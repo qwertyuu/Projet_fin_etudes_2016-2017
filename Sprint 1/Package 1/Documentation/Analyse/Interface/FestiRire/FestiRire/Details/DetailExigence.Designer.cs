@@ -60,6 +60,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -217,7 +218,7 @@
             // 
             this.maskedTextBox2.Location = new System.Drawing.Point(67, 88);
             this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(298, 20);
+            this.maskedTextBox2.Size = new System.Drawing.Size(272, 20);
             this.maskedTextBox2.TabIndex = 29;
             // 
             // numericUpDown1
@@ -403,11 +404,22 @@
             this.button14.Text = "B";
             this.button14.UseVisualStyleBackColor = true;
             // 
-            // ModifExigence
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(342, 88);
+            this.button15.Margin = new System.Windows.Forms.Padding(2);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(23, 21);
+            this.button15.TabIndex = 46;
+            this.button15.Text = "+";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // DetailExigence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 369);
+            this.Controls.Add(this.button15);
             this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button9);
@@ -440,7 +452,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "ModifExigence";
+            this.Name = "DetailExigence";
             this.Text = "Détail de l\'exigence";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
@@ -484,5 +496,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
     }
 }

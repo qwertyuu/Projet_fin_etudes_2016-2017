@@ -241,7 +241,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(128, 162);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(404, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(133, 20);
             this.dateTimePicker1.TabIndex = 22;
             // 
             // label11
@@ -586,7 +586,7 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(128, 162);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(395, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(131, 20);
             this.dateTimePicker2.TabIndex = 22;
             // 
             // label3

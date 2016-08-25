@@ -24,3 +24,6 @@ C:\Users\utilisateur.DESKTOP-NR17UOQ\Google Drive\Projet de fin d'études\Interf
 C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\Projet_fin_etudes_2016-2017\Sprint 1\Package 1\Documentation\Analyse\Interface\FestiRire\FestiRire\bin\Debug\FestiRire.exe.config
 C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\Projet_fin_etudes_2016-2017\Sprint 1\Package 1\Documentation\Analyse\Interface\FestiRire\FestiRire\obj\Debug\FestiRire.exe
 C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\Projet_fin_etudes_2016-2017\Sprint 1\Package 1\Documentation\Analyse\Interface\FestiRire\FestiRire\obj\Debug\FestiRire.pdb
+C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprint 1\Package 1\Documentation\Analyse\Interface\FestiRire\FestiRire\bin\Debug\FestiRire.exe.config
+C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprint 1\Package 1\Documentation\Analyse\Interface\FestiRire\FestiRire\obj\Debug\FestiRire.exe
+C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprint 1\Package 1\Documentation\Analyse\Interface\FestiRire\FestiRire\obj\Debug\FestiRire.pdb
