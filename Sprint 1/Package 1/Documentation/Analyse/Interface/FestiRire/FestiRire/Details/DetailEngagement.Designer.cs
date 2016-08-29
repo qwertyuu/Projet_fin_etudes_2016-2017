@@ -28,118 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rtbDescriptionLongue = new System.Windows.Forms.RichTextBox();
+            this.txtHeure = new System.Windows.Forms.MaskedTextBox();
+            this.dateEngagement = new System.Windows.Forms.DateTimePicker();
+            this.btnAnnuler = new System.Windows.Forms.Button();
+            this.btnSupprimerEngagement = new System.Windows.Forms.Button();
+            this.btnEnregistrerEngagement = new System.Windows.Forms.Button();
+            this.txtNatureEngagement = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.rtbCommentaire = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPrixBillet = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCapacite = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtDuree = new System.Windows.Forms.TextBox();
+            this.txtLieu = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.numPoliceDescriptionLongue = new System.Windows.Forms.NumericUpDown();
+            this.btnEnumDescriptionLongue = new System.Windows.Forms.Button();
+            this.btnSouslignerDescriptionLongue = new System.Windows.Forms.Button();
+            this.btnItaliqueDescriptionLongue = new System.Windows.Forms.Button();
+            this.btnGrasDescriptionLongue = new System.Windows.Forms.Button();
+            this.numPoliceCommentaire = new System.Windows.Forms.NumericUpDown();
+            this.btnEnumCommentaire = new System.Windows.Forms.Button();
+            this.btnSouslignerCommentaire = new System.Windows.Forms.Button();
+            this.btnItaliqueCommentaire = new System.Windows.Forms.Button();
+            this.btnGrasCommentaire = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.rtbDescriptionCourte = new System.Windows.Forms.RichTextBox();
+            this.btnGrasDescriptionCourte = new System.Windows.Forms.Button();
+            this.btnItaliqueDescriptionCourte = new System.Windows.Forms.Button();
+            this.btnSouslignerDescriptionCourte = new System.Windows.Forms.Button();
+            this.btnEnumDescriptionCourte = new System.Windows.Forms.Button();
+            this.numPoliceDescriptionCourte = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionLongue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionCourte)).BeginInit();
             this.SuspendLayout();
             // 
-            // richTextBox3
+            // rtbDescriptionLongue
             // 
-            this.richTextBox3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.richTextBox3.Location = new System.Drawing.Point(401, 210);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(316, 220);
-            this.richTextBox3.TabIndex = 46;
-            this.richTextBox3.Text = "";
+            this.rtbDescriptionLongue.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.rtbDescriptionLongue.Location = new System.Drawing.Point(401, 210);
+            this.rtbDescriptionLongue.Name = "rtbDescriptionLongue";
+            this.rtbDescriptionLongue.Size = new System.Drawing.Size(316, 220);
+            this.rtbDescriptionLongue.TabIndex = 46;
+            this.rtbDescriptionLongue.Text = "";
             // 
-            // maskedTextBox1
+            // txtHeure
             // 
-            this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtHeure.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(85, 64);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(296, 20);
-            this.maskedTextBox1.TabIndex = 40;
+            this.txtHeure.Location = new System.Drawing.Point(85, 64);
+            this.txtHeure.Name = "txtHeure";
+            this.txtHeure.Size = new System.Drawing.Size(296, 20);
+            this.txtHeure.TabIndex = 40;
             // 
-            // dateTimePicker2
+            // dateEngagement
             // 
-            this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dateEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(85, 39);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(133, 20);
-            this.dateTimePicker2.TabIndex = 39;
+            this.dateEngagement.Location = new System.Drawing.Point(85, 39);
+            this.dateEngagement.Margin = new System.Windows.Forms.Padding(2);
+            this.dateEngagement.Name = "dateEngagement";
+            this.dateEngagement.Size = new System.Drawing.Size(133, 20);
+            this.dateEngagement.TabIndex = 39;
             // 
-            // button2
+            // btnAnnuler
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(638, 439);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 29);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Annuler";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAnnuler.Location = new System.Drawing.Point(638, 439);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(74, 29);
+            this.btnAnnuler.TabIndex = 38;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnSupprimerEngagement
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Location = new System.Drawing.Point(458, 439);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(86, 29);
-            this.button7.TabIndex = 36;
-            this.button7.Text = "Supprimer";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnSupprimerEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSupprimerEngagement.Location = new System.Drawing.Point(458, 439);
+            this.btnSupprimerEngagement.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSupprimerEngagement.Name = "btnSupprimerEngagement";
+            this.btnSupprimerEngagement.Size = new System.Drawing.Size(86, 29);
+            this.btnSupprimerEngagement.TabIndex = 36;
+            this.btnSupprimerEngagement.Text = "Supprimer";
+            this.btnSupprimerEngagement.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnEnregistrerEngagement
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(548, 439);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 29);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Enregistrer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEnregistrerEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnregistrerEngagement.Location = new System.Drawing.Point(548, 439);
+            this.btnEnregistrerEngagement.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEnregistrerEngagement.Name = "btnEnregistrerEngagement";
+            this.btnEnregistrerEngagement.Size = new System.Drawing.Size(86, 29);
+            this.btnEnregistrerEngagement.TabIndex = 37;
+            this.btnEnregistrerEngagement.Text = "Enregistrer";
+            this.btnEnregistrerEngagement.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtNatureEngagement
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNatureEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(85, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(296, 20);
-            this.textBox1.TabIndex = 35;
+            this.txtNatureEngagement.Location = new System.Drawing.Point(85, 14);
+            this.txtNatureEngagement.Name = "txtNatureEngagement";
+            this.txtNatureEngagement.Size = new System.Drawing.Size(296, 20);
+            this.txtNatureEngagement.TabIndex = 35;
             // 
             // label4
             // 
@@ -187,15 +188,15 @@
             this.label7.TabIndex = 47;
             this.label7.Text = "Durée:";
             // 
-            // richTextBox4
+            // rtbCommentaire
             // 
-            this.richTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.rtbCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox4.Location = new System.Drawing.Point(19, 179);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(362, 251);
-            this.richTextBox4.TabIndex = 50;
-            this.richTextBox4.Text = "";
+            this.rtbCommentaire.Location = new System.Drawing.Point(19, 179);
+            this.rtbCommentaire.Name = "rtbCommentaire";
+            this.rtbCommentaire.Size = new System.Drawing.Size(362, 251);
+            this.rtbCommentaire.TabIndex = 50;
+            this.rtbCommentaire.Text = "";
             // 
             // label8
             // 
@@ -206,13 +207,13 @@
             this.label8.TabIndex = 49;
             this.label8.Text = "Commentaire:";
             // 
-            // textBox2
+            // txtPrixBillet
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox2.Location = new System.Drawing.Point(506, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(211, 20);
-            this.textBox2.TabIndex = 52;
+            this.txtPrixBillet.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtPrixBillet.Location = new System.Drawing.Point(506, 14);
+            this.txtPrixBillet.Name = "txtPrixBillet";
+            this.txtPrixBillet.Size = new System.Drawing.Size(211, 20);
+            this.txtPrixBillet.TabIndex = 52;
             // 
             // label9
             // 
@@ -224,13 +225,13 @@
             this.label9.TabIndex = 51;
             this.label9.Text = "Prix des billets:";
             // 
-            // textBox3
+            // txtCapacite
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox3.Location = new System.Drawing.Point(506, 40);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(211, 20);
-            this.textBox3.TabIndex = 54;
+            this.txtCapacite.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtCapacite.Location = new System.Drawing.Point(506, 40);
+            this.txtCapacite.Name = "txtCapacite";
+            this.txtCapacite.Size = new System.Drawing.Size(211, 20);
+            this.txtCapacite.TabIndex = 54;
             // 
             // label11
             // 
@@ -242,23 +243,23 @@
             this.label11.TabIndex = 53;
             this.label11.Text = "Capacité de la salle:";
             // 
-            // textBox4
+            // txtDuree
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtDuree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(85, 90);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(296, 20);
-            this.textBox4.TabIndex = 55;
+            this.txtDuree.Location = new System.Drawing.Point(85, 90);
+            this.txtDuree.Name = "txtDuree";
+            this.txtDuree.Size = new System.Drawing.Size(296, 20);
+            this.txtDuree.TabIndex = 55;
             // 
-            // textBox6
+            // txtLieu
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtLieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(85, 114);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(296, 20);
-            this.textBox6.TabIndex = 58;
+            this.txtLieu.Location = new System.Drawing.Point(85, 114);
+            this.txtLieu.Name = "txtLieu";
+            this.txtLieu.Size = new System.Drawing.Size(296, 20);
+            this.txtLieu.TabIndex = 58;
             // 
             // label12
             // 
@@ -269,127 +270,127 @@
             this.label12.TabIndex = 57;
             this.label12.Text = "Lieu:";
             // 
-            // numericUpDown1
+            // numPoliceDescriptionLongue
             // 
-            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown1.Location = new System.Drawing.Point(483, 185);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(34, 20);
-            this.numericUpDown1.TabIndex = 64;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numPoliceDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numPoliceDescriptionLongue.Location = new System.Drawing.Point(483, 185);
+            this.numPoliceDescriptionLongue.Name = "numPoliceDescriptionLongue";
+            this.numPoliceDescriptionLongue.Size = new System.Drawing.Size(34, 20);
+            this.numPoliceDescriptionLongue.TabIndex = 64;
+            this.numPoliceDescriptionLongue.Value = new decimal(new int[] {
             12,
             0,
             0,
             0});
             // 
-            // button17
+            // btnEnumDescriptionLongue
             // 
-            this.button17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button17.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.Location = new System.Drawing.Point(522, 184);
-            this.button17.Margin = new System.Windows.Forms.Padding(2);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(42, 21);
-            this.button17.TabIndex = 63;
-            this.button17.Text = "Enum";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnEnumDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnumDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnumDescriptionLongue.Location = new System.Drawing.Point(522, 184);
+            this.btnEnumDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEnumDescriptionLongue.Name = "btnEnumDescriptionLongue";
+            this.btnEnumDescriptionLongue.Size = new System.Drawing.Size(42, 21);
+            this.btnEnumDescriptionLongue.TabIndex = 63;
+            this.btnEnumDescriptionLongue.Text = "Enum";
+            this.btnEnumDescriptionLongue.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // btnSouslignerDescriptionLongue
             // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(455, 184);
-            this.button13.Margin = new System.Windows.Forms.Padding(2);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(23, 21);
-            this.button13.TabIndex = 60;
-            this.button13.Text = "I";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnSouslignerDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSouslignerDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSouslignerDescriptionLongue.Location = new System.Drawing.Point(455, 184);
+            this.btnSouslignerDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSouslignerDescriptionLongue.Name = "btnSouslignerDescriptionLongue";
+            this.btnSouslignerDescriptionLongue.Size = new System.Drawing.Size(23, 21);
+            this.btnSouslignerDescriptionLongue.TabIndex = 60;
+            this.btnSouslignerDescriptionLongue.Text = "I";
+            this.btnSouslignerDescriptionLongue.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // btnItaliqueDescriptionLongue
             // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(428, 184);
-            this.button12.Margin = new System.Windows.Forms.Padding(2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(23, 21);
-            this.button12.TabIndex = 61;
-            this.button12.Text = "I";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnItaliqueDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnItaliqueDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItaliqueDescriptionLongue.Location = new System.Drawing.Point(428, 184);
+            this.btnItaliqueDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnItaliqueDescriptionLongue.Name = "btnItaliqueDescriptionLongue";
+            this.btnItaliqueDescriptionLongue.Size = new System.Drawing.Size(23, 21);
+            this.btnItaliqueDescriptionLongue.TabIndex = 61;
+            this.btnItaliqueDescriptionLongue.Text = "I";
+            this.btnItaliqueDescriptionLongue.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btnGrasDescriptionLongue
             // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(401, 184);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(23, 21);
-            this.button11.TabIndex = 62;
-            this.button11.Text = "B";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnGrasDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrasDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrasDescriptionLongue.Location = new System.Drawing.Point(401, 184);
+            this.btnGrasDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrasDescriptionLongue.Name = "btnGrasDescriptionLongue";
+            this.btnGrasDescriptionLongue.Size = new System.Drawing.Size(23, 21);
+            this.btnGrasDescriptionLongue.TabIndex = 62;
+            this.btnGrasDescriptionLongue.Text = "B";
+            this.btnGrasDescriptionLongue.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown3
+            // numPoliceCommentaire
             // 
-            this.numericUpDown3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown3.Location = new System.Drawing.Point(101, 153);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(34, 20);
-            this.numericUpDown3.TabIndex = 74;
-            this.numericUpDown3.Value = new decimal(new int[] {
+            this.numPoliceCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numPoliceCommentaire.Location = new System.Drawing.Point(101, 153);
+            this.numPoliceCommentaire.Name = "numPoliceCommentaire";
+            this.numPoliceCommentaire.Size = new System.Drawing.Size(34, 20);
+            this.numPoliceCommentaire.TabIndex = 74;
+            this.numPoliceCommentaire.Value = new decimal(new int[] {
             12,
             0,
             0,
             0});
             // 
-            // button9
+            // btnEnumCommentaire
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(140, 152);
-            this.button9.Margin = new System.Windows.Forms.Padding(2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(42, 21);
-            this.button9.TabIndex = 73;
-            this.button9.Text = "Enum";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnEnumCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnumCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnumCommentaire.Location = new System.Drawing.Point(140, 152);
+            this.btnEnumCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEnumCommentaire.Name = "btnEnumCommentaire";
+            this.btnEnumCommentaire.Size = new System.Drawing.Size(42, 21);
+            this.btnEnumCommentaire.TabIndex = 73;
+            this.btnEnumCommentaire.Text = "Enum";
+            this.btnEnumCommentaire.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnSouslignerCommentaire
             // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(73, 152);
-            this.button10.Margin = new System.Windows.Forms.Padding(2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(23, 21);
-            this.button10.TabIndex = 70;
-            this.button10.Text = "I";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnSouslignerCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSouslignerCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSouslignerCommentaire.Location = new System.Drawing.Point(73, 152);
+            this.btnSouslignerCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSouslignerCommentaire.Name = "btnSouslignerCommentaire";
+            this.btnSouslignerCommentaire.Size = new System.Drawing.Size(23, 21);
+            this.btnSouslignerCommentaire.TabIndex = 70;
+            this.btnSouslignerCommentaire.Text = "I";
+            this.btnSouslignerCommentaire.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // btnItaliqueCommentaire
             // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button14.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(46, 152);
-            this.button14.Margin = new System.Windows.Forms.Padding(2);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(23, 21);
-            this.button14.TabIndex = 71;
-            this.button14.Text = "I";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnItaliqueCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnItaliqueCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItaliqueCommentaire.Location = new System.Drawing.Point(46, 152);
+            this.btnItaliqueCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnItaliqueCommentaire.Name = "btnItaliqueCommentaire";
+            this.btnItaliqueCommentaire.Size = new System.Drawing.Size(23, 21);
+            this.btnItaliqueCommentaire.TabIndex = 71;
+            this.btnItaliqueCommentaire.Text = "I";
+            this.btnItaliqueCommentaire.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // btnGrasCommentaire
             // 
-            this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button15.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(19, 152);
-            this.button15.Margin = new System.Windows.Forms.Padding(2);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(23, 21);
-            this.button15.TabIndex = 72;
-            this.button15.Text = "B";
-            this.button15.UseVisualStyleBackColor = true;
+            this.btnGrasCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrasCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrasCommentaire.Location = new System.Drawing.Point(19, 152);
+            this.btnGrasCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrasCommentaire.Name = "btnGrasCommentaire";
+            this.btnGrasCommentaire.Size = new System.Drawing.Size(23, 21);
+            this.btnGrasCommentaire.TabIndex = 72;
+            this.btnGrasCommentaire.Text = "B";
+            this.btnGrasCommentaire.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -401,71 +402,71 @@
             this.label6.TabIndex = 32;
             this.label6.Text = "Description courte:";
             // 
-            // richTextBox2
+            // rtbDescriptionCourte
             // 
-            this.richTextBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.richTextBox2.Location = new System.Drawing.Point(401, 109);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(316, 57);
-            this.richTextBox2.TabIndex = 45;
-            this.richTextBox2.Text = "";
+            this.rtbDescriptionCourte.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.rtbDescriptionCourte.Location = new System.Drawing.Point(401, 109);
+            this.rtbDescriptionCourte.Name = "rtbDescriptionCourte";
+            this.rtbDescriptionCourte.Size = new System.Drawing.Size(316, 57);
+            this.rtbDescriptionCourte.TabIndex = 45;
+            this.rtbDescriptionCourte.Text = "";
             // 
-            // button6
+            // btnGrasDescriptionCourte
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(401, 82);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(23, 21);
-            this.button6.TabIndex = 67;
-            this.button6.Text = "B";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnGrasDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrasDescriptionCourte.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrasDescriptionCourte.Location = new System.Drawing.Point(401, 82);
+            this.btnGrasDescriptionCourte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrasDescriptionCourte.Name = "btnGrasDescriptionCourte";
+            this.btnGrasDescriptionCourte.Size = new System.Drawing.Size(23, 21);
+            this.btnGrasDescriptionCourte.TabIndex = 67;
+            this.btnGrasDescriptionCourte.Text = "B";
+            this.btnGrasDescriptionCourte.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnItaliqueDescriptionCourte
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(428, 82);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(23, 21);
-            this.button5.TabIndex = 66;
-            this.button5.Text = "I";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnItaliqueDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnItaliqueDescriptionCourte.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItaliqueDescriptionCourte.Location = new System.Drawing.Point(428, 82);
+            this.btnItaliqueDescriptionCourte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnItaliqueDescriptionCourte.Name = "btnItaliqueDescriptionCourte";
+            this.btnItaliqueDescriptionCourte.Size = new System.Drawing.Size(23, 21);
+            this.btnItaliqueDescriptionCourte.TabIndex = 66;
+            this.btnItaliqueDescriptionCourte.Text = "I";
+            this.btnItaliqueDescriptionCourte.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnSouslignerDescriptionCourte
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(455, 82);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(23, 21);
-            this.button4.TabIndex = 65;
-            this.button4.Text = "I";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSouslignerDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSouslignerDescriptionCourte.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSouslignerDescriptionCourte.Location = new System.Drawing.Point(455, 82);
+            this.btnSouslignerDescriptionCourte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSouslignerDescriptionCourte.Name = "btnSouslignerDescriptionCourte";
+            this.btnSouslignerDescriptionCourte.Size = new System.Drawing.Size(23, 21);
+            this.btnSouslignerDescriptionCourte.TabIndex = 65;
+            this.btnSouslignerDescriptionCourte.Text = "I";
+            this.btnSouslignerDescriptionCourte.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnEnumDescriptionCourte
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(522, 82);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(42, 21);
-            this.button3.TabIndex = 68;
-            this.button3.Text = "Enum";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEnumDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnumDescriptionCourte.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnumDescriptionCourte.Location = new System.Drawing.Point(522, 82);
+            this.btnEnumDescriptionCourte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEnumDescriptionCourte.Name = "btnEnumDescriptionCourte";
+            this.btnEnumDescriptionCourte.Size = new System.Drawing.Size(42, 21);
+            this.btnEnumDescriptionCourte.TabIndex = 68;
+            this.btnEnumDescriptionCourte.Text = "Enum";
+            this.btnEnumDescriptionCourte.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown2
+            // numPoliceDescriptionCourte
             // 
-            this.numericUpDown2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown2.Location = new System.Drawing.Point(483, 83);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(34, 20);
-            this.numericUpDown2.TabIndex = 69;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.numPoliceDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numPoliceDescriptionCourte.Location = new System.Drawing.Point(483, 83);
+            this.numPoliceDescriptionCourte.Name = "numPoliceDescriptionCourte";
+            this.numPoliceDescriptionCourte.Size = new System.Drawing.Size(34, 20);
+            this.numPoliceDescriptionCourte.TabIndex = 69;
+            this.numPoliceDescriptionCourte.Value = new decimal(new int[] {
             12,
             0,
             0,
@@ -475,40 +476,41 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(723, 479);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button17);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.numPoliceCommentaire);
+            this.Controls.Add(this.btnEnumCommentaire);
+            this.Controls.Add(this.btnSouslignerCommentaire);
+            this.Controls.Add(this.btnItaliqueCommentaire);
+            this.Controls.Add(this.btnGrasCommentaire);
+            this.Controls.Add(this.numPoliceDescriptionCourte);
+            this.Controls.Add(this.btnEnumDescriptionCourte);
+            this.Controls.Add(this.btnSouslignerDescriptionCourte);
+            this.Controls.Add(this.btnItaliqueDescriptionCourte);
+            this.Controls.Add(this.btnGrasDescriptionCourte);
+            this.Controls.Add(this.numPoliceDescriptionLongue);
+            this.Controls.Add(this.btnEnumDescriptionLongue);
+            this.Controls.Add(this.btnSouslignerDescriptionLongue);
+            this.Controls.Add(this.btnItaliqueDescriptionLongue);
+            this.Controls.Add(this.btnGrasDescriptionLongue);
+            this.Controls.Add(this.txtLieu);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtDuree);
+            this.Controls.Add(this.txtCapacite);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPrixBillet);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.richTextBox4);
+            this.Controls.Add(this.rtbCommentaire);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.rtbDescriptionLongue);
+            this.Controls.Add(this.rtbDescriptionCourte);
+            this.Controls.Add(this.txtHeure);
+            this.Controls.Add(this.dateEngagement);
+            this.Controls.Add(this.btnAnnuler);
+            this.Controls.Add(this.btnSupprimerEngagement);
+            this.Controls.Add(this.btnEnregistrerEngagement);
+            this.Controls.Add(this.txtNatureEngagement);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
@@ -516,9 +518,9 @@
             this.Controls.Add(this.label1);
             this.Name = "DetailEngagement";
             this.Text = "Détail de l\'engagement";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionLongue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionCourte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -526,43 +528,43 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RichTextBox rtbDescriptionLongue;
+        private System.Windows.Forms.MaskedTextBox txtHeure;
+        private System.Windows.Forms.DateTimePicker dateEngagement;
+        private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.Button btnSupprimerEngagement;
+        private System.Windows.Forms.Button btnEnregistrerEngagement;
+        private System.Windows.Forms.TextBox txtNatureEngagement;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.RichTextBox rtbCommentaire;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPrixBillet;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCapacite;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtDuree;
+        private System.Windows.Forms.TextBox txtLieu;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.NumericUpDown numPoliceDescriptionLongue;
+        private System.Windows.Forms.Button btnEnumDescriptionLongue;
+        private System.Windows.Forms.Button btnSouslignerDescriptionLongue;
+        private System.Windows.Forms.Button btnItaliqueDescriptionLongue;
+        private System.Windows.Forms.Button btnGrasDescriptionLongue;
+        private System.Windows.Forms.NumericUpDown numPoliceCommentaire;
+        private System.Windows.Forms.Button btnEnumCommentaire;
+        private System.Windows.Forms.Button btnSouslignerCommentaire;
+        private System.Windows.Forms.Button btnItaliqueCommentaire;
+        private System.Windows.Forms.Button btnGrasCommentaire;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.RichTextBox rtbDescriptionCourte;
+        private System.Windows.Forms.Button btnGrasDescriptionCourte;
+        private System.Windows.Forms.Button btnItaliqueDescriptionCourte;
+        private System.Windows.Forms.Button btnSouslignerDescriptionCourte;
+        private System.Windows.Forms.Button btnEnumDescriptionCourte;
+        private System.Windows.Forms.NumericUpDown numPoliceDescriptionCourte;
     }
 }

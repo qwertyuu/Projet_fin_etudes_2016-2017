@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNomCategorie = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.rtbDescriptionCategorie = new System.Windows.Forms.RichTextBox();
+            this.btnEnregistrerArtiste = new System.Windows.Forms.Button();
+            this.btnAnnuler = new System.Windows.Forms.Button();
+            this.btnSupprimerArtiste = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -52,14 +52,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom:";
             // 
-            // textBox1
+            // txtNomCategorie
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNomCategorie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(78, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNomCategorie.Location = new System.Drawing.Point(78, 9);
+            this.txtNomCategorie.Name = "txtNomCategorie";
+            this.txtNomCategorie.Size = new System.Drawing.Size(263, 20);
+            this.txtNomCategorie.TabIndex = 1;
             // 
             // label2
             // 
@@ -70,46 +70,46 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Description:";
             // 
-            // richTextBox1
+            // rtbDescriptionCategorie
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rtbDescriptionCategorie.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(78, 64);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(263, 313);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.rtbDescriptionCategorie.Location = new System.Drawing.Point(78, 64);
+            this.rtbDescriptionCategorie.Name = "rtbDescriptionCategorie";
+            this.rtbDescriptionCategorie.Size = new System.Drawing.Size(263, 313);
+            this.rtbDescriptionCategorie.TabIndex = 2;
+            this.rtbDescriptionCategorie.Text = "";
             // 
-            // button1
+            // btnEnregistrerArtiste
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(185, 389);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Enregistrer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEnregistrerArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnregistrerArtiste.Location = new System.Drawing.Point(185, 389);
+            this.btnEnregistrerArtiste.Name = "btnEnregistrerArtiste";
+            this.btnEnregistrerArtiste.Size = new System.Drawing.Size(75, 23);
+            this.btnEnregistrerArtiste.TabIndex = 3;
+            this.btnEnregistrerArtiste.Text = "Enregistrer";
+            this.btnEnregistrerArtiste.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnAnnuler
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(266, 389);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Annuler";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnnuler.Location = new System.Drawing.Point(266, 389);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
+            this.btnAnnuler.TabIndex = 3;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnSupprimerArtiste
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(101, 389);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Supprimer";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSupprimerArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSupprimerArtiste.Location = new System.Drawing.Point(101, 389);
+            this.btnSupprimerArtiste.Name = "btnSupprimerArtiste";
+            this.btnSupprimerArtiste.Size = new System.Drawing.Size(75, 23);
+            this.btnSupprimerArtiste.TabIndex = 3;
+            this.btnSupprimerArtiste.Text = "Supprimer";
+            this.btnSupprimerArtiste.UseVisualStyleBackColor = true;
             // 
             // button13
             // 
@@ -177,11 +177,11 @@
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button11);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnAnnuler);
+            this.Controls.Add(this.btnSupprimerArtiste);
+            this.Controls.Add(this.btnEnregistrerArtiste);
+            this.Controls.Add(this.rtbDescriptionCategorie);
+            this.Controls.Add(this.txtNomCategorie);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(303, 146);
@@ -196,12 +196,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNomCategorie;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.RichTextBox rtbDescriptionCategorie;
+        private System.Windows.Forms.Button btnEnregistrerArtiste;
+        private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.Button btnSupprimerArtiste;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
