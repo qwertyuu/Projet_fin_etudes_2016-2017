@@ -1,12 +1,17 @@
+--But : Création du Package Contrat et ses tables
+--Date : 29-08-2016
+--Par : Pierre-Alexandre Pageau
+
 Use master
 
 Go
 
 Drop database PE2_Test
-
+Print 'Suppression de la base de données de test'
 Go
 
 Create database PE2_Test
+Print 'Création de la base de données de test'
 
 Go
 
@@ -18,6 +23,10 @@ Create Schema S_Contrat
 
 Go
 
+Print 'Création du schéma contrat'
+
+Go
+
 Create Table S_Contrat.tblContrat
 (
 	noContrat varchar(50),
@@ -25,8 +34,9 @@ Create Table S_Contrat.tblContrat
 	nom varchar(50),
 	description text,
 	commentaire text,
-	dateSupprime DateTime
+	dateSupprime date
 )
+Print 'Création de la table contrat'
 
 Go
 
@@ -40,8 +50,9 @@ Create Table S_Contrat.tblExigences
 	description text,
 	commentaire text,
 	descriptionCourte varchar(255),
-	dateSupprime DateTime
+	dateSupprime date
 )
+Print 'Création de la table des exigences'
 
 Go
 
@@ -50,8 +61,9 @@ Create Table S_Contrat.tblStatut
 	noStatut int,
 	nomStatut varchar(20),
 	description text,
-	dateSupprime DateTime
+	dateSupprime date
 )
+Print 'Création de la table statut'
 
 Go
 
@@ -66,8 +78,9 @@ Create Table S_Contrat.tblEngagement
 	commentaire text,
 	description text,
 	descriptionCourte varchar(255),
-	dateSupprime DateTime
+	dateSupprime date
 )
+Print 'Création de la table des engagements'
 
 Go
 
@@ -77,8 +90,9 @@ Create Table S_Contrat.tblFichierPersonnel
 	type text,
 	chemin text,
 	commentaire text,
-	dateSupprime DateTime
+	dateSupprime date
 )
+Print 'Création de la table des fichiers personnel'
 
 Go
 
@@ -87,8 +101,9 @@ Create Table S_Contrat.tblArtiste
 	noArtiste int,
 	nom varchar(50),
 	commentaire text,
-	dateSupprime DateTime
+	dateSupprime date
 )
+Print 'Création de la table des artiste'
 
 Go
 
@@ -97,8 +112,9 @@ Create table S_Contrat.tblCategorieArtiste
 	noCategorie int,
 	nom varchar(20),
 	description text,
-	dateSupprime DateTime
+	dateSupprime date
 )
+Print 'Création de la table des catégories d''artiste'
 
 Go
 
@@ -107,8 +123,9 @@ Create Table S_Contrat.tblAgence
 	noAgence varchar(15),
 	nom varchar(50),
 	courriel varchar(255),
-	dateSupprime DateTime
+	dateSupprime date
 )
+Print 'Création de la table agence'
 
 Go
 
@@ -122,8 +139,9 @@ Create Table S_Contrat.tblAdresse
 	telBureau varchar(15),
 	telCellulaire varchar(15),
 	extension varchar(5),
-	dateSupprime DateTime
+	dateSupprime date
 )
+Print 'Création de la table adresse'
 
 Go
 
@@ -132,8 +150,9 @@ Create Table S_Contrat.tblDiffuseur
 	noDiffuseur int,
 	nom varchar(50),
 	courriel varchar(255),
-	dateSupprime DateTime
+	dateSupprime date
 )
+Print 'Création de la table des diffuseurs'
 
 Go
 
@@ -149,5 +168,43 @@ Create Table S_Contrat.tblResponsable
 	telCellulaire varchar(15),
 	extension varchar(5),
 	idem bit,
-	dateSupprime DateTime
+	dateSupprime date
 )
+Print 'Création de la table des responsables'
+
+Go
+
+Create Table S_Contrat.tblRespoContrat
+(
+	noResponsable int,
+	noContrat int
+)
+Print'Création de la table d''intersection responsable-contrat'
+
+Go
+
+Create Table S_Contrat.tblContratArtiste
+(
+	noArtiste int,
+	noContrat int
+)
+Print 'Création de la table d''intersection contrat-artiste'
+
+Go
+
+Create Table S_Contrat.tblFichierOfficiel
+(
+	noArtiste int,
+	noContrat int,
+	idFichier int
+)
+Print 'Création de la table d''association artiste-contrat-ficherPersonnel'
+
+Go
+
+Create Table S_Contrat.CatArtisteArt
+(
+	noCategorie int,
+	noArtiste int
+)
+Print 'Création de la table d''intersection categorieArtiste-artiste'
