@@ -40,3 +40,6 @@ C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprin
 C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprint 1\Package 1\Documentation\Analyse\Interface\FestiRire\FestiRire\obj\Debug\FestiRire.Properties.Resources.resources
 C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprint 1\Package 1\Documentation\Analyse\Interface\FestiRire\FestiRire\obj\Debug\FestiRire.SommaireContrats.resources
 C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprint 1\Package 1\Documentation\Analyse\Interface\FestiRire\FestiRire\obj\Debug\FestiRire.csproj.GenerateResource.Cache
+C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 1\Package 1\Documentation\Analyse\Interface\FestiRire\FestiRire\bin\Debug\FestiRire.exe.config
+C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 1\Package 1\Documentation\Analyse\Interface\FestiRire\FestiRire\obj\Debug\FestiRire.exe
+C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 1\Package 1\Documentation\Analyse\Interface\FestiRire\FestiRire\obj\Debug\FestiRire.pdb
