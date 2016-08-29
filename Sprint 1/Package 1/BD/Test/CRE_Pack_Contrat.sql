@@ -1,4 +1,4 @@
---But : Création du Package Contrat et ses TABLEs
+--But : Création du Package Contrat et ses table
 --Date : 29-08-2016
 --Par : Pierre-Alexandre Pageau
 
@@ -38,7 +38,7 @@ CREATE TABLE S_Contrat.tblContrat
 	noStatut int,
 	noAgence int
 )
-PRINT 'Création de la TABLE contrat'
+PRINT 'Création de la table contrat'
 
 GO
 
@@ -53,9 +53,10 @@ CREATE TABLE S_Contrat.tblExigences
 	commentaire text,
 	descriptionCourte varchar(255),
 	dateSupprime date,
-	noContrat int
+	noContrat int,
+	noStatut int
 )
-PRINT 'Création de la TABLE des exigences'
+PRINT 'Création de la table des exigences'
 
 GO
 
@@ -64,9 +65,10 @@ CREATE TABLE S_Contrat.tblStatut
 	noStatut int,
 	nomStatut varchar(20),
 	description text,
+	couleur varchar(6),
 	dateSupprime date
 )
-PRINT 'Création de la TABLE statut'
+PRINT 'Création de la table statut'
 
 GO
 
@@ -84,7 +86,7 @@ CREATE TABLE S_Contrat.tblEngagement
 	dateSupprime date,
 	noContrat int
 )
-PRINT 'Création de la TABLE des engagements'
+PRINT 'Création de la table des engagements'
 
 GO
 
@@ -97,7 +99,7 @@ CREATE TABLE S_Contrat.tblFichierPersonnel
 	dateSupprime date,
 	noArtiste int
 )
-PRINT 'Création de la TABLE des fichiers personnel'
+PRINT 'Création de la table des fichiers personnel'
 
 GO
 
@@ -108,18 +110,18 @@ CREATE TABLE S_Contrat.tblArtiste
 	commentaire text,
 	dateSupprime date
 )
-PRINT 'Création de la TABLE des artiste'
+PRINT 'Création de la table des artiste'
 
 GO
 
-CREATE TABLE S_Contrat.tblCateGOrieArtiste
+CREATE TABLE S_Contrat.tblCategorieArtiste
 (
-	noCateGOrie int,
+	noCategorie int,
 	nom varchar(20),
 	description text,
 	dateSupprime date
 )
-PRINT 'Création de la TABLE des catéGOries d''artiste'
+PRINT 'Création de la table des catégories d''artiste'
 
 GO
 
@@ -131,7 +133,7 @@ CREATE TABLE S_Contrat.tblAgence
 	dateSupprime date,
 	noAdresse int
 )
-PRINT 'Création de la TABLE agence'
+PRINT 'Création de la table agence'
 
 GO
 
@@ -147,7 +149,7 @@ CREATE TABLE S_Contrat.tblAdresse
 	extension varchar(5),
 	dateSupprime date
 )
-PRINT 'Création de la TABLE adresse'
+PRINT 'Création de la table adresse'
 
 GO
 
@@ -159,7 +161,7 @@ CREATE TABLE S_Contrat.tblDiffuseur
 	dateSupprime date,
 	noAdresse int
 )
-PRINT 'Création de la TABLE des diffuseurs'
+PRINT 'Création de la table des diffuseurs'
 
 GO
 
@@ -179,7 +181,7 @@ CREATE TABLE S_Contrat.tblResponsable
 	noDiffuseur int,
 	noAgence int
 )
-PRINT 'Création de la TABLE des responsables'
+PRINT 'Création de la table des responsables'
 
 GO
 
@@ -188,7 +190,7 @@ CREATE TABLE S_Contrat.tblRespoContrat
 	noResponsable int,
 	noContrat int
 )
-PRINT'Création de la TABLE d''intersection responsable-contrat'
+PRINT'Création de la table d''intersection responsable-contrat'
 
 GO
 
@@ -197,7 +199,7 @@ CREATE TABLE S_Contrat.tblContratArtiste
 	noArtiste int,
 	noContrat int
 )
-PRINT 'Création de la TABLE d''intersection contrat-artiste'
+PRINT 'Création de la table d''intersection contrat-artiste'
 
 GO
 
@@ -207,13 +209,13 @@ CREATE TABLE S_Contrat.tblFichierOfficiel
 	noContrat int,
 	idFichier int
 )
-PRINT 'Création de la TABLE d''association artiste-contrat-ficherPersonnel'
+PRINT 'Création de la table d''association artiste-contrat-ficherPersonnel'
 
 GO
 
 CREATE TABLE S_Contrat.CatArtisteArt
 (
-	noCateGOrie int,
+	noCategorie int,
 	noArtiste int
 )
-PRINT 'Création de la TABLE d''intersection cateGOrieArtiste-artiste'
+PRINT 'Création de la table d''intersection categorieArtiste-artiste'
