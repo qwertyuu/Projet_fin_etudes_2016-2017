@@ -14,7 +14,11 @@ Use PE2_Test
 
 Go
 
-Create Table tblContrat
+Create Schema S_Contrat
+
+Go
+
+Create Table S_Contrat.tblContrat
 (
 	noContrat varchar(50),
 	lieu text,
@@ -26,7 +30,7 @@ Create Table tblContrat
 
 Go
 
-Create Table tblExigences
+Create Table S_Contrat.tblExigences
 (
 	noExigence int,
 	nom	varchar(20),
@@ -41,7 +45,7 @@ Create Table tblExigences
 
 Go
 
-Create Table tblStatut
+Create Table S_Contrat.tblStatut
 (
 	noStatut int,
 	nomStatut varchar(20),
@@ -51,7 +55,7 @@ Create Table tblStatut
 
 Go
 
-Create Table tblEngagement
+Create Table S_Contrat.tblEngagement
 (
 	noEngagement int,
 	duree varchar(6),
@@ -67,7 +71,7 @@ Create Table tblEngagement
 
 Go
 
-Create Table tblFichierPersonnel
+Create Table S_Contrat.tblFichierPersonnel
 (
 	idFichier int,
 	type text,
@@ -78,7 +82,7 @@ Create Table tblFichierPersonnel
 
 Go
 
-Create Table tblArtiste
+Create Table S_Contrat.tblArtiste
 (
 	noArtiste int,
 	nom varchar(50),
@@ -88,7 +92,7 @@ Create Table tblArtiste
 
 Go
 
-Create table tblCategorieArtiste
+Create table S_Contrat.tblCategorieArtiste
 (
 	noCategorie int,
 	nom varchar(20),
@@ -98,7 +102,7 @@ Create table tblCategorieArtiste
 
 Go
 
-Create Table tblAgence
+Create Table S_Contrat.tblAgence
 (
 	noAgence varchar(15),
 	nom varchar(50),
@@ -108,7 +112,7 @@ Create Table tblAgence
 
 Go
 
-Create Table tblAdresse
+Create Table S_Contrat.tblAdresse
 (
 	noAdresse int,
 	ville varchar(20),
@@ -123,7 +127,7 @@ Create Table tblAdresse
 
 Go
 
-Create Table tblDiffuseur
+Create Table S_Contrat.tblDiffuseur
 (
 	noDiffuseur int,
 	nom varchar(50),
@@ -133,7 +137,7 @@ Create Table tblDiffuseur
 
 Go
 
-Create Table tblResponsable
+Create Table S_Contrat.tblResponsable
 (
 	noResponsable int,
 	nom varchar(20),
