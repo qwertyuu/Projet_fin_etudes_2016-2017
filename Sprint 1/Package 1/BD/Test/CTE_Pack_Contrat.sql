@@ -29,11 +29,18 @@ GO
  References S_Contrat.tblStatut(noStatut)
 
  GO
-  Print 'Création des Contraintes de la table tblStatut'
+ Print 'Création des Contraintes de la table tblStatut'
  Alter table S_Contrat.tblStatut
  Alter Column noStatut  Int NOT NULL
  Alter table S_Contrat.tblStatut
  Alter Column nomStatut  varchar(20) NOT NULL
+
+ GO
+ Print 'Création des Contraintes de la table tblAgence'
+ Alter table S_Contrat.tblAgence
+ Alter Column noAgence  varchar(15) NOT NULL
+ Alter table S_Contrat.tblStatut
+ Alter Column nomAgence  varchar(20) NOT NULL
 
 
 
