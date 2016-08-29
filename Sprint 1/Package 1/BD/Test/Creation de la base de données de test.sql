@@ -16,41 +16,44 @@ Go
 
 Create Table tblContrat
 (
-	noContrat varchar(50) NOT NULL,
+	noContrat varchar(50),
 	lieu text,
-	nom varchar(50) NOT NULL,
+	nom varchar(50),
 	description text,
-	commentaire text
+	commentaire text,
+	dateSupprime DateTime
 )
 
 Go
 
 Create Table tblExigences
 (
-	noExigence int NOT NULL,
-	nom	varchar(20) NOT NULL,
-	statut varchar(50) NOT NULL,
+	noExigence int,
+	nom	varchar(20),
+	statut varchar(50),
 	date date,
 	montant decimal,
 	description text,
 	commentaire text,
-	descriptionCourte varchar(255)
+	descriptionCourte varchar(255),
+	dateSupprime DateTime
 )
 
 Go
 
 Create Table tblStatut
 (
-	noStatut int NOT NULL,
-	nomStatut varchar(20) NOT NULL,
-	description text
+	noStatut int,
+	nomStatut varchar(20),
+	description text,
+	dateSupprime DateTime
 )
 
 Go
 
 Create Table tblEngagement
 (
-	noEngagement int NOT NULL,
+	noEngagement int,
 	duree varchar(6),
 	lieu text,
 	date date,
@@ -58,81 +61,89 @@ Create Table tblEngagement
 	nature varchar(50),
 	commentaire text,
 	description text,
-	descriptionCourte varchar(255)
+	descriptionCourte varchar(255),
+	dateSupprime DateTime
 )
 
 Go
 
 Create Table tblFichierPersonnel
 (
-	idFichier int NOT NULL,
+	idFichier int,
 	type text,
-	chemin text NOT NULL,
-	commentaire text
+	chemin text,
+	commentaire text,
+	dateSupprime DateTime
 )
 
 Go
 
 Create Table tblArtiste
 (
-	noArtiste int NOT NULL,
-	nom varchar(50) NOT NULL,
-	commentaire text
+	noArtiste int,
+	nom varchar(50),
+	commentaire text,
+	dateSupprime DateTime
 )
 
 Go
 
 Create table tblCategorieArtiste
 (
-	noCategorie int NOT NULL,
-	nom varchar(20) NOT NULL,
-	description text
+	noCategorie int,
+	nom varchar(20),
+	description text,
+	dateSupprime DateTime
 )
 
 Go
 
 Create Table tblAgence
 (
-	noAgence varchar(15) NOT NULL,
-	nom varchar(50) NOT NULL,
-	courriel varchar(255)
+	noAgence varchar(15),
+	nom varchar(50),
+	courriel varchar(255),
+	dateSupprime DateTime
 )
 
 Go
 
 Create Table tblAdresse
 (
-	noAdresse int NOT NULL,
-	ville varchar(20) NOT NULL,
-	codepostal varchar(6) NOT NULL,
-	province varchar(2) NOT NULL,
-	pays varchar(20) NOT NULL,
-	telBureau varchar(15) NOT NULL,
-	telCellulaire varchar(15) NOT NULL,
-	extension varchar(5) NOT NULL
+	noAdresse int,
+	ville varchar(20),
+	codepostal varchar(6),
+	province varchar(2),
+	pays varchar(20),
+	telBureau varchar(15),
+	telCellulaire varchar(15),
+	extension varchar(5),
+	dateSupprime DateTime
 )
 
 Go
 
 Create Table tblDiffuseur
 (
-	noDiffuseur int NOT NULL,
-	nom varchar(50) NOT NULL,
-	courriel varchar(255) NOT NULL
+	noDiffuseur int,
+	nom varchar(50),
+	courriel varchar(255),
+	dateSupprime DateTime
 )
 
 Go
 
 Create Table tblResponsable
 (
-	noResponsable int NOT NULL,
-	nom varchar(20) NOT NULL,
-	prenom varchar(20) NOT NULL,
-	courriel varchar(255) NOT NULL,
-	signataire varchar(70) NOT NULL,
+	noResponsable int,
+	nom varchar(20),
+	prenom varchar(20),
+	courriel varchar(255),
+	signataire varchar(70),
 	date date,
-	telBureau varchar(15) NOT NULL,
-	telCellulaire varchar(15) NOT NULL,
-	extension varchar(5) NOT NULL,
-	idem bit NOT NULL
+	telBureau varchar(15),
+	telCellulaire varchar(15),
+	extension varchar(5),
+	idem bit,
+	dateSupprime DateTime
 )
