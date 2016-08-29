@@ -34,7 +34,9 @@ Create Table S_Contrat.tblContrat
 	nom varchar(50),
 	description text,
 	commentaire text,
-	dateSupprime date
+	dateSupprime date,
+	noStatut int,
+	noAgence int
 )
 Print 'Création de la table contrat'
 
@@ -50,7 +52,8 @@ Create Table S_Contrat.tblExigences
 	description text,
 	commentaire text,
 	descriptionCourte varchar(255),
-	dateSupprime date
+	dateSupprime date,
+	noContrat int
 )
 Print 'Création de la table des exigences'
 
@@ -78,7 +81,8 @@ Create Table S_Contrat.tblEngagement
 	commentaire text,
 	description text,
 	descriptionCourte varchar(255),
-	dateSupprime date
+	dateSupprime date,
+	noContrat int
 )
 Print 'Création de la table des engagements'
 
@@ -90,7 +94,8 @@ Create Table S_Contrat.tblFichierPersonnel
 	type text,
 	chemin text,
 	commentaire text,
-	dateSupprime date
+	dateSupprime date,
+	noArtiste int
 )
 Print 'Création de la table des fichiers personnel'
 
@@ -123,7 +128,8 @@ Create Table S_Contrat.tblAgence
 	noAgence varchar(15),
 	nom varchar(50),
 	courriel varchar(255),
-	dateSupprime date
+	dateSupprime date,
+	noAdresse int
 )
 Print 'Création de la table agence'
 
@@ -150,7 +156,8 @@ Create Table S_Contrat.tblDiffuseur
 	noDiffuseur int,
 	nom varchar(50),
 	courriel varchar(255),
-	dateSupprime date
+	dateSupprime date,
+	noAdresse int
 )
 Print 'Création de la table des diffuseurs'
 
@@ -168,7 +175,9 @@ Create Table S_Contrat.tblResponsable
 	telCellulaire varchar(15),
 	extension varchar(5),
 	idem bit,
-	dateSupprime date
+	dateSupprime date,
+	noDiffuseur int,
+	noAgence int
 )
 Print 'Création de la table des responsables'
 
