@@ -31,106 +31,106 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.txtExtensionTelephoneAgence = new System.Windows.Forms.TextBox();
+            this.txtCellulaireAgence = new System.Windows.Forms.TextBox();
+            this.txtTelephoneAgence = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateSignatureAgence = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtSignataireAgence = new System.Windows.Forms.TextBox();
+            this.txtNomResponsableAgence = new System.Windows.Forms.TextBox();
+            this.txtCourrielAgence = new System.Windows.Forms.TextBox();
+            this.txtPrenomResponsableAgence = new System.Windows.Forms.TextBox();
+            this.chkIdemAgence = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnAjoutAgence = new System.Windows.Forms.Button();
+            this.cmbNomAgence = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvExigence = new System.Windows.Forms.DataGridView();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescriCourte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvEngagement = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateEngagement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HeureEngagement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnEnregistrerContrat = new System.Windows.Forms.Button();
+            this.btnAnnuler = new System.Windows.Forms.Button();
+            this.txtNumeroContrat = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txtExtensionTelephoneDiffuseur = new System.Windows.Forms.TextBox();
+            this.dateSignatureDiffuseur = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.txtSignataireDiffuseur = new System.Windows.Forms.TextBox();
+            this.txtCellulaireDiffuseur = new System.Windows.Forms.TextBox();
+            this.txtNomResponsableDiffuseur = new System.Windows.Forms.TextBox();
+            this.txtTelephoneDiffuseur = new System.Windows.Forms.TextBox();
+            this.txtCourrielDiffuseur = new System.Windows.Forms.TextBox();
+            this.txtPrenomResponsableDiffuseur = new System.Windows.Forms.TextBox();
+            this.chkIdemDiffuseur = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnAjoutDiffuseur = new System.Windows.Forms.Button();
+            this.cmbNomDiffuseur = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button19 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button20 = new System.Windows.Forms.Button();
+            this.btnAjouterArtiste = new System.Windows.Forms.Button();
+            this.lstArtiste = new System.Windows.Forms.ListBox();
+            this.btnDetailArtiste = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnGrasCommentaire = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.rtbCommentaire = new System.Windows.Forms.RichTextBox();
+            this.btnAjouterExigence = new System.Windows.Forms.Button();
+            this.btnDetailExigence = new System.Windows.Forms.Button();
+            this.btnAjouterEngagement = new System.Windows.Forms.Button();
+            this.btnDetailEngagement = new System.Windows.Forms.Button();
+            this.txtNomContrat = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbDescriptionContrat = new System.Windows.Forms.RichTextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnSupprimerContrat = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button17 = new System.Windows.Forms.Button();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.button18 = new System.Windows.Forms.Button();
+            this.cmbStatutContrat = new System.Windows.Forms.ComboBox();
+            this.btnAjoutStatutContrat = new System.Windows.Forms.Button();
+            this.btnItaliqueCommentaire = new System.Windows.Forms.Button();
+            this.btnSouslignerCommentaire = new System.Windows.Forms.Button();
+            this.btnSouslignerDescription = new System.Windows.Forms.Button();
+            this.btnItaliqueDescription = new System.Windows.Forms.Button();
+            this.btnGrasDescription = new System.Windows.Forms.Button();
+            this.numPoliceCommentaire = new System.Windows.Forms.NumericUpDown();
+            this.btnEnumCommentaire = new System.Windows.Forms.Button();
+            this.numPoliceDescription = new System.Windows.Forms.NumericUpDown();
+            this.btnEnumDescription = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtLieuContrat = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbEvenement = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExigence)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEngagement)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescription)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,24 +149,24 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox14);
-            this.groupBox1.Controls.Add(this.textBox18);
+            this.groupBox1.Controls.Add(this.txtExtensionTelephoneAgence);
+            this.groupBox1.Controls.Add(this.txtCellulaireAgence);
+            this.groupBox1.Controls.Add(this.txtTelephoneAgence);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateSignatureAgence);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.txtSignataireAgence);
+            this.groupBox1.Controls.Add(this.txtNomResponsableAgence);
+            this.groupBox1.Controls.Add(this.txtCourrielAgence);
+            this.groupBox1.Controls.Add(this.txtPrenomResponsableAgence);
+            this.groupBox1.Controls.Add(this.chkIdemAgence);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.btnAjoutAgence);
+            this.groupBox1.Controls.Add(this.cmbNomAgence);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(11, 30);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -187,30 +187,30 @@
             this.label6.TabIndex = 37;
             this.label6.Text = "Ext.:";
             // 
-            // textBox4
+            // txtExtensionTelephoneAgence
             // 
-            this.textBox4.Location = new System.Drawing.Point(265, 114);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(54, 20);
-            this.textBox4.TabIndex = 36;
+            this.txtExtensionTelephoneAgence.Location = new System.Drawing.Point(265, 114);
+            this.txtExtensionTelephoneAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtExtensionTelephoneAgence.Name = "txtExtensionTelephoneAgence";
+            this.txtExtensionTelephoneAgence.Size = new System.Drawing.Size(54, 20);
+            this.txtExtensionTelephoneAgence.TabIndex = 36;
             // 
-            // textBox14
+            // txtCellulaireAgence
             // 
-            this.textBox14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox14.Location = new System.Drawing.Point(437, 114);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(95, 20);
-            this.textBox14.TabIndex = 31;
+            this.txtCellulaireAgence.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCellulaireAgence.Location = new System.Drawing.Point(437, 114);
+            this.txtCellulaireAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCellulaireAgence.Name = "txtCellulaireAgence";
+            this.txtCellulaireAgence.Size = new System.Drawing.Size(95, 20);
+            this.txtCellulaireAgence.TabIndex = 31;
             // 
-            // textBox18
+            // txtTelephoneAgence
             // 
-            this.textBox18.Location = new System.Drawing.Point(128, 114);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(101, 20);
-            this.textBox18.TabIndex = 30;
+            this.txtTelephoneAgence.Location = new System.Drawing.Point(128, 114);
+            this.txtTelephoneAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelephoneAgence.Name = "txtTelephoneAgence";
+            this.txtTelephoneAgence.Size = new System.Drawing.Size(101, 20);
+            this.txtTelephoneAgence.TabIndex = 30;
             // 
             // label12
             // 
@@ -233,16 +233,16 @@
             this.label24.TabIndex = 28;
             this.label24.Text = "Téléphone:";
             // 
-            // dateTimePicker1
+            // dateSignatureAgence
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dateSignatureAgence.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Location = new System.Drawing.Point(128, 162);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(133, 20);
-            this.dateTimePicker1.TabIndex = 22;
+            this.dateSignatureAgence.CustomFormat = "";
+            this.dateSignatureAgence.Location = new System.Drawing.Point(128, 162);
+            this.dateSignatureAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.dateSignatureAgence.Name = "dateSignatureAgence";
+            this.dateSignatureAgence.Size = new System.Drawing.Size(133, 20);
+            this.dateSignatureAgence.TabIndex = 22;
             // 
             // label11
             // 
@@ -254,60 +254,60 @@
             this.label11.TabIndex = 21;
             this.label11.Text = "Date de signature:";
             // 
-            // textBox7
+            // txtSignataireAgence
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtSignataireAgence.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(128, 138);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(404, 20);
-            this.textBox7.TabIndex = 20;
+            this.txtSignataireAgence.Enabled = false;
+            this.txtSignataireAgence.Location = new System.Drawing.Point(128, 138);
+            this.txtSignataireAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSignataireAgence.Name = "txtSignataireAgence";
+            this.txtSignataireAgence.Size = new System.Drawing.Size(404, 20);
+            this.txtSignataireAgence.TabIndex = 20;
             // 
-            // textBox5
+            // txtNomResponsableAgence
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNomResponsableAgence.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(128, 42);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(404, 20);
-            this.textBox5.TabIndex = 18;
+            this.txtNomResponsableAgence.Location = new System.Drawing.Point(128, 42);
+            this.txtNomResponsableAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomResponsableAgence.Name = "txtNomResponsableAgence";
+            this.txtNomResponsableAgence.Size = new System.Drawing.Size(404, 20);
+            this.txtNomResponsableAgence.TabIndex = 18;
             // 
-            // textBox3
+            // txtCourrielAgence
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCourrielAgence.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(128, 90);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(404, 20);
-            this.textBox3.TabIndex = 16;
+            this.txtCourrielAgence.Location = new System.Drawing.Point(128, 90);
+            this.txtCourrielAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCourrielAgence.Name = "txtCourrielAgence";
+            this.txtCourrielAgence.Size = new System.Drawing.Size(404, 20);
+            this.txtCourrielAgence.TabIndex = 16;
             // 
-            // textBox2
+            // txtPrenomResponsableAgence
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPrenomResponsableAgence.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(128, 66);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(404, 20);
-            this.textBox2.TabIndex = 15;
+            this.txtPrenomResponsableAgence.Location = new System.Drawing.Point(128, 66);
+            this.txtPrenomResponsableAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrenomResponsableAgence.Name = "txtPrenomResponsableAgence";
+            this.txtPrenomResponsableAgence.Size = new System.Drawing.Size(404, 20);
+            this.txtPrenomResponsableAgence.TabIndex = 15;
             // 
-            // checkBox1
+            // chkIdemAgence
             // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(536, 140);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(49, 17);
-            this.checkBox1.TabIndex = 13;
-            this.checkBox1.Text = "Idem";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkIdemAgence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkIdemAgence.AutoSize = true;
+            this.chkIdemAgence.Checked = true;
+            this.chkIdemAgence.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkIdemAgence.Location = new System.Drawing.Point(536, 140);
+            this.chkIdemAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.chkIdemAgence.Name = "chkIdemAgence";
+            this.chkIdemAgence.Size = new System.Drawing.Size(49, 17);
+            this.chkIdemAgence.TabIndex = 13;
+            this.chkIdemAgence.Text = "Idem";
+            this.chkIdemAgence.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -349,27 +349,27 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Nom du responsable:";
             // 
-            // button3
+            // btnAjoutAgence
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(536, 15);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(23, 21);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAjoutAgence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAjoutAgence.Location = new System.Drawing.Point(536, 15);
+            this.btnAjoutAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAjoutAgence.Name = "btnAjoutAgence";
+            this.btnAjoutAgence.Size = new System.Drawing.Size(23, 21);
+            this.btnAjoutAgence.TabIndex = 6;
+            this.btnAjoutAgence.Text = "+";
+            this.btnAjoutAgence.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cmbNomAgence
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbNomAgence.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(128, 16);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(404, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cmbNomAgence.FormattingEnabled = true;
+            this.cmbNomAgence.Location = new System.Drawing.Point(128, 16);
+            this.cmbNomAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbNomAgence.Name = "cmbNomAgence";
+            this.cmbNomAgence.Size = new System.Drawing.Size(404, 21);
+            this.cmbNomAgence.TabIndex = 2;
             // 
             // label2
             // 
@@ -385,7 +385,7 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.dgvExigence);
             this.groupBox3.Location = new System.Drawing.Point(11, 380);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
@@ -395,24 +395,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Éxigences";
             // 
-            // dataGridView1
+            // dgvExigence
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvExigence.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvExigence.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvExigence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExigence.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nom,
             this.date,
             this.montant,
             this.statut,
             this.DescriCourte});
-            this.dataGridView1.Location = new System.Drawing.Point(2, 15);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1189, 177);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvExigence.Location = new System.Drawing.Point(2, 15);
+            this.dgvExigence.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvExigence.Name = "dgvExigence";
+            this.dgvExigence.RowTemplate.Height = 24;
+            this.dgvExigence.Size = new System.Drawing.Size(1189, 177);
+            this.dgvExigence.TabIndex = 0;
             // 
             // Nom
             // 
@@ -444,7 +444,7 @@
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.dataGridView2);
+            this.groupBox4.Controls.Add(this.dgvEngagement);
             this.groupBox4.Location = new System.Drawing.Point(11, 227);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
@@ -454,25 +454,25 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Engagements";
             // 
-            // dataGridView2
+            // dgvEngagement
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvEngagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEngagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEngagement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column3,
             this.dateEngagement,
             this.HeureEngagement,
             this.Column1,
             this.Column4});
-            this.dataGridView2.Location = new System.Drawing.Point(2, 15);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(1189, 99);
-            this.dataGridView2.TabIndex = 0;
+            this.dgvEngagement.Location = new System.Drawing.Point(2, 15);
+            this.dgvEngagement.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvEngagement.Name = "dgvEngagement";
+            this.dgvEngagement.RowTemplate.Height = 24;
+            this.dgvEngagement.Size = new System.Drawing.Size(1189, 99);
+            this.dgvEngagement.TabIndex = 0;
             // 
             // Column3
             // 
@@ -499,58 +499,59 @@
             this.Column4.HeaderText = "Lieu";
             this.Column4.Name = "Column4";
             // 
-            // button1
+            // btnEnregistrerContrat
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(1618, 613);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 29);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Enregistrer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEnregistrerContrat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnregistrerContrat.Location = new System.Drawing.Point(1618, 613);
+            this.btnEnregistrerContrat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEnregistrerContrat.Name = "btnEnregistrerContrat";
+            this.btnEnregistrerContrat.Size = new System.Drawing.Size(86, 29);
+            this.btnEnregistrerContrat.TabIndex = 5;
+            this.btnEnregistrerContrat.Text = "Enregistrer";
+            this.btnEnregistrerContrat.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnAnnuler
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(1708, 613);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 29);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Annuler";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAnnuler.Location = new System.Drawing.Point(1708, 613);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(74, 29);
+            this.btnAnnuler.TabIndex = 6;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtNumeroContrat
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(374, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtNumeroContrat.Location = new System.Drawing.Point(139, 6);
+            this.txtNumeroContrat.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNumeroContrat.Name = "txtNumeroContrat";
+            this.txtNumeroContrat.Size = new System.Drawing.Size(374, 20);
+            this.txtNumeroContrat.TabIndex = 7;
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.textBox17);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.txtExtensionTelephoneDiffuseur);
+            this.groupBox2.Controls.Add(this.dateSignatureDiffuseur);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.textBox10);
-            this.groupBox2.Controls.Add(this.textBox11);
-            this.groupBox2.Controls.Add(this.textBox12);
-            this.groupBox2.Controls.Add(this.textBox13);
-            this.groupBox2.Controls.Add(this.checkBox2);
+            this.groupBox2.Controls.Add(this.txtSignataireDiffuseur);
+            this.groupBox2.Controls.Add(this.txtCellulaireDiffuseur);
+            this.groupBox2.Controls.Add(this.txtNomResponsableDiffuseur);
+            this.groupBox2.Controls.Add(this.txtTelephoneDiffuseur);
+            this.groupBox2.Controls.Add(this.txtCourrielDiffuseur);
+            this.groupBox2.Controls.Add(this.txtPrenomResponsableDiffuseur);
+            this.groupBox2.Controls.Add(this.chkIdemDiffuseur);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.btnAjoutDiffuseur);
+            this.groupBox2.Controls.Add(this.cmbNomDiffuseur);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Location = new System.Drawing.Point(616, 30);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
@@ -571,23 +572,23 @@
             this.label23.TabIndex = 29;
             this.label23.Text = "Ext.:";
             // 
-            // textBox17
+            // txtExtensionTelephoneDiffuseur
             // 
-            this.textBox17.Location = new System.Drawing.Point(263, 114);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(54, 20);
-            this.textBox17.TabIndex = 28;
+            this.txtExtensionTelephoneDiffuseur.Location = new System.Drawing.Point(263, 114);
+            this.txtExtensionTelephoneDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtExtensionTelephoneDiffuseur.Name = "txtExtensionTelephoneDiffuseur";
+            this.txtExtensionTelephoneDiffuseur.Size = new System.Drawing.Size(54, 20);
+            this.txtExtensionTelephoneDiffuseur.TabIndex = 28;
             // 
-            // dateTimePicker2
+            // dateSignatureDiffuseur
             // 
-            this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dateSignatureDiffuseur.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(128, 162);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(131, 20);
-            this.dateTimePicker2.TabIndex = 22;
+            this.dateSignatureDiffuseur.Location = new System.Drawing.Point(128, 162);
+            this.dateSignatureDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.dateSignatureDiffuseur.Name = "dateSignatureDiffuseur";
+            this.dateSignatureDiffuseur.Size = new System.Drawing.Size(131, 20);
+            this.dateSignatureDiffuseur.TabIndex = 22;
             // 
             // label3
             // 
@@ -599,77 +600,77 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Date de signature:";
             // 
-            // textBox8
+            // txtSignataireDiffuseur
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtSignataireDiffuseur.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(128, 138);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(395, 20);
-            this.textBox8.TabIndex = 20;
+            this.txtSignataireDiffuseur.Enabled = false;
+            this.txtSignataireDiffuseur.Location = new System.Drawing.Point(128, 138);
+            this.txtSignataireDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSignataireDiffuseur.Name = "txtSignataireDiffuseur";
+            this.txtSignataireDiffuseur.Size = new System.Drawing.Size(395, 20);
+            this.txtSignataireDiffuseur.TabIndex = 20;
             // 
-            // textBox9
+            // txtCellulaireDiffuseur
             // 
-            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox9.Location = new System.Drawing.Point(428, 114);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(95, 20);
-            this.textBox9.TabIndex = 19;
+            this.txtCellulaireDiffuseur.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCellulaireDiffuseur.Location = new System.Drawing.Point(428, 114);
+            this.txtCellulaireDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCellulaireDiffuseur.Name = "txtCellulaireDiffuseur";
+            this.txtCellulaireDiffuseur.Size = new System.Drawing.Size(95, 20);
+            this.txtCellulaireDiffuseur.TabIndex = 19;
             // 
-            // textBox10
+            // txtNomResponsableDiffuseur
             // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNomResponsableDiffuseur.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.Location = new System.Drawing.Point(128, 42);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(395, 20);
-            this.textBox10.TabIndex = 18;
+            this.txtNomResponsableDiffuseur.Location = new System.Drawing.Point(128, 42);
+            this.txtNomResponsableDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomResponsableDiffuseur.Name = "txtNomResponsableDiffuseur";
+            this.txtNomResponsableDiffuseur.Size = new System.Drawing.Size(395, 20);
+            this.txtNomResponsableDiffuseur.TabIndex = 18;
             // 
-            // textBox11
+            // txtTelephoneDiffuseur
             // 
-            this.textBox11.Location = new System.Drawing.Point(128, 114);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(101, 20);
-            this.textBox11.TabIndex = 17;
+            this.txtTelephoneDiffuseur.Location = new System.Drawing.Point(128, 114);
+            this.txtTelephoneDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelephoneDiffuseur.Name = "txtTelephoneDiffuseur";
+            this.txtTelephoneDiffuseur.Size = new System.Drawing.Size(101, 20);
+            this.txtTelephoneDiffuseur.TabIndex = 17;
             // 
-            // textBox12
+            // txtCourrielDiffuseur
             // 
-            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCourrielDiffuseur.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox12.Location = new System.Drawing.Point(128, 90);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(395, 20);
-            this.textBox12.TabIndex = 16;
+            this.txtCourrielDiffuseur.Location = new System.Drawing.Point(128, 90);
+            this.txtCourrielDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCourrielDiffuseur.Name = "txtCourrielDiffuseur";
+            this.txtCourrielDiffuseur.Size = new System.Drawing.Size(395, 20);
+            this.txtCourrielDiffuseur.TabIndex = 16;
             // 
-            // textBox13
+            // txtPrenomResponsableDiffuseur
             // 
-            this.textBox13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPrenomResponsableDiffuseur.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox13.Location = new System.Drawing.Point(128, 66);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(395, 20);
-            this.textBox13.TabIndex = 15;
+            this.txtPrenomResponsableDiffuseur.Location = new System.Drawing.Point(128, 66);
+            this.txtPrenomResponsableDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrenomResponsableDiffuseur.Name = "txtPrenomResponsableDiffuseur";
+            this.txtPrenomResponsableDiffuseur.Size = new System.Drawing.Size(395, 20);
+            this.txtPrenomResponsableDiffuseur.TabIndex = 15;
             // 
-            // checkBox2
+            // chkIdemDiffuseur
             // 
-            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Checked = true;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(527, 140);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(49, 17);
-            this.checkBox2.TabIndex = 13;
-            this.checkBox2.Text = "Idem";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkIdemDiffuseur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkIdemDiffuseur.AutoSize = true;
+            this.chkIdemDiffuseur.Checked = true;
+            this.chkIdemDiffuseur.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkIdemDiffuseur.Location = new System.Drawing.Point(527, 140);
+            this.chkIdemDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.chkIdemDiffuseur.Name = "chkIdemDiffuseur";
+            this.chkIdemDiffuseur.Size = new System.Drawing.Size(49, 17);
+            this.chkIdemDiffuseur.TabIndex = 13;
+            this.chkIdemDiffuseur.Text = "Idem";
+            this.chkIdemDiffuseur.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -732,28 +733,28 @@
             this.label18.TabIndex = 7;
             this.label18.Text = "Nom du responsable:";
             // 
-            // button4
+            // btnAjoutDiffuseur
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(527, 16);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(23, 21);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "+";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAjoutDiffuseur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAjoutDiffuseur.Location = new System.Drawing.Point(527, 16);
+            this.btnAjoutDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAjoutDiffuseur.Name = "btnAjoutDiffuseur";
+            this.btnAjoutDiffuseur.Size = new System.Drawing.Size(23, 21);
+            this.btnAjoutDiffuseur.TabIndex = 6;
+            this.btnAjoutDiffuseur.Text = "+";
+            this.btnAjoutDiffuseur.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cmbNomDiffuseur
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbNomDiffuseur.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(128, 16);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(395, 21);
-            this.comboBox2.TabIndex = 2;
-            this.comboBox2.Text = "Cégep de Jonquière";
+            this.cmbNomDiffuseur.FormattingEnabled = true;
+            this.cmbNomDiffuseur.Location = new System.Drawing.Point(128, 16);
+            this.cmbNomDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbNomDiffuseur.Name = "cmbNomDiffuseur";
+            this.cmbNomDiffuseur.Size = new System.Drawing.Size(395, 21);
+            this.cmbNomDiffuseur.TabIndex = 2;
+            this.cmbNomDiffuseur.Text = "Cégep de Jonquière";
             // 
             // label19
             // 
@@ -768,9 +769,9 @@
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.button19);
-            this.groupBox5.Controls.Add(this.listBox1);
-            this.groupBox5.Controls.Add(this.button20);
+            this.groupBox5.Controls.Add(this.btnAjouterArtiste);
+            this.groupBox5.Controls.Add(this.lstArtiste);
+            this.groupBox5.Controls.Add(this.btnDetailArtiste);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Location = new System.Drawing.Point(1508, 30);
             this.groupBox5.Name = "groupBox5";
@@ -779,42 +780,42 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Artiste concerné";
             // 
-            // button19
+            // btnAjouterArtiste
             // 
-            this.button19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnAjouterArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button19.Location = new System.Drawing.Point(166, 155);
-            this.button19.Margin = new System.Windows.Forms.Padding(2);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(104, 31);
-            this.button19.TabIndex = 34;
-            this.button19.Text = "Ajouter";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btnAjouterArtiste.Location = new System.Drawing.Point(166, 155);
+            this.btnAjouterArtiste.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAjouterArtiste.Name = "btnAjouterArtiste";
+            this.btnAjouterArtiste.Size = new System.Drawing.Size(104, 31);
+            this.btnAjouterArtiste.TabIndex = 34;
+            this.btnAjouterArtiste.Text = "Ajouter";
+            this.btnAjouterArtiste.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lstArtiste
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lstArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            this.lstArtiste.FormattingEnabled = true;
+            this.lstArtiste.Items.AddRange(new object[] {
             "Les Denis Drolets"});
-            this.listBox1.Location = new System.Drawing.Point(64, 16);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(205, 134);
-            this.listBox1.TabIndex = 2;
+            this.lstArtiste.Location = new System.Drawing.Point(64, 16);
+            this.lstArtiste.Name = "lstArtiste";
+            this.lstArtiste.Size = new System.Drawing.Size(205, 134);
+            this.lstArtiste.TabIndex = 2;
             // 
-            // button20
+            // btnDetailArtiste
             // 
-            this.button20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnDetailArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button20.Location = new System.Drawing.Point(62, 155);
-            this.button20.Margin = new System.Windows.Forms.Padding(2);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(100, 31);
-            this.button20.TabIndex = 33;
-            this.button20.Text = "Détail";
-            this.button20.UseVisualStyleBackColor = true;
+            this.btnDetailArtiste.Location = new System.Drawing.Point(62, 155);
+            this.btnDetailArtiste.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDetailArtiste.Name = "btnDetailArtiste";
+            this.btnDetailArtiste.Size = new System.Drawing.Size(100, 31);
+            this.btnDetailArtiste.TabIndex = 33;
+            this.btnDetailArtiste.Text = "Détail";
+            this.btnDetailArtiste.UseVisualStyleBackColor = true;
             // 
             // label20
             // 
@@ -826,17 +827,17 @@
             this.label20.TabIndex = 1;
             this.label20.Text = "Artiste(s):";
             // 
-            // button11
+            // btnGrasCommentaire
             // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(1210, 247);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(23, 21);
-            this.button11.TabIndex = 8;
-            this.button11.Text = "B";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnGrasCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrasCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrasCommentaire.Location = new System.Drawing.Point(1210, 247);
+            this.btnGrasCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrasCommentaire.Name = "btnGrasCommentaire";
+            this.btnGrasCommentaire.Size = new System.Drawing.Size(23, 21);
+            this.btnGrasCommentaire.TabIndex = 8;
+            this.btnGrasCommentaire.Text = "B";
+            this.btnGrasCommentaire.UseVisualStyleBackColor = true;
             // 
             // label32
             // 
@@ -848,65 +849,65 @@
             this.label32.TabIndex = 3;
             this.label32.Text = "Commentaire";
             // 
-            // richTextBox2
+            // rtbCommentaire
             // 
-            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox2.Location = new System.Drawing.Point(1209, 273);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(573, 150);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "";
+            this.rtbCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbCommentaire.Location = new System.Drawing.Point(1209, 273);
+            this.rtbCommentaire.Name = "rtbCommentaire";
+            this.rtbCommentaire.Size = new System.Drawing.Size(573, 150);
+            this.rtbCommentaire.TabIndex = 2;
+            this.rtbCommentaire.Text = "";
             // 
-            // button6
+            // btnAjouterExigence
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(1110, 576);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 31);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "Ajouter";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnAjouterExigence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAjouterExigence.Location = new System.Drawing.Point(1110, 576);
+            this.btnAjouterExigence.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAjouterExigence.Name = "btnAjouterExigence";
+            this.btnAjouterExigence.Size = new System.Drawing.Size(94, 31);
+            this.btnAjouterExigence.TabIndex = 17;
+            this.btnAjouterExigence.Text = "Ajouter";
+            this.btnAjouterExigence.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnDetailExigence
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(1012, 576);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 31);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Détail";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDetailExigence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetailExigence.Location = new System.Drawing.Point(1012, 576);
+            this.btnDetailExigence.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDetailExigence.Name = "btnDetailExigence";
+            this.btnDetailExigence.Size = new System.Drawing.Size(94, 31);
+            this.btnDetailExigence.TabIndex = 16;
+            this.btnDetailExigence.Text = "Détail";
+            this.btnDetailExigence.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnAjouterEngagement
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.Location = new System.Drawing.Point(1110, 347);
-            this.button9.Margin = new System.Windows.Forms.Padding(2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(94, 31);
-            this.button9.TabIndex = 20;
-            this.button9.Text = "Ajouter";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnAjouterEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAjouterEngagement.Location = new System.Drawing.Point(1110, 347);
+            this.btnAjouterEngagement.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAjouterEngagement.Name = "btnAjouterEngagement";
+            this.btnAjouterEngagement.Size = new System.Drawing.Size(94, 31);
+            this.btnAjouterEngagement.TabIndex = 20;
+            this.btnAjouterEngagement.Text = "Ajouter";
+            this.btnAjouterEngagement.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnDetailEngagement
             // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.Location = new System.Drawing.Point(1012, 347);
-            this.button10.Margin = new System.Windows.Forms.Padding(2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(94, 31);
-            this.button10.TabIndex = 19;
-            this.button10.Text = "Détail";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnDetailEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetailEngagement.Location = new System.Drawing.Point(1012, 347);
+            this.btnDetailEngagement.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDetailEngagement.Name = "btnDetailEngagement";
+            this.btnDetailEngagement.Size = new System.Drawing.Size(94, 31);
+            this.btnDetailEngagement.TabIndex = 19;
+            this.btnDetailEngagement.Text = "Détail";
+            this.btnDetailEngagement.UseVisualStyleBackColor = true;
             // 
-            // textBox25
+            // txtNomContrat
             // 
-            this.textBox25.Location = new System.Drawing.Point(607, 6);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(366, 20);
-            this.textBox25.TabIndex = 22;
+            this.txtNomContrat.Location = new System.Drawing.Point(607, 6);
+            this.txtNomContrat.Name = "txtNomContrat";
+            this.txtNomContrat.Size = new System.Drawing.Size(366, 20);
+            this.txtNomContrat.TabIndex = 22;
             // 
             // label34
             // 
@@ -917,14 +918,14 @@
             this.label34.TabIndex = 23;
             this.label34.Text = "Nom du contrat:";
             // 
-            // richTextBox1
+            // rtbDescriptionContrat
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(1210, 468);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(572, 140);
-            this.richTextBox1.TabIndex = 25;
-            this.richTextBox1.Text = "";
+            this.rtbDescriptionContrat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbDescriptionContrat.Location = new System.Drawing.Point(1210, 468);
+            this.rtbDescriptionContrat.Name = "rtbDescriptionContrat";
+            this.rtbDescriptionContrat.Size = new System.Drawing.Size(572, 140);
+            this.rtbDescriptionContrat.TabIndex = 25;
+            this.rtbDescriptionContrat.Text = "";
             // 
             // label31
             // 
@@ -936,16 +937,16 @@
             this.label31.TabIndex = 24;
             this.label31.Text = "Description du contrat";
             // 
-            // button7
+            // btnSupprimerContrat
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Location = new System.Drawing.Point(1528, 613);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(86, 29);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Supprimer";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnSupprimerContrat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSupprimerContrat.Location = new System.Drawing.Point(1528, 613);
+            this.btnSupprimerContrat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSupprimerContrat.Name = "btnSupprimerContrat";
+            this.btnSupprimerContrat.Size = new System.Drawing.Size(86, 29);
+            this.btnSupprimerContrat.TabIndex = 5;
+            this.btnSupprimerContrat.Text = "Supprimer";
+            this.btnSupprimerContrat.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -957,137 +958,137 @@
             this.label10.TabIndex = 23;
             this.label10.Text = "Statut du contrat:";
             // 
-            // comboBox4
+            // cmbStatutContrat
             // 
-            this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(1534, 6);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(217, 21);
-            this.comboBox4.TabIndex = 7;
-            this.comboBox4.Text = "En rédaction";
+            this.cmbStatutContrat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbStatutContrat.FormattingEnabled = true;
+            this.cmbStatutContrat.Location = new System.Drawing.Point(1534, 6);
+            this.cmbStatutContrat.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbStatutContrat.Name = "cmbStatutContrat";
+            this.cmbStatutContrat.Size = new System.Drawing.Size(217, 21);
+            this.cmbStatutContrat.TabIndex = 7;
+            this.cmbStatutContrat.Text = "En rédaction";
             // 
-            // button8
+            // btnAjoutStatutContrat
             // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.Location = new System.Drawing.Point(1755, 5);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(23, 21);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "+";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnAjoutStatutContrat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAjoutStatutContrat.Location = new System.Drawing.Point(1755, 5);
+            this.btnAjoutStatutContrat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAjoutStatutContrat.Name = "btnAjoutStatutContrat";
+            this.btnAjoutStatutContrat.Size = new System.Drawing.Size(23, 21);
+            this.btnAjoutStatutContrat.TabIndex = 8;
+            this.btnAjoutStatutContrat.Text = "+";
+            this.btnAjoutStatutContrat.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // btnItaliqueCommentaire
             // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(1237, 247);
-            this.button12.Margin = new System.Windows.Forms.Padding(2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(23, 21);
-            this.button12.TabIndex = 8;
-            this.button12.Text = "I";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnItaliqueCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnItaliqueCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItaliqueCommentaire.Location = new System.Drawing.Point(1237, 247);
+            this.btnItaliqueCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnItaliqueCommentaire.Name = "btnItaliqueCommentaire";
+            this.btnItaliqueCommentaire.Size = new System.Drawing.Size(23, 21);
+            this.btnItaliqueCommentaire.TabIndex = 8;
+            this.btnItaliqueCommentaire.Text = "I";
+            this.btnItaliqueCommentaire.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // btnSouslignerCommentaire
             // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(1264, 247);
-            this.button13.Margin = new System.Windows.Forms.Padding(2);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(23, 21);
-            this.button13.TabIndex = 8;
-            this.button13.Text = "I";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnSouslignerCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSouslignerCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSouslignerCommentaire.Location = new System.Drawing.Point(1264, 247);
+            this.btnSouslignerCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSouslignerCommentaire.Name = "btnSouslignerCommentaire";
+            this.btnSouslignerCommentaire.Size = new System.Drawing.Size(23, 21);
+            this.btnSouslignerCommentaire.TabIndex = 8;
+            this.btnSouslignerCommentaire.Text = "I";
+            this.btnSouslignerCommentaire.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // btnSouslignerDescription
             // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button14.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(1265, 442);
-            this.button14.Margin = new System.Windows.Forms.Padding(2);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(23, 21);
-            this.button14.TabIndex = 26;
-            this.button14.Text = "I";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnSouslignerDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSouslignerDescription.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSouslignerDescription.Location = new System.Drawing.Point(1265, 442);
+            this.btnSouslignerDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSouslignerDescription.Name = "btnSouslignerDescription";
+            this.btnSouslignerDescription.Size = new System.Drawing.Size(23, 21);
+            this.btnSouslignerDescription.TabIndex = 26;
+            this.btnSouslignerDescription.Text = "I";
+            this.btnSouslignerDescription.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // btnItaliqueDescription
             // 
-            this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button15.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(1238, 442);
-            this.button15.Margin = new System.Windows.Forms.Padding(2);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(23, 21);
-            this.button15.TabIndex = 27;
-            this.button15.Text = "I";
-            this.button15.UseVisualStyleBackColor = true;
+            this.btnItaliqueDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnItaliqueDescription.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItaliqueDescription.Location = new System.Drawing.Point(1238, 442);
+            this.btnItaliqueDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnItaliqueDescription.Name = "btnItaliqueDescription";
+            this.btnItaliqueDescription.Size = new System.Drawing.Size(23, 21);
+            this.btnItaliqueDescription.TabIndex = 27;
+            this.btnItaliqueDescription.Text = "I";
+            this.btnItaliqueDescription.UseVisualStyleBackColor = true;
             // 
-            // button16
+            // btnGrasDescription
             // 
-            this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button16.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(1211, 442);
-            this.button16.Margin = new System.Windows.Forms.Padding(2);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(23, 21);
-            this.button16.TabIndex = 28;
-            this.button16.Text = "B";
-            this.button16.UseVisualStyleBackColor = true;
+            this.btnGrasDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrasDescription.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrasDescription.Location = new System.Drawing.Point(1211, 442);
+            this.btnGrasDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrasDescription.Name = "btnGrasDescription";
+            this.btnGrasDescription.Size = new System.Drawing.Size(23, 21);
+            this.btnGrasDescription.TabIndex = 28;
+            this.btnGrasDescription.Text = "B";
+            this.btnGrasDescription.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // numPoliceCommentaire
             // 
-            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown1.Location = new System.Drawing.Point(1292, 248);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(34, 20);
-            this.numericUpDown1.TabIndex = 30;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numPoliceCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numPoliceCommentaire.Location = new System.Drawing.Point(1292, 248);
+            this.numPoliceCommentaire.Name = "numPoliceCommentaire";
+            this.numPoliceCommentaire.Size = new System.Drawing.Size(34, 20);
+            this.numPoliceCommentaire.TabIndex = 30;
+            this.numPoliceCommentaire.Value = new decimal(new int[] {
             12,
             0,
             0,
             0});
             // 
-            // button17
+            // btnEnumCommentaire
             // 
-            this.button17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button17.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.Location = new System.Drawing.Point(1331, 247);
-            this.button17.Margin = new System.Windows.Forms.Padding(2);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(42, 21);
-            this.button17.TabIndex = 29;
-            this.button17.Text = "Enum";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnEnumCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnumCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnumCommentaire.Location = new System.Drawing.Point(1331, 247);
+            this.btnEnumCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEnumCommentaire.Name = "btnEnumCommentaire";
+            this.btnEnumCommentaire.Size = new System.Drawing.Size(42, 21);
+            this.btnEnumCommentaire.TabIndex = 29;
+            this.btnEnumCommentaire.Text = "Enum";
+            this.btnEnumCommentaire.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown2
+            // numPoliceDescription
             // 
-            this.numericUpDown2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown2.Location = new System.Drawing.Point(1293, 443);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(34, 20);
-            this.numericUpDown2.TabIndex = 32;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.numPoliceDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numPoliceDescription.Location = new System.Drawing.Point(1293, 443);
+            this.numPoliceDescription.Name = "numPoliceDescription";
+            this.numPoliceDescription.Size = new System.Drawing.Size(34, 20);
+            this.numPoliceDescription.TabIndex = 32;
+            this.numPoliceDescription.Value = new decimal(new int[] {
             12,
             0,
             0,
             0});
             // 
-            // button18
+            // btnEnumDescription
             // 
-            this.button18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button18.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.Location = new System.Drawing.Point(1332, 442);
-            this.button18.Margin = new System.Windows.Forms.Padding(2);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(42, 21);
-            this.button18.TabIndex = 31;
-            this.button18.Text = "Enum";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btnEnumDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnumDescription.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnumDescription.Location = new System.Drawing.Point(1332, 442);
+            this.btnEnumDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEnumDescription.Name = "btnEnumDescription";
+            this.btnEnumDescription.Size = new System.Drawing.Size(42, 21);
+            this.btnEnumDescription.TabIndex = 31;
+            this.btnEnumDescription.Text = "Enum";
+            this.btnEnumDescription.UseVisualStyleBackColor = true;
             // 
             // label22
             // 
@@ -1098,17 +1099,17 @@
             this.label22.TabIndex = 34;
             this.label22.Text = "Lieu du contrat";
             // 
-            // textBox16
+            // txtLieuContrat
             // 
-            this.textBox16.Location = new System.Drawing.Point(1068, 6);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(366, 20);
-            this.textBox16.TabIndex = 33;
+            this.txtLieuContrat.Location = new System.Drawing.Point(1068, 6);
+            this.txtLieuContrat.Name = "txtLieuContrat";
+            this.txtLieuContrat.Size = new System.Drawing.Size(366, 20);
+            this.txtLieuContrat.TabIndex = 33;
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label8);
-            this.groupBox6.Controls.Add(this.comboBox3);
+            this.groupBox6.Controls.Add(this.cmbEvenement);
             this.groupBox6.Location = new System.Drawing.Point(1211, 30);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(291, 193);
@@ -1126,55 +1127,56 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Évènement lié:";
             // 
-            // comboBox3
+            // cmbEvenement
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbEvenement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(86, 15);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(200, 21);
-            this.comboBox3.TabIndex = 2;
-            this.comboBox3.Text = "Festi-rire 2017";
+            this.cmbEvenement.FormattingEnabled = true;
+            this.cmbEvenement.Location = new System.Drawing.Point(86, 15);
+            this.cmbEvenement.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbEvenement.Name = "cmbEvenement";
+            this.cmbEvenement.Size = new System.Drawing.Size(200, 21);
+            this.cmbEvenement.TabIndex = 2;
+            this.cmbEvenement.Text = "Festi-rire 2017";
             // 
             // DetailContrat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(1791, 653);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.button18);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button17);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.button16);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.txtLieuContrat);
+            this.Controls.Add(this.numPoliceDescription);
+            this.Controls.Add(this.btnEnumDescription);
+            this.Controls.Add(this.numPoliceCommentaire);
+            this.Controls.Add(this.btnEnumCommentaire);
+            this.Controls.Add(this.btnSouslignerDescription);
+            this.Controls.Add(this.btnItaliqueDescription);
+            this.Controls.Add(this.btnGrasDescription);
+            this.Controls.Add(this.btnSouslignerCommentaire);
+            this.Controls.Add(this.btnItaliqueCommentaire);
+            this.Controls.Add(this.btnGrasCommentaire);
+            this.Controls.Add(this.btnAjoutStatutContrat);
+            this.Controls.Add(this.rtbDescriptionContrat);
+            this.Controls.Add(this.cmbStatutContrat);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label34);
-            this.Controls.Add(this.textBox25);
+            this.Controls.Add(this.txtNomContrat);
             this.Controls.Add(this.label32);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.rtbCommentaire);
+            this.Controls.Add(this.btnAjouterEngagement);
+            this.Controls.Add(this.btnDetailEngagement);
+            this.Controls.Add(this.btnAjouterExigence);
+            this.Controls.Add(this.btnDetailExigence);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtNumeroContrat);
+            this.Controls.Add(this.btnAnnuler);
+            this.Controls.Add(this.btnSupprimerContrat);
+            this.Controls.Add(this.btnEnregistrerContrat);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -1186,15 +1188,15 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExigence)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEngagement)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescription)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
@@ -1208,96 +1210,96 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnEnregistrerContrat;
+        private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.DataGridView dgvExigence;
+        private System.Windows.Forms.TextBox txtNumeroContrat;
+        private System.Windows.Forms.DataGridView dgvEngagement;
+        private System.Windows.Forms.Button btnAjoutAgence;
+        private System.Windows.Forms.ComboBox cmbNomAgence;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtNomResponsableAgence;
+        private System.Windows.Forms.TextBox txtCourrielAgence;
+        private System.Windows.Forms.TextBox txtPrenomResponsableAgence;
+        private System.Windows.Forms.CheckBox chkIdemAgence;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtSignataireAgence;
+        private System.Windows.Forms.DateTimePicker dateSignatureAgence;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateSignatureDiffuseur;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.TextBox txtSignataireDiffuseur;
+        private System.Windows.Forms.TextBox txtCellulaireDiffuseur;
+        private System.Windows.Forms.TextBox txtNomResponsableDiffuseur;
+        private System.Windows.Forms.TextBox txtTelephoneDiffuseur;
+        private System.Windows.Forms.TextBox txtCourrielDiffuseur;
+        private System.Windows.Forms.TextBox txtPrenomResponsableDiffuseur;
+        private System.Windows.Forms.CheckBox chkIdemDiffuseur;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btnAjoutDiffuseur;
+        private System.Windows.Forms.ComboBox cmbNomDiffuseur;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.RichTextBox rtbCommentaire;
+        private System.Windows.Forms.Button btnAjouterExigence;
+        private System.Windows.Forms.Button btnDetailExigence;
+        private System.Windows.Forms.Button btnAjouterEngagement;
+        private System.Windows.Forms.Button btnDetailEngagement;
+        private System.Windows.Forms.TextBox txtNomContrat;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbDescriptionContrat;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnGrasCommentaire;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnSupprimerContrat;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.ComboBox cmbStatutContrat;
+        private System.Windows.Forms.Button btnAjoutStatutContrat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn montant;
         private System.Windows.Forms.DataGridViewTextBoxColumn statut;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriCourte;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Button btnItaliqueCommentaire;
+        private System.Windows.Forms.Button btnSouslignerCommentaire;
+        private System.Windows.Forms.Button btnSouslignerDescription;
+        private System.Windows.Forms.Button btnItaliqueDescription;
+        private System.Windows.Forms.Button btnGrasDescription;
+        private System.Windows.Forms.Button btnAjouterArtiste;
+        private System.Windows.Forms.ListBox lstArtiste;
+        private System.Windows.Forms.Button btnDetailArtiste;
+        private System.Windows.Forms.NumericUpDown numPoliceCommentaire;
+        private System.Windows.Forms.Button btnEnumCommentaire;
+        private System.Windows.Forms.NumericUpDown numPoliceDescription;
+        private System.Windows.Forms.Button btnEnumDescription;
+        private System.Windows.Forms.TextBox txtCellulaireAgence;
+        private System.Windows.Forms.TextBox txtTelephoneAgence;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtLieuContrat;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtExtensionTelephoneAgence;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEngagement;
         private System.Windows.Forms.DataGridViewTextBoxColumn HeureEngagement;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtExtensionTelephoneDiffuseur;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbEvenement;
     }
 }
 

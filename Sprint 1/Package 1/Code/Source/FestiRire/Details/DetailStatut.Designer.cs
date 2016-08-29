@@ -28,55 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnAnnuler = new System.Windows.Forms.Button();
+            this.btnEnregistrerStatut = new System.Windows.Forms.Button();
+            this.txtNom = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSupprimerStatut = new System.Windows.Forms.Button();
+            this.btnChoixCouleur = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.pbApercuCouleur = new System.Windows.Forms.PictureBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.numPoliceDescription = new System.Windows.Forms.NumericUpDown();
+            this.btnEnumDescription = new System.Windows.Forms.Button();
+            this.btnSouslignerDescription = new System.Windows.Forms.Button();
+            this.btnItaliqueDescription = new System.Windows.Forms.Button();
+            this.btnGrasDescription = new System.Windows.Forms.Button();
+            this.rtbDescriptionStatut = new System.Windows.Forms.RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbApercuCouleur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescription)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnAnnuler
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(321, 391);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Annuler";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAnnuler.Location = new System.Drawing.Point(321, 391);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
+            this.btnAnnuler.TabIndex = 8;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnEnregistrerStatut
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(240, 391);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Enregistrer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEnregistrerStatut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnregistrerStatut.Location = new System.Drawing.Point(240, 391);
+            this.btnEnregistrerStatut.Name = "btnEnregistrerStatut";
+            this.btnEnregistrerStatut.Size = new System.Drawing.Size(75, 23);
+            this.btnEnregistrerStatut.TabIndex = 9;
+            this.btnEnregistrerStatut.Text = "Enregistrer";
+            this.btnEnregistrerStatut.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtNom
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(130, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtNom.Location = new System.Drawing.Point(130, 15);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(269, 20);
+            this.txtNom.TabIndex = 6;
             // 
             // label2
             // 
@@ -96,24 +97,24 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Nom du statut:";
             // 
-            // button3
+            // btnSupprimerStatut
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(159, 391);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Supprimer";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSupprimerStatut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSupprimerStatut.Location = new System.Drawing.Point(159, 391);
+            this.btnSupprimerStatut.Name = "btnSupprimerStatut";
+            this.btnSupprimerStatut.Size = new System.Drawing.Size(75, 23);
+            this.btnSupprimerStatut.TabIndex = 9;
+            this.btnSupprimerStatut.Text = "Supprimer";
+            this.btnSupprimerStatut.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnChoixCouleur
             // 
-            this.button4.Location = new System.Drawing.Point(128, 362);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(156, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Choisir une couleur...";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnChoixCouleur.Location = new System.Drawing.Point(128, 362);
+            this.btnChoixCouleur.Name = "btnChoixCouleur";
+            this.btnChoixCouleur.Size = new System.Drawing.Size(156, 23);
+            this.btnChoixCouleur.TabIndex = 9;
+            this.btnChoixCouleur.Text = "Choisir une couleur...";
+            this.btnChoixCouleur.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -124,70 +125,14 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Aperçu:";
             // 
-            // pictureBox1
+            // pbApercuCouleur
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Maroon;
-            this.pictureBox1.Location = new System.Drawing.Point(340, 362);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 23);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(212, 41);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(34, 20);
-            this.numericUpDown1.TabIndex = 37;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            // 
-            // button17
-            // 
-            this.button17.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.Location = new System.Drawing.Point(251, 40);
-            this.button17.Margin = new System.Windows.Forms.Padding(2);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(42, 21);
-            this.button17.TabIndex = 36;
-            this.button17.Text = "Enum";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(184, 40);
-            this.button13.Margin = new System.Windows.Forms.Padding(2);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(23, 21);
-            this.button13.TabIndex = 33;
-            this.button13.Text = "I";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(157, 40);
-            this.button12.Margin = new System.Windows.Forms.Padding(2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(23, 21);
-            this.button12.TabIndex = 34;
-            this.button12.Text = "I";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(130, 40);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(23, 21);
-            this.button11.TabIndex = 35;
-            this.button11.Text = "B";
-            this.button11.UseVisualStyleBackColor = true;
+            this.pbApercuCouleur.BackColor = System.Drawing.Color.Maroon;
+            this.pbApercuCouleur.Location = new System.Drawing.Point(340, 362);
+            this.pbApercuCouleur.Name = "pbApercuCouleur";
+            this.pbApercuCouleur.Size = new System.Drawing.Size(56, 23);
+            this.pbApercuCouleur.TabIndex = 10;
+            this.pbApercuCouleur.TabStop = false;
             // 
             // label32
             // 
@@ -198,39 +143,102 @@
             this.label32.TabIndex = 32;
             this.label32.Text = "Description du statut:";
             // 
-            // richTextBox2
+            // numPoliceDescription
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(129, 67);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(269, 289);
-            this.richTextBox2.TabIndex = 31;
-            this.richTextBox2.Text = "";
+            this.numPoliceDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numPoliceDescription.Location = new System.Drawing.Point(212, 41);
+            this.numPoliceDescription.Name = "numPoliceDescription";
+            this.numPoliceDescription.Size = new System.Drawing.Size(34, 20);
+            this.numPoliceDescription.TabIndex = 38;
+            this.numPoliceDescription.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            // 
+            // btnEnumDescription
+            // 
+            this.btnEnumDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnumDescription.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnumDescription.Location = new System.Drawing.Point(251, 40);
+            this.btnEnumDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEnumDescription.Name = "btnEnumDescription";
+            this.btnEnumDescription.Size = new System.Drawing.Size(42, 21);
+            this.btnEnumDescription.TabIndex = 37;
+            this.btnEnumDescription.Text = "Enum";
+            this.btnEnumDescription.UseVisualStyleBackColor = true;
+            // 
+            // btnSouslignerDescription
+            // 
+            this.btnSouslignerDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSouslignerDescription.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSouslignerDescription.Location = new System.Drawing.Point(184, 40);
+            this.btnSouslignerDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSouslignerDescription.Name = "btnSouslignerDescription";
+            this.btnSouslignerDescription.Size = new System.Drawing.Size(23, 21);
+            this.btnSouslignerDescription.TabIndex = 34;
+            this.btnSouslignerDescription.Text = "I";
+            this.btnSouslignerDescription.UseVisualStyleBackColor = true;
+            // 
+            // btnItaliqueDescription
+            // 
+            this.btnItaliqueDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnItaliqueDescription.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItaliqueDescription.Location = new System.Drawing.Point(157, 40);
+            this.btnItaliqueDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnItaliqueDescription.Name = "btnItaliqueDescription";
+            this.btnItaliqueDescription.Size = new System.Drawing.Size(23, 21);
+            this.btnItaliqueDescription.TabIndex = 35;
+            this.btnItaliqueDescription.Text = "I";
+            this.btnItaliqueDescription.UseVisualStyleBackColor = true;
+            // 
+            // btnGrasDescription
+            // 
+            this.btnGrasDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrasDescription.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrasDescription.Location = new System.Drawing.Point(130, 40);
+            this.btnGrasDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrasDescription.Name = "btnGrasDescription";
+            this.btnGrasDescription.Size = new System.Drawing.Size(23, 21);
+            this.btnGrasDescription.TabIndex = 36;
+            this.btnGrasDescription.Text = "B";
+            this.btnGrasDescription.UseVisualStyleBackColor = true;
+            // 
+            // rtbDescriptionStatut
+            // 
+            this.rtbDescriptionStatut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbDescriptionStatut.Location = new System.Drawing.Point(129, 66);
+            this.rtbDescriptionStatut.Name = "rtbDescriptionStatut";
+            this.rtbDescriptionStatut.Size = new System.Drawing.Size(267, 290);
+            this.rtbDescriptionStatut.TabIndex = 33;
+            this.rtbDescriptionStatut.Text = "";
             // 
             // DetailStatut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(408, 426);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button17);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
+            this.Controls.Add(this.numPoliceDescription);
+            this.Controls.Add(this.btnEnumDescription);
+            this.Controls.Add(this.btnSouslignerDescription);
+            this.Controls.Add(this.btnItaliqueDescription);
+            this.Controls.Add(this.btnGrasDescription);
+            this.Controls.Add(this.rtbDescriptionStatut);
             this.Controls.Add(this.label32);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pbApercuCouleur);
+            this.Controls.Add(this.btnAnnuler);
+            this.Controls.Add(this.btnChoixCouleur);
+            this.Controls.Add(this.btnSupprimerStatut);
+            this.Controls.Add(this.btnEnregistrerStatut);
+            this.Controls.Add(this.txtNom);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DetailStatut";
             this.Text = "Détail du statut";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbApercuCouleur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescription)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,22 +246,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.Button btnEnregistrerStatut;
+        private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSupprimerStatut;
+        private System.Windows.Forms.Button btnChoixCouleur;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.PictureBox pbApercuCouleur;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.NumericUpDown numPoliceDescription;
+        private System.Windows.Forms.Button btnEnumDescription;
+        private System.Windows.Forms.Button btnSouslignerDescription;
+        private System.Windows.Forms.Button btnItaliqueDescription;
+        private System.Windows.Forms.Button btnGrasDescription;
+        private System.Windows.Forms.RichTextBox rtbDescriptionStatut;
     }
 }

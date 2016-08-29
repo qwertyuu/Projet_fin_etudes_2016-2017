@@ -28,58 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtNomArtiste = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAnnuler = new System.Windows.Forms.Button();
+            this.btnEnregistrerArtiste = new System.Windows.Forms.Button();
+            this.btnSupprimerArtiste = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.btnAjouterCategorieArtiste = new System.Windows.Forms.Button();
+            this.cmbCategorieArtiste = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
+            this.lblNomFichier = new System.Windows.Forms.Label();
+            this.lblTypeFichier = new System.Windows.Forms.Label();
+            this.lblTailleFichier = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.rtbCommentaire = new System.Windows.Forms.RichTextBox();
+            this.btnParcourirPhotoOfficielle = new System.Windows.Forms.Button();
+            this.btnSupprimerPhotoOfficiel = new System.Windows.Forms.Button();
+            this.lstPhotoOfficiel = new System.Windows.Forms.ListBox();
+            this.cmbContrat = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnSupprimerFiche = new System.Windows.Forms.Button();
+            this.btnParcourir = new System.Windows.Forms.Button();
+            this.lstFiches = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.lstFichier = new System.Windows.Forms.ListBox();
+            this.btnSupprimerFichier = new System.Windows.Forms.Button();
+            this.btnParcourirFichier = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbApercu = new System.Windows.Forms.PictureBox();
+            this.numPoliceCommentaire = new System.Windows.Forms.NumericUpDown();
+            this.btnEnumCommentaire = new System.Windows.Forms.Button();
+            this.btnSouslignerCommentaire = new System.Windows.Forms.Button();
+            this.btnItaliqueCommentaire = new System.Windows.Forms.Button();
+            this.btnGrasCommentaire = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbApercu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox14
+            // txtNomArtiste
             // 
-            this.textBox14.Location = new System.Drawing.Point(112, 6);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(318, 20);
-            this.textBox14.TabIndex = 26;
-            this.textBox14.Text = "Les Denis Drolets";
+            this.txtNomArtiste.Location = new System.Drawing.Point(112, 6);
+            this.txtNomArtiste.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomArtiste.Name = "txtNomArtiste";
+            this.txtNomArtiste.Size = new System.Drawing.Size(318, 20);
+            this.txtNomArtiste.TabIndex = 26;
+            this.txtNomArtiste.Text = "Les Denis Drolets";
             // 
             // label20
             // 
@@ -91,35 +91,36 @@
             this.label20.TabIndex = 25;
             this.label20.Text = "Nom d\'artiste:";
             // 
-            // button1
+            // btnAnnuler
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(771, 628);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Annuler";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAnnuler.Location = new System.Drawing.Point(771, 628);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
+            this.btnAnnuler.TabIndex = 30;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnEnregistrerArtiste
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(690, 628);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Enregistrer";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEnregistrerArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnregistrerArtiste.Location = new System.Drawing.Point(690, 628);
+            this.btnEnregistrerArtiste.Name = "btnEnregistrerArtiste";
+            this.btnEnregistrerArtiste.Size = new System.Drawing.Size(75, 23);
+            this.btnEnregistrerArtiste.TabIndex = 30;
+            this.btnEnregistrerArtiste.Text = "Enregistrer";
+            this.btnEnregistrerArtiste.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnSupprimerArtiste
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(609, 628);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 30;
-            this.button4.Text = "Supprimer";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSupprimerArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSupprimerArtiste.Location = new System.Drawing.Point(609, 628);
+            this.btnSupprimerArtiste.Name = "btnSupprimerArtiste";
+            this.btnSupprimerArtiste.Size = new System.Drawing.Size(75, 23);
+            this.btnSupprimerArtiste.TabIndex = 30;
+            this.btnSupprimerArtiste.Text = "Supprimer";
+            this.btnSupprimerArtiste.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -131,38 +132,38 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Catégorie d\'artiste:";
             // 
-            // button8
+            // btnAjouterCategorieArtiste
             // 
-            this.button8.Location = new System.Drawing.Point(407, 30);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(23, 21);
-            this.button8.TabIndex = 44;
-            this.button8.Text = "+";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnAjouterCategorieArtiste.Location = new System.Drawing.Point(407, 30);
+            this.btnAjouterCategorieArtiste.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAjouterCategorieArtiste.Name = "btnAjouterCategorieArtiste";
+            this.btnAjouterCategorieArtiste.Size = new System.Drawing.Size(23, 21);
+            this.btnAjouterCategorieArtiste.TabIndex = 44;
+            this.btnAjouterCategorieArtiste.Text = "+";
+            this.btnAjouterCategorieArtiste.UseVisualStyleBackColor = true;
             // 
-            // comboBox4
+            // cmbCategorieArtiste
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(112, 31);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(291, 21);
-            this.comboBox4.TabIndex = 43;
-            this.comboBox4.Text = "Humoriste";
+            this.cmbCategorieArtiste.FormattingEnabled = true;
+            this.cmbCategorieArtiste.Location = new System.Drawing.Point(112, 31);
+            this.cmbCategorieArtiste.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbCategorieArtiste.Name = "cmbCategorieArtiste";
+            this.cmbCategorieArtiste.Size = new System.Drawing.Size(291, 21);
+            this.cmbCategorieArtiste.TabIndex = 43;
+            this.cmbCategorieArtiste.Text = "Humoriste";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.button13);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.button12);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.button11);
+            this.groupBox1.Controls.Add(this.numPoliceCommentaire);
+            this.groupBox1.Controls.Add(this.btnEnumCommentaire);
+            this.groupBox1.Controls.Add(this.btnSouslignerCommentaire);
+            this.groupBox1.Controls.Add(this.btnItaliqueCommentaire);
+            this.groupBox1.Controls.Add(this.btnGrasCommentaire);
+            this.groupBox1.Controls.Add(this.lblNomFichier);
+            this.groupBox1.Controls.Add(this.lblTypeFichier);
+            this.groupBox1.Controls.Add(this.lblTailleFichier);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button14);
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.rtbCommentaire);
             this.groupBox1.Location = new System.Drawing.Point(436, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(410, 318);
@@ -170,80 +171,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Propriétés du fichier";
             // 
-            // numericUpDown1
+            // lblNomFichier
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(164, 119);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(34, 20);
-            this.numericUpDown1.TabIndex = 61;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
+            this.lblNomFichier.AutoSize = true;
+            this.lblNomFichier.Location = new System.Drawing.Point(6, 16);
+            this.lblNomFichier.Name = "lblNomFichier";
+            this.lblNomFichier.Size = new System.Drawing.Size(161, 13);
+            this.lblNomFichier.TabIndex = 27;
+            this.lblNomFichier.Text = "Nom: Pedigree_DenisDrolets.pdf";
             // 
-            // label6
+            // lblTypeFichier
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(161, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Nom: Pedigree_DenisDrolets.pdf";
+            this.lblTypeFichier.AutoSize = true;
+            this.lblTypeFichier.Location = new System.Drawing.Point(6, 48);
+            this.lblTypeFichier.Name = "lblTypeFichier";
+            this.lblTypeFichier.Size = new System.Drawing.Size(86, 13);
+            this.lblTypeFichier.TabIndex = 27;
+            this.lblTypeFichier.Text = "Type: Document";
             // 
-            // button13
+            // lblTailleFichier
             // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(136, 118);
-            this.button13.Margin = new System.Windows.Forms.Padding(2);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(23, 21);
-            this.button13.TabIndex = 57;
-            this.button13.Text = "I";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 13);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Type: Document";
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(109, 118);
-            this.button12.Margin = new System.Windows.Forms.Padding(2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(23, 21);
-            this.button12.TabIndex = 58;
-            this.button12.Text = "I";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Taille: 580 ko";
-            // 
-            // button11
-            // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(203, 118);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(42, 21);
-            this.button11.TabIndex = 59;
-            this.button11.Text = "Enum";
-            this.button11.UseVisualStyleBackColor = true;
+            this.lblTailleFichier.AutoSize = true;
+            this.lblTailleFichier.Location = new System.Drawing.Point(6, 33);
+            this.lblTailleFichier.Name = "lblTailleFichier";
+            this.lblTailleFichier.Size = new System.Drawing.Size(71, 13);
+            this.lblTailleFichier.TabIndex = 27;
+            this.lblTailleFichier.Text = "Taille: 580 ko";
             // 
             // label1
             // 
@@ -254,80 +207,68 @@
             this.label1.TabIndex = 55;
             this.label1.Text = "Commentaire:";
             // 
-            // button14
+            // rtbCommentaire
             // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button14.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(82, 118);
-            this.button14.Margin = new System.Windows.Forms.Padding(2);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(23, 21);
-            this.button14.TabIndex = 60;
-            this.button14.Text = "B";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rtbCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(6, 145);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(398, 167);
-            this.richTextBox1.TabIndex = 56;
-            this.richTextBox1.Text = "";
+            this.rtbCommentaire.Location = new System.Drawing.Point(6, 145);
+            this.rtbCommentaire.Name = "rtbCommentaire";
+            this.rtbCommentaire.Size = new System.Drawing.Size(398, 167);
+            this.rtbCommentaire.TabIndex = 56;
+            this.rtbCommentaire.Text = "";
             // 
-            // button6
+            // btnParcourirPhotoOfficielle
             // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button6.Location = new System.Drawing.Point(9, 130);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(199, 23);
-            this.button6.TabIndex = 48;
-            this.button6.Text = "Parcourir...";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnParcourirPhotoOfficielle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnParcourirPhotoOfficielle.Location = new System.Drawing.Point(9, 130);
+            this.btnParcourirPhotoOfficielle.Name = "btnParcourirPhotoOfficielle";
+            this.btnParcourirPhotoOfficielle.Size = new System.Drawing.Size(199, 23);
+            this.btnParcourirPhotoOfficielle.TabIndex = 48;
+            this.btnParcourirPhotoOfficielle.Text = "Parcourir...";
+            this.btnParcourirPhotoOfficielle.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnSupprimerPhotoOfficiel
             // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button7.Location = new System.Drawing.Point(214, 130);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(193, 23);
-            this.button7.TabIndex = 49;
-            this.button7.Text = "Supprimer le fichier";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnSupprimerPhotoOfficiel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSupprimerPhotoOfficiel.Location = new System.Drawing.Point(214, 130);
+            this.btnSupprimerPhotoOfficiel.Name = "btnSupprimerPhotoOfficiel";
+            this.btnSupprimerPhotoOfficiel.Size = new System.Drawing.Size(193, 23);
+            this.btnSupprimerPhotoOfficiel.TabIndex = 49;
+            this.btnSupprimerPhotoOfficiel.Text = "Supprimer le fichier";
+            this.btnSupprimerPhotoOfficiel.UseVisualStyleBackColor = true;
             // 
-            // listBox2
+            // lstPhotoOfficiel
             // 
-            this.listBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lstPhotoOfficiel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Items.AddRange(new object[] {
+            this.lstPhotoOfficiel.FormattingEnabled = true;
+            this.lstPhotoOfficiel.Items.AddRange(new object[] {
             " "});
-            this.listBox2.Location = new System.Drawing.Point(9, 44);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(398, 82);
-            this.listBox2.TabIndex = 47;
+            this.lstPhotoOfficiel.Location = new System.Drawing.Point(9, 44);
+            this.lstPhotoOfficiel.Name = "lstPhotoOfficiel";
+            this.lstPhotoOfficiel.Size = new System.Drawing.Size(398, 82);
+            this.lstPhotoOfficiel.TabIndex = 47;
             // 
-            // comboBox1
+            // cmbContrat
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbContrat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 18);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(304, 21);
-            this.comboBox1.TabIndex = 50;
+            this.cmbContrat.FormattingEnabled = true;
+            this.cmbContrat.Location = new System.Drawing.Point(103, 18);
+            this.cmbContrat.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbContrat.Name = "cmbContrat";
+            this.cmbContrat.Size = new System.Drawing.Size(304, 21);
+            this.cmbContrat.TabIndex = 50;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.listBox2);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.button7);
-            this.groupBox2.Controls.Add(this.button6);
+            this.groupBox2.Controls.Add(this.lstPhotoOfficiel);
+            this.groupBox2.Controls.Add(this.cmbContrat);
+            this.groupBox2.Controls.Add(this.btnSupprimerPhotoOfficiel);
+            this.groupBox2.Controls.Add(this.btnParcourirPhotoOfficielle);
             this.groupBox2.Location = new System.Drawing.Point(12, 189);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(418, 162);
@@ -346,9 +287,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.listBox1);
+            this.groupBox3.Controls.Add(this.btnSupprimerFiche);
+            this.groupBox3.Controls.Add(this.btnParcourir);
+            this.groupBox3.Controls.Add(this.lstFiches);
             this.groupBox3.Location = new System.Drawing.Point(12, 57);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(418, 126);
@@ -356,42 +297,42 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Liste des fiches";
             // 
-            // button3
+            // btnSupprimerFiche
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button3.Location = new System.Drawing.Point(214, 94);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 23);
-            this.button3.TabIndex = 51;
-            this.button3.Text = "Supprimer le fichier";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSupprimerFiche.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSupprimerFiche.Location = new System.Drawing.Point(214, 94);
+            this.btnSupprimerFiche.Name = "btnSupprimerFiche";
+            this.btnSupprimerFiche.Size = new System.Drawing.Size(193, 23);
+            this.btnSupprimerFiche.TabIndex = 51;
+            this.btnSupprimerFiche.Text = "Supprimer le fichier";
+            this.btnSupprimerFiche.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnParcourir
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button5.Location = new System.Drawing.Point(9, 94);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(199, 23);
-            this.button5.TabIndex = 50;
-            this.button5.Text = "Parcourir...";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnParcourir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnParcourir.Location = new System.Drawing.Point(9, 94);
+            this.btnParcourir.Name = "btnParcourir";
+            this.btnParcourir.Size = new System.Drawing.Size(199, 23);
+            this.btnParcourir.TabIndex = 50;
+            this.btnParcourir.Text = "Parcourir...";
+            this.btnParcourir.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lstFiches
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            this.lstFiches.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lstFiches.FormattingEnabled = true;
+            this.lstFiches.Items.AddRange(new object[] {
             "Pedigree_DenisDrolets.pdf"});
-            this.listBox1.Location = new System.Drawing.Point(9, 19);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(398, 69);
-            this.listBox1.TabIndex = 32;
+            this.lstFiches.Location = new System.Drawing.Point(9, 19);
+            this.lstFiches.Name = "lstFiches";
+            this.lstFiches.Size = new System.Drawing.Size(398, 69);
+            this.lstFiches.TabIndex = 32;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.listBox3);
-            this.groupBox4.Controls.Add(this.button9);
-            this.groupBox4.Controls.Add(this.button10);
+            this.groupBox4.Controls.Add(this.lstFichier);
+            this.groupBox4.Controls.Add(this.btnSupprimerFichier);
+            this.groupBox4.Controls.Add(this.btnParcourirFichier);
             this.groupBox4.Location = new System.Drawing.Point(12, 357);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(418, 265);
@@ -399,42 +340,42 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Fichiers";
             // 
-            // listBox3
+            // lstFichier
             // 
-            this.listBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lstFichier.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Items.AddRange(new object[] {
+            this.lstFichier.FormattingEnabled = true;
+            this.lstFichier.Items.AddRange(new object[] {
             " "});
-            this.listBox3.Location = new System.Drawing.Point(6, 19);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(401, 212);
-            this.listBox3.TabIndex = 47;
+            this.lstFichier.Location = new System.Drawing.Point(6, 19);
+            this.lstFichier.Name = "lstFichier";
+            this.lstFichier.Size = new System.Drawing.Size(401, 212);
+            this.lstFichier.TabIndex = 47;
             // 
-            // button9
+            // btnSupprimerFichier
             // 
-            this.button9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button9.Location = new System.Drawing.Point(211, 236);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(196, 23);
-            this.button9.TabIndex = 49;
-            this.button9.Text = "Supprimer le fichier";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnSupprimerFichier.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSupprimerFichier.Location = new System.Drawing.Point(211, 236);
+            this.btnSupprimerFichier.Name = "btnSupprimerFichier";
+            this.btnSupprimerFichier.Size = new System.Drawing.Size(196, 23);
+            this.btnSupprimerFichier.TabIndex = 49;
+            this.btnSupprimerFichier.Text = "Supprimer le fichier";
+            this.btnSupprimerFichier.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnParcourirFichier
             // 
-            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button10.Location = new System.Drawing.Point(6, 236);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(199, 23);
-            this.button10.TabIndex = 48;
-            this.button10.Text = "Parcourir...";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnParcourirFichier.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnParcourirFichier.Location = new System.Drawing.Point(6, 236);
+            this.btnParcourirFichier.Name = "btnParcourirFichier";
+            this.btnParcourirFichier.Size = new System.Drawing.Size(199, 23);
+            this.btnParcourirFichier.TabIndex = 48;
+            this.btnParcourirFichier.Text = "Parcourir...";
+            this.btnParcourirFichier.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.pictureBox1);
+            this.groupBox5.Controls.Add(this.pbApercu);
             this.groupBox5.Location = new System.Drawing.Point(436, 330);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(410, 292);
@@ -442,44 +383,106 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Aperçu";
             // 
-            // pictureBox1
+            // pbApercu
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(404, 273);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbApercu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbApercu.Location = new System.Drawing.Point(3, 16);
+            this.pbApercu.Name = "pbApercu";
+            this.pbApercu.Size = new System.Drawing.Size(404, 273);
+            this.pbApercu.TabIndex = 0;
+            this.pbApercu.TabStop = false;
+            // 
+            // numPoliceCommentaire
+            // 
+            this.numPoliceCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numPoliceCommentaire.Location = new System.Drawing.Point(164, 120);
+            this.numPoliceCommentaire.Name = "numPoliceCommentaire";
+            this.numPoliceCommentaire.Size = new System.Drawing.Size(34, 20);
+            this.numPoliceCommentaire.TabIndex = 79;
+            this.numPoliceCommentaire.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            // 
+            // btnEnumCommentaire
+            // 
+            this.btnEnumCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnumCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnumCommentaire.Location = new System.Drawing.Point(203, 119);
+            this.btnEnumCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEnumCommentaire.Name = "btnEnumCommentaire";
+            this.btnEnumCommentaire.Size = new System.Drawing.Size(42, 21);
+            this.btnEnumCommentaire.TabIndex = 78;
+            this.btnEnumCommentaire.Text = "Enum";
+            this.btnEnumCommentaire.UseVisualStyleBackColor = true;
+            // 
+            // btnSouslignerCommentaire
+            // 
+            this.btnSouslignerCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSouslignerCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSouslignerCommentaire.Location = new System.Drawing.Point(136, 119);
+            this.btnSouslignerCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSouslignerCommentaire.Name = "btnSouslignerCommentaire";
+            this.btnSouslignerCommentaire.Size = new System.Drawing.Size(23, 21);
+            this.btnSouslignerCommentaire.TabIndex = 75;
+            this.btnSouslignerCommentaire.Text = "I";
+            this.btnSouslignerCommentaire.UseVisualStyleBackColor = true;
+            // 
+            // btnItaliqueCommentaire
+            // 
+            this.btnItaliqueCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnItaliqueCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItaliqueCommentaire.Location = new System.Drawing.Point(109, 119);
+            this.btnItaliqueCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnItaliqueCommentaire.Name = "btnItaliqueCommentaire";
+            this.btnItaliqueCommentaire.Size = new System.Drawing.Size(23, 21);
+            this.btnItaliqueCommentaire.TabIndex = 76;
+            this.btnItaliqueCommentaire.Text = "I";
+            this.btnItaliqueCommentaire.UseVisualStyleBackColor = true;
+            // 
+            // btnGrasCommentaire
+            // 
+            this.btnGrasCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrasCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrasCommentaire.Location = new System.Drawing.Point(82, 119);
+            this.btnGrasCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrasCommentaire.Name = "btnGrasCommentaire";
+            this.btnGrasCommentaire.Size = new System.Drawing.Size(23, 21);
+            this.btnGrasCommentaire.TabIndex = 77;
+            this.btnGrasCommentaire.Text = "B";
+            this.btnGrasCommentaire.UseVisualStyleBackColor = true;
             // 
             // DetailArtiste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(858, 663);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.btnAjouterCategorieArtiste);
+            this.Controls.Add(this.cmbCategorieArtiste);
+            this.Controls.Add(this.btnSupprimerArtiste);
+            this.Controls.Add(this.btnEnregistrerArtiste);
+            this.Controls.Add(this.btnAnnuler);
+            this.Controls.Add(this.txtNomArtiste);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label20);
             this.Name = "DetailArtiste";
             this.Text = "Détail de l\'artiste";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbApercu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -487,40 +490,40 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtNomArtiste;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.Button btnEnregistrerArtiste;
+        private System.Windows.Forms.Button btnSupprimerArtiste;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Button btnAjouterCategorieArtiste;
+        private System.Windows.Forms.ComboBox cmbCategorieArtiste;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblTailleFichier;
+        private System.Windows.Forms.Label lblNomFichier;
+        private System.Windows.Forms.Label lblTypeFichier;
+        private System.Windows.Forms.Button btnParcourirPhotoOfficielle;
+        private System.Windows.Forms.Button btnSupprimerPhotoOfficiel;
+        private System.Windows.Forms.ListBox lstPhotoOfficiel;
+        private System.Windows.Forms.ComboBox cmbContrat;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnSupprimerFiche;
+        private System.Windows.Forms.Button btnParcourir;
+        private System.Windows.Forms.ListBox lstFiches;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.ListBox lstFichier;
+        private System.Windows.Forms.Button btnSupprimerFichier;
+        private System.Windows.Forms.Button btnParcourirFichier;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.PictureBox pbApercu;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbCommentaire;
+        private System.Windows.Forms.NumericUpDown numPoliceCommentaire;
+        private System.Windows.Forms.Button btnEnumCommentaire;
+        private System.Windows.Forms.Button btnSouslignerCommentaire;
+        private System.Windows.Forms.Button btnItaliqueCommentaire;
+        private System.Windows.Forms.Button btnGrasCommentaire;
     }
 }
