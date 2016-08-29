@@ -1,5 +1,18 @@
+Use master
+
+Go
+
 Drop database PE2_Test
+
+Go
+
 Create database PE2_Test
+
+Go
+
+Use PE2_Test
+
+Go
 
 Create Table tblContrat
 (
@@ -20,7 +33,8 @@ Create Table tblExigences
 	date date,
 	montant decimal,
 	description text,
-	commentaire text
+	commentaire text,
+	descriptionCourte varchar(255)
 )
 
 Go
@@ -43,7 +57,8 @@ Create Table tblEngagement
 	heure time,
 	nature varchar(50),
 	commentaire text,
-	description text
+	description text,
+	descriptionCourte varchar(255)
 )
 
 Go
@@ -71,7 +86,7 @@ Create table tblCategorieArtiste
 (
 	noCategorie int NOT NULL,
 	nom varchar(20) NOT NULL,
-	description description
+	description text
 )
 
 Go
@@ -115,9 +130,9 @@ Create Table tblResponsable
 	prenom varchar(20) NOT NULL,
 	courriel varchar(255) NOT NULL,
 	signataire varchar(70) NOT NULL,
-	dateSignature date,
+	date date,
 	telBureau varchar(15) NOT NULL,
 	telCellulaire varchar(15) NOT NULL,
-	Extension varchar(5) NOT NULL,
+	extension varchar(5) NOT NULL,
 	idem bit NOT NULL
 )
