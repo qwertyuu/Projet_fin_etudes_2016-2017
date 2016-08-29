@@ -6,6 +6,7 @@ USE master
 
 GO
 
+IF EXISTS (Select * from sys.databases WHERE name = N'PE2_Test')
 DROP database PE2_Test
 PRINT 'Suppression de la base de données de test'
 GO
