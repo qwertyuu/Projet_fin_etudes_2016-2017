@@ -1,21 +1,21 @@
---But : Création du Package Contrat et ses table
---Date : 29-08-2016
+--But : Création du Package Contrat et ses table (Base de données officielle)
+--Date : 30-08-2016
 --Par : Pierre-Alexandre Pageau
 
 USE master
 
 GO
 
-DROP database PE2_Test
-PRINT 'Suppression de la base de données de test'
+DROP database PE2_Officielle
+PRINT 'Suppression de la base de données officielle'
 GO
 
-CREATE DATABASE PE2_Test
-PRINT 'Création de la base de données de test'
+CREATE DATABASE PE2_Officielle
+PRINT 'Création de la base de données officielle'
 
 GO
 
-Use PE2_Test
+Use PE2_Officielle
 
 GO
 
@@ -42,7 +42,7 @@ PRINT 'Création de la table contrat'
 
 GO
 
-CREATE TABLE S_Contrat.tblExigences
+CREATE TABLE S_Contrat.tblExigence
 (
 	noExigence int,
 	nom	varchar(20),
