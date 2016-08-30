@@ -188,7 +188,7 @@ GO
 CREATE TABLE S_Contrat.tblRespoContrat
 (
 	noResponsable int,
-	noContrat int
+	noContrat varchar(20)
 )
 PRINT'Création de la table d''intersection responsable-contrat'
 
@@ -213,7 +213,7 @@ PRINT 'Création de la table d''association artiste-contrat-ficherPersonnel'
 
 GO
 
-CREATE TABLE S_Contrat.CatArtisteArt
+CREATE TABLE S_Contrat.tblCatArtisteArt
 (
 	noCategorie int,
 	noArtiste int
