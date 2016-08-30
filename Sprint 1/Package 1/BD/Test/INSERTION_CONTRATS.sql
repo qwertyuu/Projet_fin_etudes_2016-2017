@@ -220,3 +220,95 @@ insert into S_Contrat.tblCategorieArtiste (nom, description, dateSupprime) value
 GO
 PRINT 'insertion des Catégories d''artistes réussi'
 GO
+
+
+/*insertion des artistes
+
+Modifier certaines dateSupprime pour ne pas qu'elles soient toutes
+
+Rajouter des commentaires pour certains*/
+
+GO
+PRINT 'insertion des artistes débutée'
+GO
+
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Howard Rodriguez', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Matthew Fowler', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Dennis Garza', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Betty Mccoy', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Donald Collins', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Jerry Rodriguez', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Julie Alexander', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Gloria Mills', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Sandra Mason', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Lois Rivera', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Martin Mills', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Lois Riley', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Catherine Meyer', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Karen Ferguson', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Carol Thompson', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Denise Cunningham', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Melissa Patterson', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Kathryn Oliver', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Larry Lane', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Dorothy Bryant', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Todd Clark', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Kenneth Henry', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Bobby Hanson', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Tammy Hall', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Cheryl Rogers', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Anthony Hall', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Scott Graham', null, null);
+insert into S_Contrat.tblArtiste (nom, commentaire, dateSupprime) values ('Wayne Morgan',null, null);
+
+GO
+PRINT 'insertion des artistes réussi'
+GO
+
+/*insertion des Fichier Personnel
+
+Rajouter des valeurs pas mal partout en fait*/
+
+
+GO
+PRINT 'insertion des artistes débutée'
+GO
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+insert into S_Contrat.tblFichierPersonnel (type, chemin, commentaire, dateSupprime, noArtiste) values (null, null, null, null, null);
+
+GO
+PRINT 'insertion des artistes réussie'
+GO
