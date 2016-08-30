@@ -42,7 +42,7 @@ PRINT 'Création de la table contrat'
 
 GO
 
-CREATE TABLE S_Contrat.tblExigence
+CREATE TABLE S_Contrat.tblExigences
 (
 	noExigence int,
 	nom	varchar(20),
