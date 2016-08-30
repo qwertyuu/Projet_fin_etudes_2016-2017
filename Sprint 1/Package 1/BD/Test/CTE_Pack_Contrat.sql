@@ -5,16 +5,43 @@
 
 Use PE2_Test
 GO
- PRINT 'Création des Contraintes de la TABLE tblContrat'
+
+
+ ALTER TABLE S_Contrat.tblStatut
+ ALTER Column noStatut  Int NOT NULL
+ ALTER TABLE S_Contrat.tblStatut
+ ALTER Column nomStatut  varchar(20) NOT NULL
+   --Les Contraintes Clé----
+ GO
+ ALTER TABLE S_Contrat.tblStatut ADD
+ CONSTRAINT Sta_PK
+ PRIMARY Key(noStatut) 
+ PRINT 'Fin création des Contraintes de la table tblStatut'
+ GO	
+ ALTER TABLE S_Contrat.tblAgence
+ ALTER Column noAgence  varchar(15) NOT NULL
+ ALTER TABLE S_Contrat.tblAgence
+ ALTER Column nom  varchar(20) NOT NULL
+ --Les contraintes Clés----
+ GO
+ ALTER TABLE S_Contrat.tblAgence ADD
+ CONSTRAINT AGE_PK
+ PRIMARY Key(noAgence)
+ ALTER TABLE S_Contrat.tblContrat ADD
+ CONSTRAINT ADR_AGE_FK
+ FOREIGN Key(noAdresse) 
+ References S_Contrat.tblStatut(noAdresse)
+ PRINT 'Fin création des Contraintes de la table tblAgence'
+ GO
 
  ALTER TABLE S_Contrat.tblContrat
  ALTER Column noContrat  varchar(20) NOT NULL
-
  ALTER TABLE S_Contrat.tblContrat
  ALTER Column nom  varchar(20) NOT NULL
+ PRINT 'Fin création des Contraintes de la table tblContrat'
  GO
 
- PRINT 'Création de la PK et des Fk de la TABLE tblContrat'
+
  ALTER TABLE S_Contrat.tblContrat ADD
  CONSTRAINT CON_PK
  PRIMARY Key(noContrat) 
@@ -23,26 +50,16 @@ GO
  CONSTRAINT CON_AGE_FK
  FOREIGN Key(noAgence) 
  References S_Contrat.tblAgence(noAgence)
-
+ GO
  ALTER TABLE S_Contrat.tblContrat ADD
  CONSTRAINT CON_STA_FK
  FOREIGN Key(noStatut) 
  References S_Contrat.tblStatut(noStatut)
-
+ PRINT 'Fin création de la PK et des Fk de la table tblContrat'
  GO
- PRINT 'Création des Contraintes de la TABLE tblStatut'
- ALTER TABLE S_Contrat.tblStatut
- ALTER Column noStatut  Int NOT NULL
- ALTER TABLE S_Contrat.tblStatut
- ALTER Column nomStatut  varchar(20) NOT NULL
 
- GO
- PRINT 'Création des Contraintes de la TABLE tblAgence'
- ALTER TABLE S_Contrat.tblAgence
- ALTER Column noAgence  varchar(15) NOT NULL
- ALTER TABLE S_Contrat.tblStatut
- ALTER Column nomAgence  varchar(20) NOT NULL
 
+ 
 
 
 
