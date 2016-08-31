@@ -207,7 +207,7 @@ GO
  GO
 
  ALTER TABLE S_Contrat.tblResponsable ADD
- CONSTRAINT RES_AGE_FK
+ CONSTRAINT RES_DIF_FK
  FOREIGN Key(noDiffuseur) 
  References S_Contrat.tblDiffuseur(noDiffuseur)
  GO
@@ -321,27 +321,7 @@ GO
 
 
 
-
-
-
-
- ALTER TABLE S_Contrat.tblContrat ADD
- CONSTRAINT ADR_AGE_FK
- FOREIGN Key(noAdresse) 
- References S_Contrat.tblStatut(noAdresse)
-
- GO
-
-
-
-
- GO
-
-
-
  
 
- PRINT 'Fin création des Contraintes de la table tblStatut'
-  PRINT 'Fin création des Contraintes de la table tblAgence'
-   PRINT 'Fin création des Contraintes de la table tblContrat'
+
 
