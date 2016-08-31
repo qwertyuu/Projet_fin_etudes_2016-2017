@@ -280,6 +280,43 @@ GO
  PRINT 'Fin de création des contraintes FK de la table tblFichierPersonnel'
  GO
 
+ ALTER TABLE S_Contrat.tblFichierOfficiel ADD
+ CONSTRAINT FICOFF_FICPER_FK
+ FOREIGN Key(idFichier) 
+ References S_Contrat.tblFichierPersonnel(idFichier)
+ GO
+ ALTER TABLE S_Contrat.tblFichierOfficiel ADD
+ CONSTRAINT FICOFF_ART_FK
+ FOREIGN Key(noArtiste) 
+ References S_Contrat.tblArtiste(noArtiste)
+ GO
+ ALTER TABLE S_Contrat.tblFichierOfficiel ADD
+ CONSTRAINT FICOFF_CON_FK
+ FOREIGN Key(noContrat) 
+ References S_Contrat.tblContrat(noContrat)
+ PRINT 'Fin de création des contraintes FK de la table tblFichierOfficiel'
+ GO
+
+ ALTER TABLE S_Contrat.tblEngagement ADD
+ CONSTRAINT ENG_CON_FK
+ FOREIGN Key(noContrat) 
+ References S_Contrat.tblContrat(noContrat)
+ PRINT 'Fin de création des contraintes FK de la table tblEngagement'
+ GO
+
+ ALTER TABLE S_Contrat.tblExigence ADD
+ CONSTRAINT EXI_CON_FK
+ FOREIGN Key(noContrat) 
+ References S_Contrat.tblContrat(noContrat)
+ GO
+ ALTER TABLE S_Contrat.tblExigence ADD
+ CONSTRAINT EXI_STA_FK
+ FOREIGN Key(noStatut) 
+ References S_Contrat.tblStatut(noStatut)
+ PRINT 'Fin de création des contraintes FK de la table tblExigence'
+ GO
+  PRINT 'Fin de création des contraintes FK des tables du package Contrat'
+
 
 
 
