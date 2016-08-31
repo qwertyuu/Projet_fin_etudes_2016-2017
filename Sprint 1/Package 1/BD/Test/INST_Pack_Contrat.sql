@@ -6,6 +6,8 @@
 USE PE2_Test
 GO
 
+--VÉRIFIER L'ORDRE DE CRÉATION AVANT LA CRÉATION
+
 /*insertion des responsables*/
 
 GO
