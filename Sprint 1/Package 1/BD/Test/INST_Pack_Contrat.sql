@@ -15,20 +15,20 @@ PRINT 'insertion des responsables débutée'
 GO
 
 GO
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Cruz', 'George', 'gcruz0@state.tx.us', 'George Cruz', '2016/01/15', '8631113471', '5734372137', 865, false, null, 1, 11);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Cruz', 'George', 'gcruz0@state.tx.us', 'George Cruz', '2016/01/15', '8631113471', '5734372137', null, false, null, 1, 11);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Carter', 'Christina', 'ccarter1@GOogle.de', 'Christina Carter', '2016/07/22', '38562815981', '6327071769', 364, false, null, 23, 1);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hart', 'Barbara', 'bhart2@sun.com', 'Barbara Hart', '2016/02/04', '6925115065', '130315648', 913, false, null, 34, 2);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Henry', 'Ruth', 'rhenry3@livejournal.com', 'Ruth Henry', '2016/04/25', '5281157420', '6324147750', 265, false, 2016/06/13), 31, 3);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Mason', 'Nicholas', 'nmason4@hc360.com', 'Nicholas Mason', '2015/12/08', '35119500200', '96716843409', 262, true, null, 27, 4);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Young', 'Walter', 'wyoung5@sina.com.cn', 'Walter Young', '2016/02/11', '6359817195', '5182891148', 146, true, null, 21, 5);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Chavez', 'Julia', 'jchavez6@ibm.com', 'Julia Chavez', '2016/05/03', '3327172914', '35626011103', 281, false, null, 6, 6);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Chavez', 'Julia', 'jchavez6@ibm.com', 'Julia Chavez', '2016/05/03', '3327172914', '35626011103', null, false, null, 6, 6);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hill', 'Emily', 'ehill7@illinois.edu', 'Emily Hill', '2015/11/03', '5578512986', '6280071160', 138, false, null, 7, 7);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Walker', 'Kathy', 'kwalker8@purevolume.com', 'Kathy Walker', '2015/10/16', '191981506', '6224815701', 161, true, 2016/01/13), 8, 8);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hicks', 'Chris', 'chicks9@GOo.ne.jp', 'Chris Hicks', '2016/01/19', '6322134224', '5730717164', 653, false, null, 9, 9);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hicks', 'Chris', 'chicks9@GOo.ne.jp', 'Chris Hicks', '2016/01/19', '6322134224', '5730717164', null, false, null, 9, 9);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Price', 'Carl', 'cpricea@jugem.jp', 'Carl Price', '2016/03/10', '99871270173', '8617165705', 651, false, null, 11, 10);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Oliver', 'Frances', 'foliverb@army.mil', 'Frances Oliver', '2016/07/30', '4851942270', '5560317957', 702, true, null, 11, 10);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Warren', 'Brandon', 'bwarrenc@businessweek.com', 'Brandon Warren', '2015/09/05', '5571374038', '6275116346', 528, false, null, 11, 11);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Clark', 'Barbara', 'bclarkd@ibm.com', 'Barbara Clark', '2015/10/16', '5245261440', '5537911456', 942, true, null, 11, 12);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Clark', 'Barbara', 'bclarkd@ibm.com', 'Barbara Clark', '2015/10/16', '5245261440', '5537911456', null, true, null, 11, 12);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Kim', 'Albert', 'akime@tonline.de', 'Albert Kim', '2015/11/12', '38111013266', '115131898', 660, false, null, 14, 13);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hunt', 'Laura', 'lhuntf@sina.com.cn', 'Laura Hunt', '2016/01/21', '8689912348', '23530174902', 117, false, 20165/06/13 17,24, 14);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, date, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Rice', 'Judith', 'jriceg@army.mil', 'Judith Rice', '2016/02/02', '50481118756', '6263170508', 509, true, null, 12, 15);
@@ -57,8 +57,8 @@ GO
 PRINT 'insertion des diffuseurs débutée'
 GO
 
-INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Tazzy', 'bclark0@apache.org', 2016/06/13, 1);
-INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Photofeed', 'wwoods1@opera.com', 2016/02/13, 2);
+INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Tazzy', 'bclark0@apache.org', '2016/06/13', 1);
+INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Photofeed', 'wwoods1@opera.com', '2016/02/13', 2);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Wikido', 'rdixon2@php.net', null, 3);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Brainlounge', 'cmitchell3@latimes.com', null, 4);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Jaxbean', 'ereyes4@scientificamerican.com', null, 5);
@@ -91,8 +91,8 @@ INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALU
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Midel', 'sbishopv@wordpress.org', null, 32);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Browsezoom', 'vchavezw@businessweek.com', null, 33);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Zooxo', 'hstephensx@mac.com', null, 34);
-INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Vidoo', 'bromeroy@unicef.org', 2016/01/05, 35);
-INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Photobug', 'dbishopz@ca.GOv', null, 36);S
+INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Vidoo', 'bromeroy@unicef.org', '2016/01/05', 35);
+INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Photobug', 'dbishopz@ca.GOv', null, 36);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Flipstorm', 'wolson10@purevolume.com', null, 37);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Yakidoo', 'bhall11@fda.GOv', null, 38);
 
@@ -115,22 +115,22 @@ INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBure
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Caplan','Y6Z4K6','QC','Canada','4181251564','4182594355',5340);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Whitehorse','J2X2F7','YT','Canada','4185518302','4189937396',839);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Kawartha Lakes','O7F0E6','ON','Canada','4185759408','4183226713',9922);
-INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Tuktoyaktuk','I2S5P3','NT','Canada','4186680008','4188886104',8234);
+INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Tuktoyaktuk','I2S5P3','NT','Canada',null,'4188886104',8234);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Gravelbourg','C0W2I9','SK','Canada','4181957702','4184407891',1070);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Bay Roberts','O2N5S8','NL','Canada','4181531514','4187161949',5900);
-INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Arviat','E5R1J3','NU','Canada','4188296563','4188539031',1254);
+INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Arviat','E5R1J3','NU','Canada','4188296563',null,1254);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Whitehorse','S8L1A3','YT','Canada','4184820847','4182594900',54);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Whitehorse','M0A7C0','YT','Canada','4189088995','4181435113',4);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Kearny','F5F2Q2','ON','Canada','4187675272','4188250409',8938);
-INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Tulita','X7H9X9','NT','Canada','4184517009','4187488001',7882);
+INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Tulita','X7H9X9','NT','Canada','4184517009','4187488001',null);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Fraser Lake','M6T7N2','BC','Canada','4188261336','4186370777',2700);
-INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Fredericton','M6M3S6','NB','Canada','4185122464','4181074914',5279);
+INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Fredericton','M6M3S6','NB','Canada','4185122464','4181074914',null);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Fortune','L9D0R8','NL','Canada','4185262276','4184055003',7811);
-INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('MansfieldetPontefract','G7B8O7','QC','Canada','4184473760','4188618109',9439);
-INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Argyle','B5Y2Z0','NS','Canada','4184478593','4184035933',4468);
-INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Weyburn','W8R9N3','SK','Canada','4186474587','4188169626',5760);
+INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('MansfieldetPontefract','G7B8O7','QC','Canada','4184473760','4188618109',null);
+INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Argyle','B5Y2Z0','NS','Canada','4184478593',null,4468);
+INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Weyburn','W8R9N3','SK','Canada','4186474587','4188169626',null);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Fort McPherson','G5I3G5','NT','Canada','4183872302','4183219935',6440);
-INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Minitonas','Z8H2Y3','MB','Canada','4182452811','4186749589',3598);
+INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Minitonas','Z8H2Y3','MB','Canada','4182452811',null,3598);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Fredericton','W3B9T7','NB','Canada','4187381094','4184316029',1505);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Harbour Grace','U9Q5L0','NL','Canada','4186441434','4188805329',7937);
 INSERT INTO S_Contrat.tblAdresse([ville],[codepostal],[province],[pays],[telBureau],[telCellulaire],[extension]) VALUES('Port Coquitlam','S8G0Y9','BC','Canada','4183969822','4184153973',4950);
@@ -157,11 +157,11 @@ PRINT 'insertion des Agences débutée'
 GO
 
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Voonyx', 'valvarez0@umn.edu', null, 1);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Rhyloo', 'bpierce1@drupal.org', 2016/02/13, 2);
+INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Rhyloo', 'bpierce1@drupal.org', '2016/02/13', 2);
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Chatterbridge', 'rburns2@yelp.com', null, 3);
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Oyonder', 'eallen3@comcast.net', null, 4);
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Einti', 'kwright4@themeforest.net', null, 5);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Twimbo', 'rrichardson5@GOo.gl', null, 2016/01/23);
+INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Twimbo', 'rrichardson5@GOo.gl', null, 17);
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Browsezoom', 'wking6@bloglovin.com', null, 6);
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Gigabox', 'pwheeler7@paginegialle.it', null, 7);
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Aivee', 'cstewart8@umich.edu', null, 8);
@@ -170,7 +170,7 @@ INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES 
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Teklist', 'rbellb@live.com', null, 12);
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Twinte', 'rmedinac@netscape.com', null, 13);
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Demizz', 'thansend@friendfeed.com', null, 14);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Linktype', 'mrobinsone@cdbaby.com', 2016/04/14, 15);
+INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Linktype', 'mrobinsone@cdbaby.com', '2016/04/14', 15);
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Shufflebeat', 'vmartinezf@yellowbook.com', null, 16);
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Twinder', 'mramirezg@networksolutions.com', null, 21);
 INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Yamia', 'kfranklinh@networkadvertising.org', null, 22);
@@ -209,7 +209,7 @@ GO
 INSERT INTO S_Contrat.tblCategorieArtiste (nom, description, dateSupprime) VALUES ('Humoriste', 'Artiste qui se produit en spectacle en interprétant des personnages comiques, des monologues humoristiques, en exploitant des situations absurdes dans l''intention de faire rire un public.', null);
 INSERT INTO S_Contrat.tblCategorieArtiste (nom, description, dateSupprime) VALUES ('Musicien', 'Artiste ou groupe d''artistes qui pratiquent des compositions musicales', null);
 INSERT INTO S_Contrat.tblCategorieArtiste (nom, description, dateSupprime) VALUES ('Acrobate', 'Artiste qui maîtrise une ou plusieurs disciplines d''acrobatie, dont la pratique est fondée sur l''agilité, la force, la souplesse et l''équilibre.', null);
-INSERT INTO S_Contrat.tblCategorieArtiste (nom, description, dateSupprime) VALUES ('Ventriloque', 'Personne qui peut articuler sans remuer les lèvres et fait "parler" une marionette pour un effet comique.  ', null);
+INSERT INTO S_Contrat.tblCategorieArtiste (nom, description, dateSupprime) VALUES ('Ventriloque', 'Personne qui peut articuler sans remuer les lèvres et fait "parler" une marionette pour un effet comique.', null);
 INSERT INTO S_Contrat.tblCategorieArtiste (nom, description, dateSupprime) VALUES ('Danseur', 'Personne ou groupe qui performe des chorégraphie dans un but artistique', null);
 INSERT INTO S_Contrat.tblCategorieArtiste (nom, description, dateSupprime) VALUES ('Théâtre', 'Art de représenter sur scène des événements mettant en cause des êtres humains.' , null);
 
@@ -230,9 +230,9 @@ GO
 
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Howard Rodriguez', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Matthew Fowler', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Dennis Garza', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Betty Mccoy', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Donald Collins', null, null);
+INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Dennis Garza', 'N''a pas répondu à son dernier appel', null);
+INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Betty Mccoy', 'Photo à ajouter', null);
+INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Donald Collins', 'Donald ne veut pas qu''on le contacte le matin.', null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Jerry Rodriguez', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Julie Alexander', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Gloria Mills', null, null);
@@ -240,7 +240,7 @@ INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Sandr
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Lois Rivera', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Martin Mills', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Lois Riley', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Catherine Meyer', null, null);
+INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Catherine Meyer', 'Catherine veut qu''on passe par son agent.', null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Karen Ferguson', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Carol Thompson', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Denise Cunningham', null, null);
@@ -251,7 +251,7 @@ INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Dorot
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Todd Clark', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Kenneth Henry', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Bobby Hanson', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Tammy Hall', null, null);
+INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Tammy Hall', 'Mettre à jour l''image de l''artiste', null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Cheryl Rogers', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Anthony Hall', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Scott Graham', null, null);
@@ -269,46 +269,46 @@ Rajouter des valeurs pas mal partout en fait*/
 GO
 PRINT 'insertion des artistes débutée'
 GO
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,1,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','C:\photos',null,2,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,3,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Concours','D:\documents artistes',null,4,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','C:\photos',null,5,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,6,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','D:\documents artistes',null,7,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,8,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Concours','C:\photos',null,9,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,10,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','D:\documents artistes',null,11,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Concours','C:\photos',null,12,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','C:\photos',null,13,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','D:\documents artistes',null,14,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Concours','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,15,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','D:\documents artistes',null,16,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,17,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Concours','C:\photos',null,18,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Concours','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,19,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,20,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Concours','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,21,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Concours','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,22,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,23,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','D:\documents artistes',null,24,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','D:\documents artistes',null,25,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','D:\documents artistes',null,26,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,27,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Concours','D:\documents artistes',null,28,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,1,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Concours','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,2,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,3,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','D:\documents artistes',null,4,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','D:\documents artistes',null,5,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,6,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','C:\photos',null,7,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Concours','C:\photos',null,8,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Concours','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,9,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Spectacle','C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Photos\\',null,10,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','C:\photos',null,11,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Levée de fonds','D:\documents artistes',null,12,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg','On devrait s''en mettre une avec plus de lumière',1,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\photos\\photo.jpg','La photo devrait être rotaté',2,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg','Je trouve que cette photo n''a pas été prise dans le bon angle',3,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx','Manque la page 3?????\nEst ou',4,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\photos\\photo.jpg','On devrait recadrer la photo',5,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg','Ne représente pas l''artiste',6,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx','Pas oublier de faire la page titre',7,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg','Ca serait pas mieux sans lunettes????',8,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','C:\\photos\\photo.jpg',null,9,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,10,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,11,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','C:\\photos\\photo.jpg',null,12,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\photos\\photo.jpg',null,13,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,14,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,15,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,16,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,17,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','C:\\photos\\photo.jpg',null,18,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,19,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,20,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,21,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,22,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,23,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,24,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,25,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,26,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,27,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,28,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,1,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,2,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,3,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,4,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,5,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,6,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\photos\\photo.jpg',null,7,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','C:\\photos\\photo.jpg',null,8,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,9,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,10,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\photos\\photo.jpg',null,11,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,12,null);
 GO
 PRINT 'insertion des artistes réussie'
 GO
@@ -326,7 +326,7 @@ GO
 
 INSERT INTO S_Contrat.tblStatut (nomStatut, description, couleur, dateSupprime) VALUES ('Terminé', 'Le contrat a été réalisé et est archivé', 'df6c25', null);
 INSERT INTO S_Contrat.tblStatut (nomStatut, description, couleur, dateSupprime) VALUES ('En cours', 'Le contrat est à réaliser bientôt', '60aba8', null);
-INSERT INTO S_Contrat.tblStatut (nomStatut, description, couleur, dateSupprime) VALUES ('En négotiation', 'Les discussions a propos du contrat sont encore en cours', 'e97baa', null);
+INSERT INTO S_Contrat.tblStatut (nomStatut, description, couleur, dateSupprime) VALUES ('En négociation', 'Les discussions a propos du contrat sont encore en cours', 'e97baa', null);
 INSERT INTO S_Contrat.tblStatut (nomStatut, description, couleur, dateSupprime) VALUES ('En attente', 'Le contrat est attente d''une décision', '600c3d', null);
 INSERT INTO S_Contrat.tblStatut (nomStatut, description, couleur, dateSupprime) VALUES ('Annulé', 'Le contrat a été annulé', '58c7f3', null);
 INSERT INTO S_Contrat.tblStatut (nomStatut, description, couleur, dateSupprime) VALUES ('Expiré', 'La date du contrat a été dépassé sans qu''une decision soit prise.', '5a0243', null);
@@ -343,44 +343,44 @@ GO
 PRINT 'insertion des exigences commencée'
 GO
 
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Bouteilles d''eau','2016/08/21','5,697','Les clients veulent avoir des bouteilles d''eau gratuites',null,'Eau gratuite fournie',null,1,'2');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Alcool','2016/09/06','8,235','Le client veux avoir l''alcool de payé dans la loge',null,'Alcool fournie dans la loge','2016/12/30',2,'4');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Repas fournis','2017/04/03','6,754','Le client demande a avoir un repas fourni dans sa loge',null,'Le client veut son repas inclus dans sa loge',null,3,'6');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Repas végétarien','2016/05/13','8,600','Le client demande a n''avoir que des repas végétariens servis dans sa loge',null,'Le client veut des repas végétariens uniquement',null,4,'3');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logis fournis','2015/12/31','5,912','Le client demande d''avoir l''hôtel fourni',null,'Hotel fourni par l''organisateur',null,5,'5');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/10/07','6,113',null,null,null,null,6,'2');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2015/09/06','8,813',null,null,null,'2016/05/17',7,'4');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2017/01/22','8,930',null,null,null,'2015/02/26',8,'3');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2017/01/26','7,103',null,null,null,null,9,'2');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/03/07','7,610',null,null,null,'2014/08/29',10,'2');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2017/03/19','9,020',null,null,null,null,11,'2');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/04/28','5,459',null,null,null,'2016/12/21',12,'6');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2015/12/07','5,824',null,null,null,'2016/08/24',13,'1');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/01/29','5,454',null,null,null,null,14,'1');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2017/06/21','9,048',null,null,null,null,15,'4');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/04/15','9,617',null,null,null,null,16,'3');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/12/04','9,369',null,null,null,null,17,'1');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/11/10','5,172',null,null,null,null,18,'3');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/04/30','7,766',null,null,null,'2016/04/12',19,'6');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/05/31','7,043',null,null,null,null,20,'3');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2015/09/15','7,683',null,null,null,'2016/05/16',21,'4');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/09/23','5,899',null,null,null,null,22,'6');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/04/05','7,980',null,null,null,null,23,'6');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/01/23','5,567',null,null,null,'2015/06/02',24,'1');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2015/12/06','8,515',null,null,null,null,25,'2');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2017/07/16','9,327',null,null,null,null,26,'2');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2015/09/28','5,835',null,null,null,'2015/03/19',27,'3');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2017/03/08','9,721',null,null,null,null,28,'5');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2017/05/18','5,850',null,null,null,'2016/04/14',29,'4');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2015/12/30','5,348',null,null,null,'2015/10/19',30,'2');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/08/05','9,847',null,null,null,null,31,'6');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/04/08','5,385',null,null,null,null,32,'6');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/09/08','6,221',null,null,null,null,33,'1');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/07/08','6,928',null,null,null,'2016/03/23',34,'4');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2017/05/15','6,295',null,null,null,null,35,'4');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/05/31','5,970',null,null,null,null,36,'5');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/05/14','9,890',null,null,null,null,37,'1');
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES(null,'2016/06/29','6,647',null,null,null,null,38,'5');
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Bouteilles d''eau','2016/08/21','5697','Les clients veulent avoir des bouteilles d''eau gratuites',null,'Eau gratuite fournie',null,'QU-001',2);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Alcool','2016/09/06','8235','Le client veux avoir l''alcool de payé dans la loge',null,'Alcool fournie dans la loge','2016/12/30','CH-002',4);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Repas fournis','2017/04/03','6754','Le client demande a avoir un repas fourni dans sa loge',null,'Le client veut son repas inclus dans sa loge',null,'JO-002',6);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Repas végétarien','2016/05/13','8600','Le client demande a n''avoir que des repas végétariens servis dans sa loge',null,'Le client veut des repas végétariens uniquement',null,'CH-002',3);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logis fournis','2015/12/31','5912','Le client demande d''avoir l''hôtel fourni',null,'Hotel fourni par l''organisateur',null,'CH-001',5);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2016/10/07',null,null,null,null,null,'CH-001',2);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2015/09/06',null,null,null,null,'2016/05/17','JO-001',4);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2017/01/22',null,'Responsabilité de l''artiste',null,null,'2015/02/26','JO-002',3);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2017/01/26',null,null,null,null,null,'CH-002',2);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2016/03/07',null,null,null,null,'2014/08/29','QU-001',2);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2017/03/19','9020',null,null,null,null,'MO-001',2);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/04/28','5459',null,null,null,'2016/12/21','MO-001',6);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2015/12/07','5824',null,null,null,'2016/08/24','QU-002',1);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2016/01/29','5454',null,null,null,null,'JO-002',1);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2017/06/21',null,'vers 3h',null,null,null,'JO-002',4);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/04/15','9617','Fourni par le diffuseur',null,null,null,'QU-001',3);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2016/12/04','9369',null,null,null,null,'QU-001',1);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2016/11/10', null,null,null,null,null,'MO-001',3);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2016/04/30','7766',null,null,null,'2016/04/12','JO-002',6);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Capacité','2016/05/31','7043',null,null,null,null,'QU-001',3);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2015/09/15','7683',null,null,null,'2016/05/16','JO-002',4);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2016/09/23','5899',null,null,null,null,'QU-002',6);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Capacité','2016/04/05','7980',null,null,null,null,'QU-001',6);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2016/01/23','5567',null,null,null,'2015/06/02','JO-001',1);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2015/12/06','8515',null,null,null,null,'CH-001',2);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2017/07/16','9327',null,null,null,null,'MO-001',2);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2015/09/28','5835',null,null,null,'2015/03/19','CH-001',3);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2017/03/08','9721',null,null,null,null,'QU-001',5);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2017/05/18','5850',null,null,null,'2016/04/14','QU-001',4);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2015/12/30','5348',null,null,null,'2015/10/19','MO-001',2);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/08/05','9847',null,null,null,null,'CH-001',6);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Capacité','2016/04/08','5385',null,null,null,null,'JO-001',6);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2016/09/08','6221',null,null,null,null,'MO-001',1);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2016/07/08','6928',null,null,null,'2016/03/23','CH-001'34,4);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2017/05/15','6295',null,null,null,null,'QU-001',4);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2016/05/31','5970',null,null,null,null,'JO-001',5);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/05/14','9890',null,null,null,null,'CH-002',1);
+INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2016/06/29','6647',null,null,null,null,'CH-001',5);
 
 GO
 PRINT 'insertion des exigences terminée'
@@ -394,46 +394,13 @@ GO
 PRINT 'insertion des contrats commencée'
 GO
 
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Chicoutimi', null, null, null, null, 3, 22); 
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Jonquière', null, null, null, null, 1, 30);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Chicoutimi', null, null, null, null, 2, 31);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Jonquière', null, null, null, null, 4, 22);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Québec', null, null, null, null, 4, 30);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Québec', null, null, null, null, 2, 34);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 4, 14);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Chicoutimi', null, null, null, null, 2, 30);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Jonquière', null, null, null, null, 6, 24);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 3, 3);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Québec', null, null, null, null, 1, 3);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 5, 7);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Jonquière', null, null, null, null, 6, 10);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 1, 14);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 3, 1);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Chicoutimi', null, null, null, null, 6, 2);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Québec', null, null, null, null, 6, 35);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Jonquière', null, null, null, null, 2, 5);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 3, 28);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Québec', null, null, null, null, 6, 7);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Jonquière', null, null, null, null, 3, 32);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 2, 35);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 4, 6);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Chicoutimi', null, null, null, null, 6, 32);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Jonquière', null, null, null, null, 3, 7);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Québec', null, null, null, '2016/06/13', 5, 5);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Québec', null, null, null, '2016/10/28', 5, 28);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Chicoutimi', null, null, null, null, 1, 28);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Jonquière', null, null, null, '2017/06/03', 5, 24);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 5, 19);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 2, 19);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Jonquière', null, null, null, '2017/04/08', 5, 9);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Québec', null, null, null, null, 3, 23);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Chicoutimi', null, null, null, null, 4, 5);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Jonquière', null, null, null, null, 4, 22);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Jonquière', null, null, null, null, 4, 1);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 4, 34);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Chicoutimi', null, null, null, null, 2, 31);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 4, 1);
-INSERT INTO S_Contrat.tblContrat (lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('Montréal', null, null, null, null, 2, 27);
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('CH-001', 'Chicoutimi', 'Musique d''ouverture des spectacles de la semaine 1', 'L''orchestre du conservatoire pour l''ouverture des show d''humour', null, null, 3, 22); 
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('JO-001', 'Jonquière', 'Musique d''ouverture des spectacles de la semaine 2', 'L''orchestre du conservatoire pour l''ouverture des show d''humour', 'Un des membre devra être absent pour cause de maladie', null, 1, 30);
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('CH-002', 'Chicoutimi', 'Humoriste du matin', 'Martin matte viendra se vanter chez nous', null, null, 2, 31);
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('JO-002', 'Jonquière', 'Humoriste du soir', 'Soirée de rire avec Jean-Michel Anctil', 'Pas oublier d''ajouter les exigences de la semaine prochaine', null, 4, 22);
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('QU-001', 'Québec', 'Animation du midi semaine 1', 'Cracheurs de feu des fous du roi', null, null, 4, 30);
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('QU-002', 'Québec', 'Animation du midi semaine 2', 'L''animation du midi avec clown des fous du roi', null, null, 2, 34);
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('MO-001', 'Montréal', 'Animation du midi semaine 1', null, null, '2016/06/13', 4, 14);
 
 GO
 PRINT 'insertion des contrats terminée'
