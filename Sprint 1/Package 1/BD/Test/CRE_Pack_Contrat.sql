@@ -29,31 +29,30 @@ GO
 
 CREATE TABLE S_Contrat.tblContrat
 (
-	noContrat varchar(50),
+	noContrat varchar(20),
 	lieu text,
 	nom varchar(50),
 	description text,
 	commentaire text,
 	dateSupprime date,
 	noStatut int,
-	noAgence int
+	noAgence varchar(15)
 )
 PRINT 'Création de la table contrat'
 
 GO
 
-CREATE TABLE S_Contrat.tblExigences
+CREATE TABLE S_Contrat.tblExigence
 (
 	noExigence int,
 	nom	varchar(20),
-	statut varchar(50),
 	date date,
 	montant decimal,
 	description text,
 	commentaire text,
 	descriptionCourte varchar(255),
 	dateSupprime date,
-	noContrat int,
+	noContrat varchar(20),
 	noStatut int
 )
 PRINT 'Création de la table des exigences'
@@ -84,7 +83,7 @@ CREATE TABLE S_Contrat.tblEngagement
 	description text,
 	descriptionCourte varchar(255),
 	dateSupprime date,
-	noContrat int
+	noContrat varchar(20)
 )
 PRINT 'Création de la table des engagements'
 
@@ -179,7 +178,7 @@ CREATE TABLE S_Contrat.tblResponsable
 	idem bit,
 	dateSupprime date,
 	noDiffuseur int,
-	noAgence int
+	noAgence varchar(15)
 )
 PRINT 'Création de la table des responsables'
 
@@ -197,7 +196,7 @@ GO
 CREATE TABLE S_Contrat.tblContratArtiste
 (
 	noArtiste int,
-	noContrat int
+	noContrat varchar(20)
 )
 PRINT 'Création de la table d''intersection contrat-artiste'
 
@@ -206,7 +205,7 @@ GO
 CREATE TABLE S_Contrat.tblFichierOfficiel
 (
 	noArtiste int,
-	noContrat int,
+	noContrat varchar(20),
 	idFichier int
 )
 PRINT 'Création de la table d''association artiste-contrat-ficherPersonnel'
@@ -215,7 +214,7 @@ GO
 
 CREATE TABLE S_Contrat.tblCatArtisteArt
 (
-	noCategorie int,
+	noCategorie varchar(50),
 	noArtiste int
 )
 PRINT 'Création de la table d''intersection categorieArtiste-artiste'
