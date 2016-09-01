@@ -1,4 +1,4 @@
---But : Création du Package Contrat et ses table
+--But : Création du Package Contrat et ses tables
 --Date : 29-08-2016
 --Par : Pierre-Alexandre Pageau
 
@@ -44,7 +44,7 @@ GO
 
 CREATE TABLE S_Contrat.tblExigence
 (
-	noExigence int NOT NULL,
+	noExigence int NOT NULL identity(1,1),
 	nom	varchar(20) NOT NULL,
 	date date,
 	montant decimal,
@@ -61,7 +61,7 @@ GO
 
 CREATE TABLE S_Contrat.tblStatut
 (
-	noStatut int NOT NULL,
+	noStatut int NOT NULL identity(1,1),
 	nomStatut varchar(20) NOT NULL,
 	description text,
 	couleur char(6) NOT NULL,
@@ -73,7 +73,7 @@ GO
 
 CREATE TABLE S_Contrat.tblEngagement
 (
-	noEngagement int NOT NULL,
+	noEngagement int NOT NULL identity(1,1),
 	duree varchar(6) NOT NULL,
 	lieu text NOT NULL,
 	date date,
@@ -91,7 +91,7 @@ GO
 
 CREATE TABLE S_Contrat.tblFichierPersonnel
 (
-	noFichier int NOT NULL,
+	noFichier int NOT NULL identity(1,1),
 	type text NOT NULL,
 	chemin text NOT NULL,
 	commentaire text,
@@ -104,7 +104,7 @@ GO
 
 CREATE TABLE S_Contrat.tblArtiste
 (
-	noArtiste int NOT NULL,
+	noArtiste int NOT NULL identity(1,1),
 	nom varchar(50) NOT NULL,
 	commentaire text,
 	dateSupprime date
@@ -115,7 +115,7 @@ GO
 
 CREATE TABLE S_Contrat.tblCategorieArtiste
 (
-	noCategorie int NOT NULL,
+	noCategorie int NOT NULL identity(1,1),
 	nom varchar(20)NOT NULL,
 	description text,
 	dateSupprime date
@@ -138,7 +138,8 @@ GO
 
 CREATE TABLE S_Contrat.tblAdresse
 (
-	noAdresse int NOT NULL,
+	noAdresse int NOT NULL identity(1,1),
+	adresse text NOT NULL,
 	ville varchar(20) NOT NULL,
 	codepostal char(6) NOT NULL,
 	province char(2) NOT NULL,
@@ -154,7 +155,7 @@ GO
 
 CREATE TABLE S_Contrat.tblDiffuseur
 (
-	noDiffuseur int NOT NULL,
+	noDiffuseur int NOT NULL identity(1,1),
 	nom varchar(50) NOT NULL,
 	courriel varchar(255) NOT NULL,
 	dateSupprime date,
@@ -166,7 +167,7 @@ GO
 
 CREATE TABLE S_Contrat.tblResponsable
 (
-	noResponsable int NOT NULL,
+	noResponsable int NOT NULL identity(1,1),
 	nom varchar(20) NOT NULL,
 	prenom varchar(20) NOT NULL,
 	courriel varchar(255) NOT NULL,
@@ -186,7 +187,7 @@ GO
 
 CREATE TABLE S_Contrat.tblRespoContrat
 (
-	noResponsable int NOT NULL,
+	noResponsable int NOT NULL identity(1,1),
 	noContrat varchar(20) NOT NULL
 )
 PRINT'Création de la table d''intersection responsable-contrat'
