@@ -5,7 +5,6 @@
 PRINT 'CREATING DATABASE'
 :r CRE_Pack_Contrat.sql
 :r CTE_Pack_Contrat.sql
-:r INST_Pack_Contrat.sql
 
 PRINT 'DATABASE CREATE IS COMPLETE'
 GO
