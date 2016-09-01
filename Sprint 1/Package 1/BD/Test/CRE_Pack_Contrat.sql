@@ -29,31 +29,30 @@ GO
 
 CREATE TABLE S_Contrat.tblContrat
 (
-	noContrat varchar(50),
+	noContrat varchar(20) NOT NULL,
 	lieu text,
-	nom varchar(50),
+	nom varchar(50) NOT NULL,
 	description text,
 	commentaire text,
 	dateSupprime date,
 	noStatut int,
-	noAgence int
+	noAgence varchar(15)
 )
 PRINT 'Création de la table contrat'
 
 GO
 
-CREATE TABLE S_Contrat.tblExigences
+CREATE TABLE S_Contrat.tblExigence
 (
-	noExigence int,
-	nom	varchar(20),
-	statut varchar(50),
+	noExigence int NOT NULL,
+	nom	varchar(20) NOT NULL,
 	date date,
 	montant decimal,
 	description text,
 	commentaire text,
 	descriptionCourte varchar(255),
 	dateSupprime date,
-	noContrat int,
+	noContrat varchar(20),
 	noStatut int
 )
 PRINT 'Création de la table des exigences'
@@ -62,8 +61,8 @@ GO
 
 CREATE TABLE S_Contrat.tblStatut
 (
-	noStatut int,
-	nomStatut varchar(20),
+	noStatut int NOT NULL,
+	nomStatut varchar(20) NOT NULL,
 	description text,
 	couleur varchar(6),
 	dateSupprime date
@@ -74,17 +73,17 @@ GO
 
 CREATE TABLE S_Contrat.tblEngagement
 (
-	noEngagement int,
-	duree varchar(6),
-	lieu text,
+	noEngagement int NOT NULL,
+	duree varchar(6) NOT NULL,
+	lieu text NOT NULL,
 	date date,
 	heure time,
-	nature varchar(50),
+	nature varchar(50) NOT NULL,
 	commentaire text,
 	description text,
 	descriptionCourte varchar(255),
 	dateSupprime date,
-	noContrat int
+	noContrat varchar(20)
 )
 PRINT 'Création de la table des engagements'
 
@@ -92,9 +91,9 @@ GO
 
 CREATE TABLE S_Contrat.tblFichierPersonnel
 (
-	idFichier int,
-	type text,
-	chemin text,
+	idFichier int NOT NULL,
+	type text NOT NULL,
+	chemin text NOT NULL,
 	commentaire text,
 	dateSupprime date,
 	noArtiste int
@@ -105,8 +104,8 @@ GO
 
 CREATE TABLE S_Contrat.tblArtiste
 (
-	noArtiste int,
-	nom varchar(50),
+	noArtiste int NOT NULL,
+	nom varchar(50) NOT NULL,
 	commentaire text,
 	dateSupprime date
 )
@@ -116,8 +115,8 @@ GO
 
 CREATE TABLE S_Contrat.tblCategorieArtiste
 (
-	noCategorie int,
-	nom varchar(20),
+	noCategorie int NOT NULL,
+	nom varchar(20)NOT NULL,
 	description text,
 	dateSupprime date
 )
@@ -127,8 +126,8 @@ GO
 
 CREATE TABLE S_Contrat.tblAgence
 (
-	noAgence varchar(15),
-	nom varchar(50),
+	noAgence varchar(15) NOT NULL,
+	nom varchar(50) NOT NULL,
 	courriel varchar(255),
 	dateSupprime date,
 	noAdresse int
@@ -139,11 +138,11 @@ GO
 
 CREATE TABLE S_Contrat.tblAdresse
 (
-	noAdresse int,
-	ville varchar(20),
-	codepostal varchar(6),
-	province varchar(2),
-	pays varchar(20),
+	noAdresse int NOT NULL,
+	ville varchar(20) NOT NULL,
+	codepostal varchar(6) NOT NULL,
+	province varchar(2) NOT NULL,
+	pays varchar(20) NOT NULL,
 	telBureau varchar(15),
 	telCellulaire varchar(15),
 	extension varchar(5),
@@ -155,9 +154,9 @@ GO
 
 CREATE TABLE S_Contrat.tblDiffuseur
 (
-	noDiffuseur int,
-	nom varchar(50),
-	courriel varchar(255),
+	noDiffuseur int NOT NULL,
+	nom varchar(50) NOT NULL,
+	courriel varchar(255) NOT NULL,
 	dateSupprime date,
 	noAdresse int
 )
@@ -167,10 +166,10 @@ GO
 
 CREATE TABLE S_Contrat.tblResponsable
 (
-	noResponsable int,
-	nom varchar(20),
-	prenom varchar(20),
-	courriel varchar(255),
+	noResponsable int NOT NULL,
+	nom varchar(20) NOT NULL,
+	prenom varchar(20) NOT NULL,
+	courriel varchar(255) NOT NULL,
 	signataire varchar(70),
 	date date,
 	telBureau varchar(15),
@@ -179,7 +178,7 @@ CREATE TABLE S_Contrat.tblResponsable
 	idem bit,
 	dateSupprime date,
 	noDiffuseur int,
-	noAgence int
+	noAgence varchar(15)
 )
 PRINT 'Création de la table des responsables'
 
@@ -187,8 +186,8 @@ GO
 
 CREATE TABLE S_Contrat.tblRespoContrat
 (
-	noResponsable int,
-	noContrat int
+	noResponsable int NOT NULL,
+	noContrat varchar(20) NOT NULL
 )
 PRINT'Création de la table d''intersection responsable-contrat'
 
@@ -196,8 +195,8 @@ GO
 
 CREATE TABLE S_Contrat.tblContratArtiste
 (
-	noArtiste int,
-	noContrat int
+	noArtiste int NOT NULL,
+	noContrat varchar(20) NOT NULL
 )
 PRINT 'Création de la table d''intersection contrat-artiste'
 
@@ -205,17 +204,17 @@ GO
 
 CREATE TABLE S_Contrat.tblFichierOfficiel
 (
-	noArtiste int,
-	noContrat int,
-	idFichier int
+	noArtiste int NOT NULL,
+	noContrat varchar(20) NOT NULL,
+	idFichier int NOT NULL
 )
 PRINT 'Création de la table d''association artiste-contrat-ficherPersonnel'
 
 GO
 
-CREATE TABLE S_Contrat.CatArtisteArt
+CREATE TABLE S_Contrat.tblCatArtisteArt
 (
-	noCategorie int,
-	noArtiste int
+	noCategorie int NOT NULL,
+	noArtiste int NOT NULL
 )
 PRINT 'Création de la table d''intersection categorieArtiste-artiste'
