@@ -8,192 +8,96 @@ GO
 
 PRINT 'Création des PK et les contraintes NULL des tables du pakages Contrat'
 
- ALTER TABLE S_Contrat.tblStatut
- ALTER Column noStatut  Int NOT NULL
- ALTER TABLE S_Contrat.tblStatut
- ALTER Column nomStatut  varchar(20) NOT NULL
- GO
  ALTER TABLE S_Contrat.tblStatut ADD
  CONSTRAINT Sta_PK
  PRIMARY Key(noStatut) 
- PRINT 'FIN des contraintes PK et NULL de la table tblStatut'
+ PRINT 'FIN des contraintes PK de la table tblStatut'
  GO	
 
- ALTER TABLE S_Contrat.tblAgence
- ALTER Column noAgence  varchar(15) NOT NULL
- ALTER TABLE S_Contrat.tblAgence
- ALTER Column nom  varchar(50) NOT NULL
- GO
  ALTER TABLE S_Contrat.tblAgence ADD
  CONSTRAINT AGE_PK
  PRIMARY Key(noAgence)
- PRINT 'FIN des contraintes PK et NULL de la table tblAgence'
+ PRINT 'FIN des contraintes PK de la table tblAgence'
  GO
 
- ALTER TABLE S_Contrat.tblContrat
- ALTER Column noContrat  varchar(20) NOT NULL
- ALTER TABLE S_Contrat.tblContrat
- ALTER Column nom  varchar(20) NOT NULL
- GO
  ALTER TABLE S_Contrat.tblContrat ADD
  CONSTRAINT CON_PK
  PRIMARY Key(noContrat) 
- PRINT 'FIN des contraintes PK et NULL de la table tblContrat'
+ PRINT 'FIN des contraintes PK de la table tblContrat'
  GO
 
- ALTER TABLE S_Contrat.tblExigence
- ALTER Column noExigence INT NOT NULL
- ALTER TABLE S_Contrat.tblExigence
- ALTER Column nom  varchar(20) NOT NULL
-GO
  ALTER TABLE S_Contrat.tblExigence ADD
  CONSTRAINT EXI_PK
  PRIMARY Key(noExigence) 
- PRINT 'FIN des contraintes PK et NULL de la table tblExigence'
+ PRINT 'FIN des contraintes PK de la table tblExigence'
  GO
 
- ALTER TABLE S_Contrat.tblEngagement
- ALTER Column noEngagement INT NOT NULL
- ALTER TABLE S_Contrat.tblEngagement
- ALTER Column nature  varchar(50) NOT NULL
- ALTER TABLE S_Contrat.tblEngagement
- ALTER Column duree  varchar(6) NOT NULL
- ALTER TABLE S_Contrat.tblEngagement
- ALTER Column lieu  Text NOT NULL
-GO
  ALTER TABLE S_Contrat.tblEngagement ADD
  CONSTRAINT ENG_PK
  PRIMARY Key(noEngagement) 
- PRINT 'FIN des contraintes PK et NULL de la table tblEngagement'
+ PRINT 'FIN des contraintes PK de la table tblEngagement'
  GO
 
- ALTER TABLE S_Contrat.tblArtiste
- ALTER Column noArtiste INT NOT NULL
- ALTER TABLE S_Contrat.tblArtiste
- ALTER Column nom  varchar(50) NOT NULL
-GO
  ALTER TABLE S_Contrat.tblArtiste ADD
  CONSTRAINT ART_PK
  PRIMARY Key(noArtiste) 
- PRINT 'FIN des contraintes PK et NULL de la table tblArtiste'
+ PRINT 'FIN des contraintes PK de la table tblArtiste'
  GO
 
- ALTER TABLE S_Contrat.tblFichierPersonnel
- ALTER Column idFichier INT NOT NULL
- ALTER TABLE S_Contrat.tblFichierPersonnel
- ALTER Column chemin  TEXT NOT NULL
- ALTER TABLE S_Contrat.tblFichierPersonnel
- ALTER Column type  TEXT NOT NULL
-GO
  ALTER TABLE S_Contrat.tblFichierPersonnel ADD
  CONSTRAINT FIC_PK
- PRIMARY Key(idFichier) 
- PRINT 'FIN des contraintes PK et NULL de la table tblFichierPersonnel'
+ PRIMARY Key(noFichier) 
+ PRINT 'FIN des contraintes PK de la table tblFichierPersonnel'
  GO
 
- ALTER TABLE S_Contrat.tblCategorieArtiste
- ALTER Column noCategorie INT NOT NULL
- ALTER TABLE S_Contrat.tblCategorieArtiste
- ALTER Column nom  VARCHAR(20) NOT NULL
-
-GO
  ALTER TABLE S_Contrat.tblCategorieArtiste ADD
  CONSTRAINT CAT_PK
  PRIMARY Key(noCategorie) 
- PRINT 'FIN des contraintes PK et NULL de la table tblCategorieArtiste'
+ PRINT 'FIN des contraintes PK de la table tblCategorieArtiste'
  GO
 
- ALTER TABLE S_Contrat.tblAdresse
- ALTER Column noAdresse INT NOT NULL
- ALTER TABLE S_Contrat.tblAdresse
- ALTER Column ville  VARCHAR(20) NOT NULL
- ALTER TABLE S_Contrat.tblAdresse
- ALTER Column province  VARCHAR(2) NOT NULL
- ALTER TABLE S_Contrat.tblAdresse
- ALTER Column pays  VARCHAR(20) NOT NULL
- ALTER TABLE S_Contrat.tblAdresse
- ALTER Column codePostal  VARCHAR(6) NOT NULL
-GO
  ALTER TABLE S_Contrat.tblAdresse ADD
  CONSTRAINT ADR_PK
  PRIMARY Key(noAdresse) 
- PRINT 'FIN des contraintes PK et NULL de la table tblAdresse'
+ PRINT 'FIN des contraintes PK de la table tblAdresse'
  GO
 
- ALTER TABLE S_Contrat.tblDiffuseur
- ALTER Column noDiffuseur INT NOT NULL
- ALTER TABLE S_Contrat.tblDiffuseur
- ALTER Column nom  VARCHAR(50) NOT NULL
- ALTER TABLE S_Contrat.tblDiffuseur
- ALTER Column courriel  VARCHAR(255) NOT NULL
- GO
  ALTER TABLE S_Contrat.tblDiffuseur ADD
  CONSTRAINT DIF_PK
  PRIMARY Key(noDiffuseur) 
- PRINT 'FIN des contraintes PK et NULL de la table tblDiffuseur'
+ PRINT 'FIN des contraintes PK  de la table tblDiffuseur'
  GO
 
- ALTER TABLE S_Contrat.tblResponsable
- ALTER Column noResponsable INT NOT NULL
- ALTER TABLE S_Contrat.tblResponsable
- ALTER Column nom  VARCHAR(20) NOT NULL
- ALTER TABLE S_Contrat.tblResponsable
- ALTER Column prenom  VARCHAR(20) NOT NULL
- ALTER TABLE S_Contrat.tblResponsable
- ALTER Column courriel  VARCHAR(255) NOT NULL
- GO
  ALTER TABLE S_Contrat.tblResponsable ADD
  CONSTRAINT RES_PK
  PRIMARY Key(noResponsable) 
- PRINT 'FIN des contraintes PK et NULL de la table tblResponsable'
+ PRINT 'FIN des contraintes PK de la table tblResponsable'
  GO
 
- ALTER TABLE S_Contrat.tblRespoContrat
- ALTER Column noResponsable INT NOT NULL
- ALTER TABLE S_Contrat.tblRespoContrat
- ALTER Column noContrat  varchar(20) NOT NULL
- GO
  ALTER TABLE S_Contrat.tblRespoContrat ADD
  CONSTRAINT RESCON_PK
  PRIMARY Key(noResponsable,noContrat) 
- PRINT 'FIN des contraintes PK et NULL de la table tblRespoContrat'
+ PRINT 'FIN des contraintes PK  de la table tblRespoContrat'
  GO
 
- ALTER TABLE S_Contrat.tblFichierOfficiel
- ALTER Column noContrat varchar(20) NOT NULL
- ALTER TABLE S_Contrat.tblFichierOfficiel
- ALTER Column idFichier INT NOT NULL
- ALTER TABLE S_Contrat.tblFichierOfficiel
- ALTER Column noArtiste INT NOT NULL
- GO
  ALTER TABLE S_Contrat.tblFichierOfficiel ADD
  CONSTRAINT FICOFFI_PK
  PRIMARY Key(noContrat,idFichier,noArtiste) 
- PRINT 'FIN des contraintes PK et NULL de la table tblFichierOfficiel'
+ PRINT 'FIN des contraintes PK de la table tblFichierOfficiel'
  GO
 
- ALTER TABLE S_Contrat.tblContratArtiste
- ALTER Column noContrat varchar(20) NOT NULL
- ALTER TABLE S_Contrat.tblContratArtiste
- ALTER Column noArtiste INT NOT NULL
- GO
  ALTER TABLE S_Contrat.tblContratArtiste ADD
  CONSTRAINT CONART_PK
  PRIMARY Key(noContrat,noArtiste) 
- PRINT 'FIN des contraintes PK et NULL de la table tblContratArtiste'
+ PRINT 'FIN des contraintes PK de la table tblContratArtiste'
  GO
 
- ALTER TABLE S_Contrat.tblCatArtisteArt
- ALTER Column noCategorie INT NOT NULL
- ALTER TABLE S_Contrat.tblCatArtisteArt
- ALTER Column noArtiste INT NOT NULL
- GO
  ALTER TABLE S_Contrat.tblCatArtisteArt ADD
  CONSTRAINT CATART_PK
  PRIMARY Key(noCategorie,noArtiste) 
- PRINT 'FIN des contraintes PK et NULL de la table tblCatArtisteArt'
+ PRINT 'FIN des contraintes PK  de la table tblCatArtisteArt'
  GO
- PRINT 'FIN  de création des contraintes PK et NULL des tables du pakage Contrat'
+ PRINT 'FIN  de création des contraintes PK des tables du pakage Contrat'
 
  GO
  PRINT 'Création des contraintes FK des tables du pakage Contrat'
@@ -316,6 +220,19 @@ GO
  PRINT 'Fin de création des contraintes FK de la table tblExigence'
  GO
   PRINT 'Fin de création des contraintes FK des tables du package Contrat'
+
+  PRINT 'Création des contraintes CHECK des tables du package Contrat'
+
+  ALTER TABLE S_Contrat.tblDiffuseur ADD
+  CONSTRAINT CHE_COUR_DIFF CHECK(courriel like '\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b')
+
+  ALTER TABLE S_Contrat.tblAdresse ADD
+  CONSTRAINT CHE_COUR_DIFF CHECK(province like '[A-Z]^2')
+  ALTER TABLE S_Contrat.tblAdresse ADD
+  CONSTRAINT CHE_TELB_DIFF CHECK(telBureau like '[0-9]{10}')
+  ALTER TABLE S_Contrat.tblAdresse ADD
+  CONSTRAINT CHE_TELC_DIFF CHECK(telCellulaire like '[0-9]{10}')
+
 
 
 
