@@ -156,45 +156,45 @@ GO
 PRINT 'insertion des Agences débutée'
 GO
 
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Voonyx', 'valvarez0@umn.edu', null, 1);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Rhyloo', 'bpierce1@drupal.org', '2016/02/13', 2);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Chatterbridge', 'rburns2@yelp.com', null, 3);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Oyonder', 'eallen3@comcast.net', null, 4);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Einti', 'kwright4@themeforest.net', null, 5);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Twimbo', 'rrichardson5@GOo.gl', null, 17);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Browsezoom', 'wking6@bloglovin.com', null, 6);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Gigabox', 'pwheeler7@paginegialle.it', null, 7);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Aivee', 'cstewart8@umich.edu', null, 8);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Brainverse', 'agray9@accuweather.com', null, 10);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Gabcube', 'rmatthewsa@upenn.edu', null, 11);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Teklist', 'rbellb@live.com', null, 12);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Twinte', 'rmedinac@netscape.com', null, 13);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Demizz', 'thansend@friendfeed.com', null, 14);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Linktype', 'mrobinsone@cdbaby.com', '2016/04/14', 15);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Shufflebeat', 'vmartinezf@yellowbook.com', null, 16);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Twinder', 'mramirezg@networksolutions.com', null, 21);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Yamia', 'kfranklinh@networkadvertising.org', null, 22);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Fivebridge', 'bbradleyi@shinystat.com', null, 23);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Youopia', 'cmorrisonj@blinklist.com', null, 24);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Yakijo', 'cclarkk@mediafire.com', null, 25);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Browsezoom', 'ecollinsl@is.gd', null, 26);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Podcat', 'pphillipsm@hc360.com', null, 27);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Eadel', 'jmasonn@dmoz.org', null, 28);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Eimbee', 'mnicholso@newsvine.com', null, 29);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Skippad', 'dcruzp@nasa.GOv', null, 17);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Photobug', 'lrileyq@howstuffworks.com', null, 18);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Topicstorm', 'pdeanr@bloglines.com', null, 19);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Photobug', 'jburtons@posterous.com', null, 20);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Topdrive', 'dwhitet@GOo.ne.jp', null, 30);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Yodoo', 'stayloru@epa.GOv', null, 31);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Oyoyo', 'jdeanv@mediafire.com', '2013/11/13', 32);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Linktype', 'bbradleyw@hud.GOv', null, 33);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Dabvine', 'jpetersonx@tamu.edu', null, 34);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Fivebridge', 'kclarky@lycos.com', null, 35);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Realcube', 'dwallacez@bloglines.com', null, 36);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Blogtag', 'kbrown10@blogger.com', null, 37);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Thoughtbridge', 'aburke11@psu.edu', '2016/02/13', 9);
-INSERT INTO S_Contrat.tblAgence (nom, courriel, dateSupprime, noAdresse) VALUES ('Camido', 'jwoods12@hud.GOv', null, 38);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Voonyx27','Voonyx', 'valvarez0@umn.edu', null, 1);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Rhyloo01','Rhyloo', 'bpierce1@drupal.org', '2016/02/13', 2);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('chatter91','Chatterbridge', 'rburns2@yelp.com', null, 3);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Oyonde43','Oyonder', 'eallen3@comcast.net', null, 4);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Einti12','Einti', 'kwright4@themeforest.net', null, 5);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Twimbo98','Twimbo', 'rrichardson5@GOo.gl', null, 17);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Browsez41','Browsezoom', 'wking6@bloglovin.com', null, 6);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Gigabo54','Gigabox', 'pwheeler7@paginegialle.it', null, 7);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Aiveez13','Aivee', 'cstewart8@umich.edu', null, 8);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Brainv53','Brainverse', 'agray9@accuweather.com', null, 10);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Gabcub90','Gabcube', 'rmatthewsa@upenn.edu', null, 11);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Teklis84','Teklist', 'rbellb@live.com', null, 12);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Twinte00','Twinte', 'rmedinac@netscape.com', null, 13);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Demizz23','Demizz', 'thansend@friendfeed.com', null, 14);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Linkty46','Linktype', 'mrobinsone@cdbaby.com', '2016/04/14', 15);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Shuffle85','Shufflebeat', 'vmartinezf@yellowbook.com', null, 16);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Twinder06','Twinder', 'mramirezg@networksolutions.com', null, 21);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Yamiaz61','Yamia', 'kfranklinh@networkadvertising.org', null, 22);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Fiveb86','Fivebridge', 'bbradleyi@shinystat.com', null, 23);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Youopi50','Youopia', 'cmorrisonj@blinklist.com', null, 24);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Yakijo34','Yakijo', 'cclarkk@mediafire.com', null, 25);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Browsez00','Browsezoom', 'ecollinsl@is.gd', null, 26);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Podcat78','Podcat', 'pphillipsm@hc360.com', null, 27);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Eadelp75','Eadel', 'jmasonn@dmoz.org', null, 28);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Eimbee13','Eimbee', 'mnicholso@newsvine.com', null, 29);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Skippa01','Skippad', 'dcruzp@nasa.GOv', null, 17);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Photob34','Photobug', 'lrileyq@howstuffworks.com', null, 18);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Topics81','Topicstorm', 'pdeanr@bloglines.com', null, 19);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Photob11','Photobug', 'jburtons@posterous.com', null, 20);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Topdri28','Topdrive', 'dwhitet@GOo.ne.jp', null, 30);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Yodooz94','Yodoo', 'stayloru@epa.GOv', null, 31);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Oyoyoz39','Oyoyo', 'jdeanv@mediafire.com', '2013/11/13', 32);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Linkty09','Linktype', 'bbradleyw@hud.GOv', null, 33);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Dabvin64','Dabvine', 'jpetersonx@tamu.edu', null, 34);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Fivebr56','Fivebridge', 'kclarky@lycos.com', null, 35);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Realcu06','Realcube', 'dwallacez@bloglines.com', null, 36);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Blogta01','Blogtag', 'kbrown10@blogger.com', null, 37);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Though77','Thoughtbridge', 'aburke11@psu.edu', '2016/02/13', 9);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Camido97','Camido', 'jwoods12@hud.GOv', null, 38);
 GO
 PRINT 'insertion des agences réussi'
 GO
@@ -394,13 +394,13 @@ GO
 PRINT 'insertion des contrats commencée'
 GO
 
-INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('CH-001', 'Chicoutimi', 'Musique d''ouverture des spectacles de la semaine 1', 'L''orchestre du conservatoire pour l''ouverture des show d''humour', null, null, 3, 22); 
-INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('JO-001', 'Jonquière', 'Musique d''ouverture des spectacles de la semaine 2', 'L''orchestre du conservatoire pour l''ouverture des show d''humour', 'Un des membre devra être absent pour cause de maladie', null, 1, 30);
-INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('CH-002', 'Chicoutimi', 'Humoriste du matin', 'Martin matte viendra se vanter chez nous', null, null, 2, 31);
-INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('JO-002', 'Jonquière', 'Humoriste du soir', 'Soirée de rire avec Jean-Michel Anctil', 'Pas oublier d''ajouter les exigences de la semaine prochaine', null, 4, 22);
-INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('QU-001', 'Québec', 'Animation du midi semaine 1', 'Cracheurs de feu des fous du roi', null, null, 4, 30);
-INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('QU-002', 'Québec', 'Animation du midi semaine 2', 'L''animation du midi avec clown des fous du roi', null, null, 2, 34);
-INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('MO-001', 'Montréal', 'Animation du midi semaine 1', null, null, '2016/06/13', 4, 14);
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('CH-001', 'Chicoutimi', 'Musique d''ouverture des spectacles de la semaine 1', 'L''orchestre du conservatoire pour l''ouverture des show d''humour', null, null, 3, 'Yakijo34'); 
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('JO-001', 'Jonquière', 'Musique d''ouverture des spectacles de la semaine 2', 'L''orchestre du conservatoire pour l''ouverture des show d''humour', 'Un des membre devra être absent pour cause de maladie', null, 1, 'Rhyloo01');
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('CH-002', 'Chicoutimi', 'Humoriste du matin', 'Martin matte viendra se vanter chez nous', null, null, 2, 'Twinte00');
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('JO-002', 'Jonquière', 'Humoriste du soir', 'Soirée de rire avec Jean-Michel Anctil', 'Pas oublier d''ajouter les exigences de la semaine prochaine', null, 4, 'Twinder06');
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('QU-001', 'Québec', 'Animation du midi semaine 1', 'Cracheurs de feu des fous du roi', null, null, 4, 'Voonyx27');
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('QU-002', 'Québec', 'Animation du midi semaine 2', 'L''animation du midi avec clown des fous du roi', null, null, 2, 'Twimbo98');
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('MO-001', 'Montréal', 'Animation du midi semaine 1', null, null, '2016/06/13', 4, 'Yakijo34');
 
 GO
 PRINT 'insertion des contrats terminée'
