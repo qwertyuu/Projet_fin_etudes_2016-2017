@@ -130,7 +130,6 @@ CREATE TABLE S_Contrat.tblAgence
 	nom varchar(50) NOT NULL,
 	courriel varchar(255) NOT NULL,
 	dateSupprime date,
-	noAdresse int NOT NULL
 )
 PRINT 'Création de la table agence'
 
@@ -159,7 +158,6 @@ CREATE TABLE S_Contrat.tblDiffuseur
 	nom varchar(50) NOT NULL,
 	courriel varchar(255) NOT NULL,
 	dateSupprime date,
-	noAdresse int NOT NULL
 )
 PRINT 'Création de la table des diffuseurs'
 
@@ -178,8 +176,8 @@ CREATE TABLE S_Contrat.tblResponsable
 	extension varchar(5),
 	idem bit NOT NULL,
 	dateSupprime date,
-	noDiffuseur int NOT NULL,
-	noAgence varchar(15) NOT NULL
+	noDiffuseur int  NULL,
+	noAgence varchar(15) NULL
 )
 PRINT 'Création de la table des responsables'
 
@@ -215,7 +213,7 @@ GO
 
 CREATE TABLE S_Contrat.tblCatArtisteArt
 (
-	noCategorie varchar(50) NOT NULL,
+	noCategorie int NOT NULL,
 	noArtiste int NOT NULL
 )
 PRINT 'Création de la table d''intersection categorieArtiste-artiste'

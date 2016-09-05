@@ -82,7 +82,7 @@ PRINT 'Création des PK et les contraintes NULL des tables du pakages Contrat'
 
  ALTER TABLE S_Contrat.tblFichierOfficiel ADD
  CONSTRAINT FICOFFI_PK
- PRIMARY Key(noContrat,idFichier,noArtiste) 
+ PRIMARY Key(noContrat,noFichier,noArtiste) 
  PRINT 'FIN des contraintes PK de la table tblFichierOfficiel'
  GO
 
@@ -103,12 +103,6 @@ PRINT 'Création des PK et les contraintes NULL des tables du pakages Contrat'
  PRINT 'Création des contraintes FK des tables du pakage Contrat'
  GO
 
- ALTER TABLE S_Contrat.tblDiffuseur ADD
- CONSTRAINT DIF_RES_FK
- FOREIGN Key(noAdresse) 
- References S_Contrat.tblAdresse(noAdresse)
- PRINT 'Fin de création des contraintes FK de la table tblDiffuseur'
- GO
 
  ALTER TABLE S_Contrat.tblResponsable ADD
  CONSTRAINT RES_DIF_FK
@@ -120,13 +114,6 @@ PRINT 'Création des PK et les contraintes NULL des tables du pakages Contrat'
  FOREIGN Key(noAgence) 
  References S_Contrat.tblAgence(noAgence)
  PRINT 'Fin de création des contraintes FK de la table tblResponsable'
- GO
-
- ALTER TABLE S_Contrat.tblAgence ADD
- CONSTRAINT AGE_ADR_FK
- FOREIGN Key(noAdresse) 
- References S_Contrat.tblAdresse(noAdresse)
- PRINT 'Fin de création des contraintes FK de la table tblAgence'
  GO
 
  ALTER TABLE S_Contrat.tblCatArtisteArt ADD
@@ -186,8 +173,8 @@ PRINT 'Création des PK et les contraintes NULL des tables du pakages Contrat'
 
  ALTER TABLE S_Contrat.tblFichierOfficiel ADD
  CONSTRAINT FICOFF_FICPER_FK
- FOREIGN Key(idFichier) 
- References S_Contrat.tblFichierPersonnel(idFichier)
+ FOREIGN Key(noFichier) 
+ References S_Contrat.tblFichierPersonnel(noFichier)
  GO
  ALTER TABLE S_Contrat.tblFichierOfficiel ADD
  CONSTRAINT FICOFF_ART_FK
@@ -221,22 +208,57 @@ PRINT 'Création des PK et les contraintes NULL des tables du pakages Contrat'
  GO
   PRINT 'Fin de création des contraintes FK des tables du package Contrat'
 
-  PRINT 'Création des contraintes CHECK des tables du package Contrat'
+    PRINT 'Création des contraintes CHECK des tables du package Contrat'
 
+PRINT 'Création des contraintes CHECK de la table tblResponsable'
+GO
+ALTER TABLE S_Contrat.tblResponsable
+ADD CONSTRAINT CHE_DIF_AGE_NUL_RES
+CHECK (
+(CASE WHEN noDiffuseur IS NOT NULL THEN 1 ELSE 0 END
+    + CASE WHEN noAgence IS NOT NULL THEN 1 ELSE 0 END)
+    = 1
+)
+GO
+  ALTER TABLE S_Contrat.tblResponsable ADD
+  CONSTRAINT CHE_TEL_LONG_NUM_RES CHECK(isnumeric(telBureau)=1 and len(telBureau)=10)
+GO
+  ALTER TABLE S_Contrat.tblResponsable ADD
+  CONSTRAINT CHE_CEL_LONG_NUM_RES_RES  CHECK(isnumeric(telCellulaire)=1 and len(telCellulaire)=10)
+GO
+  ALTER TABLE S_Contrat.tblResponsable ADD
+  CONSTRAINT CHE_COUR_FORM_RES CHECK(courriel like '%_@__%.__%')
+PRINT 'Fin création des contraintes CHECK de table tblResponsable'
+GO
+
+PRINT 'Création des contraintes CHECK de table tblAdresse'
+GO
+  ALTER TABLE S_Contrat.tblAdresse ADD
+  CONSTRAINT CHE_TEL_LONG_NUM_ADR CHECK(isnumeric(telBureau)=1 and len(telBureau)=10)
+GO
+  ALTER TABLE S_Contrat.tblAdresse ADD
+  CONSTRAINT CHE_CEL_LONG_NUM_RES_ADR   CHECK(isnumeric(telCellulaire)=1 and len(telCellulaire)=10)
+GO
+  ALTER TABLE S_Contrat.tblAdresse ADD
+  CONSTRAINT CHE_PRO_LON_MAJ_ADR CHECK(len(province)=2 and isnumeric(province)=0 ) 
+GO
+GO
+  ALTER TABLE S_Contrat.tblAdresse ADD
+  CONSTRAINT CHE_COD_LON_ADR CHECK(len(codepostal)=6) 
+PRINT 'Fin de création des contraintes CHECK de table tblAdresse'
+GO
+
+PRINT 'Création des contraintes CHECK de table tblAgence'
+  ALTER TABLE S_Contrat.tblAgence ADD
+  CONSTRAINT CHE_COUR_FORM_AGE CHECK(courriel like '%_@__%.__%')
+PRINT 'Fin de création des contraintes CHECK de table tblAgence'
+GO
+
+PRINT 'Création des contraintes CHECK de table tblDiffuseur'
   ALTER TABLE S_Contrat.tblDiffuseur ADD
-  CONSTRAINT CHE_COUR_DIFF CHECK(courriel like '\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b')
-
-  ALTER TABLE S_Contrat.tblAdresse ADD
-  CONSTRAINT CHE_COUR_DIFF CHECK(province like '[A-Z]^2')
-  ALTER TABLE S_Contrat.tblAdresse ADD
-  CONSTRAINT CHE_TELB_DIFF CHECK(telBureau like '[0-9]{10}')
-  ALTER TABLE S_Contrat.tblAdresse ADD
-  CONSTRAINT CHE_TELC_DIFF CHECK(telCellulaire like '[0-9]{10}')
-
-
-
-
-
+  CONSTRAINT CHE_COUR_FORM_DIF CHECK(courriel like '%_@__%.__%')
+PRINT 'Fin de création des contraintes CHECK de table tblDiffuseur'
+GO
 
  
 
