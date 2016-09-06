@@ -1,4 +1,4 @@
---But : Création du Package Contrat et ses table
+--But : Création du Package Contrat et ses tables
 --Date : 29-08-2016
 --Par : Pierre-Alexandre Pageau
 
@@ -34,9 +34,9 @@ CREATE TABLE S_Contrat.tblContrat
 	nom varchar(50) NOT NULL,
 	description text,
 	commentaire text,
-	dateSupprime date,
-	noStatut int,
-	noAgence varchar(15)
+	dateSupprime datetime,
+	noStatut int NOT NULL,
+	noAgence varchar(15) NOT NULL
 )
 PRINT 'Création de la table contrat'
 
@@ -44,16 +44,16 @@ GO
 
 CREATE TABLE S_Contrat.tblExigence
 (
-	noExigence int NOT NULL,
-	nom	varchar(20) NOT NULL,
+	noExigence int NOT NULL identity(1,1),
+	nom	varchar(30) NOT NULL,
 	date date,
 	montant decimal,
 	description text,
 	commentaire text,
 	descriptionCourte varchar(255),
-	dateSupprime date,
-	noContrat varchar(20),
-	noStatut int
+	dateSupprime datetime,
+	noContrat varchar(20) NOT NULL,
+	noStatut int NOT NULL
 )
 PRINT 'Création de la table des exigences'
 
@@ -61,11 +61,11 @@ GO
 
 CREATE TABLE S_Contrat.tblStatut
 (
-	noStatut int NOT NULL,
+	noStatut int NOT NULL identity(1,1),
 	nomStatut varchar(20) NOT NULL,
 	description text,
-	couleur varchar(6),
-	dateSupprime date
+	couleur char(6) NOT NULL,
+	dateSupprime datetime
 )
 PRINT 'Création de la table statut'
 
@@ -73,7 +73,7 @@ GO
 
 CREATE TABLE S_Contrat.tblEngagement
 (
-	noEngagement int NOT NULL,
+	noEngagement int NOT NULL identity(1,1),
 	duree varchar(6) NOT NULL,
 	lieu text NOT NULL,
 	date date,
@@ -82,8 +82,8 @@ CREATE TABLE S_Contrat.tblEngagement
 	commentaire text,
 	description text,
 	descriptionCourte varchar(255),
-	dateSupprime date,
-	noContrat varchar(20)
+	dateSupprime datetime,
+	noContrat varchar(20) NOT NULL
 )
 PRINT 'Création de la table des engagements'
 
@@ -91,12 +91,12 @@ GO
 
 CREATE TABLE S_Contrat.tblFichierPersonnel
 (
-	idFichier int NOT NULL,
+	noFichier int NOT NULL identity(1,1),
 	type text NOT NULL,
 	chemin text NOT NULL,
 	commentaire text,
-	dateSupprime date,
-	noArtiste int
+	dateSupprime datetime,
+	noArtiste int NOT NULL
 )
 PRINT 'Création de la table des fichiers personnel'
 
@@ -104,10 +104,10 @@ GO
 
 CREATE TABLE S_Contrat.tblArtiste
 (
-	noArtiste int NOT NULL,
+	noArtiste int NOT NULL identity(1,1),
 	nom varchar(50) NOT NULL,
 	commentaire text,
-	dateSupprime date
+	dateSupprime datetime
 )
 PRINT 'Création de la table des artiste'
 
@@ -115,10 +115,10 @@ GO
 
 CREATE TABLE S_Contrat.tblCategorieArtiste
 (
-	noCategorie int NOT NULL,
+	noCategorie int NOT NULL identity(1,1),
 	nom varchar(20)NOT NULL,
 	description text,
-	dateSupprime date
+	dateSupprime datetime
 )
 PRINT 'Création de la table des catégories d''artiste'
 
@@ -128,9 +128,9 @@ CREATE TABLE S_Contrat.tblAgence
 (
 	noAgence varchar(15) NOT NULL,
 	nom varchar(50) NOT NULL,
-	courriel varchar(255),
-	dateSupprime date,
-	noAdresse int
+	courriel varchar(255) NOT NULL,
+	dateSupprime datetime,
+	noAdresse int NOT NULL
 )
 PRINT 'Création de la table agence'
 
@@ -138,15 +138,16 @@ GO
 
 CREATE TABLE S_Contrat.tblAdresse
 (
-	noAdresse int NOT NULL,
-	ville varchar(20) NOT NULL,
-	codepostal varchar(6) NOT NULL,
-	province varchar(2) NOT NULL,
+	noAdresse int NOT NULL identity(1,1),
+	adresse text NULL,
+	ville varchar(30) NOT NULL,
+	codepostal char(6) NOT NULL,
+	province char(2) NOT NULL,
 	pays varchar(20) NOT NULL,
-	telBureau varchar(15),
-	telCellulaire varchar(15),
+	telBureau char(10),
+	telCellulaire char(10),
 	extension varchar(5),
-	dateSupprime date
+	dateSupprime datetime
 )
 PRINT 'Création de la table adresse'
 
@@ -154,11 +155,11 @@ GO
 
 CREATE TABLE S_Contrat.tblDiffuseur
 (
-	noDiffuseur int NOT NULL,
+	noDiffuseur int NOT NULL identity(1,1),
 	nom varchar(50) NOT NULL,
 	courriel varchar(255) NOT NULL,
-	dateSupprime date,
-	noAdresse int
+	dateSupprime datetime,
+	noAdresse int NOT NULL
 )
 PRINT 'Création de la table des diffuseurs'
 
@@ -166,19 +167,19 @@ GO
 
 CREATE TABLE S_Contrat.tblResponsable
 (
-	noResponsable int NOT NULL,
+	noResponsable int NOT NULL identity(1,1),
 	nom varchar(20) NOT NULL,
 	prenom varchar(20) NOT NULL,
 	courriel varchar(255) NOT NULL,
 	signataire varchar(70),
-	date date,
-	telBureau varchar(15),
-	telCellulaire varchar(15),
+	dateSignature date,
+	telBureau char(10),
+	telCellulaire char(10),
 	extension varchar(5),
-	idem bit,
-	dateSupprime date,
-	noDiffuseur int,
-	noAgence varchar(15)
+	idem bit NOT NULL,
+	dateSupprime datetime,
+	noDiffuseur int  NULL,
+	noAgence varchar(15) NULL
 )
 PRINT 'Création de la table des responsables'
 
@@ -206,7 +207,7 @@ CREATE TABLE S_Contrat.tblFichierOfficiel
 (
 	noArtiste int NOT NULL,
 	noContrat varchar(20) NOT NULL,
-	idFichier int NOT NULL
+	noFichier int NOT NULL
 )
 PRINT 'Création de la table d''association artiste-contrat-ficherPersonnel'
 
