@@ -175,7 +175,7 @@
             this.groupBox1.Size = new System.Drawing.Size(601, 193);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Agence";
+            this.groupBox1.Text = "Responsable de l\'agence";
             // 
             // label6
             // 
@@ -560,7 +560,7 @@
             this.groupBox2.Size = new System.Drawing.Size(588, 193);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Diffuseur";
+            this.groupBox2.Text = "Responsable du diffuseur";
             // 
             // label23
             // 
@@ -1183,6 +1183,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DetailContrat";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Détail du contrat";
             this.Load += new System.EventHandler(this.AjoutContrat_Load);
             this.groupBox1.ResumeLayout(false);

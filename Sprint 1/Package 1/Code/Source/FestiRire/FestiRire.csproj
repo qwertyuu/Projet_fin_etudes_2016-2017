@@ -75,7 +75,13 @@
     <Compile Include="Vue\Details\DetailStatut.Designer.cs">
       <DependentUpon>DetailStatut.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vue\Sommaires\SommaireCategoriesArtiste.cs">
+    <Compile Include="Sommaires\SommaireAgence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sommaires\SommaireAgence.Designer.cs">
+      <DependentUpon>SommaireAgence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sommaires\SommaireCategoriesArtiste.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vue\Sommaires\SommaireCategoriesArtiste.Designer.cs">
@@ -117,7 +123,10 @@
     <EmbeddedResource Include="Vue\Details\DetailStatut.resx">
       <DependentUpon>DetailStatut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vue\Sommaires\SommaireCategoriesArtiste.resx">
+    <EmbeddedResource Include="Sommaires\SommaireAgence.resx">
+      <DependentUpon>SommaireAgence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sommaires\SommaireCategoriesArtiste.resx">
       <DependentUpon>SommaireCategoriesArtiste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vue\Details\DetailCategorieArtiste.resx">
