@@ -130,6 +130,7 @@ CREATE TABLE S_Contrat.tblAgence
 	nom varchar(50) NOT NULL,
 	courriel varchar(255) NOT NULL,
 	dateSupprime date,
+	noAdresse int NOT NULL
 )
 PRINT 'Création de la table agence'
 
@@ -138,8 +139,8 @@ GO
 CREATE TABLE S_Contrat.tblAdresse
 (
 	noAdresse int NOT NULL identity(1,1),
-	adresse text NOT NULL,
-	ville varchar(20) NOT NULL,
+	adresse text NULL,
+	ville varchar(30) NOT NULL,
 	codepostal char(6) NOT NULL,
 	province char(2) NOT NULL,
 	pays varchar(20) NOT NULL,
@@ -158,6 +159,7 @@ CREATE TABLE S_Contrat.tblDiffuseur
 	nom varchar(50) NOT NULL,
 	courriel varchar(255) NOT NULL,
 	dateSupprime date,
+	noAdresse int NOT NULL
 )
 PRINT 'Création de la table des diffuseurs'
 
@@ -185,7 +187,7 @@ GO
 
 CREATE TABLE S_Contrat.tblRespoContrat
 (
-	noResponsable int NOT NULL identity(1,1),
+	noResponsable int NOT NULL,
 	noContrat varchar(20) NOT NULL
 )
 PRINT'Création de la table d''intersection responsable-contrat'
