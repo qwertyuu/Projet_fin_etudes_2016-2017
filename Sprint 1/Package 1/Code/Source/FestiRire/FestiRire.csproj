@@ -75,13 +75,13 @@
     <Compile Include="Vue\Details\DetailStatut.Designer.cs">
       <DependentUpon>DetailStatut.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sommaires\SommaireAgence.cs">
+    <Compile Include="Vue\Sommaires\SommaireAgence.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sommaires\SommaireAgence.Designer.cs">
+    <Compile Include="Vue\Sommaires\SommaireAgence.Designer.cs">
       <DependentUpon>SommaireAgence.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sommaires\SommaireCategoriesArtiste.cs">
+    <Compile Include="Vue\Sommaires\SommaireCategoriesArtiste.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vue\Sommaires\SommaireCategoriesArtiste.Designer.cs">
@@ -123,10 +123,10 @@
     <EmbeddedResource Include="Vue\Details\DetailStatut.resx">
       <DependentUpon>DetailStatut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sommaires\SommaireAgence.resx">
+    <EmbeddedResource Include="Vue\Sommaires\SommaireAgence.resx">
       <DependentUpon>SommaireAgence.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sommaires\SommaireCategoriesArtiste.resx">
+    <EmbeddedResource Include="Vue\Sommaires\SommaireCategoriesArtiste.resx">
       <DependentUpon>SommaireCategoriesArtiste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vue\Details\DetailCategorieArtiste.resx">
