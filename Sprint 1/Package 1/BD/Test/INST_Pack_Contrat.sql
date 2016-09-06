@@ -57,8 +57,8 @@ GO
 GO
 PRINT 'insertion des diffuseurs débutée'
 GO
-INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Tazzy', 'bclark0@apache.org', '2016/06/13', 1);
-INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Photofeed', 'wwoods1@opera.com', '2016/02/13', 2);
+INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Tazzy', 'bclark0@apache.org', '20160613', 1);
+INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Photofeed', 'wwoods1@opera.com', '20160213', 2);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Wikido', 'rdixon2@php.net', null, 3);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Brainlounge', 'cmitchell3@latimes.com', null, 4);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Jaxbean', 'ereyes4@scientificamerican.com', null, 5);
@@ -78,7 +78,7 @@ INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALU
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Yacero', 'sjohnsoni@cdc.GOv', null, 19);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Jayo', 'lmeyerj@people.com.cn', null, 20);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Avaveo', 'wkelleyk@cornell.edu', null, 21);
-INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Demivee', 'nlopezl@opensource.org', '2016/02/27', 22);
+INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Demivee', 'nlopezl@opensource.org', '20160227', 22);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Yotz', 'lwheelerm@si.edu', null, 23);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Topiczoom', 'tkingn@usa.GOv', null, 24);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Demimbu', 'pmedinao@purevolume.com', null, 25);
@@ -91,7 +91,7 @@ INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALU
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Midel', 'sbishopv@wordpress.org', null, 32);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Browsezoom', 'vchavezw@businessweek.com', null, 33);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Zooxo', 'hstephensx@mac.com', null, 34);
-INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Vidoo', 'bromeroy@unicef.org', '2016/01/05', 35);
+INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Vidoo', 'bromeroy@unicef.org', '20160105', 35);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Photobug', 'dbishopz@ca.GOv', null, 36);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Flipstorm', 'wolson10@purevolume.com', null, 37);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Yakidoo', 'bhall11@fda.GOv', null, 38);
@@ -105,7 +105,7 @@ GO
 PRINT 'insertion des Agences débutée'
 GO
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Voonyx27','Voonyx', 'valvarez0@umn.edu', null, 1);
-INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Rhyloo01','Rhyloo', 'bpierce1@drupal.org', '2016/02/13', 2);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Rhyloo01','Rhyloo', 'bpierce1@drupal.org', '20160213', 2);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('chatter91','Chatterbridge', 'rburns2@yelp.com', null, 3);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Oyonde43','Oyonder', 'eallen3@comcast.net', null, 4);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Einti12','Einti', 'kwright4@themeforest.net', null, 5);
@@ -118,7 +118,7 @@ INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdress
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Teklis84','Teklist', 'rbellb@live.com', null, 12);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Twinte00','Twinte', 'rmedinac@netscape.com', null, 13);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Demizz23','Demizz', 'thansend@friendfeed.com', null, 14);
-INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Linkty46','Linktype', 'mrobinsone@cdbaby.com', '2016/04/14', 15);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Linkty46','Linktype', 'mrobinsone@cdbaby.com', '20160414', 15);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Shuffle85','Shufflebeat', 'vmartinezf@yellowbook.com', null, 16);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Twinder06','Twinder', 'mramirezg@networksolutions.com', null, 21);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Yamiaz61','Yamia', 'kfranklinh@networkadvertising.org', null, 22);
@@ -135,13 +135,13 @@ INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdress
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Photob11','Photobug', 'jburtons@posterous.com', null, 20);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Topdri28','Topdrive', 'dwhitet@GOo.ne.jp', null, 30);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Yodooz94','Yodoo', 'stayloru@epa.GOv', null, 31);
-INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Oyoyoz39','Oyoyo', 'jdeanv@mediafire.com', '2013/11/13', 32);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Oyoyoz39','Oyoyo', 'jdeanv@mediafire.com', '20131113', 32);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Linkty09','Linktype', 'bbradleyw@hud.GOv', null, 33);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Dabvin64','Dabvine', 'jpetersonx@tamu.edu', null, 34);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Fivebr56','Fivebridge', 'kclarky@lycos.com', null, 35);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Realcu06','Realcube', 'dwallacez@bloglines.com', null, 36);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Blogta01','Blogtag', 'kbrown10@blogger.com', null, 37);
-INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Though77','Thoughtbridge', 'aburke11@psu.edu', '2016/02/13', 9);
+INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Though77','Thoughtbridge', 'aburke11@psu.edu', '20160213', 9);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Camido97','Camido', 'jwoods12@hud.GOv', null, 38);
 GO
 PRINT 'insertion des agences réussi'
@@ -152,39 +152,39 @@ GO
 PRINT 'insertion des responsables débutée'
 GO
 
-GO
+
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Cruz', 'George', 'gcruz0@state.tx.us', 'George Cruz', '2016/01/15', '8631113471', '5734372137', null, 0, null, 1, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Carter', 'Christina', 'ccarter1@GOogle.de', 'Christina Carter', '2016/07/22', '38562815981', '6327071769', 364, 0, null, 2, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hart', 'Barbara', 'bhart2@sun.com', 'Barbara Hart', '2016/02/04', '6925115065', '130315648', 913, 0, null, 3, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Henry', 'Ruth', 'rhenry3@livejournal.com', 'Ruth Henry', '2016/04/25', '5281157420', '6324147750', 265, 0, 2016/06/13), 4, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Mason', 'Nicholas', 'nmason4@hc360.com', 'Nicholas Mason', '2015/12/08', '35119500200', '96716843409', 262, 1, null, 5, null);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Carter', 'Christina', 'ccarter1@GOogle.de', 'Christina Carter', '2016/07/22', '3856281598', '6327071769', 364, 0, null, 2, null);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hart', 'Barbara', 'bhart2@sun.com', 'Barbara Hart', '2016/02/04', '6925115065', '1303156481', 913, 0, null, 3, null);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Henry', 'Ruth', 'rhenry3@livejournal.com', 'Ruth Henry', '2016/04/25', '5281157420', '6324147750', 265, 0, '20160613', 4, null);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Mason', 'Nicholas', 'nmason4@hc360.com', 'Nicholas Mason', '2015/12/08', '3511950020', '9671684340', 262, 1, null, 5, null);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Young', 'Walter', 'wyoung5@sina.com.cn', 'Walter Young', '2016/02/11', '6359817195', '5182891148', 146, 1, null, 6, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Chavez', 'Julia', 'jchavez6@ibm.com', 'Julia Chavez', '2016/05/03', '3327172914', '35626011103', null, 0, null, 7, null);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Chavez', 'Julia', 'jchavez6@ibm.com', 'Julia Chavez', '2016/05/03', '3327172914', '3562601110', null, 0, null, 7, null);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hill', 'Emily', 'ehill7@illinois.edu', 'Emily Hill', '2015/11/03', '5578512986', '6280071160', 138, 0, null, 8, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Walker', 'Kathy', 'kwalker8@purevolume.com', 'Kathy Walker', '2015/10/16', '191981506', '6224815701', 161, 1, 2016/01/13), 9, null);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Walker', 'Kathy', 'kwalker8@purevolume.com', 'Kathy Walker', '2015/10/16', '1919815061', '6224815701', 161, 1, '20160113', 9, null);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hicks', 'Chris', 'chicks9@GOo.ne.jp', 'Chris Hicks', '2016/01/19', '6322134224', '5730717164', null, 0, null, 10, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Price', 'Carl', 'cpricea@jugem.jp', 'Carl Price', '2016/03/10', '99871270173', '8617165705', 651, 0, null, 11, null);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Price', 'Carl', 'cpricea@jugem.jp', 'Carl Price', '2016/03/10', '9987127017', '8617165705', 651, 0, null, 11, null);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Oliver', 'Frances', 'foliverb@army.mil', 'Frances Oliver', '2016/07/30', '4851942270', '5560317957', 702, 1, null, 11, null);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Warren', 'Brandon', 'bwarrenc@businessweek.com', 'Brandon Warren', '2015/09/05', '5571374038', '6275116346', 528, 0, null, 11, null);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Clark', 'Barbara', 'bclarkd@ibm.com', 'Barbara Clark', '2015/10/16', '5245261440', '5537911456', null, 1, null, 11, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Kim', 'Albert', 'akime@tonline.de', 'Albert Kim', '2015/11/12', '38111013266', '115131898', 660, 0, null, null, 'Camido97');
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hunt', 'Laura', 'lhuntf@sina.com.cn', 'Laura Hunt', '2016/01/21', '8689912348', '23530174902', 117, 0, 20165/06/13 17,null, 'Oyoyoz39');
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Rice', 'Judith', 'jriceg@army.mil', 'Judith Rice', '2016/02/02', '50481118756', '6263170508', 509, 1, null, 12, 'Linkty09');
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Kim', 'Albert', 'akime@tonline.de', 'Albert Kim', '2015/11/12', '3811101326', '1151318981', 660, 0, null, null, 'Camido97');
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hunt', 'Laura', 'lhuntf@sina.com.cn', 'Laura Hunt', '2016/01/21', '8689912348', '2353017490', 117, 1, '20160613', null,'Oyoyoz39');
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Rice', 'Judith', 'jriceg@army.mil', 'Judith Rice', '2016/02/02', '5048111875', '6263170508', 509, 0, null, 12, null);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Ellis', 'Lillian', 'lellish@indiatimes.com', 'Lillian Ellis', '2016/08/09', '3171709947', '4823139054', 277, 0, null, null, 'Dabvin64');
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Mills', 'Kenneth', 'kmillsi@comcast.net', 'Kenneth Mills', '2016/01/10', '25151322405', '6239167736', 308, 0, null, null, 'Skippa01');
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Sims', 'Howard', 'hsimsj@zimbio.com', 'Howard Sims', '2016/04/02', '5482271992', '126159183', 488, 0, null, null, 'Browsez00');
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Griffin', 'James', 'jgriffink@booking.com', 'James Griffin', '2016/07/07', '42013116890', '5571630869', 637, 0, null, null, 'Youopi50');
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Murphy', 'Eugene', 'emurphyl@stanford.edu', 'Eugene Murphy', '2015/10/11', '9365318046', '23412896299', 516, 0, null, null, 'Yamiaz61');
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Rose', 'Robin', 'rrosem@nsw.GOv.au', 'Robin Rose', '2016/08/19', '97039131907', '8611204331', 736, 0, null, null, 'Realcu06');
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Arnold', 'Joe', 'jarnoldn@mac.com', 'Joe Arnold', '2016/06/07', '6241471121', '167144077', 273, 1, null, null, 'Though77');
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Davis', 'Helen', 'hdaviso@bloomberg.com', 'Helen Davis', '2016/08/27', '8641311420', '161031270', 746, 0, null, null, 'Aiveez13');
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Ryan', 'Stephanie', 'sryanp@shoppro.jp', 'Stephanie Ryan', '2016/05/05', '776183176', '24881465362', 512, 0, null, 35, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hudson', 'Frank', 'fhudsonq@macromedia.com', 'Frank Hudson', '2015/11/14', '5792651523', '38621014886', 149, 0, 2013/06/13, 26, null);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Mills', 'Kenneth', 'kmillsi@comcast.net', 'Kenneth Mills', '2016/01/10', '2515132240', '6239167736', 308, 0, null, null, 'Skippa01');
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Sims', 'Howard', 'hsimsj@zimbio.com', 'Howard Sims', '2016/04/02', '5482271992', '1261591831', 488, 0, null, null, 'Browsez00');
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Griffin', 'James', 'jgriffink@booking.com', 'James Griffin', '2016/07/07', '4201311689', '5571630869', 637, 0, null, null, 'Youopi50');
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Murphy', 'Eugene', 'emurphyl@stanford.edu', 'Eugene Murphy', '2015/10/11', '9365318046', '2341289629', 516, 0, null, null, 'Yamiaz61');
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Rose', 'Robin', 'rrosem@nsw.GOv.au', 'Robin Rose', '2016/08/19', '9703913190', '8611204331', 736, 0, null, null, 'Realcu06');
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Arnold', 'Joe', 'jarnoldn@mac.com', 'Joe Arnold', '2016/06/07', '6241471121', '1671440772', 273, 1, null, null, 'Though77');
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Davis', 'Helen', 'hdaviso@bloomberg.com', 'Helen Davis', '2016/08/27', '8641311420', '1610313270', 746, 0, null, null, 'Aiveez13');
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Ryan', 'Stephanie', 'sryanp@shoppro.jp', 'Stephanie Ryan', '2016/05/05', '7761833176', '2488146532', 512, 0, null, 35, null);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hudson', 'Frank', 'fhudsonq@macromedia.com', 'Frank Hudson', '2015/11/14', '5792651523', '3862101486', 149, 0, '20130613', 26, null);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Morgan', 'Paula', 'pmorganr@GOogle.de', 'Paula Morgan', '2015/11/26', '8620734135', '5848122908', 826, 0, null, 17, null);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Sullivan', 'Chris', 'csullivans@abc.net.au', 'Chris Sullivan', '2016/01/26', '5585411605', '8126163730', 856, 0, null, 8, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Howard', 'Jimmy', 'jhowardt@addtoany.com', 'Jimmy Howard', '2016/07/20', '8647684121', '3165419184', 594, 1, 2014/06/13, null, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hunter', 'Barbara', 'bhunteru@narod.ru', 'Barbara Hunter', '2015/12/17', '8691148701', '771617581', 235, 1, null, 9, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Fields', 'Charles', 'cfieldsv@tonline.de', 'Charles Fields', '2016/05/19', '38631006232', '8114110334', 992, 0, null, 29, null);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Howard', 'Jimmy', 'jhowardt@addtoany.com', 'Jimmy Howard', '2016/07/20', '8647684121', '3165419184', 594, 0, '20140613', 17, null);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hunter', 'Barbara', 'bhunteru@narod.ru', 'Barbara Hunter', '2015/12/17', '8691148701', '7716177581', 235, 1, null, 9, null);
+INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Fields', 'Charles', 'cfieldsv@tonline.de', 'Charles Fields', '2016/05/19', '3863106232', '8114110334', 992, 0, null, 29, null);
 GO
 PRINT 'insertion des reponsables réussi'
 GO
@@ -325,7 +325,7 @@ INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire
 INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('JO-002', 'Jonquière', 'Humoriste du soir', 'Soirée de rire avec Jean-Michel Anctil', 'Pas oublier d''ajouter les exigences de la semaine prochaine', null, 4, 'Twinder06');
 INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('QU-001', 'Québec', 'Animation du midi semaine 1', 'Cracheurs de feu des fous du roi', null, null, 4, 'Voonyx27');
 INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('QU-002', 'Québec', 'Animation du midi semaine 2', 'L''animation du midi avec clown des fous du roi', null, null, 2, 'Twimbo98');
-INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('MO-001', 'Montréal', 'Animation du midi semaine 1', null, null, '2016/06/13', 4, 'Yakijo34');
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('MO-001', 'Montréal', 'Animation du midi semaine 1', null, null, '20160613', 4, 'Yakijo34');
 GO
 PRINT 'insertion des contrats terminée'
 GO
@@ -335,44 +335,44 @@ GO
 GO
 PRINT 'insertion des exigences commencée'
 GO
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Bouteilles d''eau','2016/08/21','5697','Les clients veulent avoir des bouteilles d''eau gratuites',null,'Eau gratuite fournie',null,'QU-001',2);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Alcool','2016/09/06','8235','Le client veux avoir l''alcool de payé dans la loge',null,'Alcool fournie dans la loge','2016/12/30','CH-002',4);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Repas fournis','2017/04/03','6754','Le client demande a avoir un repas fourni dans sa loge',null,'Le client veut son repas inclus dans sa loge',null,'JO-002',6);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Repas végétarien','2016/05/13','8600','Le client demande a n''avoir que des repas végétariens servis dans sa loge',null,'Le client veut des repas végétariens uniquement',null,'CH-002',3);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logis fournis','2015/12/31','5912','Le client demande d''avoir l''hôtel fourni',null,'Hotel fourni par l''organisateur',null,'CH-001',5);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2016/10/07',null,null,null,null,null,'CH-001',2);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2015/09/06',null,null,null,null,'2016/05/17','JO-001',4);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2017/01/22',null,'Responsabilité de l''artiste',null,null,'2015/02/26','JO-002',3);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2017/01/26',null,null,null,null,null,'CH-002',2);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2016/03/07',null,null,null,null,'2014/08/29','QU-001',2);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2017/03/19','9020',null,null,null,null,'MO-001',2);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/04/28','5459',null,null,null,'2016/12/21','MO-001',6);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2015/12/07','5824',null,null,null,'2016/08/24','QU-002',1);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2016/01/29','5454',null,null,null,null,'JO-002',1);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2017/06/21',null,'vers 3h',null,null,null,'JO-002',4);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/04/15','9617','Fourni par le diffuseur',null,null,null,'QU-001',3);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2016/12/04','9369',null,null,null,null,'QU-001',1);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2016/11/10', null,null,null,null,null,'MO-001',3);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2016/04/30','7766',null,null,null,'2016/04/12','JO-002',6);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Capacité','2016/05/31','7043',null,null,null,null,'QU-001',3);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2015/09/15','7683',null,null,null,'2016/05/16','JO-002',4);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2016/09/23','5899',null,null,null,null,'QU-002',6);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Capacité','2016/04/05','7980',null,null,null,null,'QU-001',6);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2016/01/23','5567',null,null,null,'2015/06/02','JO-001',1);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2015/12/06','8515',null,null,null,null,'CH-001',2);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2017/07/16','9327',null,null,null,null,'MO-001',2);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2015/09/28','5835',null,null,null,'2015/03/19','CH-001',3);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2017/03/08','9721',null,null,null,null,'QU-001',5);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2017/05/18','5850',null,null,null,'2016/04/14','QU-001',4);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2015/12/30','5348',null,null,null,'2015/10/19','MO-001',2);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/08/05','9847',null,null,null,null,'CH-001',6);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Capacité','2016/04/08','5385',null,null,null,null,'JO-001',6);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2016/09/08','6221',null,null,null,null,'MO-001',1);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2016/07/08','6928',null,null,null,'2016/03/23','CH-001'34,4);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2017/05/15','6295',null,null,null,null,'QU-001',4);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2016/05/31','5970',null,null,null,null,'JO-001',5);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/05/14','9890',null,null,null,null,'CH-002',1);
-INSERT INTO S_Contrat.tblExigences([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2016/06/29','6647',null,null,null,null,'CH-001',5);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Bouteilles d''eau','2016/08/21','5697','Les clients veulent avoir des bouteilles d''eau gratuites',null,'Eau gratuite fournie',null,'QU-001',2);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Alcool','2016/09/06','8235','Le client veux avoir l''alcool de payé dans la loge',null,'Alcool fournie dans la loge','20161230','CH-002',4);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Repas fournis','2017/04/03','6754','Le client demande a avoir un repas fourni dans sa loge',null,'Le client veut son repas inclus dans sa loge',null,'JO-002',6);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Repas végétarien','2016/05/13','8600','Le client demande a n''avoir que des repas végétariens servis dans sa loge',null,'Le client veut des repas végétariens uniquement',null,'CH-002',3);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logis fournis','2015/12/31','5912','Le client demande d''avoir l''hôtel fourni',null,'Hotel fourni par l''organisateur',null,'CH-001',5);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2016/10/07',null,null,null,null,null,'CH-001',2);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2015/09/06',null,null,null,null,'20160517','JO-001',4);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2017/01/22',null,'Responsabilité de l''artiste',null,null,'20150226','JO-002',3);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2017/01/26',null,null,null,null,null,'CH-002',2);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2016/03/07',null,null,null,null,'20140829','QU-001',2);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2017/03/19','9020',null,null,null,null,'MO-001',2);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/04/28','5459',null,null,null,'20161221','MO-001',6);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2015/12/07','5824',null,null,null,'20160824','QU-002',1);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2016/01/29','5454',null,null,null,null,'JO-002',1);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2017/06/21',null,'vers 3h',null,null,null,'JO-002',4);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/04/15','9617','Fourni par le diffuseur',null,null,null,'QU-001',3);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2016/12/04','9369',null,null,null,null,'QU-001',1);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2016/11/10', null,null,null,null,null,'MO-001',3);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2016/04/30','7766',null,null,null,'20160412','JO-002',6);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Capacité','2016/05/31','7043',null,null,null,null,'QU-001',3);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2015/09/15','7683',null,null,null,'20160516','JO-002',4);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2016/09/23','5899',null,null,null,null,'QU-002',6);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Capacité','2016/04/05','7980',null,null,null,null,'QU-001',6);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2016/01/23','5567',null,null,null,'20150602','JO-001',1);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2015/12/06','8515',null,null,null,null,'CH-001',2);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2017/07/16','9327',null,null,null,null,'MO-001',2);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2015/09/28','5835',null,null,null,'20150319','CH-001',3);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2017/03/08','9721',null,null,null,null,'QU-001',5);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Transport','2017/05/18','5850',null,null,null,'20160414','QU-001',4);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2015/12/30','5348',null,null,null,'20151019','MO-001',2);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/08/05','9847',null,null,null,null,'CH-001',6);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Capacité','2016/04/08','5385',null,null,null,null,'JO-001',6);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2016/09/08','6221',null,null,null,null,'MO-001',1);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2016/07/08','6928',null,null,null,'20160323','CH-001',4);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2017/05/15','6295',null,null,null,null,'QU-001',4);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2016/05/31','5970',null,null,null,null,'JO-001',5);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/05/14','9890',null,null,null,null,'CH-002',1);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2016/06/29','6647',null,null,null,null,'CH-001',5);
 GO
 PRINT 'insertion des exigences terminée'
 GO
@@ -475,6 +475,4 @@ GO
 PRINT 'insertion des catégories des artistes terminée'
 GO
 PRINT 'insertion terminée'
-GO
-PRINT 'GJ'
 GO
