@@ -1,6 +1,6 @@
 ﻿namespace FestiRire
 {
-    partial class SommaireAgence
+    partial class SommaireArtiste
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvAgence = new System.Windows.Forms.DataGridView();
+            this.dgvArtiste = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFiltres = new System.Windows.Forms.Button();
             this.btnRechercher = new System.Windows.Forms.Button();
@@ -40,26 +39,25 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnFermer = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAgence)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArtiste)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvAgence
+            // dgvArtiste
             // 
-            this.dgvAgence.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAgence.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAgence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAgence.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvArtiste.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvArtiste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArtiste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Ville,
-            this.Telephone,
-            this.Column2});
-            this.dgvAgence.Location = new System.Drawing.Point(6, 45);
-            this.dgvAgence.Name = "dgvAgence";
-            this.dgvAgence.Size = new System.Drawing.Size(1691, 328);
-            this.dgvAgence.TabIndex = 0;
+            this.Categorie});
+            this.dgvArtiste.Location = new System.Drawing.Point(6, 45);
+            this.dgvArtiste.Name = "dgvArtiste";
+            this.dgvArtiste.Size = new System.Drawing.Size(1691, 328);
+            this.dgvArtiste.TabIndex = 0;
             // 
             // Column1
             // 
@@ -71,15 +69,10 @@
             this.Ville.HeaderText = "Ville";
             this.Ville.Name = "Ville";
             // 
-            // Telephone
+            // Categorie
             // 
-            this.Telephone.HeaderText = "Telephone";
-            this.Telephone.Name = "Telephone";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Description";
-            this.Column2.Name = "Column2";
+            this.Categorie.HeaderText = "Categorie";
+            this.Categorie.Name = "Categorie";
             // 
             // groupBox1
             // 
@@ -87,7 +80,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btnFiltres);
-            this.groupBox1.Controls.Add(this.dgvAgence);
+            this.groupBox1.Controls.Add(this.dgvArtiste);
             this.groupBox1.Controls.Add(this.btnRechercher);
             this.groupBox1.Controls.Add(this.txtRecherche);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -95,7 +88,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1703, 379);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Catégories";
+            this.groupBox1.Text = "Artistes";
             // 
             // btnFiltres
             // 
@@ -161,7 +154,7 @@
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
             // 
-            // SommaireAgence
+            // SommaireArtiste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,9 +164,9 @@
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDetail);
-            this.Name = "SommaireAgence";
-            this.Text = "Sommaire des agences";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAgence)).EndInit();
+            this.Name = "SommaireArtiste";
+            this.Text = "Sommaire des artistes";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArtiste)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -182,7 +175,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvAgence;
+        private System.Windows.Forms.DataGridView dgvArtiste;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnDetail;
@@ -192,7 +185,6 @@
         private System.Windows.Forms.TextBox txtRecherche;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ville;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telephone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categorie;
     }
 }

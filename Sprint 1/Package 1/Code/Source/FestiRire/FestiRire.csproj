@@ -44,8 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controleur\BaseControleur.cs" />
-    <Compile Include="Controleur\BaseControleurTable.cs" />
     <Compile Include="Controleur\Details\DetailArtiste.cs" />
     <Compile Include="Controleur\Details\DetailBasePlus.cs" />
     <Compile Include="Controleur\Details\DetailBaseSimple.cs" />
@@ -74,6 +72,12 @@
     </Compile>
     <Compile Include="Vue\Details\DetailStatut.Designer.cs">
       <DependentUpon>DetailStatut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Sommaires\SommaireArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Sommaires\SommaireArtiste.Designer.cs">
+      <DependentUpon>SommaireArtiste.cs</DependentUpon>
     </Compile>
     <Compile Include="Vue\Sommaires\SommaireAgence.cs">
       <SubType>Form</SubType>
@@ -122,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vue\Details\DetailStatut.resx">
       <DependentUpon>DetailStatut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Sommaires\SommaireArtiste.resx">
+      <DependentUpon>SommaireArtiste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vue\Sommaires\SommaireAgence.resx">
       <DependentUpon>SommaireAgence.cs</DependentUpon>
