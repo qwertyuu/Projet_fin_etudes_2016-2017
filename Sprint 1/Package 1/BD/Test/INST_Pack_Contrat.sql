@@ -425,11 +425,11 @@ GO
 PRINT 'insertion des artistes par contrats débutée'
 GO
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(12,'MO-001');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(23,'MO-001');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(23,'QU-002');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(11,'MO-001');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(9,'JO-001');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(11,'JO-001');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(8,'JO-002');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(14,'JO-002');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(16,'CH-001');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(11,'CH-001');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(20,'MO-001');
@@ -442,14 +442,14 @@ GO
 GO
 PRINT 'insertion des fichier par artistes par contrats débutée'
 GO
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(11,'CH-002',22);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(11,'CH-001',22);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(4,'CH-001',24);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(4,'MO-001',10);
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(11,'JO-002',19);
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(9,'CH-001',20);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(11,'MO-002',19);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(9,'JO-001',20);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(20,'QU-002',12);
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(14,'JO-001',2);
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(13,'QU-002',25);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(14,'JO-002',2);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(23,'QU-002',25);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(7,'QU-001',7);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(17,'JO-001',24);
 GO
@@ -461,14 +461,14 @@ GO
 GO
 PRINT 'insertion des catégories des artistes débutée'
 GO
-INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(11,2);
-INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(12,5);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(4,2);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(9,5);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(23,1);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(12,1);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(23,5);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(11,3);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(10,6);
-INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(12,2);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(5,2);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(8,3);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(18,4);
 GO
@@ -476,3 +476,4 @@ PRINT 'insertion des catégories des artistes terminée'
 GO
 PRINT 'insertion terminée'
 GO
+PRINT 'GG'
