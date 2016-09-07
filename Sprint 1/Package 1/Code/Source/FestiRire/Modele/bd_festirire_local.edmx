@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PE2_TestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PE2_TestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblAdresse">
           <Key>
             <PropertyRef Name="noAdresse" />
@@ -179,8 +179,10 @@
 avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomArtiste' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomArtiste">
           <Key>
-            <PropertyRef Name="nomAriste" />
+            <PropertyRef Name="noArtiste" />
+            
           </Key>
+          <Property Name="noArtiste" Type="int" Nullable="false" />
           <Property Name="nomAriste" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="nomCat" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
@@ -188,8 +190,9 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomArtiste' n'a pas de c
 avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomCatArtiste' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomCatArtiste">
           <Key>
-            <PropertyRef Name="nom" />
+            <PropertyRef Name="noCategorie" />
           </Key>
+          <Property Name="noCategorie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="description" Type="text" />
         </EntityType>
@@ -198,8 +201,6 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomContrat' n'a pas de c
         <EntityType Name="vueSomContrat">
           <Key>
             <PropertyRef Name="noContrat" />
-            <PropertyRef Name="nom" />
-            <PropertyRef Name="nomStatut" />
           </Key>
           <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
@@ -210,11 +211,9 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomContrat' n'a pas de c
 avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomEngagement' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomEngagement">
           <Key>
-            <PropertyRef Name="nature" />
-            <PropertyRef Name="duree" />
-            <PropertyRef Name="lieu" />
-            <PropertyRef Name="noContrat" />
+            <PropertyRef Name="noEngagement" />
           </Key>
+          <Property Name="noEngagement" Type="int" Nullable="false" />
           <Property Name="nature" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="date" Type="date" />
           <Property Name="heure" Type="time" Precision="7" />
@@ -226,8 +225,11 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomEngagement' n'a pas d
 avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomExigence">
           <Key>
-            <PropertyRef Name="nom" />
+            <PropertyRef Name="noExigence" />
+            
+            
           </Key>
+          <Property Name="noExigence" Type="int" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="date" Type="date" />
           <Property Name="montant" Type="decimal" Precision="18" Scale="0" />
@@ -457,12 +459,14 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de 
           <EntitySet Name="tblStatut" EntityType="Self.tblStatut" Schema="S_Contrat" store:Type="Tables" />
           <EntitySet Name="vueSomArtiste" EntityType="Self.vueSomArtiste" store:Type="Views" store:Schema="S_Contrat">
             <DefiningQuery>SELECT 
+    [vueSomArtiste].[noArtiste] AS [noArtiste], 
     [vueSomArtiste].[nomAriste] AS [nomAriste], 
     [vueSomArtiste].[nomCat] AS [nomCat]
     FROM [S_Contrat].[vueSomArtiste] AS [vueSomArtiste]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomCatArtiste" EntityType="Self.vueSomCatArtiste" store:Type="Views" store:Schema="S_Contrat">
             <DefiningQuery>SELECT 
+    [vueSomCatArtiste].[noCategorie] AS [noCategorie], 
     [vueSomCatArtiste].[nom] AS [nom], 
     [vueSomCatArtiste].[description] AS [description]
     FROM [S_Contrat].[vueSomCatArtiste] AS [vueSomCatArtiste]</DefiningQuery>
@@ -477,6 +481,7 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de 
           </EntitySet>
           <EntitySet Name="vueSomEngagement" EntityType="Self.vueSomEngagement" store:Type="Views" store:Schema="S_Contrat">
             <DefiningQuery>SELECT 
+    [vueSomEngagement].[noEngagement] AS [noEngagement], 
     [vueSomEngagement].[nature] AS [nature], 
     [vueSomEngagement].[date] AS [date], 
     [vueSomEngagement].[heure] AS [heure], 
@@ -487,6 +492,7 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de 
           </EntitySet>
           <EntitySet Name="vueSomExigence" EntityType="Self.vueSomExigence" store:Type="Views" store:Schema="S_Contrat">
             <DefiningQuery>SELECT 
+    [vueSomExigence].[noExigence] AS [noExigence], 
     [vueSomExigence].[nom] AS [nom], 
     [vueSomExigence].[date] AS [date], 
     [vueSomExigence].[montant] AS [montant], 
@@ -564,8 +570,7 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de 
             <End Role="tblRespoContrat" EntitySet="tblRespoContrat" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PE2_TestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -745,23 +750,23 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de 
         </EntityType>
         <EntityType Name="vueSomArtiste">
           <Key>
-            <PropertyRef Name="nomAriste" />
+            <PropertyRef Name="noArtiste" />
           </Key>
           <Property Name="nomAriste" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nomCat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="noArtiste" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vueSomCatArtiste">
           <Key>
-            <PropertyRef Name="nom" />
+            <PropertyRef Name="noCategorie" />
           </Key>
           <Property Name="nom" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="noCategorie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="vueSomContrat">
           <Key>
             <PropertyRef Name="noContrat" />
-            <PropertyRef Name="nom" />
-            <PropertyRef Name="nomStatut" />
           </Key>
           <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -770,10 +775,7 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de 
         </EntityType>
         <EntityType Name="vueSomEngagement">
           <Key>
-            <PropertyRef Name="nature" />
-            <PropertyRef Name="duree" />
-            <PropertyRef Name="lieu" />
-            <PropertyRef Name="noContrat" />
+            <PropertyRef Name="noEngagement" />
           </Key>
           <Property Name="nature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="date" Type="DateTime" Precision="0" />
@@ -781,10 +783,11 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de 
           <Property Name="duree" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="noEngagement" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vueSomExigence">
           <Key>
-            <PropertyRef Name="nom" />
+            <PropertyRef Name="noExigence" />
           </Key>
           <Property Name="nom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="date" Type="DateTime" Precision="0" />
@@ -792,6 +795,7 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de 
           <Property Name="descriptionCourte" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="noStatut" Type="Int32" Nullable="false" />
           <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="noExigence" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="CON_AGE_FK">
           <End Role="tblAgence" Type="Self.tblAgence" Multiplicity="1" />
@@ -1177,6 +1181,7 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de 
           <EntitySetMapping Name="vueSomArtiste">
             <EntityTypeMapping TypeName="PE2_TestModel.vueSomArtiste">
               <MappingFragment StoreEntitySet="vueSomArtiste">
+                <ScalarProperty Name="noArtiste" ColumnName="noArtiste" />
                 <ScalarProperty Name="nomAriste" ColumnName="nomAriste" />
                 <ScalarProperty Name="nomCat" ColumnName="nomCat" />
               </MappingFragment>
@@ -1185,6 +1190,7 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de 
           <EntitySetMapping Name="vueSomCatArtiste">
             <EntityTypeMapping TypeName="PE2_TestModel.vueSomCatArtiste">
               <MappingFragment StoreEntitySet="vueSomCatArtiste">
+                <ScalarProperty Name="noCategorie" ColumnName="noCategorie" />
                 <ScalarProperty Name="nom" ColumnName="nom" />
                 <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
@@ -1203,6 +1209,7 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de 
           <EntitySetMapping Name="vueSomEngagement">
             <EntityTypeMapping TypeName="PE2_TestModel.vueSomEngagement">
               <MappingFragment StoreEntitySet="vueSomEngagement">
+                <ScalarProperty Name="noEngagement" ColumnName="noEngagement" />
                 <ScalarProperty Name="nature" ColumnName="nature" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="heure" ColumnName="heure" />
@@ -1215,6 +1222,7 @@ avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de 
           <EntitySetMapping Name="vueSomExigence">
             <EntityTypeMapping TypeName="PE2_TestModel.vueSomExigence">
               <MappingFragment StoreEntitySet="vueSomExigence">
+                <ScalarProperty Name="noExigence" ColumnName="noExigence" />
                 <ScalarProperty Name="nom" ColumnName="nom" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="montant" ColumnName="montant" />

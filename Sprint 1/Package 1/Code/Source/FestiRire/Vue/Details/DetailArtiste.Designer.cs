@@ -28,38 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtNomAgence = new System.Windows.Forms.TextBox();
+            this.txtNomArtiste = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.btnAnnuler = new System.Windows.Forms.Button();
-            this.btnEnregistrerAgence = new System.Windows.Forms.Button();
-            this.btnSupprimerAgence = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtCourriel = new System.Windows.Forms.TextBox();
+            this.btnEnregistrerArtiste = new System.Windows.Forms.Button();
+            this.btnSupprimerArtiste = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.rtbAdresse = new System.Windows.Forms.RichTextBox();
+            this.btnAjouterCategorieArtiste = new System.Windows.Forms.Button();
+            this.cmbCategorieArtiste = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblNomFichier = new System.Windows.Forms.Label();
+            this.lblTypeFichier = new System.Windows.Forms.Label();
+            this.lblTailleFichier = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCodePostal = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.rtbCommentaire = new System.Windows.Forms.RichTextBox();
+            this.btnParcourirPhotoOfficielle = new System.Windows.Forms.Button();
+            this.btnSupprimerPhotoOfficiel = new System.Windows.Forms.Button();
+            this.lstPhotoOfficiel = new System.Windows.Forms.ListBox();
+            this.cmbContrat = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbProvince = new System.Windows.Forms.ComboBox();
-            this.txtTelBureau = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTelCellulaire = new System.Windows.Forms.TextBox();
-            this.txtPosteBureau = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtVille = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnSupprimerFiche = new System.Windows.Forms.Button();
+            this.btnParcourir = new System.Windows.Forms.Button();
+            this.lstFiches = new System.Windows.Forms.ListBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lstFichier = new System.Windows.Forms.ListBox();
+            this.btnSupprimerFichier = new System.Windows.Forms.Button();
+            this.btnParcourirFichier = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pbApercu = new System.Windows.Forms.PictureBox();
+            this.numPoliceCommentaire = new System.Windows.Forms.NumericUpDown();
+            this.btnEnumCommentaire = new System.Windows.Forms.Button();
+            this.btnSouslignerCommentaire = new System.Windows.Forms.Button();
+            this.btnItaliqueCommentaire = new System.Windows.Forms.Button();
+            this.btnGrasCommentaire = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbApercu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtNomAgence
+            // txtNomArtiste
             // 
-            this.txtNomAgence.Location = new System.Drawing.Point(112, 6);
-            this.txtNomAgence.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNomAgence.Name = "txtNomAgence";
-            this.txtNomAgence.Size = new System.Drawing.Size(318, 20);
-            this.txtNomAgence.TabIndex = 26;
+            this.txtNomArtiste.Location = new System.Drawing.Point(112, 6);
+            this.txtNomArtiste.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomArtiste.Name = "txtNomArtiste";
+            this.txtNomArtiste.Size = new System.Drawing.Size(318, 20);
+            this.txtNomArtiste.TabIndex = 26;
+            this.txtNomArtiste.Text = "Les Denis Drolets";
             // 
             // label20
             // 
@@ -67,222 +87,402 @@
             this.label20.Location = new System.Drawing.Point(12, 9);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(90, 13);
+            this.label20.Size = new System.Drawing.Size(71, 13);
             this.label20.TabIndex = 25;
-            this.label20.Text = "Nom de l\'agence:";
+            this.label20.Text = "Nom d\'artiste:";
             // 
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnnuler.Location = new System.Drawing.Point(355, 410);
+            this.btnAnnuler.Location = new System.Drawing.Point(771, 628);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnAnnuler.TabIndex = 30;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             // 
-            // btnEnregistrerAgence
+            // btnEnregistrerArtiste
             // 
-            this.btnEnregistrerAgence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEnregistrerAgence.Location = new System.Drawing.Point(274, 410);
-            this.btnEnregistrerAgence.Name = "btnEnregistrerAgence";
-            this.btnEnregistrerAgence.Size = new System.Drawing.Size(75, 23);
-            this.btnEnregistrerAgence.TabIndex = 30;
-            this.btnEnregistrerAgence.Text = "Enregistrer";
-            this.btnEnregistrerAgence.UseVisualStyleBackColor = true;
+            this.btnEnregistrerArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnregistrerArtiste.Location = new System.Drawing.Point(690, 628);
+            this.btnEnregistrerArtiste.Name = "btnEnregistrerArtiste";
+            this.btnEnregistrerArtiste.Size = new System.Drawing.Size(75, 23);
+            this.btnEnregistrerArtiste.TabIndex = 30;
+            this.btnEnregistrerArtiste.Text = "Enregistrer";
+            this.btnEnregistrerArtiste.UseVisualStyleBackColor = true;
             // 
-            // btnSupprimerAgence
+            // btnSupprimerArtiste
             // 
-            this.btnSupprimerAgence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSupprimerAgence.Location = new System.Drawing.Point(193, 410);
-            this.btnSupprimerAgence.Name = "btnSupprimerAgence";
-            this.btnSupprimerAgence.Size = new System.Drawing.Size(75, 23);
-            this.btnSupprimerAgence.TabIndex = 30;
-            this.btnSupprimerAgence.Text = "Supprimer";
-            this.btnSupprimerAgence.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.txtVille);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.txtPosteBureau);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.txtTelCellulaire);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.txtTelBureau);
-            this.groupBox3.Controls.Add(this.cmbProvince);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.txtCodePostal);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.rtbAdresse);
-            this.groupBox3.Location = new System.Drawing.Point(12, 57);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(418, 347);
-            this.groupBox3.TabIndex = 52;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Adresse";
-            // 
-            // txtCourriel
-            // 
-            this.txtCourriel.Location = new System.Drawing.Point(112, 30);
-            this.txtCourriel.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCourriel.Name = "txtCourriel";
-            this.txtCourriel.Size = new System.Drawing.Size(318, 20);
-            this.txtCourriel.TabIndex = 56;
+            this.btnSupprimerArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSupprimerArtiste.Location = new System.Drawing.Point(609, 628);
+            this.btnSupprimerArtiste.Name = "btnSupprimerArtiste";
+            this.btnSupprimerArtiste.Size = new System.Drawing.Size(75, 23);
+            this.btnSupprimerArtiste.TabIndex = 30;
+            this.btnSupprimerArtiste.Text = "Supprimer";
+            this.btnSupprimerArtiste.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 33);
+            this.label2.Location = new System.Drawing.Point(12, 35);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Courriel:";
+            this.label2.Size = new System.Drawing.Size(94, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Catégorie d\'artiste:";
             // 
-            // rtbAdresse
+            // btnAjouterCategorieArtiste
             // 
-            this.rtbAdresse.Location = new System.Drawing.Point(6, 39);
-            this.rtbAdresse.Name = "rtbAdresse";
-            this.rtbAdresse.Size = new System.Drawing.Size(406, 107);
-            this.rtbAdresse.TabIndex = 0;
-            this.rtbAdresse.Text = "";
+            this.btnAjouterCategorieArtiste.Location = new System.Drawing.Point(407, 30);
+            this.btnAjouterCategorieArtiste.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAjouterCategorieArtiste.Name = "btnAjouterCategorieArtiste";
+            this.btnAjouterCategorieArtiste.Size = new System.Drawing.Size(23, 21);
+            this.btnAjouterCategorieArtiste.TabIndex = 44;
+            this.btnAjouterCategorieArtiste.Text = "+";
+            this.btnAjouterCategorieArtiste.UseVisualStyleBackColor = true;
+            // 
+            // cmbCategorieArtiste
+            // 
+            this.cmbCategorieArtiste.FormattingEnabled = true;
+            this.cmbCategorieArtiste.Location = new System.Drawing.Point(112, 31);
+            this.cmbCategorieArtiste.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbCategorieArtiste.Name = "cmbCategorieArtiste";
+            this.cmbCategorieArtiste.Size = new System.Drawing.Size(291, 21);
+            this.cmbCategorieArtiste.TabIndex = 43;
+            this.cmbCategorieArtiste.Text = "Humoriste";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.numPoliceCommentaire);
+            this.groupBox1.Controls.Add(this.btnEnumCommentaire);
+            this.groupBox1.Controls.Add(this.btnSouslignerCommentaire);
+            this.groupBox1.Controls.Add(this.btnItaliqueCommentaire);
+            this.groupBox1.Controls.Add(this.btnGrasCommentaire);
+            this.groupBox1.Controls.Add(this.lblNomFichier);
+            this.groupBox1.Controls.Add(this.lblTypeFichier);
+            this.groupBox1.Controls.Add(this.lblTailleFichier);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.rtbCommentaire);
+            this.groupBox1.Location = new System.Drawing.Point(436, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(410, 318);
+            this.groupBox1.TabIndex = 45;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Propriétés du fichier";
+            // 
+            // lblNomFichier
+            // 
+            this.lblNomFichier.AutoSize = true;
+            this.lblNomFichier.Location = new System.Drawing.Point(6, 16);
+            this.lblNomFichier.Name = "lblNomFichier";
+            this.lblNomFichier.Size = new System.Drawing.Size(161, 13);
+            this.lblNomFichier.TabIndex = 27;
+            this.lblNomFichier.Text = "Nom: Pedigree_DenisDrolets.pdf";
+            // 
+            // lblTypeFichier
+            // 
+            this.lblTypeFichier.AutoSize = true;
+            this.lblTypeFichier.Location = new System.Drawing.Point(6, 48);
+            this.lblTypeFichier.Name = "lblTypeFichier";
+            this.lblTypeFichier.Size = new System.Drawing.Size(86, 13);
+            this.lblTypeFichier.TabIndex = 27;
+            this.lblTypeFichier.Text = "Type: Document";
+            // 
+            // lblTailleFichier
+            // 
+            this.lblTailleFichier.AutoSize = true;
+            this.lblTailleFichier.Location = new System.Drawing.Point(6, 33);
+            this.lblTailleFichier.Name = "lblTailleFichier";
+            this.lblTailleFichier.Size = new System.Drawing.Size(71, 13);
+            this.lblTailleFichier.TabIndex = 27;
+            this.lblTailleFichier.Text = "Taille: 580 ko";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(6, 126);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 56;
-            this.label1.Text = "Adresse civique:";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Commentaire:";
             // 
-            // txtCodePostal
+            // rtbCommentaire
             // 
-            this.txtCodePostal.Location = new System.Drawing.Point(8, 163);
-            this.txtCodePostal.Name = "txtCodePostal";
-            this.txtCodePostal.Size = new System.Drawing.Size(118, 20);
-            this.txtCodePostal.TabIndex = 57;
+            this.rtbCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbCommentaire.Location = new System.Drawing.Point(6, 145);
+            this.rtbCommentaire.Name = "rtbCommentaire";
+            this.rtbCommentaire.Size = new System.Drawing.Size(398, 167);
+            this.rtbCommentaire.TabIndex = 56;
+            this.rtbCommentaire.Text = "";
             // 
-            // label3
+            // btnParcourirPhotoOfficielle
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 147);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
-            this.label3.TabIndex = 57;
-            this.label3.Text = "Code postal:";
+            this.btnParcourirPhotoOfficielle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnParcourirPhotoOfficielle.Location = new System.Drawing.Point(9, 130);
+            this.btnParcourirPhotoOfficielle.Name = "btnParcourirPhotoOfficielle";
+            this.btnParcourirPhotoOfficielle.Size = new System.Drawing.Size(199, 23);
+            this.btnParcourirPhotoOfficielle.TabIndex = 48;
+            this.btnParcourirPhotoOfficielle.Text = "Parcourir...";
+            this.btnParcourirPhotoOfficielle.UseVisualStyleBackColor = true;
+            // 
+            // btnSupprimerPhotoOfficiel
+            // 
+            this.btnSupprimerPhotoOfficiel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSupprimerPhotoOfficiel.Location = new System.Drawing.Point(214, 130);
+            this.btnSupprimerPhotoOfficiel.Name = "btnSupprimerPhotoOfficiel";
+            this.btnSupprimerPhotoOfficiel.Size = new System.Drawing.Size(193, 23);
+            this.btnSupprimerPhotoOfficiel.TabIndex = 49;
+            this.btnSupprimerPhotoOfficiel.Text = "Supprimer le fichier";
+            this.btnSupprimerPhotoOfficiel.UseVisualStyleBackColor = true;
+            // 
+            // lstPhotoOfficiel
+            // 
+            this.lstPhotoOfficiel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstPhotoOfficiel.FormattingEnabled = true;
+            this.lstPhotoOfficiel.Items.AddRange(new object[] {
+            " "});
+            this.lstPhotoOfficiel.Location = new System.Drawing.Point(9, 44);
+            this.lstPhotoOfficiel.Name = "lstPhotoOfficiel";
+            this.lstPhotoOfficiel.Size = new System.Drawing.Size(398, 82);
+            this.lstPhotoOfficiel.TabIndex = 47;
+            // 
+            // cmbContrat
+            // 
+            this.cmbContrat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbContrat.FormattingEnabled = true;
+            this.cmbContrat.Location = new System.Drawing.Point(103, 18);
+            this.cmbContrat.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbContrat.Name = "cmbContrat";
+            this.cmbContrat.Size = new System.Drawing.Size(304, 21);
+            this.cmbContrat.TabIndex = 50;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.lstPhotoOfficiel);
+            this.groupBox2.Controls.Add(this.cmbContrat);
+            this.groupBox2.Controls.Add(this.btnSupprimerPhotoOfficiel);
+            this.groupBox2.Controls.Add(this.btnParcourirPhotoOfficielle);
+            this.groupBox2.Location = new System.Drawing.Point(12, 189);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(418, 162);
+            this.groupBox2.TabIndex = 51;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Photos officielles";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 225);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(6, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 58;
-            this.label4.Text = "Province:";
+            this.label4.Size = new System.Drawing.Size(92, 13);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "Contrat concerné:";
             // 
-            // cmbProvince
+            // groupBox3
             // 
-            this.cmbProvince.FormattingEnabled = true;
-            this.cmbProvince.Location = new System.Drawing.Point(8, 241);
-            this.cmbProvince.Name = "cmbProvince";
-            this.cmbProvince.Size = new System.Drawing.Size(118, 21);
-            this.cmbProvince.TabIndex = 59;
-            this.cmbProvince.Text = "Québec";
+            this.groupBox3.Controls.Add(this.btnSupprimerFiche);
+            this.groupBox3.Controls.Add(this.btnParcourir);
+            this.groupBox3.Controls.Add(this.lstFiches);
+            this.groupBox3.Location = new System.Drawing.Point(12, 57);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(418, 126);
+            this.groupBox3.TabIndex = 52;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Liste des fiches";
             // 
-            // txtTelBureau
+            // btnSupprimerFiche
             // 
-            this.txtTelBureau.Location = new System.Drawing.Point(8, 281);
-            this.txtTelBureau.Name = "txtTelBureau";
-            this.txtTelBureau.Size = new System.Drawing.Size(118, 20);
-            this.txtTelBureau.TabIndex = 60;
+            this.btnSupprimerFiche.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSupprimerFiche.Location = new System.Drawing.Point(214, 94);
+            this.btnSupprimerFiche.Name = "btnSupprimerFiche";
+            this.btnSupprimerFiche.Size = new System.Drawing.Size(193, 23);
+            this.btnSupprimerFiche.TabIndex = 51;
+            this.btnSupprimerFiche.Text = "Supprimer le fichier";
+            this.btnSupprimerFiche.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // btnParcourir
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 265);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 13);
-            this.label5.TabIndex = 61;
-            this.label5.Text = "Téléphone bureau:";
+            this.btnParcourir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnParcourir.Location = new System.Drawing.Point(9, 94);
+            this.btnParcourir.Name = "btnParcourir";
+            this.btnParcourir.Size = new System.Drawing.Size(199, 23);
+            this.btnParcourir.TabIndex = 50;
+            this.btnParcourir.Text = "Parcourir...";
+            this.btnParcourir.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // lstFiches
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 305);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 13);
-            this.label6.TabIndex = 63;
-            this.label6.Text = "Téléphone cellulaire:";
+            this.lstFiches.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lstFiches.FormattingEnabled = true;
+            this.lstFiches.Items.AddRange(new object[] {
+            "Pedigree_DenisDrolets.pdf"});
+            this.lstFiches.Location = new System.Drawing.Point(9, 19);
+            this.lstFiches.Name = "lstFiches";
+            this.lstFiches.Size = new System.Drawing.Size(398, 69);
+            this.lstFiches.TabIndex = 32;
             // 
-            // txtTelCellulaire
+            // groupBox4
             // 
-            this.txtTelCellulaire.Location = new System.Drawing.Point(8, 321);
-            this.txtTelCellulaire.Name = "txtTelCellulaire";
-            this.txtTelCellulaire.Size = new System.Drawing.Size(118, 20);
-            this.txtTelCellulaire.TabIndex = 62;
+            this.groupBox4.Controls.Add(this.lstFichier);
+            this.groupBox4.Controls.Add(this.btnSupprimerFichier);
+            this.groupBox4.Controls.Add(this.btnParcourirFichier);
+            this.groupBox4.Location = new System.Drawing.Point(12, 357);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(418, 265);
+            this.groupBox4.TabIndex = 53;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Fichiers";
             // 
-            // txtPosteBureau
+            // lstFichier
             // 
-            this.txtPosteBureau.Location = new System.Drawing.Point(132, 281);
-            this.txtPosteBureau.Name = "txtPosteBureau";
-            this.txtPosteBureau.Size = new System.Drawing.Size(48, 20);
-            this.txtPosteBureau.TabIndex = 64;
+            this.lstFichier.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstFichier.FormattingEnabled = true;
+            this.lstFichier.Items.AddRange(new object[] {
+            " "});
+            this.lstFichier.Location = new System.Drawing.Point(6, 19);
+            this.lstFichier.Name = "lstFichier";
+            this.lstFichier.Size = new System.Drawing.Size(401, 212);
+            this.lstFichier.TabIndex = 47;
             // 
-            // label7
+            // btnSupprimerFichier
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(131, 265);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 65;
-            this.label7.Text = "Poste:";
+            this.btnSupprimerFichier.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSupprimerFichier.Location = new System.Drawing.Point(211, 236);
+            this.btnSupprimerFichier.Name = "btnSupprimerFichier";
+            this.btnSupprimerFichier.Size = new System.Drawing.Size(196, 23);
+            this.btnSupprimerFichier.TabIndex = 49;
+            this.btnSupprimerFichier.Text = "Supprimer le fichier";
+            this.btnSupprimerFichier.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // btnParcourirFichier
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 186);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
-            this.label8.TabIndex = 66;
-            this.label8.Text = "Ville:";
+            this.btnParcourirFichier.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnParcourirFichier.Location = new System.Drawing.Point(6, 236);
+            this.btnParcourirFichier.Name = "btnParcourirFichier";
+            this.btnParcourirFichier.Size = new System.Drawing.Size(199, 23);
+            this.btnParcourirFichier.TabIndex = 48;
+            this.btnParcourirFichier.Text = "Parcourir...";
+            this.btnParcourirFichier.UseVisualStyleBackColor = true;
             // 
-            // txtVille
+            // groupBox5
             // 
-            this.txtVille.Location = new System.Drawing.Point(8, 202);
-            this.txtVille.Name = "txtVille";
-            this.txtVille.Size = new System.Drawing.Size(118, 20);
-            this.txtVille.TabIndex = 67;
+            this.groupBox5.Controls.Add(this.pbApercu);
+            this.groupBox5.Location = new System.Drawing.Point(436, 330);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(410, 292);
+            this.groupBox5.TabIndex = 54;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Aperçu";
+            // 
+            // pbApercu
+            // 
+            this.pbApercu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbApercu.Location = new System.Drawing.Point(3, 16);
+            this.pbApercu.Name = "pbApercu";
+            this.pbApercu.Size = new System.Drawing.Size(404, 273);
+            this.pbApercu.TabIndex = 0;
+            this.pbApercu.TabStop = false;
+            // 
+            // numPoliceCommentaire
+            // 
+            this.numPoliceCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numPoliceCommentaire.Location = new System.Drawing.Point(164, 120);
+            this.numPoliceCommentaire.Name = "numPoliceCommentaire";
+            this.numPoliceCommentaire.Size = new System.Drawing.Size(34, 20);
+            this.numPoliceCommentaire.TabIndex = 79;
+            this.numPoliceCommentaire.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            // 
+            // btnEnumCommentaire
+            // 
+            this.btnEnumCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnumCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnumCommentaire.Location = new System.Drawing.Point(203, 119);
+            this.btnEnumCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEnumCommentaire.Name = "btnEnumCommentaire";
+            this.btnEnumCommentaire.Size = new System.Drawing.Size(42, 21);
+            this.btnEnumCommentaire.TabIndex = 78;
+            this.btnEnumCommentaire.Text = "Enum";
+            this.btnEnumCommentaire.UseVisualStyleBackColor = true;
+            // 
+            // btnSouslignerCommentaire
+            // 
+            this.btnSouslignerCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSouslignerCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSouslignerCommentaire.Location = new System.Drawing.Point(136, 119);
+            this.btnSouslignerCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSouslignerCommentaire.Name = "btnSouslignerCommentaire";
+            this.btnSouslignerCommentaire.Size = new System.Drawing.Size(23, 21);
+            this.btnSouslignerCommentaire.TabIndex = 75;
+            this.btnSouslignerCommentaire.Text = "I";
+            this.btnSouslignerCommentaire.UseVisualStyleBackColor = true;
+            // 
+            // btnItaliqueCommentaire
+            // 
+            this.btnItaliqueCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnItaliqueCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItaliqueCommentaire.Location = new System.Drawing.Point(109, 119);
+            this.btnItaliqueCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnItaliqueCommentaire.Name = "btnItaliqueCommentaire";
+            this.btnItaliqueCommentaire.Size = new System.Drawing.Size(23, 21);
+            this.btnItaliqueCommentaire.TabIndex = 76;
+            this.btnItaliqueCommentaire.Text = "I";
+            this.btnItaliqueCommentaire.UseVisualStyleBackColor = true;
+            // 
+            // btnGrasCommentaire
+            // 
+            this.btnGrasCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrasCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrasCommentaire.Location = new System.Drawing.Point(82, 119);
+            this.btnGrasCommentaire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrasCommentaire.Name = "btnGrasCommentaire";
+            this.btnGrasCommentaire.Size = new System.Drawing.Size(23, 21);
+            this.btnGrasCommentaire.TabIndex = 77;
+            this.btnGrasCommentaire.Text = "B";
+            this.btnGrasCommentaire.UseVisualStyleBackColor = true;
             // 
             // DetailArtiste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
-            this.ClientSize = new System.Drawing.Size(442, 445);
-            this.Controls.Add(this.txtCourriel);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(858, 663);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.btnSupprimerAgence);
-            this.Controls.Add(this.btnEnregistrerAgence);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnAjouterCategorieArtiste);
+            this.Controls.Add(this.cmbCategorieArtiste);
+            this.Controls.Add(this.btnSupprimerArtiste);
+            this.Controls.Add(this.btnEnregistrerArtiste);
             this.Controls.Add(this.btnAnnuler);
-            this.Controls.Add(this.txtNomAgence);
+            this.Controls.Add(this.txtNomArtiste);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label20);
             this.Name = "DetailArtiste";
-            this.Text = "Détail de l\'agence";
+            this.Text = "Détail de l\'artiste";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbApercu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,27 +490,40 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtNomAgence;
+        private System.Windows.Forms.TextBox txtNomArtiste;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnAnnuler;
-        private System.Windows.Forms.Button btnEnregistrerAgence;
-        private System.Windows.Forms.Button btnSupprimerAgence;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtVille;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtPosteBureau;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTelCellulaire;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTelBureau;
-        private System.Windows.Forms.ComboBox cmbProvince;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCodePostal;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox rtbAdresse;
-        private System.Windows.Forms.TextBox txtCourriel;
+        private System.Windows.Forms.Button btnEnregistrerArtiste;
+        private System.Windows.Forms.Button btnSupprimerArtiste;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAjouterCategorieArtiste;
+        private System.Windows.Forms.ComboBox cmbCategorieArtiste;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblTailleFichier;
+        private System.Windows.Forms.Label lblNomFichier;
+        private System.Windows.Forms.Label lblTypeFichier;
+        private System.Windows.Forms.Button btnParcourirPhotoOfficielle;
+        private System.Windows.Forms.Button btnSupprimerPhotoOfficiel;
+        private System.Windows.Forms.ListBox lstPhotoOfficiel;
+        private System.Windows.Forms.ComboBox cmbContrat;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnSupprimerFiche;
+        private System.Windows.Forms.Button btnParcourir;
+        private System.Windows.Forms.ListBox lstFiches;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ListBox lstFichier;
+        private System.Windows.Forms.Button btnSupprimerFichier;
+        private System.Windows.Forms.Button btnParcourirFichier;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.PictureBox pbApercu;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox rtbCommentaire;
+        private System.Windows.Forms.NumericUpDown numPoliceCommentaire;
+        private System.Windows.Forms.Button btnEnumCommentaire;
+        private System.Windows.Forms.Button btnSouslignerCommentaire;
+        private System.Windows.Forms.Button btnItaliqueCommentaire;
+        private System.Windows.Forms.Button btnGrasCommentaire;
     }
 }

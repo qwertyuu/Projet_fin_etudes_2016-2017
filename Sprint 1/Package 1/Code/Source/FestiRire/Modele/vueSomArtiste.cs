@@ -16,5 +16,6 @@ namespace FestiRire.Modele
     {
         public string nomAriste { get; set; }
         public string nomCat { get; set; }
+        public int noArtiste { get; set; }
     }
 }

@@ -20,5 +20,6 @@ namespace FestiRire.Modele
         public string descriptionCourte { get; set; }
         public int noStatut { get; set; }
         public string noContrat { get; set; }
+        public int noExigence { get; set; }
     }
 }

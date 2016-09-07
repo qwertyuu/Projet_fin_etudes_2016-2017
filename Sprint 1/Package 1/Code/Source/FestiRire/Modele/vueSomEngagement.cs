@@ -20,5 +20,6 @@ namespace FestiRire.Modele
         public string duree { get; set; }
         public string lieu { get; set; }
         public string noContrat { get; set; }
+        public int noEngagement { get; set; }
     }
 }
