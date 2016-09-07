@@ -36,6 +36,18 @@ CREATE VIEW  S_Contrat.vueSomAgence AS
 SELECT agen.nom, agen.ville, agen.telBureau,agen.telCellulaire
 FROM S_Contrat.tblAgence AS agen
 PRINT 'Création de la vue pour sommaire agence'
+GO
 
+CREATE VIEW  S_Contrat.vueSomEngagement AS
+SELECT eng.nature, eng.date, eng.heure, eng.duree, eng.lieu, con.noContrat
+FROM S_Contrat.tblEngagement AS eng
+JOIN S_Contrat.tblContrat AS con ON con.noContrat = eng.noContrat
+PRINT 'Création de la vue pour sommaire Engagement'
+GO
 
-
+CREATE VIEW  S_Contrat.vueSomExigence AS
+SELECT exi.nom, exi.date, exi.montant, exi.descriptionCourte, noStatut
+FROM S_Contrat.tblExigence AS exi
+JOIN S_Contrat.tblContrat AS con ON con.noContrat = exi.noContrat
+PRINT 'Création de la vue pour sommaire Exigence'
+GO
