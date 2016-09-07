@@ -36,10 +36,10 @@ PRINT 'Création de la vue pour sommaire artiste'
 GO
 
 CREATE VIEW  S_Contrat.vueSomAgence AS
-SELECT agen.noAgence, agen.nom, agen.ville, agen.telBureau,agen.telCellulaire
+SELECT agen.noAgence, agen.nom, adre.ville, adre.telBureau, adre.telCellulaire
 FROM S_Contrat.tblAgence AS agen
 JOIN S_Contrat.tblAdresse AS adre
-ON agen.noAgence=adre.noAgence
+ON agen.noAdresse=adre.noAdresse
 GO
 PRINT 'Création de la vue pour sommaire agence'
 GO
