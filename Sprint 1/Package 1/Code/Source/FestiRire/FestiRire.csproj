@@ -132,17 +132,23 @@
     <Compile Include="Modele\vueSomExigence.cs">
       <DependentUpon>bd_festirire_local.tt</DependentUpon>
     </Compile>
+    <Compile Include="Vue\Details\DetailArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Details\DetailArtiste.Designer.cs">
+      <DependentUpon>DetailArtiste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vue\Details\DetailContrat.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vue\Details\DetailContrat.Designer.cs">
       <DependentUpon>DetailContrat.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vue\Details\DetailArtiste.cs">
+    <Compile Include="Vue\Details\DetailAgence.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vue\Details\DetailArtiste.Designer.cs">
-      <DependentUpon>DetailArtiste.cs</DependentUpon>
+    <Compile Include="Vue\Details\DetailAgence.Designer.cs">
+      <DependentUpon>DetailAgence.cs</DependentUpon>
     </Compile>
     <Compile Include="Vue\Details\DetailStatut.cs">
       <SubType>Form</SubType>
@@ -198,8 +204,8 @@
     <EmbeddedResource Include="Vue\Details\DetailContrat.resx">
       <DependentUpon>DetailContrat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vue\Details\DetailArtiste.resx">
-      <DependentUpon>DetailArtiste.cs</DependentUpon>
+    <EmbeddedResource Include="Vue\Details\DetailAgence.resx">
+      <DependentUpon>DetailAgence.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vue\Details\DetailStatut.resx">
       <DependentUpon>DetailStatut.cs</DependentUpon>
