@@ -195,6 +195,20 @@ PRINT 'Création des PK et les contraintes NULL des tables du pakages Contrat'
  PRINT 'Fin de création des contraintes FK de la table tblEngagement'
  GO
 
+ ALTER TABLE S_Contrat.tblAgence ADD
+ CONSTRAINT AGE_ADR_FK
+ FOREIGN KEY (noAdresse)
+ REFERENCES S_Contrat.tblAdresse(noAdresse)
+ PRINT 'Fin de création des contraintes FK de la table tblAgence'
+ GO 
+
+ ALTER TABLE S_Contrat.tblDiffuseur ADD
+ CONSTRAINT DIF_ADR_FK
+ FOREIGN KEY (noAdresse)
+ REFERENCES S_Contrat.tblAdresse(noAdresse)
+ PRINT 'Fin de création des contraintes FK de la table tblAgence'
+ GO 
+
  ALTER TABLE S_Contrat.tblExigence ADD
  CONSTRAINT EXI_CON_FK
  FOREIGN Key(noContrat) 

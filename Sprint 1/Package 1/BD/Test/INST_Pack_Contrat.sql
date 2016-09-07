@@ -94,11 +94,9 @@ INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALU
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Vidoo', 'bromeroy@unicef.org', '20160105', 35);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Photobug', 'dbishopz@ca.GOv', null, 36);
 INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Flipstorm', 'wolson10@purevolume.com', null, 37);
-INSERT INTO S_Contrat.tblDiffuseur (nom, courriel, dateSupprime, noAdresse) VALUES ('Yakidoo', 'bhall11@fda.GOv', null, 38);
 GO
 PRINT 'insertion des diffuseurs réussi'
 GO
-
 /*insertion des Agences*/
 
 GO
@@ -142,7 +140,6 @@ INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdress
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Realcu06','Realcube', 'dwallacez@bloglines.com', null, 36);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Blogta01','Blogtag', 'kbrown10@blogger.com', null, 37);
 INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Though77','Thoughtbridge', 'aburke11@psu.edu', '20160213', 9);
-INSERT INTO S_Contrat.tblAgence (noAgence, nom, courriel, dateSupprime, noAdresse) VALUES ('Camido97','Camido', 'jwoods12@hud.GOv', null, 38);
 GO
 PRINT 'insertion des agences réussi'
 GO
@@ -167,7 +164,6 @@ INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSig
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Oliver', 'Frances', 'foliverb@army.mil', 'Frances Oliver', '2016/07/30', '4851942270', '5560317957', 702, 1, null, 11, null);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Warren', 'Brandon', 'bwarrenc@businessweek.com', 'Brandon Warren', '2015/09/05', '5571374038', '6275116346', 528, 0, null, 11, null);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Clark', 'Barbara', 'bclarkd@ibm.com', 'Barbara Clark', '2015/10/16', '5245261440', '5537911456', null, 1, null, 11, null);
-INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Kim', 'Albert', 'akime@tonline.de', 'Albert Kim', '2015/11/12', '3811101326', '1151318981', 660, 0, null, null, 'Camido97');
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Hunt', 'Laura', 'lhuntf@sina.com.cn', 'Laura Hunt', '2016/01/21', '8689912348', '2353017490', 117, 1, '20160613', null,'Oyoyoz39');
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Rice', 'Judith', 'jriceg@army.mil', 'Judith Rice', '2016/02/02', '5048111875', '6263170508', 509, 0, null, 12, null);
 INSERT INTO S_Contrat.tblResponsable (nom, prenom, courriel, signataire, dateSignature, telBureau, telCellulaire, extension, idem, dateSupprime, noDiffuseur, noAgence) VALUES ('Ellis', 'Lillian', 'lellish@indiatimes.com', 'Lillian Ellis', '2016/08/09', '3171709947', '4823139054', 277, 0, null, null, 'Dabvin64');
@@ -445,8 +441,6 @@ GO
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(11,'CH-001',22);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(4,'CH-001',24);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(4,'MO-001',10);
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(11,'MO-002',19);
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(9,'JO-001',20);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(20,'QU-002',12);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(14,'JO-002',2);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(23,'QU-002',25);
@@ -475,5 +469,3 @@ GO
 PRINT 'insertion des catégories des artistes terminée'
 GO
 PRINT 'insertion terminée'
-GO
-PRINT 'GG'
