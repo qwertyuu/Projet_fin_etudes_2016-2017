@@ -38,6 +38,8 @@ GO
 CREATE VIEW  S_Contrat.vueSomAgence AS
 SELECT agen.noAgence, agen.nom, agen.ville, agen.telBureau,agen.telCellulaire
 FROM S_Contrat.tblAgence AS agen
+JOIN S_Contrat.tblAdresse AS adre
+ON agen.noAgence=adre.noAgence
 GO
 PRINT 'Création de la vue pour sommaire agence'
 GO
