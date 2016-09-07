@@ -424,15 +424,15 @@ GO
 GO
 PRINT 'insertion des artistes par contrats débutée'
 GO
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(16,'MO-001');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(7,'MO-001');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(27,'MO-001');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(12,'MO-001');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(23,'MO-001');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(11,'MO-001');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(9,'JO-001');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(17,'JO-001');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(4,'JO-002');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(11,'JO-001');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(8,'JO-002');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(16,'CH-001');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(9,'CH-001');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(17,'MO-001');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(11,'CH-001');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(20,'MO-001');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(23,'CH-002');
 GO
 PRINT 'insertion des artistes par contrats terminée'
