@@ -13,12 +13,14 @@ JOIN S_Contrat.tblContrat AS con
 ON con.noAgence=agen.noAgence
 JOIN S_Contrat.tblStatut AS sta
 ON con.noStatut=sta.noStatut
-PRINT 'Création de la vue reliée a l''affichage du sommaire contrat'
 GO
+PRINT 'Création de la vue reliée a l''affichage du sommaire contrat'
 
+GO
 CREATE VIEW  S_Contrat.vueSomCatArtiste AS
 SELECT cat.nom, cat.description
 FROM S_Contrat.tblCategorieArtiste AS cat
+GO
 PRINT 'Création de la vue reliée a l''affichage du sommaire catégories d''artistes'
 GO
 
@@ -29,12 +31,14 @@ JOIN S_Contrat.tblCatArtisteArt AS catArt
 ON Art.noArtiste=catArt.noArtiste
 JOIN S_Contrat.tblCategorieArtiste AS Cat
 ON catArt.noCategorie=Cat.noCategorie
+GO
 PRINT 'Création de la vue pour sommaire artiste'
 GO
 
 CREATE VIEW  S_Contrat.vueSomAgence AS
 SELECT agen.nom, agen.ville, agen.telBureau,agen.telCellulaire
 FROM S_Contrat.tblAgence AS agen
+GO
 PRINT 'Création de la vue pour sommaire agence'
 GO
 
@@ -42,12 +46,14 @@ CREATE VIEW  S_Contrat.vueSomEngagement AS
 SELECT eng.nature, eng.date, eng.heure, eng.duree, eng.lieu, con.noContrat
 FROM S_Contrat.tblEngagement AS eng
 JOIN S_Contrat.tblContrat AS con ON con.noContrat = eng.noContrat
+GO
 PRINT 'Création de la vue pour sommaire Engagement'
 GO
 
 CREATE VIEW  S_Contrat.vueSomExigence AS
-SELECT exi.nom, exi.date, exi.montant, exi.descriptionCourte, noStatut
+SELECT exi.nom, exi.date, exi.montant, exi.descriptionCourte, exi.noStatut, con.noContrat
 FROM S_Contrat.tblExigence AS exi
 JOIN S_Contrat.tblContrat AS con ON con.noContrat = exi.noContrat
+GO
 PRINT 'Création de la vue pour sommaire Exigence'
 GO
