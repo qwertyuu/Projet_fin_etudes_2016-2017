@@ -32,8 +32,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +66,72 @@
     <Compile Include="Controleur\Sommaires\SommaireBase.cs" />
     <Compile Include="Controleur\Sommaires\SommaireCategorieArtiste.cs" />
     <Compile Include="Controleur\Sommaires\SommaireContrat.cs" />
+    <Compile Include="Modele\bd_festirire_local.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_festirire_local.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\bd_festirire_local.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\bd_festirire_local.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_festirire_local.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblAdresse.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblAgence.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblArtiste.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblCategorieArtiste.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblContrat.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblDiffuseur.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblEngagement.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblExigence.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblFichierOfficiel.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblFichierPersonnel.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblResponsable.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblStatut.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomArtiste.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomCatArtiste.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomContrat.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomEngagement.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomExigence.cs">
+      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+    </Compile>
     <Compile Include="Vue\Details\DetailContrat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +234,14 @@
     <EmbeddedResource Include="Vue\Sommaires\SommaireContrats.resx">
       <DependentUpon>SommaireContrats.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Modele\bd_festirire_local.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>bd_festirire_local.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modele\bd_festirire_local.edmx.diagram">
+      <DependentUpon>bd_festirire_local.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -170,7 +255,21 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Modele\bd_festirire_local.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>bd_festirire_local.edmx</DependentUpon>
+      <LastGenOutput>bd_festirire_local.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modele\bd_festirire_local.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>bd_festirire_local.edmx</DependentUpon>
+      <LastGenOutput>bd_festirire_local.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

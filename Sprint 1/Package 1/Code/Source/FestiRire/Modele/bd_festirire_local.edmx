@@ -1,0 +1,1274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PE2_TestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblAdresse">
+          <Key>
+            <PropertyRef Name="noAdresse" />
+          </Key>
+          <Property Name="noAdresse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adresse" Type="text" />
+          <Property Name="ville" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="codepostal" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="province" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="pays" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="telBureau" Type="char" MaxLength="10" />
+          <Property Name="telCellulaire" Type="char" MaxLength="10" />
+          <Property Name="extension" Type="varchar" MaxLength="5" />
+          <Property Name="dateSupprime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblAgence">
+          <Key>
+            <PropertyRef Name="noAgence" />
+          </Key>
+          <Property Name="noAgence" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="courriel" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="dateSupprime" Type="datetime" />
+          <Property Name="noAdresse" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblArtiste">
+          <Key>
+            <PropertyRef Name="noArtiste" />
+          </Key>
+          <Property Name="noArtiste" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="commentaire" Type="text" />
+          <Property Name="dateSupprime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblCatArtisteArt">
+          <Key>
+            <PropertyRef Name="noCategorie" />
+            <PropertyRef Name="noArtiste" />
+          </Key>
+          <Property Name="noCategorie" Type="int" Nullable="false" />
+          <Property Name="noArtiste" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblCategorieArtiste">
+          <Key>
+            <PropertyRef Name="noCategorie" />
+          </Key>
+          <Property Name="noCategorie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="dateSupprime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblContrat">
+          <Key>
+            <PropertyRef Name="noContrat" />
+          </Key>
+          <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="lieu" Type="text" />
+          <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="commentaire" Type="text" />
+          <Property Name="dateSupprime" Type="datetime" />
+          <Property Name="noStatut" Type="int" Nullable="false" />
+          <Property Name="noAgence" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblContratArtiste">
+          <Key>
+            <PropertyRef Name="noArtiste" />
+            <PropertyRef Name="noContrat" />
+          </Key>
+          <Property Name="noArtiste" Type="int" Nullable="false" />
+          <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblDiffuseur">
+          <Key>
+            <PropertyRef Name="noDiffuseur" />
+          </Key>
+          <Property Name="noDiffuseur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="courriel" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="dateSupprime" Type="datetime" />
+          <Property Name="noAdresse" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblEngagement">
+          <Key>
+            <PropertyRef Name="noEngagement" />
+          </Key>
+          <Property Name="noEngagement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="duree" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="lieu" Type="text" Nullable="false" />
+          <Property Name="date" Type="date" />
+          <Property Name="heure" Type="time" Precision="7" />
+          <Property Name="nature" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="commentaire" Type="text" />
+          <Property Name="description" Type="text" />
+          <Property Name="descriptionCourte" Type="varchar" MaxLength="255" />
+          <Property Name="dateSupprime" Type="datetime" />
+          <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblExigence">
+          <Key>
+            <PropertyRef Name="noExigence" />
+          </Key>
+          <Property Name="noExigence" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="date" Type="date" />
+          <Property Name="montant" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="description" Type="text" />
+          <Property Name="commentaire" Type="text" />
+          <Property Name="descriptionCourte" Type="varchar" MaxLength="255" />
+          <Property Name="dateSupprime" Type="datetime" />
+          <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="noStatut" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblFichierOfficiel">
+          <Key>
+            <PropertyRef Name="noArtiste" />
+            <PropertyRef Name="noContrat" />
+            <PropertyRef Name="noFichier" />
+          </Key>
+          <Property Name="noArtiste" Type="int" Nullable="false" />
+          <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="noFichier" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblFichierPersonnel">
+          <Key>
+            <PropertyRef Name="noFichier" />
+          </Key>
+          <Property Name="noFichier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="text" Nullable="false" />
+          <Property Name="chemin" Type="text" Nullable="false" />
+          <Property Name="commentaire" Type="text" />
+          <Property Name="dateSupprime" Type="datetime" />
+          <Property Name="noArtiste" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblRespoContrat">
+          <Key>
+            <PropertyRef Name="noResponsable" />
+            <PropertyRef Name="noContrat" />
+          </Key>
+          <Property Name="noResponsable" Type="int" Nullable="false" />
+          <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblResponsable">
+          <Key>
+            <PropertyRef Name="noResponsable" />
+          </Key>
+          <Property Name="noResponsable" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="prenom" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="courriel" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="signataire" Type="varchar" MaxLength="70" />
+          <Property Name="dateSignature" Type="date" />
+          <Property Name="telBureau" Type="char" MaxLength="10" />
+          <Property Name="telCellulaire" Type="char" MaxLength="10" />
+          <Property Name="extension" Type="varchar" MaxLength="5" />
+          <Property Name="idem" Type="bit" Nullable="false" />
+          <Property Name="dateSupprime" Type="datetime" />
+          <Property Name="noDiffuseur" Type="int" />
+          <Property Name="noAgence" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="tblStatut">
+          <Key>
+            <PropertyRef Name="noStatut" />
+          </Key>
+          <Property Name="noStatut" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomStatut" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="couleur" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="dateSupprime" Type="datetime" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomArtiste' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="vueSomArtiste">
+          <Key>
+            <PropertyRef Name="nomAriste" />
+          </Key>
+          <Property Name="nomAriste" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nomCat" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomCatArtiste' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="vueSomCatArtiste">
+          <Key>
+            <PropertyRef Name="nom" />
+          </Key>
+          <Property Name="nom" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="description" Type="text" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomContrat' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="vueSomContrat">
+          <Key>
+            <PropertyRef Name="noContrat" />
+            <PropertyRef Name="nom" />
+            <PropertyRef Name="nomStatut" />
+          </Key>
+          <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nomStatut" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="lieu" Type="text" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomEngagement' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="vueSomEngagement">
+          <Key>
+            <PropertyRef Name="nature" />
+            <PropertyRef Name="duree" />
+            <PropertyRef Name="lieu" />
+            <PropertyRef Name="noContrat" />
+          </Key>
+          <Property Name="nature" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="date" />
+          <Property Name="heure" Type="time" Precision="7" />
+          <Property Name="duree" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="lieu" Type="text" Nullable="false" />
+          <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Test.S_Contrat.vueSomExigence' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="vueSomExigence">
+          <Key>
+            <PropertyRef Name="nom" />
+          </Key>
+          <Property Name="nom" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="date" Type="date" />
+          <Property Name="montant" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="descriptionCourte" Type="varchar" MaxLength="255" />
+          <Property Name="noStatut" Type="int" Nullable="false" />
+          <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="CATART_ART_FK">
+          <End Role="tblArtiste" Type="Self.tblArtiste" Multiplicity="1" />
+          <End Role="tblCatArtisteArt" Type="Self.tblCatArtisteArt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblArtiste">
+              <PropertyRef Name="noArtiste" />
+            </Principal>
+            <Dependent Role="tblCatArtisteArt">
+              <PropertyRef Name="noArtiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CATART_CATART_FK">
+          <End Role="tblCategorieArtiste" Type="Self.tblCategorieArtiste" Multiplicity="1" />
+          <End Role="tblCatArtisteArt" Type="Self.tblCatArtisteArt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCategorieArtiste">
+              <PropertyRef Name="noCategorie" />
+            </Principal>
+            <Dependent Role="tblCatArtisteArt">
+              <PropertyRef Name="noCategorie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CON_AGE_FK">
+          <End Role="tblAgence" Type="Self.tblAgence" Multiplicity="1" />
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAgence">
+              <PropertyRef Name="noAgence" />
+            </Principal>
+            <Dependent Role="tblContrat">
+              <PropertyRef Name="noAgence" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CON_STA_FK">
+          <End Role="tblStatut" Type="Self.tblStatut" Multiplicity="1" />
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblStatut">
+              <PropertyRef Name="noStatut" />
+            </Principal>
+            <Dependent Role="tblContrat">
+              <PropertyRef Name="noStatut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CONART_ART_FK">
+          <End Role="tblArtiste" Type="Self.tblArtiste" Multiplicity="1" />
+          <End Role="tblContratArtiste" Type="Self.tblContratArtiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblArtiste">
+              <PropertyRef Name="noArtiste" />
+            </Principal>
+            <Dependent Role="tblContratArtiste">
+              <PropertyRef Name="noArtiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CONART_CON_FK">
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+          <End Role="tblContratArtiste" Type="Self.tblContratArtiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContrat">
+              <PropertyRef Name="noContrat" />
+            </Principal>
+            <Dependent Role="tblContratArtiste">
+              <PropertyRef Name="noContrat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ENG_CON_FK">
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+          <End Role="tblEngagement" Type="Self.tblEngagement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContrat">
+              <PropertyRef Name="noContrat" />
+            </Principal>
+            <Dependent Role="tblEngagement">
+              <PropertyRef Name="noContrat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EXI_CON_FK">
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+          <End Role="tblExigence" Type="Self.tblExigence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContrat">
+              <PropertyRef Name="noContrat" />
+            </Principal>
+            <Dependent Role="tblExigence">
+              <PropertyRef Name="noContrat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EXI_STA_FK">
+          <End Role="tblStatut" Type="Self.tblStatut" Multiplicity="1" />
+          <End Role="tblExigence" Type="Self.tblExigence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblStatut">
+              <PropertyRef Name="noStatut" />
+            </Principal>
+            <Dependent Role="tblExigence">
+              <PropertyRef Name="noStatut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FIC_ART_FK">
+          <End Role="tblArtiste" Type="Self.tblArtiste" Multiplicity="1" />
+          <End Role="tblFichierPersonnel" Type="Self.tblFichierPersonnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblArtiste">
+              <PropertyRef Name="noArtiste" />
+            </Principal>
+            <Dependent Role="tblFichierPersonnel">
+              <PropertyRef Name="noArtiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FICOFF_ART_FK">
+          <End Role="tblArtiste" Type="Self.tblArtiste" Multiplicity="1" />
+          <End Role="tblFichierOfficiel" Type="Self.tblFichierOfficiel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblArtiste">
+              <PropertyRef Name="noArtiste" />
+            </Principal>
+            <Dependent Role="tblFichierOfficiel">
+              <PropertyRef Name="noArtiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FICOFF_CON_FK">
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+          <End Role="tblFichierOfficiel" Type="Self.tblFichierOfficiel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContrat">
+              <PropertyRef Name="noContrat" />
+            </Principal>
+            <Dependent Role="tblFichierOfficiel">
+              <PropertyRef Name="noContrat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FICOFF_FICPER_FK">
+          <End Role="tblFichierPersonnel" Type="Self.tblFichierPersonnel" Multiplicity="1" />
+          <End Role="tblFichierOfficiel" Type="Self.tblFichierOfficiel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFichierPersonnel">
+              <PropertyRef Name="noFichier" />
+            </Principal>
+            <Dependent Role="tblFichierOfficiel">
+              <PropertyRef Name="noFichier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RES_AGE_FK">
+          <End Role="tblAgence" Type="Self.tblAgence" Multiplicity="0..1" />
+          <End Role="tblResponsable" Type="Self.tblResponsable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAgence">
+              <PropertyRef Name="noAgence" />
+            </Principal>
+            <Dependent Role="tblResponsable">
+              <PropertyRef Name="noAgence" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RES_DIF_FK">
+          <End Role="tblDiffuseur" Type="Self.tblDiffuseur" Multiplicity="0..1" />
+          <End Role="tblResponsable" Type="Self.tblResponsable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDiffuseur">
+              <PropertyRef Name="noDiffuseur" />
+            </Principal>
+            <Dependent Role="tblResponsable">
+              <PropertyRef Name="noDiffuseur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RESCON_CON_FK">
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+          <End Role="tblRespoContrat" Type="Self.tblRespoContrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContrat">
+              <PropertyRef Name="noContrat" />
+            </Principal>
+            <Dependent Role="tblRespoContrat">
+              <PropertyRef Name="noContrat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RESCONT_RES_FK">
+          <End Role="tblResponsable" Type="Self.tblResponsable" Multiplicity="1" />
+          <End Role="tblRespoContrat" Type="Self.tblRespoContrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblResponsable">
+              <PropertyRef Name="noResponsable" />
+            </Principal>
+            <Dependent Role="tblRespoContrat">
+              <PropertyRef Name="noResponsable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PE2_TestModelStoreContainer">
+          <EntitySet Name="tblAdresse" EntityType="Self.tblAdresse" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblAgence" EntityType="Self.tblAgence" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblArtiste" EntityType="Self.tblArtiste" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblCatArtisteArt" EntityType="Self.tblCatArtisteArt" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblCategorieArtiste" EntityType="Self.tblCategorieArtiste" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblContrat" EntityType="Self.tblContrat" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblContratArtiste" EntityType="Self.tblContratArtiste" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblDiffuseur" EntityType="Self.tblDiffuseur" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblEngagement" EntityType="Self.tblEngagement" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblExigence" EntityType="Self.tblExigence" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblFichierOfficiel" EntityType="Self.tblFichierOfficiel" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblFichierPersonnel" EntityType="Self.tblFichierPersonnel" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblRespoContrat" EntityType="Self.tblRespoContrat" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblResponsable" EntityType="Self.tblResponsable" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblStatut" EntityType="Self.tblStatut" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="vueSomArtiste" EntityType="Self.vueSomArtiste" store:Type="Views" store:Schema="S_Contrat">
+            <DefiningQuery>SELECT 
+    [vueSomArtiste].[nomAriste] AS [nomAriste], 
+    [vueSomArtiste].[nomCat] AS [nomCat]
+    FROM [S_Contrat].[vueSomArtiste] AS [vueSomArtiste]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vueSomCatArtiste" EntityType="Self.vueSomCatArtiste" store:Type="Views" store:Schema="S_Contrat">
+            <DefiningQuery>SELECT 
+    [vueSomCatArtiste].[nom] AS [nom], 
+    [vueSomCatArtiste].[description] AS [description]
+    FROM [S_Contrat].[vueSomCatArtiste] AS [vueSomCatArtiste]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vueSomContrat" EntityType="Self.vueSomContrat" store:Type="Views" store:Schema="S_Contrat">
+            <DefiningQuery>SELECT 
+    [vueSomContrat].[noContrat] AS [noContrat], 
+    [vueSomContrat].[nom] AS [nom], 
+    [vueSomContrat].[nomStatut] AS [nomStatut], 
+    [vueSomContrat].[lieu] AS [lieu]
+    FROM [S_Contrat].[vueSomContrat] AS [vueSomContrat]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vueSomEngagement" EntityType="Self.vueSomEngagement" store:Type="Views" store:Schema="S_Contrat">
+            <DefiningQuery>SELECT 
+    [vueSomEngagement].[nature] AS [nature], 
+    [vueSomEngagement].[date] AS [date], 
+    [vueSomEngagement].[heure] AS [heure], 
+    [vueSomEngagement].[duree] AS [duree], 
+    [vueSomEngagement].[lieu] AS [lieu], 
+    [vueSomEngagement].[noContrat] AS [noContrat]
+    FROM [S_Contrat].[vueSomEngagement] AS [vueSomEngagement]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vueSomExigence" EntityType="Self.vueSomExigence" store:Type="Views" store:Schema="S_Contrat">
+            <DefiningQuery>SELECT 
+    [vueSomExigence].[nom] AS [nom], 
+    [vueSomExigence].[date] AS [date], 
+    [vueSomExigence].[montant] AS [montant], 
+    [vueSomExigence].[descriptionCourte] AS [descriptionCourte], 
+    [vueSomExigence].[noStatut] AS [noStatut], 
+    [vueSomExigence].[noContrat] AS [noContrat]
+    FROM [S_Contrat].[vueSomExigence] AS [vueSomExigence]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="CATART_ART_FK" Association="Self.CATART_ART_FK">
+            <End Role="tblArtiste" EntitySet="tblArtiste" />
+            <End Role="tblCatArtisteArt" EntitySet="tblCatArtisteArt" />
+          </AssociationSet>
+          <AssociationSet Name="CATART_CATART_FK" Association="Self.CATART_CATART_FK">
+            <End Role="tblCategorieArtiste" EntitySet="tblCategorieArtiste" />
+            <End Role="tblCatArtisteArt" EntitySet="tblCatArtisteArt" />
+          </AssociationSet>
+          <AssociationSet Name="CON_AGE_FK" Association="Self.CON_AGE_FK">
+            <End Role="tblAgence" EntitySet="tblAgence" />
+            <End Role="tblContrat" EntitySet="tblContrat" />
+          </AssociationSet>
+          <AssociationSet Name="CON_STA_FK" Association="Self.CON_STA_FK">
+            <End Role="tblStatut" EntitySet="tblStatut" />
+            <End Role="tblContrat" EntitySet="tblContrat" />
+          </AssociationSet>
+          <AssociationSet Name="CONART_ART_FK" Association="Self.CONART_ART_FK">
+            <End Role="tblArtiste" EntitySet="tblArtiste" />
+            <End Role="tblContratArtiste" EntitySet="tblContratArtiste" />
+          </AssociationSet>
+          <AssociationSet Name="CONART_CON_FK" Association="Self.CONART_CON_FK">
+            <End Role="tblContrat" EntitySet="tblContrat" />
+            <End Role="tblContratArtiste" EntitySet="tblContratArtiste" />
+          </AssociationSet>
+          <AssociationSet Name="ENG_CON_FK" Association="Self.ENG_CON_FK">
+            <End Role="tblContrat" EntitySet="tblContrat" />
+            <End Role="tblEngagement" EntitySet="tblEngagement" />
+          </AssociationSet>
+          <AssociationSet Name="EXI_CON_FK" Association="Self.EXI_CON_FK">
+            <End Role="tblContrat" EntitySet="tblContrat" />
+            <End Role="tblExigence" EntitySet="tblExigence" />
+          </AssociationSet>
+          <AssociationSet Name="EXI_STA_FK" Association="Self.EXI_STA_FK">
+            <End Role="tblStatut" EntitySet="tblStatut" />
+            <End Role="tblExigence" EntitySet="tblExigence" />
+          </AssociationSet>
+          <AssociationSet Name="FIC_ART_FK" Association="Self.FIC_ART_FK">
+            <End Role="tblArtiste" EntitySet="tblArtiste" />
+            <End Role="tblFichierPersonnel" EntitySet="tblFichierPersonnel" />
+          </AssociationSet>
+          <AssociationSet Name="FICOFF_ART_FK" Association="Self.FICOFF_ART_FK">
+            <End Role="tblArtiste" EntitySet="tblArtiste" />
+            <End Role="tblFichierOfficiel" EntitySet="tblFichierOfficiel" />
+          </AssociationSet>
+          <AssociationSet Name="FICOFF_CON_FK" Association="Self.FICOFF_CON_FK">
+            <End Role="tblContrat" EntitySet="tblContrat" />
+            <End Role="tblFichierOfficiel" EntitySet="tblFichierOfficiel" />
+          </AssociationSet>
+          <AssociationSet Name="FICOFF_FICPER_FK" Association="Self.FICOFF_FICPER_FK">
+            <End Role="tblFichierPersonnel" EntitySet="tblFichierPersonnel" />
+            <End Role="tblFichierOfficiel" EntitySet="tblFichierOfficiel" />
+          </AssociationSet>
+          <AssociationSet Name="RES_AGE_FK" Association="Self.RES_AGE_FK">
+            <End Role="tblAgence" EntitySet="tblAgence" />
+            <End Role="tblResponsable" EntitySet="tblResponsable" />
+          </AssociationSet>
+          <AssociationSet Name="RES_DIF_FK" Association="Self.RES_DIF_FK">
+            <End Role="tblDiffuseur" EntitySet="tblDiffuseur" />
+            <End Role="tblResponsable" EntitySet="tblResponsable" />
+          </AssociationSet>
+          <AssociationSet Name="RESCON_CON_FK" Association="Self.RESCON_CON_FK">
+            <End Role="tblContrat" EntitySet="tblContrat" />
+            <End Role="tblRespoContrat" EntitySet="tblRespoContrat" />
+          </AssociationSet>
+          <AssociationSet Name="RESCONT_RES_FK" Association="Self.RESCONT_RES_FK">
+            <End Role="tblResponsable" EntitySet="tblResponsable" />
+            <End Role="tblRespoContrat" EntitySet="tblRespoContrat" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PE2_TestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblAdresse">
+          <Key>
+            <PropertyRef Name="noAdresse" />
+          </Key>
+          <Property Name="noAdresse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ville" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codepostal" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="province" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="pays" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telBureau" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="telCellulaire" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="extension" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblAgence">
+          <Key>
+            <PropertyRef Name="noAgence" />
+          </Key>
+          <Property Name="noAgence" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="courriel" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <Property Name="noAdresse" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblContrat" Relationship="Self.CON_AGE_FK" FromRole="tblAgence" ToRole="tblContrat" />
+          <NavigationProperty Name="tblResponsable" Relationship="Self.RES_AGE_FK" FromRole="tblAgence" ToRole="tblResponsable" />
+        </EntityType>
+        <EntityType Name="tblArtiste">
+          <Key>
+            <PropertyRef Name="noArtiste" />
+          </Key>
+          <Property Name="noArtiste" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblFichierPersonnel" Relationship="Self.FIC_ART_FK" FromRole="tblArtiste" ToRole="tblFichierPersonnel" />
+          <NavigationProperty Name="tblFichierOfficiel" Relationship="Self.FICOFF_ART_FK" FromRole="tblArtiste" ToRole="tblFichierOfficiel" />
+          <NavigationProperty Name="tblCategorieArtiste" Relationship="Self.tblCatArtisteArt" FromRole="tblArtiste" ToRole="tblCategorieArtiste" />
+          <NavigationProperty Name="tblContrat" Relationship="Self.tblContratArtiste" FromRole="tblArtiste" ToRole="tblContrat" />
+        </EntityType>
+        <EntityType Name="tblCategorieArtiste">
+          <Key>
+            <PropertyRef Name="noCategorie" />
+          </Key>
+          <Property Name="noCategorie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblArtiste" Relationship="Self.tblCatArtisteArt" FromRole="tblCategorieArtiste" ToRole="tblArtiste" />
+        </EntityType>
+        <EntityType Name="tblContrat">
+          <Key>
+            <PropertyRef Name="noContrat" />
+          </Key>
+          <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <Property Name="noStatut" Type="Int32" Nullable="false" />
+          <Property Name="noAgence" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblAgence" Relationship="Self.CON_AGE_FK" FromRole="tblContrat" ToRole="tblAgence" />
+          <NavigationProperty Name="tblStatut" Relationship="Self.CON_STA_FK" FromRole="tblContrat" ToRole="tblStatut" />
+          <NavigationProperty Name="tblEngagement" Relationship="Self.ENG_CON_FK" FromRole="tblContrat" ToRole="tblEngagement" />
+          <NavigationProperty Name="tblExigence" Relationship="Self.EXI_CON_FK" FromRole="tblContrat" ToRole="tblExigence" />
+          <NavigationProperty Name="tblFichierOfficiel" Relationship="Self.FICOFF_CON_FK" FromRole="tblContrat" ToRole="tblFichierOfficiel" />
+          <NavigationProperty Name="tblArtiste" Relationship="Self.tblContratArtiste" FromRole="tblContrat" ToRole="tblArtiste" />
+          <NavigationProperty Name="tblResponsable" Relationship="Self.tblRespoContrat" FromRole="tblContrat" ToRole="tblResponsable" />
+        </EntityType>
+        <EntityType Name="tblDiffuseur">
+          <Key>
+            <PropertyRef Name="noDiffuseur" />
+          </Key>
+          <Property Name="noDiffuseur" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="courriel" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <Property Name="noAdresse" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblResponsable" Relationship="Self.RES_DIF_FK" FromRole="tblDiffuseur" ToRole="tblResponsable" />
+        </EntityType>
+        <EntityType Name="tblEngagement">
+          <Key>
+            <PropertyRef Name="noEngagement" />
+          </Key>
+          <Property Name="noEngagement" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="duree" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="heure" Type="Time" Precision="7" />
+          <Property Name="nature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descriptionCourte" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblContrat" Relationship="Self.ENG_CON_FK" FromRole="tblEngagement" ToRole="tblContrat" />
+        </EntityType>
+        <EntityType Name="tblExigence">
+          <Key>
+            <PropertyRef Name="noExigence" />
+          </Key>
+          <Property Name="noExigence" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="montant" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descriptionCourte" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="noStatut" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblContrat" Relationship="Self.EXI_CON_FK" FromRole="tblExigence" ToRole="tblContrat" />
+          <NavigationProperty Name="tblStatut" Relationship="Self.EXI_STA_FK" FromRole="tblExigence" ToRole="tblStatut" />
+        </EntityType>
+        <EntityType Name="tblFichierOfficiel">
+          <Key>
+            <PropertyRef Name="noArtiste" />
+            <PropertyRef Name="noContrat" />
+            <PropertyRef Name="noFichier" />
+          </Key>
+          <Property Name="noArtiste" Type="Int32" Nullable="false" />
+          <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="noFichier" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblArtiste" Relationship="Self.FICOFF_ART_FK" FromRole="tblFichierOfficiel" ToRole="tblArtiste" />
+          <NavigationProperty Name="tblContrat" Relationship="Self.FICOFF_CON_FK" FromRole="tblFichierOfficiel" ToRole="tblContrat" />
+          <NavigationProperty Name="tblFichierPersonnel" Relationship="Self.FICOFF_FICPER_FK" FromRole="tblFichierOfficiel" ToRole="tblFichierPersonnel" />
+        </EntityType>
+        <EntityType Name="tblFichierPersonnel">
+          <Key>
+            <PropertyRef Name="noFichier" />
+          </Key>
+          <Property Name="noFichier" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="chemin" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <Property Name="noArtiste" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblArtiste" Relationship="Self.FIC_ART_FK" FromRole="tblFichierPersonnel" ToRole="tblArtiste" />
+          <NavigationProperty Name="tblFichierOfficiel" Relationship="Self.FICOFF_FICPER_FK" FromRole="tblFichierPersonnel" ToRole="tblFichierOfficiel" />
+        </EntityType>
+        <EntityType Name="tblResponsable">
+          <Key>
+            <PropertyRef Name="noResponsable" />
+          </Key>
+          <Property Name="noResponsable" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prenom" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="courriel" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="signataire" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="dateSignature" Type="DateTime" Precision="0" />
+          <Property Name="telBureau" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="telCellulaire" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="extension" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="idem" Type="Boolean" Nullable="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <Property Name="noDiffuseur" Type="Int32" />
+          <Property Name="noAgence" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblAgence" Relationship="Self.RES_AGE_FK" FromRole="tblResponsable" ToRole="tblAgence" />
+          <NavigationProperty Name="tblDiffuseur" Relationship="Self.RES_DIF_FK" FromRole="tblResponsable" ToRole="tblDiffuseur" />
+          <NavigationProperty Name="tblContrat" Relationship="Self.tblRespoContrat" FromRole="tblResponsable" ToRole="tblContrat" />
+        </EntityType>
+        <EntityType Name="tblStatut">
+          <Key>
+            <PropertyRef Name="noStatut" />
+          </Key>
+          <Property Name="noStatut" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomStatut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="couleur" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblContrat" Relationship="Self.CON_STA_FK" FromRole="tblStatut" ToRole="tblContrat" />
+          <NavigationProperty Name="tblExigence" Relationship="Self.EXI_STA_FK" FromRole="tblStatut" ToRole="tblExigence" />
+        </EntityType>
+        <EntityType Name="vueSomArtiste">
+          <Key>
+            <PropertyRef Name="nomAriste" />
+          </Key>
+          <Property Name="nomAriste" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomCat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vueSomCatArtiste">
+          <Key>
+            <PropertyRef Name="nom" />
+          </Key>
+          <Property Name="nom" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vueSomContrat">
+          <Key>
+            <PropertyRef Name="noContrat" />
+            <PropertyRef Name="nom" />
+            <PropertyRef Name="nomStatut" />
+          </Key>
+          <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomStatut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vueSomEngagement">
+          <Key>
+            <PropertyRef Name="nature" />
+            <PropertyRef Name="duree" />
+            <PropertyRef Name="lieu" />
+            <PropertyRef Name="noContrat" />
+          </Key>
+          <Property Name="nature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="heure" Type="Time" Precision="7" />
+          <Property Name="duree" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vueSomExigence">
+          <Key>
+            <PropertyRef Name="nom" />
+          </Key>
+          <Property Name="nom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="montant" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="descriptionCourte" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="noStatut" Type="Int32" Nullable="false" />
+          <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="CON_AGE_FK">
+          <End Role="tblAgence" Type="Self.tblAgence" Multiplicity="1" />
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAgence">
+              <PropertyRef Name="noAgence" />
+            </Principal>
+            <Dependent Role="tblContrat">
+              <PropertyRef Name="noAgence" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RES_AGE_FK">
+          <End Role="tblAgence" Type="Self.tblAgence" Multiplicity="0..1" />
+          <End Role="tblResponsable" Type="Self.tblResponsable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAgence">
+              <PropertyRef Name="noAgence" />
+            </Principal>
+            <Dependent Role="tblResponsable">
+              <PropertyRef Name="noAgence" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FIC_ART_FK">
+          <End Role="tblArtiste" Type="Self.tblArtiste" Multiplicity="1" />
+          <End Role="tblFichierPersonnel" Type="Self.tblFichierPersonnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblArtiste">
+              <PropertyRef Name="noArtiste" />
+            </Principal>
+            <Dependent Role="tblFichierPersonnel">
+              <PropertyRef Name="noArtiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FICOFF_ART_FK">
+          <End Role="tblArtiste" Type="Self.tblArtiste" Multiplicity="1" />
+          <End Role="tblFichierOfficiel" Type="Self.tblFichierOfficiel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblArtiste">
+              <PropertyRef Name="noArtiste" />
+            </Principal>
+            <Dependent Role="tblFichierOfficiel">
+              <PropertyRef Name="noArtiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CON_STA_FK">
+          <End Role="tblStatut" Type="Self.tblStatut" Multiplicity="1" />
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblStatut">
+              <PropertyRef Name="noStatut" />
+            </Principal>
+            <Dependent Role="tblContrat">
+              <PropertyRef Name="noStatut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ENG_CON_FK">
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+          <End Role="tblEngagement" Type="Self.tblEngagement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContrat">
+              <PropertyRef Name="noContrat" />
+            </Principal>
+            <Dependent Role="tblEngagement">
+              <PropertyRef Name="noContrat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EXI_CON_FK">
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+          <End Role="tblExigence" Type="Self.tblExigence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContrat">
+              <PropertyRef Name="noContrat" />
+            </Principal>
+            <Dependent Role="tblExigence">
+              <PropertyRef Name="noContrat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FICOFF_CON_FK">
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+          <End Role="tblFichierOfficiel" Type="Self.tblFichierOfficiel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContrat">
+              <PropertyRef Name="noContrat" />
+            </Principal>
+            <Dependent Role="tblFichierOfficiel">
+              <PropertyRef Name="noContrat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RES_DIF_FK">
+          <End Role="tblDiffuseur" Type="Self.tblDiffuseur" Multiplicity="0..1" />
+          <End Role="tblResponsable" Type="Self.tblResponsable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDiffuseur">
+              <PropertyRef Name="noDiffuseur" />
+            </Principal>
+            <Dependent Role="tblResponsable">
+              <PropertyRef Name="noDiffuseur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EXI_STA_FK">
+          <End Role="tblStatut" Type="Self.tblStatut" Multiplicity="1" />
+          <End Role="tblExigence" Type="Self.tblExigence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblStatut">
+              <PropertyRef Name="noStatut" />
+            </Principal>
+            <Dependent Role="tblExigence">
+              <PropertyRef Name="noStatut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FICOFF_FICPER_FK">
+          <End Role="tblFichierPersonnel" Type="Self.tblFichierPersonnel" Multiplicity="1" />
+          <End Role="tblFichierOfficiel" Type="Self.tblFichierOfficiel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFichierPersonnel">
+              <PropertyRef Name="noFichier" />
+            </Principal>
+            <Dependent Role="tblFichierOfficiel">
+              <PropertyRef Name="noFichier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tblCatArtisteArt">
+          <End Role="tblArtiste" Type="Self.tblArtiste" Multiplicity="*" />
+          <End Role="tblCategorieArtiste" Type="Self.tblCategorieArtiste" Multiplicity="*" />
+        </Association>
+        <Association Name="tblContratArtiste">
+          <End Role="tblArtiste" Type="Self.tblArtiste" Multiplicity="*" />
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="*" />
+        </Association>
+        <Association Name="tblRespoContrat">
+          <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="*" />
+          <End Role="tblResponsable" Type="Self.tblResponsable" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="PE2_TestEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAdresse" EntityType="Self.tblAdresse" />
+          <EntitySet Name="tblAgence" EntityType="Self.tblAgence" />
+          <EntitySet Name="tblArtiste" EntityType="Self.tblArtiste" />
+          <EntitySet Name="tblCategorieArtiste" EntityType="Self.tblCategorieArtiste" />
+          <EntitySet Name="tblContrat" EntityType="Self.tblContrat" />
+          <EntitySet Name="tblDiffuseur" EntityType="Self.tblDiffuseur" />
+          <EntitySet Name="tblEngagement" EntityType="Self.tblEngagement" />
+          <EntitySet Name="tblExigence" EntityType="Self.tblExigence" />
+          <EntitySet Name="tblFichierOfficiel" EntityType="Self.tblFichierOfficiel" />
+          <EntitySet Name="tblFichierPersonnel" EntityType="Self.tblFichierPersonnel" />
+          <EntitySet Name="tblResponsable" EntityType="Self.tblResponsable" />
+          <EntitySet Name="tblStatut" EntityType="Self.tblStatut" />
+          <EntitySet Name="vueSomArtiste" EntityType="Self.vueSomArtiste" />
+          <EntitySet Name="vueSomCatArtiste" EntityType="Self.vueSomCatArtiste" />
+          <EntitySet Name="vueSomContrat" EntityType="Self.vueSomContrat" />
+          <EntitySet Name="vueSomEngagement" EntityType="Self.vueSomEngagement" />
+          <EntitySet Name="vueSomExigence" EntityType="Self.vueSomExigence" />
+          <AssociationSet Name="CON_AGE_FK" Association="Self.CON_AGE_FK">
+            <End Role="tblAgence" EntitySet="tblAgence" />
+            <End Role="tblContrat" EntitySet="tblContrat" />
+          </AssociationSet>
+          <AssociationSet Name="RES_AGE_FK" Association="Self.RES_AGE_FK">
+            <End Role="tblAgence" EntitySet="tblAgence" />
+            <End Role="tblResponsable" EntitySet="tblResponsable" />
+          </AssociationSet>
+          <AssociationSet Name="FIC_ART_FK" Association="Self.FIC_ART_FK">
+            <End Role="tblArtiste" EntitySet="tblArtiste" />
+            <End Role="tblFichierPersonnel" EntitySet="tblFichierPersonnel" />
+          </AssociationSet>
+          <AssociationSet Name="FICOFF_ART_FK" Association="Self.FICOFF_ART_FK">
+            <End Role="tblArtiste" EntitySet="tblArtiste" />
+            <End Role="tblFichierOfficiel" EntitySet="tblFichierOfficiel" />
+          </AssociationSet>
+          <AssociationSet Name="CON_STA_FK" Association="Self.CON_STA_FK">
+            <End Role="tblStatut" EntitySet="tblStatut" />
+            <End Role="tblContrat" EntitySet="tblContrat" />
+          </AssociationSet>
+          <AssociationSet Name="ENG_CON_FK" Association="Self.ENG_CON_FK">
+            <End Role="tblContrat" EntitySet="tblContrat" />
+            <End Role="tblEngagement" EntitySet="tblEngagement" />
+          </AssociationSet>
+          <AssociationSet Name="EXI_CON_FK" Association="Self.EXI_CON_FK">
+            <End Role="tblContrat" EntitySet="tblContrat" />
+            <End Role="tblExigence" EntitySet="tblExigence" />
+          </AssociationSet>
+          <AssociationSet Name="FICOFF_CON_FK" Association="Self.FICOFF_CON_FK">
+            <End Role="tblContrat" EntitySet="tblContrat" />
+            <End Role="tblFichierOfficiel" EntitySet="tblFichierOfficiel" />
+          </AssociationSet>
+          <AssociationSet Name="RES_DIF_FK" Association="Self.RES_DIF_FK">
+            <End Role="tblDiffuseur" EntitySet="tblDiffuseur" />
+            <End Role="tblResponsable" EntitySet="tblResponsable" />
+          </AssociationSet>
+          <AssociationSet Name="EXI_STA_FK" Association="Self.EXI_STA_FK">
+            <End Role="tblStatut" EntitySet="tblStatut" />
+            <End Role="tblExigence" EntitySet="tblExigence" />
+          </AssociationSet>
+          <AssociationSet Name="FICOFF_FICPER_FK" Association="Self.FICOFF_FICPER_FK">
+            <End Role="tblFichierPersonnel" EntitySet="tblFichierPersonnel" />
+            <End Role="tblFichierOfficiel" EntitySet="tblFichierOfficiel" />
+          </AssociationSet>
+          <AssociationSet Name="tblCatArtisteArt" Association="Self.tblCatArtisteArt">
+            <End Role="tblArtiste" EntitySet="tblArtiste" />
+            <End Role="tblCategorieArtiste" EntitySet="tblCategorieArtiste" />
+          </AssociationSet>
+          <AssociationSet Name="tblContratArtiste" Association="Self.tblContratArtiste">
+            <End Role="tblArtiste" EntitySet="tblArtiste" />
+            <End Role="tblContrat" EntitySet="tblContrat" />
+          </AssociationSet>
+          <AssociationSet Name="tblRespoContrat" Association="Self.tblRespoContrat">
+            <End Role="tblContrat" EntitySet="tblContrat" />
+            <End Role="tblResponsable" EntitySet="tblResponsable" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PE2_TestModelStoreContainer" CdmEntityContainer="PE2_TestEntities">
+          <EntitySetMapping Name="tblAdresse">
+            <EntityTypeMapping TypeName="PE2_TestModel.tblAdresse">
+              <MappingFragment StoreEntitySet="tblAdresse">
+                <ScalarProperty Name="noAdresse" ColumnName="noAdresse" />
+                <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="codepostal" ColumnName="codepostal" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="pays" ColumnName="pays" />
+                <ScalarProperty Name="telBureau" ColumnName="telBureau" />
+                <ScalarProperty Name="telCellulaire" ColumnName="telCellulaire" />
+                <ScalarProperty Name="extension" ColumnName="extension" />
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAgence">
+            <EntityTypeMapping TypeName="PE2_TestModel.tblAgence">
+              <MappingFragment StoreEntitySet="tblAgence">
+                <ScalarProperty Name="noAgence" ColumnName="noAgence" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="courriel" ColumnName="courriel" />
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+                <ScalarProperty Name="noAdresse" ColumnName="noAdresse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblArtiste">
+            <EntityTypeMapping TypeName="PE2_TestModel.tblArtiste">
+              <MappingFragment StoreEntitySet="tblArtiste">
+                <ScalarProperty Name="noArtiste" ColumnName="noArtiste" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCategorieArtiste">
+            <EntityTypeMapping TypeName="PE2_TestModel.tblCategorieArtiste">
+              <MappingFragment StoreEntitySet="tblCategorieArtiste">
+                <ScalarProperty Name="noCategorie" ColumnName="noCategorie" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContrat">
+            <EntityTypeMapping TypeName="PE2_TestModel.tblContrat">
+              <MappingFragment StoreEntitySet="tblContrat">
+                <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+                <ScalarProperty Name="lieu" ColumnName="lieu" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+                <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+                <ScalarProperty Name="noAgence" ColumnName="noAgence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDiffuseur">
+            <EntityTypeMapping TypeName="PE2_TestModel.tblDiffuseur">
+              <MappingFragment StoreEntitySet="tblDiffuseur">
+                <ScalarProperty Name="noDiffuseur" ColumnName="noDiffuseur" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="courriel" ColumnName="courriel" />
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+                <ScalarProperty Name="noAdresse" ColumnName="noAdresse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEngagement">
+            <EntityTypeMapping TypeName="PE2_TestModel.tblEngagement">
+              <MappingFragment StoreEntitySet="tblEngagement">
+                <ScalarProperty Name="noEngagement" ColumnName="noEngagement" />
+                <ScalarProperty Name="duree" ColumnName="duree" />
+                <ScalarProperty Name="lieu" ColumnName="lieu" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="heure" ColumnName="heure" />
+                <ScalarProperty Name="nature" ColumnName="nature" />
+                <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="descriptionCourte" ColumnName="descriptionCourte" />
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+                <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblExigence">
+            <EntityTypeMapping TypeName="PE2_TestModel.tblExigence">
+              <MappingFragment StoreEntitySet="tblExigence">
+                <ScalarProperty Name="noExigence" ColumnName="noExigence" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="montant" ColumnName="montant" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+                <ScalarProperty Name="descriptionCourte" ColumnName="descriptionCourte" />
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+                <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+                <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblFichierOfficiel">
+            <EntityTypeMapping TypeName="PE2_TestModel.tblFichierOfficiel">
+              <MappingFragment StoreEntitySet="tblFichierOfficiel">
+                <ScalarProperty Name="noArtiste" ColumnName="noArtiste" />
+                <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+                <ScalarProperty Name="noFichier" ColumnName="noFichier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblFichierPersonnel">
+            <EntityTypeMapping TypeName="PE2_TestModel.tblFichierPersonnel">
+              <MappingFragment StoreEntitySet="tblFichierPersonnel">
+                <ScalarProperty Name="noFichier" ColumnName="noFichier" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="chemin" ColumnName="chemin" />
+                <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+                <ScalarProperty Name="noArtiste" ColumnName="noArtiste" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblResponsable">
+            <EntityTypeMapping TypeName="PE2_TestModel.tblResponsable">
+              <MappingFragment StoreEntitySet="tblResponsable">
+                <ScalarProperty Name="noResponsable" ColumnName="noResponsable" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="prenom" ColumnName="prenom" />
+                <ScalarProperty Name="courriel" ColumnName="courriel" />
+                <ScalarProperty Name="signataire" ColumnName="signataire" />
+                <ScalarProperty Name="dateSignature" ColumnName="dateSignature" />
+                <ScalarProperty Name="telBureau" ColumnName="telBureau" />
+                <ScalarProperty Name="telCellulaire" ColumnName="telCellulaire" />
+                <ScalarProperty Name="extension" ColumnName="extension" />
+                <ScalarProperty Name="idem" ColumnName="idem" />
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+                <ScalarProperty Name="noDiffuseur" ColumnName="noDiffuseur" />
+                <ScalarProperty Name="noAgence" ColumnName="noAgence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStatut">
+            <EntityTypeMapping TypeName="PE2_TestModel.tblStatut">
+              <MappingFragment StoreEntitySet="tblStatut">
+                <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+                <ScalarProperty Name="nomStatut" ColumnName="nomStatut" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="couleur" ColumnName="couleur" />
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vueSomArtiste">
+            <EntityTypeMapping TypeName="PE2_TestModel.vueSomArtiste">
+              <MappingFragment StoreEntitySet="vueSomArtiste">
+                <ScalarProperty Name="nomAriste" ColumnName="nomAriste" />
+                <ScalarProperty Name="nomCat" ColumnName="nomCat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vueSomCatArtiste">
+            <EntityTypeMapping TypeName="PE2_TestModel.vueSomCatArtiste">
+              <MappingFragment StoreEntitySet="vueSomCatArtiste">
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vueSomContrat">
+            <EntityTypeMapping TypeName="PE2_TestModel.vueSomContrat">
+              <MappingFragment StoreEntitySet="vueSomContrat">
+                <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="nomStatut" ColumnName="nomStatut" />
+                <ScalarProperty Name="lieu" ColumnName="lieu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vueSomEngagement">
+            <EntityTypeMapping TypeName="PE2_TestModel.vueSomEngagement">
+              <MappingFragment StoreEntitySet="vueSomEngagement">
+                <ScalarProperty Name="nature" ColumnName="nature" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="heure" ColumnName="heure" />
+                <ScalarProperty Name="duree" ColumnName="duree" />
+                <ScalarProperty Name="lieu" ColumnName="lieu" />
+                <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vueSomExigence">
+            <EntityTypeMapping TypeName="PE2_TestModel.vueSomExigence">
+              <MappingFragment StoreEntitySet="vueSomExigence">
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="montant" ColumnName="montant" />
+                <ScalarProperty Name="descriptionCourte" ColumnName="descriptionCourte" />
+                <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+                <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="tblCatArtisteArt" TypeName="PE2_TestModel.tblCatArtisteArt" StoreEntitySet="tblCatArtisteArt">
+            <EndProperty Name="tblArtiste">
+              <ScalarProperty Name="noArtiste" ColumnName="noArtiste" />
+            </EndProperty>
+            <EndProperty Name="tblCategorieArtiste">
+              <ScalarProperty Name="noCategorie" ColumnName="noCategorie" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="tblContratArtiste" TypeName="PE2_TestModel.tblContratArtiste" StoreEntitySet="tblContratArtiste">
+            <EndProperty Name="tblArtiste">
+              <ScalarProperty Name="noArtiste" ColumnName="noArtiste" />
+            </EndProperty>
+            <EndProperty Name="tblContrat">
+              <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="tblRespoContrat" TypeName="PE2_TestModel.tblRespoContrat" StoreEntitySet="tblRespoContrat">
+            <EndProperty Name="tblContrat">
+              <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+            </EndProperty>
+            <EndProperty Name="tblResponsable">
+              <ScalarProperty Name="noResponsable" ColumnName="noResponsable" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
