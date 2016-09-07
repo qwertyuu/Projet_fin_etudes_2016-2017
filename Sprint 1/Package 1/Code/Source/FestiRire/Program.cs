@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FestiRire
 {
@@ -16,7 +17,13 @@ namespace FestiRire
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SommaireArtiste());
+            using (var context = new Modele.PE2_TestEntities())
+            {
+                var m = (from r in context.tblAdresse
+                        select r).ToList();
+                MessageBox.Show(m[0].adresse);
+            }
+            //Application.Run(new SommaireArtiste());
         }
     }
 }
