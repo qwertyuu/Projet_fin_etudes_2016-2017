@@ -180,8 +180,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomAgence' n'a pas d
         <EntityType Name="vueSomAgence">
           <Key>
             <PropertyRef Name="noAgence" />
-            <PropertyRef Name="nom" />
-            <PropertyRef Name="ville" />
           </Key>
           <Property Name="noAgence" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
@@ -194,8 +192,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomArtiste' n'a pas 
         <EntityType Name="vueSomArtiste">
           <Key>
             <PropertyRef Name="noArtiste" />
-            <PropertyRef Name="nomAriste" />
-            <PropertyRef Name="nomCat" />
           </Key>
           <Property Name="noArtiste" Type="int" Nullable="false" />
           <Property Name="nomAriste" Type="varchar" MaxLength="50" Nullable="false" />
@@ -206,7 +202,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomCatArtiste' n'a p
         <EntityType Name="vueSomCatArtiste">
           <Key>
             <PropertyRef Name="noCategorie" />
-            <PropertyRef Name="nom" />
           </Key>
           <Property Name="noCategorie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="20" Nullable="false" />
@@ -217,8 +212,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomContrat' n'a pas 
         <EntityType Name="vueSomContrat">
           <Key>
             <PropertyRef Name="noContrat" />
-            <PropertyRef Name="nom" />
-            <PropertyRef Name="nomStatut" />
           </Key>
           <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
@@ -230,10 +223,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomEngagement' n'a p
         <EntityType Name="vueSomEngagement">
           <Key>
             <PropertyRef Name="noEngagement" />
-            <PropertyRef Name="nature" />
-            <PropertyRef Name="duree" />
-            <PropertyRef Name="lieu" />
-            <PropertyRef Name="noContrat" />
           </Key>
           <Property Name="noEngagement" Type="int" Nullable="false" />
           <Property Name="nature" Type="varchar" MaxLength="50" Nullable="false" />
@@ -248,9 +237,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas
         <EntityType Name="vueSomExigence">
           <Key>
             <PropertyRef Name="noExigence" />
-            <PropertyRef Name="nom" />
-            <PropertyRef Name="noStatut" />
-            <PropertyRef Name="noContrat" />
           </Key>
           <Property Name="noExigence" Type="int" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="30" Nullable="false" />
@@ -820,8 +806,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas
         <EntityType Name="vueSomAgence">
           <Key>
             <PropertyRef Name="noAgence" />
-            <PropertyRef Name="nom" />
-            <PropertyRef Name="ville" />
           </Key>
           <Property Name="noAgence" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -832,8 +816,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas
         <EntityType Name="vueSomArtiste">
           <Key>
             <PropertyRef Name="noArtiste" />
-            <PropertyRef Name="nomAriste" />
-            <PropertyRef Name="nomCat" />
           </Key>
           <Property Name="noArtiste" Type="Int32" Nullable="false" />
           <Property Name="nomAriste" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -842,7 +824,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas
         <EntityType Name="vueSomCatArtiste">
           <Key>
             <PropertyRef Name="noCategorie" />
-            <PropertyRef Name="nom" />
           </Key>
           <Property Name="noCategorie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
@@ -851,8 +832,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas
         <EntityType Name="vueSomContrat">
           <Key>
             <PropertyRef Name="noContrat" />
-            <PropertyRef Name="nom" />
-            <PropertyRef Name="nomStatut" />
           </Key>
           <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -862,10 +841,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas
         <EntityType Name="vueSomEngagement">
           <Key>
             <PropertyRef Name="noEngagement" />
-            <PropertyRef Name="nature" />
-            <PropertyRef Name="duree" />
-            <PropertyRef Name="lieu" />
-            <PropertyRef Name="noContrat" />
           </Key>
           <Property Name="noEngagement" Type="Int32" Nullable="false" />
           <Property Name="nature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -878,9 +853,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas
         <EntityType Name="vueSomExigence">
           <Key>
             <PropertyRef Name="noExigence" />
-            <PropertyRef Name="nom" />
-            <PropertyRef Name="noStatut" />
-            <PropertyRef Name="noContrat" />
           </Key>
           <Property Name="noExigence" Type="Int32" Nullable="false" />
           <Property Name="nom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
