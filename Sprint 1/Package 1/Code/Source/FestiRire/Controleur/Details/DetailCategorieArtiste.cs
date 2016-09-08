@@ -8,5 +8,13 @@ namespace FestiRire.Controleur.Details
 {
     class DetailCategorieArtiste : DetailBaseSimple
     {
+        public DetailCategorieArtiste() : base()
+        {
+
+        }
+        internal Modele.tblCategorieArtiste LoadCategorieArtiste(int noCategorie)
+        {
+            
+        }
     }
 }

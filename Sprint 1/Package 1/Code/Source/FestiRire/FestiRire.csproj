@@ -64,6 +64,7 @@
     <Compile Include="Controleur\Details\DetailEngagement.cs" />
     <Compile Include="Controleur\Details\DetailExigence.cs" />
     <Compile Include="Controleur\Details\DetailStatut.cs" />
+    <Compile Include="Controleur\Sommaires\SommaireAgence.cs" />
     <Compile Include="Controleur\Sommaires\SommaireBase.cs" />
     <Compile Include="Controleur\Sommaires\SommaireCategorieArtiste.cs" />
     <Compile Include="Controleur\Sommaires\SommaireContrat.cs" />

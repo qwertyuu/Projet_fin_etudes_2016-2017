@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace FestiRire
@@ -9,12 +10,19 @@ namespace FestiRire
     class DBProvider
     {
         private static Modele.PE2_OfficielEntities BD;
+        private static PropertyInfo[] tablesEtVues;
         public DBProvider()
         {
             if(BD == null)
             {
                 BD = new Modele.PE2_OfficielEntities();
+                tablesEtVues = BD.GetType().GetProperties();
             }
+        }
+        
+        public void Insert<T>(T o)
+        {
+            ().Add(o);
         }
 
         //-----Requête sur la table Agence----

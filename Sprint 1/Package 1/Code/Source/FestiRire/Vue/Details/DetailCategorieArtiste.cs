@@ -12,9 +12,19 @@ namespace FestiRire
 {
     public partial class DetailCategorieArtiste : Form
     {
+        Controleur.Details.DetailCategorieArtiste DCA;
         public DetailCategorieArtiste()
         {
             InitializeComponent();
+            DCA = new Controleur.Details.DetailCategorieArtiste();
+        }
+
+        public DetailCategorieArtiste(int noCategorie)
+        {
+            InitializeComponent();
+            DCA = new Controleur.Details.DetailCategorieArtiste();
+            Modele.tblCategorieArtiste categorie = DCA.LoadCategorieArtiste(noCategorie);
+            
         }
     }
 }

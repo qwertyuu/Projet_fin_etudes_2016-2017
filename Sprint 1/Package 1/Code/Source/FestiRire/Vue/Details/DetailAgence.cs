@@ -24,5 +24,11 @@ namespace FestiRire
             agence.AjouterAgence(txtNo.Text,txtNomAgence.Text, txtCourriel.Text, txtVille.Text, txtCodePostal.Text, rtbAdresse.Text, txtCellulaire.Text, txtTelCellulaire.Text, txtPosteBureau.Text, cmbProvince.Text, txtPays.Text);
             MessageBox.Show("Agence Ajouté");
         }
+
+        public DetailAgence(string idAgence)
+        {
+            InitializeComponent();
+            
+        }
     }
 }

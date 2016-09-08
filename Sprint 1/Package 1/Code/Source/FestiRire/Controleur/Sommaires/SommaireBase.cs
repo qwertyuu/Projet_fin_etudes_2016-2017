@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FestiRire.Controleur.Sommaires
 {
-    class SommaireBase
+    abstract class SommaireBase
     {
         protected DBProvider provider;
         public SommaireBase()

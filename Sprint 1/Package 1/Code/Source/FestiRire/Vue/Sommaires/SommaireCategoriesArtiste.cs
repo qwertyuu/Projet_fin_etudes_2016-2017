@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FestiRire
 {
     public partial class SommaireCategoriesArtiste : Form
@@ -22,9 +23,23 @@ namespace FestiRire
             dgvCategorie.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             dgvCategorie.AllowUserToResizeRows = false;
             dgvCategorie.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCategorie.MultiSelect = false;
             dgvCategorie.DataSource = conSommaireCatArtiste.Tout();
         }
 
+        private void btnFermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            var frmDetailCatArt = new DetailCategorieArtiste(((Modele.vueSomCatArtiste)dgvCategorie.SelectedRows[0].DataBoundItem).noCategorie);
+        }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

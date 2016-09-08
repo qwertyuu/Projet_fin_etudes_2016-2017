@@ -32,7 +32,6 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFiltres = new System.Windows.Forms.Button();
             this.btnRechercher = new System.Windows.Forms.Button();
@@ -54,8 +53,7 @@
             this.dgvAgence.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Ville,
-            this.Telephone,
-            this.Column2});
+            this.Telephone});
             this.dgvAgence.Location = new System.Drawing.Point(6, 45);
             this.dgvAgence.Name = "dgvAgence";
             this.dgvAgence.Size = new System.Drawing.Size(1691, 328);
@@ -63,23 +61,21 @@
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "nom";
             this.Column1.HeaderText = "Nom";
             this.Column1.Name = "Column1";
             // 
             // Ville
             // 
+            this.Ville.DataPropertyName = "ville";
             this.Ville.HeaderText = "Ville";
             this.Ville.Name = "Ville";
             // 
             // Telephone
             // 
+            this.Telephone.DataPropertyName = "tel";
             this.Telephone.HeaderText = "Telephone";
             this.Telephone.Name = "Telephone";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Description";
-            this.Column2.Name = "Column2";
             // 
             // groupBox1
             // 
@@ -137,6 +133,7 @@
             this.btnAjouter.TabIndex = 22;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // btnDetail
             // 
@@ -148,6 +145,7 @@
             this.btnDetail.TabIndex = 21;
             this.btnDetail.Text = "Détail";
             this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // btnFermer
             // 
@@ -160,6 +158,7 @@
             this.btnFermer.TabIndex = 22;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // SommaireAgence
             // 
@@ -193,6 +192,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ville;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telephone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

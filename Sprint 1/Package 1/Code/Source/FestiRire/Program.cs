@@ -17,17 +17,7 @@ namespace FestiRire
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (var context = new Modele.PE2_OfficielEntities())
-            {
-                var m = (from r in context.tblAdresse
-                         where r.adresse != null
-                         where r.dateSupprime == null
-                         orderby r.noAdresse descending
-                        select r
-                        );
-            }
-            //Application.Run(new SommaireCategoriesArtiste());
-            Application.Run(new DetailAgence());
+            Application.Run(new SommaireAgence());
         }
     }
 }
