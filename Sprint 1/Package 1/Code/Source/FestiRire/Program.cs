@@ -26,7 +26,8 @@ namespace FestiRire
                         select r
                         );
             }
-            Application.Run(new SommaireCategoriesArtiste());
+            //Application.Run(new SommaireCategoriesArtiste());
+            Application.Run(new DetailAgence());
         }
     }
 }

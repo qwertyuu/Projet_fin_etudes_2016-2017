@@ -8,21 +8,15 @@ namespace FestiRire.Controleur.Details
 {
     class DetailAgence
     {
-        Modele.PE2_OfficielEntities bd = new Modele.PE2_OfficielEntities();
+        DBProvider provider = new DBProvider();
         
         //Méthode permettant d'jouter une agnece
-        public void AjouterAgence(string name, string courr, string vil, string codepost, string adres, string cel, string tel, string poste,string prov,string pay)
-        {
-            if(bd!=null) //On verifie que le modèle n'est pas null.
-            {
+        public void AjouterAgence(string no,string name, string courr, string vil, string codepost, string adres, string cel, string tel, string poste,string prov,string pay)
+        {         
                 var adresse = new Modele.tblAdresse { adresse = adres, ville = vil, codepostal = codepost, province = prov, pays = pay, telBureau = tel, telCellulaire = cel, extension = poste };
-                bd.tblAdresse.Add(adresse);
-                var agence = new Modele.tblAgence { nom = name, courriel = courr };//On enregistre l'agence.
-                bd.tblAgence.Add(agence);
-                bd.SaveChanges();//Et enfin on sauvegarde les modifications.
-            }
-
-
+                provider.SaveAdrrese(adresse);
+                var agence = new Modele.tblAgence {noAgence=no,nom = name, courriel = courr,noAdresse=adresse.noAdresse };//On enregistre l'agence.
+                provider.SaveAgence(agence);//Et enfin on sauvegarde les modifications.
         }
     }
 }

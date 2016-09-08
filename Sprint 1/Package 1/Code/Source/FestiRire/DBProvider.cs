@@ -17,6 +17,20 @@ namespace FestiRire
             }
         }
 
+        //-----Requête sur la table Agence----
+        public void SaveAgence(Modele.tblAgence agence)
+        {
+            BD.tblAgence.Add(agence);
+            BD.SaveChanges();
+        }
+
+        //-----Requête sur la table adresse----
+        public void SaveAdrrese(Modele.tblAdresse adresse)
+        {
+            BD.tblAdresse.Add(adresse);
+            BD.SaveChanges();
+        }
+
         public List<Modele.vueSomAgence> ToutVueAgence()
         {
             return (from item in BD.vueSomAgence
