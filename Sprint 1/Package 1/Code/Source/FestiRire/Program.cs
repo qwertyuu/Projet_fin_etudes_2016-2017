@@ -24,10 +24,9 @@ namespace FestiRire
                          where r.dateSupprime == null
                          orderby r.noAdresse descending
                         select r
-                        ).ToList();
-                MessageBox.Show(m[0].adresse);
+                        );
             }
-            //Application.Run(new SommaireArtiste());
+            Application.Run(new SommaireCategoriesArtiste());
         }
     }
 }

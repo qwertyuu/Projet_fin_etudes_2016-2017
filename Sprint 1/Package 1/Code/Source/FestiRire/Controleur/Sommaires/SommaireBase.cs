@@ -8,5 +8,10 @@ namespace FestiRire.Controleur.Sommaires
 {
     class SommaireBase
     {
+        protected DBProvider provider;
+        public SommaireBase()
+        {
+            provider = new DBProvider();
+        }
     }
 }

@@ -8,6 +8,14 @@ namespace FestiRire.Controleur.Sommaires
 {
     class SommaireCategorieArtiste : SommaireBase
     {
-
+        public SommaireCategorieArtiste() : base()
+        {
+            
+        }
+        public List<Modele.vueSomCatArtiste> Tout()
+        {
+            return provider.ToutVueCategorieArtiste();
+        }
     }
+
 }

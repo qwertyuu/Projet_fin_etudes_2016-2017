@@ -12,9 +12,19 @@ namespace FestiRire
 {
     public partial class SommaireCategoriesArtiste : Form
     {
+        Controleur.Sommaires.SommaireCategorieArtiste conSommaireCatArtiste;
         public SommaireCategoriesArtiste()
         {
             InitializeComponent();
+            conSommaireCatArtiste = new Controleur.Sommaires.SommaireCategorieArtiste();
+            dgvCategorie.AutoGenerateColumns = false;
+            dgvCategorie.RowHeadersVisible = false;
+            dgvCategorie.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvCategorie.AllowUserToResizeRows = false;
+            dgvCategorie.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCategorie.DataSource = conSommaireCatArtiste.Tout();
         }
+
+
     }
 }

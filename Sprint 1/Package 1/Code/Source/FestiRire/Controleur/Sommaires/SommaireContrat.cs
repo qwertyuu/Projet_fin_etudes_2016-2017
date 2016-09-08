@@ -8,5 +8,9 @@ namespace FestiRire.Controleur.Sommaires
 {
     class SommaireContrat : SommaireBase
     {
+        public SommaireContrat() : base()
+        {
+
+        }
     }
 }

@@ -66,6 +66,7 @@
     <Compile Include="Controleur\Sommaires\SommaireBase.cs" />
     <Compile Include="Controleur\Sommaires\SommaireCategorieArtiste.cs" />
     <Compile Include="Controleur\Sommaires\SommaireContrat.cs" />
+    <Compile Include="DBProvider.cs" />
     <Compile Include="Modele\PE2_Officiel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

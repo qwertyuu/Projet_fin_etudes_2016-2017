@@ -44,9 +44,6 @@
             // 
             // dgvCategorie
             // 
-            this.dgvCategorie.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCategorie.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCategorie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -54,18 +51,23 @@
             this.Column2});
             this.dgvCategorie.Location = new System.Drawing.Point(6, 45);
             this.dgvCategorie.Name = "dgvCategorie";
+            this.dgvCategorie.ReadOnly = true;
             this.dgvCategorie.Size = new System.Drawing.Size(1691, 328);
             this.dgvCategorie.TabIndex = 0;
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "nom";
             this.Column1.HeaderText = "Nom";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "description";
             this.Column2.HeaderText = "Description";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -169,8 +171,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvCategorie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnDetail;
@@ -178,5 +178,7 @@
         private System.Windows.Forms.Button btnFiltres;
         private System.Windows.Forms.Button btnRechercher;
         private System.Windows.Forms.TextBox txtRecherche;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
