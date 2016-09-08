@@ -6,10 +6,6 @@ USE master
 
 GO
 
-DROP database PE2_Officielle
-PRINT 'Suppression de la base de données officielle'
-GO
-
 CREATE DATABASE PE2_Officielle
 PRINT 'Création de la base de données officielle'
 
