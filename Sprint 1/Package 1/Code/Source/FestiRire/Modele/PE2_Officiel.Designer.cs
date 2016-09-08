@@ -1,4 +1,4 @@
-﻿// La génération de code T4 est activée pour le modèle 'C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprint 1\Package 1\Code\Source\FestiRire\Modele\bd_festirire_local.edmx'. 
+﻿// La génération de code T4 est activée pour le modèle 'C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprint 1\Package 1\Code\Source\FestiRire\Modele\PE2_Officiel.edmx'. 
 // Pour activer la génération de code héritée, définissez la valeur de la propriété
 // du concepteur 'Stratégie de génération de code' sur 'ObjectContext hérité'. Cette propriété est disponible dans la fenêtre Propriétés lorsque le modèle
 //  est ouvert dans le concepteur.

@@ -17,10 +17,14 @@ namespace FestiRire
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (var context = new Modele.PE2_TestEntities())
+            using (var context = new Modele.PE2_OfficielEntities())
             {
                 var m = (from r in context.tblAdresse
-                        select r).ToList();
+                         where r.adresse != null
+                         where r.dateSupprime == null
+                         orderby r.noAdresse descending
+                        select r
+                        ).ToList();
                 MessageBox.Show(m[0].adresse);
             }
             //Application.Run(new SommaireArtiste());

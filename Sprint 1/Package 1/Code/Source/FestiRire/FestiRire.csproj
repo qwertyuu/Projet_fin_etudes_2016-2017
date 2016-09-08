@@ -66,71 +66,74 @@
     <Compile Include="Controleur\Sommaires\SommaireBase.cs" />
     <Compile Include="Controleur\Sommaires\SommaireCategorieArtiste.cs" />
     <Compile Include="Controleur\Sommaires\SommaireContrat.cs" />
-    <Compile Include="Modele\bd_festirire_local.Context.cs">
+    <Compile Include="Modele\PE2_Officiel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>bd_festirire_local.Context.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modele\bd_festirire_local.cs">
+    <Compile Include="Modele\PE2_Officiel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modele\bd_festirire_local.Designer.cs">
+    <Compile Include="Modele\PE2_Officiel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>bd_festirire_local.edmx</DependentUpon>
+      <DependentUpon>PE2_Officiel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Modele\tblAdresse.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\tblAgence.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\tblArtiste.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\tblCategorieArtiste.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\tblContrat.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\tblDiffuseur.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\tblEngagement.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\tblExigence.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\tblFichierOfficiel.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\tblFichierPersonnel.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\tblResponsable.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\tblStatut.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomAgence.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\vueSomArtiste.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\vueSomCatArtiste.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\vueSomContrat.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\vueSomEngagement.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\vueSomExigence.cs">
-      <DependentUpon>bd_festirire_local.tt</DependentUpon>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
     <Compile Include="Vue\Details\DetailArtiste.cs">
       <SubType>Form</SubType>
@@ -240,12 +243,12 @@
     <EmbeddedResource Include="Vue\Sommaires\SommaireContrats.resx">
       <DependentUpon>SommaireContrats.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Modele\bd_festirire_local.edmx">
+    <EntityDeploy Include="Modele\PE2_Officiel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>bd_festirire_local.Designer.cs</LastGenOutput>
+      <LastGenOutput>PE2_Officiel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Modele\bd_festirire_local.edmx.diagram">
-      <DependentUpon>bd_festirire_local.edmx</DependentUpon>
+    <None Include="Modele\PE2_Officiel.edmx.diagram">
+      <DependentUpon>PE2_Officiel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -262,19 +265,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Modele\bd_festirire_local.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>bd_festirire_local.edmx</DependentUpon>
-      <LastGenOutput>bd_festirire_local.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Modele\bd_festirire_local.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>bd_festirire_local.edmx</DependentUpon>
-      <LastGenOutput>bd_festirire_local.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Modele\PE2_Officiel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PE2_Officiel.edmx</DependentUpon>
+      <LastGenOutput>PE2_Officiel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modele\PE2_Officiel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PE2_Officiel.edmx</DependentUpon>
+      <LastGenOutput>PE2_Officiel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

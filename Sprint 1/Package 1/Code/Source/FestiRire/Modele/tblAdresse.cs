@@ -14,6 +14,13 @@ namespace FestiRire.Modele
     
     public partial class tblAdresse
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblAdresse()
+        {
+            this.tblAgence = new HashSet<tblAgence>();
+            this.tblDiffuseur = new HashSet<tblDiffuseur>();
+        }
+    
         public int noAdresse { get; set; }
         public string adresse { get; set; }
         public string ville { get; set; }
@@ -24,5 +31,10 @@ namespace FestiRire.Modele
         public string telCellulaire { get; set; }
         public string extension { get; set; }
         public Nullable<System.DateTime> dateSupprime { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblAgence> tblAgence { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblDiffuseur> tblDiffuseur { get; set; }
     }
 }

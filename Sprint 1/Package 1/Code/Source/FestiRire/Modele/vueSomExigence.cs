@@ -14,12 +14,12 @@ namespace FestiRire.Modele
     
     public partial class vueSomExigence
     {
+        public int noExigence { get; set; }
         public string nom { get; set; }
         public Nullable<System.DateTime> date { get; set; }
         public Nullable<decimal> montant { get; set; }
         public string descriptionCourte { get; set; }
         public int noStatut { get; set; }
         public string noContrat { get; set; }
-        public int noExigence { get; set; }
     }
 }

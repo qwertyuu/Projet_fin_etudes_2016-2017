@@ -12,10 +12,12 @@ namespace FestiRire.Modele
     using System;
     using System.Collections.Generic;
     
-    public partial class vueSomCatArtiste
+    public partial class vueSomAgence
     {
-        public int noCategorie { get; set; }
+        public string noAgence { get; set; }
         public string nom { get; set; }
-        public string description { get; set; }
+        public string ville { get; set; }
+        public string telBureau { get; set; }
+        public string telCellulaire { get; set; }
     }
 }

@@ -13,10 +13,10 @@ namespace FestiRire.Modele
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PE2_TestEntities : DbContext
+    public partial class PE2_OfficielEntities : DbContext
     {
-        public PE2_TestEntities()
-            : base("name=PE2_TestEntities")
+        public PE2_OfficielEntities()
+            : base("name=PE2_OfficielEntities")
         {
         }
     
@@ -37,6 +37,7 @@ namespace FestiRire.Modele
         public virtual DbSet<tblFichierPersonnel> tblFichierPersonnel { get; set; }
         public virtual DbSet<tblResponsable> tblResponsable { get; set; }
         public virtual DbSet<tblStatut> tblStatut { get; set; }
+        public virtual DbSet<vueSomAgence> vueSomAgence { get; set; }
         public virtual DbSet<vueSomArtiste> vueSomArtiste { get; set; }
         public virtual DbSet<vueSomCatArtiste> vueSomCatArtiste { get; set; }
         public virtual DbSet<vueSomContrat> vueSomContrat { get; set; }

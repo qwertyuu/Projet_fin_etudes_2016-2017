@@ -14,8 +14,8 @@ namespace FestiRire.Modele
     
     public partial class vueSomArtiste
     {
+        public int noArtiste { get; set; }
         public string nomAriste { get; set; }
         public string nomCat { get; set; }
-        public int noArtiste { get; set; }
     }
 }

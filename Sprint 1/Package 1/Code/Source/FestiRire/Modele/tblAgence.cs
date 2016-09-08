@@ -27,6 +27,7 @@ namespace FestiRire.Modele
         public Nullable<System.DateTime> dateSupprime { get; set; }
         public int noAdresse { get; set; }
     
+        public virtual tblAdresse tblAdresse { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblContrat> tblContrat { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -14,12 +14,12 @@ namespace FestiRire.Modele
     
     public partial class vueSomEngagement
     {
+        public int noEngagement { get; set; }
         public string nature { get; set; }
         public Nullable<System.DateTime> date { get; set; }
         public Nullable<System.TimeSpan> heure { get; set; }
         public string duree { get; set; }
         public string lieu { get; set; }
         public string noContrat { get; set; }
-        public int noEngagement { get; set; }
     }
 }
