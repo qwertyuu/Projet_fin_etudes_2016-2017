@@ -35,13 +35,17 @@ namespace FestiRire
  
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            var frmDetailAgence = new DetailAgence();
 
+
+            var frmDetailAgence = new DetailAgence((dgvAgence.SelectedRows[0].Cells["noAgence"].Value.ToString()));
+            frmDetailAgence.ShowDialog();
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
+            var frmDetailAgence = new DetailAgence();
 
+            frmDetailAgence.ShowDialog();
         }
     }
 }

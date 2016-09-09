@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvAgence = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFiltres = new System.Windows.Forms.Button();
             this.btnRechercher = new System.Windows.Forms.Button();
@@ -39,6 +36,10 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnFermer = new System.Windows.Forms.Button();
+            this.noAgence = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgence)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             this.dgvAgence.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAgence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAgence.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.noAgence,
             this.Column1,
             this.Ville,
             this.Telephone});
@@ -58,24 +60,6 @@
             this.dgvAgence.Name = "dgvAgence";
             this.dgvAgence.Size = new System.Drawing.Size(1691, 328);
             this.dgvAgence.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "nom";
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            // 
-            // Ville
-            // 
-            this.Ville.DataPropertyName = "ville";
-            this.Ville.HeaderText = "Ville";
-            this.Ville.Name = "Ville";
-            // 
-            // Telephone
-            // 
-            this.Telephone.DataPropertyName = "tel";
-            this.Telephone.HeaderText = "Telephone";
-            this.Telephone.Name = "Telephone";
             // 
             // groupBox1
             // 
@@ -160,6 +144,30 @@
             this.btnFermer.UseVisualStyleBackColor = true;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
+            // noAgence
+            // 
+            this.noAgence.DataPropertyName = "noAgence";
+            this.noAgence.HeaderText = "Numéro de l\'agence";
+            this.noAgence.Name = "noAgence";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "nom";
+            this.Column1.HeaderText = "Nom";
+            this.Column1.Name = "Column1";
+            // 
+            // Ville
+            // 
+            this.Ville.DataPropertyName = "ville";
+            this.Ville.HeaderText = "Ville";
+            this.Ville.Name = "Ville";
+            // 
+            // Telephone
+            // 
+            this.Telephone.DataPropertyName = "tel";
+            this.Telephone.HeaderText = "Telephone";
+            this.Telephone.Name = "Telephone";
+            // 
             // SommaireAgence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,6 +197,7 @@
         private System.Windows.Forms.Button btnFiltres;
         private System.Windows.Forms.Button btnRechercher;
         private System.Windows.Forms.TextBox txtRecherche;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noAgence;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ville;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telephone;

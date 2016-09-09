@@ -12,9 +12,10 @@ namespace FestiRire.Controleur.Details
         {
 
         }
+        /*
         internal Modele.tblCategorieArtiste LoadCategorieArtiste(int noCategorie)
         {
             
-        }
+        }*/
     }
 }
