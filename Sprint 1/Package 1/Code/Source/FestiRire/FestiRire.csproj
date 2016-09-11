@@ -68,6 +68,7 @@
     <Compile Include="Controleur\Sommaires\SommaireBase.cs" />
     <Compile Include="Controleur\Sommaires\SommaireCategorieArtiste.cs" />
     <Compile Include="Controleur\Sommaires\SommaireContrat.cs" />
+    <Compile Include="Controleur\Validation.cs" />
     <Compile Include="DBProvider.cs" />
     <Compile Include="Modele\PE2_Officiel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -207,6 +208,9 @@
     <Compile Include="Vue\Sommaires\SommaireContrats.Designer.cs">
       <DependentUpon>SommaireContrats.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vue\Details\DetailArtiste.resx">
+      <DependentUpon>DetailArtiste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vue\Details\DetailContrat.resx">
       <DependentUpon>DetailContrat.cs</DependentUpon>
     </EmbeddedResource>

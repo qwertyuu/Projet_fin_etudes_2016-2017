@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvAgence = new System.Windows.Forms.DataGridView();
-            this.noAgence = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFiltres = new System.Windows.Forms.Button();
             this.btnRechercher = new System.Windows.Forms.Button();
@@ -51,41 +47,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAgence.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAgence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAgence.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.noAgence,
-            this.Column1,
-            this.Ville,
-            this.Telephone});
             this.dgvAgence.Location = new System.Drawing.Point(9, 69);
             this.dgvAgence.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvAgence.MultiSelect = false;
             this.dgvAgence.Name = "dgvAgence";
             this.dgvAgence.Size = new System.Drawing.Size(2536, 505);
             this.dgvAgence.TabIndex = 0;
-            // 
-            // noAgence
-            // 
-            this.noAgence.DataPropertyName = "noAgence";
-            this.noAgence.HeaderText = "Numéro de l\'agence";
-            this.noAgence.Name = "noAgence";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "nom";
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            // 
-            // Ville
-            // 
-            this.Ville.DataPropertyName = "ville";
-            this.Ville.HeaderText = "Ville";
-            this.Ville.Name = "Ville";
-            // 
-            // Telephone
-            // 
-            this.Telephone.DataPropertyName = "tel";
-            this.Telephone.HeaderText = "Telephone";
-            this.Telephone.Name = "Telephone";
             // 
             // groupBox1
             // 
@@ -158,7 +124,6 @@
             this.btnDetail.TabIndex = 21;
             this.btnDetail.Text = "Détail";
             this.btnDetail.UseVisualStyleBackColor = true;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // btnFermer
             // 
@@ -170,14 +135,13 @@
             this.btnFermer.TabIndex = 22;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
-            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // SommaireAgence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnFermer;
-            this.ClientSize = new System.Drawing.Size(1912, 674);
+            this.ClientSize = new System.Drawing.Size(2592, 674);
             this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.groupBox1);
@@ -202,9 +166,5 @@
         private System.Windows.Forms.Button btnFiltres;
         private System.Windows.Forms.Button btnRechercher;
         private System.Windows.Forms.TextBox txtRecherche;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noAgence;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ville;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telephone;
     }
 }

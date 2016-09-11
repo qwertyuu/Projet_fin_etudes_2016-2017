@@ -12,10 +12,8 @@ namespace FestiRire.Controleur.Details
         {
 
         }
-        /*
-        internal Modele.tblCategorieArtiste LoadCategorieArtiste(int noCategorie)
+        public DetailCategorieArtiste(int no, string nom, string des, DateTime datesupp)
         {
-            
-        }*/
+        }
     }
 }

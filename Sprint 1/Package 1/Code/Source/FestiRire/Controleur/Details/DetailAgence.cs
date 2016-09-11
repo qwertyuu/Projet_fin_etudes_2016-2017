@@ -14,7 +14,25 @@ namespace FestiRire.Controleur.Details
         {
             return provider.SelectAgence(id);
         }
-        //Méthode permettant d'jouter une agence
+        //Méthode permettant d'jouter une agnece
+        public void AjouterAgence(string no,string name, string courr, string vil, string codepost, string adres, string cel, string tel, string poste,string prov,string pay)
+        {
+            var adresse = new Modele.tblAdresse { adresse = adres, ville = vil, codepostal = codepost, province = prov, pays = pay, telBureau = tel, telCellulaire = cel, extension = poste };
+            provider.SaveAdrrese(adresse);
+            var agence = new Modele.tblAgence {noAgence=no,nom = name, courriel = courr,noAdresse=adresse.noAdresse };//On enregistre l'agence.
+            provider.SaveAgence(agence);//Et enfin on sauvegarde les modifications.
+        }
+
+        //Méthode permettant de supprimer une agence.
+        public void DeleteAgence(string no)
+        {
+           
+            if(!String.IsNullOrEmpty(no))
+            {
+                provider.ModifAgence(no);
+               
+            }
+        }
         public bool EnregistrerAgence(string _noAgence,string name, string courr, string vil, string codepost, string adres, string cel, string tel, string poste,string prov,string pay)
         {
             
@@ -45,9 +63,6 @@ namespace FestiRire.Controleur.Details
             }
 
         }
-
- 
-
         internal bool AgenceExiste(string _noAgence, out string nomAgence)
         {
             var Agence = provider.SelectAgence(SanitariserTexte(_noAgence));

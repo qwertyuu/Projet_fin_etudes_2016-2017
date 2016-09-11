@@ -12,10 +12,97 @@ namespace FestiRire
 {
     public partial class DetailArtiste : Form
     {
+        Controleur.Details.DetailArtiste artiste;
         public DetailArtiste()
         {
             InitializeComponent();
-            var a = new Message();
+            artiste = new Controleur.Details.DetailArtiste();
+            ChargerCatArtiste();
+            ChargerContrat();
+            //var a = new Message();
+        }
+
+        private void ChargerCatArtiste()
+        {
+            foreach(Modele.tblCategorieArtiste cat in artiste.ChargerListCatArtis())
+            {
+                cmbCategorieArtiste.Items.Add(cat.nom.ToString());
+            }
+        }
+
+        private void ChargerContrat()
+        {
+            foreach (Modele.tblContrat cat in artiste.ChargerContrat())
+            {
+                cmbContrat.Items.Add(cat.nom.ToString());
+            }
+        }
+
+
+        private void btnParcourir_Click(object sender, EventArgs e)
+        {
+            bool valide = false;
+            openFileDialogfichier.Multiselect = true;
+            DialogResult result = openFileDialogfichier.ShowDialog();
+            while(valide==false)
+            {
+                if (result == DialogResult.OK) //Si om choisie le fichier
+                {
+                    if (openFileDialogPhoto.Filter == "Excel Files|*.xls;*.xlsx;*.xlsm")
+                    {
+                        foreach(String f in openFileDialogfichier.FileNames)
+                        {
+                            lstFiches.Items.Add(f);
+                        }
+                        valide = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Type de fichier invalide");
+                        result = openFileDialogPhoto.ShowDialog();
+                    }
+                }
+                else
+                    valide = true;
+            }
+
+
+
+        }
+
+        private void btnParcourirPhotoOfficielle_Click(object sender, EventArgs e)
+        {
+            bool valide = false;
+            openFileDialogPhoto.Multiselect = true;
+            DialogResult result = openFileDialogPhoto.ShowDialog();
+            while(valide==false)
+            {
+                if (result == DialogResult.OK) //Si om choisie le fichier
+                {
+                    if (openFileDialogPhoto.Filter == "Images(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | ")
+                    {
+                        foreach(string f in openFileDialogPhoto.SafeFileNames)
+                        {
+                            lstPhotoOfficiel.Items.Add(f);
+                        }
+                       
+                    }
+                    else
+                    {
+                        MessageBox.Show("Type de fichier invalide");
+                        result = openFileDialogPhoto.ShowDialog();
+                    }
+                }
+                else
+                    valide = true;
+            }
+
+        }
+
+        private void btnAjouterCategorieArtiste_Click(object sender, EventArgs e)
+        {
+            DetailCategorieArtiste cat = new DetailCategorieArtiste();
+            cat.ShowDialog();
         }
     }
 }

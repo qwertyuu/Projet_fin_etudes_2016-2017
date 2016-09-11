@@ -34,6 +34,28 @@ namespace FestiRire
             BD.SaveChanges();
         }
 
+
+        public void ModifAgence(string no)
+        {
+            using (var context = new Modele.PE2_OfficielEntities())
+            {
+                var query = from q in context.tblAgence
+                            where q.noAgence == no
+                            select q;
+                if(query!=null)
+                {
+                    foreach(Modele.tblAgence q in query)
+                    {
+                        q.dateSupprime=DateTime.Now;
+                    }
+                }
+
+                BD.SaveChanges();
+              
+            }
+
+        }
+
         //-----Requête sur la table adresse----
         public void InsertAdresse(Modele.tblAdresse adresse)
         {
@@ -44,6 +66,30 @@ namespace FestiRire
         public void Save()
         {
             BD.SaveChanges();
+        }
+
+        //---Requête sur la table Artiste----//
+        //Retourne la liste des catégories d'artistes dans la bd.
+        public List<Modele.tblCategorieArtiste> ReturnAllCatArtiste()
+        {
+
+            return (from q in BD.tblCategorieArtiste
+                    where q.dateSupprime == null
+                    select q
+                    ).ToList();
+
+        }
+
+        //---Requête sur la table Contrat----//
+
+        public List<Modele.tblContrat> ReturnAllContrat()
+        {
+
+            return (from q in BD.tblContrat
+                    where q.dateSupprime == null && q.tblStatut.nomStatut=="Terminé"
+                    select q
+                    ).ToList();
+
         }
 
         public List<Modele.vueSomAgence> ToutVueAgence()

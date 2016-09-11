@@ -49,12 +49,10 @@
             this.dgvCategorie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.dgvCategorie.Location = new System.Drawing.Point(9, 69);
-            this.dgvCategorie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvCategorie.MultiSelect = false;
+            this.dgvCategorie.Location = new System.Drawing.Point(6, 45);
             this.dgvCategorie.Name = "dgvCategorie";
             this.dgvCategorie.ReadOnly = true;
-            this.dgvCategorie.Size = new System.Drawing.Size(2536, 505);
+            this.dgvCategorie.Size = new System.Drawing.Size(1691, 328);
             this.dgvCategorie.TabIndex = 0;
             // 
             // Column1
@@ -80,11 +78,9 @@
             this.groupBox1.Controls.Add(this.dgvCategorie);
             this.groupBox1.Controls.Add(this.btnRechercher);
             this.groupBox1.Controls.Add(this.txtRecherche);
-            this.groupBox1.Location = new System.Drawing.Point(18, 18);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(2554, 583);
+            this.groupBox1.Size = new System.Drawing.Size(1703, 379);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Catégories";
@@ -92,10 +88,9 @@
             // btnFiltres
             // 
             this.btnFiltres.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltres.Location = new System.Drawing.Point(2344, 26);
-            this.btnFiltres.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFiltres.Location = new System.Drawing.Point(1563, 17);
             this.btnFiltres.Name = "btnFiltres";
-            this.btnFiltres.Size = new System.Drawing.Size(201, 35);
+            this.btnFiltres.Size = new System.Drawing.Size(134, 23);
             this.btnFiltres.TabIndex = 25;
             this.btnFiltres.Text = "Filtres";
             this.btnFiltres.UseVisualStyleBackColor = true;
@@ -103,10 +98,9 @@
             // btnRechercher
             // 
             this.btnRechercher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRechercher.Location = new System.Drawing.Point(2223, 26);
-            this.btnRechercher.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRechercher.Location = new System.Drawing.Point(1482, 17);
             this.btnRechercher.Name = "btnRechercher";
-            this.btnRechercher.Size = new System.Drawing.Size(112, 35);
+            this.btnRechercher.Size = new System.Drawing.Size(75, 23);
             this.btnRechercher.TabIndex = 24;
             this.btnRechercher.Text = "Rechercher";
             this.btnRechercher.UseVisualStyleBackColor = true;
@@ -115,58 +109,56 @@
             // 
             this.txtRecherche.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRecherche.Location = new System.Drawing.Point(9, 29);
-            this.txtRecherche.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRecherche.Location = new System.Drawing.Point(6, 19);
             this.txtRecherche.Name = "txtRecherche";
-            this.txtRecherche.Size = new System.Drawing.Size(2203, 26);
+            this.txtRecherche.Size = new System.Drawing.Size(1470, 20);
             this.txtRecherche.TabIndex = 23;
             this.txtRecherche.Text = "Recherche rapide";
             // 
             // btnAjouter
             // 
             this.btnAjouter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAjouter.Location = new System.Drawing.Point(2427, 609);
+            this.btnAjouter.Location = new System.Drawing.Point(1618, 396);
+            this.btnAjouter.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(141, 48);
+            this.btnAjouter.Size = new System.Drawing.Size(94, 31);
             this.btnAjouter.TabIndex = 22;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // btnDetail
             // 
             this.btnDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetail.Location = new System.Drawing.Point(2280, 609);
+            this.btnDetail.Location = new System.Drawing.Point(1520, 396);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(2);
             this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(141, 48);
+            this.btnDetail.Size = new System.Drawing.Size(94, 31);
             this.btnDetail.TabIndex = 21;
             this.btnDetail.Text = "Détail";
             this.btnDetail.UseVisualStyleBackColor = true;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // btnFermer
             // 
             this.btnFermer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnFermer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnFermer.Location = new System.Drawing.Point(16, 609);
+            this.btnFermer.Location = new System.Drawing.Point(11, 396);
+            this.btnFermer.Margin = new System.Windows.Forms.Padding(2);
             this.btnFermer.Name = "btnFermer";
-            this.btnFermer.Size = new System.Drawing.Size(141, 48);
+            this.btnFermer.Size = new System.Drawing.Size(94, 31);
             this.btnFermer.TabIndex = 22;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
-            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // SommaireCategoriesArtiste
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnFermer;
-            this.ClientSize = new System.Drawing.Size(1912, 674);
+            this.ClientSize = new System.Drawing.Size(1728, 438);
             this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDetail);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SommaireCategoriesArtiste";
             this.Text = "Sommaire des catégories d\'artiste";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorie)).EndInit();
