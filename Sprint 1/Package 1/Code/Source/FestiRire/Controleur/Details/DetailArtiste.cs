@@ -50,9 +50,10 @@ namespace FestiRire.Controleur.Details
             }
             return listContrat;
         }
-        public void AjouterArtiste(string nomArt, string nomCat,string com,string nomContrat)
+        public void AjouterArtiste(string nomArt, string nomCat,string chemin,string com,string nomContrat)
         {
-            
+            var artiste = new Modele.tblArtiste { nom = nomArt, commentaire = com };
+            var fichier=new Modele.tblFichierPersonnel()
         }
     }
 }

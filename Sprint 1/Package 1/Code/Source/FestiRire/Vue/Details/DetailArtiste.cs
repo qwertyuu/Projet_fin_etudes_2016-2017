@@ -43,10 +43,11 @@ namespace FestiRire
         {
             bool valide = false;
             openFileDialogfichier.Multiselect = true;
+            openFileDialogfichier.Title = "Sélectionner le fichier.";
             DialogResult result = openFileDialogfichier.ShowDialog();
             while(valide==false)
             {
-                if (result == DialogResult.OK) //Si om choisie le fichier
+                if (result == DialogResult.OK) //Si on choisie le fichier
                 {
                     if (openFileDialogPhoto.Filter == "Excel Files|*.xls;*.xlsx;*.xlsm")
                     {
@@ -72,30 +73,44 @@ namespace FestiRire
 
         private void btnParcourirPhotoOfficielle_Click(object sender, EventArgs e)
         {
-            bool valide = false;
+            //bool valide = false;
             openFileDialogPhoto.Multiselect = true;
+            openFileDialogfichier.Title = "Sélectionner la photo";
             DialogResult result = openFileDialogPhoto.ShowDialog();
-            while(valide==false)
+
+            if (result == DialogResult.OK) //Si om choisie le fichier
             {
-                if (result == DialogResult.OK) //Si om choisie le fichier
-                {
-                    if (openFileDialogPhoto.Filter == "Images(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | ")
-                    {
-                        foreach(string f in openFileDialogPhoto.SafeFileNames)
-                        {
-                            lstPhotoOfficiel.Items.Add(f);
-                        }
-                       
-                    }
-                    else
-                    {
-                        MessageBox.Show("Type de fichier invalide");
-                        result = openFileDialogPhoto.ShowDialog();
-                    }
-                }
-                else
-                    valide = true;
+                openFileDialogfichier.Filter = "Image Files(*.bmp, *.jpg) | *.bmp; *.jpg";
+                openFileDialogfichier.FilterIndex = 2;
+                          foreach(string f in openFileDialogPhoto.SafeFileNames)
+                         {
+                               lstPhotoOfficiel.Items.Add(f);
+                         }
             }
+
+            //while (valide==false)
+            //{
+            //    if (result == DialogResult.OK) //Si om choisie le fichier
+            //    {
+            //        openFileDialogfichier.Filter = "Image Files(*.bmp, *.jpg) | *.bmp; *.jpg";
+            //        openFileDialogfichier.FilterIndex = 2;
+            //        //if (openFileDialogPhoto.Filter == "Image Files(*.bmp, *.jpg) | *.bmp; *.jpg")
+            //        //{
+            //        //    foreach(string f in openFileDialogPhoto.SafeFileNames)
+            //        //    {
+            //        //        lstPhotoOfficiel.Items.Add(f);
+            //        //    }
+
+            //        //}
+            //        //else
+            //        //{
+            //        //    MessageBox.Show("Type de fichier invalide");
+            //        //    result = openFileDialogPhoto.ShowDialog();
+            //        //}
+            //    }
+            //    else
+            //        valide = true;
+            //}
 
         }
 
