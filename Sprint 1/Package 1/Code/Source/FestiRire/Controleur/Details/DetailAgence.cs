@@ -34,16 +34,17 @@ namespace FestiRire.Controleur.Details
            
             if(!String.IsNullOrEmpty(no))
             {
-                provider.ModifAgence(no);
+                provider.SupprimerAgence(no);
                
             }
         }
-        public bool EnregistrerAgence(string _noAgence,string name, string courr, string vil, string codepost, string adres, string cel, string tel, string poste,string prov,string pay)
+        public bool EnregistrerAgence(string orig, string _noAgence,string name, string courr, string vil, string codepost, string adres, string cel, string tel, string poste,string prov,string pay)
         {
             
-            Modele.tblAgence a = provider.SelectAgence(SanitariserTexte(_noAgence));
+            Modele.tblAgence a = provider.SelectAgence(SanitariserTexte(orig ?? _noAgence));
             if (a != null)
             {
+                //Update
                 var addr = a.tblAdresse;
                 addr.adresse = SanitariserTexte(adres);
                 addr.ville = SanitariserTexte(vil);
@@ -60,6 +61,7 @@ namespace FestiRire.Controleur.Details
             }
             else
             {
+                //Insert
                 var adresse = new Modele.tblAdresse { adresse = SanitariserTexte(adres), ville = SanitariserTexte(vil), codepostal = SanitariserTexte(codepost), province = SanitariserTexte(prov), pays = SanitariserTexte(pay), telBureau = SanitariserTelephone(tel), telCellulaire = SanitariserTelephone(cel), extension = SanitariserTexte(poste) };
                 provider.InsertAdresse(adresse);
                 var agence = new Modele.tblAgence { noAgence = _noAgence, nom = name, courriel = courr, noAdresse = adresse.noAdresse };//On enregistre l'agence.

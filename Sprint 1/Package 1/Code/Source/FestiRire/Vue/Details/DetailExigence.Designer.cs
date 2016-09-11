@@ -222,6 +222,7 @@
             // 
             // cmbStatut
             // 
+            this.cmbStatut.DisplayMember = "nomStatut";
             this.cmbStatut.FormattingEnabled = true;
             this.cmbStatut.Location = new System.Drawing.Point(81, 87);
             this.cmbStatut.Name = "cmbStatut";

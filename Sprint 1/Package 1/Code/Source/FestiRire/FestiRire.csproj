@@ -69,6 +69,7 @@
     <Compile Include="Controleur\Sommaires\SommaireBase.cs" />
     <Compile Include="Controleur\Sommaires\SommaireCategorieArtiste.cs" />
     <Compile Include="Controleur\Sommaires\SommaireContrat.cs" />
+    <Compile Include="Controleur\Sommaires\SommaireStatut.cs" />
     <Compile Include="Controleur\Validation.cs" />
     <Compile Include="DBProvider.cs" />
     <Compile Include="Modele\PE2_Officiel.Context.cs">

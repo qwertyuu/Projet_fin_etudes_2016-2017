@@ -14,12 +14,11 @@ namespace FestiRire
     {
         Controleur.Details.DetailAgence agence = new Controleur.Details.DetailAgence();
         Controleur.Validation validation = new Controleur.Validation();
-        bool modeCreation;
+        string idAgenceOriginal;
         public DetailAgence()
         {
             InitializeComponent();
             
-            modeCreation = true;
         }
         public void ConfirmationClose()
         {
@@ -71,14 +70,14 @@ namespace FestiRire
 
             }
 			string nomAgence = "";
-            if (modeCreation && agence.AgenceExiste(txtNo.Text, out nomAgence))
+            if ((idAgenceOriginal == null) && agence.AgenceExiste(txtNo.Text, out nomAgence))
             {
                 if (MessageBox.Show(String.Format("Vous avez entré un numéro d'agence existant.\nVoulez vous vraiment modifier l'agence {0}?", nomAgence), "Agence existe", MessageBoxButtons.YesNo) == DialogResult.No)
                 {
                     return;
                 }
             }
-            if(agence.EnregistrerAgence(txtNo.Text,txtNomAgence.Text, txtCourriel.Text, txtVille.Text, txtCodePostal.Text, rtbAdresse.Text, txtBureau.Text, txtTelCellulaire.Text, txtPosteBureau.Text, cmbProvince.Text, txtPays.Text))
+            if(agence.EnregistrerAgence(idAgenceOriginal, txtNo.Text,txtNomAgence.Text, txtCourriel.Text, txtVille.Text, txtCodePostal.Text, rtbAdresse.Text, txtBureau.Text, txtTelCellulaire.Text, txtPosteBureau.Text, cmbProvince.Text, txtPays.Text))
             {
                 MessageBox.Show("Agence Modifiée");
             }
@@ -92,7 +91,8 @@ namespace FestiRire
         public DetailAgence(string idAgence)
         {
             InitializeComponent();
-            modeCreation = false;
+            idAgenceOriginal = idAgence;
+            txtNo.ReadOnly = true;
             PeuplerInterface(agence.LoadAgence(idAgence));
         }
         

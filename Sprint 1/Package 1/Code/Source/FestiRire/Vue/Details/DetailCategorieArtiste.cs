@@ -23,7 +23,7 @@ namespace FestiRire
         {
             InitializeComponent();
             DCA = new Controleur.Details.DetailCategorieArtiste();
-            //Modele.tblCategorieArtiste categorie = DCA.LoadCategorieArtiste(noCategorie);
+            Modele.tblCategorieArtiste categorie = DCA.LoadCategorieArtiste(noCategorie);
             
         }
     }

@@ -44,7 +44,7 @@ namespace FestiRire.Controleur.Details
         public List<Modele.tblContrat> ChargerContrat()
         {
             listContrat = new List<Modele.tblContrat>();
-            foreach (Modele.tblContrat con in provider.ReturnAllContrat())
+            foreach (Modele.tblContrat con in provider.ToutContratTerminé())
             {
                 listContrat.Add(con);
             }

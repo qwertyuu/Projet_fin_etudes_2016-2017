@@ -21,14 +21,19 @@ namespace FestiRire
             }
         }
 
+        public List<tblStatut> ToutStatus()
+        {
+            return BD.tblStatut.ToList();
+        }
+
         public tblAgence SelectAgence(string _noAgence)
         {
-            return BD.tblAgence.SingleOrDefault(a => a.noAgence == _noAgence);
+            return BD.tblAgence.SingleOrDefault(a => a.noAgence == _noAgence && a.dateSupprime == null);
         }
 
         public tblEngagement SelectEngagement(int idEngagement)
         {
-            return BD.tblEngagement.SingleOrDefault(a => a.noEngagement == idEngagement);
+            return BD.tblEngagement.SingleOrDefault(a => a.noEngagement == idEngagement && a.dateSupprime == null);
         }
 
 
@@ -40,24 +45,20 @@ namespace FestiRire
         }
 
 
-        public void ModifAgence(string no)
+        public void SupprimerAgence(string no)
         {
-            using (var context = new Modele.PE2_OfficielEntities())
+            var query = from q in BD.tblAgence
+                        where q.noAgence == no
+                        select q;
+            if (query != null)
             {
-                var query = from q in context.tblAgence
-                            where q.noAgence == no
-                            select q;
-                if (query != null)
+                foreach (Modele.tblAgence q in query)
                 {
-                    foreach (Modele.tblAgence q in query)
-                    {
-                        q.dateSupprime = DateTime.Now;
-                    }
+                    q.dateSupprime = DateTime.Now;
                 }
-
-                BD.SaveChanges();
-
             }
+
+            BD.SaveChanges();
         }
 
 
@@ -94,7 +95,7 @@ namespace FestiRire
 
         //---Requête sur la table Contrat----//
 
-        public List<Modele.tblContrat> ReturnAllContrat()
+        public List<Modele.tblContrat> ToutContratTerminé()
         {
 
             return (from q in BD.tblContrat
