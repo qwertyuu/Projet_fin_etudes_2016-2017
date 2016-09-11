@@ -181,7 +181,6 @@
     <Compile Include="Vue\Sommaires\SommaireCategoriesArtiste.Designer.cs">
       <DependentUpon>SommaireCategoriesArtiste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Message.cs" />
     <Compile Include="Vue\Details\DetailCategorieArtiste.cs">
       <SubType>Form</SubType>
     </Compile>

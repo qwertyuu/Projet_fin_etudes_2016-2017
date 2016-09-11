@@ -12,5 +12,10 @@ namespace FestiRire.Controleur.Sommaires
         {
 
         }
+
+        public List<Modele.vueSomContrat> Tout()
+        {
+            return provider.ToutVueContrats();
+        }
     }
 }

@@ -12,19 +12,38 @@ namespace FestiRire
 {
     public partial class SommaireContrats : Form
     {
+        Controleur.Sommaires.SommaireContrat conSommaireContrat;
         public SommaireContrats()
         {
             InitializeComponent();
+            conSommaireContrat = new Controleur.Sommaires.SommaireContrat();
+
+            dgvContrats.AutoGenerateColumns = false;
+            dgvContrats.RowHeadersVisible = false;
+            dgvContrats.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvContrats.AllowUserToResizeRows = false;
+            dgvContrats.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvContrats.MultiSelect = false;
+            dgvContrats.DataSource = conSommaireContrat.Tout();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnFermer_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            var frmDetailContrat = new DetailContrat(((Modele.vueSomContrat)dgvContrats.SelectedRows[0].DataBoundItem).noContrat);
+            frmDetailContrat.ShowDialog();
+        }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            var frmDetailContrat = new DetailContrat();
+
+            frmDetailContrat.ShowDialog();
         }
     }
 }

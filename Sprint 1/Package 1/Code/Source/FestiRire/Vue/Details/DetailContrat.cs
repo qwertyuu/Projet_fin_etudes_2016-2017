@@ -12,13 +12,16 @@ namespace FestiRire
 {
     public partial class DetailContrat : Form
     {
+
         public DetailContrat()
         {
             InitializeComponent();
+            
         }
 
-        private void AjoutContrat_Load(object sender, EventArgs e)
+        public DetailContrat(string noContrat)
         {
+            InitializeComponent();
 
         }
 

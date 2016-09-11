@@ -26,6 +26,11 @@ namespace FestiRire
             return BD.tblAgence.SingleOrDefault(a => a.noAgence == _noAgence);
         }
 
+        public tblEngagement SelectEngagement(int idEngagement)
+        {
+            return BD.tblEngagement.SingleOrDefault(a => a.noEngagement == idEngagement);
+        }
+
 
         //-----Requête sur la table Agence----
         public void InsertAgence(Modele.tblAgence agence)
@@ -53,6 +58,12 @@ namespace FestiRire
                 BD.SaveChanges();
               
             }
+
+
+        public void InsertEngagement(tblEngagement tE)
+        {
+            BD.tblEngagement.Add(tE);
+            BD.SaveChanges();
 
         }
 

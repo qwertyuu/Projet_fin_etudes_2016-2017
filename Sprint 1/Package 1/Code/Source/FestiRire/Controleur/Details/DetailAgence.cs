@@ -8,7 +8,12 @@ namespace FestiRire.Controleur.Details
 {
     class DetailAgence : DetailBaseSimple
     {
-        DBProvider provider = new DBProvider();
+
+        public DetailAgence() : base()
+        {
+
+        }
+
 
         public Modele.tblAgence LoadAgence(string id)
         {
@@ -47,7 +52,7 @@ namespace FestiRire.Controleur.Details
                 addr.pays = SanitariserTexte(pay);
                 addr.telBureau = SanitariserTelephone(tel);
                 addr.telCellulaire = SanitariserTelephone(cel);
-                addr.extension = NullSiVide(SanitariserTexte(poste));
+                addr.extension = SanitariserTexte(poste);
                 a.nom = SanitariserTexte(name);
                 a.courriel = SanitariserCourriel(courr);
                 provider.Save();
@@ -55,7 +60,7 @@ namespace FestiRire.Controleur.Details
             }
             else
             {
-                var adresse = new Modele.tblAdresse { adresse = SanitariserTexte(adres), ville = SanitariserTexte(vil), codepostal = SanitariserTexte(codepost), province = SanitariserTexte(prov), pays = SanitariserTexte(pay), telBureau = SanitariserTelephone(tel), telCellulaire = SanitariserTelephone(cel), extension = NullSiVide(SanitariserTexte(poste)) };
+                var adresse = new Modele.tblAdresse { adresse = SanitariserTexte(adres), ville = SanitariserTexte(vil), codepostal = SanitariserTexte(codepost), province = SanitariserTexte(prov), pays = SanitariserTexte(pay), telBureau = SanitariserTelephone(tel), telCellulaire = SanitariserTelephone(cel), extension = SanitariserTexte(poste) };
                 provider.InsertAdresse(adresse);
                 var agence = new Modele.tblAgence { noAgence = _noAgence, nom = name, courriel = courr, noAdresse = adresse.noAdresse };//On enregistre l'agence.
                 provider.InsertAgence(agence);//Et enfin on sauvegarde les modifications.

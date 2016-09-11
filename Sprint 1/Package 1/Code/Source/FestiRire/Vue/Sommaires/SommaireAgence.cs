@@ -23,6 +23,7 @@ namespace FestiRire
             dgvAgence.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             dgvAgence.AllowUserToResizeRows = false;
             dgvAgence.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAgence.MultiSelect = false;
             var donnees = (from item in conSommaireAgence.Tout()
                           select new { noAgence = item.noAgence, nom = item.nom, ville = item.ville, tel = conSommaireAgence.FormatTelephone(item.telBureau ?? item.telCellulaire) }).ToList();
             dgvAgence.DataSource = donnees;

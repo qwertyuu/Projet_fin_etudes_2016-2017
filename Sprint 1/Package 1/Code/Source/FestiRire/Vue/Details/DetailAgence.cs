@@ -95,7 +95,6 @@ namespace FestiRire
         {
             InitializeComponent();
             modeCreation = false;
-            //Ajouter le code de loading de la combo box avant!!
             PeuplerInterface(agence.LoadAgence(idAgence));
         }
         
@@ -111,8 +110,6 @@ namespace FestiRire
             txtTelCellulaire.Text = agence.FormatTelephone(_agence.tblAdresse.telCellulaire);
             txtPosteBureau.Text = _agence.tblAdresse.extension;
             txtPays.Text = _agence.tblAdresse.pays;
-
-            // À CHANGER -- METTRE LE SELECTED INDEX APRES AVOIR POPULÉ LA COMBOBOX
             cmbProvince.Text = _agence.tblAdresse.province;
         }
 

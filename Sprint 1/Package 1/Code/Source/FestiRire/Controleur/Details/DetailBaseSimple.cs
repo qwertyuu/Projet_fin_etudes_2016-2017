@@ -8,18 +8,16 @@ namespace FestiRire.Controleur.Details
 {
     abstract class DetailBaseSimple
     {
-        protected string SanitariserTexte(string s)
+        protected DBProvider provider;
+        public DetailBaseSimple()
         {
-            return s.Trim();
+            provider = new DBProvider();
         }
 
-        protected string NullSiVide(string v)
+        protected string SanitariserTexte(string s)
         {
-            if (v == "")
-            {
-                return null;
-            }
-            return v;
+            string final = s.Trim();
+            return final == "" ? null : final;
         }
 
         protected string SanitariserTelephone(string tel)
