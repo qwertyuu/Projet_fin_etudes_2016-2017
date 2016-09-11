@@ -47,17 +47,18 @@ namespace FestiRire
                 var query = from q in context.tblAgence
                             where q.noAgence == no
                             select q;
-                if(query!=null)
+                if (query != null)
                 {
-                    foreach(Modele.tblAgence q in query)
+                    foreach (Modele.tblAgence q in query)
                     {
-                        q.dateSupprime=DateTime.Now;
+                        q.dateSupprime = DateTime.Now;
                     }
                 }
 
                 BD.SaveChanges();
-              
+
             }
+        }
 
 
         public void InsertEngagement(tblEngagement tE)

@@ -20,7 +20,7 @@ namespace FestiRire.Controleur.Details
             return final == "" ? null : final;
         }
 
-        protected string SanitariserTelephone(string tel)
+        public string SanitariserTelephone(string tel)
         {
             StringBuilder noTelFinal = new StringBuilder();
             char[] caracteresAccepte = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };

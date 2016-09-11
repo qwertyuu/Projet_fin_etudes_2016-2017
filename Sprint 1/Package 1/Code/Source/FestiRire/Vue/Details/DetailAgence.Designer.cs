@@ -78,13 +78,13 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(367, 322);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnAnnuler.TabIndex = 30;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnEnregistrerAgence
             // 
@@ -106,6 +106,7 @@
             this.btnSupprimerAgence.TabIndex = 30;
             this.btnSupprimerAgence.Text = "Supprimer";
             this.btnSupprimerAgence.UseVisualStyleBackColor = true;
+            this.btnSupprimerAgence.Click += new System.EventHandler(this.btnSupprimerAgence_Click);
             // 
             // groupBox3
             // 
@@ -326,7 +327,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(448, 354);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtNo);

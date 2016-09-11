@@ -20,53 +20,51 @@ namespace FestiRire
             InitializeComponent();
             
             modeCreation = true;
-            //ConfirmationClose();
-            //var a = new Message();
         }
         public void ConfirmationClose()
         {
             DialogResult result;
-            //On verifie que l'utilisateur n'a pas commencé à saisir.
-            if (txtNomAgence.Text != "" || txtNo.Text != "" || txtCourriel.Text != "" || rtbAdresse.Text != "" || txtVille.Text != "" || txtCodePostal.Text != "" ||
-                txtTelCellulaire.Text != "" || txtCellulaire.Text != "" || txtPosteBureau.Text != "") //Si l'utilisateur à saisi au moins un chmap on l'affiche un message de confirmation de fermeture. 
+            result = MessageBox.Show("Si vous fermez vous allez perdre les données déja saisies. Voulez-vous fermer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                result = MessageBox.Show("Si vous fermez vous allez perdre les données déja saisies. Voulez-vous fermer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                    this.Close();
+               this.Close();
             }
-            else
-                this.Close();
         }
+
+
+
 
         private void btnEnregistrerAgence_Click(object sender, EventArgs e)
         {
             validation.verifierChampVide(txtNomAgence.Text, txtNo.Text, txtCourriel.Text, rtbAdresse.Text, txtVille.Text, cmbProvince.Text, txtPays.Text, txtCodePostal.Text);
-            validation.verifierTel(txtTelCellulaire.Text, txtCellulaire.Text, txtPosteBureau.Text);
+            validation.verifierTel(agence.SanitariserTelephone(txtTelCellulaire.Text), agence.SanitariserTelephone(txtBureau.Text),  agence.SanitariserTelephone(txtPosteBureau.Text));
             if (validation.MessVide != "")//Siginifie que tous les champs n'ont pas été vérifié.
             {
                 MessageBox.Show(validation.MessVide);
+                return;
             }
             else
             {
                 if (validation.MessTel != "")
                 {
                     MessageBox.Show(validation.MessTel);
+                    return;
                 }
                 else
                 {
                     if (!validation.IsValidEmail(txtCourriel.Text))
                     {
                         MessageBox.Show("Veuillez entrer un courriel valide");
+                        return;
                     }
                     else
                     {
                         if (!validation.IsValidCodePost(txtCodePostal.Text))
-                            MessageBox.Show("Veuillez entrer un code postal valide");
-                        else
                         {
-                            agence.AjouterAgence(txtNo.Text.Trim(), txtNomAgence.Text.Trim(), txtCourriel.Text.Trim(), txtVille.Text.Trim(), txtCodePostal.Text.Trim().ToUpper(), rtbAdresse.Text.Trim(), txtCellulaire.Text.Trim(), txtTelCellulaire.Text.Trim(), txtPosteBureau.Text.Trim(), cmbProvince.Text.Trim(), txtPays.Text.Trim());
-                            MessageBox.Show("Agence Ajouté");
+                            MessageBox.Show("Veuillez entrer un code postal valide");
+                            return;
                         }
+                        
                     }
 
                 }
@@ -122,7 +120,7 @@ namespace FestiRire
                 if (result==DialogResult.Yes)
                 {
                     agence.DeleteAgence(txtNo.Text);
-                    MessageBox.Show("Agence supprimée avec succées");
+                    MessageBox.Show("Agence supprimée avec succès");
                 }
 
             }

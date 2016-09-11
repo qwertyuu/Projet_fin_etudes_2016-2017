@@ -34,11 +34,13 @@ namespace FestiRire
         private void btnDetail_Click(object sender, EventArgs e)
         {
             var frmDetailCatArt = new DetailCategorieArtiste(((Modele.vueSomCatArtiste)dgvCategorie.SelectedRows[0].DataBoundItem).noCategorie);
+            frmDetailCatArt.ShowDialog();
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-
+            var frmDetailCatArt = new DetailCategorieArtiste();
+            frmDetailCatArt.ShowDialog();
         }
     }
 }
