@@ -12,20 +12,38 @@ namespace FestiRire
 {
     public partial class SommaireStatut : Form
     {
-        Controleur.Sommaires.SommaireStatut conSommaireStatut;
+        Controleur.Sommaires.SommaireContrat conSommaireContrat;
         public SommaireStatut()
-        { 
+        {
             InitializeComponent();
-            conSommaireStatut = new Controleur.Sommaires.SommaireStatut();
+            conSommaireContrat = new Controleur.Sommaires.SommaireContrat();
+
             dgvStatut.AutoGenerateColumns = false;
             dgvStatut.RowHeadersVisible = false;
             dgvStatut.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             dgvStatut.AllowUserToResizeRows = false;
             dgvStatut.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvStatut.MultiSelect = false;
-            var donnees = (from item in conSommaireStatut.Tout()
-                           select new { noStatut = item.noStatut, nom = item.nomStatut, couleur = item.couleur, description = item.description }).ToList();
-            dgvStatut.DataSource = donnees;
+            dgvStatut.DataSource = conSommaireContrat.Tout();
+        }
+
+        private void btnFermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            var frmDetailContrat = new DetailContrat(((Modele.vueSomContrat)dgvStatut.SelectedRows[0].DataBoundItem).noContrat);
+            frmDetailContrat.ShowDialog();
+        }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            var frmDetailContrat = new DetailContrat();
+
+            frmDetailContrat.ShowDialog();
         }
     }
 }
