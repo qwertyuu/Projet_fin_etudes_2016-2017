@@ -31,6 +31,11 @@ namespace FestiRire
             return BD.tblAgence.SingleOrDefault(a => a.noAgence == _noAgence && a.dateSupprime == null);
         }
 
+        internal List<tblArtiste> ToutArtiste()
+        {
+            return BD.tblArtiste.ToList();
+        }
+
         public tblEngagement SelectEngagement(int idEngagement)
         {
             return BD.tblEngagement.SingleOrDefault(a => a.noEngagement == idEngagement && a.dateSupprime == null);
@@ -118,7 +123,7 @@ namespace FestiRire
 
         //---Requête sur la table Artiste----//
         //Retourne la liste des catégories d'artistes dans la bd.
-        public List<Modele.tblCategorieArtiste> ReturnAllCatArtiste()
+        public List<Modele.tblCategorieArtiste> ToutCatArtiste()
         {
 
             return (from q in BD.tblCategorieArtiste
@@ -135,6 +140,16 @@ namespace FestiRire
 
             return (from q in BD.tblContrat
                     where q.dateSupprime == null && q.tblStatut.nomStatut=="Terminé"
+                    select q
+                    ).ToList();
+
+        }
+
+        public List<Modele.tblContrat> ToutContrat()
+        {
+
+            return (from q in BD.tblContrat
+                    where q.dateSupprime == null
                     select q
                     ).ToList();
 

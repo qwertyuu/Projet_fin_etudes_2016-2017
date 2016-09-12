@@ -28,10 +28,14 @@ namespace FestiRire.Controleur.Details
             provider.InsertExigence(exigence);
         }
 
-        //internal tblExigence LoadExigence(int idExigence)
-        //{
-        //    //SELECT UNIQUE
-        //}
+            //INSERT
+        }
+
+        internal tblExigence LoadExigence(int idExigence)
+        {
+            return new tblExigence();
+            //SELECT UNIQUE
+        }
         internal void EnregistrerExigence(int idExigence, string nom, DateTime dateExigence, string txtMontant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue)
         {
             //UPDATE

@@ -13,47 +13,26 @@ namespace FestiRire.Controleur.Details
     	{
 
     	}
-        List<Modele.tblCategorieArtiste> ListCatArtis;
-        List<Modele.tblContrat> listContrat;
-        public List<Modele.tblCategorieArtiste>ListeCategorieArtiste
-        {
-            get
-            {
-                return ListCatArtis;
-            }
-        }
-
-        public List<Modele.tblContrat> ListeContrat
-        {
-            get
-            {
-                return listContrat;
-            }
-        }
 
         public List<Modele.tblCategorieArtiste> ChargerListCatArtis()
         {
-            ListCatArtis = new List<Modele.tblCategorieArtiste>();
-            foreach(Modele.tblCategorieArtiste cat in provider.ReturnAllCatArtiste())
-            {
-                ListCatArtis.Add(cat);
-            }
-            return ListCatArtis;
+            return provider.ToutCatArtiste();
         }
 
         public List<Modele.tblContrat> ChargerContrat()
         {
-            listContrat = new List<Modele.tblContrat>();
-            foreach (Modele.tblContrat con in provider.ToutContratTerminé())
-            {
-                listContrat.Add(con);
-            }
-            return listContrat;
+            return provider.ToutContrat();
         }
+
+        public List<Modele.tblArtiste> Tout()
+        {
+            return provider.ToutArtiste();
+        }
+
         public void AjouterArtiste(string nomArt, string nomCat,string chemin,string com,string nomContrat)
         {
             var artiste = new Modele.tblArtiste { nom = nomArt, commentaire = com };
-            var fichier=new Modele.tblFichierPersonnel()
+            var fichier = new Modele.tblFichierPersonnel();
         }
     }
 }

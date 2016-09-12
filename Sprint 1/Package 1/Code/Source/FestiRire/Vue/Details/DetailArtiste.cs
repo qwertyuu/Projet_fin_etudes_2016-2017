@@ -13,28 +13,42 @@ namespace FestiRire
     public partial class DetailArtiste : Form
     {
         Controleur.Details.DetailArtiste artiste;
+        Controleur.Sommaires.SommaireCategorieArtiste conSomCatArtiste;
         public DetailArtiste()
         {
             InitializeComponent();
             artiste = new Controleur.Details.DetailArtiste();
-            ChargerCatArtiste();
-            ChargerContrat();
-            //var a = new Message();
+            conSomCatArtiste = new Controleur.Sommaires.SommaireCategorieArtiste();
+            lstCatArtiste.SelectionMode = SelectionMode.MultiSimple;
+            cmbContrat.DataSource = artiste.ChargerContrat();
+            cmbContrat.DisplayMember = "noContrat";
+            lstCatArtiste.DataSource = conSomCatArtiste.Tout();
+            lstCatArtiste.DisplayMember = "nom";
         }
 
-        private void ChargerCatArtiste()
+
+
+        public DetailArtiste(int _idArtiste)
         {
-            foreach(Modele.tblCategorieArtiste cat in artiste.ChargerListCatArtis())
+            InitializeComponent();
+            artiste = new Controleur.Details.DetailArtiste();
+            conSomCatArtiste = new Controleur.Sommaires.SommaireCategorieArtiste();
+            lstCatArtiste.SelectionMode = SelectionMode.MultiSimple;
+            cmbContrat.DataSource = artiste.ChargerContrat();
+            cmbContrat.DisplayMember = "noContrat";
+            lstCatArtiste.DataSource = conSomCatArtiste.Tout();
+            lstCatArtiste.DisplayMember = "nom";
+            foreach (var item in lstCatArtiste.Items)
             {
-                cmbCategorieArtiste.Items.Add(cat.nom.ToString());
+                
+                lstCatArtiste.SetSelected(lstCatArtiste.Items.IndexOf(item), false);
+
             }
-        }
-
-        private void ChargerContrat()
-        {
-            foreach (Modele.tblContrat cat in artiste.ChargerContrat())
+            foreach (var item in artiste.ChargerListCatArtis())
             {
-                cmbContrat.Items.Add(cat.nom.ToString());
+
+                lstCatArtiste.SetSelected(lstCatArtiste.Items.IndexOf(item), true);
+
             }
         }
 
@@ -42,7 +56,7 @@ namespace FestiRire
         private void btnParcourir_Click(object sender, EventArgs e)
         {
             bool valide = false;
-            openFileDialogfichier.Multiselect = true;
+            openFileDialogfichier.Multiselect = false;
             openFileDialogfichier.Title = "Sélectionner le fichier.";
             DialogResult result = openFileDialogfichier.ShowDialog();
             while(valide==false)
@@ -80,12 +94,12 @@ namespace FestiRire
 
             if (result == DialogResult.OK) //Si om choisie le fichier
             {
-                openFileDialogfichier.Filter = "Image Files(*.bmp, *.jpg) | *.bmp; *.jpg";
+                openFileDialogfichier.Filter = "Images | *.png; *.bmp; *.jpg";
                 openFileDialogfichier.FilterIndex = 2;
-                          foreach(string f in openFileDialogPhoto.SafeFileNames)
-                         {
-                               lstPhotoOfficiel.Items.Add(f);
-                         }
+                foreach (string f in openFileDialogPhoto.SafeFileNames)
+                {
+                    lstPhotoOfficiel.Items.Add(f);
+                }
             }
 
             //while (valide==false)
@@ -116,7 +130,7 @@ namespace FestiRire
 
         private void btnAjouterCategorieArtiste_Click(object sender, EventArgs e)
         {
-            DetailCategorieArtiste cat = new DetailCategorieArtiste();
+            SommaireCategoriesArtiste cat = new SommaireCategoriesArtiste();
             cat.ShowDialog();
         }
     }
