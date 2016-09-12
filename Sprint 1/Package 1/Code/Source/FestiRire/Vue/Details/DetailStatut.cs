@@ -50,6 +50,11 @@ namespace FestiRire
             {
                 MessageBox.Show("Veuiller donner un nom.");
             }
+            else
+            {
+                _statut.AjouterStatut(txtNom.Text, rtbDescriptionStatut.Text, ColorTranslator.ToHtml(pbApercuCouleur.BackColor));
+            }
+
         }
     }
 }
