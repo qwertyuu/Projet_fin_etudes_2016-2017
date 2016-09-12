@@ -49,5 +49,11 @@ namespace FestiRire
 
             frmDetailAgence.ShowDialog();
         }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            string recherche;
+            recherche = txtRecherche.Text;
+        }
     }
 }

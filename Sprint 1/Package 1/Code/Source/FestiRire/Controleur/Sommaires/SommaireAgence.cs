@@ -8,9 +8,10 @@ namespace FestiRire.Controleur.Sommaires
 {
     class SommaireAgence:SommaireBase
     {
+
         public SommaireAgence() : base()
         {
-            
+
         }
 
         public List<Modele.vueSomAgence> Tout()
