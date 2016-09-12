@@ -20,6 +20,8 @@ Use PE2_Officiel
 GO
 
 CREATE SCHEMA S_Contrat
+GO
+CREATE SCHEMA S_Personnel
 
 GO
 
@@ -219,3 +221,12 @@ CREATE TABLE S_Contrat.tblCatArtisteArt
 	noArtiste int NOT NULL
 )
 PRINT 'Création de la table d''intersection categorieArtiste-artiste'
+
+GO
+
+CREATE TABLE S_personnel.tblUtilisateur
+(
+	IdUser  varchar(30)NOT NULL,
+	motPasse char(24) NOT NULL
+)
+PRINT 'Création de la table d''utilisateur'
