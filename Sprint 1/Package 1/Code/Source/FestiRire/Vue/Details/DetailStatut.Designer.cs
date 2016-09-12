@@ -53,65 +53,74 @@
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnnuler.Location = new System.Drawing.Point(321, 391);
+            this.btnAnnuler.Location = new System.Drawing.Point(482, 602);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
+            this.btnAnnuler.Size = new System.Drawing.Size(112, 35);
             this.btnAnnuler.TabIndex = 8;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnEnregistrerStatut
             // 
             this.btnEnregistrerStatut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEnregistrerStatut.Location = new System.Drawing.Point(240, 391);
+            this.btnEnregistrerStatut.Location = new System.Drawing.Point(360, 602);
+            this.btnEnregistrerStatut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEnregistrerStatut.Name = "btnEnregistrerStatut";
-            this.btnEnregistrerStatut.Size = new System.Drawing.Size(75, 23);
+            this.btnEnregistrerStatut.Size = new System.Drawing.Size(112, 35);
             this.btnEnregistrerStatut.TabIndex = 9;
             this.btnEnregistrerStatut.Text = "Enregistrer";
             this.btnEnregistrerStatut.UseVisualStyleBackColor = true;
+            this.btnEnregistrerStatut.Click += new System.EventHandler(this.btnEnregistrerStatut_Click_1);
             // 
             // txtNom
             // 
             this.txtNom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNom.Location = new System.Drawing.Point(130, 15);
+            this.txtNom.Location = new System.Drawing.Point(195, 23);
+            this.txtNom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(269, 20);
+            this.txtNom.Size = new System.Drawing.Size(402, 26);
             this.txtNom.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 367);
+            this.label2.Location = new System.Drawing.Point(16, 565);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Code de couleur:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 18);
+            this.label1.Location = new System.Drawing.Point(20, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.Size = new System.Drawing.Size(113, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Nom du statut:";
             // 
             // btnSupprimerStatut
             // 
             this.btnSupprimerStatut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSupprimerStatut.Location = new System.Drawing.Point(159, 391);
+            this.btnSupprimerStatut.Location = new System.Drawing.Point(238, 602);
+            this.btnSupprimerStatut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSupprimerStatut.Name = "btnSupprimerStatut";
-            this.btnSupprimerStatut.Size = new System.Drawing.Size(75, 23);
+            this.btnSupprimerStatut.Size = new System.Drawing.Size(112, 35);
             this.btnSupprimerStatut.TabIndex = 9;
             this.btnSupprimerStatut.Text = "Supprimer";
             this.btnSupprimerStatut.UseVisualStyleBackColor = true;
             // 
             // btnChoixCouleur
             // 
-            this.btnChoixCouleur.Location = new System.Drawing.Point(128, 362);
+            this.btnChoixCouleur.Location = new System.Drawing.Point(192, 557);
+            this.btnChoixCouleur.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnChoixCouleur.Name = "btnChoixCouleur";
-            this.btnChoixCouleur.Size = new System.Drawing.Size(156, 23);
+            this.btnChoixCouleur.Size = new System.Drawing.Size(234, 35);
             this.btnChoixCouleur.TabIndex = 9;
             this.btnChoixCouleur.Text = "Choisir une couleur...";
             this.btnChoixCouleur.UseVisualStyleBackColor = true;
@@ -119,36 +128,40 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(290, 367);
+            this.label3.Location = new System.Drawing.Point(435, 565);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(64, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Aperçu:";
             // 
             // pbApercuCouleur
             // 
             this.pbApercuCouleur.BackColor = System.Drawing.Color.Maroon;
-            this.pbApercuCouleur.Location = new System.Drawing.Point(340, 362);
+            this.pbApercuCouleur.Location = new System.Drawing.Point(510, 557);
+            this.pbApercuCouleur.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbApercuCouleur.Name = "pbApercuCouleur";
-            this.pbApercuCouleur.Size = new System.Drawing.Size(56, 23);
+            this.pbApercuCouleur.Size = new System.Drawing.Size(84, 35);
             this.pbApercuCouleur.TabIndex = 10;
             this.pbApercuCouleur.TabStop = false;
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(13, 43);
+            this.label32.Location = new System.Drawing.Point(20, 66);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(107, 13);
+            this.label32.Size = new System.Drawing.Size(160, 20);
             this.label32.TabIndex = 32;
             this.label32.Text = "Description du statut:";
             // 
             // numPoliceDescription
             // 
             this.numPoliceDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numPoliceDescription.Location = new System.Drawing.Point(212, 41);
+            this.numPoliceDescription.Location = new System.Drawing.Point(318, 63);
+            this.numPoliceDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numPoliceDescription.Name = "numPoliceDescription";
-            this.numPoliceDescription.Size = new System.Drawing.Size(34, 20);
+            this.numPoliceDescription.Size = new System.Drawing.Size(51, 26);
             this.numPoliceDescription.TabIndex = 38;
             this.numPoliceDescription.Value = new decimal(new int[] {
             12,
@@ -160,10 +173,9 @@
             // 
             this.btnEnumDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnumDescription.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnumDescription.Location = new System.Drawing.Point(251, 40);
-            this.btnEnumDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEnumDescription.Location = new System.Drawing.Point(376, 62);
             this.btnEnumDescription.Name = "btnEnumDescription";
-            this.btnEnumDescription.Size = new System.Drawing.Size(42, 21);
+            this.btnEnumDescription.Size = new System.Drawing.Size(63, 32);
             this.btnEnumDescription.TabIndex = 37;
             this.btnEnumDescription.Text = "Enum";
             this.btnEnumDescription.UseVisualStyleBackColor = true;
@@ -172,10 +184,9 @@
             // 
             this.btnSouslignerDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSouslignerDescription.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSouslignerDescription.Location = new System.Drawing.Point(184, 40);
-            this.btnSouslignerDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSouslignerDescription.Location = new System.Drawing.Point(276, 62);
             this.btnSouslignerDescription.Name = "btnSouslignerDescription";
-            this.btnSouslignerDescription.Size = new System.Drawing.Size(23, 21);
+            this.btnSouslignerDescription.Size = new System.Drawing.Size(34, 32);
             this.btnSouslignerDescription.TabIndex = 34;
             this.btnSouslignerDescription.Text = "I";
             this.btnSouslignerDescription.UseVisualStyleBackColor = true;
@@ -184,10 +195,9 @@
             // 
             this.btnItaliqueDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItaliqueDescription.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItaliqueDescription.Location = new System.Drawing.Point(157, 40);
-            this.btnItaliqueDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnItaliqueDescription.Location = new System.Drawing.Point(236, 62);
             this.btnItaliqueDescription.Name = "btnItaliqueDescription";
-            this.btnItaliqueDescription.Size = new System.Drawing.Size(23, 21);
+            this.btnItaliqueDescription.Size = new System.Drawing.Size(34, 32);
             this.btnItaliqueDescription.TabIndex = 35;
             this.btnItaliqueDescription.Text = "I";
             this.btnItaliqueDescription.UseVisualStyleBackColor = true;
@@ -196,10 +206,9 @@
             // 
             this.btnGrasDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrasDescription.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrasDescription.Location = new System.Drawing.Point(130, 40);
-            this.btnGrasDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrasDescription.Location = new System.Drawing.Point(195, 62);
             this.btnGrasDescription.Name = "btnGrasDescription";
-            this.btnGrasDescription.Size = new System.Drawing.Size(23, 21);
+            this.btnGrasDescription.Size = new System.Drawing.Size(34, 32);
             this.btnGrasDescription.TabIndex = 36;
             this.btnGrasDescription.Text = "B";
             this.btnGrasDescription.UseVisualStyleBackColor = true;
@@ -207,18 +216,19 @@
             // rtbDescriptionStatut
             // 
             this.rtbDescriptionStatut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbDescriptionStatut.Location = new System.Drawing.Point(129, 66);
+            this.rtbDescriptionStatut.Location = new System.Drawing.Point(194, 102);
+            this.rtbDescriptionStatut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rtbDescriptionStatut.Name = "rtbDescriptionStatut";
-            this.rtbDescriptionStatut.Size = new System.Drawing.Size(267, 290);
+            this.rtbDescriptionStatut.Size = new System.Drawing.Size(398, 444);
             this.rtbDescriptionStatut.TabIndex = 33;
             this.rtbDescriptionStatut.Text = "";
             // 
             // DetailStatut
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
-            this.ClientSize = new System.Drawing.Size(408, 426);
+            this.ClientSize = new System.Drawing.Size(612, 655);
             this.Controls.Add(this.numPoliceDescription);
             this.Controls.Add(this.btnEnumDescription);
             this.Controls.Add(this.btnSouslignerDescription);
@@ -235,6 +245,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DetailStatut";
             this.Text = "Détail du statut";
             ((System.ComponentModel.ISupportInitialize)(this.pbApercuCouleur)).EndInit();

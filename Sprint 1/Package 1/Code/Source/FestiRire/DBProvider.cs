@@ -35,6 +35,11 @@ namespace FestiRire
         {
             return BD.tblEngagement.SingleOrDefault(a => a.noEngagement == idEngagement && a.dateSupprime == null);
         }
+        public tblStatut SelectStatut(int idStatut)
+        {
+            return BD.tblStatut.SingleOrDefault(a => a.noStatut == idStatut);
+        }
+
 
 
         //-----Requête sur la table Agence----
@@ -60,6 +65,21 @@ namespace FestiRire
 
             BD.SaveChanges();
         }
+        public void SupprimerStatut(int no)
+        {
+            var query = from q in BD.tblStatut
+                        where q.noStatut == no
+                        select q;
+            if (query != null)
+            {
+                foreach (Modele.tblStatut q in query)
+                {
+                    q.dateSupprime = DateTime.Now;
+                }
+            }
+
+            BD.SaveChanges();
+        }
 
 
         public void InsertEngagement(tblEngagement tE)
@@ -75,6 +95,14 @@ namespace FestiRire
             BD.tblAdresse.Add(adresse);
             BD.SaveChanges();
         }
+
+        //-----Requête sur la table Statut----
+        public void InsertStatut(Modele.tblStatut statut)
+        {
+            BD.tblStatut.Add(statut);
+            BD.SaveChanges();
+        }
+
 
         public void Save()
         {
