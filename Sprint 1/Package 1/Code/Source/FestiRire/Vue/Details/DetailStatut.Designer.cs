@@ -168,6 +168,7 @@
             0,
             0,
             0});
+            this.numPoliceDescription.ValueChanged += new System.EventHandler(this.numPoliceDescription_ValueChanged);
             // 
             // btnEnumDescription
             // 
@@ -179,6 +180,7 @@
             this.btnEnumDescription.TabIndex = 37;
             this.btnEnumDescription.Text = "Enum";
             this.btnEnumDescription.UseVisualStyleBackColor = true;
+            this.btnEnumDescription.Click += new System.EventHandler(this.btnEnumDescription_Click);
             // 
             // btnSouslignerDescription
             // 
@@ -190,6 +192,7 @@
             this.btnSouslignerDescription.TabIndex = 34;
             this.btnSouslignerDescription.Text = "I";
             this.btnSouslignerDescription.UseVisualStyleBackColor = true;
+            this.btnSouslignerDescription.Click += new System.EventHandler(this.btnSouslignerDescription_Click);
             // 
             // btnItaliqueDescription
             // 
@@ -201,6 +204,7 @@
             this.btnItaliqueDescription.TabIndex = 35;
             this.btnItaliqueDescription.Text = "I";
             this.btnItaliqueDescription.UseVisualStyleBackColor = true;
+            this.btnItaliqueDescription.Click += new System.EventHandler(this.btnItaliqueDescription_Click);
             // 
             // btnGrasDescription
             // 
@@ -212,6 +216,7 @@
             this.btnGrasDescription.TabIndex = 36;
             this.btnGrasDescription.Text = "B";
             this.btnGrasDescription.UseVisualStyleBackColor = true;
+            this.btnGrasDescription.Click += new System.EventHandler(this.btnGrasDescription_Click);
             // 
             // rtbDescriptionStatut
             // 

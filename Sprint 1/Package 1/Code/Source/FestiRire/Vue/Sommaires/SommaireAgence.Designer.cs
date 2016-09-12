@@ -136,7 +136,6 @@
             this.txtRecherche.Size = new System.Drawing.Size(2203, 26);
             this.txtRecherche.TabIndex = 23;
             this.txtRecherche.Text = "Recherche rapide";
-            this.txtRecherche.TextChanged += new System.EventHandler(this.txtRecherche_TextChanged);
             // 
             // btnAjouter
             // 

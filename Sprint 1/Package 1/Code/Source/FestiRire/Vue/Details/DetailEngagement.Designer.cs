@@ -61,14 +61,8 @@
             this.btnGrasCommentaire = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.rtbDescriptionCourte = new System.Windows.Forms.RichTextBox();
-            this.btnGrasDescriptionCourte = new System.Windows.Forms.Button();
-            this.btnItaliqueDescriptionCourte = new System.Windows.Forms.Button();
-            this.btnSouslignerDescriptionCourte = new System.Windows.Forms.Button();
-            this.btnEnumDescriptionCourte = new System.Windows.Forms.Button();
-            this.numPoliceDescriptionCourte = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionLongue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionCourte)).BeginInit();
             this.SuspendLayout();
             // 
             // rtbDescriptionLongue
@@ -298,6 +292,7 @@
             0,
             0,
             0});
+            this.numPoliceDescriptionLongue.ValueChanged += new System.EventHandler(this.numPoliceDescriptionLongue_ValueChanged);
             // 
             // btnEnumDescriptionLongue
             // 
@@ -309,6 +304,7 @@
             this.btnEnumDescriptionLongue.TabIndex = 63;
             this.btnEnumDescriptionLongue.Text = "Enum";
             this.btnEnumDescriptionLongue.UseVisualStyleBackColor = true;
+            this.btnEnumDescriptionLongue.Click += new System.EventHandler(this.btnEnumDescriptionLongue_Click);
             // 
             // btnSouslignerDescriptionLongue
             // 
@@ -320,6 +316,7 @@
             this.btnSouslignerDescriptionLongue.TabIndex = 60;
             this.btnSouslignerDescriptionLongue.Text = "I";
             this.btnSouslignerDescriptionLongue.UseVisualStyleBackColor = true;
+            this.btnSouslignerDescriptionLongue.Click += new System.EventHandler(this.btnSouslignerDescriptionLongue_Click);
             // 
             // btnItaliqueDescriptionLongue
             // 
@@ -331,6 +328,7 @@
             this.btnItaliqueDescriptionLongue.TabIndex = 61;
             this.btnItaliqueDescriptionLongue.Text = "I";
             this.btnItaliqueDescriptionLongue.UseVisualStyleBackColor = true;
+            this.btnItaliqueDescriptionLongue.Click += new System.EventHandler(this.btnItaliqueDescriptionLongue_Click);
             // 
             // btnGrasDescriptionLongue
             // 
@@ -342,6 +340,7 @@
             this.btnGrasDescriptionLongue.TabIndex = 62;
             this.btnGrasDescriptionLongue.Text = "B";
             this.btnGrasDescriptionLongue.UseVisualStyleBackColor = true;
+            this.btnGrasDescriptionLongue.Click += new System.EventHandler(this.btnGrasDescriptionLongue_Click);
             // 
             // numPoliceCommentaire
             // 
@@ -356,6 +355,7 @@
             0,
             0,
             0});
+            this.numPoliceCommentaire.ValueChanged += new System.EventHandler(this.numPoliceCommentaire_ValueChanged);
             // 
             // btnEnumCommentaire
             // 
@@ -367,6 +367,7 @@
             this.btnEnumCommentaire.TabIndex = 73;
             this.btnEnumCommentaire.Text = "Enum";
             this.btnEnumCommentaire.UseVisualStyleBackColor = true;
+            this.btnEnumCommentaire.Click += new System.EventHandler(this.btnEnumCommentaire_Click);
             // 
             // btnSouslignerCommentaire
             // 
@@ -390,6 +391,7 @@
             this.btnItaliqueCommentaire.TabIndex = 71;
             this.btnItaliqueCommentaire.Text = "I";
             this.btnItaliqueCommentaire.UseVisualStyleBackColor = true;
+            this.btnItaliqueCommentaire.Click += new System.EventHandler(this.btnItaliqueCommentaire_Click);
             // 
             // btnGrasCommentaire
             // 
@@ -401,6 +403,7 @@
             this.btnGrasCommentaire.TabIndex = 72;
             this.btnGrasCommentaire.Text = "B";
             this.btnGrasCommentaire.UseVisualStyleBackColor = true;
+            this.btnGrasCommentaire.Click += new System.EventHandler(this.btnGrasCommentaire_Click);
             // 
             // label6
             // 
@@ -416,70 +419,12 @@
             // rtbDescriptionCourte
             // 
             this.rtbDescriptionCourte.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.rtbDescriptionCourte.Location = new System.Drawing.Point(755, 164);
+            this.rtbDescriptionCourte.Location = new System.Drawing.Point(755, 124);
             this.rtbDescriptionCourte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rtbDescriptionCourte.Name = "rtbDescriptionCourte";
-            this.rtbDescriptionCourte.Size = new System.Drawing.Size(472, 86);
+            this.rtbDescriptionCourte.Size = new System.Drawing.Size(472, 107);
             this.rtbDescriptionCourte.TabIndex = 45;
             this.rtbDescriptionCourte.Text = "";
-            // 
-            // btnGrasDescriptionCourte
-            // 
-            this.btnGrasDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGrasDescriptionCourte.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrasDescriptionCourte.Location = new System.Drawing.Point(755, 118);
-            this.btnGrasDescriptionCourte.Name = "btnGrasDescriptionCourte";
-            this.btnGrasDescriptionCourte.Size = new System.Drawing.Size(34, 32);
-            this.btnGrasDescriptionCourte.TabIndex = 67;
-            this.btnGrasDescriptionCourte.Text = "B";
-            this.btnGrasDescriptionCourte.UseVisualStyleBackColor = true;
-            // 
-            // btnItaliqueDescriptionCourte
-            // 
-            this.btnItaliqueDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnItaliqueDescriptionCourte.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItaliqueDescriptionCourte.Location = new System.Drawing.Point(795, 118);
-            this.btnItaliqueDescriptionCourte.Name = "btnItaliqueDescriptionCourte";
-            this.btnItaliqueDescriptionCourte.Size = new System.Drawing.Size(34, 32);
-            this.btnItaliqueDescriptionCourte.TabIndex = 66;
-            this.btnItaliqueDescriptionCourte.Text = "I";
-            this.btnItaliqueDescriptionCourte.UseVisualStyleBackColor = true;
-            // 
-            // btnSouslignerDescriptionCourte
-            // 
-            this.btnSouslignerDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSouslignerDescriptionCourte.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSouslignerDescriptionCourte.Location = new System.Drawing.Point(835, 118);
-            this.btnSouslignerDescriptionCourte.Name = "btnSouslignerDescriptionCourte";
-            this.btnSouslignerDescriptionCourte.Size = new System.Drawing.Size(34, 32);
-            this.btnSouslignerDescriptionCourte.TabIndex = 65;
-            this.btnSouslignerDescriptionCourte.Text = "I";
-            this.btnSouslignerDescriptionCourte.UseVisualStyleBackColor = true;
-            // 
-            // btnEnumDescriptionCourte
-            // 
-            this.btnEnumDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEnumDescriptionCourte.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnumDescriptionCourte.Location = new System.Drawing.Point(936, 118);
-            this.btnEnumDescriptionCourte.Name = "btnEnumDescriptionCourte";
-            this.btnEnumDescriptionCourte.Size = new System.Drawing.Size(63, 32);
-            this.btnEnumDescriptionCourte.TabIndex = 68;
-            this.btnEnumDescriptionCourte.Text = "Enum";
-            this.btnEnumDescriptionCourte.UseVisualStyleBackColor = true;
-            // 
-            // numPoliceDescriptionCourte
-            // 
-            this.numPoliceDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numPoliceDescriptionCourte.Location = new System.Drawing.Point(877, 120);
-            this.numPoliceDescriptionCourte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.numPoliceDescriptionCourte.Name = "numPoliceDescriptionCourte";
-            this.numPoliceDescriptionCourte.Size = new System.Drawing.Size(51, 26);
-            this.numPoliceDescriptionCourte.TabIndex = 69;
-            this.numPoliceDescriptionCourte.Value = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
             // 
             // DetailEngagement
             // 
@@ -492,11 +437,6 @@
             this.Controls.Add(this.btnSouslignerCommentaire);
             this.Controls.Add(this.btnItaliqueCommentaire);
             this.Controls.Add(this.btnGrasCommentaire);
-            this.Controls.Add(this.numPoliceDescriptionCourte);
-            this.Controls.Add(this.btnEnumDescriptionCourte);
-            this.Controls.Add(this.btnSouslignerDescriptionCourte);
-            this.Controls.Add(this.btnItaliqueDescriptionCourte);
-            this.Controls.Add(this.btnGrasDescriptionCourte);
             this.Controls.Add(this.numPoliceDescriptionLongue);
             this.Controls.Add(this.btnEnumDescriptionLongue);
             this.Controls.Add(this.btnSouslignerDescriptionLongue);
@@ -530,7 +470,6 @@
             this.Text = "Détail de l\'engagement";
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionLongue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionCourte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -571,10 +510,5 @@
         private System.Windows.Forms.Button btnGrasCommentaire;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox rtbDescriptionCourte;
-        private System.Windows.Forms.Button btnGrasDescriptionCourte;
-        private System.Windows.Forms.Button btnItaliqueDescriptionCourte;
-        private System.Windows.Forms.Button btnSouslignerDescriptionCourte;
-        private System.Windows.Forms.Button btnEnumDescriptionCourte;
-        private System.Windows.Forms.NumericUpDown numPoliceDescriptionCourte;
     }
 }

@@ -8,6 +8,12 @@ namespace FestiRire.Controleur.Sommaires
 {
     class SommaireStatut:SommaireBase
     {
+           
+        }
 
+        public List<Modele.tblStatut> Tout()
+        {
+            return provider.ToutStatus();
+        }
     }
 }
