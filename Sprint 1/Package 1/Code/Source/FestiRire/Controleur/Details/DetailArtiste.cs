@@ -32,7 +32,7 @@ namespace FestiRire.Controleur.Details
         public void AjouterArtiste(string nomArt, string nomCat,string chemin,string com,string nomContrat)
         {
             var artiste = new Modele.tblArtiste { nom = nomArt, commentaire = com };
-            var fichier = new Modele.tblFichierPersonnel();
+
         }
     }
 }

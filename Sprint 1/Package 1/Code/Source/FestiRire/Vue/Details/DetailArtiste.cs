@@ -128,10 +128,37 @@ namespace FestiRire
 
         }
 
+
         private void btnAjouterCategorieArtiste_Click(object sender, EventArgs e)
         {
             SommaireCategoriesArtiste cat = new SommaireCategoriesArtiste();
             cat.ShowDialog();
+        }
+
+        //Gestion des styles reliés aux commentaires et description
+        private void btnGrasCommentaire_Click(object sender, EventArgs e)
+        {
+            artiste.TextGras(rtbCommentaire);
+        }
+
+        private void btnItaliqueCommentaire_Click(object sender, EventArgs e)
+        {
+            artiste.TextItalic(rtbCommentaire);
+        }
+
+        private void btnSouslignerCommentaire_Click(object sender, EventArgs e)
+        {
+            artiste.TextUderline(rtbCommentaire);
+        }
+
+        private void numPoliceCommentaire_ValueChanged(object sender, EventArgs e)
+        {
+            artiste.SizeText(rtbCommentaire,numPoliceCommentaire.Value);
+        }
+
+        private void btnEnumCommentaire_Click(object sender, EventArgs e)
+        {
+            artiste.EnumText(rtbCommentaire);
         }
     }
 }

@@ -26,5 +26,32 @@ namespace FestiRire
             //Modele.tblCategorieArtiste categorie = DCA.LoadCategorieArtiste(noCategorie);
             
         }
+
+        //Gestion des styles reliés aux commentaires et description
+        private void btnGrasCatArtiste_Click(object sender, EventArgs e)
+        {
+            DCA.TextGras(rtbDescriptionCategorie);
+        }
+
+        private void btnItalicCatArtiste_Click(object sender, EventArgs e)
+        {
+            DCA.TextItalic(rtbDescriptionCategorie);
+        }
+
+        private void btnUnderlineCatArtiste_Click(object sender, EventArgs e)
+        {
+            DCA.TextUderline(rtbDescriptionCategorie);
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            DCA.SizeText(rtbDescriptionCategorie,numericUpDownCatArtiste.Value);
+        }
+
+        private void btnEnumCatArtiste_Click(object sender, EventArgs e)
+        {
+            DCA.EnumText(rtbDescriptionCategorie);
+        }
+
     }
 }

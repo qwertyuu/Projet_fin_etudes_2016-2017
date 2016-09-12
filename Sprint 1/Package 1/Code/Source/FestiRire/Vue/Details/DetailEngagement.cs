@@ -56,10 +56,7 @@ namespace FestiRire
             rtbDescriptionLongue.Text = _Engagement.description;
         }
 
-        private void btnSouslignerCommentaire_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
@@ -69,6 +66,57 @@ namespace FestiRire
             {
                 this.Close();
             }
+        }
+
+        //Gestion des styles de commentaire et description.
+        private void btnGrasCommentaire_Click(object sender, EventArgs e)
+        {
+            conEngagement.TextGras(rtbCommentaire);
+        }
+
+        private void btnSouslignerCommentaire_Click(object sender, EventArgs e)
+        {
+            conEngagement.TextUderline(rtbCommentaire);
+        }
+
+        private void btnItaliqueCommentaire_Click(object sender, EventArgs e)
+        {
+            conEngagement.TextItalic(rtbCommentaire);
+        }
+
+        private void numPoliceCommentaire_ValueChanged(object sender, EventArgs e)
+        {
+            conEngagement.SizeText(rtbCommentaire,numPoliceCommentaire.Value);
+        }
+
+        private void btnEnumCommentaire_Click(object sender, EventArgs e)
+        {
+            conEngagement.EnumText(rtbCommentaire);
+        }
+
+        private void btnGrasDescriptionLongue_Click(object sender, EventArgs e)
+        {
+            conEngagement.TextGras(rtbDescriptionLongue);
+        }
+
+        private void btnItaliqueDescriptionLongue_Click(object sender, EventArgs e)
+        {
+            conEngagement.TextItalic(rtbDescriptionLongue);
+        }
+
+        private void btnSouslignerDescriptionLongue_Click(object sender, EventArgs e)
+        {
+            conEngagement.TextUderline(rtbDescriptionLongue);
+        }
+
+        private void numPoliceDescriptionLongue_ValueChanged(object sender, EventArgs e)
+        {
+            conEngagement.TextUderline(rtbDescriptionLongue);
+        }
+
+        private void btnEnumDescriptionLongue_Click(object sender, EventArgs e)
+        {
+            conEngagement.EnumText(rtbDescriptionLongue);
         }
     }
 }

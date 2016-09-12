@@ -31,14 +31,14 @@ namespace FestiRire.Controleur.Details
             //INSERT
         }
 
-        internal tblExigence LoadExigence(int idExigence)
-        {
-            return new tblExigence();
-            //SELECT UNIQUE
-        }
-        internal void EnregistrerExigence(int idExigence, string nom, DateTime dateExigence, string txtMontant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue)
-        {
-            //UPDATE
-        }
-    }
+        //internal tblExigence LoadExigence(int idExigence)
+        //{
+        //    return new tblExigence();
+        //    //SELECT UNIQUE
+        //}
+        //internal void EnregistrerExigence(int idExigence, string nom, DateTime dateExigence, string txtMontant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue)
+        //{
+        //    //UPDATE
+        //}
+    
 }

@@ -25,7 +25,7 @@ namespace FestiRire
         {
             if (idExigence != null)
             {
-                conExigence.EnregistrerExigence((int)idExigence, txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+               // conExigence.EnregistrerExigence((int)idExigence, txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
                 MessageBox.Show("Exigence Modifiée");
             }
             else
@@ -57,6 +57,59 @@ namespace FestiRire
             //txtCapacite.Text = conExigence.FormatTelephone(_Exigence.tblAdresse.telCellulaire);
             rtbDescriptionCourte.Text = _Exigence.descriptionCourte;
             rtbDescriptionLongue.Text = _Exigence.description;
+        }
+
+        //Gestion des styles.
+        private void btnGrasDescriptionLongue_Click(object sender, EventArgs e)
+        {
+            
+            conExigence.TextGras(rtbDescriptionLongue);
+        }
+
+        private void btnItaliqueDescriptionLongue_Click(object sender, EventArgs e)
+        {
+            conExigence.TextItalic(rtbDescriptionLongue);
+        }
+
+        private void btnSouslignerDescriptionLongue_Click(object sender, EventArgs e)
+        {
+            conExigence.TextUderline(rtbDescriptionLongue);
+        }
+
+        private void numPoliceDescriptionLongue_ValueChanged(object sender, EventArgs e)
+        {
+            conExigence.SizeText(rtbDescriptionLongue,numPoliceDescriptionLongue.Value);
+        }
+
+        private void btnEnumDescriptionLongue_Click(object sender, EventArgs e)
+        {
+            conExigence.EnumText(rtbDescriptionLongue);
+        }
+
+        private void btnGrasCommentaire_Click(object sender, EventArgs e)
+        {
+            conExigence.TextGras(rtbCommentaire);
+        }
+
+        private void btnItaliqueCommentaire_Click(object sender, EventArgs e)
+        {
+            conExigence.TextItalic(rtbCommentaire);
+
+        }
+
+        private void btnSouslignerCommentaire_Click(object sender, EventArgs e)
+        {
+            conExigence.TextUderline(rtbCommentaire);
+        }
+
+        private void numPoliceCommentaire_ValueChanged(object sender, EventArgs e)
+        {
+            conExigence.SizeText(rtbCommentaire, numPoliceCommentaire.Value);
+        }
+
+        private void btnEnumCommentaire_Click(object sender, EventArgs e)
+        {
+            conExigence.EnumText(rtbCommentaire);
         }
     }
 }

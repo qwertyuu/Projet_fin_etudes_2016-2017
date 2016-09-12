@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace FestiRire.Controleur.Details
 {
-    class DetailContrat
+    class DetailContrat:DetailBaseSimple
     {
+        public DetailContrat():base()
+        {
+
+        }
     }
 }

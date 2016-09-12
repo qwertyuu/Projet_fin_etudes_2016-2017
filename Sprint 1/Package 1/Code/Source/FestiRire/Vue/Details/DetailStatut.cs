@@ -56,5 +56,30 @@ namespace FestiRire
             }
 
         }
+
+        private void btnGrasDescription_Click(object sender, EventArgs e)
+        {
+            _statut.TextGras(rtbDescriptionStatut);
+        }
+
+        private void btnItaliqueDescription_Click(object sender, EventArgs e)
+        {
+            _statut.TextItalic(rtbDescriptionStatut);
+        }
+
+        private void btnSouslignerDescription_Click(object sender, EventArgs e)
+        {
+            _statut.TextUderline(rtbDescriptionStatut);
+        }
+
+        private void numPoliceDescription_ValueChanged(object sender, EventArgs e)
+        {
+            _statut.SizeText(rtbDescriptionStatut,numPoliceDescription.Value);
+        }
+
+        private void btnEnumDescription_Click(object sender, EventArgs e)
+        {
+            _statut.EnumText(rtbDescriptionStatut);
+        }
     }
 }
