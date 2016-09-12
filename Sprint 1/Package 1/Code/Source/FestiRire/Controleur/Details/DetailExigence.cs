@@ -13,15 +13,25 @@ namespace FestiRire.Controleur.Details
         {
 
         }
-        internal void EnregistrerExigence(string nom, DateTime dateExigence, string txtMontant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue)
+        internal void EnregistrerExigence(string nom, DateTime dateExigence, decimal Montant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue)
         {
-            //INSERT
+            var exigence = new Modele.tblExigence()
+            {
+                nom = nom,
+                date=dateExigence,
+                montant=Montant,
+                description=rtbDescriptionLongue,
+                commentaire=rtbCommentaire,
+                descriptionCourte=rtbDescriptionCourte,
+                               
+            };
+            provider.InsertExigence(exigence);
         }
 
-        internal tblExigence LoadExigence(int idExigence)
-        {
-            //SELECT UNIQUE
-        }
+        //internal tblExigence LoadExigence(int idExigence)
+        //{
+        //    //SELECT UNIQUE
+        //}
         internal void EnregistrerExigence(int idExigence, string nom, DateTime dateExigence, string txtMontant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue)
         {
             //UPDATE

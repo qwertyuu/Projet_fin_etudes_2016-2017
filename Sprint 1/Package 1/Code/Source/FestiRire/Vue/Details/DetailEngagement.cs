@@ -22,7 +22,7 @@ namespace FestiRire
 
         private void btnEnregistrerEngagement_Click(object sender, EventArgs e)
         {
-            conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, txtHeure.Text, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+            conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value,(txtHeure.Text), txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
             if (!modeCreation)
             {
                 MessageBox.Show("Engagement Modifié");
@@ -46,7 +46,7 @@ namespace FestiRire
         {
             txtNatureEngagement.Text = _Engagement.nature;
             dateEngagement.Value = _Engagement.date ?? default(DateTime);
-            //txtHeure.Text = _Engagement.heure;
+            txtHeure.Text = _Engagement.heure;
             txtDuree.Text = _Engagement.duree;
             txtLieu.Text = _Engagement.lieu;
             rtbCommentaire.Text = _Engagement.commentaire;
@@ -54,6 +54,21 @@ namespace FestiRire
             //txtCapacite.Text = conEngagement.FormatTelephone(_Engagement.tblAdresse.telCellulaire);
             rtbDescriptionCourte.Text = _Engagement.descriptionCourte;
             rtbDescriptionLongue.Text = _Engagement.description;
+        }
+
+        private void btnSouslignerCommentaire_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            DialogResult result;
+            result = MessageBox.Show("Si vous fermez vous allez perdre les données déja saisies. Voulez-vous fermer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

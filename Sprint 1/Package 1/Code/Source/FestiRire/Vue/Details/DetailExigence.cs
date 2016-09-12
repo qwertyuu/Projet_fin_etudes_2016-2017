@@ -30,7 +30,7 @@ namespace FestiRire
             }
             else
             {
-                conExigence.EnregistrerExigence(txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+                conExigence.EnregistrerExigence(txtNom.Text, dateExigence.Value,Convert.ToDecimal(txtMontant.Text), cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
                 MessageBox.Show("Exigence Ajoutée");
             }
             this.Close();
@@ -42,7 +42,7 @@ namespace FestiRire
             InitializeComponent();
             idExigence = _idExigence;
             cmbStatut.DataSource = conStatut.Tout();
-            PeuplerInterface(conExigence.LoadExigence(_idExigence));
+           // PeuplerInterface(conExigence.LoadExigence(_idExigence));
         }
 
         private void PeuplerInterface(Modele.tblExigence _Exigence)

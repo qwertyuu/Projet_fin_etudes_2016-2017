@@ -18,7 +18,7 @@ namespace FestiRire.Modele
         public string duree { get; set; }
         public string lieu { get; set; }
         public Nullable<System.DateTime> date { get; set; }
-        public Nullable<System.TimeSpan> heure { get; set; }
+        public string heure { get; set; }
         public string nature { get; set; }
         public string commentaire { get; set; }
         public string description { get; set; }

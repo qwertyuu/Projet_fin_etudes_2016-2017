@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PE2_OfficielModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PE2_OfficielModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblAdresse">
           <Key>
             <PropertyRef Name="noAdresse" />
@@ -95,7 +95,7 @@
           <Property Name="duree" Type="varchar" MaxLength="6" Nullable="false" />
           <Property Name="lieu" Type="text" Nullable="false" />
           <Property Name="date" Type="date" />
-          <Property Name="heure" Type="time" Precision="7" />
+          <Property Name="heure" Type="char" MaxLength="5" />
           <Property Name="nature" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="commentaire" Type="text" />
           <Property Name="description" Type="text" />
@@ -180,6 +180,8 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomAgence' n'a pas d
         <EntityType Name="vueSomAgence">
           <Key>
             <PropertyRef Name="noAgence" />
+            
+            
           </Key>
           <Property Name="noAgence" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
@@ -192,6 +194,8 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomArtiste' n'a pas 
         <EntityType Name="vueSomArtiste">
           <Key>
             <PropertyRef Name="noArtiste" />
+            
+            
           </Key>
           <Property Name="noArtiste" Type="int" Nullable="false" />
           <Property Name="nomAriste" Type="varchar" MaxLength="50" Nullable="false" />
@@ -202,6 +206,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomCatArtiste' n'a p
         <EntityType Name="vueSomCatArtiste">
           <Key>
             <PropertyRef Name="noCategorie" />
+            
           </Key>
           <Property Name="noCategorie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="20" Nullable="false" />
@@ -212,6 +217,8 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomContrat' n'a pas 
         <EntityType Name="vueSomContrat">
           <Key>
             <PropertyRef Name="noContrat" />
+            
+            
           </Key>
           <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
@@ -223,6 +230,10 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomEngagement' n'a p
         <EntityType Name="vueSomEngagement">
           <Key>
             <PropertyRef Name="noEngagement" />
+            
+            
+            
+            
           </Key>
           <Property Name="noEngagement" Type="int" Nullable="false" />
           <Property Name="nature" Type="varchar" MaxLength="50" Nullable="false" />
@@ -237,6 +248,9 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas
         <EntityType Name="vueSomExigence">
           <Key>
             <PropertyRef Name="noExigence" />
+            
+            
+            
           </Key>
           <Property Name="noExigence" Type="int" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="30" Nullable="false" />
@@ -620,8 +634,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas
             <End Role="tblRespoContrat" EntitySet="tblRespoContrat" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PE2_OfficielModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -718,7 +731,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas
           <Property Name="duree" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="date" Type="DateTime" Precision="0" />
-          <Property Name="heure" Type="Time" Precision="7" />
+          <Property Name="heure" Type="String" />
           <Property Name="nature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />

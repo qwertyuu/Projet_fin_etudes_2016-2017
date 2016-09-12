@@ -89,6 +89,13 @@ namespace FestiRire
 
         }
 
+        public void InsertExigence(tblExigence exigence)
+        {
+            BD.tblExigence.Add(exigence);
+            BD.SaveChanges();
+
+        }
+
         //-----Requête sur la table adresse----
         public void InsertAdresse(Modele.tblAdresse adresse)
         {

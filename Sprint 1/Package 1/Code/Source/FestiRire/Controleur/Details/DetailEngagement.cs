@@ -21,12 +21,12 @@ namespace FestiRire.Controleur.Details
             {
                 nature = nature,
                 date = date,
-                //heure = heure,
+                heure = heure,
                 duree = duree,
                 lieu = lieu,
                 commentaire = commentaire,
                 descriptionCourte = descCourte,
-                description = descLongue
+                description = descLongue,
             };
             provider.InsertEngagement(tE);
         }
