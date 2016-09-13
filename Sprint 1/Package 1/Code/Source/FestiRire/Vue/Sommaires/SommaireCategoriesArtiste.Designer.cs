@@ -125,6 +125,7 @@
             this.btnAjouter.TabIndex = 22;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // btnDetail
             // 
@@ -136,6 +137,7 @@
             this.btnDetail.TabIndex = 21;
             this.btnDetail.Text = "Détail";
             this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // btnFermer
             // 
@@ -148,6 +150,7 @@
             this.btnFermer.TabIndex = 22;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // SommaireCategoriesArtiste
             // 

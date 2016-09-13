@@ -70,7 +70,7 @@
             this.btnEnregistrerStatut.TabIndex = 9;
             this.btnEnregistrerStatut.Text = "Enregistrer";
             this.btnEnregistrerStatut.UseVisualStyleBackColor = true;
-            this.btnEnregistrerStatut.Click += new System.EventHandler(this.btnEnregistrerStatut_Click_1);
+            this.btnEnregistrerStatut.Click += new System.EventHandler(this.btnEnregistrerStatut_Click);
             // 
             // txtNom
             // 
@@ -130,7 +130,7 @@
             // 
             // pbApercuCouleur
             // 
-            this.pbApercuCouleur.BackColor = System.Drawing.Color.Maroon;
+            this.pbApercuCouleur.BackColor = System.Drawing.Color.Transparent;
             this.pbApercuCouleur.Location = new System.Drawing.Point(340, 362);
             this.pbApercuCouleur.Name = "pbApercuCouleur";
             this.pbApercuCouleur.Size = new System.Drawing.Size(56, 23);

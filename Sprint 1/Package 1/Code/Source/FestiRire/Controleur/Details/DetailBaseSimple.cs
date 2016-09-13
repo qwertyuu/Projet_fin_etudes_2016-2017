@@ -52,6 +52,11 @@ namespace FestiRire.Controleur.Details
             return SanitariserTexte(courr);
         }
 
+        public void Save()
+        {
+            provider.Save();
+        }
+
         //Mettre le text sélectionner en gras.
         public void TextGras(System.Windows.Forms.RichTextBox text)
         {

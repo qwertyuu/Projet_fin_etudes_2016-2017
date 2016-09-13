@@ -26,14 +26,33 @@ namespace FestiRire.Controleur.Details
                 lieu = lieu,
                 commentaire = commentaire,
                 descriptionCourte = descCourte,
-                description = descLongue,
+                description = descLongue
             };
             provider.InsertEngagement(tE);
+        }
+
+        internal void EnregistrerEngagement(int idEngagement, string nature, DateTime date, string heure, string duree, string lieu, string commentaire, string prixbillet, string capacite, string descCourte, string descLongue)
+        {
+            var tE = provider.SelectEngagement(idEngagement);
+            tE.nature = nature;
+            tE.date = date;
+            tE.heure = heure;
+            tE.duree = duree;
+            tE.lieu = lieu;
+            tE.commentaire = commentaire;
+            tE.descriptionCourte = descCourte;
+            tE.description = descLongue;
+            provider.Save();
         }
 
         public tblEngagement LoadEngagement(int idEngagement)
         {
             return provider.SelectEngagement(idEngagement);
+        }
+
+        public void SupprimerEngagement(int idEngagement)
+        {
+            provider.SupprimerEngagement(idEngagement);
         }
     }
 }

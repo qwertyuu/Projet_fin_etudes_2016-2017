@@ -13,16 +13,15 @@ namespace FestiRire
     public partial class DetailStatut : Form
     {
         Controleur.Details.DetailStatut _statut = new Controleur.Details.DetailStatut();
-        bool modeCreation;
+        int? idStatut;
         public DetailStatut()
         {
             InitializeComponent();
-            modeCreation = true;
         }
         public DetailStatut(int id)
         {
             InitializeComponent();
-            modeCreation = false;
+            idStatut = id;
             PeuplerInterface(_statut.LoadStatut(id));
         }
         private void PeuplerInterface(Modele.tblStatut _statut)
@@ -44,11 +43,11 @@ namespace FestiRire
         {
             ConfirmationClose();
         }
-        private void btnEnregistrerStatut_Click_1(object sender, EventArgs e)
+        private void btnEnregistrerStatut_Click(object sender, EventArgs e)
         {
-            if (txtNom.Text == "")
+            if (txtNom.Text == "" || pbApercuCouleur.BackColor == Color.Transparent)
             {
-                MessageBox.Show("Veuiller donner un nom.");
+                MessageBox.Show("Veuiller donner un nom et entrer une couleur.");
             }
             else
             {

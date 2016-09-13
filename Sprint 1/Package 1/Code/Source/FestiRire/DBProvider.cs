@@ -21,6 +21,11 @@ namespace FestiRire
             }
         }
 
+        public tblArtiste SelectArtiste(int idArtiste)
+        {
+            return BD.tblArtiste.SingleOrDefault(a => a.noArtiste == idArtiste);
+        }
+
         public List<tblStatut> ToutStatus()
         {
             return BD.tblStatut.ToList();
@@ -29,6 +34,12 @@ namespace FestiRire
         public tblAgence SelectAgence(string _noAgence)
         {
             return BD.tblAgence.SingleOrDefault(a => a.noAgence == _noAgence && a.dateSupprime == null);
+        }
+
+        internal void InsertArtiste(tblArtiste artiste)
+        {
+            BD.tblArtiste.Add(artiste);
+            BD.SaveChanges();
         }
 
         internal List<tblArtiste> ToutArtiste()
@@ -40,9 +51,40 @@ namespace FestiRire
         {
             return BD.tblEngagement.SingleOrDefault(a => a.noEngagement == idEngagement && a.dateSupprime == null);
         }
+
+        internal List<Modele.tblFichierPersonnel> ToutFichierPersonnel()
+        {
+            return BD.tblFichierPersonnel.Where(a => a.dateSupprime == null).ToList();
+        }
+
+        internal void SupprimerArtiste(int idartiste)
+        {
+            var query = from q in BD.tblArtiste
+                        where q.noArtiste == idartiste
+                        select q;
+            if (query != null)
+            {
+                foreach (var q in query)
+                {
+                    q.dateSupprime = DateTime.Now;
+                }
+            }
+            BD.SaveChanges();
+        }
+
+        internal List<Modele.tblFichierOfficiel> PhotoOfficielArtiste(int noArtiste)
+        {
+            return BD.tblFichierOfficiel.Where(a => a.noArtiste == noArtiste && a.tblFichierPersonnel.dateSupprime == null).ToList();
+        }
+
         public tblStatut SelectStatut(int idStatut)
         {
             return BD.tblStatut.SingleOrDefault(a => a.noStatut == idStatut);
+        }
+
+        internal void InsertFichierPersonnel(tblFichierPersonnel item)
+        {
+            BD.tblFichierPersonnel.Add(item);
         }
 
 
@@ -54,6 +96,45 @@ namespace FestiRire
             BD.SaveChanges();
         }
 
+        internal tblExigence SelectExigence(int idExigence)
+        {
+            return BD.tblExigence.SingleOrDefault(a => a.noExigence == idExigence && a.dateSupprime == null);
+        }
+
+        internal void InsertFichierOfficiel(tblFichierOfficiel item)
+        {
+            BD.tblFichierOfficiel.Add(item);
+            BD.SaveChanges();
+        }
+
+        internal void SupprimerExigence(int idExigence)
+        {
+            var query = from q in BD.tblExigence
+                        where q.noExigence == idExigence
+                        select q;
+            if (query != null)
+            {
+                foreach (Modele.tblExigence q in query)
+                {
+                    q.dateSupprime = DateTime.Now;
+                }
+            }
+        }
+
+        internal void SupprimerEngagement(int idEngagement)
+        {
+            var query = from q in BD.tblEngagement
+                        where q.noEngagement == idEngagement
+                        select q;
+            if (query != null)
+            {
+                foreach (var q in query)
+                {
+                    q.dateSupprime = DateTime.Now;
+                }
+            }
+            BD.SaveChanges();
+        }
 
         public void SupprimerAgence(string no)
         {
@@ -163,8 +244,7 @@ namespace FestiRire
 
         public List<Modele.vueSomArtiste> ToutVueArtiste()
         {
-            return (from item in BD.vueSomArtiste
-                   select item).ToList();
+            return BD.vueSomArtiste.GroupBy(a => a.noArtiste.ToString()).Select(grp => grp.FirstOrDefault()).ToList();
         }
 
         public List<Modele.vueSomCatArtiste> ToutVueCategorieArtiste()
@@ -177,6 +257,12 @@ namespace FestiRire
         {
             return (from item in BD.vueSomContrat
                    select item).ToList();
+        }
+
+        internal void SupprimerFichier(tblFichierPersonnel item)
+        {
+            item.dateSupprime = DateTime.Now;
+            BD.SaveChanges();
         }
     }
 }

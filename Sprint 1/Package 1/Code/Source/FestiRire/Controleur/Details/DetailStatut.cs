@@ -10,27 +10,26 @@ namespace FestiRire.Controleur.Details
     {
         public void AjouterStatut(string nom, string desc, string coul)
         {
-            var statut = new Modele.tblStatut { nomStatut = nom, description = desc, couleur = coul };//On enregistre le statut.
+            var statut = new Modele.tblStatut { nomStatut = SanitariserTexte(nom), description = desc, couleur = coul };//On enregistre le statut.
             provider.InsertStatut(statut);//Et enfin on sauvegarde les modifications.
         }
-        internal bool StatutExiste(string _noStatut, out string nomStatut)
+
+        public void AjouterStatut(int idStatut, string nom, string desc, string coul)
         {
-            var statut = provider.SelectAgence(_noStatut);
-            if (statut != null)
-            {
-                nomStatut = statut.nom;
-                return true;
-            }
-            nomStatut = "";
-            return false;
+            var statut = provider.SelectStatut(idStatut);
+            statut.nomStatut = SanitariserTexte(nom);
+            statut.description = desc;
+            statut.couleur = coul;
+            provider.Save();//Et enfin on sauvegarde les modifications.
         }
+
         public Modele.tblStatut LoadStatut(int id)
         {
             return provider.SelectStatut(id);
         }
         public void DeleteStatut(int no)
         {
-                provider.SupprimerStatut(no);
+            provider.SupprimerStatut(no);
         }
     }
 }

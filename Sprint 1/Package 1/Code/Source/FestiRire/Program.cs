@@ -17,7 +17,7 @@ namespace FestiRire
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DetailExigence(4));
+            Application.Run(new SommaireArtiste());
         }
     }
 }

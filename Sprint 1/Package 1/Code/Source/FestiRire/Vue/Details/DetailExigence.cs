@@ -42,6 +42,7 @@ namespace FestiRire
             InitializeComponent();
             idExigence = _idExigence;
             cmbStatut.DataSource = conStatut.Tout();
+            btnSupprimerExigence.Enabled = false;
            // PeuplerInterface(conExigence.LoadExigence(_idExigence));
         }
 
@@ -110,6 +111,30 @@ namespace FestiRire
         private void btnEnumCommentaire_Click(object sender, EventArgs e)
         {
             conExigence.EnumText(rtbCommentaire);
+        }
+        private void btnSupprimerExigence_Click(object sender, EventArgs e)
+        {
+            if (idExigence != null)
+            {
+                DialogResult result = result = MessageBox.Show("Voulez-vous supprimer cet exigence?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    conExigence.SupprimerExigence((int)idExigence);
+                    MessageBox.Show("Exigence supprimée avec succès");
+                    this.Close();
+                }
+
+            }
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            DialogResult result;
+            result = MessageBox.Show("Si vous fermez vous allez perdre les données déja saisies. Voulez-vous fermer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

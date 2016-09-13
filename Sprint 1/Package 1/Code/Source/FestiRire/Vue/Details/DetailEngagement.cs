@@ -13,22 +13,22 @@ namespace FestiRire
     public partial class DetailEngagement : Form
     {
         Controleur.Details.DetailEngagement conEngagement = new Controleur.Details.DetailEngagement();
-        bool modeCreation;
+        int? idEngagement;
         public DetailEngagement()
         {
             InitializeComponent();
-            modeCreation = true;
         }
 
         private void btnEnregistrerEngagement_Click(object sender, EventArgs e)
         {
-            conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value,(txtHeure.Text), txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
-            if (!modeCreation)
+            if (idEngagement != null)
             {
+                conEngagement.EnregistrerEngagement((int)idEngagement,txtNatureEngagement.Text, dateEngagement.Value, (txtHeure.Text), txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
                 MessageBox.Show("Engagement Modifié");
             }
             else
             {
+                conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (txtHeure.Text), txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
                 MessageBox.Show("Engagement Ajouté");
             }
             this.Close();
@@ -38,7 +38,7 @@ namespace FestiRire
         public DetailEngagement(int idEngagement)
         {
             InitializeComponent();
-            modeCreation = false;
+            this.idEngagement = idEngagement;
             PeuplerInterface(conEngagement.LoadEngagement(idEngagement));
         }
 
@@ -65,6 +65,21 @@ namespace FestiRire
             if (result == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void btnSupprimerEngagement_Click(object sender, EventArgs e)
+        {
+            if (idEngagement != null)
+            {
+                DialogResult result = result = MessageBox.Show("Voulez-vous supprimer cet exigence?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    conEngagement.SupprimerEngagement((int)idEngagement);
+                    MessageBox.Show("Exigence supprimée avec succès");
+                    this.Close();
+                }
+
             }
         }
 

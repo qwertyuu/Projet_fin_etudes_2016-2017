@@ -9,10 +9,6 @@ namespace FestiRire.Controleur.Details
     class DetailAgence : DetailBaseSimple
     {
 
-        public DetailAgence() : base()
-        {
-
-        }
 
 
         public Modele.tblAgence LoadAgence(string id)

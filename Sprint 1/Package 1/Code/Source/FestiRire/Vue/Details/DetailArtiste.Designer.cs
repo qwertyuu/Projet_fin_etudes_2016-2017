@@ -102,6 +102,7 @@
             this.btnAnnuler.TabIndex = 30;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnEnregistrerArtiste
             // 
@@ -113,6 +114,7 @@
             this.btnEnregistrerArtiste.TabIndex = 30;
             this.btnEnregistrerArtiste.Text = "Enregistrer";
             this.btnEnregistrerArtiste.UseVisualStyleBackColor = true;
+            this.btnEnregistrerArtiste.Click += new System.EventHandler(this.btnEnregistrerArtiste_Click);
             // 
             // btnSupprimerArtiste
             // 
@@ -124,6 +126,7 @@
             this.btnSupprimerArtiste.TabIndex = 30;
             this.btnSupprimerArtiste.Text = "Supprimer";
             this.btnSupprimerArtiste.UseVisualStyleBackColor = true;
+            this.btnSupprimerArtiste.Click += new System.EventHandler(this.btnSupprimerArtiste_Click);
             // 
             // label2
             // 
@@ -279,6 +282,7 @@
             this.rtbCommentaire.Size = new System.Drawing.Size(595, 255);
             this.rtbCommentaire.TabIndex = 56;
             this.rtbCommentaire.Text = "";
+            this.rtbCommentaire.TextChanged += new System.EventHandler(this.rtbCommentaire_TextChanged);
             // 
             // btnParcourirPhotoOfficielle
             // 
@@ -302,6 +306,7 @@
             this.btnSupprimerPhotoOfficiel.TabIndex = 49;
             this.btnSupprimerPhotoOfficiel.Text = "Supprimer le fichier";
             this.btnSupprimerPhotoOfficiel.UseVisualStyleBackColor = true;
+            this.btnSupprimerPhotoOfficiel.Click += new System.EventHandler(this.btnSupprimerPhotoOfficiel_Click);
             // 
             // lstPhotoOfficiel
             // 
@@ -315,6 +320,8 @@
             this.lstPhotoOfficiel.Name = "lstPhotoOfficiel";
             this.lstPhotoOfficiel.Size = new System.Drawing.Size(595, 124);
             this.lstPhotoOfficiel.TabIndex = 47;
+            this.lstPhotoOfficiel.SelectedIndexChanged += new System.EventHandler(this.lstPhotoOfficiel_SelectedIndexChanged);
+            this.lstPhotoOfficiel.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.lstPhotoOfficiel_Format);
             // 
             // cmbContrat
             // 
@@ -325,6 +332,7 @@
             this.cmbContrat.Name = "cmbContrat";
             this.cmbContrat.Size = new System.Drawing.Size(454, 28);
             this.cmbContrat.TabIndex = 50;
+            this.cmbContrat.SelectedValueChanged += new System.EventHandler(this.cmbContrat_SelectedValueChanged);
             // 
             // groupBox2
             // 
@@ -376,6 +384,7 @@
             this.btnSupprimerFiche.TabIndex = 51;
             this.btnSupprimerFiche.Text = "Supprimer le fichier";
             this.btnSupprimerFiche.UseVisualStyleBackColor = true;
+            this.btnSupprimerFiche.Click += new System.EventHandler(this.btnSupprimerFiche_Click);
             // 
             // btnParcourir
             // 
@@ -393,14 +402,12 @@
             // 
             this.lstFiches.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lstFiches.FormattingEnabled = true;
-            this.lstFiches.ItemHeight = 20;
-            this.lstFiches.Items.AddRange(new object[] {
-            "Pedigree_DenisDrolets.pdf"});
-            this.lstFiches.Location = new System.Drawing.Point(14, 29);
-            this.lstFiches.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lstFiches.Location = new System.Drawing.Point(9, 19);
             this.lstFiches.Name = "lstFiches";
             this.lstFiches.Size = new System.Drawing.Size(595, 104);
             this.lstFiches.TabIndex = 32;
+            this.lstFiches.SelectedIndexChanged += new System.EventHandler(this.lstFiches_SelectedIndexChanged);
+            this.lstFiches.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.lstFiches_Format);
             // 
             // groupBox4
             // 
@@ -422,14 +429,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstFichier.FormattingEnabled = true;
-            this.lstFichier.ItemHeight = 20;
-            this.lstFichier.Items.AddRange(new object[] {
-            " "});
-            this.lstFichier.Location = new System.Drawing.Point(9, 29);
-            this.lstFichier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lstFichier.Location = new System.Drawing.Point(6, 19);
             this.lstFichier.Name = "lstFichier";
             this.lstFichier.Size = new System.Drawing.Size(600, 144);
             this.lstFichier.TabIndex = 47;
+            this.lstFichier.SelectedIndexChanged += new System.EventHandler(this.lstFiches_SelectedIndexChanged);
+            this.lstFichier.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.lstFiches_Format);
             // 
             // btnSupprimerFichier
             // 
@@ -441,6 +446,7 @@
             this.btnSupprimerFichier.TabIndex = 49;
             this.btnSupprimerFichier.Text = "Supprimer le fichier";
             this.btnSupprimerFichier.UseVisualStyleBackColor = true;
+            this.btnSupprimerFichier.Click += new System.EventHandler(this.btnSupprimerFichier_Click);
             // 
             // btnParcourirFichier
             // 
@@ -452,6 +458,7 @@
             this.btnParcourirFichier.TabIndex = 48;
             this.btnParcourirFichier.Text = "Parcourir...";
             this.btnParcourirFichier.UseVisualStyleBackColor = true;
+            this.btnParcourirFichier.Click += new System.EventHandler(this.btnParcourirFichier_Click);
             // 
             // groupBox5
             // 

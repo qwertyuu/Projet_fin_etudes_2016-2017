@@ -121,6 +121,7 @@ namespace FestiRire
                 {
                     agence.DeleteAgence(txtNo.Text);
                     MessageBox.Show("Agence supprimée avec succès");
+                    this.Close();
                 }
 
             }

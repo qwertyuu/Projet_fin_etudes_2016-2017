@@ -121,6 +121,7 @@
             this.btnAnnuler.TabIndex = 9;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnSupprimerExigence
             // 
@@ -131,6 +132,7 @@
             this.btnSupprimerExigence.TabIndex = 7;
             this.btnSupprimerExigence.Text = "Supprimer";
             this.btnSupprimerExigence.UseVisualStyleBackColor = true;
+            this.btnSupprimerExigence.Click += new System.EventHandler(this.btnSupprimerExigence_Click);
             // 
             // btnEnregistrerExigence
             // 

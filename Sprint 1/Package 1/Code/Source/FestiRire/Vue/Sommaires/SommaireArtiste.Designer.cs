@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.dgvArtiste = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFiltres = new System.Windows.Forms.Button();
             this.btnRechercher = new System.Windows.Forms.Button();
@@ -36,8 +38,6 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnFermer = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArtiste)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,18 @@
             this.dgvArtiste.Size = new System.Drawing.Size(2536, 505);
             this.dgvArtiste.TabIndex = 0;
             this.dgvArtiste.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvArtiste_CellFormatting);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "nom";
+            this.Column1.HeaderText = "Nom";
+            this.Column1.Name = "Column1";
+            // 
+            // Categorie
+            // 
+            this.Categorie.DataPropertyName = "categories";
+            this.Categorie.HeaderText = "Categorie";
+            this.Categorie.Name = "Categorie";
             // 
             // groupBox1
             // 
@@ -119,6 +131,7 @@
             this.btnAjouter.TabIndex = 22;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // btnDetail
             // 
@@ -129,6 +142,7 @@
             this.btnDetail.TabIndex = 21;
             this.btnDetail.Text = "Détail";
             this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // btnFermer
             // 
@@ -140,18 +154,7 @@
             this.btnFermer.TabIndex = 22;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "nom";
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            // 
-            // Categorie
-            // 
-            this.Categorie.DataPropertyName = "categories";
-            this.Categorie.HeaderText = "Categorie";
-            this.Categorie.Name = "Categorie";
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // SommaireArtiste
             // 

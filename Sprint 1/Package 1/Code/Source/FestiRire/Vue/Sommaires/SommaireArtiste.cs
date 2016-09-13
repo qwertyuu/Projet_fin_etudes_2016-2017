@@ -27,11 +27,8 @@ namespace FestiRire
             dgvArtiste.AllowUserToResizeRows = false;
             dgvArtiste.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvArtiste.MultiSelect = false;
-            var artistesVue = conSommaireArtiste.Tout();
-            dgvArtiste.DataSource = artistesVue;
-            var final = (from m in artistesVue
-                        join s in conDetailArtiste.Tout() on m.noArtiste equals s.noArtiste
-                        select s).ToList();
+            dgvArtiste.DataSource = conSommaireArtiste.Tout();
+           
         }
 
         private void btnFermer_Click(object sender, EventArgs e)
@@ -44,17 +41,39 @@ namespace FestiRire
         {
             var frmDetailArtiste = new DetailArtiste(((Modele.vueSomArtiste)dgvArtiste.SelectedRows[0].DataBoundItem).noArtiste);
             frmDetailArtiste.ShowDialog();
+            dgvArtiste.DataSource = null;
+            dgvArtiste.DataSource = conSommaireArtiste.Tout();
+
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             var frmDetailArtiste = new DetailArtiste();
             frmDetailArtiste.ShowDialog();
+            dgvArtiste.DataSource = null;
+            dgvArtiste.DataSource = conSommaireArtiste.Tout();
         }
 
         private void dgvArtiste_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            dgvArtiste.Rows[e.RowIndex].Cells["categories"].Value = (e.Value as Modele.vueSomArtiste).nomCat;
+            if (e.ColumnIndex == 0)
+            {
+                e.Value = (dgvArtiste.Rows[e.RowIndex].DataBoundItem as Modele.vueSomArtiste).nomAriste;
+                return;
+            }
+            var CategoriesLieesALartiste = (from m in conDetailArtiste.Tout()
+                                            where m.noArtiste == (dgvArtiste.Rows[e.RowIndex].DataBoundItem as Modele.vueSomArtiste).noArtiste
+                                            select m.tblCategorieArtiste).ToList();
+            string affichage = "";
+            foreach (var item in CategoriesLieesALartiste)
+            {
+                foreach (var cat in item)
+                {
+                    affichage += cat.nom + " / ";
+                }
+            }
+            e.Value = affichage.Substring(0, affichage.Length - 3);
+            //dgvArtiste.Rows[e.RowIndex].Cells["categories"].Value = affichage.Substring(0, affichage.Length - 3);
         }
     }
 }

@@ -28,17 +28,28 @@ namespace FestiRire.Controleur.Details
             provider.InsertExigence(exigence);
         }
 
-            //INSERT
+        internal tblExigence LoadExigence(int idExigence)
+        {
+            return provider.SelectExigence(idExigence);
+            //SELECT UNIQUE
+        }
+        internal void EnregistrerExigence(int idExigence, string nom, DateTime dateExigence, string txtMontant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue)
+        {
+            var tE = provider.SelectExigence(idExigence);
+            tE.nom = nom;
+            tE.date = dateExigence;
+            tE.montant = decimal.Parse(txtMontant);
+            tE.noStatut = (cmbStatut as Modele.tblStatut).noStatut;
+            tE.commentaire = rtbCommentaire;
+            tE.descriptionCourte = rtbDescriptionCourte;
+            tE.description = rtbDescriptionLongue;
+            provider.Save();
+            //UPDATE
         }
 
-        //internal tblExigence LoadExigence(int idExigence)
-        //{
-        //    return new tblExigence();
-        //    //SELECT UNIQUE
-        //}
-        //internal void EnregistrerExigence(int idExigence, string nom, DateTime dateExigence, string txtMontant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue)
-        //{
-        //    //UPDATE
-        //}
-    
+        internal void SupprimerExigence(int idExigence)
+        {
+            provider.SupprimerExigence(idExigence);
+        }
+    }
 }
