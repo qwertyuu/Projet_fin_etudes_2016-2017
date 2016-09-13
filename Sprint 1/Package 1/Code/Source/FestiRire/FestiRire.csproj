@@ -141,6 +141,9 @@
     <Compile Include="Modele\vueSomExigence.cs">
       <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modele\vueSomStatut.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Vue\Details\DetailArtiste.cs">
       <SubType>Form</SubType>
     </Compile>

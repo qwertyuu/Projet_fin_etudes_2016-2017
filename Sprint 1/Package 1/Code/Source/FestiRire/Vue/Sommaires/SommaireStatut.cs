@@ -12,11 +12,11 @@ namespace FestiRire
 {
     public partial class SommaireStatut : Form
     {
-        Controleur.Sommaires.SommaireContrat conSommaireContrat;
+        Controleur.Sommaires.SommaireStatut conSommaireStatut;
         public SommaireStatut()
         {
             InitializeComponent();
-            conSommaireContrat = new Controleur.Sommaires.SommaireContrat();
+            conSommaireStatut = new Controleur.Sommaires.SommaireStatut();
 
             dgvStatut.AutoGenerateColumns = false;
             dgvStatut.RowHeadersVisible = false;
@@ -24,7 +24,7 @@ namespace FestiRire
             dgvStatut.AllowUserToResizeRows = false;
             dgvStatut.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvStatut.MultiSelect = false;
-            dgvStatut.DataSource = conSommaireContrat.Tout();
+            dgvStatut.DataSource = conSommaireStatut.Tout();
         }
 
         private void btnFermer_Click(object sender, EventArgs e)
@@ -32,18 +32,17 @@ namespace FestiRire
             this.Close();
         }
 
-
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            var frmDetailContrat = new DetailContrat(((Modele.vueSomContrat)dgvStatut.SelectedRows[0].DataBoundItem).noContrat);
-            frmDetailContrat.ShowDialog();
+            var frmDetailStatut = new DetailStatut(((Modele.vueSomStatut)dgvStatut.SelectedRows[0].DataBoundItem).noStatut);
+            frmDetailStatut.ShowDialog();
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            var frmDetailContrat = new DetailContrat();
+            var frmDetailStatut = new DetailStatut();
 
-            frmDetailContrat.ShowDialog();
+            frmDetailStatut.ShowDialog();
         }
     }
 }

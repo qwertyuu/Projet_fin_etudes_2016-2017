@@ -32,7 +32,6 @@ namespace FestiRire
             this.Close();
         }
 
-
         private void btnDetail_Click(object sender, EventArgs e)
         {
             var frmDetailContrat = new DetailContrat(((Modele.vueSomContrat)dgvContrats.SelectedRows[0].DataBoundItem).noContrat);

@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace FestiRire.Controleur.Sommaires
 {
-    class SommaireStatut:SommaireBase
+    class SommaireStatut : SommaireBase
     {
-           
-        }
-
         public List<Modele.tblStatut> Tout()
         {
             return provider.ToutStatus();

@@ -74,12 +74,22 @@ namespace FestiRire
 
         private void numPoliceDescription_ValueChanged(object sender, EventArgs e)
         {
-            _statut.SizeText(rtbDescriptionStatut,numPoliceDescription.Value);
+            _statut.SizeText(rtbDescriptionStatut, numPoliceDescription.Value);
         }
 
         private void btnEnumDescription_Click(object sender, EventArgs e)
         {
             _statut.EnumText(rtbDescriptionStatut);
+        }
+
+        private void btnChoixCouleur_Click(object sender, EventArgs e)
+        {
+            DialogResult res = colorDialog1.ShowDialog();
+
+            if (res == DialogResult.OK)
+            {
+                pbApercuCouleur.BackColor = colorDialog1.Color;
+            }
         }
     }
 }
