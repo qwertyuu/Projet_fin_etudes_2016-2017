@@ -305,6 +305,7 @@ INSERT INTO S_Contrat.tblStatut (nomStatut, description, couleur, dateSupprime) 
 INSERT INTO S_Contrat.tblStatut (nomStatut, description, couleur, dateSupprime) VALUES ('En attente', 'Le contrat est attente d''une décision', '600c3d', null);
 INSERT INTO S_Contrat.tblStatut (nomStatut, description, couleur, dateSupprime) VALUES ('Annulé', 'Le contrat a été annulé', '58c7f3', null);
 INSERT INTO S_Contrat.tblStatut (nomStatut, description, couleur, dateSupprime) VALUES ('Expiré', 'La date du contrat a été dépassé sans qu''une decision soit prise.', '5a0243', null);
+INSERT INTO S_Contrat.tblStatut (nomStatut, description, couleur, dateSupprime) VALUES ('TEST', 'TEST TEST TEST TEST', 'ff0000', null);
 GO
 PRINT 'insertion des statuts terminée'
 GO
