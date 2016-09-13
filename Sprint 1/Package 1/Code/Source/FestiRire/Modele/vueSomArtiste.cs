@@ -17,5 +17,6 @@ namespace FestiRire.Modele
         public int noArtiste { get; set; }
         public string nomAriste { get; set; }
         public string nomCat { get; set; }
+        public Nullable<System.DateTime> dateSupprime { get; set; }
     }
 }

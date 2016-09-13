@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c65f52371f4d4a6cb0d631dfa11f16d5" Name="Diagram1">
+      <Diagram DiagramId="c65f52371f4d4a6cb0d631dfa11f16d5" Name="Diagram1" ZoomLevel="85">
         <EntityTypeShape EntityType="PE2_OfficielModel.tblAdresse" Width="1.5" PointX="1.5" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblAgence" Width="1.5" PointX="3.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblArtiste" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
@@ -20,9 +20,9 @@
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAgence" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomArtiste" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomCatArtiste" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomContrat" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomContrat" Width="1.5" PointX="5.75" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomEngagement" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomExigence" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomExigence" Width="1.5" PointX="12.5" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="PE2_OfficielModel.AGE_ADR_FK" ManuallyRouted="false" />
         <AssociationConnector Association="PE2_OfficielModel.DIF_ADR_FK" ManuallyRouted="false" />
         <AssociationConnector Association="PE2_OfficielModel.CON_AGE_FK" ManuallyRouted="false" />
@@ -39,6 +39,7 @@
         <AssociationConnector Association="PE2_OfficielModel.tblCatArtisteArt" ManuallyRouted="false" />
         <AssociationConnector Association="PE2_OfficielModel.tblContratArtiste" ManuallyRouted="false" />
         <AssociationConnector Association="PE2_OfficielModel.tblRespoContrat" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomStatut" Width="1.5" PointX="10.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

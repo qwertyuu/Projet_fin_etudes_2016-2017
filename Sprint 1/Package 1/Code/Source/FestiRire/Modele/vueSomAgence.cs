@@ -19,5 +19,6 @@ namespace FestiRire.Modele
         public string ville { get; set; }
         public string telBureau { get; set; }
         public string telCellulaire { get; set; }
+        public Nullable<System.DateTime> dateSupprime { get; set; }
     }
 }

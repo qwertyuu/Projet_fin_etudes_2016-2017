@@ -21,5 +21,6 @@ namespace FestiRire.Modele
         public string duree { get; set; }
         public string lieu { get; set; }
         public string noContrat { get; set; }
+        public Nullable<System.DateTime> dateSupprime { get; set; }
     }
 }
