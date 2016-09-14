@@ -96,6 +96,15 @@ namespace FestiRire.Controleur
             else
                 valide = Regex.IsMatch(code.Trim().ToUpper(), "^[a-zA-Z]{1}[0-9]{1}[a-zA-Z]{1}(\\-| |){1}[0-9]{1}[a-zA-Z]{1}[0-9]{1}$", RegexOptions.IgnoreCase);
             return valide;
-        }    
+        }
+
+        //Hash le mot de passe
+        public string Hash(string password)
+        {
+            var bytes = new UTF8Encoding().GetBytes(password);
+            var hashBytes = System.Security.Cryptography.MD5.Create().ComputeHash(bytes);
+            return Convert.ToBase64String(hashBytes);
+        }
+
     }
 }

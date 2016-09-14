@@ -82,12 +82,24 @@ namespace FestiRire
             return BD.tblStatut.SingleOrDefault(a => a.noStatut == idStatut);
         }
 
+        //--Requête sur le table utilisateur----
+        public bool Authentifier(string id, string motPasse)
+        {
+            bool UserTrouver = false;
+            var query = (from q in BD.tblUtilisateur
+                         where q.IdUser == id && q.motPasse == motPasse
+                         select q).ToList();
+
+            if (query.Count == 1) //utlisateur trouvé
+                UserTrouver = true;
+            return UserTrouver;
+
+        }
+        
         internal void InsertFichierPersonnel(tblFichierPersonnel item)
         {
             BD.tblFichierPersonnel.Add(item);
         }
-
-
 
         //-----Requête sur la table Agence----
         public void InsertAgence(Modele.tblAgence agence)
@@ -235,6 +247,7 @@ namespace FestiRire
                     ).ToList();
 
         }
+
 
         public List<Modele.vueSomAgence> ToutVueAgence()
         {
