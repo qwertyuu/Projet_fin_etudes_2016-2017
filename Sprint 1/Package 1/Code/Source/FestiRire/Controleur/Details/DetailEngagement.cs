@@ -9,19 +9,13 @@ namespace FestiRire.Controleur.Details
 {
     class DetailEngagement : DetailBaseSimple
     {
-        public DetailEngagement() : base()
+        public void EnregistrerEngagement(string nature, DateTime date, int heure, int minutes, string duree, string lieu, string commentaire, string prixbillet, string capacite, string descCourte, string descLongue)
         {
-
-        }
-
-        public void EnregistrerEngagement(string nature, DateTime date, string heure, string duree, string lieu, string commentaire, string prixbillet, string capacite, string descCourte, string descLongue)
-        {
-
             Modele.tblEngagement tE = new tblEngagement()
             {
                 nature = nature,
                 date = date,
-                heure = heure,
+                heure = new TimeSpan(heure, minutes, 0),
                 duree = duree,
                 lieu = lieu,
                 commentaire = commentaire,
@@ -31,12 +25,12 @@ namespace FestiRire.Controleur.Details
             provider.InsertEngagement(tE);
         }
 
-        internal void EnregistrerEngagement(int idEngagement, string nature, DateTime date, string heure, string duree, string lieu, string commentaire, string prixbillet, string capacite, string descCourte, string descLongue)
+        internal void EnregistrerEngagement(int idEngagement, string nature, DateTime date, int heure, int minutes, string duree, string lieu, string commentaire, string prixbillet, string capacite, string descCourte, string descLongue)
         {
             var tE = provider.SelectEngagement(idEngagement);
             tE.nature = nature;
             tE.date = date;
-            tE.heure = heure;
+            tE.heure = new TimeSpan(heure, minutes, 0);
             tE.duree = duree;
             tE.lieu = lieu;
             tE.commentaire = commentaire;

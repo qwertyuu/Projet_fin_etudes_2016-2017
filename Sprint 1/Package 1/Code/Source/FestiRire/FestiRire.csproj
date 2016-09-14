@@ -219,12 +219,6 @@
     <Compile Include="Vue\Sommaires\SommaireContrats.Designer.cs">
       <DependentUpon>SommaireContrats.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vue\Sommaires\SommaireStatut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vue\Sommaires\SommaireStatut.Designer.cs">
-      <DependentUpon>SommaireStatut.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Vue\Details\DetailArtiste.resx">
       <DependentUpon>DetailArtiste.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,9 +258,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vue\Sommaires\SommaireStatut.resx">
-      <DependentUpon>SommaireStatut.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vue\Sommaires\SommaireContrats.resx">
       <DependentUpon>SommaireContrats.cs</DependentUpon>
     </EmbeddedResource>

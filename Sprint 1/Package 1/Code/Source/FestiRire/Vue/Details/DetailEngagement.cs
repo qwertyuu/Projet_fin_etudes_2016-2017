@@ -23,12 +23,12 @@ namespace FestiRire
         {
             if (idEngagement != null)
             {
-                conEngagement.EnregistrerEngagement((int)idEngagement,txtNatureEngagement.Text, dateEngagement.Value, (txtHeure.Text), txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+                conEngagement.EnregistrerEngagement((int)idEngagement,txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
                 MessageBox.Show("Engagement Modifié");
             }
             else
             {
-                conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (txtHeure.Text), txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+                conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
                 MessageBox.Show("Engagement Ajouté");
             }
             this.Close();
@@ -46,7 +46,11 @@ namespace FestiRire
         {
             txtNatureEngagement.Text = _Engagement.nature;
             dateEngagement.Value = _Engagement.date ?? default(DateTime);
-            txtHeure.Text = _Engagement.heure;
+            if (_Engagement.heure.HasValue)
+            {
+                numHeure.Value = _Engagement.heure.Value.Hours;
+                numMinute.Value = _Engagement.heure.Value.Minutes;
+            }
             txtDuree.Text = _Engagement.duree;
             txtLieu.Text = _Engagement.lieu;
             rtbCommentaire.Text = _Engagement.commentaire;

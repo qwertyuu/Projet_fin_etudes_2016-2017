@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.rtbDescriptionLongue = new System.Windows.Forms.RichTextBox();
-            this.txtHeure = new System.Windows.Forms.MaskedTextBox();
             this.dateEngagement = new System.Windows.Forms.DateTimePicker();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnSupprimerEngagement = new System.Windows.Forms.Button();
@@ -61,8 +60,14 @@
             this.btnGrasCommentaire = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.rtbDescriptionCourte = new System.Windows.Forms.RichTextBox();
+            this.numHeure = new System.Windows.Forms.NumericUpDown();
+            this.numMinute = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionLongue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHeure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinute)).BeginInit();
             this.SuspendLayout();
             // 
             // rtbDescriptionLongue
@@ -74,23 +79,14 @@
             this.rtbDescriptionLongue.TabIndex = 46;
             this.rtbDescriptionLongue.Text = "";
             // 
-            // txtHeure
-            // 
-            this.txtHeure.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHeure.Location = new System.Drawing.Point(85, 64);
-            this.txtHeure.Name = "txtHeure";
-            this.txtHeure.Size = new System.Drawing.Size(398, 20);
-            this.txtHeure.TabIndex = 40;
-            // 
             // dateEngagement
             // 
             this.dateEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateEngagement.Location = new System.Drawing.Point(85, 39);
-            this.dateEngagement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateEngagement.Margin = new System.Windows.Forms.Padding(2);
             this.dateEngagement.Name = "dateEngagement";
-            this.dateEngagement.Size = new System.Drawing.Size(235, 20);
+            this.dateEngagement.Size = new System.Drawing.Size(134, 20);
             this.dateEngagement.TabIndex = 39;
             // 
             // btnAnnuler
@@ -98,7 +94,7 @@
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(740, 434);
-            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(74, 29);
             this.btnAnnuler.TabIndex = 38;
@@ -110,7 +106,7 @@
             // 
             this.btnSupprimerEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSupprimerEngagement.Location = new System.Drawing.Point(560, 434);
-            this.btnSupprimerEngagement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSupprimerEngagement.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupprimerEngagement.Name = "btnSupprimerEngagement";
             this.btnSupprimerEngagement.Size = new System.Drawing.Size(86, 29);
             this.btnSupprimerEngagement.TabIndex = 36;
@@ -122,7 +118,7 @@
             // 
             this.btnEnregistrerEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnregistrerEngagement.Location = new System.Drawing.Point(650, 434);
-            this.btnEnregistrerEngagement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnregistrerEngagement.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnregistrerEngagement.Name = "btnEnregistrerEngagement";
             this.btnEnregistrerEngagement.Size = new System.Drawing.Size(86, 29);
             this.btnEnregistrerEngagement.TabIndex = 37;
@@ -286,7 +282,7 @@
             this.btnEnumDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnumDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnumDescriptionLongue.Location = new System.Drawing.Point(624, 179);
-            this.btnEnumDescriptionLongue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnumDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnumDescriptionLongue.Name = "btnEnumDescriptionLongue";
             this.btnEnumDescriptionLongue.Size = new System.Drawing.Size(42, 21);
             this.btnEnumDescriptionLongue.TabIndex = 63;
@@ -299,7 +295,7 @@
             this.btnSouslignerDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSouslignerDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSouslignerDescriptionLongue.Location = new System.Drawing.Point(557, 179);
-            this.btnSouslignerDescriptionLongue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSouslignerDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
             this.btnSouslignerDescriptionLongue.Name = "btnSouslignerDescriptionLongue";
             this.btnSouslignerDescriptionLongue.Size = new System.Drawing.Size(23, 21);
             this.btnSouslignerDescriptionLongue.TabIndex = 60;
@@ -312,7 +308,7 @@
             this.btnItaliqueDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItaliqueDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItaliqueDescriptionLongue.Location = new System.Drawing.Point(530, 179);
-            this.btnItaliqueDescriptionLongue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnItaliqueDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
             this.btnItaliqueDescriptionLongue.Name = "btnItaliqueDescriptionLongue";
             this.btnItaliqueDescriptionLongue.Size = new System.Drawing.Size(23, 21);
             this.btnItaliqueDescriptionLongue.TabIndex = 61;
@@ -325,7 +321,7 @@
             this.btnGrasDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrasDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrasDescriptionLongue.Location = new System.Drawing.Point(503, 179);
-            this.btnGrasDescriptionLongue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGrasDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
             this.btnGrasDescriptionLongue.Name = "btnGrasDescriptionLongue";
             this.btnGrasDescriptionLongue.Size = new System.Drawing.Size(23, 21);
             this.btnGrasDescriptionLongue.TabIndex = 62;
@@ -352,7 +348,7 @@
             this.btnEnumCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnumCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnumCommentaire.Location = new System.Drawing.Point(145, 153);
-            this.btnEnumCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnumCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnumCommentaire.Name = "btnEnumCommentaire";
             this.btnEnumCommentaire.Size = new System.Drawing.Size(47, 21);
             this.btnEnumCommentaire.TabIndex = 73;
@@ -365,7 +361,7 @@
             this.btnSouslignerCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSouslignerCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSouslignerCommentaire.Location = new System.Drawing.Point(52, 153);
-            this.btnSouslignerCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSouslignerCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnSouslignerCommentaire.Name = "btnSouslignerCommentaire";
             this.btnSouslignerCommentaire.Size = new System.Drawing.Size(23, 21);
             this.btnSouslignerCommentaire.TabIndex = 70;
@@ -378,7 +374,7 @@
             this.btnItaliqueCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItaliqueCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItaliqueCommentaire.Location = new System.Drawing.Point(79, 153);
-            this.btnItaliqueCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnItaliqueCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnItaliqueCommentaire.Name = "btnItaliqueCommentaire";
             this.btnItaliqueCommentaire.Size = new System.Drawing.Size(21, 21);
             this.btnItaliqueCommentaire.TabIndex = 71;
@@ -391,7 +387,7 @@
             this.btnGrasCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrasCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrasCommentaire.Location = new System.Drawing.Point(24, 153);
-            this.btnGrasCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGrasCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnGrasCommentaire.Name = "btnGrasCommentaire";
             this.btnGrasCommentaire.Size = new System.Drawing.Size(24, 21);
             this.btnGrasCommentaire.TabIndex = 72;
@@ -419,66 +415,47 @@
             this.rtbDescriptionCourte.TabIndex = 45;
             this.rtbDescriptionCourte.Text = "";
             // 
-            // btnGrasDescriptionCourte
+            // numHeure
             // 
-            this.btnGrasDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGrasDescriptionCourte.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrasDescriptionCourte.Location = new System.Drawing.Point(503, 77);
-            this.btnGrasDescriptionCourte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnGrasDescriptionCourte.Name = "btnGrasDescriptionCourte";
-            this.btnGrasDescriptionCourte.Size = new System.Drawing.Size(23, 21);
-            this.btnGrasDescriptionCourte.TabIndex = 67;
-            this.btnGrasDescriptionCourte.Text = "B";
-            this.btnGrasDescriptionCourte.UseVisualStyleBackColor = true;
-            // 
-            // btnItaliqueDescriptionCourte
-            // 
-            this.btnItaliqueDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnItaliqueDescriptionCourte.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItaliqueDescriptionCourte.Location = new System.Drawing.Point(530, 77);
-            this.btnItaliqueDescriptionCourte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnItaliqueDescriptionCourte.Name = "btnItaliqueDescriptionCourte";
-            this.btnItaliqueDescriptionCourte.Size = new System.Drawing.Size(23, 21);
-            this.btnItaliqueDescriptionCourte.TabIndex = 66;
-            this.btnItaliqueDescriptionCourte.Text = "I";
-            this.btnItaliqueDescriptionCourte.UseVisualStyleBackColor = true;
-            // 
-            // btnSouslignerDescriptionCourte
-            // 
-            this.btnSouslignerDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSouslignerDescriptionCourte.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSouslignerDescriptionCourte.Location = new System.Drawing.Point(557, 77);
-            this.btnSouslignerDescriptionCourte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSouslignerDescriptionCourte.Name = "btnSouslignerDescriptionCourte";
-            this.btnSouslignerDescriptionCourte.Size = new System.Drawing.Size(23, 21);
-            this.btnSouslignerDescriptionCourte.TabIndex = 65;
-            this.btnSouslignerDescriptionCourte.Text = "I";
-            this.btnSouslignerDescriptionCourte.UseVisualStyleBackColor = true;
-            // 
-            // btnEnumDescriptionCourte
-            // 
-            this.btnEnumDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEnumDescriptionCourte.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnumDescriptionCourte.Location = new System.Drawing.Point(624, 77);
-            this.btnEnumDescriptionCourte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnEnumDescriptionCourte.Name = "btnEnumDescriptionCourte";
-            this.btnEnumDescriptionCourte.Size = new System.Drawing.Size(42, 21);
-            this.btnEnumDescriptionCourte.TabIndex = 68;
-            this.btnEnumDescriptionCourte.Text = "Enum";
-            this.btnEnumDescriptionCourte.UseVisualStyleBackColor = true;
-            // 
-            // numPoliceDescriptionCourte
-            // 
-            this.numPoliceDescriptionCourte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numPoliceDescriptionCourte.Location = new System.Drawing.Point(585, 78);
-            this.numPoliceDescriptionCourte.Name = "numPoliceDescriptionCourte";
-            this.numPoliceDescriptionCourte.Size = new System.Drawing.Size(34, 20);
-            this.numPoliceDescriptionCourte.TabIndex = 69;
-            this.numPoliceDescriptionCourte.Value = new decimal(new int[] {
-            12,
+            this.numHeure.Location = new System.Drawing.Point(85, 64);
+            this.numHeure.Maximum = new decimal(new int[] {
+            23,
             0,
             0,
             0});
+            this.numHeure.Name = "numHeure";
+            this.numHeure.Size = new System.Drawing.Size(38, 20);
+            this.numHeure.TabIndex = 75;
+            // 
+            // numMinute
+            // 
+            this.numMinute.Location = new System.Drawing.Point(145, 64);
+            this.numMinute.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.numMinute.Name = "numMinute";
+            this.numMinute.Size = new System.Drawing.Size(38, 20);
+            this.numMinute.TabIndex = 76;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(126, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(13, 13);
+            this.label5.TabIndex = 77;
+            this.label5.Text = "h";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(189, 67);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(15, 13);
+            this.label10.TabIndex = 78;
+            this.label10.Text = "m";
             // 
             // DetailEngagement
             // 
@@ -486,6 +463,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(825, 474);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.numMinute);
+            this.Controls.Add(this.numHeure);
             this.Controls.Add(this.numPoliceCommentaire);
             this.Controls.Add(this.btnEnumCommentaire);
             this.Controls.Add(this.btnSouslignerCommentaire);
@@ -508,7 +489,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.rtbDescriptionLongue);
             this.Controls.Add(this.rtbDescriptionCourte);
-            this.Controls.Add(this.txtHeure);
             this.Controls.Add(this.dateEngagement);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnSupprimerEngagement);
@@ -523,6 +503,8 @@
             this.Text = "Détail de l\'engagement";
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionLongue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHeure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinute)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,7 +513,6 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox rtbDescriptionLongue;
-        private System.Windows.Forms.MaskedTextBox txtHeure;
         private System.Windows.Forms.DateTimePicker dateEngagement;
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Button btnSupprimerEngagement;
@@ -563,5 +544,9 @@
         private System.Windows.Forms.Button btnGrasCommentaire;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox rtbDescriptionCourte;
+        private System.Windows.Forms.NumericUpDown numHeure;
+        private System.Windows.Forms.NumericUpDown numMinute;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label10;
     }
 }
