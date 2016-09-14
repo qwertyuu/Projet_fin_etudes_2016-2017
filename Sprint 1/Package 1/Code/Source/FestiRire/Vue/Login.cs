@@ -26,7 +26,12 @@ namespace FestiRire.Vue
             Menu frmMenu = new Menu();
             bool userFound = login.AuthentifierUser(txtIdUser.Text, validation.Hash(txtPassword.Text));
             if (userFound)//Utilisateur trouvé
+            {
+                this.Hide();
                 frmMenu.ShowDialog();
+                this.Show();
+            }
+
             else
                 MessageBox.Show("Identifiant ou mot de passe incorrect");
 
