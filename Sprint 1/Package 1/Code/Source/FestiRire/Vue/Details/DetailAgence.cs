@@ -113,7 +113,6 @@ namespace FestiRire
 
         private void btnSupprimerAgence_Click(object sender, EventArgs e)
         {
-          
             if (!String.IsNullOrEmpty(txtNo.Text))
             {
                 DialogResult result = result = MessageBox.Show("Voulez-vous supprimer cette agence?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -124,10 +123,9 @@ namespace FestiRire
                     this.Close();
                 }
 
-            }
-                     
-                else
-                   MessageBox.Show("Veuillez entrer le numéro de l'agence que vous voulez supprimer.");
+            }  
+            else
+                MessageBox.Show("Veuillez entrer le numéro de l'agence que vous voulez supprimer.");
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)

@@ -408,10 +408,10 @@
             // rtbDescriptionCourte
             // 
             this.rtbDescriptionCourte.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.rtbDescriptionCourte.Location = new System.Drawing.Point(755, 124);
+            this.rtbDescriptionCourte.Location = new System.Drawing.Point(503, 82);
             this.rtbDescriptionCourte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rtbDescriptionCourte.Name = "rtbDescriptionCourte";
-            this.rtbDescriptionCourte.Size = new System.Drawing.Size(472, 107);
+            this.rtbDescriptionCourte.Size = new System.Drawing.Size(311, 79);
             this.rtbDescriptionCourte.TabIndex = 45;
             this.rtbDescriptionCourte.Text = "";
             // 
