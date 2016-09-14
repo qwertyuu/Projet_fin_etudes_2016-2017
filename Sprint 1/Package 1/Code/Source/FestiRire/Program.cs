@@ -19,7 +19,7 @@ namespace FestiRire
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SommaireAgence());
+            Application.Run(new Vue.Login());
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]

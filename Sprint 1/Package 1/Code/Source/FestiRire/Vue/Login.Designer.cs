@@ -66,6 +66,7 @@
             this.txtIdUser.Name = "txtIdUser";
             this.txtIdUser.Size = new System.Drawing.Size(158, 20);
             this.txtIdUser.TabIndex = 73;
+            this.txtIdUser.Text = "Equipe2";
             // 
             // txtPassword
             // 
@@ -74,6 +75,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(158, 20);
             this.txtPassword.TabIndex = 74;
+            this.txtPassword.Text = "Rasipike";
             // 
             // btnCancel
             // 
@@ -101,9 +103,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::FestiRire.Properties.Resources.identification11;
+            this.pictureBox1.Image = global::FestiRire.Properties.Resources.identification;
             this.pictureBox1.Location = new System.Drawing.Point(43, 66);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(138, 155);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -122,7 +124,7 @@
             this.Controls.Add(this.txtIdUser);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label10);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "Identification";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

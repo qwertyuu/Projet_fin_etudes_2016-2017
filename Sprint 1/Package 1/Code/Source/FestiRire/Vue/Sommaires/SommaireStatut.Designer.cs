@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dgvStatut = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Couleur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFiltres = new System.Windows.Forms.Button();
             this.btnRechercher = new System.Windows.Forms.Button();
@@ -36,9 +39,6 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnFermer = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Couleur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatut)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,21 @@
             this.dgvStatut.Name = "dgvStatut";
             this.dgvStatut.Size = new System.Drawing.Size(1691, 328);
             this.dgvStatut.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nom";
+            this.Column1.Name = "Column1";
+            // 
+            // Couleur
+            // 
+            this.Couleur.HeaderText = "Couleur";
+            this.Couleur.Name = "Couleur";
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
             // 
             // groupBox1
             // 
@@ -138,21 +153,6 @@
             this.btnFermer.TabIndex = 22;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            // 
-            // Couleur
-            // 
-            this.Couleur.HeaderText = "Couleur";
-            this.Couleur.Name = "Couleur";
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
             // 
             // SommaireStatut
             // 

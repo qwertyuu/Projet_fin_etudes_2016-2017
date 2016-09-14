@@ -175,6 +175,13 @@
           <Property Name="couleur" Type="char" MaxLength="6" Nullable="false" />
           <Property Name="dateSupprime" Type="datetime" />
         </EntityType>
+        <EntityType Name="tblUtilisateur">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="motPasse" Type="char" MaxLength="24" Nullable="false" />
+        </EntityType>
         <!--Erreurs détectées durant la génération :
 avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomAgence' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomAgence">
@@ -271,6 +278,8 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
         <EntityType Name="vueSomStatut">
           <Key>
             <PropertyRef Name="noStatut" />
+            
+            
           </Key>
           <Property Name="noStatut" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NomStatut" Type="varchar" MaxLength="20" Nullable="false" />
@@ -522,6 +531,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
           <EntitySet Name="tblRespoContrat" EntityType="Self.tblRespoContrat" Schema="S_Contrat" store:Type="Tables" />
           <EntitySet Name="tblResponsable" EntityType="Self.tblResponsable" Schema="S_Contrat" store:Type="Tables" />
           <EntitySet Name="tblStatut" EntityType="Self.tblStatut" Schema="S_Contrat" store:Type="Tables" />
+          <EntitySet Name="tblUtilisateur" EntityType="Self.tblUtilisateur" Schema="S_Personnel" store:Type="Tables" />
           <EntitySet Name="vueSomAgence" EntityType="Self.vueSomAgence" store:Type="Views" store:Schema="S_Contrat">
             <DefiningQuery>SELECT 
     [vueSomAgence].[noAgence] AS [noAgence], 
@@ -1166,6 +1176,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
             <End Role="tblResponsable" EntitySet="tblResponsable" />
           </AssociationSet>
           <EntitySet Name="vueSomStatut" EntityType="PE2_OfficielModel.vueSomStatut" />
+          <EntitySet Name="tblUtilisateur" EntityType="PE2_OfficielModel.tblUtilisateur" />
         </EntityContainer>
         <EntityType Name="vueSomStatut">
           <Key>
@@ -1176,6 +1187,13 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="couleur" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblUtilisateur">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="motPasse" Type="String" Nullable="false" MaxLength="24" FixedLength="true" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1442,6 +1460,14 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="NomStatut" ColumnName="NomStatut" />
                 <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUtilisateur">
+            <EntityTypeMapping TypeName="PE2_OfficielModel.tblUtilisateur">
+              <MappingFragment StoreEntitySet="tblUtilisateur">
+                <ScalarProperty Name="motPasse" ColumnName="motPasse" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

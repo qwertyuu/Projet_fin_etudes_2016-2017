@@ -23,6 +23,8 @@ namespace FestiRire.Controleur.Details
             provider.Save();//Et enfin on sauvegarde les modifications.
         }
 
+
+
         public Modele.tblStatut LoadStatut(int id)
         {
             return provider.SelectStatut(id);

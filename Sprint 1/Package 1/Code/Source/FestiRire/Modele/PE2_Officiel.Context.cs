@@ -44,5 +44,6 @@ namespace FestiRire.Modele
         public virtual DbSet<vueSomEngagement> vueSomEngagement { get; set; }
         public virtual DbSet<vueSomExigence> vueSomExigence { get; set; }
         public virtual DbSet<vueSomStatut> vueSomStatut { get; set; }
+        public virtual DbSet<tblUtilisateur> tblUtilisateur { get; set; }
     }
 }

@@ -65,6 +65,7 @@
     <Compile Include="Controleur\Details\DetailExigence.cs" />
     <Compile Include="Controleur\Details\DetailFichiers.cs" />
     <Compile Include="Controleur\Details\DetailStatut.cs" />
+    <Compile Include="Controleur\Login.cs" />
     <Compile Include="Controleur\Sommaires\SommaireAgence.cs" />
     <Compile Include="Controleur\Sommaires\SommaireArtiste.cs" />
     <Compile Include="Controleur\Sommaires\SommaireBase.cs" />
@@ -124,6 +125,9 @@
     <Compile Include="Modele\tblStatut.cs">
       <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modele\tblUtilisateur.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modele\vueSomAgence.cs">
       <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
@@ -168,6 +172,18 @@
     </Compile>
     <Compile Include="Vue\Details\DetailStatut.Designer.cs">
       <DependentUpon>DetailStatut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Vue\Sommaires\SommaireArtiste.cs">
       <SubType>Form</SubType>
@@ -231,6 +247,12 @@
     <EmbeddedResource Include="Vue\Details\DetailStatut.resx">
       <DependentUpon>DetailStatut.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vue\Sommaires\SommaireArtiste.resx">
       <DependentUpon>SommaireArtiste.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +279,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Vue\Sommaires\SommaireContrats.resx">
       <DependentUpon>SommaireContrats.cs</DependentUpon>
@@ -291,6 +314,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\image\identification.png" />
     <Content Include="Modele\PE2_Officiel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PE2_Officiel.edmx</DependentUpon>

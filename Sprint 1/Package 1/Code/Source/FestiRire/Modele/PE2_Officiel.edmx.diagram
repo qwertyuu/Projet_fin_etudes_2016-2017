@@ -40,6 +40,7 @@
         <AssociationConnector Association="PE2_OfficielModel.tblContratArtiste" ManuallyRouted="false" />
         <AssociationConnector Association="PE2_OfficielModel.tblRespoContrat" ManuallyRouted="false" />
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomStatut" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblUtilisateur" Width="1.5" PointX="13.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

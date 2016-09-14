@@ -208,7 +208,6 @@ namespace FestiRire
             BD.SaveChanges();
         }
 
-
         public void Save()
         {
             BD.SaveChanges();
