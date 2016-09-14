@@ -18,7 +18,14 @@ namespace FestiRire
         Controleur.Details.DetailFichiers conDetailFichiers;
         Controleur.Details.DetailCategorieArtiste conCatArtiste;
         int? idartiste;
-        Modele.tblFichierPersonnel selection;
+        private Modele.tblFichierPersonnel Selection;
+
+        public Modele.tblFichierPersonnel selection
+        {
+            get { return Selection; }
+            set { Selection = value; rtbCommentaire.Enabled = true; }
+        }
+
         public DetailArtiste()
         {
             InitializeComponent();

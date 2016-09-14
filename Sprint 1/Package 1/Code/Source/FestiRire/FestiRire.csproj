@@ -74,6 +74,7 @@
     <Compile Include="Controleur\Sommaires\SommaireStatut.cs" />
     <Compile Include="Controleur\Validation.cs" />
     <Compile Include="DBProvider.cs" />
+    <Compile Include="Extenstion_List.cs" />
     <Compile Include="Modele\PE2_Officiel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,6 +150,7 @@
     <Compile Include="Modele\vueSomStatut.cs">
       <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SortableBindingList.cs" />
     <Compile Include="Vue\Details\DetailArtiste.cs">
       <SubType>Form</SubType>
     </Compile>

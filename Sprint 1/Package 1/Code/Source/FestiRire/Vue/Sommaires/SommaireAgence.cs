@@ -24,9 +24,11 @@ namespace FestiRire
             dgvAgence.AllowUserToResizeRows = false;
             dgvAgence.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAgence.MultiSelect = false;
+            dgvAgence.AllowUserToAddRows = false;
+
             var donnees = (from item in conSommaireAgence.Tout()
                           select new { noAgence = item.noAgence, nom = item.nom, ville = item.ville, tel = conSommaireAgence.FormatTelephone(item.telBureau ?? item.telCellulaire) }).ToList();
-            dgvAgence.DataSource = donnees;
+            dgvAgence.DataSource = donnees.ToSortableBindingList();
         }
 
         private void btnFermer_Click(object sender, EventArgs e)
@@ -41,6 +43,10 @@ namespace FestiRire
 
             var frmDetailAgence = new DetailAgence((dgvAgence.SelectedRows[0].Cells["noAgence"].Value.ToString()));
             frmDetailAgence.ShowDialog();
+            var donnees = (from item in conSommaireAgence.Tout()
+                           select new { noAgence = item.noAgence, nom = item.nom, ville = item.ville, tel = conSommaireAgence.FormatTelephone(item.telBureau ?? item.telCellulaire) }).ToList();
+            dgvAgence.DataSource = null;
+            dgvAgence.DataSource = donnees.ToSortableBindingList();
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
@@ -48,6 +54,10 @@ namespace FestiRire
             var frmDetailAgence = new DetailAgence();
 
             frmDetailAgence.ShowDialog();
+            var donnees = (from item in conSommaireAgence.Tout()
+                           select new { noAgence = item.noAgence, nom = item.nom, ville = item.ville, tel = conSommaireAgence.FormatTelephone(item.telBureau ?? item.telCellulaire) }).ToList();
+            dgvAgence.DataSource = null;
+            dgvAgence.DataSource = donnees.ToSortableBindingList();
         }
 
         private void btnDetails_Click(object sender, EventArgs e)
@@ -55,5 +65,7 @@ namespace FestiRire
             string recherche;
             recherche = txtRecherche.Text;
         }
+
+
     }
 }

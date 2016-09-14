@@ -65,30 +65,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 20);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 66);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 20);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Date:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 100);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 20);
+            this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Montant:";
             // 
@@ -96,28 +93,27 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 218);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(15, 142);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 20);
+            this.label5.Size = new System.Drawing.Size(71, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Commentaire:";
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(122, 18);
-            this.txtNom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNom.Location = new System.Drawing.Point(81, 12);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(424, 26);
+            this.txtNom.Size = new System.Drawing.Size(284, 20);
             this.txtNom.TabIndex = 1;
             // 
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnnuler.Location = new System.Drawing.Point(1071, 551);
+            this.btnAnnuler.Location = new System.Drawing.Point(716, 358);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(111, 45);
+            this.btnAnnuler.Size = new System.Drawing.Size(74, 29);
             this.btnAnnuler.TabIndex = 9;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -126,9 +122,10 @@
             // btnSupprimerExigence
             // 
             this.btnSupprimerExigence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSupprimerExigence.Location = new System.Drawing.Point(801, 551);
+            this.btnSupprimerExigence.Location = new System.Drawing.Point(536, 358);
+            this.btnSupprimerExigence.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSupprimerExigence.Name = "btnSupprimerExigence";
-            this.btnSupprimerExigence.Size = new System.Drawing.Size(129, 45);
+            this.btnSupprimerExigence.Size = new System.Drawing.Size(86, 29);
             this.btnSupprimerExigence.TabIndex = 7;
             this.btnSupprimerExigence.Text = "Supprimer";
             this.btnSupprimerExigence.UseVisualStyleBackColor = true;
@@ -137,35 +134,36 @@
             // btnEnregistrerExigence
             // 
             this.btnEnregistrerExigence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEnregistrerExigence.Location = new System.Drawing.Point(936, 551);
+            this.btnEnregistrerExigence.Location = new System.Drawing.Point(626, 358);
+            this.btnEnregistrerExigence.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEnregistrerExigence.Name = "btnEnregistrerExigence";
-            this.btnEnregistrerExigence.Size = new System.Drawing.Size(129, 45);
+            this.btnEnregistrerExigence.Size = new System.Drawing.Size(86, 29);
             this.btnEnregistrerExigence.TabIndex = 8;
             this.btnEnregistrerExigence.Text = "Enregistrer";
             this.btnEnregistrerExigence.UseVisualStyleBackColor = true;
+            this.btnEnregistrerExigence.Click += new System.EventHandler(this.btnEnregistrerExigence_Click);
             // 
             // dateExigence
             // 
-            this.dateExigence.Location = new System.Drawing.Point(122, 57);
+            this.dateExigence.Location = new System.Drawing.Point(81, 37);
+            this.dateExigence.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateExigence.Name = "dateExigence";
-            this.dateExigence.Size = new System.Drawing.Size(202, 26);
+            this.dateExigence.Size = new System.Drawing.Size(136, 20);
             this.dateExigence.TabIndex = 23;
             // 
             // txtMontant
             // 
-            this.txtMontant.Location = new System.Drawing.Point(122, 95);
-            this.txtMontant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMontant.Location = new System.Drawing.Point(81, 62);
             this.txtMontant.Name = "txtMontant";
-            this.txtMontant.Size = new System.Drawing.Size(424, 26);
+            this.txtMontant.Size = new System.Drawing.Size(284, 20);
             this.txtMontant.TabIndex = 24;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(18, 138);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(12, 90);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 20);
+            this.label10.Size = new System.Drawing.Size(38, 13);
             this.label10.TabIndex = 27;
             this.label10.Text = "Statut:";
             // 
@@ -173,18 +171,18 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(557, 223);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(373, 145);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 20);
+            this.label4.Size = new System.Drawing.Size(98, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Description longue:";
             // 
             // btnAjouterStatut
             // 
-            this.btnAjouterStatut.Location = new System.Drawing.Point(514, 134);
+            this.btnAjouterStatut.Location = new System.Drawing.Point(343, 87);
+            this.btnAjouterStatut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAjouterStatut.Name = "btnAjouterStatut";
-            this.btnAjouterStatut.Size = new System.Drawing.Size(34, 32);
+            this.btnAjouterStatut.Size = new System.Drawing.Size(23, 21);
             this.btnAjouterStatut.TabIndex = 46;
             this.btnAjouterStatut.Text = "+";
             this.btnAjouterStatut.UseVisualStyleBackColor = true;
@@ -194,18 +192,18 @@
             this.cmbEvenement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbEvenement.FormattingEnabled = true;
-            this.cmbEvenement.Location = new System.Drawing.Point(122, 174);
+            this.cmbEvenement.Location = new System.Drawing.Point(81, 113);
+            this.cmbEvenement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbEvenement.Name = "cmbEvenement";
-            this.cmbEvenement.Size = new System.Drawing.Size(426, 28);
+            this.cmbEvenement.Size = new System.Drawing.Size(287, 21);
             this.cmbEvenement.TabIndex = 61;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(18, 178);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(12, 116);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(94, 20);
+            this.label13.Size = new System.Drawing.Size(64, 13);
             this.label13.TabIndex = 60;
             this.label13.Text = "Évènement:";
             // 
@@ -213,19 +211,17 @@
             // 
             this.cmbStatut.DisplayMember = "nomStatut";
             this.cmbStatut.FormattingEnabled = true;
-            this.cmbStatut.Location = new System.Drawing.Point(122, 134);
-            this.cmbStatut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbStatut.Location = new System.Drawing.Point(81, 87);
             this.cmbStatut.Name = "cmbStatut";
-            this.cmbStatut.Size = new System.Drawing.Size(382, 28);
+            this.cmbStatut.Size = new System.Drawing.Size(256, 21);
             this.cmbStatut.TabIndex = 62;
             // 
             // numPoliceCommentaire
             // 
             this.numPoliceCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numPoliceCommentaire.Location = new System.Drawing.Point(147, 246);
-            this.numPoliceCommentaire.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numPoliceCommentaire.Location = new System.Drawing.Point(100, 160);
             this.numPoliceCommentaire.Name = "numPoliceCommentaire";
-            this.numPoliceCommentaire.Size = new System.Drawing.Size(51, 26);
+            this.numPoliceCommentaire.Size = new System.Drawing.Size(34, 20);
             this.numPoliceCommentaire.TabIndex = 67;
             this.numPoliceCommentaire.Value = new decimal(new int[] {
             12,
@@ -238,9 +234,10 @@
             // 
             this.btnEnumCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnumCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnumCommentaire.Location = new System.Drawing.Point(206, 245);
+            this.btnEnumCommentaire.Location = new System.Drawing.Point(139, 159);
+            this.btnEnumCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEnumCommentaire.Name = "btnEnumCommentaire";
-            this.btnEnumCommentaire.Size = new System.Drawing.Size(63, 32);
+            this.btnEnumCommentaire.Size = new System.Drawing.Size(42, 21);
             this.btnEnumCommentaire.TabIndex = 66;
             this.btnEnumCommentaire.Text = "Enum";
             this.btnEnumCommentaire.UseVisualStyleBackColor = true;
@@ -250,9 +247,10 @@
             // 
             this.btnSouslignerCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSouslignerCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSouslignerCommentaire.Location = new System.Drawing.Point(105, 246);
+            this.btnSouslignerCommentaire.Location = new System.Drawing.Point(72, 160);
+            this.btnSouslignerCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSouslignerCommentaire.Name = "btnSouslignerCommentaire";
-            this.btnSouslignerCommentaire.Size = new System.Drawing.Size(34, 32);
+            this.btnSouslignerCommentaire.Size = new System.Drawing.Size(23, 21);
             this.btnSouslignerCommentaire.TabIndex = 63;
             this.btnSouslignerCommentaire.Text = "I";
             this.btnSouslignerCommentaire.UseVisualStyleBackColor = true;
@@ -262,9 +260,10 @@
             // 
             this.btnItaliqueCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItaliqueCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItaliqueCommentaire.Location = new System.Drawing.Point(64, 246);
+            this.btnItaliqueCommentaire.Location = new System.Drawing.Point(45, 160);
+            this.btnItaliqueCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnItaliqueCommentaire.Name = "btnItaliqueCommentaire";
-            this.btnItaliqueCommentaire.Size = new System.Drawing.Size(34, 32);
+            this.btnItaliqueCommentaire.Size = new System.Drawing.Size(23, 21);
             this.btnItaliqueCommentaire.TabIndex = 64;
             this.btnItaliqueCommentaire.Text = "I";
             this.btnItaliqueCommentaire.UseVisualStyleBackColor = true;
@@ -274,9 +273,10 @@
             // 
             this.btnGrasCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrasCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrasCommentaire.Location = new System.Drawing.Point(24, 246);
+            this.btnGrasCommentaire.Location = new System.Drawing.Point(18, 160);
+            this.btnGrasCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGrasCommentaire.Name = "btnGrasCommentaire";
-            this.btnGrasCommentaire.Size = new System.Drawing.Size(34, 32);
+            this.btnGrasCommentaire.Size = new System.Drawing.Size(23, 21);
             this.btnGrasCommentaire.TabIndex = 65;
             this.btnGrasCommentaire.Text = "B";
             this.btnGrasCommentaire.UseVisualStyleBackColor = true;
@@ -285,30 +285,27 @@
             // rtbCommentaire
             // 
             this.rtbCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbCommentaire.Location = new System.Drawing.Point(22, 285);
-            this.rtbCommentaire.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rtbCommentaire.Location = new System.Drawing.Point(17, 185);
             this.rtbCommentaire.Name = "rtbCommentaire";
-            this.rtbCommentaire.Size = new System.Drawing.Size(523, 253);
+            this.rtbCommentaire.Size = new System.Drawing.Size(350, 166);
             this.rtbCommentaire.TabIndex = 68;
             this.rtbCommentaire.Text = "";
             // 
             // rtbDescriptionCourte
             // 
             this.rtbDescriptionCourte.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.rtbDescriptionCourte.Location = new System.Drawing.Point(555, 39);
-            this.rtbDescriptionCourte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rtbDescriptionCourte.Location = new System.Drawing.Point(372, 25);
             this.rtbDescriptionCourte.Name = "rtbDescriptionCourte";
-            this.rtbDescriptionCourte.Size = new System.Drawing.Size(627, 163);
+            this.rtbDescriptionCourte.Size = new System.Drawing.Size(419, 107);
             this.rtbDescriptionCourte.TabIndex = 70;
             this.rtbDescriptionCourte.Text = "";
             // 
             // numPoliceDescriptionLongue
             // 
             this.numPoliceDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numPoliceDescriptionLongue.Location = new System.Drawing.Point(677, 245);
-            this.numPoliceDescriptionLongue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numPoliceDescriptionLongue.Location = new System.Drawing.Point(453, 159);
             this.numPoliceDescriptionLongue.Name = "numPoliceDescriptionLongue";
-            this.numPoliceDescriptionLongue.Size = new System.Drawing.Size(51, 26);
+            this.numPoliceDescriptionLongue.Size = new System.Drawing.Size(34, 20);
             this.numPoliceDescriptionLongue.TabIndex = 81;
             this.numPoliceDescriptionLongue.Value = new decimal(new int[] {
             12,
@@ -321,9 +318,10 @@
             // 
             this.btnEnumDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnumDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnumDescriptionLongue.Location = new System.Drawing.Point(735, 241);
+            this.btnEnumDescriptionLongue.Location = new System.Drawing.Point(492, 157);
+            this.btnEnumDescriptionLongue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEnumDescriptionLongue.Name = "btnEnumDescriptionLongue";
-            this.btnEnumDescriptionLongue.Size = new System.Drawing.Size(63, 32);
+            this.btnEnumDescriptionLongue.Size = new System.Drawing.Size(42, 21);
             this.btnEnumDescriptionLongue.TabIndex = 80;
             this.btnEnumDescriptionLongue.Text = "Enum";
             this.btnEnumDescriptionLongue.UseVisualStyleBackColor = true;
@@ -333,9 +331,10 @@
             // 
             this.btnSouslignerDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSouslignerDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSouslignerDescriptionLongue.Location = new System.Drawing.Point(636, 245);
+            this.btnSouslignerDescriptionLongue.Location = new System.Drawing.Point(426, 159);
+            this.btnSouslignerDescriptionLongue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSouslignerDescriptionLongue.Name = "btnSouslignerDescriptionLongue";
-            this.btnSouslignerDescriptionLongue.Size = new System.Drawing.Size(34, 32);
+            this.btnSouslignerDescriptionLongue.Size = new System.Drawing.Size(23, 21);
             this.btnSouslignerDescriptionLongue.TabIndex = 77;
             this.btnSouslignerDescriptionLongue.Text = "I";
             this.btnSouslignerDescriptionLongue.UseVisualStyleBackColor = true;
@@ -345,9 +344,10 @@
             // 
             this.btnItaliqueDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItaliqueDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItaliqueDescriptionLongue.Location = new System.Drawing.Point(596, 246);
+            this.btnItaliqueDescriptionLongue.Location = new System.Drawing.Point(399, 160);
+            this.btnItaliqueDescriptionLongue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnItaliqueDescriptionLongue.Name = "btnItaliqueDescriptionLongue";
-            this.btnItaliqueDescriptionLongue.Size = new System.Drawing.Size(34, 32);
+            this.btnItaliqueDescriptionLongue.Size = new System.Drawing.Size(23, 21);
             this.btnItaliqueDescriptionLongue.TabIndex = 78;
             this.btnItaliqueDescriptionLongue.Text = "I";
             this.btnItaliqueDescriptionLongue.UseVisualStyleBackColor = true;
@@ -357,9 +357,10 @@
             // 
             this.btnGrasDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrasDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrasDescriptionLongue.Location = new System.Drawing.Point(556, 245);
+            this.btnGrasDescriptionLongue.Location = new System.Drawing.Point(373, 159);
+            this.btnGrasDescriptionLongue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGrasDescriptionLongue.Name = "btnGrasDescriptionLongue";
-            this.btnGrasDescriptionLongue.Size = new System.Drawing.Size(34, 32);
+            this.btnGrasDescriptionLongue.Size = new System.Drawing.Size(23, 21);
             this.btnGrasDescriptionLongue.TabIndex = 79;
             this.btnGrasDescriptionLongue.Text = "B";
             this.btnGrasDescriptionLongue.UseVisualStyleBackColor = true;
@@ -368,10 +369,9 @@
             // rtbDescriptionLongue
             // 
             this.rtbDescriptionLongue.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.rtbDescriptionLongue.Location = new System.Drawing.Point(561, 290);
-            this.rtbDescriptionLongue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rtbDescriptionLongue.Location = new System.Drawing.Point(376, 188);
             this.rtbDescriptionLongue.Name = "rtbDescriptionLongue";
-            this.rtbDescriptionLongue.Size = new System.Drawing.Size(624, 253);
+            this.rtbDescriptionLongue.Size = new System.Drawing.Size(417, 166);
             this.rtbDescriptionLongue.TabIndex = 76;
             this.rtbDescriptionLongue.Text = "";
             // 
@@ -379,19 +379,18 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(552, 14);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(370, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 20);
+            this.label6.Size = new System.Drawing.Size(96, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Description courte:";
             // 
             // DetailExigence
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
-            this.ClientSize = new System.Drawing.Size(1198, 612);
+            this.ClientSize = new System.Drawing.Size(801, 398);
             this.Controls.Add(this.numPoliceDescriptionLongue);
             this.Controls.Add(this.btnEnumDescriptionLongue);
             this.Controls.Add(this.btnSouslignerDescriptionLongue);
@@ -422,7 +421,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DetailExigence";
             this.Text = "Détail de l\'exigence";
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).EndInit();

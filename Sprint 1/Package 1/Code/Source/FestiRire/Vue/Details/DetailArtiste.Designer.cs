@@ -237,27 +237,27 @@
             this.lblNomFichier.AutoSize = true;
             this.lblNomFichier.Location = new System.Drawing.Point(6, 16);
             this.lblNomFichier.Name = "lblNomFichier";
-            this.lblNomFichier.Size = new System.Drawing.Size(161, 13);
+            this.lblNomFichier.Size = new System.Drawing.Size(32, 13);
             this.lblNomFichier.TabIndex = 27;
-            this.lblNomFichier.Text = "Nom: Pedigree_DenisDrolets.pdf";
+            this.lblNomFichier.Text = "Nom:";
             // 
             // lblTypeFichier
             // 
             this.lblTypeFichier.AutoSize = true;
             this.lblTypeFichier.Location = new System.Drawing.Point(6, 48);
             this.lblTypeFichier.Name = "lblTypeFichier";
-            this.lblTypeFichier.Size = new System.Drawing.Size(86, 13);
+            this.lblTypeFichier.Size = new System.Drawing.Size(34, 13);
             this.lblTypeFichier.TabIndex = 27;
-            this.lblTypeFichier.Text = "Type: Document";
+            this.lblTypeFichier.Text = "Type:";
             // 
             // lblTailleFichier
             // 
             this.lblTailleFichier.AutoSize = true;
             this.lblTailleFichier.Location = new System.Drawing.Point(6, 33);
             this.lblTailleFichier.Name = "lblTailleFichier";
-            this.lblTailleFichier.Size = new System.Drawing.Size(71, 13);
+            this.lblTailleFichier.Size = new System.Drawing.Size(35, 13);
             this.lblTailleFichier.TabIndex = 27;
-            this.lblTailleFichier.Text = "Taille: 580 ko";
+            this.lblTailleFichier.Text = "Taille:";
             // 
             // label1
             // 
@@ -273,6 +273,7 @@
             this.rtbCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbCommentaire.Enabled = false;
             this.rtbCommentaire.Location = new System.Drawing.Point(6, 145);
             this.rtbCommentaire.Name = "rtbCommentaire";
             this.rtbCommentaire.Size = new System.Drawing.Size(398, 167);
@@ -498,7 +499,6 @@
             this.Controls.Add(this.txtNomArtiste);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label20);
-            this.MaximizeBox = false;
             this.Name = "DetailArtiste";
             this.Text = "Détail de l\'artiste";
             this.groupBox1.ResumeLayout(false);

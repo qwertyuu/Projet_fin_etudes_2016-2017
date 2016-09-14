@@ -23,7 +23,8 @@ namespace FestiRire
             dgvCategorie.AllowUserToResizeRows = false;
             dgvCategorie.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCategorie.MultiSelect = false;
-            dgvCategorie.DataSource = conSommaireCatArtiste.Tout();
+            dgvCategorie.AllowUserToAddRows = false;
+            dgvCategorie.DataSource = conSommaireCatArtiste.Tout().ToSortableBindingList();
         }
 
         private void btnFermer_Click(object sender, EventArgs e)
@@ -35,12 +36,16 @@ namespace FestiRire
         {
             var frmDetailCatArt = new DetailCategorieArtiste(((Modele.vueSomCatArtiste)dgvCategorie.SelectedRows[0].DataBoundItem).noCategorie);
             frmDetailCatArt.ShowDialog();
+            dgvCategorie.DataSource = null;
+            dgvCategorie.DataSource = conSommaireCatArtiste.Tout().ToSortableBindingList();
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             var frmDetailCatArt = new DetailCategorieArtiste();
             frmDetailCatArt.ShowDialog();
+            dgvCategorie.DataSource = null;
+            dgvCategorie.DataSource = conSommaireCatArtiste.Tout().ToSortableBindingList();
         }
     }
 }

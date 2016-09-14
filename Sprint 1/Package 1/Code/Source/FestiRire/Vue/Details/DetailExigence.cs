@@ -25,7 +25,7 @@ namespace FestiRire
         {
             if (idExigence != null)
             {
-               // conExigence.EnregistrerExigence((int)idExigence, txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+                conExigence.EnregistrerExigence((int)idExigence, txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
                 MessageBox.Show("Exigence Modifiée");
             }
             else
@@ -54,8 +54,6 @@ namespace FestiRire
             txtMontant.Text = (_Exigence.montant ?? 0).ToString();
             cmbStatut.SelectedItem = _Exigence.tblStatut;
             rtbCommentaire.Text = _Exigence.commentaire;
-            //txtPrixBillet.Text = _Exigence.;
-            //txtCapacite.Text = conExigence.FormatTelephone(_Exigence.tblAdresse.telCellulaire);
             rtbDescriptionCourte.Text = _Exigence.descriptionCourte;
             rtbDescriptionLongue.Text = _Exigence.description;
         }

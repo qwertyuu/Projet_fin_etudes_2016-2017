@@ -24,7 +24,8 @@ namespace FestiRire
             dgvContrats.AllowUserToResizeRows = false;
             dgvContrats.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvContrats.MultiSelect = false;
-            dgvContrats.DataSource = conSommaireContrat.Tout();
+            dgvContrats.AllowUserToAddRows = false;
+            dgvContrats.DataSource = conSommaireContrat.Tout().ToSortableBindingList();
         }
 
         private void btnFermer_Click(object sender, EventArgs e)
@@ -36,13 +37,16 @@ namespace FestiRire
         {
             var frmDetailContrat = new DetailContrat(((Modele.vueSomContrat)dgvContrats.SelectedRows[0].DataBoundItem).noContrat);
             frmDetailContrat.ShowDialog();
+            dgvContrats.DataSource = null;
+            dgvContrats.DataSource = conSommaireContrat.Tout().ToSortableBindingList();
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             var frmDetailContrat = new DetailContrat();
-
             frmDetailContrat.ShowDialog();
+            dgvContrats.DataSource = null;
+            dgvContrats.DataSource = conSommaireContrat.Tout().ToSortableBindingList();
         }
     }
 }

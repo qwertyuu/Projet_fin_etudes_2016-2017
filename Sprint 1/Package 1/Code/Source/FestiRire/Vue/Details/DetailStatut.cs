@@ -28,7 +28,7 @@ namespace FestiRire
         {
             txtNom.Text = _statut.nomStatut;
             rtbDescriptionStatut.Text = _statut.description;
-            pbApercuCouleur.BackColor = ColorTranslator.FromHtml(_statut.couleur);
+            pbApercuCouleur.BackColor = ColorTranslator.FromHtml("#" + _statut.couleur);
         }
         public void ConfirmationClose()
         {
@@ -53,7 +53,7 @@ namespace FestiRire
             {
                 _statut.AjouterStatut(txtNom.Text, rtbDescriptionStatut.Text, ColorTranslator.ToHtml(pbApercuCouleur.BackColor));
             }
-
+            this.Close();
         }
 
         private void btnGrasDescription_Click(object sender, EventArgs e)

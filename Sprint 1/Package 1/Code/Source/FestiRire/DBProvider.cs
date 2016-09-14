@@ -13,6 +13,12 @@ namespace FestiRire
     class DBProvider
     {
         private static Modele.PE2_OfficielEntities BD;
+
+        internal List<Modele.vueSomStatut> ToutVueStatus()
+        {
+            return BD.vueSomStatut.ToList();
+        }
+
         public DBProvider()
         {
             if(BD == null)

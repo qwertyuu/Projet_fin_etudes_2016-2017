@@ -27,7 +27,8 @@ namespace FestiRire
             dgvArtiste.AllowUserToResizeRows = false;
             dgvArtiste.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvArtiste.MultiSelect = false;
-            dgvArtiste.DataSource = conSommaireArtiste.Tout();
+            dgvArtiste.AllowUserToAddRows = false;
+            dgvArtiste.DataSource = conSommaireArtiste.Tout().ToSortableBindingList();
            
         }
 
@@ -42,7 +43,7 @@ namespace FestiRire
             var frmDetailArtiste = new DetailArtiste(((Modele.vueSomArtiste)dgvArtiste.SelectedRows[0].DataBoundItem).noArtiste);
             frmDetailArtiste.ShowDialog();
             dgvArtiste.DataSource = null;
-            dgvArtiste.DataSource = conSommaireArtiste.Tout();
+            dgvArtiste.DataSource = conSommaireArtiste.Tout().ToSortableBindingList();
 
         }
 
@@ -51,7 +52,7 @@ namespace FestiRire
             var frmDetailArtiste = new DetailArtiste();
             frmDetailArtiste.ShowDialog();
             dgvArtiste.DataSource = null;
-            dgvArtiste.DataSource = conSommaireArtiste.Tout();
+            dgvArtiste.DataSource = conSommaireArtiste.Tout().ToSortableBindingList();
         }
 
         private void dgvArtiste_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
