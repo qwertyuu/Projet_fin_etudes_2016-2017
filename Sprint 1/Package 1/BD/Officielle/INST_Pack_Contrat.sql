@@ -490,3 +490,9 @@ GO
 PRINT 'insertion des catégories des artistes terminée'
 GO
 PRINT 'insertion terminée'
+
+/*Insertion des Utilisateur débutée*/
+GO
+INSERT INTO S_Personnel.tblUtilisateur(IdUser,motPasse)VALUES('Equipe2','PvCmx48Mqm5pqGzWe6nKEg==');
+GO
+/*Insertion des Utilisateur terminé*/
