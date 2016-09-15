@@ -34,8 +34,8 @@ CREATE TABLE S_Contrat.tblContrat
 	noContrat varchar(20) NOT NULL,
 	lieu text,
 	nom varchar(50) NOT NULL,
-	description text,
-	commentaire text,
+	description text,				/*RTF*/
+	commentaire text,				/*RTF*/
 	dateSupprime datetime,
 	noStatut int NOT NULL,
 	noAgence varchar(15) NOT NULL
@@ -50,8 +50,8 @@ CREATE TABLE S_Contrat.tblExigence
 	nom	varchar(30) NOT NULL,
 	date date,
 	montant decimal,
-	description text,
-	commentaire text,
+	description text,					/*RTF*/
+	commentaire text,					/*RTF*/
 	descriptionCourte varchar(255),
 	dateSupprime datetime,
 	noContrat varchar(20) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE S_Contrat.tblStatut
 (
 	noStatut int NOT NULL identity(1,1),
 	nomStatut varchar(20) NOT NULL,
-	description text,
+	description text,					
 	couleur char(6) NOT NULL,
 	dateSupprime datetime
 )
@@ -81,8 +81,8 @@ CREATE TABLE S_Contrat.tblEngagement
 	date date,
 	heure time,
 	nature varchar(50) NOT NULL,
-	commentaire text,
-	description text,
+	commentaire text,					/*RTF*/
+	description text,					/*RTF*/
 	descriptionCourte varchar(255),
 	dateSupprime datetime,
 	noContrat varchar(20) NOT NULL
@@ -96,7 +96,7 @@ CREATE TABLE S_Contrat.tblFichierPersonnel
 	noFichier int NOT NULL identity(1,1),
 	type text NOT NULL,
 	chemin text NOT NULL,
-	commentaire text,
+	commentaire text,					/*RTF*/
 	dateSupprime datetime,
 	noArtiste int NOT NULL
 )
@@ -108,7 +108,7 @@ CREATE TABLE S_Contrat.tblArtiste
 (
 	noArtiste int NOT NULL identity(1,1),
 	nom varchar(50) NOT NULL,
-	commentaire text,
+	commentaire text,						  
 	dateSupprime datetime
 )
 PRINT 'Création de la table des artiste'
@@ -119,7 +119,7 @@ CREATE TABLE S_Contrat.tblCategorieArtiste
 (
 	noCategorie int NOT NULL identity(1,1),
 	nom varchar(20)NOT NULL,
-	description text,
+	description text,	
 	dateSupprime datetime
 )
 PRINT 'Création de la table des catégories d''artiste'

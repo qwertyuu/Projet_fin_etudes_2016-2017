@@ -29,9 +29,9 @@ GO
 CREATE VIEW  S_Contrat.vueSomArtiste WITH SCHEMABINDING AS
 SELECT Art.noArtiste, Art.nom as 'nomAriste',Cat.nom as 'nomCat',Art.dateSupprime
 FROM S_Contrat.tblArtiste AS Art
-JOIN S_Contrat.tblCatArtisteArt AS catArt
+LEFT JOIN S_Contrat.tblCatArtisteArt AS catArt
 ON Art.noArtiste=catArt.noArtiste
-JOIN S_Contrat.tblCategorieArtiste AS Cat
+LEFT JOIN S_Contrat.tblCategorieArtiste AS Cat
 ON catArt.noCategorie=Cat.noCategorie
 WHERE Art.dateSupprime IS NULL
 GO
