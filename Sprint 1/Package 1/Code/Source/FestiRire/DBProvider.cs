@@ -48,6 +48,12 @@ namespace FestiRire
             BD.SaveChanges();
         }
 
+        internal void InsertCatArtiste(tblCategorieArtiste catArt)
+        {
+            BD.tblCategorieArtiste.Add(catArt);
+            BD.SaveChanges();
+        }
+
         internal List<tblArtiste> ToutArtiste()
         {
             return BD.tblArtiste.ToList();
@@ -87,6 +93,30 @@ namespace FestiRire
         {
             return BD.tblStatut.SingleOrDefault(a => a.noStatut == idStatut);
         }
+
+        public tblCategorieArtiste selectCatArt(int id)
+        {
+            return BD.tblCategorieArtiste.SingleOrDefault(catArt => catArt.noCategorie == id && catArt.dateSupprime==null);
+        }
+
+
+        public int ReturnNbreCat()
+        {
+            int nbre=0;
+            var query = (from q in BD.tblCategorieArtiste
+                        where q.dateSupprime==null
+                        select q).ToList();
+
+            foreach(var q in query)
+            {
+                nbre++;
+            }
+
+            return nbre;
+
+        }
+
+
 
         //--Requête sur le table utilisateur----
         public bool Authentifier(string id, string motPasse)
@@ -177,6 +207,22 @@ namespace FestiRire
             if (query != null)
             {
                 foreach (Modele.tblStatut q in query)
+                {
+                    q.dateSupprime = DateTime.Now;
+                }
+            }
+
+            BD.SaveChanges();
+        }
+
+        public void SupprimerCatArtiste(int no)
+        {
+            var query = from q in BD.tblCategorieArtiste
+                        where q.noCategorie == no
+                        select q;
+            if (query != null)
+            {
+                foreach (Modele.tblCategorieArtiste q in query)
                 {
                     q.dateSupprime = DateTime.Now;
                 }

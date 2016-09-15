@@ -203,11 +203,10 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomArtiste' n'a pas 
           <Key>
             <PropertyRef Name="noArtiste" />
             
-            
           </Key>
           <Property Name="noArtiste" Type="int" Nullable="false" />
           <Property Name="nomAriste" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="nomCat" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nomCat" Type="varchar" MaxLength="20" />
           <Property Name="dateSupprime" Type="datetime" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
@@ -876,7 +875,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
           </Key>
           <Property Name="noArtiste" Type="Int32" Nullable="false" />
           <Property Name="nomAriste" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nomCat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomCat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="vueSomCatArtiste">

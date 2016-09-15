@@ -106,5 +106,14 @@ namespace FestiRire.Controleur
             return Convert.ToBase64String(hashBytes);
         }
 
+        //Validation sur la catégorie d'artiste.
+        public string VerifierNomCat(string nom)
+        {
+           string Vide = "";
+            if (string.IsNullOrEmpty(nom))
+                Vide= "Veuillez entrer le nom de la catégorie d'artiste.";
+            return Vide;
+        }
+
     }
 }
