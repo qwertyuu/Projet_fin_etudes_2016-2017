@@ -17,13 +17,14 @@ namespace FestiRire
         {
             InitializeComponent();
             contrat = new Controleur.Details.DetailContrat();
-            
+            verifierStatut();
         }
 
         public DetailContrat(string noContrat)
         {
             InitializeComponent();
-
+            //Faire loader les info de contrat ici
+            verifierStatut();
         }
 
         //Gestion des styles reliés aux commentaires et description
@@ -76,6 +77,56 @@ namespace FestiRire
         private void btnEnumDescription_Click(object sender, EventArgs e)
         {
             contrat.EnumText(rtbDescriptionContrat);
+        }
+
+        private void btnStatut1_Click(object sender, EventArgs e)
+        {
+            if (btnStatut1.Text == "En négociation")
+                lblStatutContrat.Text = "En négociation";
+            else if (btnStatut1.Text == "En cours")
+                lblStatutContrat.Text = "En cours";
+            else if (btnStatut1.Text == "Terminé")
+                lblStatutContrat.Text = "Terminé";
+
+            verifierStatut();
+        }
+
+        private void btnStatut2_Click(object sender, EventArgs e)
+        {
+            if (btnStatut2.Text == "Supprimer")
+                lblStatutContrat.Text = "Supprimer";
+            else if (btnStatut2.Text == "Conttrat annulé")
+                lblStatutContrat.Text = "Annulé";
+
+            verifierStatut();
+        }
+
+        private void verifierStatut()
+        {
+            if (lblStatutContrat.Text == "")
+            {
+                btnStatut1.Text = "En négociation";
+                btnStatut1.Visible = true;
+            }
+            else if (lblStatutContrat.Text == "En négociation")
+            {
+                btnStatut1.Text = "En cours";
+                btnStatut1.Visible = true;
+                btnStatut2.Text = "Supprimer";
+                btnStatut2.Visible = true;
+            }
+            else if (lblStatutContrat.Text == "En cours")
+            {
+                btnStatut1.Text = "Terminé";
+                btnStatut1.Visible = true;
+                btnStatut2.Text = "Contrat annulé";
+                btnStatut2.Visible = true;
+            }
+            else if (lblStatutContrat.Text == "Annulé" || lblStatutContrat.Text == "Supprimer" || lblStatutContrat.Text == "Terminé")
+            {
+                btnStatut1.Visible = false;
+                btnStatut2.Visible = false;
+            }
         }
     }
 }
