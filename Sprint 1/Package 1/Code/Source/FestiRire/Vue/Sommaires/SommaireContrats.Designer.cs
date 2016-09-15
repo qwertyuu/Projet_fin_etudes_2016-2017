@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvContrats = new System.Windows.Forms.DataGridView();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtRecherche = new System.Windows.Forms.TextBox();
             this.btnRechercher = new System.Windows.Forms.Button();
             this.btnFiltres = new System.Windows.Forms.Button();
@@ -36,12 +42,6 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContrats)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,40 @@
             this.dgvContrats.Name = "dgvContrats";
             this.dgvContrats.Size = new System.Drawing.Size(1689, 329);
             this.dgvContrats.TabIndex = 0;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Évènement";
+            this.Column7.Name = "Column7";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "noContrat";
+            this.Column1.HeaderText = "Contrat";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "lieu";
+            this.Column2.HeaderText = "Lieu";
+            this.Column2.Name = "Column2";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Date";
+            this.Column6.Name = "Column6";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "nom";
+            this.Column4.HeaderText = "Agence";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "nomStatut";
+            this.Column5.HeaderText = "Statut";
+            this.Column5.Name = "Column5";
             // 
             // txtRecherche
             // 
@@ -104,6 +138,7 @@
             this.btnFermer.TabIndex = 25;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // btnAjouter
             // 
@@ -144,40 +179,6 @@
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contrats";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Évènement";
-            this.Column7.Name = "Column7";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "noContrat";
-            this.Column1.HeaderText = "Contrat";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "lieu";
-            this.Column2.HeaderText = "Lieu";
-            this.Column2.Name = "Column2";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Date";
-            this.Column6.Name = "Column6";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "nom";
-            this.Column4.HeaderText = "Agence";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "nomStatut";
-            this.Column5.HeaderText = "Statut";
-            this.Column5.Name = "Column5";
             // 
             // SommaireContrats
             // 
