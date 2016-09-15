@@ -61,16 +61,19 @@
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "nomStatut";
             this.Column1.HeaderText = "Nom";
             this.Column1.Name = "Column1";
             // 
             // Couleur
             // 
+            this.Couleur.DataPropertyName = "couleur";
             this.Couleur.HeaderText = "Couleur";
             this.Couleur.Name = "Couleur";
             // 
             // Description
             // 
+            this.Description.DataPropertyName = "description";
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
             // 
@@ -109,6 +112,7 @@
             this.btnRechercher.TabIndex = 24;
             this.btnRechercher.Text = "Rechercher";
             this.btnRechercher.UseVisualStyleBackColor = true;
+            this.btnRechercher.Click += new System.EventHandler(this.btnRechercher_Click);
             // 
             // txtRecherche
             // 
@@ -156,24 +160,6 @@
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "nomStatut";
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            // 
-            // Couleur
-            // 
-            this.Couleur.DataPropertyName = "couleur";
-            this.Couleur.HeaderText = "Couleur";
-            this.Couleur.Name = "Couleur";
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "description";
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
             // 
             // SommaireStatut
             // 

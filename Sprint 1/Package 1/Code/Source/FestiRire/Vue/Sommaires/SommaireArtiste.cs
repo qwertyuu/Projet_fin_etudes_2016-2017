@@ -15,6 +15,7 @@ namespace FestiRire
         Controleur.Sommaires.SommaireArtiste conSommaireArtiste;
         Controleur.Details.DetailArtiste conDetailArtiste;
         Controleur.Sommaires.SommaireCategorieArtiste conCatArt;
+
         public SommaireArtiste()
         {
             InitializeComponent();

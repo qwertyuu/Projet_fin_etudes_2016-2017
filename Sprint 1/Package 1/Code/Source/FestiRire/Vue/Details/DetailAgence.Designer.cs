@@ -62,7 +62,7 @@
             this.txtNomAgence.Location = new System.Drawing.Point(120, 37);
             this.txtNomAgence.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomAgence.Name = "txtNomAgence";
-            this.txtNomAgence.Size = new System.Drawing.Size(318, 20);
+            this.txtNomAgence.Size = new System.Drawing.Size(285, 20);
             this.txtNomAgence.TabIndex = 26;
             // 
             // label20
@@ -78,7 +78,7 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnnuler.Location = new System.Drawing.Point(367, 322);
+            this.btnAnnuler.Location = new System.Drawing.Point(760, 239);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnAnnuler.TabIndex = 30;
@@ -89,7 +89,7 @@
             // btnEnregistrerAgence
             // 
             this.btnEnregistrerAgence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEnregistrerAgence.Location = new System.Drawing.Point(286, 322);
+            this.btnEnregistrerAgence.Location = new System.Drawing.Point(679, 239);
             this.btnEnregistrerAgence.Name = "btnEnregistrerAgence";
             this.btnEnregistrerAgence.Size = new System.Drawing.Size(75, 23);
             this.btnEnregistrerAgence.TabIndex = 30;
@@ -100,7 +100,7 @@
             // btnSupprimerAgence
             // 
             this.btnSupprimerAgence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSupprimerAgence.Location = new System.Drawing.Point(206, 322);
+            this.btnSupprimerAgence.Location = new System.Drawing.Point(599, 239);
             this.btnSupprimerAgence.Name = "btnSupprimerAgence";
             this.btnSupprimerAgence.Size = new System.Drawing.Size(75, 23);
             this.btnSupprimerAgence.TabIndex = 30;
@@ -126,9 +126,9 @@
             this.groupBox3.Controls.Add(this.txtCodePostal);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.rtbAdresse);
-            this.groupBox3.Location = new System.Drawing.Point(8, 86);
+            this.groupBox3.Location = new System.Drawing.Point(410, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(435, 228);
+            this.groupBox3.Size = new System.Drawing.Size(425, 231);
             this.groupBox3.TabIndex = 52;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Adresse";
@@ -293,7 +293,7 @@
             this.txtCourriel.Location = new System.Drawing.Point(120, 61);
             this.txtCourriel.Margin = new System.Windows.Forms.Padding(2);
             this.txtCourriel.Name = "txtCourriel";
-            this.txtCourriel.Size = new System.Drawing.Size(318, 20);
+            this.txtCourriel.Size = new System.Drawing.Size(285, 20);
             this.txtCourriel.TabIndex = 56;
             // 
             // label2
@@ -327,7 +327,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 354);
+            this.ClientSize = new System.Drawing.Size(841, 271);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtNo);
             this.Controls.Add(this.txtCourriel);

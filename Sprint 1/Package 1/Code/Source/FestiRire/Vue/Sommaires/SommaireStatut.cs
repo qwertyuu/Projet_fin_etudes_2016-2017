@@ -26,7 +26,24 @@ namespace FestiRire
             dgvStatut.MultiSelect = false;
             dgvStatut.AllowUserToAddRows = false;
             dgvStatut.DataSource = conSommaireStatut.Tout().ToSortableBindingList();
-            
+            txtRecherche.GotFocus += TxtRecherche_GotFocus;
+            txtRecherche.LostFocus += TxtRecherche_LostFocus;
+        }
+
+        private void TxtRecherche_LostFocus(object sender, EventArgs e)
+        {
+            if (txtRecherche.Text == "")
+            {
+                txtRecherche.Text = "Recherche rapide";
+            }
+        }
+
+        private void TxtRecherche_GotFocus(object sender, EventArgs e)
+        {
+            if (txtRecherche.Text == "Recherche rapide")
+            {
+                txtRecherche.Text = "";
+            }
         }
 
         private void btnFermer_Click(object sender, EventArgs e)
@@ -50,5 +67,9 @@ namespace FestiRire
             dgvStatut.DataSource = conSommaireStatut.Tout().ToSortableBindingList();
         }
 
+        private void btnRechercher_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
