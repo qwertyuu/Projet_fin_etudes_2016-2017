@@ -47,7 +47,7 @@
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnnuler.Location = new System.Drawing.Point(321, 391);
+            this.btnAnnuler.Location = new System.Drawing.Point(653, 391);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnAnnuler.TabIndex = 8;
@@ -58,7 +58,7 @@
             // btnEnregistrerStatut
             // 
             this.btnEnregistrerStatut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEnregistrerStatut.Location = new System.Drawing.Point(240, 391);
+            this.btnEnregistrerStatut.Location = new System.Drawing.Point(572, 391);
             this.btnEnregistrerStatut.Name = "btnEnregistrerStatut";
             this.btnEnregistrerStatut.Size = new System.Drawing.Size(75, 23);
             this.btnEnregistrerStatut.TabIndex = 9;
@@ -72,7 +72,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNom.Location = new System.Drawing.Point(130, 15);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(269, 20);
+            this.txtNom.Size = new System.Drawing.Size(601, 20);
             this.txtNom.TabIndex = 6;
             // 
             // label2
@@ -96,12 +96,13 @@
             // btnSupprimerStatut
             // 
             this.btnSupprimerStatut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSupprimerStatut.Location = new System.Drawing.Point(159, 391);
+            this.btnSupprimerStatut.Location = new System.Drawing.Point(491, 391);
             this.btnSupprimerStatut.Name = "btnSupprimerStatut";
             this.btnSupprimerStatut.Size = new System.Drawing.Size(75, 23);
             this.btnSupprimerStatut.TabIndex = 9;
             this.btnSupprimerStatut.Text = "Supprimer";
             this.btnSupprimerStatut.UseVisualStyleBackColor = true;
+            this.btnSupprimerStatut.Click += new System.EventHandler(this.btnSupprimerStatut_Click);
             // 
             // btnChoixCouleur
             // 
@@ -143,9 +144,9 @@
             // rtbDescriptionStatut
             // 
             this.rtbDescriptionStatut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbDescriptionStatut.Location = new System.Drawing.Point(129, 43);
+            this.rtbDescriptionStatut.Location = new System.Drawing.Point(130, 43);
             this.rtbDescriptionStatut.Name = "rtbDescriptionStatut";
-            this.rtbDescriptionStatut.Size = new System.Drawing.Size(267, 313);
+            this.rtbDescriptionStatut.Size = new System.Drawing.Size(598, 313);
             this.rtbDescriptionStatut.TabIndex = 33;
             this.rtbDescriptionStatut.Text = "";
             // 
@@ -154,7 +155,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
-            this.ClientSize = new System.Drawing.Size(408, 426);
+            this.ClientSize = new System.Drawing.Size(740, 426);
             this.Controls.Add(this.rtbDescriptionStatut);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.pbApercuCouleur);
@@ -166,6 +167,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "DetailStatut";
             this.Text = "Détail du statut";
             ((System.ComponentModel.ISupportInitialize)(this.pbApercuCouleur)).EndInit();

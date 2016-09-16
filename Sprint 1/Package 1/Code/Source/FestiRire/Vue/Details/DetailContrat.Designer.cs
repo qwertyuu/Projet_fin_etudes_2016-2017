@@ -870,6 +870,7 @@
             this.btnAjouterExigence.TabIndex = 17;
             this.btnAjouterExigence.Text = "Ajouter";
             this.btnAjouterExigence.UseVisualStyleBackColor = true;
+            this.btnAjouterExigence.Click += new System.EventHandler(this.btnAjouterExigence_Click);
             // 
             // btnDetailExigence
             // 
@@ -881,6 +882,7 @@
             this.btnDetailExigence.TabIndex = 16;
             this.btnDetailExigence.Text = "Détail";
             this.btnDetailExigence.UseVisualStyleBackColor = true;
+            this.btnDetailExigence.Click += new System.EventHandler(this.btnDetailExigence_Click);
             // 
             // btnAjouterEngagement
             // 
@@ -892,6 +894,7 @@
             this.btnAjouterEngagement.TabIndex = 20;
             this.btnAjouterEngagement.Text = "Ajouter";
             this.btnAjouterEngagement.UseVisualStyleBackColor = true;
+            this.btnAjouterEngagement.Click += new System.EventHandler(this.btnAjouterEngagement_Click);
             // 
             // btnDetailEngagement
             // 
@@ -903,6 +906,7 @@
             this.btnDetailEngagement.TabIndex = 19;
             this.btnDetailEngagement.Text = "Détail";
             this.btnDetailEngagement.UseVisualStyleBackColor = true;
+            this.btnDetailEngagement.Click += new System.EventHandler(this.btnDetailEngagement_Click);
             // 
             // txtNomContrat
             // 
@@ -1199,6 +1203,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "DetailContrat";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Détail du contrat";

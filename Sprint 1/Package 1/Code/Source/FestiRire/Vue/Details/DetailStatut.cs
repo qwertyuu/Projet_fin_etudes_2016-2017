@@ -17,6 +17,7 @@ namespace FestiRire
         public DetailStatut()
         {
             InitializeComponent();
+            idStatut = 0;
         }
         public DetailStatut(int id)
         {
@@ -43,17 +44,25 @@ namespace FestiRire
         {
             ConfirmationClose();
         }
+
         private void btnEnregistrerStatut_Click(object sender, EventArgs e)
         {
+            string mess = "";
+
             if (txtNom.Text == "" || pbApercuCouleur.BackColor == Color.Transparent)
             {
                 MessageBox.Show("Veuiller donner un nom et entrer une couleur.");
             }
             else
             {
-                _statut.AjouterStatut(txtNom.Text, rtbDescriptionStatut.Text, ColorTranslator.ToHtml(pbApercuCouleur.BackColor));
+                if (!_statut.AjouterStatut((int)idStatut, txtNom.Text, rtbDescriptionStatut.Text, ColorTranslator.ToHtml(pbApercuCouleur.BackColor)))
+                    mess = "Le satut a été modifié avec succés.";
+                else
+                    mess = "Le satut à été enregistré avec succés." ;
+                MessageBox.Show(mess);
+                this.Close();
             }
-            this.Close();
+           
         }
 
         private void btnChoixCouleur_Click(object sender, EventArgs e)
@@ -63,6 +72,25 @@ namespace FestiRire
             if (res == DialogResult.OK)
             {
                 pbApercuCouleur.BackColor = colorDialog1.Color;
+            }
+        }
+
+        public void DesactiverBtnSupp()
+        {
+            btnSupprimerStatut.Enabled = false;
+        }
+
+        private void btnSupprimerStatut_Click(object sender, EventArgs e)
+        {
+            if (idStatut != 0)
+            {
+                DialogResult result = result = MessageBox.Show("Voulez-vous supprimer ce statut?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    _statut.DeleteStatut((int)idStatut);
+                    MessageBox.Show("Le statut a été supprimé avec succés.");
+                    this.Close();
+                }
             }
         }
     }

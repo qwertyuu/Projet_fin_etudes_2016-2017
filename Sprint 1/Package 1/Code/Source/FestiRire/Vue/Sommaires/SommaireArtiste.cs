@@ -51,6 +51,7 @@ namespace FestiRire
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             var frmDetailArtiste = new DetailArtiste();
+            frmDetailArtiste.DesactiverBtnSupp();
             frmDetailArtiste.ShowDialog();
             dgvArtiste.DataSource = null;
             dgvArtiste.DataSource = conSommaireArtiste.Tout().ToSortableBindingList();

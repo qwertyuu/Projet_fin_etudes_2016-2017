@@ -8,20 +8,32 @@ namespace FestiRire.Controleur.Details
 {
     class DetailStatut : DetailBaseSimple
     {
-        public void AjouterStatut(string nom, string desc, string coul)
+        private string EnleverDiese(string car)
         {
-            var statut = new Modele.tblStatut { nomStatut = SanitariserTexte(nom), description = desc, couleur = coul };//On enregistre le statut.
-            provider.InsertStatut(statut);//Et enfin on sauvegarde les modifications.
+            return car.Remove(0, 1);
+        }
+        public bool AjouterStatut(int idAcien,string nom, string desc, string coul)
+        {
+            string couleurGod = EnleverDiese(coul);
+            Modele.tblStatut statut = provider.SelectStatut(idAcien);
+
+            if (statut != null)
+            {
+                //l'élément exite on fait une mise à jour.
+                statut.nomStatut = nom;
+                statut.description = desc;
+                statut.couleur = couleurGod;
+                provider.Save();
+                return false;
+            }
+            else //On fait ajoute si l'élément n'existe pas
+            {
+                var stat = new Modele.tblStatut { nomStatut = SanitariserTexte(nom), description = SanitariserTexte(desc),couleur=couleurGod };
+                provider.InsertStatut(stat);
+                return true;
+            }
         }
 
-        public void AjouterStatut(int idStatut, string nom, string desc, string coul)
-        {
-            var statut = provider.SelectStatut(idStatut);
-            statut.nomStatut = SanitariserTexte(nom);
-            statut.description = desc;
-            statut.couleur = coul;
-            provider.Save();//Et enfin on sauvegarde les modifications.
-        }
 
 
 

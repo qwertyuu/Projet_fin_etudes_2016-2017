@@ -128,5 +128,27 @@ namespace FestiRire
                 btnStatut2.Visible = false;
             }
         }
+
+        private void btnDetailEngagement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDetailExigence_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAjouterEngagement_Click(object sender, EventArgs e)
+        {
+            var frmDetailExigence = new DetailExigence();
+            frmDetailExigence.DesactiverBtnSupp();
+        }
+
+        private void btnAjouterExigence_Click(object sender, EventArgs e)
+        {
+            var frmDetailEngagement = new DetailEngagement();
+            frmDetailEngagement.DesactiverBtnSupp();
+        }
     }
 }

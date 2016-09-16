@@ -95,6 +95,11 @@ namespace FestiRire
             txtNo.ReadOnly = true;
             PeuplerInterface(agence.LoadAgence(idAgence));
         }
+
+        public void DesactiverBtnSupp()
+        {
+            btnSupprimerAgence.Enabled = false;
+        }
         
         private void PeuplerInterface(Modele.tblAgence _agence)
         {

@@ -13,28 +13,35 @@ namespace FestiRire
     public partial class DetailCategorieArtiste : Form
     {
         Controleur.Details.DetailCategorieArtiste DCA;
-        Controleur.Validation validation;
+        Controleur.Validation validation  = new Controleur.Validation();
+
         public DetailCategorieArtiste()
         {
             InitializeComponent();
             DCA = new Controleur.Details.DetailCategorieArtiste();
-            validation = new Controleur.Validation();
+            IdCatArt = 0;
         }
-        string idOrginal = "";
+        int IdCatArt;
 
         public DetailCategorieArtiste(int noCategorie)
         {
             InitializeComponent();
-            DCA = new Controleur.Details.DetailCategorieArtiste();           
+            IdCatArt = 0;
+            DCA = new Controleur.Details.DetailCategorieArtiste();
             Modele.tblCategorieArtiste categorie = DCA.LoadCatArtt(noCategorie);
             peuplerInterface(categorie);
             
         }
 
+        public void DesactiverBtnSupp()
+        {
+            btnSupprimerArtiste.Enabled = false;
+        }
 
         //Permet de peupler l'interface détail
         private void peuplerInterface(Modele.tblCategorieArtiste catArt)
         {
+            IdCatArt = catArt.noCategorie; //On concerve le numéro pour pouvoir supprimer avec.
             txtNomCategorie.Text = catArt.nom;
             rtbDescriptionCategorie.Text = catArt.description;
         }
@@ -64,12 +71,6 @@ namespace FestiRire
         {
             DCA.TextUderline(rtbDescriptionCategorie);
         }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            DCA.SizeText(rtbDescriptionCategorie,numericUpDownCatArtiste.Value);
-        }
-
         private void btnEnumCatArtiste_Click(object sender, EventArgs e)
         {
             DCA.EnumText(rtbDescriptionCategorie);
@@ -82,14 +83,20 @@ namespace FestiRire
 
         private void btnEnregistrerArtiste_Click(object sender, EventArgs e)
         {
-            string messvide = validation.VerifierNomCat(txtNomCategorie.Text);
+            string mes = "";
+            string messvide;
+            messvide = validation.VerifierNomCat(txtNomCategorie.Text);
             if (messvide!="")
             {
                 MessageBox.Show(messvide);
             }
             else
             {
-               DCA.EnregistrerCatArt(txtNomCategorie.Text, rtbDescriptionCategorie.Text);
+                if (!DCA.EnregistrerCatArt(IdCatArt, txtNomCategorie.Text, rtbDescriptionCategorie.Text))
+                    mes = "La catégorie d'artiste a été modifiée  avec succés.";
+                else
+                    mes = "La catégorie d'artiste a été enregistrée avec succés.";
+                MessageBox.Show(mes);
                this.Close();
             }
 
@@ -98,7 +105,15 @@ namespace FestiRire
 
         private void btnSupprimerArtiste_Click(object sender, EventArgs e)
         {
-
+            if(IdCatArt!=0)
+            {
+                DialogResult result = result = MessageBox.Show("Voulez-vous supprimer cette catégorie d'artiste?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(result==DialogResult.Yes)
+                {
+                    DCA.deleteCatArt(IdCatArt);
+                    MessageBox.Show("La catégorie d'artiste a été supprimée avec succés");
+                }
+            }
         }
     }
 }

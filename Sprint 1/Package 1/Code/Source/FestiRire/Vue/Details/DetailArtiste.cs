@@ -77,6 +77,10 @@ namespace FestiRire
             }
         }
 
+        public void DesactiverBtnSupp()
+        {
+            btnSupprimerArtiste.Enabled = false;
+        }
         private void btnParcourir_Click(object sender, EventArgs e)
         {
             openFileDialogfichier.Multiselect = false;

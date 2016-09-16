@@ -87,6 +87,11 @@ namespace FestiRire
             }
         }
 
+        public void DesactiverBtnSupp()
+        {
+            btnSupprimerEngagement.Enabled = false;
+        }
+
         //Gestion des styles de commentaire et description.
         private void btnGrasCommentaire_Click(object sender, EventArgs e)
         {

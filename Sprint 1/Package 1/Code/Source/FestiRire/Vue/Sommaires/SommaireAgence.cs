@@ -52,7 +52,7 @@ namespace FestiRire
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             var frmDetailAgence = new DetailAgence();
-
+            frmDetailAgence.DesactiverBtnSupp();
             frmDetailAgence.ShowDialog();
             var donnees = (from item in conSommaireAgence.Tout()
                            select new { noAgence = item.noAgence, nom = item.nom, ville = item.ville, tel = conSommaireAgence.FormatTelephone(item.telBureau ?? item.telCellulaire) }).ToList();

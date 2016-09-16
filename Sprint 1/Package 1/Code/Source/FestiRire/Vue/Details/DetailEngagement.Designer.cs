@@ -499,6 +499,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "DetailEngagement";
             this.Text = "Détail de l\'engagement";
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionLongue)).EndInit();

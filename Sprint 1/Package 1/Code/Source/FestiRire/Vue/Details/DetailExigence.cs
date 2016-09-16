@@ -134,5 +134,10 @@ namespace FestiRire
                 this.Close();
             }
         }
+
+        public void DesactiverBtnSupp()
+        {
+            btnSupprimerExigence.Enabled = false;
+        }
     }
 }

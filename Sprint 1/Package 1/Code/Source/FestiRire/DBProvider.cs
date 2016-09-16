@@ -215,6 +215,7 @@ namespace FestiRire
             BD.SaveChanges();
         }
 
+
         public void SupprimerCatArtiste(int no)
         {
             var query = from q in BD.tblCategorieArtiste

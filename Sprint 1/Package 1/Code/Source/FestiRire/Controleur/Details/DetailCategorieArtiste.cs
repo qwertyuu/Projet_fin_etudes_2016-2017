@@ -18,10 +18,26 @@ namespace FestiRire.Controleur.Details
             return provider.selectCatArt(id);
         }
 
-        public void EnregistrerCatArt(string nom, string desc)
+        public bool EnregistrerCatArt(int idAcien ,string nom, string desc)
         {
-            var categorie = new Modele.tblCategorieArtiste { nom = SanitariserTexte(nom), description = SanitariserTexte(desc) };
-            provider.InsertCatArtiste(categorie);
+
+            Modele.tblCategorieArtiste catArt = provider.selectCatArt(idAcien);
+
+            if (catArt != null)
+            {
+                //l'élément exite on fait une mise à jour.
+                catArt.nom = nom;
+                catArt.description = desc;
+                provider.Save();
+                return false;
+            }
+            else //On fait ajoute si l'élément n'existe pas
+            {
+                var categorie = new Modele.tblCategorieArtiste { nom = SanitariserTexte(nom), description = SanitariserTexte(desc) };
+                provider.InsertCatArtiste(categorie);
+                return true;
+            }
+
         }
 
         public void deleteCatArt(int no)
@@ -29,23 +45,6 @@ namespace FestiRire.Controleur.Details
             provider.SupprimerCatArtiste(no);
         }
 
-
-        //    Modele.tblCategorieArtiste catArt = provider.selectCatArt(noCat);
-
-        //    if (catArt != null)
-        //    {
-        //        l'élément exite on fait une mise à jour.
-        //        catArt.nom = nom;
-        //        catArt.description = desc;
-        //        provider.Save();
-        //        return true;
-        //    }
-        //    else //On fait ajoute si l'élément n'existe pas
-        //    {
-        //        var categorie = new Modele.tblCategorieArtiste { nom = SanitariserTexte(nom), description = SanitariserTexte(desc) };
-        //        provider.InsertCatArtiste(categorie);
-        //        return false;
-        //    }
 
         
 

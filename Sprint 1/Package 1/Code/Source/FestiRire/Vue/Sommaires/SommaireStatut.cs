@@ -62,6 +62,7 @@ namespace FestiRire
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             var frmDetailStatut = new DetailStatut();
+            frmDetailStatut.DesactiverBtnSupp();
             frmDetailStatut.ShowDialog();
             dgvStatut.DataSource = null;
             dgvStatut.DataSource = conSommaireStatut.Tout().ToSortableBindingList();

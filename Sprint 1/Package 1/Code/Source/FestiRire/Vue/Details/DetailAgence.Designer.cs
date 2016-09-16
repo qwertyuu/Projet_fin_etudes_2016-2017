@@ -338,6 +338,7 @@
             this.Controls.Add(this.btnEnregistrerAgence);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.btnAnnuler);
+            this.MaximizeBox = false;
             this.Name = "DetailAgence";
             this.Text = "Détail de l\'agence";
             this.groupBox3.ResumeLayout(false);

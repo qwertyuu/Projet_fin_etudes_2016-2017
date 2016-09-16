@@ -85,6 +85,7 @@
             this.btnEnregistrerArtiste.TabIndex = 3;
             this.btnEnregistrerArtiste.Text = "Enregistrer";
             this.btnEnregistrerArtiste.UseVisualStyleBackColor = true;
+            this.btnEnregistrerArtiste.Click += new System.EventHandler(this.btnEnregistrerArtiste_Click);
             // 
             // btnAnnuler
             // 
@@ -95,6 +96,7 @@
             this.btnAnnuler.TabIndex = 3;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnSupprimerArtiste
             // 
@@ -105,6 +107,7 @@
             this.btnSupprimerArtiste.TabIndex = 3;
             this.btnSupprimerArtiste.Text = "Supprimer";
             this.btnSupprimerArtiste.UseVisualStyleBackColor = true;
+            this.btnSupprimerArtiste.Click += new System.EventHandler(this.btnSupprimerArtiste_Click);
             // 
             // DetailCategorieArtiste
             // 
@@ -118,6 +121,7 @@
             this.Controls.Add(this.txtNomCategorie);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(301, 140);
             this.Name = "DetailCategorieArtiste";
             this.Text = "Détail de la catégorie d\'artiste";

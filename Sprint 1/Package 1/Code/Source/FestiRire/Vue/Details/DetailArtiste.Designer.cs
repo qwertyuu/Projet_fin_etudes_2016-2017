@@ -77,7 +77,7 @@
             // txtNomArtiste
             // 
             this.txtNomArtiste.Location = new System.Drawing.Point(112, 6);
-            this.txtNomArtiste.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomArtiste.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomArtiste.Name = "txtNomArtiste";
             this.txtNomArtiste.Size = new System.Drawing.Size(318, 20);
             this.txtNomArtiste.TabIndex = 26;
@@ -139,7 +139,7 @@
             // btnAjouterCategorieArtiste
             // 
             this.btnAjouterCategorieArtiste.Location = new System.Drawing.Point(112, 144);
-            this.btnAjouterCategorieArtiste.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAjouterCategorieArtiste.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjouterCategorieArtiste.Name = "btnAjouterCategorieArtiste";
             this.btnAjouterCategorieArtiste.Size = new System.Drawing.Size(318, 25);
             this.btnAjouterCategorieArtiste.TabIndex = 44;
@@ -185,7 +185,7 @@
             this.btnEnumCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnumCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnumCommentaire.Location = new System.Drawing.Point(203, 119);
-            this.btnEnumCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnumCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnumCommentaire.Name = "btnEnumCommentaire";
             this.btnEnumCommentaire.Size = new System.Drawing.Size(42, 21);
             this.btnEnumCommentaire.TabIndex = 78;
@@ -198,7 +198,7 @@
             this.btnSouslignerCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSouslignerCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSouslignerCommentaire.Location = new System.Drawing.Point(136, 119);
-            this.btnSouslignerCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSouslignerCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnSouslignerCommentaire.Name = "btnSouslignerCommentaire";
             this.btnSouslignerCommentaire.Size = new System.Drawing.Size(23, 21);
             this.btnSouslignerCommentaire.TabIndex = 75;
@@ -211,7 +211,7 @@
             this.btnItaliqueCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItaliqueCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItaliqueCommentaire.Location = new System.Drawing.Point(109, 119);
-            this.btnItaliqueCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnItaliqueCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnItaliqueCommentaire.Name = "btnItaliqueCommentaire";
             this.btnItaliqueCommentaire.Size = new System.Drawing.Size(23, 21);
             this.btnItaliqueCommentaire.TabIndex = 76;
@@ -224,7 +224,7 @@
             this.btnGrasCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrasCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrasCommentaire.Location = new System.Drawing.Point(82, 119);
-            this.btnGrasCommentaire.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGrasCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnGrasCommentaire.Name = "btnGrasCommentaire";
             this.btnGrasCommentaire.Size = new System.Drawing.Size(23, 21);
             this.btnGrasCommentaire.TabIndex = 77;
@@ -322,7 +322,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbContrat.FormattingEnabled = true;
             this.cmbContrat.Location = new System.Drawing.Point(103, 18);
-            this.cmbContrat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbContrat.Margin = new System.Windows.Forms.Padding(2);
             this.cmbContrat.Name = "cmbContrat";
             this.cmbContrat.Size = new System.Drawing.Size(304, 21);
             this.cmbContrat.TabIndex = 50;
@@ -390,7 +390,7 @@
             this.lstFiches.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lstFiches.FormattingEnabled = true;
             this.lstFiches.Location = new System.Drawing.Point(6, 12);
-            this.lstFiches.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstFiches.Margin = new System.Windows.Forms.Padding(2);
             this.lstFiches.Name = "lstFiches";
             this.lstFiches.Size = new System.Drawing.Size(398, 69);
             this.lstFiches.TabIndex = 32;
@@ -416,7 +416,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstFichier.FormattingEnabled = true;
             this.lstFichier.Location = new System.Drawing.Point(4, 12);
-            this.lstFichier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstFichier.Margin = new System.Windows.Forms.Padding(2);
             this.lstFichier.Name = "lstFichier";
             this.lstFichier.Size = new System.Drawing.Size(401, 95);
             this.lstFichier.TabIndex = 47;
@@ -499,6 +499,7 @@
             this.Controls.Add(this.txtNomArtiste);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label20);
+            this.MaximizeBox = false;
             this.Name = "DetailArtiste";
             this.Text = "Détail de l\'artiste";
             this.groupBox1.ResumeLayout(false);

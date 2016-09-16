@@ -43,6 +43,7 @@ namespace FestiRire
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             var frmDetailCatArt = new DetailCategorieArtiste();
+            frmDetailCatArt.DesactiverBtnSupp();
             frmDetailCatArt.ShowDialog();
             dgvCategorie.DataSource = null;
             dgvCategorie.DataSource = conSommaireCatArtiste.Tout().ToSortableBindingList();
