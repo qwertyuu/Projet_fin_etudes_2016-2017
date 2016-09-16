@@ -104,6 +104,7 @@
             this.btnRechercher.TabIndex = 24;
             this.btnRechercher.Text = "Rechercher";
             this.btnRechercher.UseVisualStyleBackColor = true;
+            this.btnRechercher.Click += new System.EventHandler(this.btnRechercher_Click);
             // 
             // txtRecherche
             // 
@@ -154,6 +155,7 @@
             // 
             // SommaireCategoriesArtiste
             // 
+            this.AcceptButton = this.btnRechercher;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnFermer;

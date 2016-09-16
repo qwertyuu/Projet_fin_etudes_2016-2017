@@ -117,6 +117,7 @@
             this.btnRechercher.TabIndex = 3;
             this.btnRechercher.Text = "Rechercher";
             this.btnRechercher.UseVisualStyleBackColor = true;
+            this.btnRechercher.Click += new System.EventHandler(this.btnRechercher_Click);
             // 
             // btnFiltres
             // 
@@ -182,6 +183,7 @@
             // 
             // SommaireContrats
             // 
+            this.AcceptButton = this.btnRechercher;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1725, 434);

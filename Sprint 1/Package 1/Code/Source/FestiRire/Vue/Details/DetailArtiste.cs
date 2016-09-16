@@ -179,9 +179,12 @@ namespace FestiRire
             {
                 pbApercu.Image = null;
             }
-            lblTailleFichier.Text = "Taille:" + BytesToString(f.Length);
-            lblNomFichier.Text = "Nom:" + f.Name;
-            lblTypeFichier.Text = "Type:" + types[f.Extension.Substring(1).ToUpper()];
+            if (f != null && f.Exists)
+            {
+                lblTailleFichier.Text = "Taille:" + BytesToString(f.Length);
+                lblNomFichier.Text = "Nom:" + f.Name;
+                lblTypeFichier.Text = "Type:" + types[f.Extension.Substring(1).ToUpper()];
+            }
             cmbContrat.SelectedItem = i.tblContrat;
             this.selection = ((sender as ListBox).SelectedItem as Modele.tblFichierOfficiel).tblFichierPersonnel;
             rtbCommentaire.Rtf = i.tblFichierPersonnel.commentaire;
@@ -232,9 +235,10 @@ namespace FestiRire
             this.selection = (sender as ListBox).SelectedItem as Modele.tblFichierPersonnel;
             rtbCommentaire.Rtf = i.commentaire;
         }
+        //permet de convertir les grosseur de fichier en un format lisible
         static string BytesToString(long byteCount)
         {
-            string[] suf = { "o", "ko", "mo", "go", "to", "po", "eo" }; //Longs run out around EB
+            string[] suf = { "o", "ko", "mo", "go", "to", "po", "eo" };
             if (byteCount == 0)
                 return "0" + suf[0];
             long bytes = Math.Abs(byteCount);

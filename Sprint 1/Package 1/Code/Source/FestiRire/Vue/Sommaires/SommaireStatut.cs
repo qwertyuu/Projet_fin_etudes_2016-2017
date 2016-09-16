@@ -71,14 +71,14 @@ namespace FestiRire
         private void btnRechercher_Click(object sender, EventArgs e)
         {
             var dataGridView = dgvStatut;
-            var critere = txtRecherche.Text;
-            if (string.IsNullOrEmpty(critere))
+            var critere = txtRecherche.Text.ToUpper();
+            if (string.IsNullOrEmpty(critere) || critere == "Recherche rapide".ToUpper())
             {
                 dataGridView.DataSource = conSommaireStatut.Tout().ToSortableBindingList();
             }
             else
             {
-                dataGridView.DataSource = conSommaireStatut.Tout().Where(a => a.NomStatut.Contains(critere) || a.couleur.Contains(critere) || a.description.Contains(critere)).ToList().ToSortableBindingList();
+                dataGridView.DataSource = conSommaireStatut.Tout().Where(a => a.NomStatut.ToUpper().Contains(critere) || a.couleur.ToUpper().Contains(critere) || a.description.ToUpper().Contains(critere)).ToList().ToSortableBindingList();
             }
         }
     }

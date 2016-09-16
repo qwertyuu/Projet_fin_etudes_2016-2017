@@ -120,6 +120,7 @@
             this.btnRechercher.TabIndex = 24;
             this.btnRechercher.Text = "Rechercher";
             this.btnRechercher.UseVisualStyleBackColor = true;
+            this.btnRechercher.Click += new System.EventHandler(this.btnRechercher_Click);
             // 
             // txtRecherche
             // 
@@ -170,6 +171,7 @@
             // 
             // SommaireAgence
             // 
+            this.AcceptButton = this.btnRechercher;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.btnFermer;

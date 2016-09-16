@@ -26,6 +26,25 @@ namespace FestiRire
             dgvContrats.MultiSelect = false;
             dgvContrats.AllowUserToAddRows = false;
             dgvContrats.DataSource = conSommaireContrat.Tout().ToSortableBindingList();
+            txtRecherche.GotFocus += TxtRecherche_GotFocus;
+            txtRecherche.LostFocus += TxtRecherche_LostFocus;
+        }
+
+
+        private void TxtRecherche_LostFocus(object sender, EventArgs e)
+        {
+            if (txtRecherche.Text == "")
+            {
+                txtRecherche.Text = "Recherche rapide";
+            }
+        }
+
+        private void TxtRecherche_GotFocus(object sender, EventArgs e)
+        {
+            if (txtRecherche.Text == "Recherche rapide")
+            {
+                txtRecherche.Text = "";
+            }
         }
 
         private void btnFermer_Click(object sender, EventArgs e)
@@ -47,6 +66,21 @@ namespace FestiRire
             frmDetailContrat.ShowDialog();
             dgvContrats.DataSource = null;
             dgvContrats.DataSource = conSommaireContrat.Tout().ToSortableBindingList();
+        }
+
+        private void btnRechercher_Click(object sender, EventArgs e)
+        {
+            var dataGridView = dgvContrats;
+            var controlleur = conSommaireContrat;
+            var critere = txtRecherche.Text.ToUpper();
+            if (string.IsNullOrEmpty(critere) || critere == "Recherche rapide".ToUpper())
+            {
+                dataGridView.DataSource = controlleur.Tout().ToSortableBindingList();
+            }
+            else
+            {
+                dataGridView.DataSource = controlleur.Tout().Where(a => a.lieu.ToUpper().Contains(critere) || a.noContrat.ToUpper().Contains(critere) || a.nom.ToUpper().Contains(critere) || a.nomStatut.ToUpper().Contains(critere)).ToList().ToSortableBindingList();
+            }
         }
     }
 }

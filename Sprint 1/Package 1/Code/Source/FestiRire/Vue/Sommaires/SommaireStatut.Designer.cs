@@ -163,6 +163,7 @@
             // 
             // SommaireStatut
             // 
+            this.AcceptButton = this.btnRechercher;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnFermer;
@@ -172,7 +173,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDetail);
             this.Name = "SommaireStatut";
-            this.Text = "Sommaire des artistes";
+            this.Text = "Sommaire des status";
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatut)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
