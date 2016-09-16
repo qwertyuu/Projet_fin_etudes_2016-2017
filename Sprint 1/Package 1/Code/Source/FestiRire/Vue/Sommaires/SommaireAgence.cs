@@ -60,12 +60,6 @@ namespace FestiRire
             dgvAgence.DataSource = donnees.ToSortableBindingList();
         }
 
-        private void btnDetails_Click(object sender, EventArgs e)
-        {
-            string recherche;
-            recherche = txtRecherche.Text;
-        }
-
 
     }
 }

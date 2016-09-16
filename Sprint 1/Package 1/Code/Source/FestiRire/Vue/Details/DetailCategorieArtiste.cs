@@ -14,7 +14,7 @@ namespace FestiRire
     {
         Controleur.Details.DetailCategorieArtiste DCA;
         Controleur.Validation validation  = new Controleur.Validation();
-
+        //Crée l'interface insert
         public DetailCategorieArtiste()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace FestiRire
             IdCatArt = 0;
         }
         int IdCatArt;
-
+        //Crée l'interface avec modifications / Update
         public DetailCategorieArtiste(int noCategorie)
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace FestiRire
             peuplerInterface(categorie);
             
         }
-
+        //Fonction pour désactiver le bouton supprimer lorsque l'interface est en mode ajout
         public void DesactiverBtnSupp()
         {
             btnSupprimerArtiste.Enabled = false;

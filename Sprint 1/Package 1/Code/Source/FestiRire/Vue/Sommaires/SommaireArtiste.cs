@@ -78,5 +78,10 @@ namespace FestiRire
             e.Value = affichage.Substring(0, affichage.Length - 3);
             //dgvArtiste.Rows[e.RowIndex].Cells["categories"].Value = affichage.Substring(0, affichage.Length - 3);
         }
+
+        private void btnRechercher_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
