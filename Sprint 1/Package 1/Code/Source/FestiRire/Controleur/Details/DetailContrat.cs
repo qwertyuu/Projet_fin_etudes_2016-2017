@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace FestiRire.Controleur.Details
 {
-    class DetailContrat:DetailBaseSimple
+    class DetailContrat : DetailBaseSimple
     {
-        public DetailContrat():base()
+        internal Modele.tblContrat SelectContrat(string idContrat)
         {
-
+            return provider.SelectContrat(idContrat);
         }
     }
 }

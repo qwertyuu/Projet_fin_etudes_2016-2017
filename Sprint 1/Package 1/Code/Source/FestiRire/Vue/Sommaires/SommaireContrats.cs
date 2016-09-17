@@ -25,6 +25,8 @@ namespace FestiRire
             dgvContrats.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvContrats.MultiSelect = false;
             dgvContrats.AllowUserToAddRows = false;
+            dgvContrats.ReadOnly = true;
+            dgvContrats.AllowUserToDeleteRows = false;
             dgvContrats.DataSource = conSommaireContrat.Tout().ToSortableBindingList();
             txtRecherche.GotFocus += TxtRecherche_GotFocus;
             txtRecherche.LostFocus += TxtRecherche_LostFocus;

@@ -18,6 +18,7 @@ namespace FestiRire
         public DetailExigence()
         {
             InitializeComponent();
+            DesactiverBtnSupp();
             idExigence = null;
         }
 
@@ -42,8 +43,7 @@ namespace FestiRire
             InitializeComponent();
             idExigence = _idExigence;
             cmbStatut.DataSource = conStatut.Tout();
-            btnSupprimerExigence.Enabled = false;
-           // PeuplerInterface(conExigence.LoadExigence(_idExigence));
+            PeuplerInterface(conExigence.LoadExigence(_idExigence));
         }
 
         private void PeuplerInterface(Modele.tblExigence _Exigence)

@@ -25,6 +25,8 @@ namespace FestiRire
             dgvAgence.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAgence.MultiSelect = false;
             dgvAgence.AllowUserToAddRows = false;
+            dgvAgence.ReadOnly = true;
+            dgvAgence.AllowUserToDeleteRows = false;
 
             var donnees = (from item in conSommaireAgence.Tout()
                           select new { noAgence = item.noAgence, nom = item.nom, ville = item.ville, tel = conSommaireAgence.FormatTelephone(item.telBureau ?? item.telCellulaire) }).ToList();

@@ -17,6 +17,7 @@ namespace FestiRire
         public DetailEngagement()
         {
             InitializeComponent();
+            DesactiverBtnSupp();
         }
 
         private void btnEnregistrerEngagement_Click(object sender, EventArgs e)

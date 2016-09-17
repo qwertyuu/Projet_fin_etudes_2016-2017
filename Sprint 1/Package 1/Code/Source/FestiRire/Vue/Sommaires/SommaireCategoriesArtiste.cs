@@ -24,6 +24,8 @@ namespace FestiRire
             dgvCategorie.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCategorie.MultiSelect = false;
             dgvCategorie.AllowUserToAddRows = false;
+            dgvCategorie.ReadOnly = true;
+            dgvCategorie.AllowUserToDeleteRows = false;
             dgvCategorie.DataSource = conSommaireCatArtiste.Tout().ToSortableBindingList();
             txtRecherche.GotFocus += TxtRecherche_GotFocus;
             txtRecherche.LostFocus += TxtRecherche_LostFocus;

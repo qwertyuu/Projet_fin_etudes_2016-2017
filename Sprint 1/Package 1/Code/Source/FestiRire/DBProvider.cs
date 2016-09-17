@@ -14,7 +14,12 @@ namespace FestiRire
     {
         private static Modele.PE2_OfficielEntities BD;
 
-        internal List<Modele.vueSomStatut> ToutVueStatus()
+        public Modele.tblContrat SelectContrat(string idContrat)
+        {
+            return BD.tblContrat.SingleOrDefault(a => a.noContrat == idContrat);
+        }
+
+        public List<Modele.vueSomStatut> ToutVueStatus()
         {
             return BD.vueSomStatut.ToList();
         }
@@ -42,19 +47,19 @@ namespace FestiRire
             return BD.tblAgence.SingleOrDefault(a => a.noAgence == _noAgence && a.dateSupprime == null);
         }
 
-        internal void InsertArtiste(tblArtiste artiste)
+        public void InsertArtiste(tblArtiste artiste)
         {
             BD.tblArtiste.Add(artiste);
             BD.SaveChanges();
         }
 
-        internal void InsertCatArtiste(tblCategorieArtiste catArt)
+        public void InsertCatArtiste(tblCategorieArtiste catArt)
         {
             BD.tblCategorieArtiste.Add(catArt);
             BD.SaveChanges();
         }
 
-        internal List<tblArtiste> ToutArtiste()
+        public List<tblArtiste> ToutArtiste()
         {
             return BD.tblArtiste.ToList();
         }
@@ -64,12 +69,12 @@ namespace FestiRire
             return BD.tblEngagement.SingleOrDefault(a => a.noEngagement == idEngagement && a.dateSupprime == null);
         }
 
-        internal List<Modele.tblFichierPersonnel> ToutFichierPersonnel()
+        public List<Modele.tblFichierPersonnel> ToutFichierPersonnel()
         {
             return BD.tblFichierPersonnel.Where(a => a.dateSupprime == null).ToList();
         }
 
-        internal void SupprimerArtiste(int idartiste)
+        public void SupprimerArtiste(int idartiste)
         {
             var query = from q in BD.tblArtiste
                         where q.noArtiste == idartiste
@@ -84,7 +89,7 @@ namespace FestiRire
             BD.SaveChanges();
         }
 
-        internal List<Modele.tblFichierOfficiel> PhotoOfficielArtiste(int noArtiste)
+        public List<Modele.tblFichierOfficiel> PhotoOfficielArtiste(int noArtiste)
         {
             return BD.tblFichierOfficiel.Where(a => a.noArtiste == noArtiste && a.tblFichierPersonnel.dateSupprime == null).ToList();
         }
@@ -131,8 +136,8 @@ namespace FestiRire
             return UserTrouver;
 
         }
-        
-        internal void InsertFichierPersonnel(tblFichierPersonnel item)
+
+        public void InsertFichierPersonnel(tblFichierPersonnel item)
         {
             BD.tblFichierPersonnel.Add(item);
         }
@@ -144,18 +149,18 @@ namespace FestiRire
             BD.SaveChanges();
         }
 
-        internal tblExigence SelectExigence(int idExigence)
+        public tblExigence SelectExigence(int idExigence)
         {
             return BD.tblExigence.SingleOrDefault(a => a.noExigence == idExigence && a.dateSupprime == null);
         }
 
-        internal void InsertFichierOfficiel(tblFichierOfficiel item)
+        public void InsertFichierOfficiel(tblFichierOfficiel item)
         {
             BD.tblFichierOfficiel.Add(item);
             BD.SaveChanges();
         }
 
-        internal void SupprimerExigence(int idExigence)
+        public void SupprimerExigence(int idExigence)
         {
             var query = from q in BD.tblExigence
                         where q.noExigence == idExigence
@@ -169,7 +174,7 @@ namespace FestiRire
             }
         }
 
-        internal void SupprimerEngagement(int idEngagement)
+        public void SupprimerEngagement(int idEngagement)
         {
             var query = from q in BD.tblEngagement
                         where q.noEngagement == idEngagement
@@ -324,7 +329,7 @@ namespace FestiRire
                    select item).ToList();
         }
 
-        internal void SupprimerFichier(tblFichierPersonnel item)
+        public void SupprimerFichier(tblFichierPersonnel item)
         {
             item.dateSupprime = DateTime.Now;
             BD.SaveChanges();

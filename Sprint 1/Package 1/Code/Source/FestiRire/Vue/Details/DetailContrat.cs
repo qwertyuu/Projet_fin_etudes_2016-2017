@@ -12,71 +12,99 @@ namespace FestiRire
 {
     public partial class DetailContrat : Form
     {
-        Controleur.Details.DetailContrat contrat;
+        Controleur.Details.DetailContrat conContrat;
+        Controleur.Sommaires.SommaireAgence conSomAgence;
+        Controleur.Details.DetailArtiste conArtiste;
+        private string idContrat;
+
         public DetailContrat()
         {
             InitializeComponent();
-            contrat = new Controleur.Details.DetailContrat();
+            conContrat = new Controleur.Details.DetailContrat();
+            conSomAgence = new Controleur.Sommaires.SommaireAgence();
+            conArtiste = new Controleur.Details.DetailArtiste();
+            idContrat = null;
+            PeuplerListes();
             verifierStatut();
         }
 
         public DetailContrat(string noContrat)
         {
             InitializeComponent();
-            //Faire loader les info de contrat ici
+            conContrat = new Controleur.Details.DetailContrat();
+            conSomAgence = new Controleur.Sommaires.SommaireAgence();
+            conArtiste = new Controleur.Details.DetailArtiste();
+            idContrat = noContrat;
+            PeuplerListes();
+            PeuplerInterface();
             verifierStatut();
+        }
+
+        private void PeuplerInterface()
+        {
+            var contratDuMoment = conContrat.SelectContrat(idContrat);
+            txtNumeroContrat.Text = contratDuMoment.noContrat;
+            txtNomContrat.Text = contratDuMoment.nom;
+            txtLieuContrat.Text = contratDuMoment.lieu;
+            
+        }
+
+        private void PeuplerListes()
+        {
+            cmbNomAgence.DataSource = conSomAgence.Tout();
+            lstArtiste.DataSource = conArtiste.Tout();
         }
 
         //Gestion des styles reliés aux commentaires et description
         private void btnGrasCommentaire_Click(object sender, EventArgs e)
         {
-            contrat.TextGras(rtbCommentaire);
+            conContrat.TextGras(rtbCommentaire);
         }
 
         private void btnItaliqueCommentaire_Click(object sender, EventArgs e)
         {
-            contrat.TextItalic(rtbCommentaire);
+            conContrat.TextItalic(rtbCommentaire);
         }
 
         private void btnSouslignerCommentaire_Click(object sender, EventArgs e)
         {
-            contrat.TextUderline(rtbCommentaire);
+            conContrat.TextUderline(rtbCommentaire);
         }
 
         private void numPoliceCommentaire_ValueChanged(object sender, EventArgs e)
         {
-            contrat.SizeText(rtbCommentaire,numPoliceCommentaire.Value);
+            conContrat.SizeText(rtbCommentaire,numPoliceCommentaire.Value);
         }
 
         private void btnEnumCommentaire_Click(object sender, EventArgs e)
         {
-            contrat.EnumText(rtbCommentaire);
+            conContrat.EnumText(rtbCommentaire);
         }
 
 
         private void btnGrasDescription_Click(object sender, EventArgs e)
         {
-            contrat.TextGras(rtbDescriptionContrat);
+            conContrat.TextGras(rtbDescriptionContrat);
         }
 
         private void btnItaliqueDescription_Click(object sender, EventArgs e)
         {
-            contrat.TextItalic(rtbDescriptionContrat);
+            conContrat.TextItalic(rtbDescriptionContrat);
         }
 
         private void btnSouslignerDescription_Click(object sender, EventArgs e)
         {
-            contrat.TextUderline(rtbDescriptionContrat);
+            conContrat.TextUderline(rtbDescriptionContrat);
         }
 
         private void numPoliceDescription_ValueChanged(object sender, EventArgs e)
         {
-            contrat.SizeText(rtbDescriptionContrat,numPoliceDescription.Value);
+            conContrat.SizeText(rtbDescriptionContrat,numPoliceDescription.Value);
         }
 
         private void btnEnumDescription_Click(object sender, EventArgs e)
         {
-            contrat.EnumText(rtbDescriptionContrat);
+            conContrat.EnumText(rtbDescriptionContrat);
         }
 
         private void btnStatut1_Click(object sender, EventArgs e)
@@ -94,8 +122,8 @@ namespace FestiRire
         private void btnStatut2_Click(object sender, EventArgs e)
         {
             if (btnStatut2.Text == "Supprimer")
-                lblStatutContrat.Text = "Supprimer";
-            else if (btnStatut2.Text == "Conttrat annulé")
+                lblStatutContrat.Text = "Supprimé";
+            else if (btnStatut2.Text == "Contrat annulé")
                 lblStatutContrat.Text = "Annulé";
 
             verifierStatut();
@@ -141,14 +169,62 @@ namespace FestiRire
 
         private void btnAjouterEngagement_Click(object sender, EventArgs e)
         {
-            var frmDetailExigence = new DetailExigence();
-            frmDetailExigence.DesactiverBtnSupp();
+            var frmDetailEngagement  = new DetailEngagement();
+            frmDetailEngagement.ShowDialog();
+
         }
 
         private void btnAjouterExigence_Click(object sender, EventArgs e)
         {
-            var frmDetailEngagement = new DetailEngagement();
-            frmDetailEngagement.DesactiverBtnSupp();
+            var frmDetailExigence = new DetailExigence();
+            frmDetailExigence.ShowDialog();
+        }
+
+        private void cmbNomAgence_Format(object sender, ListControlConvertEventArgs e)
+        {
+            var itemAFormatter = (e.ListItem as Modele.vueSomAgence);
+            e.Value = itemAFormatter.noAgence + " / " + itemAFormatter.nom;
+        }
+
+        private void btnAjoutAgence_Click(object sender, EventArgs e)
+        {
+            SommaireAgence sommaireAgence = new SommaireAgence();
+            sommaireAgence.ShowDialog();
+            PeuplerListes();
+        }
+
+        private void chkIdemAgence_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkIdemAgence.Checked)
+            {
+                txtSignataireAgence.Text = null;
+                txtSignataireAgence.Enabled = false;
+            }
+            else
+            {
+                txtSignataireAgence.Enabled = true;
+            }
+        }
+
+        private void chkIdemDiffuseur_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkIdemDiffuseur.Checked)
+            {
+                txtSignataireDiffuseur.Text = null;
+                txtSignataireDiffuseur.Enabled = false;
+            }
+            else
+            {
+                txtSignataireDiffuseur.Enabled = true;
+            }
+
+        }
+
+        private void btnAjouterArtiste_Click(object sender, EventArgs e)
+        {
+            SommaireArtiste sA = new SommaireArtiste();
+            sA.ShowDialog();
+            PeuplerListes();
         }
     }
 }

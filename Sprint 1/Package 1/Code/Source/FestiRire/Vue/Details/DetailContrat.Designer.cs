@@ -91,7 +91,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnAjouterArtiste = new System.Windows.Forms.Button();
             this.lstArtiste = new System.Windows.Forms.ListBox();
-            this.btnDetailArtiste = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.btnGrasCommentaire = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
@@ -309,6 +308,7 @@
             this.chkIdemAgence.TabIndex = 13;
             this.chkIdemAgence.Text = "Idem";
             this.chkIdemAgence.UseVisualStyleBackColor = true;
+            this.chkIdemAgence.CheckedChanged += new System.EventHandler(this.chkIdemAgence_CheckedChanged);
             // 
             // label9
             // 
@@ -360,6 +360,7 @@
             this.btnAjoutAgence.TabIndex = 6;
             this.btnAjoutAgence.Text = "+";
             this.btnAjoutAgence.UseVisualStyleBackColor = true;
+            this.btnAjoutAgence.Click += new System.EventHandler(this.btnAjoutAgence_Click);
             // 
             // cmbNomAgence
             // 
@@ -371,6 +372,7 @@
             this.cmbNomAgence.Name = "cmbNomAgence";
             this.cmbNomAgence.Size = new System.Drawing.Size(404, 21);
             this.cmbNomAgence.TabIndex = 2;
+            this.cmbNomAgence.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmbNomAgence_Format);
             // 
             // label2
             // 
@@ -672,6 +674,7 @@
             this.chkIdemDiffuseur.TabIndex = 13;
             this.chkIdemDiffuseur.Text = "Idem";
             this.chkIdemDiffuseur.UseVisualStyleBackColor = true;
+            this.chkIdemDiffuseur.CheckedChanged += new System.EventHandler(this.chkIdemDiffuseur_CheckedChanged);
             // 
             // label13
             // 
@@ -737,6 +740,7 @@
             // btnAjoutDiffuseur
             // 
             this.btnAjoutDiffuseur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAjoutDiffuseur.Enabled = false;
             this.btnAjoutDiffuseur.Location = new System.Drawing.Point(527, 16);
             this.btnAjoutDiffuseur.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjoutDiffuseur.Name = "btnAjoutDiffuseur";
@@ -749,6 +753,7 @@
             // 
             this.cmbNomDiffuseur.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbNomDiffuseur.Enabled = false;
             this.cmbNomDiffuseur.FormattingEnabled = true;
             this.cmbNomDiffuseur.Location = new System.Drawing.Point(128, 16);
             this.cmbNomDiffuseur.Margin = new System.Windows.Forms.Padding(2);
@@ -772,51 +777,38 @@
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.btnAjouterArtiste);
             this.groupBox5.Controls.Add(this.lstArtiste);
-            this.groupBox5.Controls.Add(this.btnDetailArtiste);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Location = new System.Drawing.Point(1508, 30);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(274, 193);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Artiste concerné";
+            this.groupBox5.Text = "Artistes concernés";
             // 
             // btnAjouterArtiste
             // 
             this.btnAjouterArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAjouterArtiste.Location = new System.Drawing.Point(166, 155);
+            this.btnAjouterArtiste.Location = new System.Drawing.Point(64, 155);
             this.btnAjouterArtiste.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjouterArtiste.Name = "btnAjouterArtiste";
-            this.btnAjouterArtiste.Size = new System.Drawing.Size(104, 31);
+            this.btnAjouterArtiste.Size = new System.Drawing.Size(206, 31);
             this.btnAjouterArtiste.TabIndex = 34;
-            this.btnAjouterArtiste.Text = "Ajouter";
+            this.btnAjouterArtiste.Text = "Gérer";
             this.btnAjouterArtiste.UseVisualStyleBackColor = true;
+            this.btnAjouterArtiste.Click += new System.EventHandler(this.btnAjouterArtiste_Click);
             // 
             // lstArtiste
             // 
             this.lstArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstArtiste.DisplayMember = "nom";
             this.lstArtiste.FormattingEnabled = true;
-            this.lstArtiste.Items.AddRange(new object[] {
-            "Les Denis Drolets"});
             this.lstArtiste.Location = new System.Drawing.Point(64, 16);
             this.lstArtiste.Name = "lstArtiste";
             this.lstArtiste.Size = new System.Drawing.Size(205, 134);
             this.lstArtiste.TabIndex = 2;
-            // 
-            // btnDetailArtiste
-            // 
-            this.btnDetailArtiste.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetailArtiste.Location = new System.Drawing.Point(62, 155);
-            this.btnDetailArtiste.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDetailArtiste.Name = "btnDetailArtiste";
-            this.btnDetailArtiste.Size = new System.Drawing.Size(100, 31);
-            this.btnDetailArtiste.TabIndex = 33;
-            this.btnDetailArtiste.Text = "Détail";
-            this.btnDetailArtiste.UseVisualStyleBackColor = true;
             // 
             // label20
             // 
@@ -854,6 +846,7 @@
             // rtbCommentaire
             // 
             this.rtbCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbCommentaire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbCommentaire.Location = new System.Drawing.Point(1209, 273);
             this.rtbCommentaire.Name = "rtbCommentaire";
             this.rtbCommentaire.Size = new System.Drawing.Size(573, 150);
@@ -927,6 +920,7 @@
             // rtbDescriptionContrat
             // 
             this.rtbDescriptionContrat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbDescriptionContrat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbDescriptionContrat.Location = new System.Drawing.Point(1210, 468);
             this.rtbDescriptionContrat.Name = "rtbDescriptionContrat";
             this.rtbDescriptionContrat.Size = new System.Drawing.Size(572, 140);
@@ -947,7 +941,7 @@
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1140, 629);
+            this.label10.Location = new System.Drawing.Point(1142, 620);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 13);
             this.label10.TabIndex = 23;
@@ -1296,7 +1290,6 @@
         private System.Windows.Forms.Button btnGrasDescription;
         private System.Windows.Forms.Button btnAjouterArtiste;
         private System.Windows.Forms.ListBox lstArtiste;
-        private System.Windows.Forms.Button btnDetailArtiste;
         private System.Windows.Forms.NumericUpDown numPoliceCommentaire;
         private System.Windows.Forms.Button btnEnumCommentaire;
         private System.Windows.Forms.NumericUpDown numPoliceDescription;
