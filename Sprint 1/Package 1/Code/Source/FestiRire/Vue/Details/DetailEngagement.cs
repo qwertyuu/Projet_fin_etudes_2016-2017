@@ -13,6 +13,7 @@ namespace FestiRire
     public partial class DetailEngagement : Form
     {
         Controleur.Details.DetailEngagement conEngagement = new Controleur.Details.DetailEngagement();
+        Controleur.Validation validation = new Controleur.Validation();
         int? idEngagement;
         public DetailEngagement()
         {
@@ -22,17 +23,35 @@ namespace FestiRire
 
         private void btnEnregistrerEngagement_Click(object sender, EventArgs e)
         {
-            if (idEngagement != null)
+            if(txtNatureEngagement.Text=="" || txtLieu.Text=="")
             {
-                conEngagement.EnregistrerEngagement((int)idEngagement,txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
-                MessageBox.Show("Engagement Modifié");
+                MessageBox.Show("Veuillez entrer la nature et le lieu de l'engagement.");
+                return;
             }
             else
             {
-                conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
-                MessageBox.Show("Engagement Ajouté");
+                if(!validation.ValiderChampDate(dateEngagement))
+                {
+                    MessageBox.Show(validation.MessVide);
+                    return;
+                }
+                else
+                {
+                    if (idEngagement != null)
+                    {
+                        conEngagement.EnregistrerEngagement((int)idEngagement, txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+                        MessageBox.Show("Engagement Modifié");
+                    }
+                    else
+                    {
+                        conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+                        MessageBox.Show("Engagement Ajouté");
+                    }
+                    this.Close();
+                }
             }
-            this.Close();
+
+
 
         }
 
@@ -143,5 +162,7 @@ namespace FestiRire
         {
             conEngagement.EnumText(rtbDescriptionLongue);
         }
+
+
     }
 }

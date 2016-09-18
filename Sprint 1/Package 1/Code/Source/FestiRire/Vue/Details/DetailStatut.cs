@@ -30,6 +30,7 @@ namespace FestiRire
             txtNom.Text = _statut.nomStatut;
             rtbDescriptionStatut.Text = _statut.description;
             pbApercuCouleur.BackColor = ColorTranslator.FromHtml("#" + _statut.couleur);
+            
         }
         public void ConfirmationClose()
         {
@@ -48,7 +49,6 @@ namespace FestiRire
         private void btnEnregistrerStatut_Click(object sender, EventArgs e)
         {
             string mess = "";
-
             if (txtNom.Text == "" || pbApercuCouleur.BackColor == Color.Transparent)
             {
                 MessageBox.Show("Veuiller donner un nom et entrer une couleur.");

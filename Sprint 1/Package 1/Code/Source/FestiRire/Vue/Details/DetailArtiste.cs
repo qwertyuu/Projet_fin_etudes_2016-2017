@@ -208,6 +208,7 @@ namespace FestiRire
                 cmbContrat.SelectedIndex = 0;
                 rtbCommentaire.Rtf = "";
                 this.selection = null;
+                rtbCommentaire.Enabled = true;
                 return;
             }
             Dictionary<string, string> types = new Dictionary<string, string>()
@@ -281,23 +282,32 @@ namespace FestiRire
                     join b in cats on a.noCategorie equals b.noCategorie
                     select a).ToList();
 
-            if (idartiste == null)
+            if (txtNomArtiste.Text == "" || lstCatArtiste.SelectedIndex == -1)
             {
-                idartiste = artiste.AjouterArtiste(
-                    txtNomArtiste.Text,
-                    categories,
-                    rtbCommentaire.Rtf
-                );
+                MessageBox.Show("Veuillez entrez le nom de l'artiste et sa catégorie.");
+                return;
             }
             else
             {
-                artiste.AjouterArtiste(
-                    (int)this.idartiste,
-                    txtNomArtiste.Text,
-                    categories,
-                    rtbCommentaire.Rtf
-                );
+                if (idartiste == null)
+                {
+                    idartiste = artiste.AjouterArtiste(
+                        txtNomArtiste.Text,
+                        categories,
+                        rtbCommentaire.Rtf
+                    );
+                }
+                else
+                {
+                    artiste.AjouterArtiste(
+                        (int)this.idartiste,
+                        txtNomArtiste.Text,
+                        categories,
+                        rtbCommentaire.Rtf
+                    );
+                }
             }
+
             foreach (Modele.tblFichierPersonnel item in lstFichier.Items)
             {
                 if (!artiste.Fichiers((int)idartiste).Contains(item))
@@ -375,7 +385,10 @@ namespace FestiRire
 
         private void rtbCommentaire_TextChanged(object sender, EventArgs e)
         {
-            this.selection.commentaire = rtbCommentaire.Rtf;
+            if (this.selection != null)
+                this.selection.commentaire = rtbCommentaire.Rtf;
+            else
+                MessageBox.Show("Vous devez sélectionnez un fichier ou une photo avant d'y mettre une commentire");
         }
 
         private void cmbContrat_SelectedValueChanged(object sender, EventArgs e)

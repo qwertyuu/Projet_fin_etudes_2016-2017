@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace FestiRire.Controleur
 {
@@ -113,6 +115,20 @@ namespace FestiRire.Controleur
             if (string.IsNullOrEmpty(nom))
                 Vide= "Veuillez entrer le nom de la catégorie d'artiste.";
             return Vide;
+        }
+
+        //Validation de l'agagement.
+        public bool ValiderChampDate(DateTimePicker date)
+        {
+            if (date.Value < DateTime.Now)
+            {
+                messVide = "La date doit être dans le futur";
+                return false;
+            }
+            else
+                return true;
+            
+
         }
 
     }

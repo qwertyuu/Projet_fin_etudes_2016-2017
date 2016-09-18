@@ -83,7 +83,7 @@
             // 
             this.dateEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateEngagement.Location = new System.Drawing.Point(85, 39);
+            this.dateEngagement.Location = new System.Drawing.Point(85, 35);
             this.dateEngagement.Margin = new System.Windows.Forms.Padding(2);
             this.dateEngagement.Name = "dateEngagement";
             this.dateEngagement.Size = new System.Drawing.Size(134, 20);
@@ -463,6 +463,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(825, 474);
+            this.Controls.Add(this.dateEngagement);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.numMinute);
@@ -489,7 +490,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.rtbDescriptionLongue);
             this.Controls.Add(this.rtbDescriptionCourte);
-            this.Controls.Add(this.dateEngagement);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnSupprimerEngagement);
             this.Controls.Add(this.btnEnregistrerEngagement);
