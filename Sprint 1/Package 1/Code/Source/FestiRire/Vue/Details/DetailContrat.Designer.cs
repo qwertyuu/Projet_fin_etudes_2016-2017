@@ -807,6 +807,7 @@
             this.lstArtiste.FormattingEnabled = true;
             this.lstArtiste.Location = new System.Drawing.Point(64, 16);
             this.lstArtiste.Name = "lstArtiste";
+            this.lstArtiste.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstArtiste.Size = new System.Drawing.Size(205, 134);
             this.lstArtiste.TabIndex = 2;
             // 

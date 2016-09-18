@@ -8,9 +8,19 @@ namespace FestiRire.Controleur.Details
 {
     class DetailContrat : DetailBaseSimple
     {
-        internal Modele.tblContrat SelectContrat(string idContrat)
+        public Modele.tblContrat SelectContrat(string idContrat)
         {
             return provider.SelectContrat(idContrat);
+        }
+
+        public Modele.tblResponsable ResponsableAgence(string idContrat)
+        {
+            return provider.SelectResponsableAgence(idContrat);
+        }
+
+        public Modele.tblResponsable ResponsableDiffuseur(string idContrat)
+        {
+            return provider.SelectResponsableDiffuseur(idContrat);
         }
     }
 }

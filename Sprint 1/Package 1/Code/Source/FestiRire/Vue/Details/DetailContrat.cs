@@ -42,10 +42,35 @@ namespace FestiRire
 
         private void PeuplerInterface()
         {
+            //peupler les informations qui viennent directement du contrat lui-meme
             var contratDuMoment = conContrat.SelectContrat(idContrat);
             txtNumeroContrat.Text = contratDuMoment.noContrat;
             txtNomContrat.Text = contratDuMoment.nom;
             txtLieuContrat.Text = contratDuMoment.lieu;
+            rtbCommentaire.Rtf = contratDuMoment.commentaire;
+            rtbDescriptionContrat.Rtf = contratDuMoment.description;
+
+            //sélectionner la bonne agence
+            cmbNomAgence.SelectedItem = conSomAgence.Tout().SingleOrDefault(a => a.noAgence == contratDuMoment.noAgence);
+
+            //sélectionner les artistes liés au contrat
+            var artistes = contratDuMoment.tblArtiste;
+            for (int i = 0; i < lstArtiste.Items.Count; i++)
+            {
+                lstArtiste.SetSelected(i, artistes.Contains(lstArtiste.Items[i] as Modele.tblArtiste));
+            }
+
+            //peupler le responsable
+            var ResponsableAgence = conContrat.ResponsableAgence(idContrat);
+            txtNomResponsableAgence.Text = ResponsableAgence.nom;
+            txtPrenomResponsableAgence.Text = ResponsableAgence.prenom;
+            txtCellulaireAgence.Text = conContrat.FormatTelephone(ResponsableAgence.telCellulaire);
+            txtCourrielAgence.Text = ResponsableAgence.courriel;
+            txtTelephoneAgence.Text = conContrat.FormatTelephone(ResponsableAgence.telBureau);
+            txtSignataireAgence.Text = ResponsableAgence.signataire;
+            dateSignatureAgence.Value = ResponsableAgence.dateSignature ?? DateTime.Now;
+            txtExtensionTelephoneAgence.Text = ResponsableAgence.extension;
+            chkIdemAgence.Checked = ResponsableAgence.idem;
             
         }
 

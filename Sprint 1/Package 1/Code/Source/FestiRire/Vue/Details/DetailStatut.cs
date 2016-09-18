@@ -55,7 +55,7 @@ namespace FestiRire
             }
             else
             {
-                if (!_statut.AjouterStatut((int)idStatut, txtNom.Text, rtbDescriptionStatut.Text, ColorTranslator.ToHtml(pbApercuCouleur.BackColor)))
+                if (!_statut.AjouterStatut((int)idStatut, txtNom.Text, rtbDescriptionStatut.Text, pbApercuCouleur.BackColor))
                     mess = "Le satut a été modifié avec succés.";
                 else
                     mess = "Le satut à été enregistré avec succés." ;

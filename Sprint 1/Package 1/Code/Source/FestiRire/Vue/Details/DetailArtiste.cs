@@ -69,11 +69,13 @@ namespace FestiRire
 
         private void loadCatArtiste()
         {
+            //fonction qui s'occupe de sélectionner les catégories d'artistes lié à l'artiste
             if (this.idartiste == null)
                 return;
+            var categories = artiste.ChargerListCatArtis((int)this.idartiste);
             for (int i = 0; i < lstCatArtiste.Items.Count; i++)
             {
-                lstCatArtiste.SetSelected(lstCatArtiste.Items.IndexOf(lstCatArtiste.Items[i]), artiste.ChargerListCatArtis((int)this.idartiste).Any(a => a.noCategorie == (lstCatArtiste.Items[i] as Modele.vueSomCatArtiste).noCategorie));
+                lstCatArtiste.SetSelected(i, categories.Any(a => a.noCategorie == (lstCatArtiste.Items[i] as Modele.vueSomCatArtiste).noCategorie));
             }
         }
 

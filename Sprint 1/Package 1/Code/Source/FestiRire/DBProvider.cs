@@ -16,7 +16,19 @@ namespace FestiRire
 
         public Modele.tblContrat SelectContrat(string idContrat)
         {
-            return BD.tblContrat.SingleOrDefault(a => a.noContrat == idContrat);
+            return BD.tblContrat.SingleOrDefault(a => a.noContrat == idContrat && a.dateSupprime == null);
+        }
+
+        internal tblResponsable SelectResponsableAgence(string idContrat)
+        {
+            var contrat = SelectContrat(idContrat);
+            return contrat.tblResponsable.SingleOrDefault(a => a.noAgence != null && a.dateSupprime == null);
+        }
+
+        internal tblResponsable SelectResponsableDiffuseur(string idContrat)
+        {
+            var contrat = SelectContrat(idContrat);
+            return contrat.tblResponsable.SingleOrDefault(a => a.noDiffuseur != null && a.dateSupprime == null);
         }
 
         public List<Modele.vueSomStatut> ToutVueStatus()
@@ -34,7 +46,7 @@ namespace FestiRire
 
         public tblArtiste SelectArtiste(int idArtiste)
         {
-            return BD.tblArtiste.SingleOrDefault(a => a.noArtiste == idArtiste);
+            return BD.tblArtiste.SingleOrDefault(a => a.noArtiste == idArtiste && a.dateSupprime == null);
         }
 
         public List<tblStatut> ToutStatus()
