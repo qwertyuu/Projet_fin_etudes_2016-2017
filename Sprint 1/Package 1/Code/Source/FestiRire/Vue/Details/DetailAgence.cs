@@ -58,7 +58,7 @@ namespace FestiRire
                     }
                     else
                     {
-                        if (!validation.IsValidCodePost(txtCodePostal.Text))
+                        if (!validation.IsValidCodePost(agence.traiterCodePostal(txtCodePostal.Text)))
                         {
                             MessageBox.Show("Veuillez entrer un code postal valide");
                             return;

@@ -36,6 +36,22 @@ namespace FestiRire.Controleur.Details
             return noTelFinal.ToString();
         }
 
+        public string traiterCodePostal(string codePostal)
+        {
+            char[] chiffresAccepte = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+            char[] lettresAccepte = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            StringBuilder codePostalFinal = new StringBuilder();
+
+            foreach (var item in codePostal)
+            {
+                if (lettresAccepte.Contains(char.ToUpper(item)) || chiffresAccepte.Contains(item))
+                {
+                    codePostalFinal.Append(char.ToUpper(item));
+                }
+            }
+            return codePostalFinal.ToString();
+        }
+
         public string FormatTelephone(string tel)
         {
             StringBuilder sB = new StringBuilder();

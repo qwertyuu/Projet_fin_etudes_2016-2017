@@ -188,14 +188,12 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomAgence' n'a pas d
           <Key>
             <PropertyRef Name="noAgence" />
             
-            
           </Key>
           <Property Name="noAgence" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="ville" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ville" Type="varchar" MaxLength="30" />
           <Property Name="telBureau" Type="char" MaxLength="10" />
           <Property Name="telCellulaire" Type="char" MaxLength="10" />
-          <Property Name="dateSupprime" Type="datetime" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
 avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomArtiste' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
@@ -225,13 +223,12 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomCatArtiste' n'a p
 avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomContrat' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomContrat">
           <Key>
+            
             <PropertyRef Name="noContrat" />
-            
-            
           </Key>
           <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="nomStatut" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nomStatut" Type="varchar" MaxLength="20" />
           <Property Name="lieu" Type="text" />
           <Property Name="dateSupprime" Type="datetime" />
         </EntityType>
@@ -243,7 +240,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomEngagement' n'a p
             
             
             
-            
           </Key>
           <Property Name="noEngagement" Type="int" Nullable="false" />
           <Property Name="nature" Type="varchar" MaxLength="50" Nullable="false" />
@@ -252,14 +248,13 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomEngagement' n'a p
           <Property Name="duree" Type="varchar" MaxLength="6" Nullable="false" />
           <Property Name="lieu" Type="text" Nullable="false" />
           <Property Name="dateSupprime" Type="datetime" />
-          <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="noContrat" Type="varchar" MaxLength="20" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
 avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomExigence">
           <Key>
             <PropertyRef Name="noExigence" />
-            
             
             
           </Key>
@@ -270,7 +265,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas
           <Property Name="descriptionCourte" Type="varchar" MaxLength="255" />
           <Property Name="noStatut" Type="int" Nullable="false" />
           <Property Name="dateSupprime" Type="datetime" />
-          <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="noContrat" Type="varchar" MaxLength="20" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
 avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
@@ -537,8 +532,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
     [vueSomAgence].[nom] AS [nom], 
     [vueSomAgence].[ville] AS [ville], 
     [vueSomAgence].[telBureau] AS [telBureau], 
-    [vueSomAgence].[telCellulaire] AS [telCellulaire], 
-    [vueSomAgence].[dateSupprime] AS [dateSupprime]
+    [vueSomAgence].[telCellulaire] AS [telCellulaire]
     FROM [S_Contrat].[vueSomAgence] AS [vueSomAgence]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomArtiste" EntityType="Self.vueSomArtiste" store:Type="Views" store:Schema="S_Contrat">
@@ -864,10 +858,9 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
           </Key>
           <Property Name="noAgence" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ville" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ville" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="telBureau" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="telCellulaire" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="vueSomArtiste">
           <Key>
@@ -893,7 +886,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
           </Key>
           <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nomStatut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomStatut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
         </EntityType>
@@ -907,7 +900,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
           <Property Name="heure" Type="Time" Precision="7" />
           <Property Name="duree" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="vueSomExigence">
@@ -920,7 +913,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
           <Property Name="montant" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="descriptionCourte" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="noStatut" Type="Int32" Nullable="false" />
-          <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
         </EntityType>
         <Association Name="AGE_ADR_FK">
@@ -1359,7 +1352,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
           <EntitySetMapping Name="vueSomAgence">
             <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomAgence">
               <MappingFragment StoreEntitySet="vueSomAgence">
-                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
                 <ScalarProperty Name="noAgence" ColumnName="noAgence" />
                 <ScalarProperty Name="nom" ColumnName="nom" />
                 <ScalarProperty Name="ville" ColumnName="ville" />

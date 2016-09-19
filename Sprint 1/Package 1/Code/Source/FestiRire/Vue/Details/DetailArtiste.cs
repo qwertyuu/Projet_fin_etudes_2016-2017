@@ -34,6 +34,15 @@ namespace FestiRire
                     btnGrasCommentaire.Enabled = true;
                     numPoliceCommentaire.Enabled = true;
                 }
+                else
+                {
+                    rtbCommentaire.Enabled = false;
+                    btnItaliqueCommentaire.Enabled = false;
+                    btnSouslignerCommentaire.Enabled = false;
+                    btnEnumCommentaire.Enabled = false;
+                    btnGrasCommentaire.Enabled = false;
+                    numPoliceCommentaire.Enabled = false;
+                }
             }
         }
 
@@ -182,15 +191,20 @@ namespace FestiRire
                 { "PDF",    "Document" },
                 { "DOCX",   "Document" },
                 { "DOC",    "Document" },
-                { "TXT",    "Texte" }
+                { "TXT",    "Texte" },
+                { "XLS",    "Document" },
+                { "XLSX",    "Document" },
+                { "XLSM",    "Document" }
             };
             if (File.Exists(i.tblFichierPersonnel.chemin) && types[f.Extension.Substring(1).ToUpper()] == "Image")
             {
                 pbApercu.Image = Image.FromFile(i.tblFichierPersonnel.chemin);
+                btnOuvrirFichier.Visible = false;
             }
             else
             {
                 pbApercu.Image = null;
+                btnOuvrirFichier.Visible = true;
             }
             if (f != null && f.Exists)
             {
@@ -210,7 +224,6 @@ namespace FestiRire
 
         private void lstFiches_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             var i = ((sender as ListBox).SelectedItem as Modele.tblFichierPersonnel);
             if (i == null)
             {
@@ -231,16 +244,21 @@ namespace FestiRire
                 { "PDF",    "Document" },
                 { "DOCX",   "Document" },
                 { "DOC",    "Document" },
-                { "TXT",    "Texte" }
+                { "TXT",    "Texte" },
+                { "XLS",    "Document" },
+                { "XLSX",    "Document" },
+                { "XLSM",    "Document" }
             };
             var f = new FileInfo(i.chemin);
             if (File.Exists(i.chemin) && types[f.Extension.Substring(1).ToUpper()] == "Image")
             {
                 pbApercu.Image = Image.FromFile(i.chemin);
+                btnOuvrirFichier.Visible = false;
             }
             else
             {
                 pbApercu.Image = null;
+                btnOuvrirFichier.Visible = true;
             }
             lblTailleFichier.Text = "Taille:" + BytesToString(f.Length);
             lblNomFichier.Text = "Nom:" + f.Name;
@@ -257,7 +275,7 @@ namespace FestiRire
             long bytes = Math.Abs(byteCount);
             int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
             double num = Math.Round(bytes / Math.Pow(1024, place), 1);
-            return (Math.Sign(byteCount) * num).ToString() + suf[place];
+            return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
         }
 
         private void btnParcourirFichier_Click(object sender, EventArgs e)
@@ -497,6 +515,14 @@ namespace FestiRire
         private void btnEnumCommentaire_Click(object sender, EventArgs e)
         {
             artiste.EnumText(rtbCommentaire);
+        }
+
+        private void btnOuvrirFichier_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(selection.chemin))
+            {
+                System.Diagnostics.Process.Start(selection.chemin);
+            }
         }
     }
 }

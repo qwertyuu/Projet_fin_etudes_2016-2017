@@ -65,6 +65,7 @@
             this.openFileDialogfichier = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogPhoto = new System.Windows.Forms.OpenFileDialog();
             this.lstCatArtiste = new System.Windows.Forms.ListBox();
+            this.btnOuvrirFichier = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -95,7 +96,6 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(771, 628);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
@@ -183,6 +183,7 @@
             // btnEnumCommentaire
             // 
             this.btnEnumCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnumCommentaire.Enabled = false;
             this.btnEnumCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnumCommentaire.Location = new System.Drawing.Point(203, 119);
             this.btnEnumCommentaire.Margin = new System.Windows.Forms.Padding(2);
@@ -447,6 +448,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btnOuvrirFichier);
             this.groupBox5.Controls.Add(this.pbApercu);
             this.groupBox5.Location = new System.Drawing.Point(436, 330);
             this.groupBox5.Name = "groupBox5";
@@ -457,10 +459,12 @@
             // 
             // pbApercu
             // 
+            this.pbApercu.BackColor = System.Drawing.Color.Transparent;
             this.pbApercu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbApercu.Location = new System.Drawing.Point(3, 16);
             this.pbApercu.Name = "pbApercu";
             this.pbApercu.Size = new System.Drawing.Size(404, 273);
+            this.pbApercu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbApercu.TabIndex = 0;
             this.pbApercu.TabStop = false;
             // 
@@ -480,12 +484,24 @@
             this.lstCatArtiste.Size = new System.Drawing.Size(318, 108);
             this.lstCatArtiste.TabIndex = 55;
             // 
+            // btnOuvrirFichier
+            // 
+            this.btnOuvrirFichier.Location = new System.Drawing.Point(125, 137);
+            this.btnOuvrirFichier.Name = "btnOuvrirFichier";
+            this.btnOuvrirFichier.Size = new System.Drawing.Size(159, 23);
+            this.btnOuvrirFichier.TabIndex = 1;
+            this.btnOuvrirFichier.Text = "Ouvrir le fichier sélectionné";
+            this.btnOuvrirFichier.UseVisualStyleBackColor = true;
+            this.btnOuvrirFichier.Visible = false;
+            this.btnOuvrirFichier.Click += new System.EventHandler(this.btnOuvrirFichier_Click);
+            // 
             // DetailArtiste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(858, 663);
+            this.ControlBox = false;
             this.Controls.Add(this.lstCatArtiste);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -499,6 +515,7 @@
             this.Controls.Add(this.txtNomArtiste);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label20);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "DetailArtiste";
             this.Text = "Détail de l\'artiste";
@@ -555,5 +572,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialogfichier;
         private System.Windows.Forms.OpenFileDialog openFileDialogPhoto;
         private System.Windows.Forms.ListBox lstCatArtiste;
+        private System.Windows.Forms.Button btnOuvrirFichier;
     }
 }

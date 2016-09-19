@@ -44,7 +44,7 @@ namespace FestiRire.Controleur.Details
                 var addr = a.tblAdresse;
                 addr.adresse = SanitariserTexte(adres);
                 addr.ville = SanitariserTexte(vil);
-                addr.codepostal = SanitariserTexte(codepost);
+                addr.codepostal = traiterCodePostal(SanitariserTexte(codepost));
                 addr.province = SanitariserTexte(prov);
                 addr.pays = SanitariserTexte(pay);
                 addr.telBureau = SanitariserTelephone(tel);
@@ -58,14 +58,16 @@ namespace FestiRire.Controleur.Details
             else
             {
                 //Insert
-                var adresse = new Modele.tblAdresse { adresse = SanitariserTexte(adres), ville = SanitariserTexte(vil), codepostal = SanitariserTexte(codepost), province = SanitariserTexte(prov), pays = SanitariserTexte(pay), telBureau = SanitariserTelephone(tel), telCellulaire = SanitariserTelephone(cel), extension = SanitariserTexte(poste) };
+                var adresse = new Modele.tblAdresse { adresse = SanitariserTexte(adres), ville = SanitariserTexte(vil), codepostal = traiterCodePostal(SanitariserTexte(codepost)), province = SanitariserTexte(prov), pays = SanitariserTexte(pay), telBureau = SanitariserTelephone(tel), telCellulaire = SanitariserTelephone(cel), extension = SanitariserTexte(poste) };
                 provider.InsertAdresse(adresse);
-                var agence = new Modele.tblAgence { noAgence = _noAgence, nom = name, courriel = courr, noAdresse = adresse.noAdresse };//On enregistre l'agence.
+                var agence = new Modele.tblAgence { noAgence = _noAgence, nom = name, courriel = SanitariserCourriel(courr), noAdresse = adresse.noAdresse };//On enregistre l'agence.
                 provider.InsertAgence(agence);//Et enfin on sauvegarde les modifications.
                 return false;
             }
 
         }
+
+
         internal bool AgenceExiste(string _noAgence, out string nomAgence)
         {
             var Agence = provider.SelectAgence(SanitariserTexte(_noAgence));

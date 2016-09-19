@@ -112,6 +112,7 @@ namespace FestiRire
                 {
                     DCA.deleteCatArt(IdCatArt);
                     MessageBox.Show("La catégorie d'artiste a été supprimée avec succés");
+                    this.Close();
                 }
             }
         }
