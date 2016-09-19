@@ -7,9 +7,9 @@ USE PE2_Officiel
 GO
 
 CREATE VIEW  S_Contrat.vueSomContrat WITH SCHEMABINDING AS
-SELECT con.noContrat, agen.nom,sta.nomStatut, con.lieu, con.dateSupprime
-FROM S_Contrat.tblAgence AS agen 
-LEFT JOIN S_Contrat.tblContrat AS con 
+SELECT con.noContrat, agen.nom,sta.nomStatut, con.lieu
+FROM S_Contrat.tblContrat AS con  
+LEFT JOIN S_Contrat.tblAgence AS agen 
 ON con.noAgence=agen.noAgence
 LEFT JOIN S_Contrat.tblStatut AS sta
 ON con.noStatut=sta.noStatut
@@ -19,7 +19,7 @@ PRINT 'Création de la vue reliée a l''affichage du sommaire contrat'
 
 GO
 CREATE VIEW  S_Contrat.vueSomCatArtiste WITH SCHEMABINDING AS
-SELECT cat.noCategorie, cat.nom, cat.description, cat.dateSupprime
+SELECT cat.noCategorie, cat.nom, cat.description
 FROM S_Contrat.tblCategorieArtiste AS cat
 WHERE cat.dateSupprime IS NULL
 GO
@@ -27,7 +27,7 @@ PRINT 'Création de la vue reliée a l''affichage du sommaire catégories d''artist
 GO
 
 CREATE VIEW  S_Contrat.vueSomArtiste WITH SCHEMABINDING AS
-SELECT Art.noArtiste, Art.nom as 'nomAriste',Cat.nom as 'nomCat',Art.dateSupprime
+SELECT Art.noArtiste, Art.nom as 'nomAriste',Cat.nom as 'nomCat'
 FROM S_Contrat.tblArtiste AS Art
 LEFT JOIN S_Contrat.tblCatArtisteArt AS catArt
 ON Art.noArtiste=catArt.noArtiste
@@ -50,7 +50,7 @@ PRINT 'Création de la vue pour sommaire agence'
 GO
 
 CREATE VIEW  S_Contrat.vueSomEngagement WITH SCHEMABINDING AS
-SELECT eng.noEngagement, eng.nature, eng.date, eng.heure, eng.duree, eng.lieu, eng.dateSupprime, con.noContrat
+SELECT eng.noEngagement, eng.nature, eng.date, eng.heure, eng.duree, eng.lieu, con.noContrat
 FROM S_Contrat.tblEngagement AS eng
 LEFT JOIN S_Contrat.tblContrat AS con ON con.noContrat = eng.noContrat
 WHERE eng.dateSupprime IS NULL
@@ -59,7 +59,7 @@ PRINT 'Création de la vue pour sommaire Engagement'
 GO
 
 CREATE VIEW  S_Contrat.vueSomExigence WITH SCHEMABINDING AS
-SELECT exi.noExigence, exi.nom, exi.date, exi.montant, exi.descriptionCourte, exi.noStatut, exi.dateSupprime, con.noContrat
+SELECT exi.noExigence, exi.nom, exi.date, exi.montant, exi.descriptionCourte, exi.noStatut, con.noContrat
 FROM S_Contrat.tblExigence AS exi
 LEFT JOIN S_Contrat.tblContrat AS con ON con.noContrat = exi.noContrat
 WHERE exi.dateSupprime IS NULL
