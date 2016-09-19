@@ -390,7 +390,7 @@ namespace FestiRire
             if (this.selection != null)
                 this.selection.commentaire = rtbCommentaire.Rtf;
             else
-                MessageBox.Show("Vous devez sélectionnez un fichier ou une photo avant d'y mettre une commentire");
+                MessageBox.Show("Vous devez sélectionnez un fichier ou une photo avant d'y mettre une commentaire");
         }
 
         private void cmbContrat_SelectedValueChanged(object sender, EventArgs e)

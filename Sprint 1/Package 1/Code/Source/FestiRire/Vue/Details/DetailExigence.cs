@@ -14,6 +14,7 @@ namespace FestiRire
     {
         Controleur.Details.DetailExigence conExigence = new Controleur.Details.DetailExigence();
         Controleur.Sommaires.SommaireStatut conStatut = new Controleur.Sommaires.SommaireStatut();
+        Controleur.Validation validation = new Controleur.Validation();
         int? idExigence;
         public DetailExigence()
         {
@@ -24,17 +25,36 @@ namespace FestiRire
 
         private void btnEnregistrerExigence_Click(object sender, EventArgs e)
         {
-            if (idExigence != null)
+            if(txtNom.Text=="" || cmbStatut.SelectedIndex==-1)
             {
-                conExigence.EnregistrerExigence((int)idExigence, txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
-                MessageBox.Show("Exigence Modifiée");
+                MessageBox.Show("Veuillez entrer le nom de l'exigence et son statut.");
+                return;
             }
             else
             {
-                conExigence.EnregistrerExigence(txtNom.Text, dateExigence.Value,Convert.ToDecimal(txtMontant.Text), cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
-                MessageBox.Show("Exigence Ajoutée");
+                if(!validation.ValiderChampDate(dateExigence))
+                {
+                    MessageBox.Show(validation.MessVide);
+                }
+                else
+                {
+                    if (idExigence != null)
+                    {
+                        conExigence.EnregistrerExigence((int)idExigence, txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+                        MessageBox.Show("Exigence Modifiée");
+                    }
+                    else
+                    {
+                        conExigence.EnregistrerExigence(txtNom.Text, dateExigence.Value, Convert.ToDecimal(txtMontant.Text), cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+                        MessageBox.Show("Exigence Ajoutée");
+                    }
+                    this.Close();
+                }
             }
-            this.Close();
+      
+   
+           
+
 
         }
 
