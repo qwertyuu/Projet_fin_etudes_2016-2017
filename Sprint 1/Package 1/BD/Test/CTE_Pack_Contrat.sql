@@ -238,13 +238,6 @@ CHECK (
 (CASE WHEN noDiffuseur IS NOT NULL THEN 1 ELSE 0 END
     + CASE WHEN noAgence IS NOT NULL THEN 1 ELSE 0 END)
     = 1
-)
-GO
-  ALTER TABLE S_Contrat.tblResponsable ADD
-  CONSTRAINT CHE_TEL_LONG_NUM_RES CHECK(isnumeric(telBureau)=1 and len(telBureau)=10)
-GO
-  ALTER TABLE S_Contrat.tblResponsable ADD
-  CONSTRAINT CHE_CEL_LONG_NUM_RES_RES  CHECK(isnumeric(telCellulaire)=1 and len(telCellulaire)=10)
 GO
   ALTER TABLE S_Contrat.tblResponsable ADD
   CONSTRAINT CHE_COUR_FORM_RES CHECK(courriel like '%_@__%.__%')

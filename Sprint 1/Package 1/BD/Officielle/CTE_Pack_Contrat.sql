@@ -247,12 +247,6 @@ GO
 PRINT 'Création des contraintes CHECK de table tblAdresse'
 GO
   ALTER TABLE S_Contrat.tblAdresse ADD
-  CONSTRAINT CHE_TEL_LONG_NUM_ADR CHECK(isnumeric(telBureau)=1 and len(telBureau)=10)
-GO
-  ALTER TABLE S_Contrat.tblAdresse ADD
-  CONSTRAINT CHE_CEL_LONG_NUM_RES_ADR   CHECK(isnumeric(telCellulaire)=1 and len(telCellulaire)=10)
-GO
-  ALTER TABLE S_Contrat.tblAdresse ADD
   CONSTRAINT CHE_PRO_LON_MAJ_ADR CHECK(len(province)=2 and isnumeric(province)=0 ) 
 GO
 GO
