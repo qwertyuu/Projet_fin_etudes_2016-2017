@@ -267,5 +267,10 @@ namespace FestiRire
             sA.ShowDialog();
             PeuplerListes();
         }
+
+        private void btnEnregistrerContrat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

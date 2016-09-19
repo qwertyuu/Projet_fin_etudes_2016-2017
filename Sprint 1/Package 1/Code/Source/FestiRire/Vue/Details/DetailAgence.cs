@@ -63,6 +63,15 @@ namespace FestiRire
                             MessageBox.Show("Veuillez entrer un code postal valide");
                             return;
                         }
+                        else
+                        {
+                            if (!validation.VarifierNomAgence( txtNomAgence.Text))
+                            {
+                                MessageBox.Show("Le nom de l'agence doit finir par 90");
+                                return;
+                            }
+
+                        }
                         
                     }
 

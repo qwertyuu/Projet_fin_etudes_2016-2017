@@ -117,6 +117,16 @@ namespace FestiRire.Controleur
             return Vide;
         }
 
+        public bool VarifierNomAgence(string nom)
+        {
+            if (nom[nom.Length - 1] == '0' && nom[nom.Length - 2] == '9')
+                return true;
+            else
+            return false;
+                    
+
+        }
+
         //Validation de l'agagement.
         public bool ValiderChampDate(DateTimePicker date)
         {

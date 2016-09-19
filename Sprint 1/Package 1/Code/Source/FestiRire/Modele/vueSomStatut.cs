@@ -18,6 +18,5 @@ namespace FestiRire.Modele
         public string NomStatut { get; set; }
         public string description { get; set; }
         public string couleur { get; set; }
-        public Nullable<System.DateTime> dateSupprime { get; set; }
     }
 }

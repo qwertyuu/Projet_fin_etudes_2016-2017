@@ -21,6 +21,5 @@ namespace FestiRire.Modele
         public string descriptionCourte { get; set; }
         public int noStatut { get; set; }
         public string noContrat { get; set; }
-        public Nullable<System.DateTime> dateSupprime { get; set; }
     }
 }

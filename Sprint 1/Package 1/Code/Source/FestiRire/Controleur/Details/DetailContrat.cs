@@ -22,5 +22,14 @@ namespace FestiRire.Controleur.Details
         {
             return provider.SelectResponsableDiffuseur(idContrat);
         }
+
+        //private Modele.tblResponsable EnregistrerResoAgence(string nom, string prenom, string courriel, string cel, string tel, string poste, string signataire, DateTime dateSignatire)
+        //{
+
+        //}
+        //public bool EnregistrerContrat(string IdAcien, string no, string nomContrat,string nomRespo,string prenomRespo,string couRespo,string tel, string cell,string poste,)
+        //{
+
+        //}
     }
 }
