@@ -11,7 +11,16 @@ namespace FestiRire.Controleur.Details
 
         public string TraiterNoAgence(string noAgence)
         {
-            char[] caracteresAcceptes = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".ToCharArray();
+            char[] caracteresAcceptes = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-".ToCharArray();
+            StringBuilder agenceFinal = new StringBuilder();
+            foreach (var item in noAgence)
+            {
+                if (caracteresAcceptes.Contains(item))
+                {
+                    agenceFinal.Append(item);
+                }
+            }
+            return agenceFinal.ToString();
         }
 
         public Modele.tblAgence LoadAgence(string id)
