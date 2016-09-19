@@ -9,9 +9,9 @@ GO
 CREATE VIEW  S_Contrat.vueSomContrat WITH SCHEMABINDING AS
 SELECT con.noContrat, agen.nom,sta.nomStatut, con.lieu, con.dateSupprime
 FROM S_Contrat.tblAgence AS agen 
-JOIN S_Contrat.tblContrat AS con 
+LEFT JOIN S_Contrat.tblContrat AS con 
 ON con.noAgence=agen.noAgence
-JOIN S_Contrat.tblStatut AS sta
+LEFT JOIN S_Contrat.tblStatut AS sta
 ON con.noStatut=sta.noStatut
 WHERE con.dateSupprime IS NULL
 GO
@@ -39,11 +39,12 @@ PRINT 'Création de la vue pour sommaire artiste'
 GO
 
 CREATE VIEW  S_Contrat.vueSomAgence WITH SCHEMABINDING AS
-SELECT agen.noAgence, agen.nom, adre.ville, adre.telBureau, adre.telCellulaire, adre.dateSupprime
+SELECT agen.noAgence, agen.nom, adre.ville, adre.telBureau, adre.telCellulaire
 FROM S_Contrat.tblAgence AS agen
-JOIN S_Contrat.tblAdresse AS adre
+LEFT JOIN S_Contrat.tblAdresse AS adre
 ON agen.noAdresse=adre.noAdresse
 WHERE adre.dateSupprime IS NULL
+AND agen.dateSupprime IS NULL
 GO
 PRINT 'Création de la vue pour sommaire agence'
 GO
@@ -51,7 +52,7 @@ GO
 CREATE VIEW  S_Contrat.vueSomEngagement WITH SCHEMABINDING AS
 SELECT eng.noEngagement, eng.nature, eng.date, eng.heure, eng.duree, eng.lieu, eng.dateSupprime, con.noContrat
 FROM S_Contrat.tblEngagement AS eng
-JOIN S_Contrat.tblContrat AS con ON con.noContrat = eng.noContrat
+LEFT JOIN S_Contrat.tblContrat AS con ON con.noContrat = eng.noContrat
 WHERE eng.dateSupprime IS NULL
 GO
 PRINT 'Création de la vue pour sommaire Engagement'
@@ -60,7 +61,7 @@ GO
 CREATE VIEW  S_Contrat.vueSomExigence WITH SCHEMABINDING AS
 SELECT exi.noExigence, exi.nom, exi.date, exi.montant, exi.descriptionCourte, exi.noStatut, exi.dateSupprime, con.noContrat
 FROM S_Contrat.tblExigence AS exi
-JOIN S_Contrat.tblContrat AS con ON con.noContrat = exi.noContrat
+LEFT JOIN S_Contrat.tblContrat AS con ON con.noContrat = exi.noContrat
 WHERE exi.dateSupprime IS NULL
 GO
 PRINT 'Création de la vue pour sommaire Exigence'
