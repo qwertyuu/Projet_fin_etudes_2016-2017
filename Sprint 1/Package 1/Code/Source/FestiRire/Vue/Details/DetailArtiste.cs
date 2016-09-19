@@ -395,6 +395,7 @@ namespace FestiRire
                 }
             }
             conDetailFichiers.Save();
+            MessageBox.Show("L'artiste a été enregistré avec succès");
             this.Close();
         }
 

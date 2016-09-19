@@ -33,7 +33,7 @@ namespace FestiRire
 
         public List<Modele.vueSomStatut> ToutVueStatus()
         {
-            return BD.vueSomStatut.ToList();
+            return BD.vueSomStatut.AsNoTracking().ToList();
         }
 
         public DBProvider()
@@ -320,24 +320,24 @@ namespace FestiRire
 
         public List<Modele.vueSomAgence> ToutVueAgence()
         {
-            return (from item in BD.vueSomAgence
+            return (from item in BD.vueSomAgence.AsNoTracking()
                    select item).ToList();
         }
 
         public List<Modele.vueSomArtiste> ToutVueArtiste()
         {
-            return BD.vueSomArtiste.GroupBy(a => a.noArtiste.ToString()).Select(grp => grp.FirstOrDefault()).ToList();
+            return BD.vueSomArtiste.AsNoTracking().GroupBy(a => a.noArtiste.ToString()).Select(grp => grp.FirstOrDefault()).ToList();
         }
 
         public List<Modele.vueSomCatArtiste> ToutVueCategorieArtiste()
         {
-            return (from item in BD.vueSomCatArtiste
+            return (from item in BD.vueSomCatArtiste.AsNoTracking()
                    select item).ToList();
         }
 
         public List<Modele.vueSomContrat> ToutVueContrats()
         {
-            return (from item in BD.vueSomContrat
+            return (from item in BD.vueSomContrat.AsNoTracking()
                    select item).ToList();
         }
 
