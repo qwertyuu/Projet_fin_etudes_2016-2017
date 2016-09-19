@@ -60,7 +60,7 @@ namespace FestiRire
                 lstArtiste.SetSelected(i, artistes.Contains(lstArtiste.Items[i] as Modele.tblArtiste));
             }
 
-            //peupler le responsable
+            //peupler le responsable de l'agence
             var ResponsableAgence = conContrat.ResponsableAgence(idContrat);
             txtNomResponsableAgence.Text = ResponsableAgence.nom;
             txtPrenomResponsableAgence.Text = ResponsableAgence.prenom;
@@ -71,7 +71,23 @@ namespace FestiRire
             dateSignatureAgence.Value = ResponsableAgence.dateSignature ?? DateTime.Now;
             txtExtensionTelephoneAgence.Text = ResponsableAgence.extension;
             chkIdemAgence.Checked = ResponsableAgence.idem;
-            
+
+
+            //peupler le responsable du diffuseur
+            var ResponsableDiffuseur = conContrat.ResponsableDiffuseur(idContrat);
+            txtNomResponsableDiffuseur.Text = ResponsableDiffuseur.nom;
+            txtPrenomResponsableDiffuseur.Text = ResponsableDiffuseur.prenom;
+            txtCellulaireDiffuseur.Text = conContrat.FormatTelephone(ResponsableDiffuseur.telCellulaire);
+            txtCourrielDiffuseur.Text = ResponsableDiffuseur.courriel;
+            txtTelephoneDiffuseur.Text = conContrat.FormatTelephone(ResponsableDiffuseur.telBureau);
+            txtSignataireDiffuseur.Text = ResponsableDiffuseur.signataire;
+            dateSignatureDiffuseur.Value = ResponsableDiffuseur.dateSignature ?? DateTime.Now;
+            txtExtensionTelephoneDiffuseur.Text = ResponsableDiffuseur.extension;
+            chkIdemDiffuseur.Checked = ResponsableDiffuseur.idem;
+
+            //peupler les exigences
+
+            //dgvExigence.DataSource
         }
 
         private void PeuplerListes()
@@ -175,7 +191,7 @@ namespace FestiRire
                 btnStatut2.Text = "Contrat annulé";
                 btnStatut2.Visible = true;
             }
-            else if (lblStatutContrat.Text == "Annulé" || lblStatutContrat.Text == "Supprimer" || lblStatutContrat.Text == "Terminé")
+            else if (lblStatutContrat.Text == "Annulé" || lblStatutContrat.Text == "Supprimé" || lblStatutContrat.Text == "Terminé")
             {
                 btnStatut1.Visible = false;
                 btnStatut2.Visible = false;

@@ -23,7 +23,18 @@ namespace FestiRire
         public Modele.tblFichierPersonnel selection
         {
             get { return Selection; }
-            set { Selection = value; rtbCommentaire.Enabled = true; }
+            set {
+                Selection = value;
+                if (value != null)
+                {
+                    rtbCommentaire.Enabled = true;
+                    btnItaliqueCommentaire.Enabled = true;
+                    btnSouslignerCommentaire.Enabled = true;
+                    btnEnumCommentaire.Enabled = true;
+                    btnGrasCommentaire.Enabled = true;
+                    numPoliceCommentaire.Enabled = true;
+                }
+            }
         }
 
         public DetailArtiste()
@@ -210,7 +221,6 @@ namespace FestiRire
                 cmbContrat.SelectedIndex = 0;
                 rtbCommentaire.Rtf = "";
                 this.selection = null;
-                rtbCommentaire.Enabled = true;
                 return;
             }
             Dictionary<string, string> types = new Dictionary<string, string>()
