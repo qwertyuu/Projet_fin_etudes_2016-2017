@@ -237,7 +237,7 @@ ADD CONSTRAINT CHE_DIF_AGE_NUL_RES
 CHECK (
 (CASE WHEN noDiffuseur IS NOT NULL THEN 1 ELSE 0 END
     + CASE WHEN noAgence IS NOT NULL THEN 1 ELSE 0 END)
-    = 1
+    = 1)
 GO
   ALTER TABLE S_Contrat.tblResponsable ADD
   CONSTRAINT CHE_COUR_FORM_RES CHECK(courriel like '%_@__%.__%')
