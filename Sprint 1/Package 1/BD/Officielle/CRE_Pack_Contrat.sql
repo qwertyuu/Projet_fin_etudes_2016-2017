@@ -32,7 +32,7 @@ GO
 CREATE TABLE S_Contrat.tblContrat
 (
 	noContrat varchar(20) NOT NULL,
-	lieu text,
+	lieu varchar(50),
 	nom varchar(50) NOT NULL,
 	description text,				/*RTF*/
 	commentaire text,				/*RTF*/
@@ -77,7 +77,7 @@ CREATE TABLE S_Contrat.tblEngagement
 (
 	noEngagement int NOT NULL identity(1,1),
 	duree varchar(6) NOT NULL,
-	lieu text NOT NULL,
+	lieu varchar(50) NOT NULL,
 	date date,
 	heure time,
 	nature varchar(50) NOT NULL,
