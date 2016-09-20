@@ -419,16 +419,19 @@
             // 
             // Nom
             // 
+            this.Nom.DataPropertyName = "nom";
             this.Nom.HeaderText = "Nom";
             this.Nom.Name = "Nom";
             // 
             // date
             // 
+            this.date.DataPropertyName = "date";
             this.date.HeaderText = "Date";
             this.date.Name = "date";
             // 
             // montant
             // 
+            this.montant.DataPropertyName = "montant";
             this.montant.HeaderText = "Montant";
             this.montant.Name = "montant";
             // 
@@ -439,6 +442,7 @@
             // 
             // DescriCourte
             // 
+            this.DescriCourte.DataPropertyName = "descriptionCourte";
             this.DescriCourte.HeaderText = "Description";
             this.DescriCourte.Name = "DescriCourte";
             // 
@@ -479,26 +483,31 @@
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "nature";
             this.Column3.HeaderText = "Nature";
             this.Column3.Name = "Column3";
             // 
             // dateEngagement
             // 
+            this.dateEngagement.DataPropertyName = "date";
             this.dateEngagement.HeaderText = "Date";
             this.dateEngagement.Name = "dateEngagement";
             // 
             // HeureEngagement
             // 
+            this.HeureEngagement.DataPropertyName = "heure";
             this.HeureEngagement.HeaderText = "Heure";
             this.HeureEngagement.Name = "HeureEngagement";
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "duree";
             this.Column1.HeaderText = "Durée";
             this.Column1.Name = "Column1";
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "lieu";
             this.Column4.HeaderText = "Lieu";
             this.Column4.Name = "Column4";
             // 
@@ -944,11 +953,11 @@
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1142, 620);
+            this.label10.Location = new System.Drawing.Point(1117, 621);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 13);
+            this.label10.Size = new System.Drawing.Size(114, 13);
             this.label10.TabIndex = 23;
-            this.label10.Text = "Statut du contrat:";
+            this.label10.Text = "Changement de statut:";
             // 
             // btnItaliqueCommentaire
             // 
@@ -1282,11 +1291,6 @@
         private System.Windows.Forms.Button btnGrasCommentaire;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn montant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescriCourte;
         private System.Windows.Forms.Button btnItaliqueCommentaire;
         private System.Windows.Forms.Button btnSouslignerCommentaire;
         private System.Windows.Forms.Button btnSouslignerDescription;
@@ -1306,11 +1310,6 @@
         private System.Windows.Forms.TextBox txtLieuContrat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtExtensionTelephoneAgence;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateEngagement;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HeureEngagement;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtExtensionTelephoneDiffuseur;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -1320,6 +1319,16 @@
         private System.Windows.Forms.Button btnStatut2;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lblStatutContrat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescriCourte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateEngagement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeureEngagement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
 

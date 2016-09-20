@@ -23,7 +23,7 @@ namespace FestiRire.Controleur.Details
             return provider.SelectResponsableDiffuseur(idContrat);
         }
 
-        public void  EnregistrerResponsable(string IdAcienContrat,string nomRespoAge, string prenomRespoAge, string courr, string cel, string tel, string poste, string signataireRespo, DateTime dateSignatire, bool idem, string noAge,int noDiff)
+        public void  EnregistrerResponsable(string IdAcienContrat,string nomRespoAge, string prenomRespoAge, string courr, string cel, string tel, string poste, string signataireRespo, DateTime dateSignatire, bool idem, string noAge,int? noDiff)
         {
             if(IdAcienContrat!=null)
             {
@@ -54,8 +54,7 @@ namespace FestiRire.Controleur.Details
 
         private int ReturnNoSatut(string nom)
         {
-           
-             return provider.ReturnStatut(nom).noStatut;
+            return provider.SelectStatut(nom).noStatut;
         }
         public bool EnregistrerContrat(string IdAcienContrat, string IdNouveauContrat, string nomContrat,string lieu,string com, string desc, string nomStatut,string noAgence)
         {
@@ -76,7 +75,7 @@ namespace FestiRire.Controleur.Details
             }
             else
             {
-                var contrat = new Modele.tblContrat { lieu = lieu, nom = nomContrat, description = desc, commentaire = com, noStatut = noStatut, noAgence = noAgence };
+                var contrat = new Modele.tblContrat { noContrat = IdNouveauContrat, lieu = lieu, nom = nomContrat, description = desc, commentaire = com, noStatut = noStatut, noAgence = noAgence };
                 provider.InsertContrat(contrat);
                 return true;
             }

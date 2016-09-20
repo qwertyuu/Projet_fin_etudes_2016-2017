@@ -31,7 +31,7 @@ namespace FestiRire
             return contrat.tblResponsable.SingleOrDefault(a => a.noDiffuseur != null && a.dateSupprime == null);
         }
 
-        public tblStatut ReturnStatut(string nom)
+        public tblStatut SelectStatut(string nom)
         {
             return BD.tblStatut.SingleOrDefault(s=>s.nomStatut == nom && s.dateSupprime == null && s.noStatut <= 6);
         }
@@ -361,6 +361,16 @@ namespace FestiRire
         {
             item.dateSupprime = DateTime.Now;
             BD.SaveChanges();
+        }
+
+        internal List<Modele.vueSomEngagement> ToutEngagement()
+        {
+            return BD.vueSomEngagement.AsNoTracking().ToList();
+        }
+
+        internal List<Modele.vueSomExigence> ToutExigence()
+        {
+            return BD.vueSomExigence.AsNoTracking().ToList();
         }
     }
 }

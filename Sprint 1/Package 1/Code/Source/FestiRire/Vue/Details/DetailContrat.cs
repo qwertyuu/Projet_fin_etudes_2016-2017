@@ -12,10 +12,13 @@ namespace FestiRire
 {
     public partial class DetailContrat : Form
     {
+        enum listes { Tout, Artiste, Agence, Exigence, Engagement }
         Controleur.Details.DetailContrat conContrat;
         Controleur.Sommaires.SommaireAgence conSomAgence;
         Controleur.Details.DetailArtiste conArtiste;
-        Controleur.Validation validation = new Controleur.Validation();
+        Controleur.Validation validation;
+        Controleur.Sommaires.SommaireExigence conSomExi;
+        Controleur.Sommaires.SommaireEngagement conSomEng;
         private string idContrat;
         private string idAgence;
         private int idDiffuseur;
@@ -23,21 +26,51 @@ namespace FestiRire
         public DetailContrat()
         {
             InitializeComponent();
-            conContrat = new Controleur.Details.DetailContrat();
-            conSomAgence = new Controleur.Sommaires.SommaireAgence();
-            conArtiste = new Controleur.Details.DetailArtiste();
+            InitComplet();
             idContrat = null;
             idDiffuseur = 1;
             PeuplerListes();
             verifierStatut();
         }
 
-        public DetailContrat(string noContrat)
+        public void InitComplet()
         {
-            InitializeComponent();
+            //propriétés du datagridview engagement
+            dgvEngagement.AutoGenerateColumns = false;
+            dgvEngagement.RowHeadersVisible = false;
+            dgvEngagement.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvEngagement.AllowUserToResizeRows = false;
+            dgvEngagement.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvEngagement.MultiSelect = false;
+            dgvEngagement.AllowUserToAddRows = false;
+            dgvEngagement.ReadOnly = true;
+            dgvEngagement.AllowUserToDeleteRows = false;
+
+
+            //propriétés du datagridview exigence
+            dgvExigence.AutoGenerateColumns = false;
+            dgvExigence.RowHeadersVisible = false;
+            dgvExigence.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvExigence.AllowUserToResizeRows = false;
+            dgvExigence.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvExigence.MultiSelect = false;
+            dgvExigence.AllowUserToAddRows = false;
+            dgvExigence.ReadOnly = true;
+            dgvExigence.AllowUserToDeleteRows = false;
+
+
             conContrat = new Controleur.Details.DetailContrat();
             conSomAgence = new Controleur.Sommaires.SommaireAgence();
             conArtiste = new Controleur.Details.DetailArtiste();
+            validation = new Controleur.Validation();
+            conSomExi = new Controleur.Sommaires.SommaireExigence();
+            conSomEng = new Controleur.Sommaires.SommaireEngagement();
+        }
+
+        public DetailContrat(string noContrat)
+        {
+            InitializeComponent();
+            InitComplet();
             idContrat = noContrat;
             idDiffuseur = 1;
             PeuplerListes();
@@ -57,6 +90,15 @@ namespace FestiRire
             return noExtrait;
 
         }
+
+        private void SelectionnerArtistes(Modele.tblContrat contratDuMoment)
+        {
+            var artistes = contratDuMoment.tblArtiste;
+            for (int i = 0; i < lstArtiste.Items.Count; i++)
+            {
+                lstArtiste.SetSelected(i, artistes.Contains(lstArtiste.Items[i] as Modele.tblArtiste));
+            }
+        }
         private void PeuplerInterface()
         {
             //peupler les informations qui viennent directement du contrat lui-meme
@@ -71,11 +113,7 @@ namespace FestiRire
             cmbNomAgence.SelectedItem = conSomAgence.Tout().SingleOrDefault(a => a.noAgence == contratDuMoment.noAgence);
 
             //sélectionner les artistes liés au contrat
-            var artistes = contratDuMoment.tblArtiste;
-            for (int i = 0; i < lstArtiste.Items.Count; i++)
-            {
-                lstArtiste.SetSelected(i, artistes.Contains(lstArtiste.Items[i] as Modele.tblArtiste));
-            }
+            SelectionnerArtistes(contratDuMoment);
 
             //peupler le responsable de l'agence
             var ResponsableAgence = conContrat.ResponsableAgence(idContrat);
@@ -102,15 +140,39 @@ namespace FestiRire
             txtExtensionTelephoneDiffuseur.Text = ResponsableDiffuseur.extension;
             chkIdemDiffuseur.Checked = ResponsableDiffuseur.idem;
 
-            //peupler les exigences
-
-            //dgvExigence.DataSource
+            //peupler le statut et associer les bon boutons de changement de statut
+            lblStatutContrat.Text = contratDuMoment.tblStatut.nomStatut;
+            verifierStatut();
         }
 
-        private void PeuplerListes()
+        private void PeuplerListes(listes l = listes.Tout)
         {
-            cmbNomAgence.DataSource = conSomAgence.Tout();
-            lstArtiste.DataSource = conArtiste.Tout();
+            switch (l)
+            {
+                case listes.Tout:
+                    //peupler toutes les listes
+                    cmbNomAgence.DataSource = conSomAgence.Tout();
+                    lstArtiste.DataSource = conArtiste.Tout();
+                    dgvExigence.DataSource = conSomExi.ToutPourContrat(idContrat).ToSortableBindingList();
+                    dgvEngagement.DataSource = conSomEng.ToutPourContrat(idContrat).ToSortableBindingList();
+                    break;
+                case listes.Artiste:
+                    //peupler les artistes
+                    lstArtiste.DataSource = conArtiste.Tout();
+                    break;
+                case listes.Agence:
+                    //peupler les agences
+                    cmbNomAgence.DataSource = conSomAgence.Tout();
+                    break;
+                case listes.Exigence:
+                    //peupler les exigences
+                    dgvExigence.DataSource = conSomExi.ToutPourContrat(idContrat).ToSortableBindingList();
+                    break;
+                case listes.Engagement:
+                    //peupler les engagements
+                    dgvEngagement.DataSource = conSomEng.ToutPourContrat(idContrat).ToSortableBindingList();
+                    break;
+            }
         }
 
         //Gestion des styles reliés aux commentaires et description
@@ -138,8 +200,7 @@ namespace FestiRire
         {
             conContrat.EnumText(rtbCommentaire);
         }
-
-
+        
         private void btnGrasDescription_Click(object sender, EventArgs e)
         {
             conContrat.TextGras(rtbDescriptionContrat);
@@ -181,7 +242,7 @@ namespace FestiRire
         {
             if (btnStatut2.Text == "Supprimer")
                 lblStatutContrat.Text = "Supprimé";
-            else if (btnStatut2.Text == "Contrat annulé")
+            else if (btnStatut2.Text == "Annuler")
                 lblStatutContrat.Text = "Annulé";
 
             verifierStatut();
@@ -205,7 +266,7 @@ namespace FestiRire
             {
                 btnStatut1.Text = "Terminé";
                 btnStatut1.Visible = true;
-                btnStatut2.Text = "Contrat annulé";
+                btnStatut2.Text = "Annuler";
                 btnStatut2.Visible = true;
             }
             else if (lblStatutContrat.Text == "Annulé" || lblStatutContrat.Text == "Supprimé" || lblStatutContrat.Text == "Terminé")
@@ -229,6 +290,7 @@ namespace FestiRire
         {
             var frmDetailEngagement = new DetailEngagement();
             frmDetailEngagement.ShowDialog();
+            PeuplerListes(listes.Engagement);
 
         }
 
@@ -236,6 +298,7 @@ namespace FestiRire
         {
             var frmDetailExigence = new DetailExigence();
             frmDetailExigence.ShowDialog();
+            PeuplerListes(listes.Exigence);
         }
 
         private void cmbNomAgence_Format(object sender, ListControlConvertEventArgs e)
@@ -248,7 +311,7 @@ namespace FestiRire
         {
             SommaireAgence sommaireAgence = new SommaireAgence();
             sommaireAgence.ShowDialog();
-            PeuplerListes();
+            PeuplerListes(listes.Agence);
         }
 
         private void chkIdemAgence_CheckedChanged(object sender, EventArgs e)
@@ -282,14 +345,17 @@ namespace FestiRire
         {
             SommaireArtiste sA = new SommaireArtiste();
             sA.ShowDialog();
-            PeuplerListes();
+            PeuplerListes(listes.Artiste);
+            var contratDuMoment = conContrat.SelectContrat(idContrat);
+            if (contratDuMoment != null)
+            {
+                SelectionnerArtistes(contratDuMoment);
+            }
         }
 
         private void btnEnregistrerContrat_Click(object sender, EventArgs e)
         {
             string mes = "";
-            MessageBox.Show(DisplayObjectInfo(conContrat.SelectContrat(txtNumeroContrat.Text)));
-            return;
             if (txtNumeroContrat.Text == "" || txtNomContrat.Text == "")
             {
                 MessageBox.Show("Veuillez entrer le numéro et le nom du contrat");
@@ -311,20 +377,28 @@ namespace FestiRire
                     }
                 }
             }
+            var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
+            if (idContrat == null && contratEcrit != null)
+            {
+                if (MessageBox.Show(string.Format("Le numéro de contrat que vous avez entré existe déjà sous le nom de {0}\nVoulez-vous l'écraser?", contratEcrit.nom), "Contrat existant", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return;
+                }
+            }
             
 
             //On enregistre le responsable de l'agence
-            conContrat.EnregistrerResponsable(idContrat, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignatureAgence.Value, chkIdemAgence.Checked, idAgence, idDiffuseur);
+            conContrat.EnregistrerResponsable(idContrat, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignatureAgence.Value, chkIdemAgence.Checked, idAgence, null);
             //On enregistre le responsable du  diffuseur
             conContrat.EnregistrerResponsable(idContrat, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignatureDiffuseur.Value, chkIdemDiffuseur.Checked, null, idDiffuseur);
 
             if (!conContrat.EnregistrerContrat(idContrat,txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence))
             {
-                mes = "Le contrat a été modifiée  avec succés";
+                mes = "Le contrat a été modifiée avec succès";
             }
             else
             {
-                mes = "Le contrat a été ajouté  avec succés";
+                mes = "Le contrat a été ajouté avec succès";
             }
             MessageBox.Show(mes);
             this.Close();
@@ -339,45 +413,6 @@ namespace FestiRire
             {
                 this.Close();
             }
-        }
-
-        public static string DisplayObjectInfo(Object o)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            // Include the type of the object
-            System.Type type = o.GetType();
-            sb.Append("Type: " + type.Name);
-
-            // Include information for each Field
-            sb.Append("\r\n\r\nFields:");
-            System.Reflection.FieldInfo[] fi = type.GetFields();
-            if (fi.Length > 0)
-            {
-                foreach (System.Reflection.FieldInfo f in fi)
-                {
-                    sb.Append("\r\n " + f.ToString() + " = " +
-                              f.GetValue(o));
-                }
-            }
-            else
-                sb.Append("\r\n None");
-
-            // Include information for each Property
-            sb.Append("\r\n\r\nProperties:");
-            System.Reflection.PropertyInfo[] pi = type.GetProperties();
-            if (pi.Length > 0)
-            {
-                foreach (System.Reflection.PropertyInfo p in pi)
-                {
-                    sb.Append("\r\n " + p.ToString() + " = " +
-                              p.GetValue(o, null));
-                }
-            }
-            else
-                sb.Append("\r\n None");
-
-            return sb.ToString();
         }
     }
 }
