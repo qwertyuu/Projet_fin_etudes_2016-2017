@@ -15,6 +15,7 @@ namespace FestiRire
         Controleur.Details.DetailContrat conContrat;
         Controleur.Sommaires.SommaireAgence conSomAgence;
         Controleur.Details.DetailArtiste conArtiste;
+        Controleur.Validation validation = new Controleur.Validation();
         private string idContrat;
 
         public DetailContrat()
@@ -270,7 +271,39 @@ namespace FestiRire
 
         private void btnEnregistrerContrat_Click(object sender, EventArgs e)
         {
+           if(txtNumeroContrat.Text=="" || txtNomContrat.Text=="")
+            {
+                MessageBox.Show("Veuillez entrer le numéro et le nom du contrat");
+                return;
+            }
+           else
+            {
+                if(!validation.ValiderChampRespo(txtNomResponsableAgence.Text,txtPrenomResponsableAgence.Text,txtCourrielAgence.Text)&&cmbNomAgence.SelectedIndex==-1)
+                {
+                    MessageBox.Show(validation.MessVide + " de l'agence");
+                    return;
+                }
+                else
+                {
+                    if(!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
+                    {
+                        MessageBox.Show(validation.MessVide + " du diffusseur");
+                        return;
+                    }
+                }
+            }
 
+           //if(conContrat.EnregistrerResponsable(idContrat,txtNomResponsableAgence.Text,txtPrenomResponsableAgence.Text,txtCourrielAgence.Text,txtCellulaireAgence.Text,txtTelephoneAgence.Text,chkIdemAgence.Checked,))
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            DialogResult result;
+            result = MessageBox.Show("Si vous fermez vous allez perdre les données déja saisies. Voulez-vous fermer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

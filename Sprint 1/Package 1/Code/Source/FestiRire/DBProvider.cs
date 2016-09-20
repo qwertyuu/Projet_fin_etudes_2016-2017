@@ -70,6 +70,11 @@ namespace FestiRire
             BD.tblCategorieArtiste.Add(catArt);
             BD.SaveChanges();
         }
+        public void InsertContrat(tblContrat contrat)
+        {
+            BD.tblContrat.Add(contrat);
+            BD.SaveChanges();
+        }
 
         public List<tblArtiste> ToutArtiste()
         {
@@ -117,6 +122,7 @@ namespace FestiRire
         }
 
 
+
         public int ReturnNbreCat()
         {
             int nbre=0;
@@ -158,6 +164,11 @@ namespace FestiRire
         public void InsertAgence(Modele.tblAgence agence)
         {
             BD.tblAgence.Add(agence);
+            BD.SaveChanges();
+        }
+        public void InsertResponsable(Modele.tblResponsable respo)
+        {
+            BD.tblResponsable.Add(respo);
             BD.SaveChanges();
         }
 

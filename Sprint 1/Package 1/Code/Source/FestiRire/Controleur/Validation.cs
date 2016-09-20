@@ -117,9 +117,9 @@ namespace FestiRire.Controleur
             return Vide;
         }
 
-        public bool VarifierNomAgence(string nom)
+        public bool VerifierNoAgence(string no)
         {
-            if (nom[nom.Length - 1] == '0' && nom[nom.Length - 2] == '9')
+            if (no[no.Length - 1] == '0' && no[no.Length - 2] == '9')
                 return true;
             else
             return false;
@@ -139,6 +139,17 @@ namespace FestiRire.Controleur
                 return true;
             
 
+        }
+
+        public bool ValiderChampRespo(string nom, string prenom, string courriel)
+        {
+            if (nom == "" || prenom == "" || courriel == "")
+            {
+                messVide = "Veuillez entrez les champs obliatoires";
+                return false;
+            }
+            else
+                return true;
         }
 
     }

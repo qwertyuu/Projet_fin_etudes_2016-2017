@@ -65,7 +65,7 @@ namespace FestiRire
                         }
                         else
                         {
-                            if (!validation.VarifierNomAgence( txtNomAgence.Text))
+                            if (!validation.VerifierNoAgence( txtNo.Text))
                             {
                                 MessageBox.Show("Le nom de l'agence doit finir par 90");
                                 return;
