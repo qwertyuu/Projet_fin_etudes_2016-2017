@@ -102,6 +102,7 @@
             // txtNom
             // 
             this.txtNom.Location = new System.Drawing.Point(81, 12);
+            this.txtNom.MaxLength = 30;
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(284, 20);
             this.txtNom.TabIndex = 1;
@@ -109,6 +110,7 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(716, 358);
             this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnuler.Name = "btnAnnuler";
@@ -190,6 +192,7 @@
             // 
             this.cmbEvenement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbEvenement.Enabled = false;
             this.cmbEvenement.FormattingEnabled = true;
             this.cmbEvenement.Location = new System.Drawing.Point(81, 113);
             this.cmbEvenement.Margin = new System.Windows.Forms.Padding(2);
@@ -293,6 +296,7 @@
             // rtbDescriptionCourte
             // 
             this.rtbDescriptionCourte.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.rtbDescriptionCourte.Enabled = false;
             this.rtbDescriptionCourte.Location = new System.Drawing.Point(372, 25);
             this.rtbDescriptionCourte.Name = "rtbDescriptionCourte";
             this.rtbDescriptionCourte.Size = new System.Drawing.Size(419, 107);

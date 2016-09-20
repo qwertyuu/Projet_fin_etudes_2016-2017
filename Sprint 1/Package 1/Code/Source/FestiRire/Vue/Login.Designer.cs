@@ -63,6 +63,7 @@
             // txtIdUser
             // 
             this.txtIdUser.Location = new System.Drawing.Point(392, 92);
+            this.txtIdUser.MaxLength = 30;
             this.txtIdUser.Name = "txtIdUser";
             this.txtIdUser.Size = new System.Drawing.Size(158, 20);
             this.txtIdUser.TabIndex = 73;
@@ -71,6 +72,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(392, 129);
+            this.txtPassword.MaxLength = 24;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(158, 20);
@@ -125,6 +127,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label10);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
             this.Text = "Identification";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

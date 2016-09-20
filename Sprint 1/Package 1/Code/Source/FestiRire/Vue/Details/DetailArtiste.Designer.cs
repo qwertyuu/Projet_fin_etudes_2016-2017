@@ -61,11 +61,11 @@
             this.btnSupprimerFichier = new System.Windows.Forms.Button();
             this.btnParcourirFichier = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnOuvrirFichier = new System.Windows.Forms.Button();
             this.pbApercu = new System.Windows.Forms.PictureBox();
             this.openFileDialogfichier = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogPhoto = new System.Windows.Forms.OpenFileDialog();
             this.lstCatArtiste = new System.Windows.Forms.ListBox();
-            this.btnOuvrirFichier = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -79,6 +79,7 @@
             // 
             this.txtNomArtiste.Location = new System.Drawing.Point(112, 6);
             this.txtNomArtiste.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomArtiste.MaxLength = 50;
             this.txtNomArtiste.Name = "txtNomArtiste";
             this.txtNomArtiste.Size = new System.Drawing.Size(318, 20);
             this.txtNomArtiste.TabIndex = 26;
@@ -96,6 +97,7 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(771, 628);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
@@ -457,6 +459,17 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Aperçu";
             // 
+            // btnOuvrirFichier
+            // 
+            this.btnOuvrirFichier.Location = new System.Drawing.Point(125, 137);
+            this.btnOuvrirFichier.Name = "btnOuvrirFichier";
+            this.btnOuvrirFichier.Size = new System.Drawing.Size(159, 23);
+            this.btnOuvrirFichier.TabIndex = 1;
+            this.btnOuvrirFichier.Text = "Ouvrir le fichier sélectionné";
+            this.btnOuvrirFichier.UseVisualStyleBackColor = true;
+            this.btnOuvrirFichier.Visible = false;
+            this.btnOuvrirFichier.Click += new System.EventHandler(this.btnOuvrirFichier_Click);
+            // 
             // pbApercu
             // 
             this.pbApercu.BackColor = System.Drawing.Color.Transparent;
@@ -483,17 +496,6 @@
             this.lstCatArtiste.Name = "lstCatArtiste";
             this.lstCatArtiste.Size = new System.Drawing.Size(318, 108);
             this.lstCatArtiste.TabIndex = 55;
-            // 
-            // btnOuvrirFichier
-            // 
-            this.btnOuvrirFichier.Location = new System.Drawing.Point(125, 137);
-            this.btnOuvrirFichier.Name = "btnOuvrirFichier";
-            this.btnOuvrirFichier.Size = new System.Drawing.Size(159, 23);
-            this.btnOuvrirFichier.TabIndex = 1;
-            this.btnOuvrirFichier.Text = "Ouvrir le fichier sélectionné";
-            this.btnOuvrirFichier.UseVisualStyleBackColor = true;
-            this.btnOuvrirFichier.Visible = false;
-            this.btnOuvrirFichier.Click += new System.EventHandler(this.btnOuvrirFichier_Click);
             // 
             // DetailArtiste
             // 

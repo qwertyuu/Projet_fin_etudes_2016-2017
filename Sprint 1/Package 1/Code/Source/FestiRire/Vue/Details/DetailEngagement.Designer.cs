@@ -92,6 +92,7 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(740, 434);
             this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnuler.Name = "btnAnnuler";
@@ -130,6 +131,7 @@
             this.txtNatureEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNatureEngagement.Location = new System.Drawing.Point(85, 14);
+            this.txtNatureEngagement.MaxLength = 50;
             this.txtNatureEngagement.Name = "txtNatureEngagement";
             this.txtNatureEngagement.Size = new System.Drawing.Size(398, 20);
             this.txtNatureEngagement.TabIndex = 35;
@@ -202,6 +204,7 @@
             // txtPrixBillet
             // 
             this.txtPrixBillet.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtPrixBillet.Enabled = false;
             this.txtPrixBillet.Location = new System.Drawing.Point(608, 12);
             this.txtPrixBillet.Name = "txtPrixBillet";
             this.txtPrixBillet.Size = new System.Drawing.Size(211, 20);
@@ -220,6 +223,7 @@
             // txtCapacite
             // 
             this.txtCapacite.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtCapacite.Enabled = false;
             this.txtCapacite.Location = new System.Drawing.Point(608, 38);
             this.txtCapacite.Name = "txtCapacite";
             this.txtCapacite.Size = new System.Drawing.Size(211, 20);
@@ -240,6 +244,7 @@
             this.txtDuree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDuree.Location = new System.Drawing.Point(85, 90);
+            this.txtDuree.MaxLength = 5;
             this.txtDuree.Name = "txtDuree";
             this.txtDuree.Size = new System.Drawing.Size(398, 20);
             this.txtDuree.TabIndex = 55;
@@ -249,6 +254,7 @@
             this.txtLieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLieu.Location = new System.Drawing.Point(85, 114);
+            this.txtLieu.MaxLength = 50;
             this.txtLieu.Name = "txtLieu";
             this.txtLieu.Size = new System.Drawing.Size(398, 20);
             this.txtLieu.TabIndex = 58;
@@ -409,6 +415,7 @@
             this.rtbDescriptionCourte.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.rtbDescriptionCourte.Location = new System.Drawing.Point(503, 82);
             this.rtbDescriptionCourte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rtbDescriptionCourte.MaxLength = 255;
             this.rtbDescriptionCourte.Name = "rtbDescriptionCourte";
             this.rtbDescriptionCourte.Size = new System.Drawing.Size(311, 79);
             this.rtbDescriptionCourte.TabIndex = 45;

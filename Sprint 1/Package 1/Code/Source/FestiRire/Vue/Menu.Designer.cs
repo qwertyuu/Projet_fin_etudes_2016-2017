@@ -141,6 +141,7 @@
             this.Controls.Add(this.label10);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Menu";
             this.Text = "menu";
             this.groupBox1.ResumeLayout(false);

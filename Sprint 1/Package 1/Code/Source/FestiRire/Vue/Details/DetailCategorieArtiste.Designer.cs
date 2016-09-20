@@ -51,6 +51,7 @@
             this.txtNomCategorie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNomCategorie.Location = new System.Drawing.Point(78, 9);
+            this.txtNomCategorie.MaxLength = 20;
             this.txtNomCategorie.Name = "txtNomCategorie";
             this.txtNomCategorie.Size = new System.Drawing.Size(678, 20);
             this.txtNomCategorie.TabIndex = 1;
@@ -90,6 +91,7 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(681, 389);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);

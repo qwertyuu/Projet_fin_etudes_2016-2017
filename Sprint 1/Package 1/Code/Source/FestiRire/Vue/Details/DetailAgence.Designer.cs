@@ -61,6 +61,7 @@
             // 
             this.txtNomAgence.Location = new System.Drawing.Point(120, 37);
             this.txtNomAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomAgence.MaxLength = 50;
             this.txtNomAgence.Name = "txtNomAgence";
             this.txtNomAgence.Size = new System.Drawing.Size(285, 20);
             this.txtNomAgence.TabIndex = 26;
@@ -78,6 +79,7 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(760, 239);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
@@ -165,6 +167,7 @@
             // txtVille
             // 
             this.txtVille.Location = new System.Drawing.Point(8, 199);
+            this.txtVille.MaxLength = 30;
             this.txtVille.Name = "txtVille";
             this.txtVille.Size = new System.Drawing.Size(118, 20);
             this.txtVille.TabIndex = 67;
@@ -182,6 +185,7 @@
             // txtPosteBureau
             // 
             this.txtPosteBureau.Location = new System.Drawing.Point(260, 161);
+            this.txtPosteBureau.MaxLength = 5;
             this.txtPosteBureau.Name = "txtPosteBureau";
             this.txtPosteBureau.Size = new System.Drawing.Size(48, 20);
             this.txtPosteBureau.TabIndex = 64;
@@ -199,6 +203,7 @@
             // txtTelCellulaire
             // 
             this.txtTelCellulaire.Location = new System.Drawing.Point(132, 199);
+            this.txtTelCellulaire.MaxLength = 10;
             this.txtTelCellulaire.Name = "txtTelCellulaire";
             this.txtTelCellulaire.Size = new System.Drawing.Size(118, 20);
             this.txtTelCellulaire.TabIndex = 62;
@@ -216,6 +221,7 @@
             // txtBureau
             // 
             this.txtBureau.Location = new System.Drawing.Point(132, 161);
+            this.txtBureau.MaxLength = 10;
             this.txtBureau.Name = "txtBureau";
             this.txtBureau.Size = new System.Drawing.Size(118, 20);
             this.txtBureau.TabIndex = 60;
@@ -266,6 +272,7 @@
             // txtCodePostal
             // 
             this.txtCodePostal.Location = new System.Drawing.Point(133, 118);
+            this.txtCodePostal.MaxLength = 6;
             this.txtCodePostal.Name = "txtCodePostal";
             this.txtCodePostal.Size = new System.Drawing.Size(118, 20);
             this.txtCodePostal.TabIndex = 57;
@@ -292,6 +299,7 @@
             // 
             this.txtCourriel.Location = new System.Drawing.Point(120, 61);
             this.txtCourriel.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCourriel.MaxLength = 255;
             this.txtCourriel.Name = "txtCourriel";
             this.txtCourriel.Size = new System.Drawing.Size(285, 20);
             this.txtCourriel.TabIndex = 56;
@@ -319,6 +327,7 @@
             // txtNo
             // 
             this.txtNo.Location = new System.Drawing.Point(120, 12);
+            this.txtNo.MaxLength = 15;
             this.txtNo.Name = "txtNo";
             this.txtNo.Size = new System.Drawing.Size(118, 20);
             this.txtNo.TabIndex = 71;

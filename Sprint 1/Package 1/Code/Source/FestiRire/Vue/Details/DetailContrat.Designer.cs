@@ -191,6 +191,7 @@
             // 
             this.txtExtensionTelephoneAgence.Location = new System.Drawing.Point(265, 114);
             this.txtExtensionTelephoneAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtExtensionTelephoneAgence.MaxLength = 5;
             this.txtExtensionTelephoneAgence.Name = "txtExtensionTelephoneAgence";
             this.txtExtensionTelephoneAgence.Size = new System.Drawing.Size(54, 20);
             this.txtExtensionTelephoneAgence.TabIndex = 36;
@@ -200,6 +201,7 @@
             this.txtCellulaireAgence.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCellulaireAgence.Location = new System.Drawing.Point(437, 114);
             this.txtCellulaireAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCellulaireAgence.MaxLength = 10;
             this.txtCellulaireAgence.Name = "txtCellulaireAgence";
             this.txtCellulaireAgence.Size = new System.Drawing.Size(95, 20);
             this.txtCellulaireAgence.TabIndex = 31;
@@ -208,6 +210,7 @@
             // 
             this.txtTelephoneAgence.Location = new System.Drawing.Point(128, 114);
             this.txtTelephoneAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelephoneAgence.MaxLength = 10;
             this.txtTelephoneAgence.Name = "txtTelephoneAgence";
             this.txtTelephoneAgence.Size = new System.Drawing.Size(101, 20);
             this.txtTelephoneAgence.TabIndex = 30;
@@ -261,6 +264,7 @@
             this.txtSignataireAgence.Enabled = false;
             this.txtSignataireAgence.Location = new System.Drawing.Point(128, 138);
             this.txtSignataireAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSignataireAgence.MaxLength = 70;
             this.txtSignataireAgence.Name = "txtSignataireAgence";
             this.txtSignataireAgence.Size = new System.Drawing.Size(404, 20);
             this.txtSignataireAgence.TabIndex = 20;
@@ -271,6 +275,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNomResponsableAgence.Location = new System.Drawing.Point(128, 42);
             this.txtNomResponsableAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomResponsableAgence.MaxLength = 20;
             this.txtNomResponsableAgence.Name = "txtNomResponsableAgence";
             this.txtNomResponsableAgence.Size = new System.Drawing.Size(404, 20);
             this.txtNomResponsableAgence.TabIndex = 18;
@@ -281,6 +286,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCourrielAgence.Location = new System.Drawing.Point(128, 90);
             this.txtCourrielAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCourrielAgence.MaxLength = 255;
             this.txtCourrielAgence.Name = "txtCourrielAgence";
             this.txtCourrielAgence.Size = new System.Drawing.Size(404, 20);
             this.txtCourrielAgence.TabIndex = 16;
@@ -291,6 +297,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrenomResponsableAgence.Location = new System.Drawing.Point(128, 66);
             this.txtPrenomResponsableAgence.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrenomResponsableAgence.MaxLength = 20;
             this.txtPrenomResponsableAgence.Name = "txtPrenomResponsableAgence";
             this.txtPrenomResponsableAgence.Size = new System.Drawing.Size(404, 20);
             this.txtPrenomResponsableAgence.TabIndex = 15;
@@ -540,6 +547,7 @@
             // 
             this.txtNumeroContrat.Location = new System.Drawing.Point(139, 6);
             this.txtNumeroContrat.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNumeroContrat.MaxLength = 20;
             this.txtNumeroContrat.Name = "txtNumeroContrat";
             this.txtNumeroContrat.Size = new System.Drawing.Size(374, 20);
             this.txtNumeroContrat.TabIndex = 7;
@@ -590,6 +598,7 @@
             // 
             this.txtExtensionTelephoneDiffuseur.Location = new System.Drawing.Point(263, 114);
             this.txtExtensionTelephoneDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtExtensionTelephoneDiffuseur.MaxLength = 5;
             this.txtExtensionTelephoneDiffuseur.Name = "txtExtensionTelephoneDiffuseur";
             this.txtExtensionTelephoneDiffuseur.Size = new System.Drawing.Size(54, 20);
             this.txtExtensionTelephoneDiffuseur.TabIndex = 28;
@@ -621,6 +630,7 @@
             this.txtSignataireDiffuseur.Enabled = false;
             this.txtSignataireDiffuseur.Location = new System.Drawing.Point(128, 138);
             this.txtSignataireDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSignataireDiffuseur.MaxLength = 70;
             this.txtSignataireDiffuseur.Name = "txtSignataireDiffuseur";
             this.txtSignataireDiffuseur.Size = new System.Drawing.Size(395, 20);
             this.txtSignataireDiffuseur.TabIndex = 20;
@@ -630,6 +640,7 @@
             this.txtCellulaireDiffuseur.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCellulaireDiffuseur.Location = new System.Drawing.Point(428, 114);
             this.txtCellulaireDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCellulaireDiffuseur.MaxLength = 10;
             this.txtCellulaireDiffuseur.Name = "txtCellulaireDiffuseur";
             this.txtCellulaireDiffuseur.Size = new System.Drawing.Size(95, 20);
             this.txtCellulaireDiffuseur.TabIndex = 19;
@@ -640,6 +651,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNomResponsableDiffuseur.Location = new System.Drawing.Point(128, 42);
             this.txtNomResponsableDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomResponsableDiffuseur.MaxLength = 20;
             this.txtNomResponsableDiffuseur.Name = "txtNomResponsableDiffuseur";
             this.txtNomResponsableDiffuseur.Size = new System.Drawing.Size(395, 20);
             this.txtNomResponsableDiffuseur.TabIndex = 18;
@@ -648,6 +660,7 @@
             // 
             this.txtTelephoneDiffuseur.Location = new System.Drawing.Point(128, 114);
             this.txtTelephoneDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelephoneDiffuseur.MaxLength = 10;
             this.txtTelephoneDiffuseur.Name = "txtTelephoneDiffuseur";
             this.txtTelephoneDiffuseur.Size = new System.Drawing.Size(101, 20);
             this.txtTelephoneDiffuseur.TabIndex = 17;
@@ -658,6 +671,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCourrielDiffuseur.Location = new System.Drawing.Point(128, 90);
             this.txtCourrielDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCourrielDiffuseur.MaxLength = 255;
             this.txtCourrielDiffuseur.Name = "txtCourrielDiffuseur";
             this.txtCourrielDiffuseur.Size = new System.Drawing.Size(395, 20);
             this.txtCourrielDiffuseur.TabIndex = 16;
@@ -668,6 +682,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrenomResponsableDiffuseur.Location = new System.Drawing.Point(128, 66);
             this.txtPrenomResponsableDiffuseur.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrenomResponsableDiffuseur.MaxLength = 20;
             this.txtPrenomResponsableDiffuseur.Name = "txtPrenomResponsableDiffuseur";
             this.txtPrenomResponsableDiffuseur.Size = new System.Drawing.Size(395, 20);
             this.txtPrenomResponsableDiffuseur.TabIndex = 15;
@@ -1090,6 +1105,7 @@
             // txtLieuContrat
             // 
             this.txtLieuContrat.Location = new System.Drawing.Point(1068, 6);
+            this.txtLieuContrat.MaxLength = 50;
             this.txtLieuContrat.Name = "txtLieuContrat";
             this.txtLieuContrat.Size = new System.Drawing.Size(366, 20);
             this.txtLieuContrat.TabIndex = 33;
@@ -1119,6 +1135,7 @@
             // 
             this.cmbEvenement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbEvenement.Enabled = false;
             this.cmbEvenement.FormattingEnabled = true;
             this.cmbEvenement.Location = new System.Drawing.Point(86, 15);
             this.cmbEvenement.Margin = new System.Windows.Forms.Padding(2);
