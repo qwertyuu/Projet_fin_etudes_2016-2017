@@ -18,6 +18,10 @@ namespace FestiRire.Controleur.Details
 
         protected string SanitariserTexte(string s)
         {
+            if (s == null)
+            {
+                return null;
+            }
             string final = s.Trim();
             return final == "" ? null : final;
         }
@@ -54,6 +58,10 @@ namespace FestiRire.Controleur.Details
 
         public string FormatTelephone(string tel)
         {
+            if (string.IsNullOrEmpty(tel) || string.IsNullOrWhiteSpace(tel))
+            {
+                return null;
+            }
             StringBuilder sB = new StringBuilder();
             sB.Append("(");
             sB.Append(tel.Substring(0, 3));

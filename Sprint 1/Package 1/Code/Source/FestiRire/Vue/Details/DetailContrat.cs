@@ -29,6 +29,7 @@ namespace FestiRire
             InitComplet();
             idContrat = null;
             idDiffuseur = 1;
+            btnEnregistrerContrat.Enabled = false;
             PeuplerListes();
             verifierStatut();
         }
@@ -76,19 +77,6 @@ namespace FestiRire
             PeuplerListes();
             PeuplerInterface();
             verifierStatut();
-        }
-
-        private string ExtraitNoAgence(string no)
-        {
-            int i = 0;
-            string noExtrait = "";
-            while (no[i] != '/')
-            {
-                noExtrait += no[i];
-                i++;
-            }
-            return noExtrait;
-
         }
 
         private void SelectionnerArtistes(Modele.tblContrat contratDuMoment)
@@ -200,7 +188,7 @@ namespace FestiRire
         {
             conContrat.EnumText(rtbCommentaire);
         }
-        
+
         private void btnGrasDescription_Click(object sender, EventArgs e)
         {
             conContrat.TextGras(rtbDescriptionContrat);
@@ -234,7 +222,7 @@ namespace FestiRire
                 lblStatutContrat.Text = "En cours";
             else if (btnStatut1.Text == "Terminé")
                 lblStatutContrat.Text = "Terminé";
-
+            btnEnregistrerContrat.Enabled = true;
             verifierStatut();
         }
 
@@ -244,6 +232,7 @@ namespace FestiRire
                 lblStatutContrat.Text = "Supprimé";
             else if (btnStatut2.Text == "Annuler")
                 lblStatutContrat.Text = "Annulé";
+            btnEnregistrerContrat.Enabled = true;
 
             verifierStatut();
         }
@@ -385,14 +374,14 @@ namespace FestiRire
                     return;
                 }
             }
-            
+            idAgence = (cmbNomAgence.SelectedItem as Modele.vueSomAgence).noAgence;
 
             //On enregistre le responsable de l'agence
-            conContrat.EnregistrerResponsable(idContrat, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignatureAgence.Value, chkIdemAgence.Checked, idAgence, null);
+            var responsableAgence = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignatureAgence.Value, chkIdemAgence.Checked, idAgence, null);
             //On enregistre le responsable du  diffuseur
-            conContrat.EnregistrerResponsable(idContrat, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignatureDiffuseur.Value, chkIdemDiffuseur.Checked, null, idDiffuseur);
+            var responsableDiffuseur = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignatureDiffuseur.Value, chkIdemDiffuseur.Checked, null, idDiffuseur);
 
-            if (!conContrat.EnregistrerContrat(idContrat,txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence))
+            if (!conContrat.EnregistrerContrat(idContrat, txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence, responsableAgence, responsableDiffuseur))
             {
                 mes = "Le contrat a été modifiée avec succès";
             }

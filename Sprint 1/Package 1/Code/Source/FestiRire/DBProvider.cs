@@ -22,12 +22,20 @@ namespace FestiRire
         internal tblResponsable SelectResponsableAgence(string idContrat)
         {
             var contrat = SelectContrat(idContrat);
+            if (contrat == null)
+            {
+                return null;
+            }
             return contrat.tblResponsable.SingleOrDefault(a => a.noAgence != null && a.dateSupprime == null);
         }
 
         internal tblResponsable SelectResponsableDiffuseur(string idContrat)
         {
             var contrat = SelectContrat(idContrat);
+            if (contrat == null)
+            {
+                return null;
+            }
             return contrat.tblResponsable.SingleOrDefault(a => a.noDiffuseur != null && a.dateSupprime == null);
         }
 
