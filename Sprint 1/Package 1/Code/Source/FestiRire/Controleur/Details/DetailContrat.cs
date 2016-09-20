@@ -25,24 +25,28 @@ namespace FestiRire.Controleur.Details
 
         public void  EnregistrerResponsable(string IdAcienContrat,string nomRespoAge, string prenomRespoAge, string courr, string cel, string tel, string poste, string signataireRespo, DateTime dateSignatire, bool idem, string noAge,int noDiff)
         {
-            Modele.tblResponsable ResponsableMAJ = provider.SelectResponsableAgence(IdAcienContrat);
-            if(ResponsableMAJ!=null)//On fait une MAJ
+            if(IdAcienContrat!=null)
             {
-                ResponsableMAJ.nom = SanitariserTexte(nomRespoAge);
-                ResponsableMAJ.prenom =SanitariserTexte(prenomRespoAge);
-                ResponsableMAJ.courriel =SanitariserCourriel(courr);
-                ResponsableMAJ.telCellulaire =SanitariserTelephone(cel);
-                ResponsableMAJ.telBureau = SanitariserTelephone(tel);
-                ResponsableMAJ.extension =SanitariserTexte(poste);
-                ResponsableMAJ.dateSignature = dateSignatire;
-                ResponsableMAJ.noAgence = SanitariserTexte(noAge);
-                ResponsableMAJ.idem = idem;
-                provider.Save();
-                return ;
+                Modele.tblResponsable ResponsableMAJ = provider.SelectResponsableAgence(IdAcienContrat);
+                if (ResponsableMAJ != null)//On fait une MAJ
+                {
+                    ResponsableMAJ.nom = SanitariserTexte(nomRespoAge);
+                    ResponsableMAJ.prenom = SanitariserTexte(prenomRespoAge);
+                    ResponsableMAJ.courriel = SanitariserCourriel(courr);
+                    ResponsableMAJ.telCellulaire = SanitariserTelephone(cel);
+                    ResponsableMAJ.telBureau = SanitariserTelephone(tel);
+                    ResponsableMAJ.extension = SanitariserTexte(poste);
+                    ResponsableMAJ.dateSignature = dateSignatire;
+                    ResponsableMAJ.noAgence = SanitariserTexte(noAge);
+                    ResponsableMAJ.idem = idem;
+                    provider.Save();
+                    return;
+                }
             }
+
             else //On enregistre un nouveau
             {
-                var RespoAge = new Modele.tblResponsable { nom = SanitariserTexte(nomRespoAge), prenom = SanitariserTexte(prenomRespoAge), courriel = SanitariserCourriel(courr), signataire = signataireRespo, dateSignature = dateSignatire, telBureau = SanitariserTelephone(tel), telCellulaire = SanitariserTelephone(cel), extension = poste, idem = idem, noAgence = SanitariserTexte(noAge), noDiffuseur = noDiff };
+               var RespoAge = new Modele.tblResponsable { nom = SanitariserTexte(nomRespoAge), prenom = SanitariserTexte(prenomRespoAge), courriel = SanitariserCourriel(courr), signataire = signataireRespo, dateSignature = dateSignatire, telBureau = SanitariserTelephone(tel), telCellulaire = SanitariserTelephone(cel), extension = poste, idem = idem, noAgence = noAge, noDiffuseur = noDiff };
                 provider.InsertResponsable(RespoAge);
                 return ;
             }
@@ -50,11 +54,14 @@ namespace FestiRire.Controleur.Details
 
         private int ReturnNoSatut(string nom)
         {
-            return provider.ReturnStatut(nom).noStatut;
+           
+             return provider.ReturnStatut(nom).noStatut;
         }
         public bool EnregistrerContrat(string IdAcienContrat, string IdNouveauContrat, string nomContrat,string lieu,string com, string desc, string nomStatut,string noAgence)
         {
-            int noStatut = ReturnNoSatut(nomStatut);
+        
+             int noStatut = ReturnNoSatut(nomStatut);
+          
             Modele.tblContrat contratMAJ = provider.SelectContrat(IdAcienContrat);
             if(contratMAJ!=null)
             {

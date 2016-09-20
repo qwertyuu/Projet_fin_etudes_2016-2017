@@ -27,8 +27,7 @@ namespace FestiRire
             conSomAgence = new Controleur.Sommaires.SommaireAgence();
             conArtiste = new Controleur.Details.DetailArtiste();
             idContrat = null;
-            //idAgence = ExtraitNoAgence(cmbNomAgence.Text);
-            idDiffuseur = 0;
+            idDiffuseur = 1;
             PeuplerListes();
             verifierStatut();
         }
@@ -41,7 +40,6 @@ namespace FestiRire
             conArtiste = new Controleur.Details.DetailArtiste();
             idContrat = noContrat;
             idDiffuseur = 1;
-            //idAgence = ExtraitNoAgence(cmbNomAgence.Text);
             PeuplerListes();
             PeuplerInterface();
             verifierStatut();
@@ -312,10 +310,6 @@ namespace FestiRire
                         return;
                     }
                 }
-            }
-            if (idContrat == null)
-            {
-
             }
             
 
