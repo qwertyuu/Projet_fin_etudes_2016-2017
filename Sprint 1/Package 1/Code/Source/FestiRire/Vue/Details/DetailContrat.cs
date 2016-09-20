@@ -27,7 +27,7 @@ namespace FestiRire
             conSomAgence = new Controleur.Sommaires.SommaireAgence();
             conArtiste = new Controleur.Details.DetailArtiste();
             idContrat = null;
-            idAgence = ExtraitNoAgence(cmbNomAgence.Text);
+            //idAgence = ExtraitNoAgence(cmbNomAgence.Text);
             idDiffuseur = 0;
             PeuplerListes();
             verifierStatut();
@@ -41,7 +41,7 @@ namespace FestiRire
             conArtiste = new Controleur.Details.DetailArtiste();
             idContrat = noContrat;
             idDiffuseur = 1;
-            idAgence = ExtraitNoAgence(cmbNomAgence.Text);
+            //idAgence = ExtraitNoAgence(cmbNomAgence.Text);
             PeuplerListes();
             PeuplerInterface();
             verifierStatut();
@@ -51,7 +51,7 @@ namespace FestiRire
         {
             int i = 0;
             string noExtrait = "";
-            while(no[i]!='/')
+            while (no[i] != '/')
             {
                 noExtrait += no[i];
                 i++;
@@ -133,7 +133,7 @@ namespace FestiRire
 
         private void numPoliceCommentaire_ValueChanged(object sender, EventArgs e)
         {
-            conContrat.SizeText(rtbCommentaire,numPoliceCommentaire.Value);
+            conContrat.SizeText(rtbCommentaire, numPoliceCommentaire.Value);
         }
 
         private void btnEnumCommentaire_Click(object sender, EventArgs e)
@@ -159,7 +159,7 @@ namespace FestiRire
 
         private void numPoliceDescription_ValueChanged(object sender, EventArgs e)
         {
-            conContrat.SizeText(rtbDescriptionContrat,numPoliceDescription.Value);
+            conContrat.SizeText(rtbDescriptionContrat, numPoliceDescription.Value);
         }
 
         private void btnEnumDescription_Click(object sender, EventArgs e)
@@ -229,7 +229,7 @@ namespace FestiRire
 
         private void btnAjouterEngagement_Click(object sender, EventArgs e)
         {
-            var frmDetailEngagement  = new DetailEngagement();
+            var frmDetailEngagement = new DetailEngagement();
             frmDetailEngagement.ShowDialog();
 
         }
@@ -290,41 +290,47 @@ namespace FestiRire
         private void btnEnregistrerContrat_Click(object sender, EventArgs e)
         {
             string mes = "";
-           if(txtNumeroContrat.Text=="" || txtNomContrat.Text=="")
+            MessageBox.Show(DisplayObjectInfo(conContrat.SelectContrat(txtNumeroContrat.Text)));
+            return;
+            if (txtNumeroContrat.Text == "" || txtNomContrat.Text == "")
             {
                 MessageBox.Show("Veuillez entrer le numéro et le nom du contrat");
                 return;
             }
-           else
+            else
             {
-                if(!validation.ValiderChampRespo(txtNomResponsableAgence.Text,txtPrenomResponsableAgence.Text,txtCourrielAgence.Text)&&cmbNomAgence.SelectedIndex==-1)
+                if (!validation.ValiderChampRespo(txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text) && cmbNomAgence.SelectedIndex == -1)
                 {
                     MessageBox.Show(validation.MessVide + " de l'agence");
                     return;
                 }
                 else
                 {
-                    if(!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
+                    if (!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
                     {
-                        MessageBox.Show(validation.MessVide + " du diffusseur");
+                        MessageBox.Show(validation.MessVide + " du diffuseur");
                         return;
                     }
                 }
             }
+            if (idContrat == null)
+            {
 
+            }
+            
 
-           //On enregistre le responsable de l'agence
+            //On enregistre le responsable de l'agence
             conContrat.EnregistrerResponsable(idContrat, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignatureAgence.Value, chkIdemAgence.Checked, idAgence, idDiffuseur);
             //On enregistre le responsable du  diffuseur
             conContrat.EnregistrerResponsable(idContrat, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignatureDiffuseur.Value, chkIdemDiffuseur.Checked, null, idDiffuseur);
 
-            if(!conContrat.EnregistrerContrat(idContrat,txtNomContrat.Text,txtLieuContrat.Text,rtbCommentaire.Rtf,rtbDescriptionContrat.Rtf,lblStatutContrat.Text,idAgence))
+            if (!conContrat.EnregistrerContrat(idContrat,txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence))
             {
-                mes = "Le contrat  a été modifiée  avec succés";
+                mes = "Le contrat a été modifiée  avec succés";
             }
             else
             {
-                mes = "Le contrat  a été ajouté  avec succés";
+                mes = "Le contrat a été ajouté  avec succés";
             }
             MessageBox.Show(mes);
             this.Close();
@@ -339,6 +345,45 @@ namespace FestiRire
             {
                 this.Close();
             }
+        }
+
+        public static string DisplayObjectInfo(Object o)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            // Include the type of the object
+            System.Type type = o.GetType();
+            sb.Append("Type: " + type.Name);
+
+            // Include information for each Field
+            sb.Append("\r\n\r\nFields:");
+            System.Reflection.FieldInfo[] fi = type.GetFields();
+            if (fi.Length > 0)
+            {
+                foreach (System.Reflection.FieldInfo f in fi)
+                {
+                    sb.Append("\r\n " + f.ToString() + " = " +
+                              f.GetValue(o));
+                }
+            }
+            else
+                sb.Append("\r\n None");
+
+            // Include information for each Property
+            sb.Append("\r\n\r\nProperties:");
+            System.Reflection.PropertyInfo[] pi = type.GetProperties();
+            if (pi.Length > 0)
+            {
+                foreach (System.Reflection.PropertyInfo p in pi)
+                {
+                    sb.Append("\r\n " + p.ToString() + " = " +
+                              p.GetValue(o, null));
+                }
+            }
+            else
+                sb.Append("\r\n None");
+
+            return sb.ToString();
         }
     }
 }

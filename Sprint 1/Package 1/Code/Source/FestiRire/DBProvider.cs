@@ -33,7 +33,7 @@ namespace FestiRire
 
         public tblStatut ReturnStatut(string nom)
         {
-            return BD.tblStatut.SingleOrDefault(s=>s.nomStatut ==nom && s.dateSupprime == null);
+            return BD.tblStatut.SingleOrDefault(s=>s.nomStatut == nom && s.dateSupprime == null && s.noStatut <= 6);
         }
 
         public List<Modele.vueSomStatut> ToutVueStatus()

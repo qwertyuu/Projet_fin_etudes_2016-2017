@@ -52,7 +52,7 @@ namespace FestiRire.Controleur.Details
         {
             return provider.ReturnStatut(nom).noStatut;
         }
-        public bool EnregistrerContrat(string IdAcienContrat,  string nomContrat,string lieu,string com, string desc, string nomStatut,string noAgence)
+        public bool EnregistrerContrat(string IdAcienContrat, string IdNouveauContrat, string nomContrat,string lieu,string com, string desc, string nomStatut,string noAgence)
         {
             int noStatut = ReturnNoSatut(nomStatut);
             Modele.tblContrat contratMAJ = provider.SelectContrat(IdAcienContrat);
