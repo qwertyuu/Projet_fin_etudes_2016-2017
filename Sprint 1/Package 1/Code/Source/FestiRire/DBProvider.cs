@@ -31,6 +31,11 @@ namespace FestiRire
             return contrat.tblResponsable.SingleOrDefault(a => a.noDiffuseur != null && a.dateSupprime == null);
         }
 
+        public tblStatut ReturnStatut(string nom)
+        {
+            return BD.tblStatut.SingleOrDefault(s=>s.nomStatut ==nom && s.dateSupprime == null);
+        }
+
         public List<Modele.vueSomStatut> ToutVueStatus()
         {
             return BD.vueSomStatut.AsNoTracking().ToList();

@@ -23,7 +23,7 @@ namespace FestiRire.Controleur.Details
             return provider.SelectResponsableDiffuseur(idContrat);
         }
 
-        public Modele.tblResponsable EnregistrerResponsable(string IdAcienContrat,string nomRespoAge, string prenomRespoAge, string courr, string cel, string tel, string poste, string signataireRespo, DateTime dateSignatire, bool idem, string noAge,int noDiff)
+        public void  EnregistrerResponsable(string IdAcienContrat,string nomRespoAge, string prenomRespoAge, string courr, string cel, string tel, string poste, string signataireRespo, DateTime dateSignatire, bool idem, string noAge,int noDiff)
         {
             Modele.tblResponsable ResponsableMAJ = provider.SelectResponsableAgence(IdAcienContrat);
             if(ResponsableMAJ!=null)//On fait une MAJ
@@ -38,26 +38,32 @@ namespace FestiRire.Controleur.Details
                 ResponsableMAJ.noAgence = SanitariserTexte(noAge);
                 ResponsableMAJ.idem = idem;
                 provider.Save();
-                return ResponsableMAJ;
+                return ;
             }
             else //On enregistre un nouveau
             {
                 var RespoAge = new Modele.tblResponsable { nom = SanitariserTexte(nomRespoAge), prenom = SanitariserTexte(prenomRespoAge), courriel = SanitariserCourriel(courr), signataire = signataireRespo, dateSignature = dateSignatire, telBureau = SanitariserTelephone(tel), telCellulaire = SanitariserTelephone(cel), extension = poste, idem = idem, noAgence = SanitariserTexte(noAge), noDiffuseur = noDiff };
                 provider.InsertResponsable(RespoAge);
-                return RespoAge;
+                return ;
             }
         }
-        public bool EnregistrerContrat(string IdAcienContrat,  string nomContrat,string lieu,string nomAgence, string nomDiffusseur,string com, string desc, int noStatut,string noAgence)
+
+        private int ReturnNoSatut(string nom)
         {
+            return provider.ReturnStatut(nom).noStatut;
+        }
+        public bool EnregistrerContrat(string IdAcienContrat,  string nomContrat,string lieu,string com, string desc, string nomStatut,string noAgence)
+        {
+            int noStatut = ReturnNoSatut(nomStatut);
             Modele.tblContrat contratMAJ = provider.SelectContrat(IdAcienContrat);
             if(contratMAJ!=null)
             {
                 contratMAJ.nom = nomContrat;
-                contratMAJ.noStatut = noStatut;
                 contratMAJ.lieu = lieu;
                 contratMAJ.commentaire = com;
                 contratMAJ.description = desc;
                 contratMAJ.noAgence = noAgence;
+                contratMAJ.noStatut = noStatut;
                 provider.Save();
                 return false;
             }
