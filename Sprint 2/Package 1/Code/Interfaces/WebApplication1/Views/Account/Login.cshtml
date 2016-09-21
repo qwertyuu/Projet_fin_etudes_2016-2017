@@ -1,4 +1,5 @@
 ﻿@using WebApplication1.Models
+
 @model LoginViewModel
 @{
     ViewBag.Title = "Connexion";
@@ -53,7 +54,7 @@
     </div>
     <div class="col-md-4">
         <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            <img id="img_logo" alt="logo" src="~/Content/logocegep.PNG" height="400px" width="600px">
         </section>
     </div>
 </div>
