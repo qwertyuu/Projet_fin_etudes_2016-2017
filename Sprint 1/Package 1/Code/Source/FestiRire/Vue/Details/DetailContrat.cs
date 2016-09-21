@@ -22,6 +22,8 @@ namespace FestiRire
         private string idContrat;
         private string idAgence;
         private int idDiffuseur;
+        private string idContratTemporaire;
+        Random NbreRamdom;
 
         public DetailContrat()
         {
@@ -32,6 +34,8 @@ namespace FestiRire
             btnEnregistrerContrat.Enabled = false;
             PeuplerListes();
             verifierStatut();
+            NbreRamdom = new Random();
+            idContratTemporaire = validation.Hash( NbreRamdom.Next().ToString()).Substring(0, 19);
         }
 
         public void InitComplet()
@@ -77,6 +81,8 @@ namespace FestiRire
             PeuplerListes();
             PeuplerInterface();
             verifierStatut();
+            txtNumeroContrat.Enabled = false;
+            idContratTemporaire = null;
         }
 
         private void SelectionnerArtistes(Modele.tblContrat contratDuMoment)
@@ -283,7 +289,7 @@ namespace FestiRire
 
         private void btnAjouterEngagement_Click(object sender, EventArgs e)
         {
-            var frmDetailEngagement = new DetailEngagement();
+            var frmDetailEngagement = new DetailEngagement( idContrat ?? idContratTemporaire);
             frmDetailEngagement.ShowDialog();
             PeuplerListes(listes.Engagement);
 
@@ -291,7 +297,7 @@ namespace FestiRire
 
         private void btnAjouterExigence_Click(object sender, EventArgs e)
         {
-            var frmDetailExigence = new DetailExigence();
+            var frmDetailExigence = new DetailExigence(idContrat ?? idContratTemporaire);
             frmDetailExigence.ShowDialog();
             PeuplerListes(listes.Exigence);
         }
@@ -372,6 +378,8 @@ namespace FestiRire
                     }
                 }
             }
+
+
             var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
             if (idContrat == null && contratEcrit != null)
             {

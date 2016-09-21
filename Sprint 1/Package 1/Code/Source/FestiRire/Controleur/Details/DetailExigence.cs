@@ -13,16 +13,17 @@ namespace FestiRire.Controleur.Details
         {
 
         }
-        internal void EnregistrerExigence(string nom, DateTime dateExigence, decimal Montant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue)
+        internal void EnregistrerExigence(string nom, DateTime dateExigence, decimal Montant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue, string idContrat)
         {
             var exigence = new Modele.tblExigence()
             {
                 nom = nom,
-                date=dateExigence,
-                montant=Montant,
-                description=rtbDescriptionLongue,
-                commentaire=rtbCommentaire,
-                descriptionCourte=rtbDescriptionCourte,
+                date = dateExigence,
+                montant = Montant,
+                description = rtbDescriptionLongue,
+                commentaire = rtbCommentaire,
+                descriptionCourte = rtbDescriptionCourte,
+                noContrat = idContrat,
                                
             };
             provider.InsertExigence(exigence);
@@ -33,7 +34,7 @@ namespace FestiRire.Controleur.Details
             return provider.SelectExigence(idExigence);
             //SELECT UNIQUE
         }
-        internal void EnregistrerExigence(int idExigence, string nom, DateTime dateExigence, string txtMontant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue)
+        internal void EnregistrerExigence(int idExigence, string nom, DateTime dateExigence, string txtMontant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue,string noContrat)
         {
             var tE = provider.SelectExigence(idExigence);
             tE.nom = nom;
@@ -43,6 +44,7 @@ namespace FestiRire.Controleur.Details
             tE.commentaire = rtbCommentaire;
             tE.descriptionCourte = rtbDescriptionCourte;
             tE.description = rtbDescriptionLongue;
+            tE.noContrat = noContrat;
             provider.Save();
             //UPDATE
         }

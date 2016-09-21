@@ -16,12 +16,7 @@ namespace FestiRire
         Controleur.Sommaires.SommaireStatut conStatut = new Controleur.Sommaires.SommaireStatut();
         Controleur.Validation validation = new Controleur.Validation();
         int? idExigence;
-        public DetailExigence()
-        {
-            InitializeComponent();
-            DesactiverBtnSupp();
-            idExigence = null;
-        }
+        string idContratTemporaire;
 
         private void btnEnregistrerExigence_Click(object sender, EventArgs e)
         {
@@ -40,12 +35,12 @@ namespace FestiRire
                 {
                     if (idExigence != null)
                     {
-                        conExigence.EnregistrerExigence((int)idExigence, txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+                        conExigence.EnregistrerExigence((int)idExigence, txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text,idContratTemporaire);
                         MessageBox.Show("Exigence Modifiée");
                     }
                     else
                     {
-                        conExigence.EnregistrerExigence(txtNom.Text, dateExigence.Value, Convert.ToDecimal(txtMontant.Text), cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+                        conExigence.EnregistrerExigence(txtNom.Text, dateExigence.Value, Convert.ToDecimal(txtMontant.Text), cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text,idContratTemporaire);
                         MessageBox.Show("Exigence Ajoutée");
                     }
                     this.Close();
@@ -64,6 +59,15 @@ namespace FestiRire
             idExigence = _idExigence;
             cmbStatut.DataSource = conStatut.Tout();
             PeuplerInterface(conExigence.LoadExigence(_idExigence));
+        }
+        public DetailExigence(string _idContratTemporaire)
+        {
+            InitializeComponent();
+            idContratTemporaire = _idContratTemporaire;
+            MessageBox.Show(idContratTemporaire);
+            DesactiverBtnSupp();
+            idExigence = null;
+
         }
 
         private void PeuplerInterface(Modele.tblExigence _Exigence)

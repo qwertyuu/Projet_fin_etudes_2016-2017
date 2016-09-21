@@ -15,12 +15,7 @@ namespace FestiRire
         Controleur.Details.DetailEngagement conEngagement = new Controleur.Details.DetailEngagement();
         Controleur.Validation validation = new Controleur.Validation();
         int? idEngagement;
-        public DetailEngagement()
-        {
-            InitializeComponent();
-            DesactiverBtnSupp();
-        }
-
+        string idContratTemporaire;
         private void btnEnregistrerEngagement_Click(object sender, EventArgs e)
         {
             if(txtNatureEngagement.Text=="" || txtLieu.Text=="")
@@ -39,12 +34,12 @@ namespace FestiRire
                 {
                     if (idEngagement != null)
                     {
-                        conEngagement.EnregistrerEngagement((int)idEngagement, txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+                        conEngagement.EnregistrerEngagement((int)idEngagement, txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text,idContratTemporaire);
                         MessageBox.Show("Engagement Modifié");
                     }
                     else
                     {
-                        conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text);
+                        conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text,idContratTemporaire);
                         MessageBox.Show("Engagement Ajouté");
                     }
                     this.Close();
@@ -62,6 +57,12 @@ namespace FestiRire
             PeuplerInterface(conEngagement.LoadEngagement(idEngagement));
         }
 
+        public DetailEngagement(string _idContratTemporaire)
+        {
+            InitializeComponent();
+            idContratTemporaire = _idContratTemporaire;
+            DesactiverBtnSupp();
+        }
         private void PeuplerInterface(Modele.tblEngagement _Engagement)
         {
             txtNatureEngagement.Text = _Engagement.nature;
