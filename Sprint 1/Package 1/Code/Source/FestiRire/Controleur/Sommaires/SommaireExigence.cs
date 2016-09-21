@@ -11,5 +11,11 @@ namespace FestiRire.Controleur.Sommaires
         {
             return provider.ToutExigence().Where(e => e.noContrat == idContrat).ToList();
         }
+
+        public List<Modele.vueSomExigence> Tout()
+        {
+
+            return provider.ToutExigence();
+        }
     }
 }

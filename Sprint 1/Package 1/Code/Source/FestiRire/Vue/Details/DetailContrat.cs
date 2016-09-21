@@ -267,12 +267,18 @@ namespace FestiRire
 
         private void btnDetailEngagement_Click(object sender, EventArgs e)
         {
-
+            DetailEngagement frmDetailEngagement = new DetailEngagement(((Modele.vueSomEngagement)dgvEngagement.SelectedRows[0].DataBoundItem).noEngagement);
+            frmDetailEngagement.ShowDialog();
+            dgvEngagement.DataSource = null;
+            dgvEngagement.DataSource = conSomEng.Tout().ToSortableBindingList();
         }
 
         private void btnDetailExigence_Click(object sender, EventArgs e)
         {
-
+            DetailExigence frmDetailExigence = new DetailExigence(((Modele.vueSomExigence)dgvExigence.SelectedRows[0].DataBoundItem).noExigence);
+            frmDetailExigence.ShowDialog();
+            dgvExigence.DataSource = null;
+            dgvExigence.DataSource = conSomExi.Tout().ToSortableBindingList();
         }
 
         private void btnAjouterEngagement_Click(object sender, EventArgs e)
