@@ -36,7 +36,6 @@
             this.btnArtiste = new System.Windows.Forms.Button();
             this.btnCatArt = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnStatut = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,10 +93,10 @@
             // 
             this.btnCatArt.BackColor = System.Drawing.Color.Transparent;
             this.btnCatArt.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCatArt.Location = new System.Drawing.Point(264, 160);
+            this.btnCatArt.Location = new System.Drawing.Point(179, 93);
             this.btnCatArt.Margin = new System.Windows.Forms.Padding(2);
             this.btnCatArt.Name = "btnCatArt";
-            this.btnCatArt.Size = new System.Drawing.Size(215, 43);
+            this.btnCatArt.Size = new System.Drawing.Size(195, 43);
             this.btnCatArt.TabIndex = 79;
             this.btnCatArt.Text = "Catégorie d\'artistes";
             this.btnCatArt.UseVisualStyleBackColor = false;
@@ -107,7 +106,6 @@
             // 
             this.groupBox1.Controls.Add(this.btnCatArt);
             this.groupBox1.Controls.Add(this.btnArtiste);
-            this.groupBox1.Controls.Add(this.btnStatut);
             this.groupBox1.Controls.Add(this.btnAgence);
             this.groupBox1.Controls.Add(this.btnContrat);
             this.groupBox1.Location = new System.Drawing.Point(45, 93);
@@ -118,19 +116,6 @@
             this.groupBox1.TabIndex = 80;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contrat";
-            // 
-            // btnStatut
-            // 
-            this.btnStatut.BackColor = System.Drawing.Color.Transparent;
-            this.btnStatut.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatut.Location = new System.Drawing.Point(178, 93);
-            this.btnStatut.Margin = new System.Windows.Forms.Padding(2);
-            this.btnStatut.Name = "btnStatut";
-            this.btnStatut.Size = new System.Drawing.Size(196, 43);
-            this.btnStatut.TabIndex = 77;
-            this.btnStatut.Text = "Statut";
-            this.btnStatut.UseVisualStyleBackColor = false;
-            this.btnStatut.Click += new System.EventHandler(this.btnStatut_Click);
             // 
             // Menu
             // 
@@ -159,6 +144,5 @@
         private System.Windows.Forms.Button btnArtiste;
         private System.Windows.Forms.Button btnCatArt;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnStatut;
     }
 }
