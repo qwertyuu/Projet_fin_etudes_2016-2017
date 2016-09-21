@@ -35,12 +35,12 @@ namespace FestiRire
                 {
                     if (idExigence != null)
                     {
-                        conExigence.EnregistrerExigence((int)idExigence, txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text,idContratTemporaire);
+                        conExigence.EnregistrerExigence((int)idExigence, txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Rtf, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf, idContratTemporaire);
                         MessageBox.Show("Exigence Modifiée");
                     }
                     else
                     {
-                        conExigence.EnregistrerExigence(txtNom.Text, dateExigence.Value, Convert.ToDecimal(txtMontant.Text), cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text,idContratTemporaire);
+                        conExigence.EnregistrerExigence(txtNom.Text, dateExigence.Value, Convert.ToDecimal(txtMontant.Text), cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Rtf, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf, idContratTemporaire);
                         MessageBox.Show("Exigence Ajoutée");
                     }
                     this.Close();
@@ -77,9 +77,9 @@ namespace FestiRire
 
             txtMontant.Text = (_Exigence.montant ?? 0).ToString();
             cmbStatut.SelectedItem = _Exigence.tblStatut;
-            rtbCommentaire.Text = _Exigence.commentaire;
+            rtbCommentaire.Rtf = _Exigence.commentaire;
             rtbDescriptionCourte.Text = _Exigence.descriptionCourte;
-            rtbDescriptionLongue.Text = _Exigence.description;
+            rtbDescriptionLongue.Rtf = _Exigence.description;
         }
 
         //Gestion des styles.

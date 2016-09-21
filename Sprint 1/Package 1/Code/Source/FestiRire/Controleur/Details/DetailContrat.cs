@@ -57,7 +57,7 @@ namespace FestiRire.Controleur.Details
         {
             return provider.SelectStatut(nom).noStatut;
         }
-        public bool EnregistrerContrat(string IdAcienContrat, string IdNouveauContrat, string nomContrat, string lieu, string com, string desc, string nomStatut, string noAgence, Modele.tblResponsable respAgence, Modele.tblResponsable respDiff)
+        public bool EnregistrerContrat(string IdAcienContrat, string IdNouveauContrat, string nomContrat, string lieu, string com, string desc, string nomStatut, string noAgence, Modele.tblResponsable respAgence, Modele.tblResponsable respDiff, List<Modele.tblArtiste> tblArtiste, out string noContratAjoute)
         {
             int noStatut = -1;
             if (nomStatut != "Supprimé")
@@ -81,6 +81,7 @@ namespace FestiRire.Controleur.Details
                 contratMAJ.commentaire = com;
                 contratMAJ.description = desc;
                 contratMAJ.noAgence = noAgence;
+                contratMAJ.tblArtiste = tblArtiste;
                 foreach (var item in contratMAJ.tblResponsable)
                 {
                     item.dateSupprime = DateTime.Now;
@@ -89,11 +90,12 @@ namespace FestiRire.Controleur.Details
                 contratMAJ.tblResponsable.Add(respAgence);
                 contratMAJ.tblResponsable.Add(respDiff);
                 provider.Save();
+                noContratAjoute = null;
                 return false;
             }
             else
             {
-                var contrat = new Modele.tblContrat { noContrat = IdNouveauContrat, lieu = lieu, nom = nomContrat, description = desc, commentaire = com, noStatut = noStatut, noAgence = noAgence };
+                var contrat = new Modele.tblContrat { noContrat = IdNouveauContrat, lieu = lieu, nom = nomContrat, description = desc, commentaire = com, noStatut = noStatut, noAgence = noAgence, tblArtiste = tblArtiste };
                 if (noStatut == -1)
                 {
                     contrat.dateSupprime = DateTime.Now;
@@ -101,6 +103,7 @@ namespace FestiRire.Controleur.Details
                 contrat.tblResponsable.Add(respAgence);
                 contrat.tblResponsable.Add(respDiff);
                 provider.InsertContrat(contrat);
+                noContratAjoute = contrat.noContrat;
                 return true;
             }
         }

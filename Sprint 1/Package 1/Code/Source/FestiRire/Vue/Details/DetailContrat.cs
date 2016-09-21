@@ -273,6 +273,11 @@ namespace FestiRire
 
         private void btnDetailEngagement_Click(object sender, EventArgs e)
         {
+            if (idContrat == null)
+            {
+                MessageBox.Show("Vous devez enregistrer le contrat afin de pouvoir accéder au détail d'un engagement");
+                return;
+            }
             DetailEngagement frmDetailEngagement = new DetailEngagement(((Modele.vueSomEngagement)dgvEngagement.SelectedRows[0].DataBoundItem).noEngagement);
             frmDetailEngagement.ShowDialog();
             dgvEngagement.DataSource = null;
@@ -281,6 +286,11 @@ namespace FestiRire
 
         private void btnDetailExigence_Click(object sender, EventArgs e)
         {
+            if (idContrat == null)
+            {
+                MessageBox.Show("Vous devez enregistrer le contrat afin de pouvoir accéder au détail d'une exigence");
+                return;
+            }
             DetailExigence frmDetailExigence = new DetailExigence(((Modele.vueSomExigence)dgvExigence.SelectedRows[0].DataBoundItem).noExigence);
             frmDetailExigence.ShowDialog();
             dgvExigence.DataSource = null;
@@ -289,6 +299,11 @@ namespace FestiRire
 
         private void btnAjouterEngagement_Click(object sender, EventArgs e)
         {
+            if (idContrat == null)
+            {
+                MessageBox.Show("Vous devez enregistrer le contrat afin de pouvoir ajouter un engagement");
+                return;
+            }
             var frmDetailEngagement = new DetailEngagement( idContrat ?? idContratTemporaire);
             frmDetailEngagement.ShowDialog();
             PeuplerListes(listes.Engagement);
@@ -297,6 +312,11 @@ namespace FestiRire
 
         private void btnAjouterExigence_Click(object sender, EventArgs e)
         {
+            if (idContrat == null)
+            {
+                MessageBox.Show("Vous devez enregistrer le contrat afin de pouvoir ajouter une exigence");
+                return;
+            }
             var frmDetailExigence = new DetailExigence(idContrat ?? idContratTemporaire);
             frmDetailExigence.ShowDialog();
             PeuplerListes(listes.Exigence);
@@ -394,17 +414,17 @@ namespace FestiRire
             var responsableAgence = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignatureAgence.Value, chkIdemAgence.Checked, idAgence, null);
             //On enregistre le responsable du  diffuseur
             var responsableDiffuseur = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignatureDiffuseur.Value, chkIdemDiffuseur.Checked, null, idDiffuseur);
-
-            if (!conContrat.EnregistrerContrat(idContrat, txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence, responsableAgence, responsableDiffuseur))
+            string noContratAjoute = "";
+            if (!conContrat.EnregistrerContrat(idContrat, txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence, responsableAgence, responsableDiffuseur,lstArtiste.SelectedItems.Cast<Modele.tblArtiste>().ToList(), out noContratAjoute))
             {
-                mes = "Le contrat a été modifiée avec succès";
+                mes = "Les informations du contrat ont été mis à jour";
             }
             else
             {
-                mes = "Le contrat a été ajouté avec succès";
+                idContrat = noContratAjoute;
+                mes = "Le contrat a été créé avec succès";
             }
             MessageBox.Show(mes);
-            this.Close();
 
         }
 
@@ -417,5 +437,6 @@ namespace FestiRire
                 this.Close();
             }
         }
+
     }
 }

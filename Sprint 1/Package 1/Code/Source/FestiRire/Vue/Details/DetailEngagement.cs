@@ -34,12 +34,12 @@ namespace FestiRire
                 {
                     if (idEngagement != null)
                     {
-                        conEngagement.EnregistrerEngagement((int)idEngagement, txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text,idContratTemporaire);
+                        conEngagement.EnregistrerEngagement((int)idEngagement, txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Rtf, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf, idContratTemporaire);
                         MessageBox.Show("Engagement Modifié");
                     }
                     else
                     {
-                        conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Text, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Text,idContratTemporaire);
+                        conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Rtf, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf,idContratTemporaire);
                         MessageBox.Show("Engagement Ajouté");
                     }
                     this.Close();
@@ -74,11 +74,11 @@ namespace FestiRire
             }
             txtDuree.Text = _Engagement.duree;
             txtLieu.Text = _Engagement.lieu;
-            rtbCommentaire.Text = _Engagement.commentaire;
+            rtbCommentaire.Rtf = _Engagement.commentaire;
             //txtPrixBillet.Text = _Engagement.;
             //txtCapacite.Text = conEngagement.FormatTelephone(_Engagement.tblAdresse.telCellulaire);
             rtbDescriptionCourte.Text = _Engagement.descriptionCourte;
-            rtbDescriptionLongue.Text = _Engagement.description;
+            rtbDescriptionLongue.Rtf = _Engagement.description;
         }
 
 

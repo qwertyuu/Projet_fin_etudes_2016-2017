@@ -23,18 +23,6 @@ namespace FestiRire.Vue
             frmContrat.ShowDialog();
         }
 
-        private void btnExigence_Click(object sender, EventArgs e)
-        {
-            DetailExigence frmExigence = new DetailExigence();
-            frmExigence.ShowDialog();
-        }
-
-        private void btnEngagement_Click(object sender, EventArgs e)
-        {
-            DetailEngagement frmEngagement = new DetailEngagement();
-            frmEngagement.ShowDialog();
-        }
-
         private void btnStatut_Click(object sender, EventArgs e)
         {
             SommaireStatut frmStatut = new SommaireStatut();

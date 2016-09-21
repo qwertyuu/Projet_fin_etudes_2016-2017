@@ -29,6 +29,16 @@ namespace FestiRire
             return contrat.tblResponsable.SingleOrDefault(a => a.noAgence != null && a.dateSupprime == null);
         }
 
+        internal void SupprimerBDEngagement(vueSomEngagement engagement)
+        {
+            BD.tblEngagement.Remove(BD.tblEngagement.SingleOrDefault(e => e.noEngagement == engagement.noEngagement));
+        }
+
+        internal void SupprimerBDExigence(vueSomExigence exigence)
+        {
+            BD.tblExigence.Remove(BD.tblExigence.SingleOrDefault(e => e.noExigence == exigence.noExigence));
+        }
+
         internal tblResponsable SelectResponsableDiffuseur(string idContrat)
         {
             var contrat = SelectContrat(idContrat);

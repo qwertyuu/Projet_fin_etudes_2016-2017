@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FestiRire.Modele;
 
 namespace FestiRire.Controleur.Sommaires
 {
@@ -14,8 +15,12 @@ namespace FestiRire.Controleur.Sommaires
 
         public List<Modele.vueSomEngagement> Tout()
         {
-
             return provider.ToutEngagement();
+        }
+
+        internal void SupprimerBD(vueSomEngagement engagement)
+        {
+            provider.SupprimerBDEngagement(engagement);
         }
     }
 }

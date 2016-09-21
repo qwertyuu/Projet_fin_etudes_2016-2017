@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FestiRire.Modele;
 
 namespace FestiRire.Controleur.Sommaires
 {
@@ -16,6 +17,11 @@ namespace FestiRire.Controleur.Sommaires
         {
 
             return provider.ToutExigence();
+        }
+
+        internal void SupprimerBD(vueSomExigence exigence)
+        {
+            provider.SupprimerBDExigence(exigence);
         }
     }
 }
