@@ -414,8 +414,8 @@ namespace FestiRire
         private void btnEnregistrerContrat_Click(object sender, EventArgs e)
         {
             string mes = "";
-            bool SaveRepoAgence = true;
-            bool SaveRespoDiffusseur = true;
+            //bool SaveRepoAgence = true;
+            //bool SaveRespoDiffusseur = true;
             if (txtNumeroContrat.Text == "" || txtNomContrat.Text == "")
             {
                 MessageBox.Show("Veuillez entrer le numéro et le nom du contrat");
@@ -449,7 +449,6 @@ namespace FestiRire
                 if (!validation.ValiderChampRespo(txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text))
                 {
                     MessageBox.Show(validation.MessVide + " de l'agence");
-                    SaveRepoAgence = false;
                     return;
                 }
                 else
@@ -463,7 +462,6 @@ namespace FestiRire
                 if (!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
                 {
                     MessageBox.Show(validation.MessVide + " du diffuseur");
-                    SaveRespoDiffusseur = false;
                     return;
                 }
                 else
@@ -488,42 +486,28 @@ namespace FestiRire
                 }
             }
             idAgence = (cmbNomAgence.SelectedItem as Modele.vueSomAgence).noAgence;
-            if(SaveRepoAgence)
-            {
+            Modele.tblResponsable responsableAgence = null;
+            Modele.tblResponsable responsableDiffuseur = null;
 
-            }
             //On enregistre le responsable de l'agence
-            var responsableAgence = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignatureAgence.Value, chkIdemAgence.Checked, idAgence, null);
+            responsableAgence = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignatureAgence.Value, chkIdemAgence.Checked, idAgence, null);
+
+
+            responsableDiffuseur = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignatureDiffuseur.Value, chkIdemDiffuseur.Checked, null, idDiffuseur);
+
             //On enregistre le responsable du  diffuseur
-            var responsableDiffuseur = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignatureDiffuseur.Value, chkIdemDiffuseur.Checked, null, idDiffuseur);
 
 
             string noContratAjoute = "";
 
-            if (responsableAgence == null || responsableDiffuseur == null)
+            if (!conContrat.EnregistrerContrat(idContrat, txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence, responsableAgence, responsableDiffuseur, lstArtiste.SelectedItems.Cast<Modele.tblArtiste>().ToList(), out noContratAjoute))
             {
-
-                if (!conContrat.EnregistrerContrat(idContrat, txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence, responsableAgence, responsableDiffuseur, lstArtiste.SelectedItems.Cast<Modele.tblArtiste>().ToList(), out noContratAjoute))
-                {
-                    mes = "Les informations du contrat ont été mis à jour";
-                }
-                else
-                {
-                    idContrat = noContratAjoute;
-                    mes = "Le contrat a été créé avec succès";
-                }
+                mes = "Les informations du contrat ont été mis à jour";
             }
             else
             {
-                if (!conContrat.EnregistrerContrat(idContrat, txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence, responsableAgence, responsableDiffuseur, lstArtiste.SelectedItems.Cast<Modele.tblArtiste>().ToList(), out noContratAjoute))
-                {
-                    mes = "Les informations du contrat ont été mis à jour";
-                }
-                else
-                {
-                    idContrat = noContratAjoute;
-                    mes = "Le contrat a été créé avec succès";
-                }
+                idContrat = noContratAjoute;
+                mes = "Le contrat a été créé avec succès";
             }
 
             MessageBox.Show(mes);
