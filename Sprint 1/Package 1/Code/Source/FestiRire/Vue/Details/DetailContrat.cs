@@ -293,7 +293,7 @@ namespace FestiRire
                 MessageBox.Show("Vous devez enregistrer le contrat afin de pouvoir accéder au détail d'un engagement");
                 return;
             }
-            if(dgvEngagement.Rows.Count!=0)
+            if(dgvEngagement.SelectedRows.Count!=0)
             {
                 MessageBox.Show("Vous devez avoir au moins une exigence dans la grille avant d'appuyer sur détail");
                 DetailEngagement frmDetailEngagement = new DetailEngagement(((Modele.vueSomEngagement)dgvEngagement.SelectedRows[0].DataBoundItem).noEngagement);
@@ -311,7 +311,7 @@ namespace FestiRire
                 return;
             }
             //tricottage pour aller chercher le numero d'exigence d'un type anonyme utilisé pour l'affichage
-            if(dgvEngagement.Rows.Count!=0)
+            if(dgvEngagement.SelectedRows.Count!=0)
             {
                 MessageBox.Show("Vous devez avoir au moins un engagement dans la grille avant d'appuyer sur détail");
                 int noExigence = (int)dgvExigence.SelectedRows[0].DataBoundItem.GetType().GetProperty("noExigence").GetValue(dgvExigence.SelectedRows[0].DataBoundItem, null);
