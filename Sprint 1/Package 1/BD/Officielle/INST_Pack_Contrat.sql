@@ -195,15 +195,11 @@ Rajouter des commentaires pour certains*/
 GO
 PRINT 'insertion des artistes débutée'
 GO
-
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Howard Rodriguez', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Matthew Fowler', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Dennis Garza', '{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
-\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}', null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Betty Mccoy', '{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
-\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}', null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Donald Collins', '{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
-\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}', null);
+INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Dennis Garza', '{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}', null);
+INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Betty Mccoy', '{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}', null);
+INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Donald Collins', '{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}', null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Jerry Rodriguez', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Julie Alexander', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Gloria Mills', null, null);
@@ -211,23 +207,7 @@ INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Sandr
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Lois Rivera', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Martin Mills', null, null);
 INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Lois Riley', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Catherine Meyer', '{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
-\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}', null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Karen Ferguson', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Carol Thompson', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Denise Cunningham', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Melissa Patterson', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Kathryn Oliver', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Larry Lane', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Dorothy Bryant', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Todd Clark', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Kenneth Henry', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Bobby Hanson', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Tammy Hall', 'Mettre à jour l''image de l''artiste', null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Cheryl Rogers', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Anthony Hall', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Scott Graham', null, null);
-INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Wayne Morgan',null, null);
+INSERT INTO S_Contrat.tblArtiste (nom, commentaire, dateSupprime) VALUES ('Catherine Meyer', '{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}', null);
 GO
 PRINT 'insertion des artistes réussi'
 GO
@@ -235,58 +215,31 @@ GO
 /*insertion des Fichier Personnel*/
 
 GO
-PRINT 'insertion des artistes débutée'
+PRINT 'insertion des fichiers personnels débutée'
 GO
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','\\photos\\photo.jpg','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
 \viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}',1,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\photos\\photo.jpg','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','\\photos\\photo.jpg','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
 \viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}',2,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','\\photos\\photo.jpg','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
 \viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}',3,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','\\documents\\document.docx','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
 \viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}',4,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\photos\\photo.jpg','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','\\photos\\photo.jpg','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
 \viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}',5,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','\\photos\\photo.jpg','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
 \viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}',6,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','\\documents\\document.docx','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
 \viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}',7,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','\\photos\\photo.jpg','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}
 \viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 dssdsdssd\ulnone\b0\fs17\par}',8,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','C:\\photos\\photo.jpg',null,9,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,10,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,11,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','C:\\photos\\photo.jpg',null,12,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\photos\\photo.jpg',null,13,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,14,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,15,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,16,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,17,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','C:\\photos\\photo.jpg',null,18,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,19,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,20,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,21,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,22,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,23,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,24,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,25,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,26,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,27,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,28,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,1,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,2,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,3,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,4,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,5,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,6,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\photos\\photo.jpg',null,7,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','C:\\photos\\photo.jpg',null,8,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,9,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\Users\\utilisateur.DESKTOP-7L405VB\\Desktop\\Photos\\photo.jpg',null,10,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','C:\\photos\\photo.jpg',null,11,null);
-INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','D:\\documents artistes\\document.docx',null,12,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','\\photos\\photo.jpg',null,9,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','\\photos\\photo.jpg',null,10,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','\\documents\\document.docx',null,11,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Document','\\photos\\photo.jpg',null,12,null);
+INSERT INTO S_Contrat.tblFichierPersonnel([type],[chemin],[commentaire],[noArtiste],[dateSupprime]) VALUES('Photo','\\photos\\photo.jpg',null,13,null);
 GO
-PRINT 'insertion des artistes réussie'
+PRINT 'insertion des fichiers personnels réussie'
 GO
 
 /*insertion des statuts*/
@@ -429,15 +382,15 @@ GO
 PRINT 'insertion des artistes par contrats débutée'
 GO
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(12,'MO-001');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(23,'QU-002');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(13,'QU-002');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(11,'MO-001');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(9,'JO-001');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(11,'JO-001');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(14,'JO-002');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(16,'CH-001');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(12,'JO-002');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(10,'CH-001');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(11,'CH-001');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(20,'MO-001');
-INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(23,'CH-002');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(2,'MO-001');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(3,'CH-002');
 GO
 PRINT 'insertion des artistes par contrats terminée'
 GO
@@ -446,14 +399,14 @@ GO
 GO
 PRINT 'insertion des fichier par artistes par contrats débutée'
 GO
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(11,'CH-001',22);
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(4,'CH-001',24);
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(4,'MO-001',10);
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(20,'QU-002',12);
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(14,'JO-002',2);
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(23,'QU-002',25);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(11,'CH-001',1);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(4,'CH-001',2);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(4,'MO-001',3);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(2,'QU-002',4);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(4,'JO-002',5);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(13,'QU-002',6);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(7,'QU-001',7);
-INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(17,'JO-001',24);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(1,'JO-001',8);
 GO
 PRINT 'insertion des fichier par artistes par contrats terminée'
 GO
@@ -465,14 +418,24 @@ PRINT 'insertion des catégories des artistes débutée'
 GO
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(4,2);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(9,5);
-INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(23,1);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(13,1);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(12,1);
-INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(23,5);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(13,5);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(11,3);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(10,6);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(5,2);
 INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(8,3);
-INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(18,4);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(13,4);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(1,2);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(2,5);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(3,1);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(4,1);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(5,5);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(6,3);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(7,6);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(8,2);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(9,3);
+INSERT INTO S_Contrat.tblCatArtisteArt([noArtiste],[noCategorie]) VALUES(10,4);
 GO
 PRINT 'insertion des catégories des artistes terminée'
 GO
