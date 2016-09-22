@@ -319,7 +319,7 @@ namespace FestiRire
                 MessageBox.Show("Vous devez enregistrer le contrat afin de pouvoir accéder au détail d'une exigence");
                 return;
             }
-            if (dgvEngagement.SelectedRows.Count != 0)
+            if (dgvEngagement.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vous devez avoir au moins un engagement dans la grille avant d'appuyer sur détail");
             }
@@ -533,7 +533,7 @@ namespace FestiRire
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             DialogResult result;
-            result = MessageBox.Show("Si vous fermez vous allez perdre les données déja saisies. Voulez-vous fermer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            result = MessageBox.Show("Si vous fermez, vous allez perdre les informations inscrites depuis le dernier enregistrement.\nVoulez-vous vraiment fermer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 this.Close();
