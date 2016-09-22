@@ -227,6 +227,7 @@
             // 
             // cmbProvince
             // 
+            this.cmbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvince.FormattingEnabled = true;
             this.cmbProvince.Items.AddRange(new object[] {
             "AB",
@@ -246,7 +247,6 @@
             this.cmbProvince.Name = "cmbProvince";
             this.cmbProvince.Size = new System.Drawing.Size(118, 21);
             this.cmbProvince.TabIndex = 59;
-            this.cmbProvince.Text = "QC";
             // 
             // label4
             // 

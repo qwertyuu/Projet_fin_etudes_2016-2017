@@ -293,9 +293,12 @@ namespace FestiRire
                 MessageBox.Show("Vous devez enregistrer le contrat afin de pouvoir accéder au détail d'un engagement");
                 return;
             }
-            if(dgvEngagement.SelectedRows.Count!=0)
+            if (dgvEngagement.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vous devez avoir au moins une exigence dans la grille avant d'appuyer sur détail");
+            }
+            else
+            {
                 DetailEngagement frmDetailEngagement = new DetailEngagement(((Modele.vueSomEngagement)dgvEngagement.SelectedRows[0].DataBoundItem).noEngagement);
                 frmDetailEngagement.ShowDialog();
                 PeuplerListes(listes.Engagement);
@@ -310,10 +313,13 @@ namespace FestiRire
                 MessageBox.Show("Vous devez enregistrer le contrat afin de pouvoir accéder au détail d'une exigence");
                 return;
             }
-            //tricottage pour aller chercher le numero d'exigence d'un type anonyme utilisé pour l'affichage
-            if(dgvEngagement.SelectedRows.Count!=0)
+            if (dgvEngagement.SelectedRows.Count != 0)
             {
                 MessageBox.Show("Vous devez avoir au moins un engagement dans la grille avant d'appuyer sur détail");
+            }
+            else
+            {
+                //tricottage pour aller chercher le numero d'exigence d'un type anonyme utilisé pour l'affichage
                 int noExigence = (int)dgvExigence.SelectedRows[0].DataBoundItem.GetType().GetProperty("noExigence").GetValue(dgvExigence.SelectedRows[0].DataBoundItem, null);
                 DetailExigence frmDetailExigence = new DetailExigence(noExigence);
                 frmDetailExigence.ShowDialog();
@@ -410,39 +416,39 @@ namespace FestiRire
                 return;
             }
 
-                if(lblStatutContrat.Text=="En cours")
+            if (lblStatutContrat.Text == "En cours")
+            {
+                if (txtLieuContrat.Text == "")
                 {
-                    if(txtLieuContrat.Text=="")
-                    {
-                        MessageBox.Show("Veuillez entrez le lieu du contrat");
-                        return;
-                    }
-
-                    if(lstArtiste.SelectedIndex==-1)
-                    {
-                        MessageBox.Show("Veuillez selectionner au moins un artiste");
-                        return;
-                    }
-
-                    //if (dgvEngagement.SelectedRows.Count==0)
-                    //{
-                    //    MessageBox.Show("Veuillez au moins un engagement");
-                    //    return;
-                    //}
-                    if (!validation.ValiderChampRespo(txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text))
-                    {
-                        MessageBox.Show(validation.MessVide + " de l'agence");
-                        return;
-                    }
-                    if (!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
-                        {
-                            MessageBox.Show(validation.MessVide + " du diffuseur");
-                            return;
-                        }
-                  
+                    MessageBox.Show("Veuillez entrez le lieu du contrat");
+                    return;
                 }
 
-            
+                if (lstArtiste.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Veuillez selectionner au moins un artiste");
+                    return;
+                }
+
+                //if (dgvEngagement.SelectedRows.Count==0)
+                //{
+                //    MessageBox.Show("Veuillez au moins un engagement");
+                //    return;
+                //}
+                if (!validation.ValiderChampRespo(txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text))
+                {
+                    MessageBox.Show(validation.MessVide + " de l'agence");
+                    return;
+                }
+                if (!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
+                {
+                    MessageBox.Show(validation.MessVide + " du diffuseur");
+                    return;
+                }
+
+            }
+
+
 
 
             var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
@@ -460,7 +466,7 @@ namespace FestiRire
             //On enregistre le responsable du  diffuseur
             var responsableDiffuseur = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignatureDiffuseur.Value, chkIdemDiffuseur.Checked, null, idDiffuseur);
             string noContratAjoute = "";
-            if (!conContrat.EnregistrerContrat(idContrat, txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence, responsableAgence, responsableDiffuseur,lstArtiste.SelectedItems.Cast<Modele.tblArtiste>().ToList(), out noContratAjoute))
+            if (!conContrat.EnregistrerContrat(idContrat, txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence, responsableAgence, responsableDiffuseur, lstArtiste.SelectedItems.Cast<Modele.tblArtiste>().ToList(), out noContratAjoute))
             {
                 mes = "Les informations du contrat ont été mis à jour";
             }
