@@ -25,7 +25,7 @@ namespace FestiRire.Controleur
         public void verifierChampVide(string nom, string no, string courr, string addr, string ville, string prov, string pays, string code)
         {
             messVide = "";
-            if (nom == "" || no == "" || courr == "" || addr == "" || ville == "" || prov == "" || pays == "" || code == "")
+            if (SanitariserTexte(nom) == null || SanitariserTexte(no) == null || SanitariserCourriel(courr) == null || SanitariserTexte(addr) == null || SanitariserTexte(ville) == null || SanitariserTexte(prov) == null || SanitariserTexte(pays) == null || SanitariserTexte(code) == null)
             {
                 messVide = "Vos devez remplir tous les champs obbigatoire";
             }
