@@ -15,7 +15,7 @@ namespace FestiRire
         Controleur.Details.DetailEngagement conEngagement = new Controleur.Details.DetailEngagement();
         Controleur.Validation validation = new Controleur.Validation();
         int? idEngagement;
-        string idContratTemporaire;
+        string idContrat;
         private void btnEnregistrerEngagement_Click(object sender, EventArgs e)
         {
             if(txtNatureEngagement.Text=="" || txtLieu.Text=="")
@@ -34,12 +34,12 @@ namespace FestiRire
                 {
                     if (idEngagement != null)
                     {
-                        conEngagement.EnregistrerEngagement((int)idEngagement, txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Rtf, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf, idContratTemporaire);
+                        conEngagement.EnregistrerEngagement((int)idEngagement, txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Rtf, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf);
                         MessageBox.Show("Engagement Modifié");
                     }
                     else
                     {
-                        conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Rtf, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf,idContratTemporaire);
+                        conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Rtf, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf,idContrat);
                         MessageBox.Show("Engagement Ajouté");
                     }
                     this.Close();
@@ -60,7 +60,7 @@ namespace FestiRire
         public DetailEngagement(string _idContratTemporaire)
         {
             InitializeComponent();
-            idContratTemporaire = _idContratTemporaire;
+            idContrat = _idContratTemporaire;
             DesactiverBtnSupp();
         }
         private void PeuplerInterface(Modele.tblEngagement _Engagement)

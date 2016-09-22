@@ -13,10 +13,10 @@ namespace FestiRire
     public partial class DetailExigence : Form
     {
         Controleur.Details.DetailExigence conExigence = new Controleur.Details.DetailExigence();
-        Controleur.Sommaires.SommaireStatut conStatut = new Controleur.Sommaires.SommaireStatut();
+        Controleur.Details.DetailStatut conStatut = new Controleur.Details.DetailStatut();
         Controleur.Validation validation = new Controleur.Validation();
         int? idExigence;
-        string idContratTemporaire;
+        string idContrat;
 
         private void btnEnregistrerExigence_Click(object sender, EventArgs e)
         {
@@ -35,12 +35,12 @@ namespace FestiRire
                 {
                     if (idExigence != null)
                     {
-                        conExigence.EnregistrerExigence((int)idExigence, txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Rtf, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf, idContratTemporaire);
+                        conExigence.EnregistrerExigence((int)idExigence, txtNom.Text, dateExigence.Value, txtMontant.Text, cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Rtf, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf);
                         MessageBox.Show("Exigence Modifiée");
                     }
                     else
                     {
-                        conExigence.EnregistrerExigence(txtNom.Text, dateExigence.Value, Convert.ToDecimal(txtMontant.Text), cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Rtf, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf, idContratTemporaire);
+                        conExigence.EnregistrerExigence(txtNom.Text, dateExigence.Value, Convert.ToDecimal(txtMontant.Text), cmbStatut.SelectedItem, cmbEvenement.SelectedItem, rtbCommentaire.Rtf, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf, idContrat);
                         MessageBox.Show("Exigence Ajoutée");
                     }
                     this.Close();
@@ -60,11 +60,10 @@ namespace FestiRire
             cmbStatut.DataSource = conStatut.Tout();
             PeuplerInterface(conExigence.LoadExigence(_idExigence));
         }
-        public DetailExigence(string _idContratTemporaire)
+        public DetailExigence(string _idContrat)
         {
             InitializeComponent();
-            idContratTemporaire = _idContratTemporaire;
-            MessageBox.Show(idContratTemporaire);
+            idContrat = _idContrat;
             DesactiverBtnSupp();
             idExigence = null;
 

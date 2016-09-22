@@ -373,6 +373,7 @@
             // 
             this.cmbNomAgence.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbNomAgence.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNomAgence.FormattingEnabled = true;
             this.cmbNomAgence.Location = new System.Drawing.Point(128, 16);
             this.cmbNomAgence.Margin = new System.Windows.Forms.Padding(2);
@@ -444,12 +445,13 @@
             // 
             // statut
             // 
+            this.statut.DataPropertyName = "statut";
             this.statut.HeaderText = "Statut";
             this.statut.Name = "statut";
             // 
             // DescriCourte
             // 
-            this.DescriCourte.DataPropertyName = "descriptionCourte";
+            this.DescriCourte.DataPropertyName = "description";
             this.DescriCourte.HeaderText = "Description";
             this.DescriCourte.Name = "DescriCourte";
             // 
@@ -533,7 +535,6 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(1708, 613);
             this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnuler.Name = "btnAnnuler";
@@ -1135,14 +1136,16 @@
             // 
             this.cmbEvenement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbEvenement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEvenement.Enabled = false;
             this.cmbEvenement.FormattingEnabled = true;
+            this.cmbEvenement.Items.AddRange(new object[] {
+            "Festi-rire 2017"});
             this.cmbEvenement.Location = new System.Drawing.Point(86, 15);
             this.cmbEvenement.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEvenement.Name = "cmbEvenement";
             this.cmbEvenement.Size = new System.Drawing.Size(200, 21);
             this.cmbEvenement.TabIndex = 2;
-            this.cmbEvenement.Text = "Festi-rire 2017";
             // 
             // btnStatut1
             // 
@@ -1186,7 +1189,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(1791, 653);
             this.ControlBox = false;
             this.Controls.Add(this.lblStatutContrat);
@@ -1336,16 +1338,16 @@
         private System.Windows.Forms.Button btnStatut2;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lblStatutContrat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn montant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescriCourte;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEngagement;
         private System.Windows.Forms.DataGridViewTextBoxColumn HeureEngagement;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescriCourte;
     }
 }
 

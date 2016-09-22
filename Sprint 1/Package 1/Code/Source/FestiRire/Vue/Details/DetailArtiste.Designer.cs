@@ -97,7 +97,6 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(771, 628);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
@@ -323,6 +322,7 @@
             // 
             this.cmbContrat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbContrat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbContrat.FormattingEnabled = true;
             this.cmbContrat.Location = new System.Drawing.Point(103, 18);
             this.cmbContrat.Margin = new System.Windows.Forms.Padding(2);
@@ -501,7 +501,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(858, 663);
             this.ControlBox = false;
             this.Controls.Add(this.lstCatArtiste);

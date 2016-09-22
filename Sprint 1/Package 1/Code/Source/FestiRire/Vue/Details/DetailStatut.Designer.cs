@@ -46,7 +46,6 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(653, 391);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
@@ -73,7 +72,7 @@
             this.txtNom.Location = new System.Drawing.Point(130, 15);
             this.txtNom.MaxLength = 20;
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(601, 20);
+            this.txtNom.Size = new System.Drawing.Size(598, 20);
             this.txtNom.TabIndex = 6;
             // 
             // label2
@@ -155,7 +154,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(740, 426);
             this.ControlBox = false;
             this.Controls.Add(this.rtbDescriptionStatut);

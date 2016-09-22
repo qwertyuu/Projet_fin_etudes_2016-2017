@@ -11,6 +11,7 @@ namespace FestiRire.Controleur.Details
     {
         public void EnregistrerEngagement(string nature, DateTime date, int heure, int minutes, string duree, string lieu, string commentaire, string prixbillet, string capacite, string descCourte, string descLongue,string idContrat)
         {
+            //INSERT
             Modele.tblEngagement tE = new tblEngagement()
             {
                 nature = nature,
@@ -26,9 +27,9 @@ namespace FestiRire.Controleur.Details
             };
             provider.InsertEngagement(tE);
         }
-
-        internal void EnregistrerEngagement(int idEngagement, string nature, DateTime date, int heure, int minutes, string duree, string lieu, string commentaire, string prixbillet, string capacite, string descCourte, string descLongue, string idContrat)
+        internal void EnregistrerEngagement(int idEngagement, string nature, DateTime date, int heure, int minutes, string duree, string lieu, string commentaire, string prixbillet, string capacite, string descCourte, string descLongue)
         {
+            //UPDATE
             var tE = provider.SelectEngagement(idEngagement);
             tE.nature = nature;
             tE.date = date;
@@ -38,17 +39,18 @@ namespace FestiRire.Controleur.Details
             tE.commentaire = commentaire;
             tE.descriptionCourte = descCourte;
             tE.description = descLongue;
-            tE.noContrat = idContrat;
             provider.Save();
         }
 
         public tblEngagement LoadEngagement(int idEngagement)
         {
+            //SELECT
             return provider.SelectEngagement(idEngagement);
         }
 
         public void SupprimerEngagement(int idEngagement)
         {
+            //DATE SUPPRIME
             provider.SupprimerEngagement(idEngagement);
         }
     }

@@ -218,6 +218,7 @@ namespace FestiRire
                     q.dateSupprime = DateTime.Now;
                 }
             }
+            BD.SaveChanges();
         }
 
         public void SupprimerEngagement(int idEngagement)

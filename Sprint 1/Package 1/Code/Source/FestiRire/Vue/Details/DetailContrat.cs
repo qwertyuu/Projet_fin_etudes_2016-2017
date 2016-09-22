@@ -19,11 +19,10 @@ namespace FestiRire
         Controleur.Validation validation;
         Controleur.Sommaires.SommaireExigence conSomExi;
         Controleur.Sommaires.SommaireEngagement conSomEng;
+        Controleur.Details.DetailStatut conStatut;
         private string idContrat;
         private string idAgence;
         private int idDiffuseur;
-        private string idContratTemporaire;
-        Random NbreRamdom;
 
         public DetailContrat()
         {
@@ -34,8 +33,6 @@ namespace FestiRire
             btnEnregistrerContrat.Enabled = false;
             PeuplerListes();
             verifierStatut();
-            NbreRamdom = new Random();
-            idContratTemporaire = validation.Hash( NbreRamdom.Next().ToString()).Substring(0, 19);
         }
 
         public void InitComplet()
@@ -70,6 +67,7 @@ namespace FestiRire
             validation = new Controleur.Validation();
             conSomExi = new Controleur.Sommaires.SommaireExigence();
             conSomEng = new Controleur.Sommaires.SommaireEngagement();
+            conStatut = new Controleur.Details.DetailStatut();
         }
 
         public DetailContrat(string noContrat)
@@ -82,7 +80,6 @@ namespace FestiRire
             PeuplerInterface();
             verifierStatut();
             txtNumeroContrat.Enabled = false;
-            idContratTemporaire = null;
         }
 
         private void SelectionnerArtistes(Modele.tblContrat contratDuMoment)
@@ -139,6 +136,14 @@ namespace FestiRire
             verifierStatut();
         }
 
+        private void PeuplerExigence()
+        {
+            dgvExigence.DataSource = conSomExi.ToutPourContrat(idContrat)
+                .Select(a => new { date = a.date, nom = a.nom, montant = a.montant, statut = conStatut.LoadStatut(a.noStatut).nomStatut, description = a.descriptionCourte, noExigence = a.noExigence })
+                .ToList()
+                .ToSortableBindingList();
+        }
+
         private void PeuplerListes(listes l = listes.Tout)
         {
             switch (l)
@@ -147,7 +152,7 @@ namespace FestiRire
                     //peupler toutes les listes
                     cmbNomAgence.DataSource = conSomAgence.Tout();
                     lstArtiste.DataSource = conArtiste.Tout();
-                    dgvExigence.DataSource = conSomExi.ToutPourContrat(idContrat).ToSortableBindingList();
+                    PeuplerExigence();
                     dgvEngagement.DataSource = conSomEng.ToutPourContrat(idContrat).ToSortableBindingList();
                     break;
                 case listes.Artiste:
@@ -160,7 +165,7 @@ namespace FestiRire
                     break;
                 case listes.Exigence:
                     //peupler les exigences
-                    dgvExigence.DataSource = conSomExi.ToutPourContrat(idContrat).ToSortableBindingList();
+                    PeuplerExigence();
                     break;
                 case listes.Engagement:
                     //peupler les engagements
@@ -290,8 +295,7 @@ namespace FestiRire
             }
             DetailEngagement frmDetailEngagement = new DetailEngagement(((Modele.vueSomEngagement)dgvEngagement.SelectedRows[0].DataBoundItem).noEngagement);
             frmDetailEngagement.ShowDialog();
-            dgvEngagement.DataSource = null;
-            dgvEngagement.DataSource = conSomEng.Tout().ToSortableBindingList();
+            PeuplerListes(listes.Engagement);
         }
 
         private void btnDetailExigence_Click(object sender, EventArgs e)
@@ -301,10 +305,11 @@ namespace FestiRire
                 MessageBox.Show("Vous devez enregistrer le contrat afin de pouvoir accéder au détail d'une exigence");
                 return;
             }
-            DetailExigence frmDetailExigence = new DetailExigence(((Modele.vueSomExigence)dgvExigence.SelectedRows[0].DataBoundItem).noExigence);
+            //tricottage pour aller chercher le numero d'exigence d'un type anonyme utilisé pour l'affichage
+            int noExigence = (int)dgvExigence.SelectedRows[0].DataBoundItem.GetType().GetProperty("noExigence").GetValue(dgvExigence.SelectedRows[0].DataBoundItem, null);
+            DetailExigence frmDetailExigence = new DetailExigence(noExigence);
             frmDetailExigence.ShowDialog();
-            dgvExigence.DataSource = null;
-            dgvExigence.DataSource = conSomExi.Tout().ToSortableBindingList();
+            PeuplerListes(listes.Exigence);
         }
 
         private void btnAjouterEngagement_Click(object sender, EventArgs e)
@@ -314,7 +319,7 @@ namespace FestiRire
                 MessageBox.Show("Vous devez enregistrer le contrat afin de pouvoir ajouter un engagement");
                 return;
             }
-            var frmDetailEngagement = new DetailEngagement( idContrat ?? idContratTemporaire);
+            var frmDetailEngagement = new DetailEngagement(idContrat);
             frmDetailEngagement.ShowDialog();
             PeuplerListes(listes.Engagement);
 
@@ -327,7 +332,7 @@ namespace FestiRire
                 MessageBox.Show("Vous devez enregistrer le contrat afin de pouvoir ajouter une exigence");
                 return;
             }
-            var frmDetailExigence = new DetailExigence(idContrat ?? idContratTemporaire);
+            var frmDetailExigence = new DetailExigence(idContrat);
             frmDetailExigence.ShowDialog();
             PeuplerListes(listes.Exigence);
         }

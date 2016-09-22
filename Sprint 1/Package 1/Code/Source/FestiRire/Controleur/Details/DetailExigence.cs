@@ -9,10 +9,6 @@ namespace FestiRire.Controleur.Details
 {
     class DetailExigence : DetailBaseSimple
     {
-        public DetailExigence() : base()
-        {
-
-        }
         internal void EnregistrerExigence(string nom, DateTime dateExigence, decimal Montant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue, string idContrat)
         {
             var exigence = new Modele.tblExigence()
@@ -34,7 +30,7 @@ namespace FestiRire.Controleur.Details
             return provider.SelectExigence(idExigence);
             //SELECT UNIQUE
         }
-        internal void EnregistrerExigence(int idExigence, string nom, DateTime dateExigence, string txtMontant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue,string noContrat)
+        internal void EnregistrerExigence(int idExigence, string nom, DateTime dateExigence, string txtMontant, object cmbStatut, object cmbEvenement, string rtbCommentaire, string rtbDescriptionCourte, string rtbDescriptionLongue)
         {
             var tE = provider.SelectExigence(idExigence);
             tE.nom = nom;
@@ -44,7 +40,6 @@ namespace FestiRire.Controleur.Details
             tE.commentaire = rtbCommentaire;
             tE.descriptionCourte = rtbDescriptionCourte;
             tE.description = rtbDescriptionLongue;
-            tE.noContrat = noContrat;
             provider.Save();
             //UPDATE
         }

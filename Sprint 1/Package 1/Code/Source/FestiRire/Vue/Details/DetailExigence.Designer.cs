@@ -40,7 +40,6 @@
             this.txtMontant = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnAjouterStatut = new System.Windows.Forms.Button();
             this.cmbEvenement = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbStatut = new System.Windows.Forms.ComboBox();
@@ -93,7 +92,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 142);
+            this.label5.Location = new System.Drawing.Point(13, 145);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 13);
             this.label5.TabIndex = 0;
@@ -110,7 +109,6 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(716, 358);
             this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnuler.Name = "btnAnnuler";
@@ -178,26 +176,17 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Description longue:";
             // 
-            // btnAjouterStatut
-            // 
-            this.btnAjouterStatut.Location = new System.Drawing.Point(343, 87);
-            this.btnAjouterStatut.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAjouterStatut.Name = "btnAjouterStatut";
-            this.btnAjouterStatut.Size = new System.Drawing.Size(23, 21);
-            this.btnAjouterStatut.TabIndex = 46;
-            this.btnAjouterStatut.Text = "+";
-            this.btnAjouterStatut.UseVisualStyleBackColor = true;
-            // 
             // cmbEvenement
             // 
             this.cmbEvenement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbEvenement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEvenement.Enabled = false;
             this.cmbEvenement.FormattingEnabled = true;
             this.cmbEvenement.Location = new System.Drawing.Point(81, 113);
             this.cmbEvenement.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEvenement.Name = "cmbEvenement";
-            this.cmbEvenement.Size = new System.Drawing.Size(287, 21);
+            this.cmbEvenement.Size = new System.Drawing.Size(284, 21);
             this.cmbEvenement.TabIndex = 61;
             // 
             // label13
@@ -212,16 +201,17 @@
             // cmbStatut
             // 
             this.cmbStatut.DisplayMember = "nomStatut";
+            this.cmbStatut.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatut.FormattingEnabled = true;
             this.cmbStatut.Location = new System.Drawing.Point(81, 87);
             this.cmbStatut.Name = "cmbStatut";
-            this.cmbStatut.Size = new System.Drawing.Size(256, 21);
+            this.cmbStatut.Size = new System.Drawing.Size(284, 21);
             this.cmbStatut.TabIndex = 62;
             // 
             // numPoliceCommentaire
             // 
             this.numPoliceCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numPoliceCommentaire.Location = new System.Drawing.Point(100, 160);
+            this.numPoliceCommentaire.Location = new System.Drawing.Point(98, 163);
             this.numPoliceCommentaire.Name = "numPoliceCommentaire";
             this.numPoliceCommentaire.Size = new System.Drawing.Size(34, 20);
             this.numPoliceCommentaire.TabIndex = 67;
@@ -236,7 +226,7 @@
             // 
             this.btnEnumCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnumCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnumCommentaire.Location = new System.Drawing.Point(139, 159);
+            this.btnEnumCommentaire.Location = new System.Drawing.Point(137, 162);
             this.btnEnumCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnumCommentaire.Name = "btnEnumCommentaire";
             this.btnEnumCommentaire.Size = new System.Drawing.Size(42, 21);
@@ -249,7 +239,7 @@
             // 
             this.btnSouslignerCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSouslignerCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSouslignerCommentaire.Location = new System.Drawing.Point(72, 160);
+            this.btnSouslignerCommentaire.Location = new System.Drawing.Point(70, 163);
             this.btnSouslignerCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnSouslignerCommentaire.Name = "btnSouslignerCommentaire";
             this.btnSouslignerCommentaire.Size = new System.Drawing.Size(23, 21);
@@ -262,7 +252,7 @@
             // 
             this.btnItaliqueCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItaliqueCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItaliqueCommentaire.Location = new System.Drawing.Point(45, 160);
+            this.btnItaliqueCommentaire.Location = new System.Drawing.Point(43, 163);
             this.btnItaliqueCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnItaliqueCommentaire.Name = "btnItaliqueCommentaire";
             this.btnItaliqueCommentaire.Size = new System.Drawing.Size(23, 21);
@@ -275,7 +265,7 @@
             // 
             this.btnGrasCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrasCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrasCommentaire.Location = new System.Drawing.Point(18, 160);
+            this.btnGrasCommentaire.Location = new System.Drawing.Point(16, 163);
             this.btnGrasCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnGrasCommentaire.Name = "btnGrasCommentaire";
             this.btnGrasCommentaire.Size = new System.Drawing.Size(23, 21);
@@ -287,7 +277,7 @@
             // rtbCommentaire
             // 
             this.rtbCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbCommentaire.Location = new System.Drawing.Point(17, 185);
+            this.rtbCommentaire.Location = new System.Drawing.Point(15, 188);
             this.rtbCommentaire.Name = "rtbCommentaire";
             this.rtbCommentaire.Size = new System.Drawing.Size(350, 166);
             this.rtbCommentaire.TabIndex = 68;
@@ -296,7 +286,6 @@
             // rtbDescriptionCourte
             // 
             this.rtbDescriptionCourte.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.rtbDescriptionCourte.Enabled = false;
             this.rtbDescriptionCourte.Location = new System.Drawing.Point(372, 25);
             this.rtbDescriptionCourte.Name = "rtbDescriptionCourte";
             this.rtbDescriptionCourte.Size = new System.Drawing.Size(419, 107);
@@ -306,7 +295,7 @@
             // numPoliceDescriptionLongue
             // 
             this.numPoliceDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numPoliceDescriptionLongue.Location = new System.Drawing.Point(453, 159);
+            this.numPoliceDescriptionLongue.Location = new System.Drawing.Point(453, 164);
             this.numPoliceDescriptionLongue.Name = "numPoliceDescriptionLongue";
             this.numPoliceDescriptionLongue.Size = new System.Drawing.Size(34, 20);
             this.numPoliceDescriptionLongue.TabIndex = 81;
@@ -321,7 +310,7 @@
             // 
             this.btnEnumDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnumDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnumDescriptionLongue.Location = new System.Drawing.Point(492, 157);
+            this.btnEnumDescriptionLongue.Location = new System.Drawing.Point(492, 163);
             this.btnEnumDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnumDescriptionLongue.Name = "btnEnumDescriptionLongue";
             this.btnEnumDescriptionLongue.Size = new System.Drawing.Size(42, 21);
@@ -334,7 +323,7 @@
             // 
             this.btnSouslignerDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSouslignerDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSouslignerDescriptionLongue.Location = new System.Drawing.Point(426, 159);
+            this.btnSouslignerDescriptionLongue.Location = new System.Drawing.Point(425, 163);
             this.btnSouslignerDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
             this.btnSouslignerDescriptionLongue.Name = "btnSouslignerDescriptionLongue";
             this.btnSouslignerDescriptionLongue.Size = new System.Drawing.Size(23, 21);
@@ -347,7 +336,7 @@
             // 
             this.btnItaliqueDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItaliqueDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItaliqueDescriptionLongue.Location = new System.Drawing.Point(399, 160);
+            this.btnItaliqueDescriptionLongue.Location = new System.Drawing.Point(398, 163);
             this.btnItaliqueDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
             this.btnItaliqueDescriptionLongue.Name = "btnItaliqueDescriptionLongue";
             this.btnItaliqueDescriptionLongue.Size = new System.Drawing.Size(23, 21);
@@ -360,7 +349,7 @@
             // 
             this.btnGrasDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrasDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrasDescriptionLongue.Location = new System.Drawing.Point(373, 159);
+            this.btnGrasDescriptionLongue.Location = new System.Drawing.Point(375, 163);
             this.btnGrasDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
             this.btnGrasDescriptionLongue.Name = "btnGrasDescriptionLongue";
             this.btnGrasDescriptionLongue.Size = new System.Drawing.Size(23, 21);
@@ -392,7 +381,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(801, 398);
             this.ControlBox = false;
             this.Controls.Add(this.numPoliceDescriptionLongue);
@@ -411,7 +399,6 @@
             this.Controls.Add(this.cmbStatut);
             this.Controls.Add(this.cmbEvenement);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.btnAjouterStatut);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtMontant);
             this.Controls.Add(this.dateExigence);
@@ -449,7 +436,6 @@
         private System.Windows.Forms.MaskedTextBox txtMontant;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnAjouterStatut;
         private System.Windows.Forms.ComboBox cmbEvenement;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbStatut;
