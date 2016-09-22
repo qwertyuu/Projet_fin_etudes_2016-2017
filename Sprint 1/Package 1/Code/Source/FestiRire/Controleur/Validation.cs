@@ -141,6 +141,7 @@ namespace FestiRire.Controleur
 
         }
 
+        
         public bool ValiderChampRespo(string nom, string prenom, string courriel)
         {
             if (nom == "" || prenom == "" || courriel == "")

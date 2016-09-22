@@ -223,9 +223,19 @@ namespace FestiRire
         private void btnStatut1_Click(object sender, EventArgs e)
         {
             if (btnStatut1.Text == "En négociation")
+            {
                 lblStatutContrat.Text = "En négociation";
+            }
+
             else if (btnStatut1.Text == "En cours")
-                lblStatutContrat.Text = "En cours";
+            {
+                if (MessageBox.Show(("Si vous passez le statut du contrat à En cours, le numéro, le nom et lieu du contrat ne seront plus modifiable.\nVoulez-vous changer de statut?"), "Changement de statut", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    txtNumeroContrat.Enabled = false;
+                    txtNomContrat.Enabled = false;
+                    lblStatutContrat.Text = "En cours";
+                }
+            }
             else if (btnStatut1.Text == "Terminé")
                 lblStatutContrat.Text = "Terminé";
             btnEnregistrerContrat.Enabled = true;
@@ -382,21 +392,43 @@ namespace FestiRire
                 MessageBox.Show("Veuillez entrer le numéro et le nom du contrat");
                 return;
             }
+
             else
             {
-                if (!validation.ValiderChampRespo(txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text) && cmbNomAgence.SelectedIndex == -1)
+                if(lblStatutContrat.Text=="En cours")
                 {
-                    MessageBox.Show(validation.MessVide + " de l'agence");
-                    return;
-                }
-                else
-                {
-                    if (!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
+                    if(txtLieuContrat.Text=="")
                     {
-                        MessageBox.Show(validation.MessVide + " du diffuseur");
+                        MessageBox.Show("Veuillez entrez le lieu du contrat");
                         return;
                     }
+
+                    if(lstArtiste.SelectedIndex==-1)
+                    {
+                        MessageBox.Show("Veuillez selectionner au moins un artiste");
+                        return;
+                    }
+
+                    //if (dgvEngagement.SelectedRows.Count==0)
+                    //{
+                    //    MessageBox.Show("Veuillez au moins un engagement");
+                    //    return;
+                    //}
+                    if (!validation.ValiderChampRespo(txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text))
+                    {
+                        MessageBox.Show(validation.MessVide + " de l'agence");
+                        return;
+                    }
+                    else
+                    {
+                        if (!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
+                        {
+                            MessageBox.Show(validation.MessVide + " du diffuseur");
+                            return;
+                        }
+                    }
                 }
+
             }
 
 
