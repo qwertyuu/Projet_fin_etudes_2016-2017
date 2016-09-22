@@ -293,9 +293,14 @@ namespace FestiRire
                 MessageBox.Show("Vous devez enregistrer le contrat afin de pouvoir accéder au détail d'un engagement");
                 return;
             }
-            DetailEngagement frmDetailEngagement = new DetailEngagement(((Modele.vueSomEngagement)dgvEngagement.SelectedRows[0].DataBoundItem).noEngagement);
-            frmDetailEngagement.ShowDialog();
-            PeuplerListes(listes.Engagement);
+            if(dgvEngagement.Rows.Count!=0)
+            {
+                MessageBox.Show("Vous devez avoir au moins une exigence dans la grille avant d'appuyer sur détail");
+                DetailEngagement frmDetailEngagement = new DetailEngagement(((Modele.vueSomEngagement)dgvEngagement.SelectedRows[0].DataBoundItem).noEngagement);
+                frmDetailEngagement.ShowDialog();
+                PeuplerListes(listes.Engagement);
+            }
+
         }
 
         private void btnDetailExigence_Click(object sender, EventArgs e)
@@ -306,10 +311,15 @@ namespace FestiRire
                 return;
             }
             //tricottage pour aller chercher le numero d'exigence d'un type anonyme utilisé pour l'affichage
-            int noExigence = (int)dgvExigence.SelectedRows[0].DataBoundItem.GetType().GetProperty("noExigence").GetValue(dgvExigence.SelectedRows[0].DataBoundItem, null);
-            DetailExigence frmDetailExigence = new DetailExigence(noExigence);
-            frmDetailExigence.ShowDialog();
-            PeuplerListes(listes.Exigence);
+            if(dgvEngagement.Rows.Count!=0)
+            {
+                MessageBox.Show("Vous devez avoir au moins un engagement dans la grille avant d'appuyer sur détail");
+                int noExigence = (int)dgvExigence.SelectedRows[0].DataBoundItem.GetType().GetProperty("noExigence").GetValue(dgvExigence.SelectedRows[0].DataBoundItem, null);
+                DetailExigence frmDetailExigence = new DetailExigence(noExigence);
+                frmDetailExigence.ShowDialog();
+                PeuplerListes(listes.Exigence);
+            }
+
         }
 
         private void btnAjouterEngagement_Click(object sender, EventArgs e)
@@ -392,14 +402,14 @@ namespace FestiRire
         private void btnEnregistrerContrat_Click(object sender, EventArgs e)
         {
             string mes = "";
+            //bool SaveRepoAgence = true;
+            //bool SaveRespoDiffusseur = true;
             if (txtNumeroContrat.Text == "" || txtNomContrat.Text == "")
             {
                 MessageBox.Show("Veuillez entrer le numéro et le nom du contrat");
                 return;
             }
 
-            else
-            {
                 if(lblStatutContrat.Text=="En cours")
                 {
                     if(txtLieuContrat.Text=="")
@@ -424,17 +434,15 @@ namespace FestiRire
                         MessageBox.Show(validation.MessVide + " de l'agence");
                         return;
                     }
-                    else
-                    {
-                        if (!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
+                    if (!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
                         {
                             MessageBox.Show(validation.MessVide + " du diffuseur");
                             return;
                         }
-                    }
+                  
                 }
 
-            }
+            
 
 
             var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
