@@ -72,7 +72,7 @@ namespace FestiRire
             return BD.tblArtiste.SingleOrDefault(a => a.noArtiste == idArtiste && a.dateSupprime == null);
         }
 
-        public List<tblStatut> ToutStatus()
+        public List<tblStatut> ToutStatut()
         {
             return BD.tblStatut.ToList();
         }

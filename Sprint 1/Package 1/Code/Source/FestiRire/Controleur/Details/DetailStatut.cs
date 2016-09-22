@@ -46,5 +46,10 @@ namespace FestiRire.Controleur.Details
         {
             provider.SupprimerStatut(no);
         }
+
+        public List<Modele.tblStatut> Tout()
+        {
+            return provider.ToutStatut();
+        }
     }
 }
