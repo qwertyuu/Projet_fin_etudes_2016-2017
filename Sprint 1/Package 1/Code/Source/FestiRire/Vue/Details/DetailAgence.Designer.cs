@@ -202,7 +202,7 @@
             // txtTelCellulaire
             // 
             this.txtTelCellulaire.Location = new System.Drawing.Point(132, 199);
-            this.txtTelCellulaire.MaxLength = 10;
+            this.txtTelCellulaire.MaxLength = 250;
             this.txtTelCellulaire.Name = "txtTelCellulaire";
             this.txtTelCellulaire.Size = new System.Drawing.Size(118, 20);
             this.txtTelCellulaire.TabIndex = 62;
@@ -220,7 +220,7 @@
             // txtBureau
             // 
             this.txtBureau.Location = new System.Drawing.Point(132, 161);
-            this.txtBureau.MaxLength = 10;
+            this.txtBureau.MaxLength = 250;
             this.txtBureau.Name = "txtBureau";
             this.txtBureau.Size = new System.Drawing.Size(118, 20);
             this.txtBureau.TabIndex = 60;
@@ -335,6 +335,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(841, 271);
             this.ControlBox = false;
             this.Controls.Add(this.label10);

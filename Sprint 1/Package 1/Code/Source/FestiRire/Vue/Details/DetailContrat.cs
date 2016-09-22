@@ -234,12 +234,18 @@ namespace FestiRire
 
             else if (btnStatut1.Text == "En cours")
             {
-                if (MessageBox.Show(("Si vous passez le statut du contrat à En cours, le numéro, le nom et lieu du contrat ne seront plus modifiable.\nVoulez-vous changer de statut?"), "Changement de statut", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (txtNomContrat.Text == "" || txtNumeroContrat.Text == "")
+                    MessageBox.Show("Vous devez d'abord entrer le numéro et le nom du contrat avant de changer de statut");
+                else
                 {
-                    txtNumeroContrat.Enabled = false;
-                    txtNomContrat.Enabled = false;
-                    lblStatutContrat.Text = "En cours";
+                    if (MessageBox.Show(("Si vous passez le statut du contrat à En cours, le numéro, le nom et lieu du contrat ne seront plus modifiable.\nVoulez-vous changer de statut?"), "Changement de statut", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        txtNumeroContrat.Enabled = false;
+                        txtNomContrat.Enabled = false;
+                        lblStatutContrat.Text = "En cours";
+                    }
                 }
+
             }
             else if (btnStatut1.Text == "Terminé")
                 lblStatutContrat.Text = "Terminé";
@@ -408,15 +414,15 @@ namespace FestiRire
         private void btnEnregistrerContrat_Click(object sender, EventArgs e)
         {
             string mes = "";
-            //bool SaveRepoAgence = true;
-            //bool SaveRespoDiffusseur = true;
+            bool SaveRepoAgence = true;
+            bool SaveRespoDiffusseur = true;
             if (txtNumeroContrat.Text == "" || txtNomContrat.Text == "")
             {
                 MessageBox.Show("Veuillez entrer le numéro et le nom du contrat");
                 return;
             }
 
-            if (lblStatutContrat.Text == "En cours")
+            if (lblStatutContrat.Text == "En cours" || lblStatutContrat.Text == "Terminé")
             {
                 if (txtLieuContrat.Text == "")
                 {
@@ -430,26 +436,48 @@ namespace FestiRire
                     return;
                 }
 
-                //if (dgvEngagement.SelectedRows.Count==0)
-                //{
-                //    MessageBox.Show("Veuillez au moins un engagement");
-                //    return;
-                //}
+                if (dgvEngagement.SelectedRows.Count != 0)
+                {
+                    if (dgvEngagement.SelectedRows.Count == 0)
+                    {
+                        MessageBox.Show("Veuillez selectionner au  moins un engagement");
+                        return;
+                    }
+                }
+
+
                 if (!validation.ValiderChampRespo(txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text))
                 {
                     MessageBox.Show(validation.MessVide + " de l'agence");
+                    SaveRepoAgence = false;
                     return;
+                }
+                else
+                {
+                    if (!validation.IsValidEmail(txtCourrielAgence.Text))
+                    {
+                        MessageBox.Show("Courriel  de l'agence invalide");
+                        return;
+                    }
                 }
                 if (!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
                 {
                     MessageBox.Show(validation.MessVide + " du diffuseur");
+                    SaveRespoDiffusseur = false;
                     return;
                 }
+                else
+                {
+                    if (!validation.IsValidEmail(txtCourrielDiffuseur.Text))
+                    {
+                        MessageBox.Show("Courriel  du diffusseur invalide");
+                        return;
+                    }
+                }
+
+
 
             }
-
-
-
 
             var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
             if (idContrat == null && contratEcrit != null)
@@ -460,21 +488,44 @@ namespace FestiRire
                 }
             }
             idAgence = (cmbNomAgence.SelectedItem as Modele.vueSomAgence).noAgence;
+            if(SaveRepoAgence)
+            {
 
+            }
             //On enregistre le responsable de l'agence
             var responsableAgence = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignatureAgence.Value, chkIdemAgence.Checked, idAgence, null);
             //On enregistre le responsable du  diffuseur
             var responsableDiffuseur = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignatureDiffuseur.Value, chkIdemDiffuseur.Checked, null, idDiffuseur);
+
+
             string noContratAjoute = "";
-            if (!conContrat.EnregistrerContrat(idContrat, txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence, responsableAgence, responsableDiffuseur, lstArtiste.SelectedItems.Cast<Modele.tblArtiste>().ToList(), out noContratAjoute))
+
+            if (responsableAgence == null || responsableDiffuseur == null)
             {
-                mes = "Les informations du contrat ont été mis à jour";
+
+                if (!conContrat.EnregistrerContrat(idContrat, txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence, responsableAgence, responsableDiffuseur, lstArtiste.SelectedItems.Cast<Modele.tblArtiste>().ToList(), out noContratAjoute))
+                {
+                    mes = "Les informations du contrat ont été mis à jour";
+                }
+                else
+                {
+                    idContrat = noContratAjoute;
+                    mes = "Le contrat a été créé avec succès";
+                }
             }
             else
             {
-                idContrat = noContratAjoute;
-                mes = "Le contrat a été créé avec succès";
+                if (!conContrat.EnregistrerContrat(idContrat, txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence, responsableAgence, responsableDiffuseur, lstArtiste.SelectedItems.Cast<Modele.tblArtiste>().ToList(), out noContratAjoute))
+                {
+                    mes = "Les informations du contrat ont été mis à jour";
+                }
+                else
+                {
+                    idContrat = noContratAjoute;
+                    mes = "Le contrat a été créé avec succès";
+                }
             }
+
             MessageBox.Show(mes);
 
         }

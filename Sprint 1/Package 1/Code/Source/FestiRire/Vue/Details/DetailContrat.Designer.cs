@@ -201,7 +201,7 @@
             this.txtCellulaireAgence.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCellulaireAgence.Location = new System.Drawing.Point(437, 114);
             this.txtCellulaireAgence.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCellulaireAgence.MaxLength = 10;
+            this.txtCellulaireAgence.MaxLength = 250;
             this.txtCellulaireAgence.Name = "txtCellulaireAgence";
             this.txtCellulaireAgence.Size = new System.Drawing.Size(95, 20);
             this.txtCellulaireAgence.TabIndex = 31;
@@ -210,7 +210,7 @@
             // 
             this.txtTelephoneAgence.Location = new System.Drawing.Point(128, 114);
             this.txtTelephoneAgence.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTelephoneAgence.MaxLength = 10;
+            this.txtTelephoneAgence.MaxLength = 250;
             this.txtTelephoneAgence.Name = "txtTelephoneAgence";
             this.txtTelephoneAgence.Size = new System.Drawing.Size(101, 20);
             this.txtTelephoneAgence.TabIndex = 30;
@@ -641,7 +641,7 @@
             this.txtCellulaireDiffuseur.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCellulaireDiffuseur.Location = new System.Drawing.Point(428, 114);
             this.txtCellulaireDiffuseur.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCellulaireDiffuseur.MaxLength = 10;
+            this.txtCellulaireDiffuseur.MaxLength = 250;
             this.txtCellulaireDiffuseur.Name = "txtCellulaireDiffuseur";
             this.txtCellulaireDiffuseur.Size = new System.Drawing.Size(95, 20);
             this.txtCellulaireDiffuseur.TabIndex = 19;
@@ -661,7 +661,7 @@
             // 
             this.txtTelephoneDiffuseur.Location = new System.Drawing.Point(128, 114);
             this.txtTelephoneDiffuseur.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTelephoneDiffuseur.MaxLength = 10;
+            this.txtTelephoneDiffuseur.MaxLength = 250;
             this.txtTelephoneDiffuseur.Name = "txtTelephoneDiffuseur";
             this.txtTelephoneDiffuseur.Size = new System.Drawing.Size(101, 20);
             this.txtTelephoneDiffuseur.TabIndex = 17;
@@ -1189,6 +1189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1791, 653);
             this.ControlBox = false;
             this.Controls.Add(this.lblStatutContrat);

@@ -9,7 +9,7 @@ using System.Drawing;
 
 namespace FestiRire.Controleur
 {
-    class Validation
+    class Validation:Details.DetailBaseSimple
     {
         private string messVide;
         private string messTel;
