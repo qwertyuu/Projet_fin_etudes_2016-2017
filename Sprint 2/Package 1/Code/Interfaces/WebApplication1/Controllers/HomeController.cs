@@ -31,5 +31,10 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+        
+        public ActionResult CreerActivite()
+        {
+            return View();
+        }
     }
 }

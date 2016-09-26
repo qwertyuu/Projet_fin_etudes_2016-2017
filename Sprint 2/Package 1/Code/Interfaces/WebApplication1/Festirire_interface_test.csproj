@@ -278,6 +278,7 @@
     <Content Include="Views\Home\Publicités.cshtml" />
     <Content Include="Views\Home\Forfaits.cshtml" />
     <Content Include="Views\Home\Activite.cshtml" />
+    <Content Include="Views\Home\CreerActivite.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
