@@ -36,3 +36,41 @@ C:\Users\utilisateur.INFO-324-1A-115\Documents\Templates\asp.net boilerplate\ECJ
 C:\Users\utilisateur.INFO-324-1A-115\Documents\Templates\asp.net boilerplate\ECJ.Application\obj\Debug\ECJ.Application.csprojResolveAssemblyReference.cache
 C:\Users\utilisateur.INFO-324-1A-115\Documents\Templates\asp.net boilerplate\ECJ.Application\obj\Debug\ECJ.Application.dll
 C:\Users\utilisateur.INFO-324-1A-115\Documents\Templates\asp.net boilerplate\ECJ.Application\obj\Debug\ECJ.Application.pdb
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\ECJ.Application.dll.config
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\ECJ.Application.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\ECJ.Application.pdb
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Abp.AutoMapper.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Abp.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Abp.Zero.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\AutoMapper.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Castle.Core.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Castle.Facilities.Logging.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Castle.Windsor.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\ECJ.Core.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Newtonsoft.Json.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Nito.AsyncEx.Concurrent.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Nito.AsyncEx.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Nito.AsyncEx.Enlightenment.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\System.Collections.Immutable.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\System.Linq.Dynamic.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\ECJ.Core.pdb
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Abp.pdb
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Abp.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Abp.AutoMapper.pdb
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Abp.AutoMapper.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Abp.Zero.pdb
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Abp.Zero.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\AutoMapper.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Castle.Core.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Castle.Facilities.Logging.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Castle.Windsor.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Newtonsoft.Json.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Nito.AsyncEx.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Nito.AsyncEx.Concurrent.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\Nito.AsyncEx.Enlightenment.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\bin\Debug\System.Collections.Immutable.xml
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\obj\Debug\ECJ.Application.csprojResolveAssemblyReference.cache
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\obj\Debug\ECJ.Application.dll
+C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Application\obj\Debug\ECJ.Application.pdb
