@@ -25,14 +25,6 @@ namespace ECJ.Web
                         )
                 ).AddItem(
                     new MenuItemDefinition(
-                        "Tenants",
-                        L("Tenants"),
-                        url: "Tenants",
-                        icon: "fa fa-globe",
-                        requiredPermissionName: PermissionNames.Pages_Tenants
-                        )
-                ).AddItem(
-                    new MenuItemDefinition(
                         "Users",
                         L("Users"),
                         url: "Users",
@@ -45,6 +37,13 @@ namespace ECJ.Web
                         L("About"),
                         url: "About",
                         icon: "fa fa-info"
+                        )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        "Events",
+                        L("Events"),
+                        url: "Events",
+                        icon: "fa fa-calendar"
                         )
                 );
         }

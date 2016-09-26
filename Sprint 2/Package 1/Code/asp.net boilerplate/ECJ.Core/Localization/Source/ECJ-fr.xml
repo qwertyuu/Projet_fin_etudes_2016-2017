@@ -2,7 +2,7 @@
 <localizationDictionary culture="fr">
   <texts>
     <text name="HomePage" value="Accueil" />
-    <text name="About" value="A propos" />
+    <text name="About" value="À propos" />
     <text name="WellcomeMessage" value="Bienvenue sur ECJ !" />
     
     <text name="FormIsNotValidMessage" value="Le formulaire n'est pas valide. Veuillez le corriger." />
@@ -18,6 +18,9 @@
     <text name="Password" value="Mot de passe" />
     <text name="RememberMe" value="Se rappeler de moi" />
     <text name="LogIn" value="Se connecter" />
+    <text name="Event" value="Évènement" />
+    <text name="Events" value="Évènements" />
+    <text name="Users" value="Utilisateurs" />
 
     <text name="LoginFailed" value="Echec d'authentification !" />
 
