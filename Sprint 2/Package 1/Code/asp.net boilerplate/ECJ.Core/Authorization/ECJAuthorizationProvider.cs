@@ -16,7 +16,6 @@ namespace ECJ.Authorization
             }
 
             var users = pages.CreateChildPermission(PermissionNames.Pages_Users, L("Users"));
-
             //Host permissions
             var tenants = pages.CreateChildPermission(PermissionNames.Pages_Tenants, L("Tenants"), multiTenancySides: MultiTenancySides.Host);
         }

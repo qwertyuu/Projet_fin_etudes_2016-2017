@@ -33,6 +33,12 @@ namespace ECJ.Web
                         )
                 ).AddItem(
                     new MenuItemDefinition(
+                        "Activite",
+                        L("Activite"),
+                        url: "Activite"
+                        )
+                ).AddItem(
+                    new MenuItemDefinition(
                         "About",
                         L("About"),
                         url: "About",

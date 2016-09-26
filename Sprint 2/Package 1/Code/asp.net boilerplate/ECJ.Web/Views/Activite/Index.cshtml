@@ -5,61 +5,41 @@
 
 <h2>Index</h2>
 
+@{List<string> listeActivite = new List<string>();
 
-<input width="300" />
-<button> Recherche</button>
+    listeActivite.Add("Michelin Harvey");
+    listeActivite.Add("non-réalisé");
+    listeActivite.Add("Faire l'éclairage ainsi que le sons");
+    listeActivite.Add("La lumière doit etre ajustée selon la norme et le sons doit etre d'une belle qualitée");
+    listeActivite.Add("12/09/2016"); }
 
-<table>
-    <tr>
-        <th>
-            Responsable
-        </th>
-        <th>
-            etat
-        </th>
-        <th>
-            tache
-        </th>
-        <th>
-            details
-        </th>
-        <th>
-            date
-        </th>
-        <th>
-            Options
-        </th>
-    </tr>
+<input/>
+<button data-toggle="modal" class="btn btn-primary"> Recherche</button>
+<div class="row">
+    <div class="col-md-12">
+        <a href="/Activite/Create" data-toggle="modal" class="btn btn-primary pull-right">Creer <i class="fa fa-plus"></i></a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Responsable</th>
+                    <th>etat</th>
+                    <th>tache</th>
+                    <th>details</th>
+                    <th>date</th>
+                </tr>
+            </thead>
 
+            <tbody>
+                <tr>
 
-    <tr>
-        <td>
-            Michelin Harvey
-        </td>
-        <td>
-            non-réalisé
-        </td>
-        <td>
-            Faire l'éclairage ainsi que le sons
-        </td>
-        <td>
-            La lumière doit etre ajustée selon la norme et le sons doit etre d'une belle qualitée
-        </td>
-        <td>
-            12/09/2016
-        </td>
-        <td>
-            <a href="/Activite/Create">Create</a>
-        </td>
-</tr>
-
-    <tr>
-        <td>Ginette Deschenes</td>
-        <td>Réalisé</td>
-        <td>Rechercher des commanditaires</td>
-        <td>Quelqu'un doit s'occuper de la recherche des commanditaire puisque le projet est dispendieux et nous ne possedons pas l'argent nécessaire pour subvenir au besoin</td>
-        <td>22/09/2016</td>
-        <td><a href="/Activite/Create">Create</a></td>
-    </tr>
-
-</table>
+                    @foreach (var Act in listeActivite)
+                    {
+                        <td>
+                            @Act
+                        </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
