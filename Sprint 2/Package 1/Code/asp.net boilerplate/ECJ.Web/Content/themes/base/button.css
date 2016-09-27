@@ -112,3 +112,9 @@ button.ui-button::-moz-focus-inner {
 	border: 0;
 	padding: 0;
 }
+footer{
+    width:100%;
+    bottom:0px;
+    left:0px;
+}
+

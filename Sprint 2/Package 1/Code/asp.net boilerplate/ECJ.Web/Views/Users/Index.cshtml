@@ -44,46 +44,35 @@
             <form name="userCreateForm" role="form" novalidate class="form-validation">
                 <div class="modal-header">
                     <h4 class="modal-title">
-                        <span>@L("CreateNewUser")</span>
+                        <span>Créer un nouveau mémo</span>
                     </h4>
                 </div>
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label>@L("UserName")</label>
+                        <label>Expéditeur</label>
                         <input class="form-control" type="text" name="UserName" required maxlength="@AbpUserBase.MaxUserNameLength" minlength="2">
                     </div>
 
                     <div class="form-group">
-                        <label>@L("Name")</label>
+                        <label>Destinataire</label>
                         <input type="text" name="Name" class="form-control" required maxlength="@ECJ.Users.User.MaxNameLength">
                     </div>
 
                     <div class="form-group">
-                        <label>@L("Surname")</label>
-                        <input type="text" name="Surname" class="form-control" required maxlength="@ECJ.Users.User.MaxSurnameLength">
+                        <label>Date</label>
+                        <input type="date" name="Surname" class="form-control" required maxlength="@ECJ.Users.User.MaxSurnameLength">
                     </div>
 
                     <div class="form-group">
-                        <label>@L("EmailAddress")</label>
-                        <input type="email" name="EmailAddress" class="form-control" maxlength="@AbpUserBase.MaxEmailAddressLength">
-                    </div>
-
-                    <div class="form-group">
-                        <label>@L("Password")</label>
-                        <input type="password" name="Password" class="form-control" required maxlength="@ECJ.Users.User.MaxPlainPasswordLength">
-                    </div>
-
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="IsActive" value="true" value="true" checked="checked"> @L("IsActive")
-                        </label>
+                        <label>Message</label>
+                        <textarea  name="EmailAddress" class="form-control" rows="10" cols="5" required></textarea>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">@L("Cancel")</button>
                     <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@L("Cancel")</button>
                 </div>
             </form>
         </div>

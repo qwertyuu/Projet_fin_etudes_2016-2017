@@ -10,11 +10,12 @@
     @Html.IncludeScript("~/Views/Account/Login.js")
 }
 
-<div class="pull-right">
-    <img src="~/images/logo_Home.png" />
-</div>
+
 <div class="container">
     <div id="LoginArea" class="row">
+        <div>
+            <img src="~/images/logo_Home.png" />
+        </div><br /><br />
         <div class="col-lg-12">
             <div class="well bs-component">
                 <form id="LoginForm" class="form-horizontal" action="@(Url.Action("Login", "Account"))?returnUrl=@(Model.ReturnUrl)" method="POST">

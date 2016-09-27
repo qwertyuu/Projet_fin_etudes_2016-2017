@@ -51,6 +51,13 @@ namespace ECJ.Web
                         url: "Events",
                         icon: "fa fa-calendar"
                         )
+               ).AddItem(
+                    new MenuItemDefinition(
+                        "Publicite",
+                        L("pub"),
+                        url: "Publicite",
+                        icon: "fa fa-television"
+                        )
                 );
         }
 

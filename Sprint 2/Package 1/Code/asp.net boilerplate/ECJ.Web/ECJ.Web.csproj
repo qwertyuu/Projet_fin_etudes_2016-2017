@@ -493,7 +493,7 @@
     <Content Include="Views\Publicite\Ajout.cshtml" />
     <Content Include="Views\Publicite\Detail.cshtml" />
     <Content Include="Views\AgencePub\Ajout.cshtml" />
-    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\Shared\BotomBar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
