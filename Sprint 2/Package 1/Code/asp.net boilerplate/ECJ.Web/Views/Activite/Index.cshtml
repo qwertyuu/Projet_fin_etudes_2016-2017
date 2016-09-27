@@ -3,14 +3,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Activités</h2>
 
 @{List<string> listeActivite = new List<string>();
 
-    listeActivite.Add("Michelin Harvey");
+    listeActivite.Add("Harvey");
+    listeActivite.Add("Michelin");
     listeActivite.Add("non-réalisé");
-    listeActivite.Add("Faire l'éclairage ainsi que le sons");
-    listeActivite.Add("La lumière doit etre ajustée selon la norme et le sons doit etre d'une belle qualitée");
+    listeActivite.Add("Faire l'éclairage ainsi que le sons.");
+    listeActivite.Add("La lumière doit etre ajustée selon la norme et le sons doit etre d'une belle qualitée.");
     listeActivite.Add("12/09/2016"); }
 
 <input/>
@@ -21,7 +22,8 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Responsable</th>
+                    <th>Nom du responsable</th>
+                    <th>Prénom du responsable</th>
                     <th>etat</th>
                     <th>tache</th>
                     <th>details</th>

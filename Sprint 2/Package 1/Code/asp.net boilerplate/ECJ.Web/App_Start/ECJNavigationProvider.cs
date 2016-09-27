@@ -34,10 +34,10 @@ namespace ECJ.Web
                 ).AddItem(
                     new MenuItemDefinition(
                         "Activite",
-                        L("Activite"),
+                        L("Act"),
                         url: "Activite",
-                        icon: "fa fa-star",
-                        requiredPermissionName: PermissionNames.Pages_Users
+                        icon: "fa fa-puzzle-piece",
+                        requiresAuthentication: true
                         )
                 ).AddItem(
                     new MenuItemDefinition(
@@ -45,7 +45,7 @@ namespace ECJ.Web
                         L("About"),
                         url: "About",
                         icon: "fa fa-info",
-                        requiredPermissionName: PermissionNames.Pages_Users
+                        requiresAuthentication: true
                         )
                 ).AddItem(
                     new MenuItemDefinition(
@@ -53,16 +53,17 @@ namespace ECJ.Web
                         L("Events"),
                         url: "Events",
                         icon: "fa fa-calendar",
-                        requiredPermissionName: PermissionNames.Pages_Users
+                        requiresAuthentication: true
                         )
-               ).AddItem(
+                ).AddItem(
                     new MenuItemDefinition(
-                        "Publicite",
-                        L("pub"),
-                        url: "Publicite",
-                        icon: "fa fa-television"
+                        "Commanditaires",
+                        L("Comm"),
+                        url: "Commanditaires",
+                        icon: "fa fa-money",
+                        requiresAuthentication: true
                         )
-                );
+                ); ;
         }
 
         private static ILocalizableString L(string name)

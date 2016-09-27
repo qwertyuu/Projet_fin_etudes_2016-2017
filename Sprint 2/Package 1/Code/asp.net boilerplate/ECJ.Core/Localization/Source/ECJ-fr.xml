@@ -46,6 +46,8 @@
     <text name="TenantSelection" value="Sélection du client (tenant)" />
     <text name="TenantSelection_Detail" value="Veuillez choisir l'un de ces clients (tenants) suivants." />
     <text name="Logout" value="Déconnexion" />
+    <text name="Act" value="Activité" />
+    <text name="Comm" value="Commenditaires" />
     <text name="pub" value="Publicité" />
 
   </texts>

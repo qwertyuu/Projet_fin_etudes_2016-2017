@@ -13,29 +13,37 @@
     <fieldset>
         <legend></legend>
 
-        <label for="responsable" >Responsable :</label>
+        <div class="form-group">
+            <label>Nom du Responsable : </label>
+            <input class="form-control" type="text" name="UserName" required maxlength="25" minlength="2">
+        </div>
+        <div class="form-group">
+            <label>Prénom du Responsable : </label>
+            <input class="form-control" type="text" name="UserName" required maxlength="25" minlength="2">
+        </div>
 
-        <input type="text" name="responsable"><br>
+        <div class="form-group">
+            <label>État : </label>
+            <input class="form-control" type="text" name="UserName" required maxlength="25" minlength="2">
+        </div>
 
-        <label for="Etat">État:</label>
+        <div class="form-group">
+            <label>Tâches : </label>
+            <input class="form-control" type="text" name="UserName" required maxlength="50" minlength="2">
+        </div>
 
-        <input type="text" name="Etat"><br>
+        <div class="form-group">
+            <label>Details : </label>
+            <input class="form-control" type="text" name="UserName">
+        </div>
 
-        <label for="Taches">Tâches :</label>
-
-        <input type="text" name="Taches"><br>
-
-        <label for="Details">Détails :</label>
-
-        <input type="text" name="Details"><br>
-
-        <label for="Date">Date :</label>
         <form>
-            <input type="datetime-local" name="Date">
+            Date :
+            <input class="form-control" type="date" name="date">
         </form>
 
         <p>
-            <input type="submit" value="Create" class="btn btn-primary pull-left" />
+            <input type="submit" value="Create" class="btn btn-primary pull-right" />
         </p>
     </fieldset>
 }

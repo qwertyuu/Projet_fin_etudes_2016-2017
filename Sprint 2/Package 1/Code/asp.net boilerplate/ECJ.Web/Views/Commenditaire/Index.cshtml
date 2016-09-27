@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Commenditaires</h2>
+
+@{List<string> listeCommenditaires = new List<string>();
+    int cpt = 0;
+
+    listeCommenditaires.Add("Tim Hortons");
+    listeCommenditaires.Add("Desgagné");
+    listeCommenditaires.Add("Jean-Paul");
+    listeCommenditaires.Add("http://www.timhortons.com/ca/en/index.php");
+    listeCommenditaires.Add("Notre participation au sein des communautés va bien au-delà de notre café et de nos produits de boulangerie et de pâtisserie exceptionnels.  Tim Hortons soutient fièrement les initiatives communautaires locales dans toutes les collectivités où nous sommes présents.");
+    listeCommenditaires.Add("timHortons@hotmail.com");
+    listeCommenditaires.Add("418-547-3225");
+    listeCommenditaires.Add("535"); }
+
+<input />
+<button data-toggle="modal" class="btn btn-primary"> Recherche</button>
+<div class="row">
+    <div class="col-md-12">
+        <a href="/Commenditaire/Create" data-toggle="modal" class="btn btn-primary pull-right">Creer <i class="fa fa-plus"></i></a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom du commenditaire</th>
+                    <th>Nom du contact</th>
+                    <th>Prenom du contact</th>
+                    <th>Logo</th>
+                    <th>URL</th>
+                    <th>Présentation</th>
+                    <th>courriel</th>
+                    <th>No tel</th>
+                    <th>poste</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+
+                    @foreach (var Comm in listeCommenditaires)
+                    {
+                        cpt++;
+
+                        if (cpt == 4)
+                            <image ></image>
+                            <td>
+                                @Comm
+                            </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
