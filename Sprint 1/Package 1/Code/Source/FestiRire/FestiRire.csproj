@@ -32,8 +32,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,76 +55,224 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Details\DetailContrat.cs">
+    <Compile Include="Controleur\Details\DetailAgence.cs" />
+    <Compile Include="Controleur\Details\DetailArtiste.cs" />
+    <Compile Include="Controleur\Details\DetailBasePlus.cs" />
+    <Compile Include="Controleur\Details\DetailBaseSimple.cs" />
+    <Compile Include="Controleur\Details\DetailCategorieArtiste.cs" />
+    <Compile Include="Controleur\Details\DetailContrat.cs" />
+    <Compile Include="Controleur\Details\DetailEngagement.cs" />
+    <Compile Include="Controleur\Details\DetailExigence.cs" />
+    <Compile Include="Controleur\Details\DetailFichiers.cs" />
+    <Compile Include="Controleur\Details\DetailStatut.cs" />
+    <Compile Include="Controleur\Login.cs" />
+    <Compile Include="Controleur\Sommaires\SommaireAgence.cs" />
+    <Compile Include="Controleur\Sommaires\SommaireArtiste.cs" />
+    <Compile Include="Controleur\Sommaires\SommaireBase.cs" />
+    <Compile Include="Controleur\Sommaires\SommaireCategorieArtiste.cs" />
+    <Compile Include="Controleur\Sommaires\SommaireContrat.cs" />
+    <Compile Include="Controleur\Sommaires\SommaireEngagement.cs" />
+    <Compile Include="Controleur\Sommaires\SommaireExigence.cs" />
+    <Compile Include="Controleur\Sommaires\SommaireStatut.cs" />
+    <Compile Include="Controleur\Validation.cs" />
+    <Compile Include="DBProvider.cs" />
+    <Compile Include="Extenstion_List.cs" />
+    <Compile Include="Modele\PE2_Officiel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PE2_Officiel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\PE2_Officiel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\PE2_Officiel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PE2_Officiel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblAdresse.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblAgence.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblArtiste.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblCategorieArtiste.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblContrat.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblDiffuseur.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblEngagement.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblExigence.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblFichierOfficiel.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblFichierPersonnel.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblResponsable.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblStatut.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\tblUtilisateur.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomAgence.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomArtiste.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomCatArtiste.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomContrat.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomEngagement.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomExigence.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\vueSomStatut.cs">
+      <DependentUpon>PE2_Officiel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SortableBindingList.cs" />
+    <Compile Include="Vue\Details\DetailArtiste.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Details\DetailContrat.Designer.cs">
-      <DependentUpon>DetailContrat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Details\DetailArtiste.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Details\DetailArtiste.Designer.cs">
+    <Compile Include="Vue\Details\DetailArtiste.Designer.cs">
       <DependentUpon>DetailArtiste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Details\DetailStatut.cs">
+    <Compile Include="Vue\Details\DetailContrat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Details\DetailStatut.Designer.cs">
+    <Compile Include="Vue\Details\DetailContrat.Designer.cs">
+      <DependentUpon>DetailContrat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Details\DetailAgence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Details\DetailAgence.Designer.cs">
+      <DependentUpon>DetailAgence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Details\DetailStatut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Details\DetailStatut.Designer.cs">
       <DependentUpon>DetailStatut.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sommaires\SommaireCategoriesArtiste.cs">
+    <Compile Include="Vue\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sommaires\SommaireCategoriesArtiste.Designer.cs">
+    <Compile Include="Vue\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Sommaires\SommaireArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Sommaires\SommaireArtiste.Designer.cs">
+      <DependentUpon>SommaireArtiste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Sommaires\SommaireAgence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Sommaires\SommaireAgence.Designer.cs">
+      <DependentUpon>SommaireAgence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Sommaires\SommaireCategoriesArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Sommaires\SommaireCategoriesArtiste.Designer.cs">
       <DependentUpon>SommaireCategoriesArtiste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Message.cs" />
-    <Compile Include="Details\DetailCategorieArtiste.cs">
+    <Compile Include="Vue\Details\DetailCategorieArtiste.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Details\DetailCategorieArtiste.Designer.cs">
+    <Compile Include="Vue\Details\DetailCategorieArtiste.Designer.cs">
       <DependentUpon>DetailCategorieArtiste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Details\DetailEngagement.cs">
+    <Compile Include="Vue\Details\DetailEngagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Details\DetailEngagement.Designer.cs">
+    <Compile Include="Vue\Details\DetailEngagement.Designer.cs">
       <DependentUpon>DetailEngagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Details\DetailExigence.cs">
+    <Compile Include="Vue\Details\DetailExigence.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Details\DetailExigence.Designer.cs">
+    <Compile Include="Vue\Details\DetailExigence.Designer.cs">
       <DependentUpon>DetailExigence.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sommaires\SommaireContrats.cs">
+    <Compile Include="Vue\Sommaires\SommaireStatut.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sommaires\SommaireContrats.Designer.cs">
+    <Compile Include="Vue\Sommaires\SommaireStatut.Designer.cs">
+      <DependentUpon>SommaireStatut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Sommaires\SommaireContrats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Sommaires\SommaireContrats.Designer.cs">
       <DependentUpon>SommaireContrats.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Details\DetailContrat.resx">
-      <DependentUpon>DetailContrat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Details\DetailArtiste.resx">
+    <EmbeddedResource Include="Vue\Details\DetailArtiste.resx">
       <DependentUpon>DetailArtiste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Details\DetailStatut.resx">
+    <EmbeddedResource Include="Vue\Details\DetailContrat.resx">
+      <DependentUpon>DetailContrat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Details\DetailAgence.resx">
+      <DependentUpon>DetailAgence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Details\DetailStatut.resx">
       <DependentUpon>DetailStatut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sommaires\SommaireCategoriesArtiste.resx">
+    <EmbeddedResource Include="Vue\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Sommaires\SommaireArtiste.resx">
+      <DependentUpon>SommaireArtiste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Sommaires\SommaireAgence.resx">
+      <DependentUpon>SommaireAgence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Sommaires\SommaireCategoriesArtiste.resx">
       <DependentUpon>SommaireCategoriesArtiste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Details\DetailCategorieArtiste.resx">
+    <EmbeddedResource Include="Vue\Details\DetailCategorieArtiste.resx">
       <DependentUpon>DetailCategorieArtiste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Details\DetailEngagement.resx">
+    <EmbeddedResource Include="Vue\Details\DetailEngagement.resx">
       <DependentUpon>DetailEngagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Details\DetailExigence.resx">
+    <EmbeddedResource Include="Vue\Details\DetailExigence.resx">
       <DependentUpon>DetailExigence.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -124,10 +283,22 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Sommaires\SommaireContrats.resx">
+    <EmbeddedResource Include="Vue\Sommaires\SommaireContrats.resx">
       <DependentUpon>SommaireContrats.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Sommaires\SommaireStatut.resx">
+      <DependentUpon>SommaireStatut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Modele\PE2_Officiel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PE2_Officiel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modele\PE2_Officiel.edmx.diagram">
+      <DependentUpon>PE2_Officiel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -139,7 +310,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\image\identification.png" />
+    <Content Include="Modele\PE2_Officiel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PE2_Officiel.edmx</DependentUpon>
+      <LastGenOutput>PE2_Officiel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modele\PE2_Officiel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PE2_Officiel.edmx</DependentUpon>
+      <LastGenOutput>PE2_Officiel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

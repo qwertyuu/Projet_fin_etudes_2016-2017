@@ -1,0 +1,2 @@
+sqlcmd -S INFO-324-1A-115\SQLEXPRESS  -E -i CRE_DB.sql
+PAUSE
