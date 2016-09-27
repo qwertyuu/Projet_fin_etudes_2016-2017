@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace ECJ.Web.Controllers
 {
-    public class PubliciteController : Controller
+    public class AgencePubController : Controller
     {
-        // GET: Publicite
+        // GET: AgencePub
         public ActionResult Index()
         {
             return View();

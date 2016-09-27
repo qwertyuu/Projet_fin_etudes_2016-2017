@@ -3,10 +3,55 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Publicité</h2>
 
-<table>
-    <thead>
-        <td>Nom</td>
-    </thead>
-</table>
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <input type="search"  name="date" class="form-control" required /><br />
+            <input type="submit" value="Rechercher" data-toggle="modal" class="btn btn-primary"/>
+        </form>
+        <a href="/Publicite/Ajout" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i>Ajouter</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Media</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>l'humoriste de l'année</td>
+                    <td>Radio</td>
+                    <td>2016-09-23</td>
+                    <td>Promotion</td>
+                    <td><a href="">Supprimer</a><br/>
+                        <a href="" >Modifier</a><br />
+                        <a href="">Détail</a>
+                    </td>
+                 
+                </tr>
+                <tr>
+                    <td>l'humoriste de l'année</td>
+                    <td>Radio</td>
+                    <td>2016-09-23</td>
+                    <td>Promotion</td>
+                    <td>
+                        <a href="">Supprimer</a><br />
+                        <a href="">Modifier</a><br />
+                        <a href="">Détail</a>
+                    </td>
+
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
