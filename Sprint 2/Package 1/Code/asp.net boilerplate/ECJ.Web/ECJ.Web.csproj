@@ -451,6 +451,7 @@
     <Compile Include="Controllers\PubliciteController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="Controllers\TenantsController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Models\Layout\UserMenuOrLoginLinkViewModel.cs" />
     <Compile Include="Models\Account\LoginFormViewModel.cs" />
@@ -492,6 +493,7 @@
     <Content Include="Views\Publicite\Ajout.cshtml" />
     <Content Include="Views\Publicite\Detail.cshtml" />
     <Content Include="Views\AgencePub\Ajout.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
