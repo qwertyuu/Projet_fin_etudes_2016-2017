@@ -3,11 +3,14 @@
     ViewBag.Title = "Ajout";
 }
 
-<h2>Ajouter un évènement</h2>
+<h2>Créer un évènement</h2>
 @{
     List<string> elements = new List<string>()
     {
-        "Nom"
+        "Nom",
+        "Date de début",
+        "Date de fin",
+
     };
 }
 <form name="createPub" role="form" novalidate class="form-validation">
