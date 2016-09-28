@@ -41,14 +41,6 @@ namespace ECJ.Web
                         )
                 ).AddItem(
                     new MenuItemDefinition(
-                        "About",
-                        L("About"),
-                        url: "About",
-                        icon: "fa fa-info",
-                        requiresAuthentication: true
-                        )
-                ).AddItem(
-                    new MenuItemDefinition(
                         "Events",
                         L("Events"),
                         url: "Events",
@@ -59,8 +51,16 @@ namespace ECJ.Web
                     new MenuItemDefinition(
                         "Commanditaires",
                         L("Comm"),
-                        url: "Commanditaires",
+                        url: "Commenditaire",
                         icon: "fa fa-money",
+                        requiresAuthentication: true
+                        )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        "About",
+                        L("About"),
+                        url: "About",
+                        icon: "fa fa-info",
                         requiresAuthentication: true
                         )
                 ); ;
