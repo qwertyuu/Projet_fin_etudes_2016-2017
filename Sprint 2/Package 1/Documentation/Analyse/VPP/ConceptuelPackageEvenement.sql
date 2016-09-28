@@ -1,4 +1,0 @@
-CREATE TABLE Activite (noActivite int(11) NOT NULL AUTO_INCREMENT, nomResponsable varchar(25), prenomResponsable varchar(25), etat varchar(25), `date` date, tache varchar(50), details text, datesupprimee date NOT NULL, EvenementnoEvenement int(11) NOT NULL, PRIMARY KEY (noActivite));
-CREATE TABLE Evenement (noEvenement int(11) NOT NULL AUTO_INCREMENT, nom varchar(35), dateDebut date, datefin timestamp NULL, affiche blob, url text, description text, PRIMARY KEY (noEvenement));
-CREATE TABLE Commanditaire (noCommanditaire int(11), nomCommanditaire int(11), nomContact varchar(25), prenomContact varchar(25), logo blob, url text, textePresentation text, courriel varchar(255), numTel char(10), extension varchar(5));
-ALTER TABLE Activite ADD INDEX FKActivite126097 (EvenementnoEvenement), ADD CONSTRAINT FKActivite126097 FOREIGN KEY (EvenementnoEvenement) REFERENCES Evenement (noEvenement);
