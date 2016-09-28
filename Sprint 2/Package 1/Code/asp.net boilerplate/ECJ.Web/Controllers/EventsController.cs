@@ -9,13 +9,10 @@ namespace ECJ.Web.Controllers
     [AbpMvcAuthorize(PermissionNames.Pages_Events)]
     public class EventsController : ECJControllerBase
     {
-        private readonly IUserAppService _userAppService;
-
-        public EventsController(IUserAppService userAppService)
+        public ActionResult Detail()
         {
-            _userAppService = userAppService;
+            return View();
         }
-
         public ActionResult Index()
         {
             return View();

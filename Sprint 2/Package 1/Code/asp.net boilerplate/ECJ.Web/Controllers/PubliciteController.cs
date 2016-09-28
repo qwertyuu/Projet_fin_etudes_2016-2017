@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ECJ.Web.Controllers
 {
-    public class PubliciteController : Controller
+    public class PubliciteController : ECJControllerBase
     {
         // GET: Publicite
         public ActionResult Index()
