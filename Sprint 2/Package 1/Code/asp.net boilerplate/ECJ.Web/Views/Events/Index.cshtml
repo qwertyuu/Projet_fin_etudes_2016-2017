@@ -1,8 +1,55 @@
-﻿
+﻿@using Abp.Authorization.Users
+@using Abp.Web.Mvc.Extensions
+@model Abp.Application.Services.Dto.ListResultOutput<ECJ.Users.Dto.UserListDto>
 @{
     ViewBag.Title = "Events";
     ViewBag.ActiveMenu = "Events";
 }
+<div>
+    <h1>@L("Events")</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Events/Ajout" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un évènement</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Date début</th>
+                        <th>Date fin</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-<h2>Events</h2>
-
+                    <tr>
+                        <td>FestiRire 2017</td>
+                        <td>24/06/2017</td>
+                        <td>24/09/2017</td>
+                        <td>Le cegep de jonquiere présente le festi-rire 2017 avec mike ward</td>
+                    </tr>
+                    <tr>
+                        <td>FestiRire 2016</td>
+                        <td>24/06/2016</td>
+                        <td>24/09/2016</td>
+                        <td>Le cegep de jonquiere présente le festi-rire 2016 avec un autre artiste</td>
+                    </tr>
+                    <tr>
+                        <td>FestiRire 2015</td>
+                        <td>24/06/2015</td>
+                        <td>24/09/2015</td>
+                        <td>Le cegep de jonquiere présente le festi-rire 2015 avec personne</td>
+                    </tr>
+                    @foreach (var user in new List<string>())
+                    {/*
+                        <tr>
+                            <td>@user.UserName</td>
+                            <td>@user.FullName</td>
+                            <td>@user.EmailAddress</td>
+                            <td>@L(user.IsActive ? "Yes" : "No")</td>
+                        </tr>
+                    */}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

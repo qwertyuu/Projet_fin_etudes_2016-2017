@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Ajout";
+}
+
+<h2>Ajouter un évènement</h2>
+@{
+    List<string> elements = new List<string>()
+    {
+        "Nom"
+    };
+}
+<form name="createPub" role="form" novalidate class="form-validation">
+
+    @foreach (var user in elements)
+    {
+        <div class="form-group">
+            <label>@user</label>
+            <input class="form-control" type="text" name="nom" required>
+        </div>
+    }
+</form>

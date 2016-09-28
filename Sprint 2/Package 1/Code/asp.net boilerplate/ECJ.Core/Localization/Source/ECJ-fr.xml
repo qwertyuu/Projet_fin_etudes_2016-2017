@@ -21,6 +21,7 @@
     <text name="Event" value="Évènement" />
     <text name="Events" value="Évènements" />
     <text name="Users" value="Utilisateurs" />
+    <text name="Activite" value="Activité" />
 
     <text name="LoginFailed" value="Echec d'authentification !" />
 

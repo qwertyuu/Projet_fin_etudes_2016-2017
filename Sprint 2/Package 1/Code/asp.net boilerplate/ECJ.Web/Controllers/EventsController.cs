@@ -16,9 +16,12 @@ namespace ECJ.Web.Controllers
             _userAppService = userAppService;
         }
 
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            var output = await _userAppService.GetUsers();
+            return View();
+        }
+        public ActionResult Ajout()
+        {
             return View();
         }
     }

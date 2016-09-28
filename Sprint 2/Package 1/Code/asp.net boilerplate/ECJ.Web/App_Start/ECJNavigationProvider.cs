@@ -35,21 +35,25 @@ namespace ECJ.Web
                     new MenuItemDefinition(
                         "Activite",
                         L("Activite"),
-                        url: "Activite"
+                        url: "Activite",
+                        icon: "fa fa-star",
+                        requiredPermissionName: PermissionNames.Pages_Users
                         )
                 ).AddItem(
                     new MenuItemDefinition(
                         "About",
                         L("About"),
                         url: "About",
-                        icon: "fa fa-info"
+                        icon: "fa fa-info",
+                        requiredPermissionName: PermissionNames.Pages_Users
                         )
                 ).AddItem(
                     new MenuItemDefinition(
                         "Events",
                         L("Events"),
                         url: "Events",
-                        icon: "fa fa-calendar"
+                        icon: "fa fa-calendar",
+                        requiredPermissionName: PermissionNames.Pages_Users
                         )
                ).AddItem(
                     new MenuItemDefinition(
