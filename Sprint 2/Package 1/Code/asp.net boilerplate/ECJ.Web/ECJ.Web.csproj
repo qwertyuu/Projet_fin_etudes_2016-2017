@@ -449,6 +449,7 @@
     <Compile Include="Controllers\Activite\ActiviteController.cs" />
     <Compile Include="Controllers\AgencePubController.cs" />
     <Compile Include="Controllers\Commanditaire\CommanditaireController.cs" />
+    <Compile Include="Controllers\SousEvenementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PubliciteController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
@@ -502,6 +503,7 @@
     <Content Include="Views\Events\Detail.cshtml" />
     <Content Include="Views\Commanditaire\Create.cshtml" />
     <Content Include="Views\Commanditaire\Detail.cshtml" />
+    <Content Include="Views\SousEvenements\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

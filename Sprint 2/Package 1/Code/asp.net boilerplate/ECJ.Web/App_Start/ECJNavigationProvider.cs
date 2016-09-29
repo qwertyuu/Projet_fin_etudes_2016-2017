@@ -60,7 +60,7 @@ namespace ECJ.Web
                         "About",
                         L("About"),
                         url: "About",
-                        icon: "fa fa-info",
+                        icon: "fa fa-info-circle",
                         requiresAuthentication: true
                         )
                 ); ;

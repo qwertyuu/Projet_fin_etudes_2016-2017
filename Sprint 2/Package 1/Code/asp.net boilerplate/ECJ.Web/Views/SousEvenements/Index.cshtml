@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Détail d'un sous-évènement</h2>
+@{
+    List<string[]> elements = new List<string[]>()
+    {
+        new string[] {"Nom", "Souper spectacle" }
+    };
+}
+<form name="createPub" role="form" novalidate class="form-validation">
+
+    @foreach (var user in elements)
+    {
+        <div class="form-group">
+            <label>@user[0]</label>
+            <div class="well well-sm">
+                @user[1]
+            </div>
+        </div>
+    }
+    <div class="form-group">
+        <label>Description</label>
+        <div class="well well-lg">
+            Le souper spectacle avec mike ward
+        </div>
+    </div>
+    <label>Services requis</label>
+    <div class="form-group">
+        <a href="/Events/Ajout" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</a>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>Restauration</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Techniciens audio</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <label>Salles</label>
+    <div class="form-group">
+        <a href="/Events/Ajout" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une salle</a>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prix</th>
+                    <th>Billets standard</th>
+                    <th>Billets VIP</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Salle François Brassard</td>
+                    <td>5000$</td>
+                    <td>10$</td>
+                    <td>30$</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</form>

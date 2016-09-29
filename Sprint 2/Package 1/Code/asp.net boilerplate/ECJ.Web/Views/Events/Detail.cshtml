@@ -11,7 +11,7 @@
         new string[] {"Nom", "FestiRire 2017" },
         new string[] {"Date de début", "24/06/2017" },
         new string[] {"Date de fin", "24/09/2017" },
-        new string[] {"Lien hypertexte", "Le cegep de jonquiere présente le festi-rire 2017 avec mike ward" }
+        new string[] {"Lien hypertexte", "http://www.hahaha.com/fr" }
     };
 }
 <form name="createPub" role="form" novalidate class="form-validation">
@@ -51,29 +51,84 @@
                 <tr>
                     <td>Sous-Evenement 1</td>
                     <td>
-                        <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info fa-lg"></i></a>
+                        <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
                         <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-danger pull-right" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
                     </td>
                 </tr>
                 <tr>
                     <td>Sous-Evenement 2</td>
                     <td>
-                        <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info fa-lg"></i></a>
+                        <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
                         <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-danger pull-right" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
                     </td>
                 </tr>
                 <tr>
                     <td>Sous-Evenement 3</td>
                     <td>
-                        <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info fa-lg"></i></a>
+                        <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
                         <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-danger pull-right" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#liste" data-toggle="tab" aria-expanded="true">Liste</a></li>
+        <li class=""><a href="#calendrier" data-toggle="tab" aria-expanded="false">Calendrier</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade" id="home">
+            <div class="form-group">
+                <label>Activités</label>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Responsable</th>
+                            <th>État</th>
+                            <th>Tâche</th>
+                            <th>Détails</th>
+                            <th class="col-md-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>Sous-Evenement 1</td>
+                            <td>Sous-Evenement 1</td>
+                            <td>Sous-Evenement 1</td>
+                            <td>Sous-Evenement 1</td>
+                            <td>
+                                <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sous-Evenement 2</td>
+                            <td>
+                                <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sous-Evenement 3</td>
+                            <td>
+                                <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane fade active in" id="profile">
+            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+        </div>
     </div>
     <br />
     <br />
