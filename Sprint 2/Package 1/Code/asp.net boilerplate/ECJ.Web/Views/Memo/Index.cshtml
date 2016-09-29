@@ -1,26 +1,12 @@
-﻿@using Abp.Web.Mvc.Extensions
+﻿
+@using Abp.Web.Mvc.Extensions
 @model Abp.Application.Services.Dto.ListResultOutput<ECJ.Users.Dto.UserListDto>
 @section scripts
 {
-    @Html.IncludeScript("~/Views/Users/Index.js")
+    @Html.IncludeScript("~/Views/Memo/Index.js")
 }
 
-<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-    <div class="container">
-        <div class="navbar-fixed-bottom">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-       
-            <a href="/Memo/Index"  class="btn btn-primary"  data-toggle="modal"><i class="fa fa-plus"></i> Créer un Mémo</a>
-    </div>
-</div>
-
-<div class="modal fade" tabindex="-1" id="UserCreateModal" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
+<div class="modal fade" tabindex="-1" id="Memo" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form name="userCreateForm" role="form" novalidate class="form-validation">
