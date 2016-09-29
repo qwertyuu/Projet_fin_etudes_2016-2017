@@ -430,6 +430,7 @@
     <Content Include="Views\Account\Register.js" />
     <Content Include="Views\Tenants\Index.js" />
     <Content Include="Views\Users\Index.js" />
+    <Content Include="Views\ViewCalculateur.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
