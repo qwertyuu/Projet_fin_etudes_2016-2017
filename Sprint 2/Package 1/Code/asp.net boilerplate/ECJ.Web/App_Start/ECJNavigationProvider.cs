@@ -52,7 +52,7 @@ namespace ECJ.Web
                         "Commanditaires",
                         L("Comm"),
                         url: "Commanditaire",
-                        icon: "fa fa-money",
+                        icon: "fa fa-thumbs-up",
                         requiresAuthentication: true
                         )
                 ).AddItem(

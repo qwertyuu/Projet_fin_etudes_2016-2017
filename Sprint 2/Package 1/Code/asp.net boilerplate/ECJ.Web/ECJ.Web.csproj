@@ -503,6 +503,8 @@
     <Content Include="Views\Events\Detail.cshtml" />
     <Content Include="Views\Commanditaire\Create.cshtml" />
     <Content Include="Views\Commanditaire\Detail.cshtml" />
+    <Compile Include="Controllers\Don\DonController.cs" />
+    <Content Include="Views\don\Create.cshtml" />
     <Content Include="Views\SousEvenements\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

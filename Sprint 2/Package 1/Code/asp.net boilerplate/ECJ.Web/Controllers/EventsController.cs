@@ -6,7 +6,7 @@ using ECJ.Users;
 
 namespace ECJ.Web.Controllers
 {
-    [AbpMvcAuthorize(PermissionNames.Pages_Events)]
+    //[AbpMvcAuthorize(PermissionNames.Pages_Events)]
     public class EventsController : ECJControllerBase
     {
         public ActionResult Detail()

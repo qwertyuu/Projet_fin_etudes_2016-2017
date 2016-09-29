@@ -1,60 +1,79 @@
-﻿    @{
-        ViewBag.Title = "Index";
-    }
+﻿@{
+    ViewBag.Title = "Index";
+}
 
-    <h2>Commanditaires</h2>
+<h2>Commanditaires</h2>
 
-    @{List<string> listecommanditaires = new List<string>();
-        int cpt = 0;
+<div class="row">
+    <div class="col-md-12">
+        <form class="page-header">
+            <div class="input-group">
+                <input class="form-control" type="text">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Rechercher</button>
+                </span>
+            </div>
+        </form>
+        <a href="/commanditaire/Create" data-toggle="modal" class="btn btn-primary pull-right">Creer <i class="fa fa-plus"></i></a>
+        <table class="table">
+            <tdead>
+                <tr>
+                    <th>Nom du commanditaire</th>
+                    <th>Nom du contact</th>
+                    <th>Prenom du contact</th>
+                    <th>Logo</th>
+                    <th>URL</th>
+                    <th class="col-md-8">Présentation</th>
+                    <th>courriel</th>
+                    <th>Numéro de téléphone</th>
+                    <th>Poste</th>
+                    <th>Argent donnée</th>
+                    <th>Rang</th>
+                    <th>Action</th>
+                </tr>
+            </tdead>
 
-        listecommanditaires.Add("Tim Hortons");
-        listecommanditaires.Add("Desgagné");
-        listecommanditaires.Add("Jean-Paul");
-        listecommanditaires.Add("http://www.timhortons.com/ca/en/index.php");
-        listecommanditaires.Add("Notre participation au sein des communautés va bien au-delà de notre café et de nos produits de boulangerie et de pâtisserie exceptionnels.  Tim Hortons soutient fièrement les initiatives communautaires locales dans toutes les collectivités où nous sommes présents.");
-        listecommanditaires.Add("timHortons@hotmail.com");
-        listecommanditaires.Add("418-547-3225");
-        listecommanditaires.Add("535"); }
+            <tbody>
+                <tr>
+                    <td>Tim Hortons</td>
+                    <td>Desgagné</td>
+                    <td>Jean-Paul</td>
+                    <td><image src="http://www.actuallywecreate.com/wp-content/uploads/2012/10/tim-hortons-always-fresh.jpg" style="width:200px"></image></td>
+                    <td><a href="http://www.timhortons.com/ca/en/index.php">http://www.timhortons.com/ca/en/index.php</a></td>
+                    <td>Notre participation au sein des communautés va bien au-delà de notre café ...</td>
+                    <td>timHortons@hotmail.com</td>
+                    <td>418-547-3225</td>
+                    <td>535</td>
+                    <td>1532.56$</td>
+                    <td>Or</td>
+                    <td>
+                        <a href="/Commanditaire/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                        <a href="/don/Create" class="btn btn-sm btn-primary" title="Ajouter don"><i class="fa fa-money"></i></a>
+                    </td>
+                </tr>
 
-    <input />
-    <button data-toggle="modal" class="btn btn-primary"> Recherche</button>
-    <div class="row">
-        <div class="col-md-12">
-            <a href="/commanditaire/Create" data-toggle="modal" class="btn btn-primary pull-right">Creer <i class="fa fa-plus"></i></a>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Nom du commanditaire</th>
-                        <th>Nom du contact</th>
-                        <th>Prenom du contact</th>
-                        <th>Logo</th>
-                        <th>URL</th>
-                        <th>Présentation</th>
-                        <th>courriel</th>
-                        <th>Numéro de téléphone</th>
-                        <th>Poste</th>
-                        <th>Options</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>Tim Hortons</td>
-                        <td>Desgagné</td>
-                        <td>Jean-Paul</td>
-                        <td><image src="http://www.actuallywecreate.com/wp-content/uploads/2012/10/tim-hortons-always-fresh.jpg" style="width:200px"></image></td>
-                        <td><a href="http://www.timhortons.com/ca/en/index.php">http://www.timhortons.com/ca/en/index.php</a></td>
-                        <td>Notre participation au sein des communautés va bien au-delà de notre café et de nos produits de boulangerie et de pâtisserie exceptionnels.  Tim Hortons soutient fièrement les initiatives communautaires locales dans toutes les collectivités où nous sommes présents.</td>
-                        <td>timHortons@hotmail.com</td>
-                        <td>418-547-3225</td>
-                        <td>535</td>
-                        <td>
-                            <a href="" class="fa fa-trash"></a><br />
-                            <a href="" class="fa fa-pencil"></a><br />
-                            <a href="/Commanditaire/Detail" class="fa fa-info-circle"></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                <tr>
+                    <td>McDonald's</td>
+                    <td>Mc Donald</td>
+                    <td>Ronald</td>
+                    <td><image src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Mcdonalds-90s-logo.svg/2000px-Mcdonalds-90s-logo.svg.png" style="width:200px"></image></td>
+                    <td><a href="http://www.mcdonalds.ca/ca/fr.html">http://www.mcdonalds.ca/ca/fr.html</a></td>
+                    <td>Depuis le début, nous sommes engagés à faire la bonne chose. Les politiques, programmes et pratiques en place ...</td>
+                    <td>mcdonald@hotmail.com</td>
+                    <td>418-542-2356</td>
+                    <td>8765</td>
+                    <td>1054.34$</td>
+                    <td>Agent</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-primary" title="Ajouter don"><i class="fa fa-money"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+</div>

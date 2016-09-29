@@ -5,46 +5,63 @@
 
 <h2>Activités</h2>
 
-@{List<string> listeActivite = new List<string>();
-
-    listeActivite.Add("Harvey");
-    listeActivite.Add("Michelin");
-    listeActivite.Add("non-réalisé");
-    listeActivite.Add("Faire l'éclairage ainsi que le sons.");
-    listeActivite.Add("La lumière doit etre ajustée selon la norme et le sons doit etre d'une belle qualitée.");
-    listeActivite.Add("12/09/2016"); }
-
-<input/>
-<button data-toggle="modal" class="btn btn-primary"> Recherche</button>
 <div class="row">
     <div class="col-md-12">
+        <form class="page-header">
+            <div class="input-group">
+                <input class="form-control" type="text">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Rechercher</button>
+                </span>
+            </div>
+        </form>
         <a href="/Activite/Create" data-toggle="modal" class="btn btn-primary pull-right">Creer <i class="fa fa-plus"></i></a>
         <table class="table">
             <thead>
                 <tr>
                     <th>Nom du responsable</th>
                     <th>Prénom du responsable</th>
-                    <th>État</th>
                     <th>Tâche</th>
                     <th>Détails</th>
                     <th>Date</th>
-                    <th>Options</th>
+                    <th>Action</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr>
-
-                    @foreach (var Act in listeActivite)
-                    {
-                        <td>
-                            @Act
-                        </td>
-                    }
+                <tr class="success">
+                    <td>Tremblay</td>
+                    <td>Gilles</td>
+                    <td>Faire une entrevue à la radio</td>
+                    <td>Le transport doit être fourni et les repas doivent être payé (matin-midi-soir)</td>
+                    <td>30/09/2016</td>
                     <td>
-                        <a href="" class="fa fa-trash"></a><br />
-                        <a href="" class="fa fa-pencil"></a><br />
-                        <a href="" class="fa fa-info-circle"></a>
+                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+
+                <tr class="danger">
+                    <td>Harvey</td>
+                    <td>Michelin</td>
+                    <td>Faire l'éclairage ainsi que le sons.</td>
+                    <td>La lumière doit etre ajustée selon la norme et le sons doit etre d'une belle qualitée.</td>
+                    <td>12/09/2016</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+
+                <tr class="danger">
+                    <td>Gauthier</td>
+                    <td>Paul</td>
+                    <td>Faire une publication</td>
+                    <td>La publication doit promouvoir un sous-évènement. Elle doit être publié sur Facebook, twitter et sur instagram(avec une photo de l'évènement)</td>
+                    <td>14/10/2016</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
                     </td>
                 </tr>
             </tbody>
