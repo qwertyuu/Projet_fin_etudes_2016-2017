@@ -47,7 +47,7 @@
     <text name="TenantSelection_Detail" value="Veuillez choisir l'un de ces clients (tenants) suivants." />
     <text name="Logout" value="Déconnexion" />
     <text name="Act" value="Activité" />
-    <text name="Comm" value="Commenditaires" />
+    <text name="Comm" value="Commanditaires" />
     <text name="pub" value="Publicité" />
     <text name="memo" value="Créer un Mémo" />
 

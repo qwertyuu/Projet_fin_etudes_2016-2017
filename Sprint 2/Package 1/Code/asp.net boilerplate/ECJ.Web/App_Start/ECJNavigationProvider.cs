@@ -51,7 +51,7 @@ namespace ECJ.Web
                     new MenuItemDefinition(
                         "Commanditaires",
                         L("Comm"),
-                        url: "Commenditaire",
+                        url: "Commanditaire",
                         icon: "fa fa-money",
                         requiresAuthentication: true
                         )
