@@ -420,6 +420,8 @@
     <Content Include="Scripts\sweetalert\sweet-alert.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Content\zabuto_calendar.css" />
+    <Content Include="Scripts\zabuto_calendar.js" />
     <Content Include="Views\Account\Login.css">
       <DependentUpon>Login.less</DependentUpon>
     </Content>
@@ -429,6 +431,7 @@
     </Content>
     <Content Include="Views\Account\Register.js" />
     <Content Include="Views\CMemo\Index.js" />
+    <Content Include="Views\Events\Detail.js" />
     <Content Include="Views\Tenants\Index.js" />
     <Content Include="Views\Users\Index.js" />
     <Content Include="Views\ViewCalculateur.cshtml" />

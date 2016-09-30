@@ -18,6 +18,7 @@ namespace ECJ.Web
                     .Include("~/Content/toastr.min.css", new CssRewriteUrlTransform())
                     .Include("~/Scripts/sweetalert/sweet-alert.css", new CssRewriteUrlTransform())
                     .Include("~/Content/flags/famfamfam-flags.css", new CssRewriteUrlTransform())
+                    .Include("~/Content/zabuto_calendar.css", new CssRewriteUrlTransform())
                     .Include("~/Content/font-awesome.min.css", new CssRewriteUrlTransform())
                 );
 
@@ -38,6 +39,7 @@ namespace ECJ.Web
 
                         "~/Scripts/jquery-2.2.0.min.js",
                         "~/Scripts/jquery-ui-1.11.4.min.js",
+                        "~/Scripts/zabuto_calendar.js",
 
                         "~/Scripts/bootstrap.min.js",
 
