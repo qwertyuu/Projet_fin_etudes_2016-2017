@@ -3,26 +3,30 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Publicité</h2>
+<h2>Appel d'offre</h2>
 
 <div class="row">
     <div class="col-md-12">
         <form class="page-header">
             <div class="input-group">
-                <input class="form-control" type="text">
+                <input class="form-control" type="search">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Rechercher</button>
+                    <button class="btn btn-primary pull-right" type="button">Rechercher</button>
                 </span>
             </div>
         </form>
-        <a href="/Publicite/Ajout" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i>Ajouter</a>
+        <a href="/AppelOffre/Ajout" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
         <table class="table" align="center">
             <thead>
                 <tr>
                     <th>Nom</th>
                     <th>Media</th>
-                    <th>Date</th>
-                    <th>Type</th>
+                    <th>Date d'envoie</th>
+                    <th>Date requise</th>
+                    <th>Statut</th>
+                    <th>Évènement</th>
+                    <th>Description</th>
+                    <th>Soumission</th>
                     <th>Action</th>
                 </tr>
 
@@ -31,10 +35,14 @@
                 <tr>
                     <td>l'humoriste de l'année</td>
                     <td>Radio</td>
-                    <td>2016-09-23</td>
-                    <td>Promotion</td>
+                    <td>2016-09-28</td>
+                    <td>2016-10-04</td>
+                    <td>En création</td>
+                    <td>FestiRire 2017</td>
+                    <td>Promotion de l'artiste de l'année</td>
+                    <td></td>
                     <td>
-                        <a href="/Publicite/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                        <a href="/AppelOffre/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
                         <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
                         <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
                     </td>
@@ -43,10 +51,14 @@
                 <tr>
                     <td>l'humoriste de l'année</td>
                     <td>Radio</td>
-                    <td>2016-09-23</td>
-                    <td>Promotion</td>
+                    <td>2016-09-28</td>
+                    <td>2016-10-04</td>
+                    <td>Envoyé</td>
+                    <td>FestiRire 2017</td>
+                    <td>Promotion de l'artiste de l'année</td>
+                    <td></td>
                     <td>
-                        <a href="/Publicite/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                        <a href="/AppelOffre/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
                         <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
                         <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
                     </td>

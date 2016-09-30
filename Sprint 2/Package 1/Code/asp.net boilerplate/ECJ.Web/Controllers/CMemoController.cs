@@ -6,15 +6,10 @@ using System.Web.Mvc;
 
 namespace ECJ.Web.Controllers
 {
-    public class AgencePubController : Controller
+    public class CMemoController : Controller
     {
-        // GET: AgencePub
+        // GET: CMemo
         public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult Ajout()
         {
             return View();
         }

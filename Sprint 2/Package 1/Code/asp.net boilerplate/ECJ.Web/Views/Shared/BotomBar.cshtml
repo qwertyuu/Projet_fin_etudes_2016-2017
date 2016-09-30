@@ -2,23 +2,18 @@
 @model Abp.Application.Services.Dto.ListResultOutput<ECJ.Users.Dto.UserListDto>
 @section scripts
 {
-    @Html.IncludeScript("~/Views/Users/Index.js")
+    @Html.IncludeScript("~/Views/CMemo/Index.js")
 }
 
 <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
     <div class="container">
-        <div class="navbar-fixed-bottom">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+        <div class="navbar-header">
+            <a href="/CMemo/Index" class="btn btn-primary" data-toggle="modal" data-target="#CMemo"><i class="fa fa-plus"></i> Créer un Mémo</a>
         </div>
-       
-            <a href="/Memo/Index"  class="btn btn-primary"  data-toggle="modal"><i class="fa fa-plus"></i> Créer un Mémo</a>
+
     </div>
 </div>
+
 
 <div class="modal fade" tabindex="-1" id="UserCreateModal" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">

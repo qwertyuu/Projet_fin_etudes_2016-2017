@@ -1,9 +1,12 @@
-﻿
+﻿@using Abp.Authorization.Users
 @using Abp.Web.Mvc.Extensions
 @model Abp.Application.Services.Dto.ListResultOutput<ECJ.Users.Dto.UserListDto>
+@{
+    ViewBag.ActiveMenu = "Mémo"; //The menu item will be active for this page.
+}
 @section scripts
 {
-    @Html.IncludeScript("~/Views/Memo/Index.js")
+    @Html.IncludeScript("~/Views/CMemo/Index.js")
 }
 
 <div class="modal fade" tabindex="-1" id="Memo" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ECJ.Web.Controllers
 {
-    public class PubliciteController : ECJControllerBase
+    public class AppelOffreController : ECJControllerBase
     {
         // GET: Publicite
         public ActionResult Index()
@@ -15,6 +15,11 @@ namespace ECJ.Web.Controllers
         }
 
         public ActionResult Ajout()
+        {
+            return View();
+        }
+
+        public ActionResult Detail()
         {
             return View();
         }

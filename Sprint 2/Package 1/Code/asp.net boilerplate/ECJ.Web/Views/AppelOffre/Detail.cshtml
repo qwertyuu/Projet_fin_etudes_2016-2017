@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Detail";
+}
+<h2>Détail de l'appel d'offre</h2>
+
+<form name="createPub" role="form" novalidate class="form-validation">
+
+    <div class="form-group">
+        <label>Évènement</label>
+        <div class="well well-sm">
+            FestiRire 2017
+        </div>
+    </div>
+    <div class="form-group" >
+        <label>Nom</label>
+        <div class="well well-sm"> 
+            l'humoriste de l'année
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Média</label>
+        <div class="well well-sm">
+            Radio
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Date d'envoi</label>
+        <div class="well well-sm">
+            2016-09-28
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Date requise</label>
+        <div class="well well-sm">
+            2016-10-04
+        </div>
+     </div>
+
+    <div class="form-group">
+        <label>Statut</label>
+        <div class="well well-sm">
+            En création
+        </div>    
+    </div>
+
+    <div class="form-group">
+        <label>Agence de publicité</label>
+        <div class="well well-sm">
+            Médiative
+        </div>   
+    </div>
+
+    <div class="form-group">
+        <label>Description</label>
+        <div class="well well-sm">
+            Promotion de l'artiste de l'année
+        </div>  
+      </div>
+    <br />
+    <label>Soumissions</label>
+    <div class="form-group">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>Soumission 1</td>
+                    <td>
+                        <a href="/AppelOffre/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Soumission 2</td>
+                    <td>
+                        <a href="/AppelOffre/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Soumission 3</td>
+                    <td>
+                        <a href="/AppelOffre/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <a href="/AppelOffre/Index" class="btn btn-default pull-right " data-dismiss="modal">Retour</a>
+
+</form>

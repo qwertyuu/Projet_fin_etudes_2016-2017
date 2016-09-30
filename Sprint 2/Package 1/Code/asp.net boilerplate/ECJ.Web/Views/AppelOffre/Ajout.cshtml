@@ -3,7 +3,7 @@
     ViewBag.Title = "Ajout";
 }
 
-<h2>Ajouter une publicité</h2>
+<h2>Appel d'offre</h2>
 
  <form name="createPub" role="form" novalidate class="form-validation">
 
@@ -25,15 +25,20 @@
         <input type="text" name="media" class="form-control" required>
     </div>
 
+     <div class="form-group">
+         <label>Date d'envoi</label>
+         <input type="date" name="date" class="form-control" required>
+     </div>
     <div class="form-group">
-        <label>Type</label>
-        <input type="text" name="type" class="form-control" required>
-    </div>
-
-    <div class="form-group">
-        <label>Date</label>
+        <label>Date requise</label>
         <input type="date" name="date" class="form-control" required>
     </div>
+
+     <div class="form-group">
+         <label>Statut</label>
+         <input type="color" value="#ffffff" name="colorStatut" class="form-control" required>
+     </div>
+
     <div class="form-group">
         <label>Agence de publicité</label>
         <select name="type" class="form-control" required multiple>
@@ -41,12 +46,16 @@
             <option>Agence Masse</option>
             <option>Côté fleuve Inc</option>
         </select>
-        <a href="/AgencePub/Ajout" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i></a>
     </div>
+
+     <div class="form-group">
+         <label>Description</label>
+         <textarea  name="description" class="form-control" required rows="8"></textarea> 
+     </div>
     <br /><br /><br />
     <div class="pull-right">
         <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Ajouter</span></button>
-        <a href="/Publicite/Index" class="btn btn-default" data-dismiss="modal">Anuuler</a>
+        <a href="/AppelOffre/Index" class="btn btn-default" data-dismiss="modal">Annuler</a>
     </div>
 
 
