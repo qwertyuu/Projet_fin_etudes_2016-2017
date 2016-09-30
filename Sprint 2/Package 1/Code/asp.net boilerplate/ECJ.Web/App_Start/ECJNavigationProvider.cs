@@ -47,6 +47,14 @@ namespace ECJ.Web
                         icon: "fa fa-calendar",
                         requiresAuthentication: true
                         )
+               ).AddItem(
+                    new MenuItemDefinition(
+                        "AppelOffre",
+                        L("pub"),
+                        url: "AppelOffre",
+                        icon: "fa fa-television",
+                        requiresAuthentication: true
+                        )
                 ).AddItem(
                     new MenuItemDefinition(
                         "Commanditaires",
