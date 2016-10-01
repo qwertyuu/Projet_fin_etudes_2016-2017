@@ -16,7 +16,7 @@ namespace FestiRire.Controleur.Details
             provider = new DBProvider();
         }
 
-        protected string SanitariserTexte(string s)
+        public string SanitariserTexte(string s)
         {
             if (s == null)
             {
@@ -72,7 +72,7 @@ namespace FestiRire.Controleur.Details
             return sB.ToString();
         }
 
-        protected string SanitariserCourriel(string courr)
+        public string SanitariserCourriel(string courr)
         {
             return SanitariserTexte(courr);
         }

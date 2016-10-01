@@ -27,7 +27,7 @@ namespace FestiRire.Controleur.Details
 
         public int AjouterArtiste(string nomArt, List<Modele.tblCategorieArtiste> cat, string com)
         {
-            var artiste = new Modele.tblArtiste { nom = nomArt, tblCategorieArtiste = cat, commentaire = com };
+            var artiste = new Modele.tblArtiste { nom = SanitariserTexte(nomArt), tblCategorieArtiste = cat, commentaire = com };
             provider.InsertArtiste(artiste);
             return artiste.noArtiste;
         }
@@ -35,7 +35,7 @@ namespace FestiRire.Controleur.Details
         public void AjouterArtiste(int noArtiste, string nomArt, ICollection<Modele.tblCategorieArtiste> cat, string com)
         {
             var artiste = provider.SelectArtiste(noArtiste);
-            artiste.nom = nomArt;
+            artiste.nom = SanitariserTexte(nomArt);
             artiste.tblCategorieArtiste = cat;
             artiste.commentaire = com;
         }

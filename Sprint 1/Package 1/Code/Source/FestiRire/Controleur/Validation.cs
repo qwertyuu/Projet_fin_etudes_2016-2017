@@ -9,7 +9,7 @@ using System.Drawing;
 
 namespace FestiRire.Controleur
 {
-    class Validation:Details.DetailBaseSimple
+    class Validation : Details.DetailBaseSimple
     {
         private string messVide;
         private string messTel;
@@ -27,21 +27,26 @@ namespace FestiRire.Controleur
             messVide = "";
             if (SanitariserTexte(nom) == null || SanitariserTexte(no) == null || SanitariserCourriel(courr) == null || SanitariserTexte(addr) == null || SanitariserTexte(ville) == null || SanitariserTexte(prov) == null || SanitariserTexte(pays) == null || SanitariserTexte(code) == null)
             {
-                messVide = "Vos devez remplir tous les champs obbigatoire";
+                messVide = "Vous devez remplir tous les champs obligatoires";
             }
-             
+
         }
 
-        public void verifierTel(string tel, string cel, string poste)
+        public void verifierTel(string _tel, string _cel, string _poste)
         {
             messTel = "";
-            if(tel==""&& cel=="")
+            //sanitarisation
+            string tel = SanitariserTelephone(_tel);
+            string cel = SanitariserTelephone(_cel);
+            string poste = SanitariserTexte(_poste);
+
+            if (tel == null && cel == null)
             {
                 messTel = "Vous devez préciser au moins un numéro de téléphone.";
             }
             else
             {
-                if(cel!="")
+                if (cel != null)
                 {
                     if (!Regex.IsMatch(cel, @"^\d+$") || cel.Length != 10)
                     {
@@ -56,47 +61,51 @@ namespace FestiRire.Controleur
                     }
                     else
                     {
-                           if (cel != "" && poste == "")
-                            {
-                                messTel = "Vous devez préciser le numéro de poste.";
-                            }
-                           else
+                        if (cel != null && poste == null)
                         {
-                            if(!Regex.IsMatch(tel, @"^\d+$"))
-                             messTel = "Le poste entré n'est pas valide.";
+                            messTel = "Vous devez préciser le numéro de poste.";
+                        }
+                        else
+                        {
+                            if (!Regex.IsMatch(tel, @"^\d+$"))
+                                messTel = "Le poste entré n'est pas valide.";
 
 
                         }
                     }
 
                 }
-            
+
             }
 
 
-        } 
+        }
         //Vérifier émail
-        public bool IsValidEmail(string email)
+        public bool IsValidEmail(string _email)
         {
             bool valide = true;
+            //sanitarisation
+            string email = SanitariserCourriel(_email);
             if (String.IsNullOrEmpty(email))
-                valide= false;
+                valide = false;
             else
             {
-                valide=Regex.IsMatch(email.Trim(), @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
-                @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$",RegexOptions.IgnoreCase,TimeSpan.FromMilliseconds(250));
+                valide = Regex.IsMatch(email, @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+                @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(500));
             }
             return valide;
-        }  
-        
+        }
+
         //Verifier code postal
-        public bool IsValidCodePost(string code)
+        public bool IsValidCodePost(string _code)
         {
             bool valide = false;
+            //sanitarisation
+            string code = SanitariserTexte(_code);
             if (String.IsNullOrEmpty(code))
                 valide = false;
             else
-                valide = Regex.IsMatch(code.Trim().ToUpper(), "^[a-zA-Z]{1}[0-9]{1}[a-zA-Z]{1}(\\-| |){1}[0-9]{1}[a-zA-Z]{1}[0-9]{1}$", RegexOptions.IgnoreCase);
+                valide = Regex.IsMatch(code.ToUpper(), "^[a-zA-Z]{1}[0-9]{1}[a-zA-Z]{1}(\\-| |){1}[0-9]{1}[a-zA-Z]{1}[0-9]{1}$", RegexOptions.IgnoreCase);
             return valide;
         }
 
@@ -109,21 +118,26 @@ namespace FestiRire.Controleur
         }
 
         //Validation sur la catégorie d'artiste.
-        public string VerifierNomCat(string nom)
+        public string VerifierNomCat(string _nom)
         {
-           string Vide = "";
+            string Vide = "";
+            //sanitarisation
+            string nom = SanitariserTexte(_nom);
             if (string.IsNullOrEmpty(nom))
-                Vide= "Veuillez entrer le nom de la catégorie d'artiste.";
+                Vide = "Veuillez entrer le nom de la catégorie d'artiste.";
             return Vide;
         }
 
-        public bool VerifierNoAgence(string no)
+        public bool VerifierNoAgence(string _no)
         {
-            if (no[no.Length - 1] == '0' && no[no.Length - 2] == '9')
+            //sanitarisation
+            string no = SanitariserTexte(_no);
+            //déterminer si le numéro d'agence finit par 90
+            if (no.Length >= 2 && no.EndsWith("90"))
                 return true;
             else
-            return false;
-                    
+                return false;
+
 
         }
 
@@ -137,16 +151,19 @@ namespace FestiRire.Controleur
             }
             else
                 return true;
-            
+
 
         }
 
-        
-        public bool ValiderChampRespo(string nom, string prenom, string courriel)
+
+        public bool ValiderChampRespo(string _nom, string _prenom, string _courriel)
         {
-            if (nom == "" || prenom == "" || courriel == "")
+            string nom = SanitariserTexte(_nom);
+            string prenom = SanitariserTexte(_prenom);
+            string courriel = SanitariserCourriel(_courriel);
+            if (nom == null || prenom == null || courriel == null)
             {
-                messVide = "Veuillez entrez les champs obliatoires";
+                messVide = "Veuillez entrer les champs obliatoires";
                 return false;
             }
             else

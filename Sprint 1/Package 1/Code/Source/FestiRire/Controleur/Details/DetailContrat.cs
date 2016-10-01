@@ -57,8 +57,18 @@ namespace FestiRire.Controleur.Details
         {
             return provider.SelectStatut(nom).noStatut;
         }
-        public bool EnregistrerContrat(string IdAcienContrat, string IdNouveauContrat, string nomContrat, string lieu, string com, string desc, string nomStatut, string noAgence, Modele.tblResponsable respAgence, Modele.tblResponsable respDiff, List<Modele.tblArtiste> tblArtiste, out string noContratAjoute)
+        public bool EnregistrerContrat(string _IdAcienContrat, string _IdNouveauContrat, string _nomContrat, string _lieu, string _com, string _desc, string _nomStatut, string _noAgence, Modele.tblResponsable respAgence, Modele.tblResponsable respDiff, List<Modele.tblArtiste> tblArtiste, out string noContratAjoute)
         {
+            //sanitariser
+            string IdAcienContrat = SanitariserTexte(_IdAcienContrat);
+            string IdNouveauContrat =SanitariserTexte(_IdNouveauContrat);
+            string nomContrat =SanitariserTexte(_nomContrat);
+            string lieu =SanitariserTexte(_lieu);
+            string com =SanitariserTexte(_com);
+            string desc =SanitariserTexte(_desc);
+            string nomStatut =SanitariserTexte(_nomStatut);
+            string noAgence =SanitariserTexte(_noAgence);
+
             int noStatut = -1;
             if (nomStatut != "Supprimé")
             {

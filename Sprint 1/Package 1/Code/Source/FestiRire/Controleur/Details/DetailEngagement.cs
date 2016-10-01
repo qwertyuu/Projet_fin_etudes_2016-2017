@@ -9,8 +9,14 @@ namespace FestiRire.Controleur.Details
 {
     class DetailEngagement : DetailBaseSimple
     {
-        public void EnregistrerEngagement(string nature, DateTime date, int heure, int minutes, string duree, string lieu, string commentaire, string prixbillet, string capacite, string descCourte, string descLongue,string idContrat)
+        public void EnregistrerEngagement(string _nature, DateTime date, int heure, int minutes, string _duree, string _lieu, string _commentaire, string _prixbillet, string _capacite, string descCourte, string descLongue, string idContrat)
         {
+            string nature = SanitariserTexte(_nature);
+            string duree = SanitariserTexte(_duree);
+            string lieu = SanitariserTexte(_lieu);
+            string commentaire = SanitariserTexte(_commentaire);
+            string prixbillet = SanitariserTexte(_prixbillet);
+            string capacite = SanitariserTexte(_capacite);
             //INSERT
             Modele.tblEngagement tE = new tblEngagement()
             {
@@ -27,8 +33,14 @@ namespace FestiRire.Controleur.Details
             };
             provider.InsertEngagement(tE);
         }
-        internal void EnregistrerEngagement(int idEngagement, string nature, DateTime date, int heure, int minutes, string duree, string lieu, string commentaire, string prixbillet, string capacite, string descCourte, string descLongue)
+        internal void EnregistrerEngagement(int idEngagement, string _nature, DateTime date, int heure, int minutes, string _duree, string _lieu, string _commentaire, string _prixbillet, string _capacite, string descCourte, string descLongue)
         {
+            string nature = SanitariserTexte(_nature);
+            string duree = SanitariserTexte(_duree);
+            string lieu = SanitariserTexte(_lieu);
+            string commentaire = SanitariserTexte(_commentaire);
+            string prixbillet = SanitariserTexte(_prixbillet);
+            string capacite = SanitariserTexte(_capacite);
             //UPDATE
             var tE = provider.SelectEngagement(idEngagement);
             tE.nature = nature;

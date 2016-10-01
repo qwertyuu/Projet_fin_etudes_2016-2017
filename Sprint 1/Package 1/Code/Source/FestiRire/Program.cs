@@ -16,7 +16,7 @@ namespace FestiRire
         [STAThread]
         static void Main()
         {
-            
+            SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Vue.Login());

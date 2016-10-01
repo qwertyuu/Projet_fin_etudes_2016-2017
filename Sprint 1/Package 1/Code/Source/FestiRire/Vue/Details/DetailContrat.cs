@@ -416,7 +416,7 @@ namespace FestiRire
             string mes = "";
             //bool SaveRepoAgence = true;
             //bool SaveRespoDiffusseur = true;
-            if (txtNumeroContrat.Text == "" || txtNomContrat.Text == "")
+            if (conContrat.SanitariserTexte(txtNumeroContrat.Text) == null || conContrat.SanitariserTexte(txtNomContrat.Text) == null)
             {
                 MessageBox.Show("Veuillez entrer le numéro et le nom du contrat");
                 return;
@@ -424,7 +424,7 @@ namespace FestiRire
 
             if (lblStatutContrat.Text == "En cours" || lblStatutContrat.Text == "Terminé")
             {
-                if (txtLieuContrat.Text == "")
+                if (conContrat.SanitariserTexte(txtLieuContrat.Text) == null)
                 {
                     MessageBox.Show("Veuillez entrez le lieu du contrat");
                     return;
