@@ -1,0 +1,218 @@
+﻿
+    @{
+        ViewBag.Title = "ViewCalculateur";
+    }
+    <h2>Calculateur de forfait</h2>
+
+    <input />
+    <button data-toggle="modal" class="btn btn-primary">Recherche</button>
+<form class="form-horizontal">
+    <div class="row" id="calculateur">
+
+        <div class="form-group">
+            <div class="col-md-6">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@*Description*@</th>@*J'utilise des tables vides pour aligner mes forms*@
+                            <th>@*Total*@</th>
+                            <th>@*Prix*@</th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="form-group">
+                                    <label class="control-label" for="inputDefault">Billets</label>
+                                    <input type="text" class="form-control" id="inputDefault">
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-group">
+                                    <label class="control-label" for="inputDefault">Prix</label>
+                                    <input type="text" class="form-control" id="inputDefault">
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-group">
+                                    <label class="control-label" for="inputDefault">Total</label>
+                                    <input type="text" class="form-control" id="inputDefault">
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="form-group">
+                                    <label class="control-label" for="inputDefault">Billets V.I.P</label>
+                                    <input type="text" class="form-control" id="inputDefault">
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-group">
+                                    <label class="control-label" for="inputDefault">Prix</label>
+                                    <input type="text" class="form-control" id="inputDefault">
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-group">
+                                    <label class="control-label" for="inputDefault">Total</label>
+                                    <input type="text" class="form-control" id="inputDefault">
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+       </form>
+        <div class="col-md-6" id="salle">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nom de la salle</th>
+                        <th>Nombre de places V.I.P</th>
+                        <th>Nombre de places</th>
+                        <th>Coûts</th>
+                        <th>Détails</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6" id="souper">
+            Souper Spectacle
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>@*Nombre de places*@</th>
+                        <th>@*Nombre de billets*@</th>
+                        <th>@*Prix*@</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="form-group">
+                                <label class="control-label" for="inputDefault">Nombre de places</label>
+                                <input type="text" class="form-control" id="inputDefault">
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-group">
+                                <label class="control-label" for="inputDefault">Prix</label>
+                                <input type="text" class="form-control" id="inputDefault">
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-group">
+                                <label class="control-label" for="inputDefault">Total</label>
+                                <input type="text" class="form-control" id="inputDefault">
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6" id="age">
+        <table class="table">
+            Reduction selon les tranches d'âge
+            <tr>
+                <th>@*Tranche d'âge*@</th>
+                <th>@*% en rabais*@</th>
+                <th>@*Prix*@</th>
+            </tr>
+            <tr>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label">Jeunes</label>
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label" for="inputDefault">% Rabais</label>
+                        <input type="text" class="form-control" id="inputDefault">
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label" for="inputDefault">Total</label>
+                        <input type="text" class="form-control" id="inputDefault">
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label">Adultes</label>
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label" for="inputDefault">% Rabais</label>
+                        <input type="text" class="form-control" id="inputDefault">
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label" for="inputDefault">Total</label>
+                        <input type="text" class="form-control" id="inputDefault">
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label">Ainés</label>
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label" for="inputDefault">% Rabais</label>
+                        <input type="text" class="form-control" id="inputDefault">
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label" for="inputDefault">Total</label>
+                        <input type="text" class="form-control" id="inputDefault">
+                    </div>
+                </th>
+            </tr>
+        </table>
+
+
+        <div class="row" id="rabais">
+            <div class="col-md-10">
+                Billet a prix réduits.
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@*Nombre de places*@</th>
+                            <th>@*Coûts*@</th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="form-group">
+                                    <label class="control-label" for="inputDefault">Nombre de billets</label>
+                                    <input type="text" class="form-control" id="inputDefault">
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-group">
+                                    <label class="control-label" for="inputDefault">Prix</label>
+                                    <input type="text" class="form-control" id="inputDefault">
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-group">
+                                    <label class="control-label" for="inputDefault">Total</label>
+                                    <input type="text" class="form-control" id="inputDefault">
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+

@@ -50,6 +50,7 @@
     <text name="Comm" value="Commanditaires" />
     <text name="pub" value="Publicité" />
     <text name="memo" value="Créer un Mémo" />
+    <text name="Cal" value="Calculateur" />
 
   </texts>
 </localizationDictionary>

@@ -71,6 +71,14 @@ namespace ECJ.Web
                         icon: "fa fa-info-circle",
                         requiresAuthentication: true
                         )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        "Calculateur",
+                        L("Cal"),
+                        url: "Calculateur",
+                        icon: "fa fa-money",
+                        requiresAuthentication: true
+                        )
                 ); ;
         }
 
