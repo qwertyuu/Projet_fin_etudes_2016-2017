@@ -452,7 +452,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Activite\ActiviteController.cs" />
     <Compile Include="Controllers\CMemoController.cs" />
-    <Compile Include="Controllers\AgencePubController.cs" />
     <Compile Include="Controllers\Calculateur\CalculateurController.cs" />
     <Compile Include="Controllers\Commanditaire\CommanditaireController.cs" />
     <Compile Include="Controllers\SousEvenementController.cs" />
