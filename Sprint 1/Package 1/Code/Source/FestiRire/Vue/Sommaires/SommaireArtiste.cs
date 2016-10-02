@@ -109,7 +109,7 @@ namespace FestiRire
             }
             else
             {
-                dataGridView.DataSource = controlleur.Tout().Where(a => a.nomAriste.ToUpper().Contains(critere) || categoriesLieesALartiste[a].ToUpper().Contains(critere)).ToList().ToSortableBindingList();
+                dataGridView.DataSource = categoriesLieesALartiste.Keys.Where(a => (a.nomAriste ?? "").ToUpper().Contains(critere) || categoriesLieesALartiste[a].ToUpper().Contains(critere)).ToList().ToSortableBindingList();
             }
         }
     }

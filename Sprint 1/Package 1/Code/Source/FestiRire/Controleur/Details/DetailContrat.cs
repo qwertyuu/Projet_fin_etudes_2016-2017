@@ -23,7 +23,7 @@ namespace FestiRire.Controleur.Details
             return provider.SelectResponsableDiffuseur(idContrat);
         }
 
-        public Modele.tblResponsable EnregistrerResponsable(string IdAcienContrat, string nomRespoAge, string prenomRespoAge, string courr, string cel, string tel, string poste, string signataireRespo, DateTime dateSignatire, bool idem, string noAge, int? noDiff)
+        public Modele.tblResponsable EnregistrerResponsable(string IdAcienContrat, string nomRespoAge, string prenomRespoAge, string courr, string cel, string tel, string poste, string signataireRespo, DateTime? dateSignatire, bool idem, string noAge, int? noDiff)
         {
             if (IdAcienContrat != null)
             {
@@ -97,8 +97,14 @@ namespace FestiRire.Controleur.Details
                     item.dateSupprime = DateTime.Now;
                 }
                 contratMAJ.tblResponsable.Clear();
-                contratMAJ.tblResponsable.Add(respAgence);
-                contratMAJ.tblResponsable.Add(respDiff);
+                if (respAgence != null)
+                {
+                    contratMAJ.tblResponsable.Add(respAgence);
+                }
+                if (respDiff != null)
+                {
+                    contratMAJ.tblResponsable.Add(respDiff);
+                }
                 provider.Save();
                 noContratAjoute = null;
                 return false;
@@ -110,8 +116,14 @@ namespace FestiRire.Controleur.Details
                 {
                     contrat.dateSupprime = DateTime.Now;
                 }
-                contrat.tblResponsable.Add(respAgence);
-                contrat.tblResponsable.Add(respDiff);
+                if (respAgence != null)
+                {
+                    contrat.tblResponsable.Add(respAgence);
+                }
+                if (respDiff != null)
+                {
+                    contrat.tblResponsable.Add(respDiff);
+                }
                 provider.InsertContrat(contrat);
                 noContratAjoute = contrat.noContrat;
                 return true;

@@ -92,7 +92,7 @@ namespace FestiRire
             }
             else
             {
-                dataGridView.DataSource = donnees.Where(a => a.nom.ToUpper().Contains(critere) || a.ville.ToUpper().Contains(critere) || a.noAgence.ToUpper().Contains(critere) || a.tel.ToUpper().Contains(critere)).ToList().ToSortableBindingList();
+                dataGridView.DataSource = donnees.Where(a => (a.nom ?? "").ToUpper().Contains(critere) || (a.ville ?? "").ToUpper().Contains(critere) || (a.noAgence?? "").ToUpper().Contains(critere) || (a.tel ?? "").ToUpper().Contains(critere)).ToList().ToSortableBindingList();
             }
         }
     }

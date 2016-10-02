@@ -246,6 +246,7 @@
             this.dateSignatureAgence.Name = "dateSignatureAgence";
             this.dateSignatureAgence.Size = new System.Drawing.Size(133, 20);
             this.dateSignatureAgence.TabIndex = 22;
+            this.dateSignatureAgence.ValueChanged += new System.EventHandler(this.dateSignatureAgence_ValueChanged);
             // 
             // label11
             // 
@@ -613,6 +614,7 @@
             this.dateSignatureDiffuseur.Name = "dateSignatureDiffuseur";
             this.dateSignatureDiffuseur.Size = new System.Drawing.Size(131, 20);
             this.dateSignatureDiffuseur.TabIndex = 22;
+            this.dateSignatureDiffuseur.ValueChanged += new System.EventHandler(this.dateSignatureDiffuseur_ValueChanged);
             // 
             // label3
             // 
@@ -1229,6 +1231,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "DetailContrat";

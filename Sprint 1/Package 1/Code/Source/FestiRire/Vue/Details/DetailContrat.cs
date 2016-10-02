@@ -29,9 +29,12 @@ namespace FestiRire
             InitializeComponent();
             InitComplet();
             idContrat = null;
+            dateSignatureAgence.CustomFormat = " ";
+            dateSignatureDiffuseur.CustomFormat = " ";
             idDiffuseur = 1;
             btnEnregistrerContrat.Enabled = false;
             PeuplerListes();
+            lstArtiste.ClearSelected();
             verifierStatut();
         }
 
@@ -108,28 +111,47 @@ namespace FestiRire
 
             //peupler le responsable de l'agence
             var ResponsableAgence = conContrat.ResponsableAgence(idContrat);
-            txtNomResponsableAgence.Text = ResponsableAgence.nom;
-            txtPrenomResponsableAgence.Text = ResponsableAgence.prenom;
-            txtCellulaireAgence.Text = conContrat.FormatTelephone(ResponsableAgence.telCellulaire);
-            txtCourrielAgence.Text = ResponsableAgence.courriel;
-            txtTelephoneAgence.Text = conContrat.FormatTelephone(ResponsableAgence.telBureau);
-            txtSignataireAgence.Text = ResponsableAgence.signataire;
-            dateSignatureAgence.Value = ResponsableAgence.dateSignature ?? DateTime.Now;
-            txtExtensionTelephoneAgence.Text = ResponsableAgence.extension;
-            chkIdemAgence.Checked = ResponsableAgence.idem;
-
-
+            if (ResponsableAgence != null)
+            {
+                txtNomResponsableAgence.Text = ResponsableAgence.nom;
+                txtPrenomResponsableAgence.Text = ResponsableAgence.prenom;
+                txtCellulaireAgence.Text = conContrat.FormatTelephone(ResponsableAgence.telCellulaire);
+                txtCourrielAgence.Text = ResponsableAgence.courriel;
+                txtTelephoneAgence.Text = conContrat.FormatTelephone(ResponsableAgence.telBureau);
+                txtSignataireAgence.Text = ResponsableAgence.signataire;
+                if (ResponsableAgence.dateSignature == null)
+                {
+                    dateSignatureAgence.CustomFormat = " ";
+                }
+                else
+                {
+                    dateSignatureAgence.Value = (DateTime)ResponsableAgence.dateSignature;
+                }
+                txtExtensionTelephoneAgence.Text = ResponsableAgence.extension;
+                chkIdemAgence.Checked = ResponsableAgence.idem;
+            }
+            
             //peupler le responsable du diffuseur
             var ResponsableDiffuseur = conContrat.ResponsableDiffuseur(idContrat);
-            txtNomResponsableDiffuseur.Text = ResponsableDiffuseur.nom;
-            txtPrenomResponsableDiffuseur.Text = ResponsableDiffuseur.prenom;
-            txtCellulaireDiffuseur.Text = conContrat.FormatTelephone(ResponsableDiffuseur.telCellulaire);
-            txtCourrielDiffuseur.Text = ResponsableDiffuseur.courriel;
-            txtTelephoneDiffuseur.Text = conContrat.FormatTelephone(ResponsableDiffuseur.telBureau);
-            txtSignataireDiffuseur.Text = ResponsableDiffuseur.signataire;
-            dateSignatureDiffuseur.Value = ResponsableDiffuseur.dateSignature ?? DateTime.Now;
-            txtExtensionTelephoneDiffuseur.Text = ResponsableDiffuseur.extension;
-            chkIdemDiffuseur.Checked = ResponsableDiffuseur.idem;
+            if (ResponsableDiffuseur != null)
+            {
+                txtNomResponsableDiffuseur.Text = ResponsableDiffuseur.nom;
+                txtPrenomResponsableDiffuseur.Text = ResponsableDiffuseur.prenom;
+                txtCellulaireDiffuseur.Text = conContrat.FormatTelephone(ResponsableDiffuseur.telCellulaire);
+                txtCourrielDiffuseur.Text = ResponsableDiffuseur.courriel;
+                txtTelephoneDiffuseur.Text = conContrat.FormatTelephone(ResponsableDiffuseur.telBureau);
+                txtSignataireDiffuseur.Text = ResponsableDiffuseur.signataire;
+                if (ResponsableDiffuseur.dateSignature == null)
+                {
+                    dateSignatureDiffuseur.CustomFormat = " ";
+                }
+                else
+                {
+                    dateSignatureDiffuseur.Value = (DateTime)ResponsableDiffuseur.dateSignature;
+                }
+                txtExtensionTelephoneDiffuseur.Text = ResponsableDiffuseur.extension;
+                chkIdemDiffuseur.Checked = ResponsableDiffuseur.idem;
+            }
 
             //peupler le statut et associer les bon boutons de changement de statut
             lblStatutContrat.Text = contratDuMoment.tblStatut.nomStatut;
@@ -429,13 +451,11 @@ namespace FestiRire
                     MessageBox.Show("Veuillez entrez le lieu du contrat");
                     return;
                 }
-
                 if (lstArtiste.SelectedIndex == -1)
                 {
                     MessageBox.Show("Veuillez selectionner au moins un artiste");
                     return;
                 }
-
                 if (dgvEngagement.SelectedRows.Count != 0)
                 {
                     if (dgvEngagement.SelectedRows.Count == 0)
@@ -444,8 +464,6 @@ namespace FestiRire
                         return;
                     }
                 }
-
-
                 if (!validation.ValiderChampRespo(txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text))
                 {
                     MessageBox.Show(validation.MessVide + " de l'agence");
@@ -468,13 +486,10 @@ namespace FestiRire
                 {
                     if (!validation.IsValidEmail(txtCourrielDiffuseur.Text))
                     {
-                        MessageBox.Show("Courriel  du diffusseur invalide");
+                        MessageBox.Show("Courriel  du diffuseur invalide");
                         return;
                     }
                 }
-
-
-
             }
 
             var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
@@ -489,15 +504,50 @@ namespace FestiRire
             Modele.tblResponsable responsableAgence = null;
             Modele.tblResponsable responsableDiffuseur = null;
 
-            //On enregistre le responsable de l'agence
-            responsableAgence = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignatureAgence.Value, chkIdemAgence.Checked, idAgence, null);
+            if (!validation.ValiderChampRespo(txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text))
+            {
+                MessageBox.Show("Le responsable de l'agence n'a pas pu être enregistré car un des champs obligatoire est vide.");
+            }
+            else
+            {
+                if (!validation.IsValidEmail(txtCourrielAgence.Text))
+                {
+                    MessageBox.Show("Le responsable de l'agence n'a pas pu être enregistré car le format du courriel est invalide.");
+                }
+                else
+                {
+                    //On enregistre le responsable de l'agence
+                    DateTime? dateSignature = null;
+                    if (dateSignatureAgence.CustomFormat != " ")
+                    {
+                        dateSignature = dateSignatureAgence.Value;
+                    }
+                    responsableAgence = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignature, chkIdemAgence.Checked, idAgence, null);
+                }
+            }
 
 
-            responsableDiffuseur = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignatureDiffuseur.Value, chkIdemDiffuseur.Checked, null, idDiffuseur);
-
-            //On enregistre le responsable du  diffuseur
-
-
+            if (!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
+            {
+                MessageBox.Show("Le responsable du diffuseur n'a pas pu être enregistré car un des champs obligatoire est vide.");
+            }
+            else
+            {
+                if (!validation.IsValidEmail(txtCourrielDiffuseur.Text))
+                {
+                    MessageBox.Show("Le responsable du diffuseur n'a pas pu être enregistré car le format du courriel est invalide.");
+                }
+                else
+                {
+                    //On enregistre le responsable du  diffuseur
+                    DateTime? dateSignature = null;
+                    if (dateSignatureDiffuseur.CustomFormat != " ")
+                    {
+                        dateSignature = dateSignatureDiffuseur.Value;
+                    }
+                    responsableDiffuseur = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignature, chkIdemDiffuseur.Checked, null, idDiffuseur);
+                }
+            }
             string noContratAjoute = "";
 
             if (!conContrat.EnregistrerContrat(idContrat, txtNumeroContrat.Text, txtNomContrat.Text, txtLieuContrat.Text, rtbCommentaire.Rtf, rtbDescriptionContrat.Rtf, lblStatutContrat.Text, idAgence, responsableAgence, responsableDiffuseur, lstArtiste.SelectedItems.Cast<Modele.tblArtiste>().ToList(), out noContratAjoute))
@@ -524,5 +574,14 @@ namespace FestiRire
             }
         }
 
+        private void dateSignatureAgence_ValueChanged(object sender, EventArgs e)
+        {
+            dateSignatureAgence.Format = DateTimePickerFormat.Long;
+        }
+
+        private void dateSignatureDiffuseur_ValueChanged(object sender, EventArgs e)
+        {
+            dateSignatureDiffuseur.Format = DateTimePickerFormat.Long;
+        }
     }
 }
