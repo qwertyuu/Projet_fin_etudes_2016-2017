@@ -319,6 +319,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\image\identification.png" />
+    <None Include="bin\Debug\image\userlogin.png" />
     <Content Include="Modele\PE2_Officiel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PE2_Officiel.edmx</DependentUpon>

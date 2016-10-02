@@ -23,7 +23,7 @@ namespace FestiRire.Controleur.Details
             return provider.SelectResponsableDiffuseur(idContrat);
         }
 
-        public Modele.tblResponsable EnregistrerResponsable(string IdAcienContrat, string nomRespoAge, string prenomRespoAge, string courr, string cel, string tel, string poste, string signataireRespo, DateTime dateSignatire, bool idem, string noAge, int? noDiff)
+        public Modele.tblResponsable EnregistrerResponsable(string IdAcienContrat, string nomRespoAge, string prenomRespoAge, string courr, string cel, string tel, string poste, string signataireRespo, DateTime? dateSignatire, bool idem, string noAge, int? noDiff)
         {
             if (IdAcienContrat != null)
             {

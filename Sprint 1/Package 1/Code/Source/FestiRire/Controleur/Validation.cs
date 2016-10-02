@@ -27,7 +27,7 @@ namespace FestiRire.Controleur
             messVide = "";
             if (SanitariserTexte(nom) == null || SanitariserTexte(no) == null || SanitariserCourriel(courr) == null || SanitariserTexte(addr) == null || SanitariserTexte(ville) == null || SanitariserTexte(prov) == null || SanitariserTexte(pays) == null || SanitariserTexte(code) == null)
             {
-                messVide = "Vos devez remplir tous les champs obbigatoire";
+                messVide = "Vous devez remplir tous les champs obbigatoires";
             }
              
         }
@@ -37,7 +37,7 @@ namespace FestiRire.Controleur
             messTel = "";
             if(tel==""&& cel=="")
             {
-                messTel = "Vous devez préciser au moins un numéro de téléphone.";
+                messTel = "Vous devez préciser au moins un numéro de téléphone";
             }
             else
             {
@@ -45,25 +45,25 @@ namespace FestiRire.Controleur
                 {
                     if (!Regex.IsMatch(cel, @"^\d+$") || cel.Length != 10)
                     {
-                        messTel = "Le numéro de téléphone entré n'est pas valide.";
+                        messTel = "Le numéro de téléphone entré n'est pas valide";
                     }
                 }
                 else
                 {
                     if (!Regex.IsMatch(tel, @"^\d+$") || tel.Length != 10)
                     {
-                        messTel = "Le numéro de téléphone entré n'est pas valide.";
+                        messTel = "Le numéro de téléphone entré n'est pas valide";
                     }
                     else
                     {
                            if (cel != "" && poste == "")
                             {
-                                messTel = "Vous devez préciser le numéro de poste.";
+                                messTel = "Vous devez préciser le numéro de poste";
                             }
                            else
                         {
                             if(!Regex.IsMatch(tel, @"^\d+$"))
-                             messTel = "Le poste entré n'est pas valide.";
+                             messTel = "Le poste entré n'est pas valide";
 
 
                         }
@@ -130,7 +130,7 @@ namespace FestiRire.Controleur
         //Validation de l'agagement.
         public bool ValiderChampDate(DateTimePicker date)
         {
-            if (date.Value < DateTime.Now)
+            if (date.Value.Date < DateTime.Now.Date)
             {
                 messVide = "La date doit être dans le futur";
                 return false;
@@ -151,6 +151,20 @@ namespace FestiRire.Controleur
             }
             else
                 return true;
+        }
+
+        public bool IdemIsChecked(bool idem, string signataire)
+        {
+            if(idem ==false)
+            {
+                if(SanitariserTexte(signataire) == null)
+                {
+                  messVide = "Veuillez entrer le nom du signataire ";
+                  return false;
+               }
+
+            }
+            return true;
         }
 
     }

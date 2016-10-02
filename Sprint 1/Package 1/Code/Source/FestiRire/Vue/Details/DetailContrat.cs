@@ -23,6 +23,9 @@ namespace FestiRire
         private string idContrat;
         private string idAgence;
         private int idDiffuseur;
+        private DateTime? dateSignatAgence = null;
+        private DateTime? dateSignaDiffusseur = null;
+
 
         public DetailContrat()
         {
@@ -238,7 +241,7 @@ namespace FestiRire
                     MessageBox.Show("Vous devez d'abord entrer le numéro et le nom du contrat avant de changer de statut");
                 else
                 {
-                    if (MessageBox.Show(("Si vous passez le statut du contrat à En cours, le numéro, le nom et lieu du contrat ne seront plus modifiable.\nVoulez-vous changer de statut?"), "Changement de statut", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show(("Si vous passez le statut du contrat à En cours, le numéro et le nom  du contrat ne seront plus modifiable.\nVoulez-vous changer de statut?"), "Changement de statut", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         txtNumeroContrat.Enabled = false;
                         txtNomContrat.Enabled = false;
@@ -473,10 +476,42 @@ namespace FestiRire
                     }
                 }
 
+                //On verifie les numéros de téléphones
+                validation.verifierTel(txtTelephoneAgence.Text, txtCellulaireAgence.Text, txtExtensionTelephoneAgence.Text);
+                if(validation.MessTel!="")
+                {
+                    MessageBox.Show(validation.MessTel + " de l'agence");
+                    return ;
+                }
+                validation.verifierTel(txtTelephoneDiffuseur.Text, txtCellulaireDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text);
+                if (validation.MessTel != "")
+                {
+                    MessageBox.Show(validation.MessTel + " du diffusseur");
+                    return;
+                }
 
 
+                //On verifie si la date est bien dans le futur
+                if (!validation.ValiderChampDate(dateSignatureAgence) || !validation.ValiderChampDate(dateSignatureDiffuseur))
+                {
+                    MessageBox.Show(validation.MessVide);
+                    return;
+                }
             }
 
+            //On verifie si Idem a été cohcé ou pas.
+            if(!validation.IdemIsChecked(chkIdemAgence.Checked,txtSignataireAgence.Text))
+            {
+                MessageBox.Show(validation.MessVide + " de l'agence.");
+                return;
+            }
+            if (!validation.IdemIsChecked(chkIdemDiffuseur.Checked, txtSignataireDiffuseur.Text))
+            {
+                MessageBox.Show(validation.MessVide + " du diffusseur.");
+                return;
+            }
+
+            //Si tout se passe bien on début l'enregistrement du contrat.
             var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
             if (idContrat == null && contratEcrit != null)
             {
@@ -487,13 +522,13 @@ namespace FestiRire
             }
             idAgence = (cmbNomAgence.SelectedItem as Modele.vueSomAgence).noAgence;
             Modele.tblResponsable responsableAgence = null;
-            Modele.tblResponsable responsableDiffuseur = null;
+            Modele.tblResponsable responsableDiffuseur = null;  
 
             //On enregistre le responsable de l'agence
-            responsableAgence = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignatureAgence.Value, chkIdemAgence.Checked, idAgence, null);
+            responsableAgence = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text, txtCellulaireAgence.Text, txtTelephoneAgence.Text, txtExtensionTelephoneAgence.Text, txtSignataireAgence.Text, dateSignatAgence, chkIdemAgence.Checked, idAgence, null);
 
 
-            responsableDiffuseur = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignatureDiffuseur.Value, chkIdemDiffuseur.Checked, null, idDiffuseur);
+            responsableDiffuseur = conContrat.EnregistrerResponsable(txtNumeroContrat.Text, txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text, txtCellulaireDiffuseur.Text, txtTelephoneDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text, txtSignataireDiffuseur.Text, dateSignaDiffusseur, chkIdemDiffuseur.Checked, null, idDiffuseur);
 
             //On enregistre le responsable du  diffuseur
 
@@ -516,13 +551,18 @@ namespace FestiRire
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
-            DialogResult result;
-            result = MessageBox.Show("Si vous fermez, vous allez perdre les informations inscrites depuis le dernier enregistrement.\nVoulez-vous vraiment fermer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
+
+            this.Close();          
         }
 
+        private void dateSignatureAgence_ValueChanged(object sender, EventArgs e)
+        {
+            dateSignatAgence = dateSignatureAgence.Value;
+        }
+
+        private void dateSignatureDiffuseur_ValueChanged(object sender, EventArgs e)
+        {
+            dateSignaDiffusseur = dateSignatureDiffuseur.Value;
+        }
     }
 }
