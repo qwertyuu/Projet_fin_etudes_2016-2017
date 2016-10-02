@@ -141,10 +141,10 @@ GO
 CREATE TABLE S_Contrat.tblAdresse
 (
 	noAdresse int NOT NULL identity(1,1),
-	adresse text NULL,
+	adresse text NOT NULL,
 	ville varchar(30) NOT NULL,
 	codepostal char(6) NOT NULL,
-	province char(2) NOT NULL,
+	province varchar(3) NOT NULL,
 	pays varchar(20) NOT NULL,
 	telBureau char(10),
 	telCellulaire char(10),

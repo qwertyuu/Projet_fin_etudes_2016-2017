@@ -247,10 +247,6 @@ GO
 PRINT 'Création des contraintes CHECK de table tblAdresse'
 GO
   ALTER TABLE S_Contrat.tblAdresse ADD
-  CONSTRAINT CHE_PRO_LON_MAJ_ADR CHECK(len(province)=2 and isnumeric(province)=0 ) 
-GO
-GO
-  ALTER TABLE S_Contrat.tblAdresse ADD
   CONSTRAINT CHE_COD_LON_ADR CHECK(len(codepostal)=6) 
 PRINT 'Fin de création des contraintes CHECK de table tblAdresse'
 GO
