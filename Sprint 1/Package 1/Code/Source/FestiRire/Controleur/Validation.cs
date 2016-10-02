@@ -42,7 +42,7 @@ namespace FestiRire.Controleur
 
             if (tel == null && cel == null)
             {
-                messTel = "Vous devez préciser au moins un numéro de téléphone.";
+                messTel = "Vous devez préciser au moins un numéro de téléphone";
             }
             else
             {
@@ -50,25 +50,25 @@ namespace FestiRire.Controleur
                 {
                     if (!Regex.IsMatch(cel, @"^\d+$") || cel.Length != 10)
                     {
-                        messTel = "Le numéro de téléphone entré n'est pas valide.";
+                        messTel = "Le numéro de téléphone entré n'est pas valide";
                     }
                 }
                 else
                 {
                     if (!Regex.IsMatch(tel, @"^\d+$") || tel.Length != 10)
                     {
-                        messTel = "Le numéro de téléphone entré n'est pas valide.";
+                        messTel = "Le numéro de téléphone entré n'est pas valide";
                     }
                     else
                     {
                         if (cel != null && poste == null)
                         {
-                            messTel = "Vous devez préciser le numéro de poste.";
+                            messTel = "Vous devez préciser le numéro de poste";
                         }
                         else
                         {
                             if (!Regex.IsMatch(tel, @"^\d+$"))
-                                messTel = "Le poste entré n'est pas valide.";
+                                messTel = "Le poste entré n'est pas valide";
 
 
                         }
@@ -144,7 +144,7 @@ namespace FestiRire.Controleur
         //Validation de l'agagement.
         public bool ValiderChampDate(DateTimePicker date)
         {
-            if (date.Value < DateTime.Now)
+            if (date.Value.Date < DateTime.Now.Date)
             {
                 messVide = "La date doit être dans le futur";
                 return false;
@@ -163,11 +163,25 @@ namespace FestiRire.Controleur
             string courriel = SanitariserCourriel(_courriel);
             if (nom == null || prenom == null || courriel == null)
             {
-                messVide = "Veuillez entrer les champs obliatoires";
+                messVide = "Veuillez entrer les champs obligatoires";
                 return false;
             }
             else
                 return true;
+        }
+
+        public bool IdemIsChecked(bool idem, string signataire)
+        {
+            if (idem == false)
+            {
+                if (SanitariserTexte(signataire) == null)
+                {
+                    messVide = "Veuillez entrer le nom du signataire ";
+                    return false;
+                }
+
+            }
+            return true;
         }
 
     }

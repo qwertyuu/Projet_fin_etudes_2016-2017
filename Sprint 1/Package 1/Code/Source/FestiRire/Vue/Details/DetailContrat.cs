@@ -490,8 +490,44 @@ namespace FestiRire
                         return;
                     }
                 }
+
+
+                //On verifie si la date est bien dans le futur
+                if (!validation.ValiderChampDate(dateSignatureAgence) || !validation.ValiderChampDate(dateSignatureDiffuseur))
+                {
+                    MessageBox.Show(validation.MessVide);
+                    return;
+                }
+
+                //On verifie si Idem a été coché ou pas.
+                if (!validation.IdemIsChecked(chkIdemAgence.Checked, txtSignataireAgence.Text))
+                {
+                    MessageBox.Show(validation.MessVide + " de l'agence.");
+                    return;
+                }
+                if (!validation.IdemIsChecked(chkIdemDiffuseur.Checked, txtSignataireDiffuseur.Text))
+                {
+                    MessageBox.Show(validation.MessVide + " du diffusseur.");
+                    return;
+                }
+
+                //On verifie les numéros de téléphones
+                validation.verifierTel(txtTelephoneAgence.Text, txtCellulaireAgence.Text, txtExtensionTelephoneAgence.Text);
+                if (validation.MessTel != "")
+                {
+                    MessageBox.Show(validation.MessTel + " de l'agence");
+                    return;
+                }
+                validation.verifierTel(txtTelephoneDiffuseur.Text, txtCellulaireDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text);
+                if (validation.MessTel != "")
+                {
+                    MessageBox.Show(validation.MessTel + " du diffusseur");
+                    return;
+                }
+
             }
 
+            //Si tout se passe bien on début l'enregistrement du contrat.
             var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
             if (idContrat == null && contratEcrit != null)
             {
@@ -566,12 +602,7 @@ namespace FestiRire
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
-            DialogResult result;
-            result = MessageBox.Show("Si vous fermez, vous allez perdre les informations inscrites depuis le dernier enregistrement.\nVoulez-vous vraiment fermer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
+                this.Close();       
         }
 
         private void dateSignatureAgence_ValueChanged(object sender, EventArgs e)

@@ -10,10 +10,10 @@
             <PropertyRef Name="noAdresse" />
           </Key>
           <Property Name="noAdresse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="adresse" Type="text" />
+          <Property Name="adresse" Type="text" Nullable="false" />
           <Property Name="ville" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="codepostal" Type="char" MaxLength="6" Nullable="false" />
-          <Property Name="province" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="province" Type="varchar" MaxLength="3" Nullable="false" />
           <Property Name="pays" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="telBureau" Type="char" MaxLength="10" />
           <Property Name="telCellulaire" Type="char" MaxLength="10" />
@@ -61,7 +61,7 @@
             <PropertyRef Name="noContrat" />
           </Key>
           <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="lieu" Type="text" />
+          <Property Name="lieu" Type="varchar" MaxLength="50" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="description" Type="text" />
           <Property Name="commentaire" Type="text" />
@@ -93,7 +93,7 @@
           </Key>
           <Property Name="noEngagement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="duree" Type="varchar" MaxLength="6" Nullable="false" />
-          <Property Name="lieu" Type="text" Nullable="false" />
+          <Property Name="lieu" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="date" Type="date" />
           <Property Name="heure" Type="time" Precision="7" />
           <Property Name="nature" Type="varchar" MaxLength="50" Nullable="false" />
@@ -226,7 +226,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomContrat' n'a pas 
           <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" />
           <Property Name="nomStatut" Type="varchar" MaxLength="20" />
-          <Property Name="lieu" Type="text" />
+          <Property Name="lieu" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
 avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomEngagement' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
@@ -242,7 +242,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomEngagement' n'a p
           <Property Name="date" Type="date" />
           <Property Name="heure" Type="time" Precision="7" />
           <Property Name="duree" Type="varchar" MaxLength="6" Nullable="false" />
-          <Property Name="lieu" Type="text" Nullable="false" />
+          <Property Name="lieu" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="noContrat" Type="varchar" MaxLength="20" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
@@ -668,10 +668,10 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
             <PropertyRef Name="noAdresse" />
           </Key>
           <Property Name="noAdresse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ville" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="codepostal" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="province" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="province" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="pays" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="telBureau" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="telCellulaire" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
@@ -721,7 +721,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
             <PropertyRef Name="noContrat" />
           </Key>
           <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="lieu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -754,7 +754,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
           </Key>
           <Property Name="noEngagement" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="duree" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lieu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="date" Type="DateTime" Precision="0" />
           <Property Name="heure" Type="Time" Precision="7" />
           <Property Name="nature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -874,7 +874,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
           <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="nomStatut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="lieu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vueSomEngagement">
           <Key>
@@ -885,7 +885,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas d
           <Property Name="date" Type="DateTime" Precision="0" />
           <Property Name="heure" Type="Time" Precision="7" />
           <Property Name="duree" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="lieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lieu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="noContrat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vueSomExigence">

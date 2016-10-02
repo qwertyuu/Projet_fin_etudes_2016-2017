@@ -240,8 +240,8 @@ INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire
 INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('JO-002', 'Jonquière', 'Humoriste du soir','{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 RichTextFormat\ulnone\b0\fs17\par}', 'sup', null, 4, '9D0JF090');
 INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('QU-001', 'Québec', 'Animation du midi semaine 1', '{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 RichTextFormat\ulnone\b0\fs17\par}', null, null, 4, 'CE7Q5Q90');
 INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('QU-002', 'Québec', 'Animation du midi semaine 2', '{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 RichTextFormat\ulnone\b0\fs17\par}', null, null, 2, 'HSRN3290');
-INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('MO-001', 'Montréal', 'Animation du midi semaine 1', null, null, '20160613', 4, '65PT4690');
-INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('WY-001', 'Alma', 'Activité de cloture', 'Réprésente le céromonie de cloture de l''évèmement', null, null, 4, 'Q05ZDR90');
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('MO-001', 'Montréal', 'Animation du midi semaine 1', null, null, null, 4, '65PT4690');
+INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('WY-001', 'Alma', 'Activité de cloture', '{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 RichTextFormat\ulnone\b0\fs17\par}', null, null, 4, 'Q05ZDR90');
 INSERT INTO S_Contrat.tblContrat (noContrat, lieu, nom, description, commentaire, dateSupprime, noStatut, noAgence) VALUES ('XN-002', 'Sherbrooke', 'Animation du midi semaine 6', '{\rtf1\ansi\ansicpg1252\deff0\deflang3084{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}{\f1\fnil\fcharset2 Symbol;}}\viewkind4\uc1\pard{\pntext\f1\''B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\''B7}}\ul\b\f0\fs32 RichTextFormat\ulnone\b0\fs17\par}', null, null, 2, '81C36790');
 GO
 PRINT 'insertion des contrats terminée'
@@ -298,6 +298,12 @@ INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commenta
 INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2016/05/31','5970',null,null,null,null,'JO-001',5);
 INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Sonorisation et éclairage','2016/05/14','9890',null,null,null,null,'CH-002',1);
 INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2016/06/29','6647',null,null,null,null,'CH-001',5);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Heure de la prise de son','2016/06/29','6647',null,null,null,null,'WY-001',4);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Logement','2016/06/29','2346',null,null,null,null,'XN-002',3);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Prix des billets','2016/10/29','5679',null,null,null,null,'WY-001',4);
+INSERT INTO S_Contrat.tblExigence([nom],[date],[montant],[description],[commentaire],[descriptionCourte],[dateSupprime],[noContrat],[noStatut]) VALUES('Nourriture','2016/06/29','8903',null,null,null,null,'XN-002',3);
+
+
 GO
 PRINT 'insertion des exigences terminée'
 GO
@@ -323,6 +329,14 @@ INSERT INTO S_Contrat.tblEngagement([duree],[lieu],[date],[heure],[nature],[comm
 INSERT INTO S_Contrat.tblEngagement([duree],[lieu],[date],[heure],[nature],[commentaire],[description],[descriptionCourte],[dateSupprime],[noContrat]) VALUES('4h00','Jonquière','2017/01/15','04:52:04','Spectacle',null,null,null,null,'QU-002');
 INSERT INTO S_Contrat.tblEngagement([duree],[lieu],[date],[heure],[nature],[commentaire],[description],[descriptionCourte],[dateSupprime],[noContrat]) VALUES('2h30','Quebec','2017/09/01','11:48:55','Spectacle',null,null,null,null,'JO-002');
 INSERT INTO S_Contrat.tblEngagement([duree],[lieu],[date],[heure],[nature],[commentaire],[description],[descriptionCourte],[dateSupprime],[noContrat]) VALUES('1h30','Montréal','2017/01/13','05:57:32','Concert',null,null,null,null,'JO-001');
+INSERT INTO S_Contrat.tblEngagement([duree],[lieu],[date],[heure],[nature],[commentaire],[description],[descriptionCourte],[dateSupprime],[noContrat]) VALUES('3h30','Chicoutimi','2017/01/13','05:57:32','Concert',null,null,null,null,'WY-001');
+INSERT INTO S_Contrat.tblEngagement([duree],[lieu],[date],[heure],[nature],[commentaire],[description],[descriptionCourte],[dateSupprime],[noContrat]) VALUES('3h30','Chicoutimi','2017/01/13','05:57:32','Concert',null,null,null,null,'XN-002');
+INSERT INTO S_Contrat.tblEngagement([duree],[lieu],[date],[heure],[nature],[commentaire],[description],[descriptionCourte],[dateSupprime],[noContrat]) VALUES('2h30','Alma','2017/10/03','05:57:32','Spectacle',null,null,null,null,'WY-001');
+INSERT INTO S_Contrat.tblEngagement([duree],[lieu],[date],[heure],[nature],[commentaire],[description],[descriptionCourte],[dateSupprime],[noContrat]) VALUES('3h30','Chicoutimi','2017/06/18','05:57:32','Concert',null,null,null,null,'XN-002');
+INSERT INTO S_Contrat.tblEngagement([duree],[lieu],[date],[heure],[nature],[commentaire],[description],[descriptionCourte],[dateSupprime],[noContrat]) VALUES('6h30','Québec','2017/03/20','05:57:32','Spectacle',null,null,null,null,'XN-002');
+
+
+
 GO
 PRINT 'insertion des engagements terminée'
 GO
@@ -346,7 +360,9 @@ INSERT INTO S_Contrat.tblRespoContrat([noResponsable],[noContrat]) VALUES(10,	'Q
 INSERT INTO S_Contrat.tblRespoContrat([noResponsable],[noContrat]) VALUES(12,	'QU-002');
 INSERT INTO S_Contrat.tblRespoContrat([noResponsable],[noContrat]) VALUES(14,	'MO-001');
 INSERT INTO S_Contrat.tblRespoContrat([noResponsable],[noContrat]) VALUES(5,	'WY-001');
-INSERT INTO S_Contrat.tblRespoContrat([noResponsable],[noContrat]) VALUES(5,	'XN-002');
+INSERT INTO S_Contrat.tblRespoContrat([noResponsable],[noContrat]) VALUES(6,	'WY-001');
+INSERT INTO S_Contrat.tblRespoContrat([noResponsable],[noContrat]) VALUES(2,	'XN-002');
+INSERT INTO S_Contrat.tblRespoContrat([noResponsable],[noContrat]) VALUES(3,	'XN-002');
 GO
 PRINT 'insertion des responsables par contrats terminée'
 GO
@@ -365,6 +381,10 @@ INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(10,'CH-0
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(11,'CH-001');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(2,'MO-001');
 INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(3,'CH-002');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(5,'WY-001');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(7,'XN-002');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(1,'WY-001');
+INSERT INTO S_Contrat.tblContratArtiste([noArtiste],[noContrat]) VALUES(8,'XN-002');
 GO
 PRINT 'insertion des artistes par contrats terminée'
 GO
@@ -381,6 +401,8 @@ INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VA
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(13,'QU-002',6);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(7,'QU-001',7);
 INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(1,'JO-001',8);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(3,'WY-001',7);
+INSERT INTO S_Contrat.tblFichierOfficiel([noArtiste],[noContrat],[noFichier]) VALUES(5,'XN-002',1);
 GO
 PRINT 'insertion des fichier par artistes par contrats terminée'
 GO
