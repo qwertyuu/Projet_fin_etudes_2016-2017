@@ -18,5 +18,10 @@ namespace ECJ.Web.Controllers.Activite
         {
             return View();
         }
+
+        public ActionResult Detail()
+        {
+            return View();
+        }
     }
 }

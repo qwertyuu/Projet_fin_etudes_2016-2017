@@ -512,6 +512,7 @@
     <Content Include="Views\SousEvenements\Detail.cshtml" />
     <Content Include="Views\Calculateur\Index.cshtml" />
     <Content Include="Views\SousEvenements\Ajout.cshtml" />
+    <Content Include="Views\Activite\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

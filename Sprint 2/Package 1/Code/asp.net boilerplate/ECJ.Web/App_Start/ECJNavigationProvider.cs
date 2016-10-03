@@ -23,7 +23,7 @@ namespace ECJ.Web
                         icon: "fa fa-home",
                         requiresAuthentication: true
                         )
-                ).AddItem(
+                )/*.AddItem(
                     new MenuItemDefinition(
                         "Users",
                         L("Users"),
@@ -31,7 +31,7 @@ namespace ECJ.Web
                         icon: "fa fa-users",
                         requiredPermissionName: PermissionNames.Pages_Users
                         )
-                ).AddItem(
+                )*/.AddItem(
                     new MenuItemDefinition(
                         "Activite",
                         L("Act"),
@@ -63,15 +63,15 @@ namespace ECJ.Web
                         icon: "fa fa-thumbs-up",
                         requiresAuthentication: true
                         )
-                ).AddItem(
-                    new MenuItemDefinition(
-                        "About",
-                        L("About"),
-                        url: "About",
-                        icon: "fa fa-info-circle",
-                        requiresAuthentication: true
-                        )
-                ).AddItem(
+                )/*.AddItem(
+                //    new MenuItemDefinition(
+                //        "About",
+                //        L("About"),
+                //        url: "About",
+                //        icon: "fa fa-info-circle",
+                //        requiresAuthentication: true
+                //        )
+                )*/.AddItem(
                     new MenuItemDefinition(
                         "Calculateur",
                         L("Cal"),

@@ -928,3 +928,845 @@ DEBUG 2016-10-03 14:15:11,683 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        -
 DEBUG 2016-10-03 14:15:13,620 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"857e4738-0bcc-4f9f-8724-833589b70719","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:15:13.6195081-04:00","Properties":{}}
 DEBUG 2016-10-03 14:15:13,645 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 857e4738-0bcc-4f9f-8724-833589b70719
 DEBUG 2016-10-03 14:15:21,649 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 857e4738-0bcc-4f9f-8724-833589b70719
+DEBUG 2016-10-03 14:28:08,826 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-10-03 14:28:08,837 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-10-03 14:28:08,841 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,843 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,843 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,843 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,843 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,843 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,844 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,844 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,844 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,844 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,844 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,844 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,844 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,844 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,844 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:08,846 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-10-03 14:28:08,966 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:28:08,966 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:28:08,966 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:28:08,966 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:28:09,274 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:28:10,613 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-10-03 14:28:10,619 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-10-03 14:28:10,621 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-10-03 14:28:10,623 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-10-03 14:28:10,624 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-10-03 14:28:10,760 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-10-03 14:28:10,960 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-10-03 14:28:10,960 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-10-03 14:28:10,964 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-10-03 14:28:10,964 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-10-03 14:28:10,964 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-10-03 14:28:10,964 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-10-03 14:28:10,964 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-10-03 14:28:10,964 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-10-03 14:28:13,482 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-10-03 14:28:13,484 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-10-03 14:28:13,485 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-10-03 14:28:13,485 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+WARN  2016-10-03 14:28:16,212 [6    ] Abp.Logging.LogHelper                    - Abp.Authorization.AbpAuthorizationException: L'utilisateur courant ne peut pas s'authentifier à l'application!
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__18.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 34
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__21.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 85
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 52
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.<>c__DisplayClass3.<Run>b__1(Task t)
+   à System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   à System.Threading.Tasks.Task.Execute()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   à Abp.Threading.AsyncHelper.RunSync(Func`1 action) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\AsyncHelper.cs:ligne 42
+   à Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelperExtensions.cs:ligne 27
+   à Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Mvc\Web\Mvc\Authorization\AbpMvcAuthorizeFilter.cs:ligne 35
+Abp.Authorization.AbpAuthorizationException: L'utilisateur courant ne peut pas s'authentifier à l'application!
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__18.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 34
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__21.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 85
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 52
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.<>c__DisplayClass3.<Run>b__1(Task t)
+   à System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   à System.Threading.Tasks.Task.Execute()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   à Abp.Threading.AsyncHelper.RunSync(Func`1 action) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\AsyncHelper.cs:ligne 42
+   à Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelperExtensions.cs:ligne 27
+   à Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Mvc\Web\Mvc\Authorization\AbpMvcAuthorizeFilter.cs:ligne 35
+DEBUG 2016-10-03 14:28:21,805 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"c8c26653-671b-4a6c-b183-55da06321b20","IpAddress":"::1","TenantId":null,"UserId":null,"ConnectTime":"2016-10-03T14:28:21.7959676-04:00","Properties":{}}
+DEBUG 2016-10-03 14:28:21,854 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: c8c26653-671b-4a6c-b183-55da06321b20
+DEBUG 2016-10-03 14:28:29,301 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ee661836-3e21-4d0f-a4b3-d1f0afa2fa1a","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:28:29.3000824-04:00","Properties":{}}
+DEBUG 2016-10-03 14:28:29,315 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ee661836-3e21-4d0f-a4b3-d1f0afa2fa1a
+DEBUG 2016-10-03 14:28:31,862 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ee661836-3e21-4d0f-a4b3-d1f0afa2fa1a
+DEBUG 2016-10-03 14:28:32,343 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"d2046392-425f-4c9c-8d6c-bd7aa5b892ec","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:28:32.3428663-04:00","Properties":{}}
+DEBUG 2016-10-03 14:28:32,402 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: d2046392-425f-4c9c-8d6c-bd7aa5b892ec
+DEBUG 2016-10-03 14:28:34,028 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: d2046392-425f-4c9c-8d6c-bd7aa5b892ec
+DEBUG 2016-10-03 14:28:34,440 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"0f9d181a-008a-4698-a965-e2e302627ae1","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:28:34.4397176-04:00","Properties":{}}
+DEBUG 2016-10-03 14:28:34,457 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 0f9d181a-008a-4698-a965-e2e302627ae1
+DEBUG 2016-10-03 14:28:36,521 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 0f9d181a-008a-4698-a965-e2e302627ae1
+DEBUG 2016-10-03 14:28:36,881 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"23fc0d55-15ae-42da-986c-08b53358aff7","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:28:36.881706-04:00","Properties":{}}
+DEBUG 2016-10-03 14:28:36,888 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 23fc0d55-15ae-42da-986c-08b53358aff7
+DEBUG 2016-10-03 14:28:40,763 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 23fc0d55-15ae-42da-986c-08b53358aff7
+DEBUG 2016-10-03 14:28:41,190 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"74f26abf-9594-47d2-89cc-463934792f5e","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:28:41.1890213-04:00","Properties":{}}
+DEBUG 2016-10-03 14:28:41,196 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 74f26abf-9594-47d2-89cc-463934792f5e
+DEBUG 2016-10-03 14:28:41,245 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 74f26abf-9594-47d2-89cc-463934792f5e
+DEBUG 2016-10-03 14:28:41,572 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e52be75e-408f-4dd9-9405-fad8d02bc18a","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:28:41.5720234-04:00","Properties":{}}
+DEBUG 2016-10-03 14:28:41,581 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e52be75e-408f-4dd9-9405-fad8d02bc18a
+DEBUG 2016-10-03 14:28:42,374 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e52be75e-408f-4dd9-9405-fad8d02bc18a
+DEBUG 2016-10-03 14:28:42,749 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5c2541b2-b9d2-41aa-b581-dd04471f5aa8","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:28:42.7494232-04:00","Properties":{}}
+DEBUG 2016-10-03 14:28:42,753 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5c2541b2-b9d2-41aa-b581-dd04471f5aa8
+DEBUG 2016-10-03 14:28:44,538 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5c2541b2-b9d2-41aa-b581-dd04471f5aa8
+DEBUG 2016-10-03 14:28:44,898 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b02b1ea3-fda2-45cf-b2c4-d2003925cec5","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:28:44.8975947-04:00","Properties":{}}
+DEBUG 2016-10-03 14:28:44,902 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b02b1ea3-fda2-45cf-b2c4-d2003925cec5
+DEBUG 2016-10-03 14:28:45,786 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b02b1ea3-fda2-45cf-b2c4-d2003925cec5
+DEBUG 2016-10-03 14:28:46,119 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"da41dfee-cbd3-43b4-b971-814c4d37658f","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:28:46.1193733-04:00","Properties":{}}
+DEBUG 2016-10-03 14:28:46,134 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: da41dfee-cbd3-43b4-b971-814c4d37658f
+ERROR 2016-10-03 14:28:47,877 [8    ] Web.Controllers.SousEvenementsController - The view 'Index' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/sousEvenements/Index.aspx
+~/Views/sousEvenements/Index.ascx
+~/Views/Shared/Index.aspx
+~/Views/Shared/Index.ascx
+~/Views/sousEvenements/Index.cshtml
+~/Views/sousEvenements/Index.vbhtml
+~/Views/Shared/Index.cshtml
+~/Views/Shared/Index.vbhtml
+System.InvalidOperationException: The view 'Index' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/sousEvenements/Index.aspx
+~/Views/sousEvenements/Index.ascx
+~/Views/Shared/Index.aspx
+~/Views/Shared/Index.ascx
+~/Views/sousEvenements/Index.cshtml
+~/Views/sousEvenements/Index.vbhtml
+~/Views/Shared/Index.cshtml
+~/Views/Shared/Index.vbhtml
+   à System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   à System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   à System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   à System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   à System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   à System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+DEBUG 2016-10-03 14:28:47,928 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: da41dfee-cbd3-43b4-b971-814c4d37658f
+DEBUG 2016-10-03 14:29:01,698 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: c8c26653-671b-4a6c-b183-55da06321b20
+DEBUG 2016-10-03 14:29:46,778 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-10-03 14:29:47,054 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-10-03 14:29:47,058 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,060 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,060 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,060 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,060 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,060 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,061 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,061 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,061 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,061 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,061 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,061 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,062 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,062 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,062 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:47,064 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-10-03 14:29:47,430 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:29:47,430 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:29:47,430 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:29:47,430 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:29:47,792 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:29:48,438 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-10-03 14:29:48,445 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-10-03 14:29:48,446 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-10-03 14:29:48,449 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-10-03 14:29:48,450 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-10-03 14:29:48,585 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-10-03 14:29:48,769 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-10-03 14:29:48,769 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-10-03 14:29:48,773 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-10-03 14:29:48,773 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-10-03 14:29:48,774 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-10-03 14:29:48,774 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-10-03 14:29:48,774 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-10-03 14:29:48,774 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-10-03 14:29:51,234 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-10-03 14:29:51,236 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-10-03 14:29:51,237 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-10-03 14:29:51,238 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-10-03 14:29:58,531 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"45c45428-28b6-473c-b402-daef1d00c02f","IpAddress":"::1","TenantId":null,"UserId":null,"ConnectTime":"2016-10-03T14:29:58.5182801-04:00","Properties":{}}
+DEBUG 2016-10-03 14:29:58,578 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 45c45428-28b6-473c-b402-daef1d00c02f
+WARN  2016-10-03 14:30:10,775 [7    ] Abp.Logging.LogHelper                    - Abp.Authorization.AbpAuthorizationException: L'utilisateur courant ne peut pas s'authentifier à l'application!
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__18.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 34
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__21.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 85
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 52
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.<>c__DisplayClass3.<Run>b__1(Task t)
+   à System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   à System.Threading.Tasks.Task.Execute()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   à Abp.Threading.AsyncHelper.RunSync(Func`1 action) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\AsyncHelper.cs:ligne 42
+   à Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelperExtensions.cs:ligne 27
+   à Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Mvc\Web\Mvc\Authorization\AbpMvcAuthorizeFilter.cs:ligne 35
+Abp.Authorization.AbpAuthorizationException: L'utilisateur courant ne peut pas s'authentifier à l'application!
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__18.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 34
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__21.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 85
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 52
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.<>c__DisplayClass3.<Run>b__1(Task t)
+   à System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   à System.Threading.Tasks.Task.Execute()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   à Abp.Threading.AsyncHelper.RunSync(Func`1 action) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\AsyncHelper.cs:ligne 42
+   à Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelperExtensions.cs:ligne 27
+   à Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Mvc\Web\Mvc\Authorization\AbpMvcAuthorizeFilter.cs:ligne 35
+DEBUG 2016-10-03 14:30:11,093 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 45c45428-28b6-473c-b402-daef1d00c02f
+DEBUG 2016-10-03 14:30:11,585 [12   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5cfbeafd-7295-453e-8873-c6f470b0890b","IpAddress":"::1","TenantId":null,"UserId":null,"ConnectTime":"2016-10-03T14:30:11.5840457-04:00","Properties":{}}
+DEBUG 2016-10-03 14:30:11,593 [12   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5cfbeafd-7295-453e-8873-c6f470b0890b
+DEBUG 2016-10-03 14:30:17,398 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"badc54fe-409f-46a5-9a55-9c5942d42af5","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:30:17.3977824-04:00","Properties":{}}
+DEBUG 2016-10-03 14:30:17,420 [12   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: badc54fe-409f-46a5-9a55-9c5942d42af5
+DEBUG 2016-10-03 14:30:19,204 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: badc54fe-409f-46a5-9a55-9c5942d42af5
+DEBUG 2016-10-03 14:30:19,553 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8702af1d-77d6-446b-9dd1-3ecacb69265a","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:30:19.5521662-04:00","Properties":{}}
+DEBUG 2016-10-03 14:30:19,628 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8702af1d-77d6-446b-9dd1-3ecacb69265a
+DEBUG 2016-10-03 14:30:21,214 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8702af1d-77d6-446b-9dd1-3ecacb69265a
+DEBUG 2016-10-03 14:30:21,601 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f2a547ff-1c1a-406b-b03a-0a38c43bf31d","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:30:21.6014743-04:00","Properties":{}}
+DEBUG 2016-10-03 14:30:21,605 [12   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f2a547ff-1c1a-406b-b03a-0a38c43bf31d
+DEBUG 2016-10-03 14:30:22,999 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f2a547ff-1c1a-406b-b03a-0a38c43bf31d
+DEBUG 2016-10-03 14:30:23,322 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b510478e-55a9-496e-86ca-e55f134a5a55","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:30:23.3228252-04:00","Properties":{}}
+DEBUG 2016-10-03 14:30:23,338 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b510478e-55a9-496e-86ca-e55f134a5a55
+DEBUG 2016-10-03 14:30:29,508 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b510478e-55a9-496e-86ca-e55f134a5a55
+DEBUG 2016-10-03 14:30:29,950 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"d8477b9c-bbd4-414f-bc40-b08b1d062288","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:30:29.9495011-04:00","Properties":{}}
+DEBUG 2016-10-03 14:30:29,961 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: d8477b9c-bbd4-414f-bc40-b08b1d062288
+DEBUG 2016-10-03 14:30:32,182 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: d8477b9c-bbd4-414f-bc40-b08b1d062288
+DEBUG 2016-10-03 14:30:32,585 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f2bd4ef9-a0ba-44e7-9f28-878d3bfe0643","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:30:32.5852328-04:00","Properties":{}}
+DEBUG 2016-10-03 14:30:32,622 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f2bd4ef9-a0ba-44e7-9f28-878d3bfe0643
+DEBUG 2016-10-03 14:30:49,440 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5cfbeafd-7295-453e-8873-c6f470b0890b
+WARN  2016-10-03 14:30:49,440 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - System.NullReferenceException: La référence d'objet n'est pas définie à une instance d'un objet.
+   à Abp.RealTime.OnlineClientManagerExtensions.<>c__DisplayClass2_0.<GetAllByUserId>b__0(IOnlineClient c) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 34
+   à System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   à System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   à System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   à System.Collections.Immutable.ImmutableExtensions.FallbackWrapper`1.get_Count()
+   à System.Collections.Immutable.ImmutableList`1.FillFromEmpty(IEnumerable`1 items)
+   à System.Collections.Immutable.ImmutableList`1.AddRange(IEnumerable`1 items)
+   à System.Collections.Immutable.ImmutableList.ToImmutableList[TSource](IEnumerable`1 source)
+   à Abp.RealTime.OnlineClientManagerExtensions.GetAllByUserId(IOnlineClientManager onlineClientManager, IUserIdentifier user) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 33
+   à Abp.RealTime.OnlineClientManagerExtensions.IsOnline(IOnlineClientManager onlineClientManager, UserIdentifier user) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 20
+   à Abp.RealTime.OnlineClientManager.Remove(String connectionId) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManager.cs:ligne 64
+   à Abp.Web.SignalR.Hubs.AbpCommonHub.<OnDisconnected>d__13.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.SignalR\Web\SignalR\Hubs\AbpCommonHub.cs:ligne 80
+System.NullReferenceException: La référence d'objet n'est pas définie à une instance d'un objet.
+   à Abp.RealTime.OnlineClientManagerExtensions.<>c__DisplayClass2_0.<GetAllByUserId>b__0(IOnlineClient c) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 34
+   à System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   à System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   à System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   à System.Collections.Immutable.ImmutableExtensions.FallbackWrapper`1.get_Count()
+   à System.Collections.Immutable.ImmutableList`1.FillFromEmpty(IEnumerable`1 items)
+   à System.Collections.Immutable.ImmutableList`1.AddRange(IEnumerable`1 items)
+   à System.Collections.Immutable.ImmutableList.ToImmutableList[TSource](IEnumerable`1 source)
+   à Abp.RealTime.OnlineClientManagerExtensions.GetAllByUserId(IOnlineClientManager onlineClientManager, IUserIdentifier user) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 33
+   à Abp.RealTime.OnlineClientManagerExtensions.IsOnline(IOnlineClientManager onlineClientManager, UserIdentifier user) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 20
+   à Abp.RealTime.OnlineClientManager.Remove(String connectionId) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManager.cs:ligne 64
+   à Abp.Web.SignalR.Hubs.AbpCommonHub.<OnDisconnected>d__13.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.SignalR\Web\SignalR\Hubs\AbpCommonHub.cs:ligne 80
+DEBUG 2016-10-03 14:31:46,293 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-10-03 14:31:47,573 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-10-03 14:31:47,580 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,583 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,583 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,583 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,583 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,584 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,584 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,584 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,584 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,585 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,585 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,585 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,585 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,586 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,586 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:47,589 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-10-03 14:31:47,958 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:31:47,958 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:31:47,958 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:31:47,958 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:31:48,309 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:31:48,961 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-10-03 14:31:48,967 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-10-03 14:31:48,968 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-10-03 14:31:48,970 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-10-03 14:31:48,971 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-10-03 14:31:49,106 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-10-03 14:31:49,283 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-10-03 14:31:49,283 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-10-03 14:31:49,288 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-10-03 14:31:49,288 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-10-03 14:31:49,288 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-10-03 14:31:49,288 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-10-03 14:31:49,288 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-10-03 14:31:49,288 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-10-03 14:31:51,666 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-10-03 14:31:51,667 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-10-03 14:31:51,668 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-10-03 14:31:51,669 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-10-03 14:31:53,952 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"f2bd4ef9-a0ba-44e7-9f28-878d3bfe0643","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:31:53.9015494-04:00","Properties":{}}
+DEBUG 2016-10-03 14:31:58,133 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"39ea77e0-e060-4ff8-8084-476a05afb514","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:31:58.133551-04:00","Properties":{}}
+DEBUG 2016-10-03 14:31:58,166 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 39ea77e0-e060-4ff8-8084-476a05afb514
+DEBUG 2016-10-03 14:32:08,278 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 39ea77e0-e060-4ff8-8084-476a05afb514
+DEBUG 2016-10-03 14:32:08,726 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"78557e83-2ed8-4bda-bc56-eae3b119844a","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:32:08.7267407-04:00","Properties":{}}
+DEBUG 2016-10-03 14:32:08,751 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 78557e83-2ed8-4bda-bc56-eae3b119844a
+DEBUG 2016-10-03 14:32:10,061 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 78557e83-2ed8-4bda-bc56-eae3b119844a
+DEBUG 2016-10-03 14:32:10,360 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"66d95746-b07a-4370-8149-381108d00b81","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:32:10.3601911-04:00","Properties":{}}
+DEBUG 2016-10-03 14:32:10,373 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 66d95746-b07a-4370-8149-381108d00b81
+DEBUG 2016-10-03 14:32:14,579 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 66d95746-b07a-4370-8149-381108d00b81
+DEBUG 2016-10-03 14:32:14,914 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"089efee8-23f0-42f6-a2dc-008fb8c9e80d","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:32:14.9143052-04:00","Properties":{}}
+DEBUG 2016-10-03 14:32:14,918 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 089efee8-23f0-42f6-a2dc-008fb8c9e80d
+DEBUG 2016-10-03 14:32:28,176 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 089efee8-23f0-42f6-a2dc-008fb8c9e80d
+DEBUG 2016-10-03 14:32:28,667 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"14c4faf6-9a0d-40e6-84f8-f8eec51da826","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:32:28.66531-04:00","Properties":{}}
+DEBUG 2016-10-03 14:32:28,701 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 14c4faf6-9a0d-40e6-84f8-f8eec51da826
+DEBUG 2016-10-03 14:32:31,585 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 14c4faf6-9a0d-40e6-84f8-f8eec51da826
+DEBUG 2016-10-03 14:32:32,551 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f2bd4ef9-a0ba-44e7-9f28-878d3bfe0643
+DEBUG 2016-10-03 14:34:29,550 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-10-03 14:34:29,565 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-10-03 14:34:29,570 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,572 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,572 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,572 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,572 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,572 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:29,575 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-10-03 14:34:29,703 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:34:29,703 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:34:29,703 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:34:29,703 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:34:30,016 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:34:31,246 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-10-03 14:34:31,253 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-10-03 14:34:31,254 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-10-03 14:34:31,256 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-10-03 14:34:31,257 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-10-03 14:34:31,394 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-10-03 14:34:31,596 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-10-03 14:34:31,596 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-10-03 14:34:31,599 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-10-03 14:34:31,599 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-10-03 14:34:31,599 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-10-03 14:34:31,599 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-10-03 14:34:31,600 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-10-03 14:34:31,600 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-10-03 14:34:34,044 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-10-03 14:34:34,046 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-10-03 14:34:34,047 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-10-03 14:34:34,048 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+WARN  2016-10-03 14:34:35,773 [6    ] Abp.Logging.LogHelper                    - Abp.Authorization.AbpAuthorizationException: L'utilisateur courant ne peut pas s'authentifier à l'application!
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__18.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 34
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__21.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 85
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 52
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.<>c__DisplayClass3.<Run>b__1(Task t)
+   à System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   à System.Threading.Tasks.Task.Execute()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   à Abp.Threading.AsyncHelper.RunSync(Func`1 action) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\AsyncHelper.cs:ligne 42
+   à Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelperExtensions.cs:ligne 27
+   à Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Mvc\Web\Mvc\Authorization\AbpMvcAuthorizeFilter.cs:ligne 35
+Abp.Authorization.AbpAuthorizationException: L'utilisateur courant ne peut pas s'authentifier à l'application!
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__18.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 34
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__21.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 85
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 52
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.<>c__DisplayClass3.<Run>b__1(Task t)
+   à System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   à System.Threading.Tasks.Task.Execute()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   à Abp.Threading.AsyncHelper.RunSync(Func`1 action) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\AsyncHelper.cs:ligne 42
+   à Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelperExtensions.cs:ligne 27
+   à Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Mvc\Web\Mvc\Authorization\AbpMvcAuthorizeFilter.cs:ligne 35
+DEBUG 2016-10-03 14:34:40,963 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"65db2c0b-f766-432b-b68a-04ae57fce794","IpAddress":"::1","TenantId":null,"UserId":null,"ConnectTime":"2016-10-03T14:34:40.9550873-04:00","Properties":{}}
+DEBUG 2016-10-03 14:34:41,001 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 65db2c0b-f766-432b-b68a-04ae57fce794
+DEBUG 2016-10-03 14:34:47,421 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"9ba8e4aa-02d3-4f47-a60f-0cb422f4e062","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:34:47.4213605-04:00","Properties":{}}
+DEBUG 2016-10-03 14:34:47,421 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 9ba8e4aa-02d3-4f47-a60f-0cb422f4e062
+DEBUG 2016-10-03 14:35:20,910 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 65db2c0b-f766-432b-b68a-04ae57fce794
+WARN  2016-10-03 14:35:20,913 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - System.NullReferenceException: La référence d'objet n'est pas définie à une instance d'un objet.
+   à Abp.RealTime.OnlineClientManagerExtensions.<>c__DisplayClass2_0.<GetAllByUserId>b__0(IOnlineClient c) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 34
+   à System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   à System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   à System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   à System.Collections.Immutable.ImmutableExtensions.FallbackWrapper`1.get_Count()
+   à System.Collections.Immutable.ImmutableList`1.FillFromEmpty(IEnumerable`1 items)
+   à System.Collections.Immutable.ImmutableList`1.AddRange(IEnumerable`1 items)
+   à System.Collections.Immutable.ImmutableList.ToImmutableList[TSource](IEnumerable`1 source)
+   à Abp.RealTime.OnlineClientManagerExtensions.GetAllByUserId(IOnlineClientManager onlineClientManager, IUserIdentifier user) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 33
+   à Abp.RealTime.OnlineClientManagerExtensions.IsOnline(IOnlineClientManager onlineClientManager, UserIdentifier user) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 20
+   à Abp.RealTime.OnlineClientManager.Remove(String connectionId) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManager.cs:ligne 64
+   à Abp.Web.SignalR.Hubs.AbpCommonHub.<OnDisconnected>d__13.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.SignalR\Web\SignalR\Hubs\AbpCommonHub.cs:ligne 80
+System.NullReferenceException: La référence d'objet n'est pas définie à une instance d'un objet.
+   à Abp.RealTime.OnlineClientManagerExtensions.<>c__DisplayClass2_0.<GetAllByUserId>b__0(IOnlineClient c) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 34
+   à System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   à System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   à System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   à System.Collections.Immutable.ImmutableExtensions.FallbackWrapper`1.get_Count()
+   à System.Collections.Immutable.ImmutableList`1.FillFromEmpty(IEnumerable`1 items)
+   à System.Collections.Immutable.ImmutableList`1.AddRange(IEnumerable`1 items)
+   à System.Collections.Immutable.ImmutableList.ToImmutableList[TSource](IEnumerable`1 source)
+   à Abp.RealTime.OnlineClientManagerExtensions.GetAllByUserId(IOnlineClientManager onlineClientManager, IUserIdentifier user) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 33
+   à Abp.RealTime.OnlineClientManagerExtensions.IsOnline(IOnlineClientManager onlineClientManager, UserIdentifier user) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 20
+   à Abp.RealTime.OnlineClientManager.Remove(String connectionId) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManager.cs:ligne 64
+   à Abp.Web.SignalR.Hubs.AbpCommonHub.<OnDisconnected>d__13.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.SignalR\Web\SignalR\Hubs\AbpCommonHub.cs:ligne 80
+DEBUG 2016-10-03 14:35:21,127 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 9ba8e4aa-02d3-4f47-a60f-0cb422f4e062
+DEBUG 2016-10-03 14:35:21,987 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"7a40814a-d026-468b-858e-f75186ce6927","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:35:21.9870407-04:00","Properties":{}}
+DEBUG 2016-10-03 14:35:22,007 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 7a40814a-d026-468b-858e-f75186ce6927
+DEBUG 2016-10-03 14:35:24,545 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 7a40814a-d026-468b-858e-f75186ce6927
+DEBUG 2016-10-03 14:35:25,323 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b4f859f9-9351-4796-a379-62e45dac937b","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:35:25.3220527-04:00","Properties":{}}
+DEBUG 2016-10-03 14:35:25,339 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b4f859f9-9351-4796-a379-62e45dac937b
+DEBUG 2016-10-03 14:38:18,860 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b4f859f9-9351-4796-a379-62e45dac937b
+DEBUG 2016-10-03 14:38:19,801 [31   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"cd5361cb-2347-4253-86db-32f35b99a23c","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:38:19.8015155-04:00","Properties":{}}
+DEBUG 2016-10-03 14:38:19,801 [33   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: cd5361cb-2347-4253-86db-32f35b99a23c
+DEBUG 2016-10-03 14:38:26,236 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: cd5361cb-2347-4253-86db-32f35b99a23c
+DEBUG 2016-10-03 14:38:26,618 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e67ab44e-c0b1-4d2a-afb7-655074343f31","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:38:26.6182851-04:00","Properties":{}}
+DEBUG 2016-10-03 14:38:26,618 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e67ab44e-c0b1-4d2a-afb7-655074343f31
+DEBUG 2016-10-03 14:38:49,634 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e67ab44e-c0b1-4d2a-afb7-655074343f31
+DEBUG 2016-10-03 14:38:50,133 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"7052ae9d-e662-432b-8f81-7f6740754f03","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:38:50.1329202-04:00","Properties":{}}
+DEBUG 2016-10-03 14:38:50,159 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 7052ae9d-e662-432b-8f81-7f6740754f03
+DEBUG 2016-10-03 14:39:00,578 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 7052ae9d-e662-432b-8f81-7f6740754f03
+DEBUG 2016-10-03 14:39:00,994 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"7257d30d-0273-4d3d-bd02-8734b21d0497","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:39:00.9930923-04:00","Properties":{}}
+DEBUG 2016-10-03 14:39:01,009 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 7257d30d-0273-4d3d-bd02-8734b21d0497
+DEBUG 2016-10-03 14:39:17,741 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 7257d30d-0273-4d3d-bd02-8734b21d0497
+DEBUG 2016-10-03 14:39:18,630 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1b68724a-688a-4574-9f4f-91470c383070","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:39:18.6297588-04:00","Properties":{}}
+DEBUG 2016-10-03 14:39:18,711 [31   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1b68724a-688a-4574-9f4f-91470c383070
+DEBUG 2016-10-03 14:39:29,922 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1b68724a-688a-4574-9f4f-91470c383070
+DEBUG 2016-10-03 14:39:30,310 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f9378f71-efc5-46fc-8c69-d4cbec634695","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:39:30.3109055-04:00","Properties":{}}
+DEBUG 2016-10-03 14:39:30,312 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f9378f71-efc5-46fc-8c69-d4cbec634695
+DEBUG 2016-10-03 14:39:35,547 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f9378f71-efc5-46fc-8c69-d4cbec634695
+DEBUG 2016-10-03 14:39:35,913 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"632baeea-035a-4c71-a386-e69ac02cb5f3","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:39:35.9136266-04:00","Properties":{}}
+DEBUG 2016-10-03 14:39:35,927 [27   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 632baeea-035a-4c71-a386-e69ac02cb5f3
+DEBUG 2016-10-03 14:39:36,907 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 632baeea-035a-4c71-a386-e69ac02cb5f3
+DEBUG 2016-10-03 14:39:37,282 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1ec72091-2eb3-4269-b5a1-685ceed2bd27","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:39:37.2829017-04:00","Properties":{}}
+DEBUG 2016-10-03 14:39:37,298 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1ec72091-2eb3-4269-b5a1-685ceed2bd27
+DEBUG 2016-10-03 14:39:37,513 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1ec72091-2eb3-4269-b5a1-685ceed2bd27
+DEBUG 2016-10-03 14:39:37,887 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"0b4981de-0cf9-4bd4-9812-503bb3b339d5","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:39:37.8861996-04:00","Properties":{}}
+DEBUG 2016-10-03 14:39:37,902 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 0b4981de-0cf9-4bd4-9812-503bb3b339d5
+DEBUG 2016-10-03 14:40:04,720 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 0b4981de-0cf9-4bd4-9812-503bb3b339d5
+DEBUG 2016-10-03 14:40:05,249 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"51deb926-3460-4b94-999d-e90787493afa","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:40:05.2482656-04:00","Properties":{}}
+DEBUG 2016-10-03 14:40:05,296 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 51deb926-3460-4b94-999d-e90787493afa
+DEBUG 2016-10-03 14:40:05,528 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 51deb926-3460-4b94-999d-e90787493afa
+DEBUG 2016-10-03 14:40:05,867 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"441874b5-d7c5-418d-ac83-0e84467d790a","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:40:05.8674762-04:00","Properties":{}}
+DEBUG 2016-10-03 14:40:05,873 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 441874b5-d7c5-418d-ac83-0e84467d790a
+DEBUG 2016-10-03 14:40:06,666 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 441874b5-d7c5-418d-ac83-0e84467d790a
+DEBUG 2016-10-03 14:40:07,050 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"56df557e-fe39-4f9e-b010-b1e05fb26924","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:40:07.0506268-04:00","Properties":{}}
+DEBUG 2016-10-03 14:40:07,063 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 56df557e-fe39-4f9e-b010-b1e05fb26924
+DEBUG 2016-10-03 14:40:07,788 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 56df557e-fe39-4f9e-b010-b1e05fb26924
+DEBUG 2016-10-03 14:40:08,133 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1b0076ab-17c1-4d80-8714-c7d39fee31eb","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:40:08.1327205-04:00","Properties":{}}
+DEBUG 2016-10-03 14:40:08,144 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1b0076ab-17c1-4d80-8714-c7d39fee31eb
+DEBUG 2016-10-03 14:40:09,610 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1b0076ab-17c1-4d80-8714-c7d39fee31eb
+DEBUG 2016-10-03 14:40:09,942 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"bf4f9064-7e79-4f42-9cfe-6204537804a3","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:40:09.9420777-04:00","Properties":{}}
+DEBUG 2016-10-03 14:40:09,960 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: bf4f9064-7e79-4f42-9cfe-6204537804a3
+DEBUG 2016-10-03 14:40:12,648 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: bf4f9064-7e79-4f42-9cfe-6204537804a3
+DEBUG 2016-10-03 14:40:12,978 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"c5f2ad4e-ef90-4dd2-a9af-dcf872858539","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:40:12.9785897-04:00","Properties":{}}
+DEBUG 2016-10-03 14:40:12,988 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: c5f2ad4e-ef90-4dd2-a9af-dcf872858539
+DEBUG 2016-10-03 14:40:15,440 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: c5f2ad4e-ef90-4dd2-a9af-dcf872858539
+DEBUG 2016-10-03 14:40:15,797 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"54d2f39d-542c-4811-8891-41795418df6a","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:40:15.7976276-04:00","Properties":{}}
+DEBUG 2016-10-03 14:40:15,801 [33   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 54d2f39d-542c-4811-8891-41795418df6a
+DEBUG 2016-10-03 14:40:38,152 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 54d2f39d-542c-4811-8891-41795418df6a
+DEBUG 2016-10-03 14:40:38,616 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e399b210-e4c2-4893-9d09-26767e15d6d3","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:40:38.6141208-04:00","Properties":{}}
+DEBUG 2016-10-03 14:40:38,639 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e399b210-e4c2-4893-9d09-26767e15d6d3
+DEBUG 2016-10-03 14:40:40,217 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e399b210-e4c2-4893-9d09-26767e15d6d3
+DEBUG 2016-10-03 14:40:40,669 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"2a7787bd-1b8e-4d74-93b6-8df18f728449","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:40:40.6690479-04:00","Properties":{}}
+DEBUG 2016-10-03 14:40:40,669 [38   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 2a7787bd-1b8e-4d74-93b6-8df18f728449
+DEBUG 2016-10-03 14:40:44,292 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 2a7787bd-1b8e-4d74-93b6-8df18f728449
+DEBUG 2016-10-03 14:40:44,704 [39   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f2670af0-212d-42f3-b2f4-69902697df14","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:40:44.703919-04:00","Properties":{}}
+DEBUG 2016-10-03 14:40:44,706 [38   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f2670af0-212d-42f3-b2f4-69902697df14
+DEBUG 2016-10-03 14:41:01,861 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f2670af0-212d-42f3-b2f4-69902697df14
+DEBUG 2016-10-03 14:41:02,356 [36   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"78d01ce2-c373-4d29-9f83-e71507579f32","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:41:02.3555953-04:00","Properties":{}}
+DEBUG 2016-10-03 14:41:02,371 [37   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 78d01ce2-c373-4d29-9f83-e71507579f32
+DEBUG 2016-10-03 14:44:14,572 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-10-03 14:44:14,811 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-10-03 14:44:14,817 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,819 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,819 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,820 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,820 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,820 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,820 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,820 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,821 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,821 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,821 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,821 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,821 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,821 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,821 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:14,824 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-10-03 14:44:15,193 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:44:15,193 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:44:15,193 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:44:15,193 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:44:15,554 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:44:16,212 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-10-03 14:44:16,218 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-10-03 14:44:16,220 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-10-03 14:44:16,222 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-10-03 14:44:16,224 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-10-03 14:44:16,365 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-10-03 14:44:16,556 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-10-03 14:44:16,556 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-10-03 14:44:16,560 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-10-03 14:44:16,560 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-10-03 14:44:16,560 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-10-03 14:44:16,560 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-10-03 14:44:16,560 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-10-03 14:44:16,560 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-10-03 14:44:18,969 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-10-03 14:44:18,970 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-10-03 14:44:18,971 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-10-03 14:44:18,972 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-10-03 14:44:21,145 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"78d01ce2-c373-4d29-9f83-e71507579f32","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:44:21.0971728-04:00","Properties":{}}
+DEBUG 2016-10-03 14:44:24,968 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"6614ee84-8c6c-4b84-951c-0c845123d1fe","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:44:24.9680378-04:00","Properties":{}}
+DEBUG 2016-10-03 14:44:24,999 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 6614ee84-8c6c-4b84-951c-0c845123d1fe
+DEBUG 2016-10-03 14:44:56,682 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 6614ee84-8c6c-4b84-951c-0c845123d1fe
+DEBUG 2016-10-03 14:44:57,180 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ceab25e4-eb04-4fef-921c-58a30c29ec50","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:44:57.1795163-04:00","Properties":{}}
+DEBUG 2016-10-03 14:44:57,194 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ceab25e4-eb04-4fef-921c-58a30c29ec50
+DEBUG 2016-10-03 14:45:04,508 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ceab25e4-eb04-4fef-921c-58a30c29ec50
+DEBUG 2016-10-03 14:45:04,893 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8270a66a-c65d-4d3a-a0c8-3bffc4fec8f6","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:45:04.89337-04:00","Properties":{}}
+DEBUG 2016-10-03 14:45:04,899 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8270a66a-c65d-4d3a-a0c8-3bffc4fec8f6
+DEBUG 2016-10-03 14:45:10,211 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8270a66a-c65d-4d3a-a0c8-3bffc4fec8f6
+DEBUG 2016-10-03 14:45:10,589 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"58d92284-9ff6-4e51-ab5c-ed151bd8369c","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:45:10.5890461-04:00","Properties":{}}
+DEBUG 2016-10-03 14:45:10,593 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 58d92284-9ff6-4e51-ab5c-ed151bd8369c
+DEBUG 2016-10-03 14:45:11,894 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 58d92284-9ff6-4e51-ab5c-ed151bd8369c
+DEBUG 2016-10-03 14:45:12,298 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"0c47e10e-f7b2-4e21-ba47-e69eb9b1141a","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:45:12.2985933-04:00","Properties":{}}
+DEBUG 2016-10-03 14:45:12,303 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 0c47e10e-f7b2-4e21-ba47-e69eb9b1141a
+DEBUG 2016-10-03 14:45:14,222 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 0c47e10e-f7b2-4e21-ba47-e69eb9b1141a
+DEBUG 2016-10-03 14:45:14,609 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"4751d055-e7ac-4c9f-8b87-f03c0ae9820a","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:45:14.608113-04:00","Properties":{}}
+DEBUG 2016-10-03 14:45:14,620 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 4751d055-e7ac-4c9f-8b87-f03c0ae9820a
+DEBUG 2016-10-03 14:45:20,063 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 4751d055-e7ac-4c9f-8b87-f03c0ae9820a
+DEBUG 2016-10-03 14:45:20,455 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"6dac3259-9359-4103-ace7-1bae5fd4e2d5","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:45:20.4548665-04:00","Properties":{}}
+DEBUG 2016-10-03 14:45:20,464 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 6dac3259-9359-4103-ace7-1bae5fd4e2d5
+DEBUG 2016-10-03 14:50:59,404 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 78d01ce2-c373-4d29-9f83-e71507579f32
+DEBUG 2016-10-03 14:51:16,073 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 6dac3259-9359-4103-ace7-1bae5fd4e2d5
+DEBUG 2016-10-03 14:51:17,007 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"62c14657-e25d-49b8-9e20-1e2bb6ce20b7","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:51:17.0075121-04:00","Properties":{}}
+DEBUG 2016-10-03 14:51:17,036 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 62c14657-e25d-49b8-9e20-1e2bb6ce20b7
+DEBUG 2016-10-03 14:51:18,016 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 62c14657-e25d-49b8-9e20-1e2bb6ce20b7
+DEBUG 2016-10-03 14:51:18,821 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ea17b351-d4fd-4ffa-8bf7-eb8bb915de83","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:51:18.8215314-04:00","Properties":{}}
+DEBUG 2016-10-03 14:51:18,837 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ea17b351-d4fd-4ffa-8bf7-eb8bb915de83
+DEBUG 2016-10-03 14:51:37,729 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ea17b351-d4fd-4ffa-8bf7-eb8bb915de83
+DEBUG 2016-10-03 14:51:38,320 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5a4c320a-160f-41c8-a373-8f7522bc9c1a","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:51:38.3200702-04:00","Properties":{}}
+DEBUG 2016-10-03 14:51:38,343 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5a4c320a-160f-41c8-a373-8f7522bc9c1a
+DEBUG 2016-10-03 14:51:39,826 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5a4c320a-160f-41c8-a373-8f7522bc9c1a
+DEBUG 2016-10-03 14:51:40,232 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"55998f35-3d62-4dd2-9993-c852e4346bff","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:51:40.2325881-04:00","Properties":{}}
+DEBUG 2016-10-03 14:51:40,232 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 55998f35-3d62-4dd2-9993-c852e4346bff
+DEBUG 2016-10-03 14:52:38,486 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 55998f35-3d62-4dd2-9993-c852e4346bff
+DEBUG 2016-10-03 14:52:38,987 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5a2e4c56-9624-4fb6-8cd1-da41f1f8d69c","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:52:38.9876932-04:00","Properties":{}}
+DEBUG 2016-10-03 14:52:38,987 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5a2e4c56-9624-4fb6-8cd1-da41f1f8d69c
+DEBUG 2016-10-03 14:52:39,972 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5a2e4c56-9624-4fb6-8cd1-da41f1f8d69c
+DEBUG 2016-10-03 14:52:40,325 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"4dedc327-5c6b-460e-937f-013e04a01d01","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:52:40.3251839-04:00","Properties":{}}
+DEBUG 2016-10-03 14:52:40,334 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 4dedc327-5c6b-460e-937f-013e04a01d01
+DEBUG 2016-10-03 14:53:48,329 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 4dedc327-5c6b-460e-937f-013e04a01d01
+DEBUG 2016-10-03 14:53:48,802 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"a1b46a03-45a8-417a-8539-0bd27501bc29","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:53:48.8025277-04:00","Properties":{}}
+DEBUG 2016-10-03 14:53:48,830 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: a1b46a03-45a8-417a-8539-0bd27501bc29
+DEBUG 2016-10-03 14:53:52,546 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: a1b46a03-45a8-417a-8539-0bd27501bc29
+DEBUG 2016-10-03 14:53:52,909 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"31d6b01d-b14c-4984-b487-cf8657127475","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:53:52.9081521-04:00","Properties":{}}
+DEBUG 2016-10-03 14:53:52,914 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 31d6b01d-b14c-4984-b487-cf8657127475
+DEBUG 2016-10-03 14:55:59,546 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-10-03 14:55:59,694 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-10-03 14:55:59,700 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,703 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,703 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,703 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,703 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,704 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,704 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,704 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,704 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,704 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,705 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,705 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,705 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,705 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,705 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:55:59,707 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-10-03 14:56:01,458 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:56:01,458 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:56:01,458 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:56:01,458 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 14:56:01,835 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 14:56:02,488 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-10-03 14:56:02,495 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-10-03 14:56:02,496 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-10-03 14:56:02,498 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-10-03 14:56:02,499 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-10-03 14:56:02,641 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-10-03 14:56:02,821 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-10-03 14:56:02,821 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-10-03 14:56:02,826 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-10-03 14:56:02,826 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-10-03 14:56:02,827 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-10-03 14:56:02,827 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-10-03 14:56:02,827 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-10-03 14:56:02,827 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-10-03 14:56:05,222 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-10-03 14:56:05,223 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-10-03 14:56:05,223 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-10-03 14:56:05,224 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-10-03 14:56:11,726 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"d4bdf4bd-6112-4835-b22d-d3cdbb3c5e6d","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:56:11.7061545-04:00","Properties":{}}
+DEBUG 2016-10-03 14:56:11,772 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: d4bdf4bd-6112-4835-b22d-d3cdbb3c5e6d
+DEBUG 2016-10-03 14:56:11,817 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: d4bdf4bd-6112-4835-b22d-d3cdbb3c5e6d
+DEBUG 2016-10-03 14:56:12,168 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"3d4f2b80-be62-48b7-8efb-91b496c04af7","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:56:12.1671936-04:00","Properties":{}}
+DEBUG 2016-10-03 14:56:12,181 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 3d4f2b80-be62-48b7-8efb-91b496c04af7
+DEBUG 2016-10-03 14:56:22,183 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 3d4f2b80-be62-48b7-8efb-91b496c04af7
+DEBUG 2016-10-03 14:56:22,536 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"62a66e0b-f669-4b04-a395-31b417032fb7","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:56:22.5366403-04:00","Properties":{}}
+DEBUG 2016-10-03 14:56:22,554 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 62a66e0b-f669-4b04-a395-31b417032fb7
+DEBUG 2016-10-03 14:56:23,274 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 62a66e0b-f669-4b04-a395-31b417032fb7
+DEBUG 2016-10-03 14:56:23,680 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1366af58-34f8-481f-aa47-5e22a686a859","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:56:23.6800388-04:00","Properties":{}}
+DEBUG 2016-10-03 14:56:23,686 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1366af58-34f8-481f-aa47-5e22a686a859
+DEBUG 2016-10-03 14:56:41,992 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1366af58-34f8-481f-aa47-5e22a686a859
+DEBUG 2016-10-03 14:56:42,464 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"43560947-4418-4495-9fbe-bbe494bf115b","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T14:56:42.4648681-04:00","Properties":{}}
+DEBUG 2016-10-03 14:56:42,469 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 43560947-4418-4495-9fbe-bbe494bf115b
+DEBUG 2016-10-03 14:57:26,121 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 43560947-4418-4495-9fbe-bbe494bf115b
+DEBUG 2016-10-03 15:02:26,474 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-10-03 15:02:26,701 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-10-03 15:02:26,705 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,707 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,707 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,707 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,708 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,708 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,708 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,708 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,708 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,709 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,709 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,709 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,709 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,709 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,709 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:26,711 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-10-03 15:02:27,071 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 15:02:27,071 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 15:02:27,071 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 15:02:27,071 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 15:02:27,424 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:02:28,069 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-10-03 15:02:28,075 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-10-03 15:02:28,076 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-10-03 15:02:28,078 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-10-03 15:02:28,079 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-10-03 15:02:28,229 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-10-03 15:02:28,407 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-10-03 15:02:28,408 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-10-03 15:02:28,413 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-10-03 15:02:28,413 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-10-03 15:02:28,413 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-10-03 15:02:28,414 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-10-03 15:02:28,414 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-10-03 15:02:28,414 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-10-03 15:02:30,869 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-10-03 15:02:30,870 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-10-03 15:02:30,871 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-10-03 15:02:30,872 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-10-03 15:02:37,953 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b83f35aa-12f4-4544-973d-fa69287a5dbd","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T15:02:37.9536595-04:00","Properties":{}}
+DEBUG 2016-10-03 15:02:38,004 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b83f35aa-12f4-4544-973d-fa69287a5dbd
+DEBUG 2016-10-03 15:02:58,910 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b83f35aa-12f4-4544-973d-fa69287a5dbd
+DEBUG 2016-10-03 15:02:59,413 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"9fc80796-a17e-4c29-84a6-203c7ce4fe20","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T15:02:59.4120016-04:00","Properties":{}}
+DEBUG 2016-10-03 15:02:59,425 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 9fc80796-a17e-4c29-84a6-203c7ce4fe20
+DEBUG 2016-10-03 15:03:10,154 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 9fc80796-a17e-4c29-84a6-203c7ce4fe20
+DEBUG 2016-10-03 15:03:10,582 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8a1b0fa8-57bb-437e-bec3-d6defc68ef4d","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T15:03:10.5812433-04:00","Properties":{}}
+DEBUG 2016-10-03 15:03:10,587 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8a1b0fa8-57bb-437e-bec3-d6defc68ef4d
+DEBUG 2016-10-03 15:03:12,365 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8a1b0fa8-57bb-437e-bec3-d6defc68ef4d
+DEBUG 2016-10-03 15:03:12,736 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"9cd139cf-da60-4e3b-a378-7d186ee9f246","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T15:03:12.7350157-04:00","Properties":{}}
+DEBUG 2016-10-03 15:03:12,740 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 9cd139cf-da60-4e3b-a378-7d186ee9f246
+DEBUG 2016-10-03 15:03:13,334 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 9cd139cf-da60-4e3b-a378-7d186ee9f246
+DEBUG 2016-10-03 15:03:13,667 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1a373560-ea1f-4157-b4d7-1f0e9a235e52","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T15:03:13.6675325-04:00","Properties":{}}
+DEBUG 2016-10-03 15:03:13,672 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1a373560-ea1f-4157-b4d7-1f0e9a235e52
+DEBUG 2016-10-03 15:03:16,335 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1a373560-ea1f-4157-b4d7-1f0e9a235e52
+DEBUG 2016-10-03 15:03:16,761 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"9dfacadd-9415-408b-98b2-2bd8040f70e3","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2016-10-03T15:03:16.7607891-04:00","Properties":{}}
+DEBUG 2016-10-03 15:03:16,776 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 9dfacadd-9415-408b-98b2-2bd8040f70e3
+DEBUG 2016-10-03 15:11:55,235 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-10-03 15:11:55,247 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-10-03 15:11:55,251 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,253 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,253 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,253 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,253 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,253 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,253 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,254 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,254 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,254 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,254 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,254 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,254 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,254 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,254 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:55,257 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-10-03 15:11:55,378 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 15:11:55,378 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 15:11:55,378 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 15:11:55,378 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 15:11:55,738 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:11:57,063 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-10-03 15:11:57,069 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-10-03 15:11:57,070 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-10-03 15:11:57,072 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-10-03 15:11:57,073 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-10-03 15:11:57,233 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-10-03 15:11:57,530 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-10-03 15:11:57,530 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-10-03 15:11:57,538 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-10-03 15:11:57,539 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-10-03 15:11:57,539 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-10-03 15:11:57,540 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-10-03 15:11:57,540 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-10-03 15:11:57,541 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-10-03 15:11:59,963 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-10-03 15:11:59,964 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-10-03 15:11:59,965 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-10-03 15:11:59,966 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-10-03 15:13:46,827 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-10-03 15:13:46,844 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-10-03 15:13:46,853 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,858 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,858 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,859 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,859 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,859 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,860 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,860 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,860 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,860 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,860 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,860 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,860 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,861 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,861 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:46,864 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-10-03 15:13:47,031 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 15:13:47,031 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 15:13:47,031 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 15:13:47,031 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-10-03 15:13:47,338 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-10-03 15:13:48,823 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-10-03 15:13:48,831 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-10-03 15:13:48,833 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-10-03 15:13:48,837 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-10-03 15:13:48,839 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-10-03 15:13:49,020 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-10-03 15:13:49,353 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-10-03 15:13:49,353 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-10-03 15:13:49,359 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-10-03 15:13:49,359 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-10-03 15:13:49,359 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-10-03 15:13:49,360 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-10-03 15:13:49,360 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-10-03 15:13:49,360 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-10-03 15:13:52,989 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-10-03 15:13:52,990 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-10-03 15:13:52,991 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-10-03 15:13:52,991 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-10-03 15:14:00,270 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"550cd356-fc59-4d80-89c5-5966b34568ad","IpAddress":"::1","TenantId":null,"UserId":null,"ConnectTime":"2016-10-03T15:14:00.2628704-04:00","Properties":{}}
+DEBUG 2016-10-03 15:14:00,303 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 550cd356-fc59-4d80-89c5-5966b34568ad
