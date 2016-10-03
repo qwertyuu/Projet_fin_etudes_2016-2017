@@ -289,7 +289,13 @@ namespace FestiRire
 
             }
             else if (btnStatut1.Text == "Terminé")
+            {
+                if (!verifierChampRespo())
+                {
+                    return;
+                }
                 lblStatutContrat.Text = "Terminé";
+            }
             btnEnregistrerContrat.Enabled = true;
             verifierStatut();
         }
@@ -332,10 +338,7 @@ namespace FestiRire
             else if (lblStatutContrat.Text == "Annulé" || lblStatutContrat.Text == "Supprimé" || lblStatutContrat.Text == "Terminé")
             {
                 
-                if(!verifierChampRespo())
-                {
-                    return;
-                }
+
                 btnStatut1.Visible = false;
                 btnStatut2.Visible = false;
                 DesactiverTout(this);
@@ -589,7 +592,10 @@ namespace FestiRire
         private void btnEnregistrerContrat_Click(object sender, EventArgs e)
         {
             string mes = "";
-            verifierChampRespo();
+            if (!verifierChampRespo())
+            {
+                return;
+            }
 
           //Si tout se passe bien on débute l'enregistrement du contrat.
           var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
