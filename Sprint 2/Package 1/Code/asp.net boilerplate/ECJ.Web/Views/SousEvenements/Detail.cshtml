@@ -1,4 +1,4 @@
-﻿
+﻿@using Abp.Web.Mvc.Extensions
 @{
     ViewBag.Title = "Detail";
 }
@@ -18,7 +18,11 @@
         new string[] {"Nom", "Souper spectacle" }
     };
 }
-<div name="AjoutPub" role="form" novalidate class="form-validation">
+@section scripts
+{
+    @Html.IncludeScript("~/Views/SousEvenements/Index.js")
+}
+<div name="createPub" role="form" novalidate class="form-validation">
 
     @foreach (var user in elements)
     {
@@ -161,35 +165,63 @@
         </table>
     </div>
 
-    <label>Activité</label>
-    <a href="/sousEvenements/Ajout" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer une activité</a>
-    <div class="form-group">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>Tâches</th>
-                    <th>Date</th>
-                    <th class="col-md-2">Action</th>
-                </tr>
-            </thead>
-            <tbody>
+    <label>Activités</label>
+    <a href="/Activite/Ajout" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#liste" data-toggle="tab" aria-expanded="true">Liste</a></li>
+        <li class=""><a href="#calendrier" data-toggle="tab" aria-expanded="false">Calendrier</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane active fade in" id="liste">
+            <div class="form-group">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Responsable</th>
+                            <th>Tâche</th>
+                            <th>Détails</th>
+                            <th>Date</th>
+                            <th class="col-md-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                <tr>
-                    <td>Faire une entrevue à la radio</td>
-                    <td>30/09/2016</td>
-                    <td>
-                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Faire une publication</td>
-                    <td>14/10/2016</td>
-                    <td>
-                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        <tr>
+                            <td>Jean Tremblay</td>
+                            <td>Faire une entrevue à la radio</td>
+                            <td>Jean est allé parler de nous à la radio NRJ et RougeFM</td>
+                            <td>30-09-2016</td>
+                            <td>
+                                <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jean-Claude Bouchard</td>
+                            <td>Faire une publication</td>
+                            <td>Jean-Claude a publié sur Facebook à propos du sous-évènement</td>
+                            <td>25-09-2016</td>
+                            <td>
+                                <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane fade in clearfix" id="calendrier">
+            <div id="calendrier-inner" class="col-md-4 col-md-offset-4">
+
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
     </div>
     <br />
     <br />
