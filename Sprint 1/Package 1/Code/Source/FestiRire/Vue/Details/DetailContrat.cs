@@ -332,10 +332,13 @@ namespace FestiRire
             }
             else if (lblStatutContrat.Text == "Annulé" || lblStatutContrat.Text == "Supprimé" || lblStatutContrat.Text == "Terminé")
             {
+                
+                if(!verifierChampRespo())
+                {
+                    return;
+                }
                 btnStatut1.Visible = false;
                 btnStatut2.Visible = false;
-             
-
             }
         }
         private void DesactiverTout(Control container)
@@ -487,15 +490,12 @@ namespace FestiRire
             }
         }
 
-        private void btnEnregistrerContrat_Click(object sender, EventArgs e)
+        public bool verifierChampRespo()
         {
-            string mes = "";
-            //bool SaveRepoAgence = true;
-            //bool SaveRespoDiffusseur = true;
-            if (conContrat.SanitariserTexte(txtNumeroContrat.Text) == null || conContrat.SanitariserTexte(txtNomContrat.Text) == null)
+             if (conContrat.SanitariserTexte(txtNumeroContrat.Text) == null || conContrat.SanitariserTexte(txtNomContrat.Text) == null)
             {
                 MessageBox.Show("Veuillez entrer le numéro et le nom du contrat");
-                return;
+                return false;
             }
 
             if (lblStatutContrat.Text == "En cours" || lblStatutContrat.Text == "Terminé")
@@ -503,45 +503,45 @@ namespace FestiRire
                 if (conContrat.SanitariserTexte(txtLieuContrat.Text) == null)
                 {
                     MessageBox.Show("Veuillez entrez le lieu du contrat");
-                    return;
+                    return false;
                 }
                 if (lstArtiste.SelectedIndex == -1)
                 {
                     MessageBox.Show("Veuillez selectionner au moins un artiste");
-                    return;
+                    return false;
                 }
                 if (dgvEngagement.SelectedRows.Count != 0)
                 {
                     if (dgvEngagement.SelectedRows.Count == 0)
                     {
                         MessageBox.Show("Veuillez selectionner au  moins un engagement");
-                        return;
+                        return false;
                     }
                 }
                 if (!validation.ValiderChampRespo(txtNomResponsableAgence.Text, txtPrenomResponsableAgence.Text, txtCourrielAgence.Text))
                 {
                     MessageBox.Show(validation.MessVide + " de l'agence");
-                    return;
+                    return false;
                 }
                 else
                 {
                     if (!validation.IsValidEmail(txtCourrielAgence.Text))
                     {
                         MessageBox.Show("Courriel  de l'agence invalide");
-                        return;
+                        return false;
                     }
                 }
                 if (!validation.ValiderChampRespo(txtNomResponsableDiffuseur.Text, txtPrenomResponsableDiffuseur.Text, txtCourrielDiffuseur.Text))
                 {
                     MessageBox.Show(validation.MessVide + " du diffuseur");
-                    return;
+                    return false;
                 }
                 else
                 {
                     if (!validation.IsValidEmail(txtCourrielDiffuseur.Text))
                     {
                         MessageBox.Show("Courriel  du diffuseur invalide");
-                        return;
+                        return false;
                     }
                 }
 
@@ -550,19 +550,19 @@ namespace FestiRire
                 if (!validation.ValiderChampDate(dateSignatureAgence) || !validation.ValiderChampDate(dateSignatureDiffuseur))
                 {
                     MessageBox.Show(validation.MessVide);
-                    return;
+                    return false;
                 }
 
                 //On verifie si Idem a été coché ou pas.
                 if (!validation.IdemIsChecked(chkIdemAgence.Checked, txtSignataireAgence.Text))
                 {
                     MessageBox.Show(validation.MessVide + " de l'agence.");
-                    return;
+                    return false;
                 }
                 if (!validation.IdemIsChecked(chkIdemDiffuseur.Checked, txtSignataireDiffuseur.Text))
                 {
                     MessageBox.Show(validation.MessVide + " du diffusseur.");
-                    return;
+                    return false;
                 }
 
                 //On verifie les numéros de téléphones
@@ -570,24 +570,32 @@ namespace FestiRire
                 if (validation.MessTel != "")
                 {
                     MessageBox.Show(validation.MessTel + " de l'agence");
-                    return;
+                    return false;
                 }
                 validation.verifierTel(txtTelephoneDiffuseur.Text, txtCellulaireDiffuseur.Text, txtExtensionTelephoneDiffuseur.Text);
                 if (validation.MessTel != "")
                 {
                     MessageBox.Show(validation.MessTel + " du diffusseur");
-                    return;
+                    return false;
                 }
 
             }
             if (cmbNomAgence.SelectedItem == null)
             {
                 MessageBox.Show("Vous devez choisir une agence");
-                return;
+                return false;
             }
 
-            //Si tout se passe bien on début l'enregistrement du contrat.
-            var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
+            return true;
+
+        }
+        private void btnEnregistrerContrat_Click(object sender, EventArgs e)
+        {
+            string mes = "";
+            verifierChampRespo();
+
+          //Si tout se passe bien on début l'enregistrement du contrat.
+          var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
             if (idContrat == null && contratEcrit != null)
             {
                 if (MessageBox.Show(string.Format("Le numéro de contrat que vous avez entré existe déjà sous le nom de {0}\nVoulez-vous l'écraser?", contratEcrit.nom), "Contrat existant", MessageBoxButtons.YesNo) == DialogResult.No)
