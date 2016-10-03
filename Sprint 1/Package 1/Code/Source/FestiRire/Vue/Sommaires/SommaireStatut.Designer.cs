@@ -33,7 +33,6 @@
             this.Couleur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnFiltres = new System.Windows.Forms.Button();
             this.btnRechercher = new System.Windows.Forms.Button();
             this.txtRecherche = new System.Windows.Forms.TextBox();
             this.btnAjouter = new System.Windows.Forms.Button();
@@ -82,7 +81,6 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.btnFiltres);
             this.groupBox1.Controls.Add(this.dgvStatut);
             this.groupBox1.Controls.Add(this.btnRechercher);
             this.groupBox1.Controls.Add(this.txtRecherche);
@@ -93,22 +91,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Statut";
             // 
-            // btnFiltres
-            // 
-            this.btnFiltres.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltres.Location = new System.Drawing.Point(1563, 17);
-            this.btnFiltres.Name = "btnFiltres";
-            this.btnFiltres.Size = new System.Drawing.Size(134, 23);
-            this.btnFiltres.TabIndex = 25;
-            this.btnFiltres.Text = "Filtres";
-            this.btnFiltres.UseVisualStyleBackColor = true;
-            // 
             // btnRechercher
             // 
             this.btnRechercher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRechercher.Location = new System.Drawing.Point(1482, 17);
+            this.btnRechercher.Location = new System.Drawing.Point(1544, 16);
             this.btnRechercher.Name = "btnRechercher";
-            this.btnRechercher.Size = new System.Drawing.Size(75, 23);
+            this.btnRechercher.Size = new System.Drawing.Size(153, 23);
             this.btnRechercher.TabIndex = 24;
             this.btnRechercher.Text = "Rechercher";
             this.btnRechercher.UseVisualStyleBackColor = true;
@@ -120,7 +108,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRecherche.Location = new System.Drawing.Point(6, 20);
             this.txtRecherche.Name = "txtRecherche";
-            this.txtRecherche.Size = new System.Drawing.Size(1470, 20);
+            this.txtRecherche.Size = new System.Drawing.Size(1532, 20);
             this.txtRecherche.TabIndex = 23;
             this.txtRecherche.Text = "Recherche rapide";
             // 
@@ -189,7 +177,6 @@
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.Button btnFermer;
-        private System.Windows.Forms.Button btnFiltres;
         private System.Windows.Forms.Button btnRechercher;
         private System.Windows.Forms.TextBox txtRecherche;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

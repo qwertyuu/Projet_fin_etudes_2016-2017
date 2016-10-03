@@ -30,6 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSiAgen = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl0 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtExtensionTelephoneAgence = new System.Windows.Forms.TextBox();
             this.txtCellulaireAgence = new System.Windows.Forms.TextBox();
@@ -68,6 +72,10 @@
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.txtNumeroContrat = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblSigDiff = new System.Windows.Forms.Label();
+            this.lbl5 = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.txtExtensionTelephoneDiffuseur = new System.Windows.Forms.TextBox();
             this.dateSignatureDiffuseur = new System.Windows.Forms.DateTimePicker();
@@ -89,6 +97,7 @@
             this.cmbNomDiffuseur = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lbl7 = new System.Windows.Forms.Label();
             this.btnAjouterArtiste = new System.Windows.Forms.Button();
             this.lstArtiste = new System.Windows.Forms.ListBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -124,16 +133,7 @@
             this.lblStatutContrat = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.lblSiAgen = new System.Windows.Forms.Label();
-            this.lblSigDiff = new System.Windows.Forms.Label();
-            this.lbl7 = new System.Windows.Forms.Label();
             this.lbl6 = new System.Windows.Forms.Label();
-            this.lbl5 = new System.Windows.Forms.Label();
-            this.lbl4 = new System.Windows.Forms.Label();
-            this.lbl3 = new System.Windows.Forms.Label();
-            this.lbl2 = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.lbl0 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -193,6 +193,58 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Responsable de l\'agence";
+            // 
+            // lblSiAgen
+            // 
+            this.lblSiAgen.AutoSize = true;
+            this.lblSiAgen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSiAgen.ForeColor = System.Drawing.Color.Red;
+            this.lblSiAgen.Location = new System.Drawing.Point(107, 140);
+            this.lblSiAgen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSiAgen.Name = "lblSiAgen";
+            this.lblSiAgen.Size = new System.Drawing.Size(17, 24);
+            this.lblSiAgen.TabIndex = 86;
+            this.lblSiAgen.Text = "*";
+            this.lblSiAgen.Visible = false;
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2.ForeColor = System.Drawing.Color.Red;
+            this.lbl2.Location = new System.Drawing.Point(536, 86);
+            this.lbl2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(17, 24);
+            this.lbl2.TabIndex = 93;
+            this.lbl2.Text = "*";
+            this.lbl2.Visible = false;
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.ForeColor = System.Drawing.Color.Red;
+            this.lbl1.Location = new System.Drawing.Point(536, 62);
+            this.lbl1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(17, 24);
+            this.lbl1.TabIndex = 94;
+            this.lbl1.Text = "*";
+            this.lbl1.Visible = false;
+            // 
+            // lbl0
+            // 
+            this.lbl0.AutoSize = true;
+            this.lbl0.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl0.ForeColor = System.Drawing.Color.Red;
+            this.lbl0.Location = new System.Drawing.Point(536, 42);
+            this.lbl0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl0.Name = "lbl0";
+            this.lbl0.Size = new System.Drawing.Size(17, 24);
+            this.lbl0.TabIndex = 95;
+            this.lbl0.Text = "*";
+            this.lbl0.Visible = false;
             // 
             // label6
             // 
@@ -607,6 +659,58 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Responsable du diffuseur";
             // 
+            // lblSigDiff
+            // 
+            this.lblSigDiff.AutoSize = true;
+            this.lblSigDiff.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSigDiff.ForeColor = System.Drawing.Color.Red;
+            this.lblSigDiff.Location = new System.Drawing.Point(107, 141);
+            this.lblSigDiff.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSigDiff.Name = "lblSigDiff";
+            this.lblSigDiff.Size = new System.Drawing.Size(17, 24);
+            this.lblSigDiff.TabIndex = 87;
+            this.lblSigDiff.Text = "*";
+            this.lblSigDiff.Visible = false;
+            // 
+            // lbl5
+            // 
+            this.lbl5.AutoSize = true;
+            this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl5.ForeColor = System.Drawing.Color.Red;
+            this.lbl5.Location = new System.Drawing.Point(527, 90);
+            this.lbl5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(17, 24);
+            this.lbl5.TabIndex = 90;
+            this.lbl5.Text = "*";
+            this.lbl5.Visible = false;
+            // 
+            // lbl4
+            // 
+            this.lbl4.AutoSize = true;
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4.ForeColor = System.Drawing.Color.Red;
+            this.lbl4.Location = new System.Drawing.Point(527, 66);
+            this.lbl4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(17, 24);
+            this.lbl4.TabIndex = 91;
+            this.lbl4.Text = "*";
+            this.lbl4.Visible = false;
+            // 
+            // lbl3
+            // 
+            this.lbl3.AutoSize = true;
+            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.ForeColor = System.Drawing.Color.Red;
+            this.lbl3.Location = new System.Drawing.Point(527, 45);
+            this.lbl3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(17, 24);
+            this.lbl3.TabIndex = 92;
+            this.lbl3.Text = "*";
+            this.lbl3.Visible = false;
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -835,6 +939,19 @@
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Artistes concernés";
+            // 
+            // lbl7
+            // 
+            this.lbl7.AutoSize = true;
+            this.lbl7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl7.ForeColor = System.Drawing.Color.Red;
+            this.lbl7.Location = new System.Drawing.Point(42, 32);
+            this.lbl7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl7.Name = "lbl7";
+            this.lbl7.Size = new System.Drawing.Size(17, 24);
+            this.lbl7.TabIndex = 88;
+            this.lbl7.Text = "*";
+            this.lbl7.Visible = false;
             // 
             // btnAjouterArtiste
             // 
@@ -1233,45 +1350,6 @@
             this.label26.TabIndex = 85;
             this.label26.Text = "*";
             // 
-            // lblSiAgen
-            // 
-            this.lblSiAgen.AutoSize = true;
-            this.lblSiAgen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSiAgen.ForeColor = System.Drawing.Color.Red;
-            this.lblSiAgen.Location = new System.Drawing.Point(107, 140);
-            this.lblSiAgen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSiAgen.Name = "lblSiAgen";
-            this.lblSiAgen.Size = new System.Drawing.Size(17, 24);
-            this.lblSiAgen.TabIndex = 86;
-            this.lblSiAgen.Text = "*";
-            this.lblSiAgen.Visible = false;
-            // 
-            // lblSigDiff
-            // 
-            this.lblSigDiff.AutoSize = true;
-            this.lblSigDiff.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSigDiff.ForeColor = System.Drawing.Color.Red;
-            this.lblSigDiff.Location = new System.Drawing.Point(107, 141);
-            this.lblSigDiff.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSigDiff.Name = "lblSigDiff";
-            this.lblSigDiff.Size = new System.Drawing.Size(17, 24);
-            this.lblSigDiff.TabIndex = 87;
-            this.lblSigDiff.Text = "*";
-            this.lblSigDiff.Visible = false;
-            // 
-            // lbl7
-            // 
-            this.lbl7.AutoSize = true;
-            this.lbl7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl7.ForeColor = System.Drawing.Color.Red;
-            this.lbl7.Location = new System.Drawing.Point(42, 32);
-            this.lbl7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl7.Name = "lbl7";
-            this.lbl7.Size = new System.Drawing.Size(17, 24);
-            this.lbl7.TabIndex = 88;
-            this.lbl7.Text = "*";
-            this.lbl7.Visible = false;
-            // 
             // lbl6
             // 
             this.lbl6.AutoSize = true;
@@ -1284,84 +1362,6 @@
             this.lbl6.TabIndex = 89;
             this.lbl6.Text = "*";
             this.lbl6.Visible = false;
-            // 
-            // lbl5
-            // 
-            this.lbl5.AutoSize = true;
-            this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5.ForeColor = System.Drawing.Color.Red;
-            this.lbl5.Location = new System.Drawing.Point(527, 90);
-            this.lbl5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl5.Name = "lbl5";
-            this.lbl5.Size = new System.Drawing.Size(17, 24);
-            this.lbl5.TabIndex = 90;
-            this.lbl5.Text = "*";
-            this.lbl5.Visible = false;
-            // 
-            // lbl4
-            // 
-            this.lbl4.AutoSize = true;
-            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.ForeColor = System.Drawing.Color.Red;
-            this.lbl4.Location = new System.Drawing.Point(527, 66);
-            this.lbl4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(17, 24);
-            this.lbl4.TabIndex = 91;
-            this.lbl4.Text = "*";
-            this.lbl4.Visible = false;
-            // 
-            // lbl3
-            // 
-            this.lbl3.AutoSize = true;
-            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.ForeColor = System.Drawing.Color.Red;
-            this.lbl3.Location = new System.Drawing.Point(527, 45);
-            this.lbl3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(17, 24);
-            this.lbl3.TabIndex = 92;
-            this.lbl3.Text = "*";
-            this.lbl3.Visible = false;
-            // 
-            // lbl2
-            // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.ForeColor = System.Drawing.Color.Red;
-            this.lbl2.Location = new System.Drawing.Point(536, 86);
-            this.lbl2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(17, 24);
-            this.lbl2.TabIndex = 93;
-            this.lbl2.Text = "*";
-            this.lbl2.Visible = false;
-            // 
-            // lbl1
-            // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.ForeColor = System.Drawing.Color.Red;
-            this.lbl1.Location = new System.Drawing.Point(536, 62);
-            this.lbl1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(17, 24);
-            this.lbl1.TabIndex = 94;
-            this.lbl1.Text = "*";
-            this.lbl1.Visible = false;
-            // 
-            // lbl0
-            // 
-            this.lbl0.AutoSize = true;
-            this.lbl0.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl0.ForeColor = System.Drawing.Color.Red;
-            this.lbl0.Location = new System.Drawing.Point(536, 42);
-            this.lbl0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl0.Name = "lbl0";
-            this.lbl0.Size = new System.Drawing.Size(17, 24);
-            this.lbl0.TabIndex = 95;
-            this.lbl0.Text = "*";
-            this.lbl0.Visible = false;
             // 
             // label27
             // 
@@ -1423,7 +1423,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "DetailContrat";

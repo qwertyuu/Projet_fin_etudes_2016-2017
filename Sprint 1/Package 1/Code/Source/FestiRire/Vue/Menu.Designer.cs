@@ -125,6 +125,7 @@
             this.ClientSize = new System.Drawing.Size(887, 350);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label10);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             this.dgvContrats = new System.Windows.Forms.DataGridView();
-            this.txtRecherche = new System.Windows.Forms.TextBox();
-            this.btnRechercher = new System.Windows.Forms.Button();
-            this.btnFiltres = new System.Windows.Forms.Button();
-            this.btnFermer = new System.Windows.Forms.Button();
-            this.btnAjouter = new System.Windows.Forms.Button();
-            this.btnDetail = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtRecherche = new System.Windows.Forms.TextBox();
+            this.btnRechercher = new System.Windows.Forms.Button();
+            this.btnFermer = new System.Windows.Forms.Button();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnDetail = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContrats)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,36 +59,50 @@
             this.dgvContrats.Size = new System.Drawing.Size(1689, 329);
             this.dgvContrats.TabIndex = 0;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "noContrat";
+            this.Column1.HeaderText = "Contrat";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "lieu";
+            this.Column2.HeaderText = "Lieu";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "nom";
+            this.Column4.HeaderText = "Agence";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "nomStatut";
+            this.Column5.HeaderText = "Statut";
+            this.Column5.Name = "Column5";
+            // 
             // txtRecherche
             // 
             this.txtRecherche.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRecherche.Location = new System.Drawing.Point(6, 19);
             this.txtRecherche.Name = "txtRecherche";
-            this.txtRecherche.Size = new System.Drawing.Size(1456, 20);
+            this.txtRecherche.Size = new System.Drawing.Size(1513, 20);
             this.txtRecherche.TabIndex = 2;
             this.txtRecherche.Text = "Recherche rapide";
             // 
             // btnRechercher
             // 
             this.btnRechercher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRechercher.Location = new System.Drawing.Point(1468, 17);
+            this.btnRechercher.Location = new System.Drawing.Point(1525, 16);
             this.btnRechercher.Name = "btnRechercher";
-            this.btnRechercher.Size = new System.Drawing.Size(75, 23);
+            this.btnRechercher.Size = new System.Drawing.Size(170, 23);
             this.btnRechercher.TabIndex = 3;
             this.btnRechercher.Text = "Rechercher";
             this.btnRechercher.UseVisualStyleBackColor = true;
             this.btnRechercher.Click += new System.EventHandler(this.btnRechercher_Click);
-            // 
-            // btnFiltres
-            // 
-            this.btnFiltres.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltres.Location = new System.Drawing.Point(1549, 17);
-            this.btnFiltres.Name = "btnFiltres";
-            this.btnFiltres.Size = new System.Drawing.Size(146, 23);
-            this.btnFiltres.TabIndex = 6;
-            this.btnFiltres.Text = "Filtres";
-            this.btnFiltres.UseVisualStyleBackColor = true;
             // 
             // btnFermer
             // 
@@ -135,37 +148,12 @@
             this.groupBox1.Controls.Add(this.dgvContrats);
             this.groupBox1.Controls.Add(this.txtRecherche);
             this.groupBox1.Controls.Add(this.btnRechercher);
-            this.groupBox1.Controls.Add(this.btnFiltres);
             this.groupBox1.Location = new System.Drawing.Point(12, 10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1701, 381);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contrats";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "noContrat";
-            this.Column1.HeaderText = "Contrat";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "lieu";
-            this.Column2.HeaderText = "Lieu";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "nom";
-            this.Column4.HeaderText = "Agence";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "nomStatut";
-            this.Column5.HeaderText = "Statut";
-            this.Column5.Name = "Column5";
             // 
             // SommaireContrats
             // 
@@ -193,7 +181,6 @@
         private System.Windows.Forms.DataGridView dgvContrats;
         private System.Windows.Forms.TextBox txtRecherche;
         private System.Windows.Forms.Button btnRechercher;
-        private System.Windows.Forms.Button btnFiltres;
         private System.Windows.Forms.Button btnFermer;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnDetail;

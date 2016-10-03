@@ -154,6 +154,7 @@
             this.Controls.Add(this.txtNomCategorie);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(301, 140);
             this.Name = "DetailCategorieArtiste";
