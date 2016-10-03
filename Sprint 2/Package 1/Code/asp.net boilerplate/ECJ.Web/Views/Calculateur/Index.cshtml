@@ -2,17 +2,12 @@
 @{
     ViewBag.Title = "ViewCalculateur";
 }
-<h2>Calculateur de forfait</h2>
+<h2>Calculateur</h2>
 <div class="row" id="calculateur">
     <form class="form-horizontal">
         <div class="col-md-6">
             <table class="table">
-                <thead>
-                    <tr>
-                        <th>@*Description*@</th>@*J'utilise des tables vides pour aligner mes forms*@
-                        <th>@*Total*@</th>
-                        <th>@*Prix*@</th>
-                    </tr>
+                <tbody>
                     <tr>
                         <th>
                             <div class="form-group">
@@ -53,7 +48,7 @@
                             </div>
                         </th>
                     </tr>
-                </thead>
+                </tbody>
             </table>
         </div>
 
@@ -86,7 +81,7 @@
     <div class="row" id="SouperPlaces">
         <div class="col-md-6" id="forfaits">
             <table class="table">
-                <thead>
+                <tbody>
                     <tr>
                         <th>Forfaits inclus</th>
                     </tr>
@@ -99,18 +94,13 @@
                     <tr>
                         <td>Réductions de prix</td>
                     </tr>
-                </thead>
+                </tbody>
             </table>
         </div>
-        <div class="col-md-6" id="souper">
+        <div class="col-md-6" id="souper">  
             Souper Spectacle
             <table class="table">
-                <thead>
-                    <tr>
-                        <th>@*Nombre de places*@</th>
-                        <th>@*Nombre de billets*@</th>
-                        <th>@*Prix*@</th>
-                    </tr>
+                <tbody>
                     <tr>
                         <th>
                             <div class="form-group">
@@ -131,7 +121,7 @@
                             </div>
                         </th>
                     </tr>
-                </thead>
+                </tbody>
             </table>
         </div>
     </div>
@@ -142,19 +132,9 @@
         <table class="table">
             Reduction selon les tranches d'âge
             <tr>
-                <th>@*Tranche d'âge*@</th>
-                <th>@*% en rabais*@</th>
-                <th>@*Prix*@</th>
-            </tr>
-            <tr>
                 <th>
                     <div class="form-group">
-                        <label class="control-label">Jeunes</label>
-                    </div>
-                </th>
-                <th>
-                    <div class="form-group">
-                        <label class="control-label" for="inputDefault">% Rabais</label>
+                        <label class="control-label" for="inputDefault">Jeunes % Rabais</label>
                         <input type="text" class="form-control" id="inputDefault">
                     </div>
                 </th>
@@ -168,12 +148,7 @@
             <tr>
                 <th>
                     <div class="form-group">
-                        <label class="control-label">Adultes</label>
-                    </div>
-                </th>
-                <th>
-                    <div class="form-group">
-                        <label class="control-label" for="inputDefault">% Rabais</label>
+                        <label class="control-label" for="inputDefault">Adultes % Rabais</label>
                         <input type="text" class="form-control" id="inputDefault">
                     </div>
                 </th>
@@ -187,12 +162,7 @@
             <tr>
                 <th>
                     <div class="form-group">
-                        <label class="control-label">Ainés</label>
-                    </div>
-                </th>
-                <th>
-                    <div class="form-group">
-                        <label class="control-label" for="inputDefault">% Rabais</label>
+                        <label class="control-label" for="inputDefault">Ainés % Rabais</label>
                         <input type="text" class="form-control" id="inputDefault">
                     </div>
                 </th>
@@ -211,11 +181,7 @@
         <div class="col-md-6">
             Billet a prix réduits.
             <table class="table">
-                <thead>
-                    <tr>
-                        <th>@*Nombre de places*@</th>
-                        <th>@*Coûts*@</th>
-                    </tr>
+                <tbody>
                     <tr>
                         <th>
                             <div class="form-group">
@@ -236,7 +202,7 @@
                             </div>
                         </th>
                     </tr>
-                </thead>
+                </tbody>
             </table>
         </div>
     </div>
