@@ -972,7 +972,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstArtiste.DisplayMember = "nom";
-            this.lstArtiste.Enabled = false;
             this.lstArtiste.FormattingEnabled = true;
             this.lstArtiste.Location = new System.Drawing.Point(64, 16);
             this.lstArtiste.Name = "lstArtiste";

@@ -41,10 +41,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.rtbCommentaire = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtPrixBillet = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtCapacite = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtDuree = new System.Windows.Forms.TextBox();
             this.txtLieu = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -77,9 +73,9 @@
             // rtbDescriptionLongue
             // 
             this.rtbDescriptionLongue.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.rtbDescriptionLongue.Location = new System.Drawing.Point(503, 207);
+            this.rtbDescriptionLongue.Location = new System.Drawing.Point(489, 179);
             this.rtbDescriptionLongue.Name = "rtbDescriptionLongue";
-            this.rtbDescriptionLongue.Size = new System.Drawing.Size(316, 220);
+            this.rtbDescriptionLongue.Size = new System.Drawing.Size(330, 248);
             this.rtbDescriptionLongue.TabIndex = 46;
             this.rtbDescriptionLongue.Text = "";
             // 
@@ -87,7 +83,7 @@
             // 
             this.dateEngagement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateEngagement.Location = new System.Drawing.Point(85, 35);
+            this.dateEngagement.Location = new System.Drawing.Point(85, 39);
             this.dateEngagement.Margin = new System.Windows.Forms.Padding(2);
             this.dateEngagement.Name = "dateEngagement";
             this.dateEngagement.Size = new System.Drawing.Size(134, 20);
@@ -143,7 +139,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(504, 166);
+            this.label4.Location = new System.Drawing.Point(486, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 13);
             this.label4.TabIndex = 33;
@@ -204,44 +200,6 @@
             this.label8.TabIndex = 49;
             this.label8.Text = "Commentaire:";
             // 
-            // txtPrixBillet
-            // 
-            this.txtPrixBillet.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtPrixBillet.Enabled = false;
-            this.txtPrixBillet.Location = new System.Drawing.Point(608, 12);
-            this.txtPrixBillet.Name = "txtPrixBillet";
-            this.txtPrixBillet.Size = new System.Drawing.Size(211, 20);
-            this.txtPrixBillet.TabIndex = 52;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(500, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 13);
-            this.label9.TabIndex = 51;
-            this.label9.Text = "Prix des billets:";
-            // 
-            // txtCapacite
-            // 
-            this.txtCapacite.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtCapacite.Enabled = false;
-            this.txtCapacite.Location = new System.Drawing.Point(608, 38);
-            this.txtCapacite.Name = "txtCapacite";
-            this.txtCapacite.Size = new System.Drawing.Size(211, 20);
-            this.txtCapacite.TabIndex = 54;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(500, 40);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 13);
-            this.label11.TabIndex = 53;
-            this.label11.Text = "Capacité de la salle:";
-            // 
             // txtDuree
             // 
             this.txtDuree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -274,7 +232,7 @@
             // numPoliceDescriptionLongue
             // 
             this.numPoliceDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numPoliceDescriptionLongue.Location = new System.Drawing.Point(585, 180);
+            this.numPoliceDescriptionLongue.Location = new System.Drawing.Point(571, 154);
             this.numPoliceDescriptionLongue.Name = "numPoliceDescriptionLongue";
             this.numPoliceDescriptionLongue.Size = new System.Drawing.Size(34, 20);
             this.numPoliceDescriptionLongue.TabIndex = 64;
@@ -289,7 +247,7 @@
             // 
             this.btnEnumDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnumDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnumDescriptionLongue.Location = new System.Drawing.Point(624, 179);
+            this.btnEnumDescriptionLongue.Location = new System.Drawing.Point(610, 153);
             this.btnEnumDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnumDescriptionLongue.Name = "btnEnumDescriptionLongue";
             this.btnEnumDescriptionLongue.Size = new System.Drawing.Size(42, 21);
@@ -302,7 +260,7 @@
             // 
             this.btnSouslignerDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSouslignerDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSouslignerDescriptionLongue.Location = new System.Drawing.Point(557, 179);
+            this.btnSouslignerDescriptionLongue.Location = new System.Drawing.Point(543, 153);
             this.btnSouslignerDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
             this.btnSouslignerDescriptionLongue.Name = "btnSouslignerDescriptionLongue";
             this.btnSouslignerDescriptionLongue.Size = new System.Drawing.Size(23, 21);
@@ -315,7 +273,7 @@
             // 
             this.btnItaliqueDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItaliqueDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItaliqueDescriptionLongue.Location = new System.Drawing.Point(530, 179);
+            this.btnItaliqueDescriptionLongue.Location = new System.Drawing.Point(516, 153);
             this.btnItaliqueDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
             this.btnItaliqueDescriptionLongue.Name = "btnItaliqueDescriptionLongue";
             this.btnItaliqueDescriptionLongue.Size = new System.Drawing.Size(23, 21);
@@ -328,7 +286,7 @@
             // 
             this.btnGrasDescriptionLongue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrasDescriptionLongue.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrasDescriptionLongue.Location = new System.Drawing.Point(503, 179);
+            this.btnGrasDescriptionLongue.Location = new System.Drawing.Point(489, 153);
             this.btnGrasDescriptionLongue.Margin = new System.Windows.Forms.Padding(2);
             this.btnGrasDescriptionLongue.Name = "btnGrasDescriptionLongue";
             this.btnGrasDescriptionLongue.Size = new System.Drawing.Size(23, 21);
@@ -407,7 +365,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(500, 64);
+            this.label6.Location = new System.Drawing.Point(489, 7);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 13);
             this.label6.TabIndex = 32;
@@ -416,11 +374,11 @@
             // rtbDescriptionCourte
             // 
             this.rtbDescriptionCourte.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.rtbDescriptionCourte.Location = new System.Drawing.Point(503, 82);
+            this.rtbDescriptionCourte.Location = new System.Drawing.Point(490, 25);
             this.rtbDescriptionCourte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rtbDescriptionCourte.MaxLength = 255;
             this.rtbDescriptionCourte.Name = "rtbDescriptionCourte";
-            this.rtbDescriptionCourte.Size = new System.Drawing.Size(311, 79);
+            this.rtbDescriptionCourte.Size = new System.Drawing.Size(311, 107);
             this.rtbDescriptionCourte.TabIndex = 45;
             this.rtbDescriptionCourte.Text = "";
             // 
@@ -460,7 +418,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(189, 67);
+            this.label10.Location = new System.Drawing.Point(189, 66);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(15, 13);
             this.label10.TabIndex = 78;
@@ -518,7 +476,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(825, 474);
             this.ControlBox = false;
             this.Controls.Add(this.label18);
@@ -543,10 +500,6 @@
             this.Controls.Add(this.txtLieu);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtDuree);
-            this.Controls.Add(this.txtCapacite);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtPrixBillet);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.rtbCommentaire);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -561,7 +514,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Enabled = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "DetailEngagement";
@@ -590,10 +542,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox rtbCommentaire;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtPrixBillet;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtCapacite;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtDuree;
         private System.Windows.Forms.TextBox txtLieu;
         private System.Windows.Forms.Label label12;

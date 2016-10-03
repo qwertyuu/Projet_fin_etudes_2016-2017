@@ -73,8 +73,14 @@ namespace FestiRire
         {
             txtNom.Text = _Exigence.nom;
             dateExigence.Value = _Exigence.date ?? default(DateTime);
-
-            txtMontant.Text = (_Exigence.montant ?? 0).ToString();
+            if (_Exigence.montant == null)
+            {
+                txtMontant.Text = "";
+            }
+            else
+            {
+                txtMontant.Text = _Exigence.montant.ToString();
+            }
             cmbStatut.SelectedItem = _Exigence.tblStatut;
             rtbCommentaire.Rtf = _Exigence.commentaire;
             rtbDescriptionCourte.Text = _Exigence.descriptionCourte;

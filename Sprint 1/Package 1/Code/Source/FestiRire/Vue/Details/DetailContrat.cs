@@ -96,7 +96,6 @@ namespace FestiRire
             PeuplerInterface();
             verifierStatut();
             txtNumeroContrat.Enabled = false;
-            DesactiverTout(this);
         }
 
         private void SelectionnerArtistes(Modele.tblContrat contratDuMoment)
@@ -339,25 +338,23 @@ namespace FestiRire
                 }
                 btnStatut1.Visible = false;
                 btnStatut2.Visible = false;
+                DesactiverTout(this);
+
             }
         }
         private void DesactiverTout(Control container)
         {
-            if(lblStatutContrat.Text== "Terminé")
+            foreach (Control c in container.Controls)
             {
-                foreach (Control c in container.Controls)
+                DesactiverTout(c);
+                if (c is TextBox || c is ComboBox || c is ListBox || c is Button || c is NumericUpDown || c is CheckBox || c is DateTimePicker || c is RichTextBox)
                 {
-                    DesactiverTout(c);
-                    if (c is TextBox || c is ComboBox || c is ListBox || c is Button || c is NumericUpDown || c is CheckBox || c is DateTimePicker || c is RichTextBox)
+                    if (c.Text != "Fermer" || c.Text != "Enregistrer")
                     {
-                        if (c.Text != "Fermer")
-                        {
-                            c.Enabled = false;
-                        }
+                        c.Enabled = false;
                     }
                 }
             }
-
         }
 
         private void btnDetailEngagement_Click(object sender, EventArgs e)
@@ -594,7 +591,7 @@ namespace FestiRire
             string mes = "";
             verifierChampRespo();
 
-          //Si tout se passe bien on début l'enregistrement du contrat.
+          //Si tout se passe bien on débute l'enregistrement du contrat.
           var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
             if (idContrat == null && contratEcrit != null)
             {

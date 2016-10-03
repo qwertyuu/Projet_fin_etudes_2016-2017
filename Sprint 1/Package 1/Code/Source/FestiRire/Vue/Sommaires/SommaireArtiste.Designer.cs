@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvArtiste = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRechercher = new System.Windows.Forms.Button();
             this.txtRecherche = new System.Windows.Forms.TextBox();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnFermer = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArtiste)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,18 +56,6 @@
             this.dgvArtiste.Size = new System.Drawing.Size(1691, 328);
             this.dgvArtiste.TabIndex = 0;
             this.dgvArtiste.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvArtiste_CellFormatting);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "nomAriste";
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            // 
-            // Categorie
-            // 
-            this.Categorie.DataPropertyName = "categories";
-            this.Categorie.HeaderText = "Categorie";
-            this.Categorie.Name = "Categorie";
             // 
             // groupBox1
             // 
@@ -141,6 +129,18 @@
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "nomAriste";
+            this.Column1.HeaderText = "Nom";
+            this.Column1.Name = "Column1";
+            // 
+            // Categorie
+            // 
+            this.Categorie.DataPropertyName = "categories";
+            this.Categorie.HeaderText = "Catégorie";
+            this.Categorie.Name = "Categorie";
             // 
             // SommaireArtiste
             // 

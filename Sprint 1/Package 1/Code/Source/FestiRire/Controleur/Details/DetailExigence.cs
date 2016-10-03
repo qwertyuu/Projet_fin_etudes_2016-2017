@@ -35,7 +35,16 @@ namespace FestiRire.Controleur.Details
             var tE = provider.SelectExigence(idExigence);
             tE.nom = nom;
             tE.date = dateExigence;
-            tE.montant = decimal.Parse(txtMontant);
+            decimal? montant = null;
+            if (SanitariserTexte(txtMontant) != null)
+            {
+                decimal conversion = 0;
+                if (decimal.TryParse(txtMontant, out conversion))
+                {
+                    montant = conversion;
+                }
+            }
+            tE.montant = montant;
             tE.noStatut = (cmbStatut as Modele.tblStatut).noStatut;
             tE.commentaire = rtbCommentaire;
             tE.descriptionCourte = rtbDescriptionCourte;

@@ -34,12 +34,12 @@ namespace FestiRire
                 {
                     if (idEngagement != null)
                     {
-                        conEngagement.EnregistrerEngagement((int)idEngagement, txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Rtf, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf);
+                        conEngagement.EnregistrerEngagement((int)idEngagement, txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Rtf, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf);
                         MessageBox.Show("Engagement Modifié");
                     }
                     else
                     {
-                        conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Rtf, txtPrixBillet.Text, txtCapacite.Text, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf,idContrat);
+                        conEngagement.EnregistrerEngagement(txtNatureEngagement.Text, dateEngagement.Value, (int)numHeure.Value, (int)numMinute.Value, txtDuree.Text, txtLieu.Text, rtbCommentaire.Rtf, rtbDescriptionCourte.Text, rtbDescriptionLongue.Rtf,idContrat);
                         MessageBox.Show("Engagement Ajouté");
                     }
                     this.Close();
