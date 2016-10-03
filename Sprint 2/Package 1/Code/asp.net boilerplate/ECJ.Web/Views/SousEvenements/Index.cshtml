@@ -4,6 +4,16 @@
 }
 
 <h2>Détail d'un sous-évènement</h2>
+<a href="/sousEvenements/Create" data-toggle="modal" class="btn btn-primary pull-right">Créer <i class="fa fa-plus"></i></a>
+<a href="/sousEvenements/Create" data-toggle="modal" class="btn btn-primary pull-right">Modifier</a>
+
+<div class="form-group">
+    <label>Évènement</label>
+    <div class="well well-lg">
+        Festi-rire 2016
+    </div>
+</div>
+
 @{
     List<string[]> elements = new List<string[]>()
     {
@@ -21,6 +31,7 @@
             </div>
         </div>
     }
+
     <div class="form-group">
         <label>Description</label>
         <div class="well well-lg">
@@ -29,7 +40,6 @@
     </div>
     <label>Services requis</label>
     <div class="form-group">
-        <a href="/Events/Ajout" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</a>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -56,7 +66,6 @@
     </div>
     <label>Salles</label>
     <div class="form-group">
-        <a href="/Events/Ajout" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une salle</a>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -73,6 +82,138 @@
                     <td>5000$</td>
                     <td>10$</td>
                     <td>30$</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <label>Forfaits</label>
+    <div class="form-group">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>Étudiants</td>
+                    <td>Le forfaits étudiants est en fait un forfaits pour toutes personnes en dessous de 25 ans et qui est encore aux études.</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Familiale</td>
+                    <td>Le forfaits familiale est un combo pour deux adultes et deux enfants en dessous de 14 ans.</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <label>Engagement</label>
+    <div class="form-group">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Statut</th>
+                    <th>Date</th>
+                    <th>Montant</th>
+                    <th>Description courte</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>L'éclairage</td>
+                    <td>En cours</td>
+                    <td>14/10/2016</td>
+                    <td>120.00$</td>
+                    <td>Doit changer une ampoule dans la section B</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>La musique</td>
+                    <td>En cours</td>
+                    <td>18/10/2016</td>
+                    <td>40.00$</td>
+                    <td>Doit mettre de nouveaux morceaux a la musique d'avant-spectacle</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <label>Dons</label>
+    <div class="form-group">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nom du commanditaire</th>
+                    <th>Montant</th>
+                    <th>Date</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>McDonald's</td>
+                    <td>300$</td>
+                    <td>14/10/2016</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tim Hortons</td>
+                    <td>650$</td>
+                    <td>22/10/2016</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <label>Activité</label>
+    <div class="form-group">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Tâches</th>
+                    <th>Date</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>Faire une entrevue à la radio</td>
+                    <td>30/09/2016</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Faire une publication</td>
+                    <td>14/10/2016</td>
                     <td>
                         <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
                     </td>

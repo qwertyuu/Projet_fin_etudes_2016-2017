@@ -17,7 +17,7 @@ namespace ECJ.Web.Controllers
         {
             return View();
         }
-        public ActionResult Ajout()
+        public ActionResult Create()
         {
             return View();
         }
