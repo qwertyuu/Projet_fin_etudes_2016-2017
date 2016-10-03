@@ -349,7 +349,7 @@ namespace FestiRire
                 DesactiverTout(c);
                 if (c is TextBox || c is ComboBox || c is ListBox || c is Button || c is NumericUpDown || c is CheckBox || c is DateTimePicker || c is RichTextBox)
                 {
-                    if (c.Text != "Fermer" || c.Text != "Enregistrer")
+                    if (!(c.Text == "Fermer" || c.Text == "Enregistrer"))
                     {
                         c.Enabled = false;
                     }
