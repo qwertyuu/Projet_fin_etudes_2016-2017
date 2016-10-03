@@ -92,5 +92,10 @@ namespace FestiRire.Controleur.Details
         {
             provider.InsertFichierOfficiel(item);
         }
+
+        internal bool PhotoExiste(tblFichierOfficiel i)
+        {
+            return provider.PhotoOfficielleExiste(i);
+        }
     }
 }

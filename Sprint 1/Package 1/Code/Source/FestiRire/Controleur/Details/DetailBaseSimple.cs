@@ -28,6 +28,10 @@ namespace FestiRire.Controleur.Details
 
         public string SanitariserTelephone(string tel)
         {
+            if (SanitariserTexte(tel) == null)
+            {
+                return null;
+            }
             StringBuilder noTelFinal = new StringBuilder();
             char[] caracteresAccepte = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
             foreach (var c in tel)

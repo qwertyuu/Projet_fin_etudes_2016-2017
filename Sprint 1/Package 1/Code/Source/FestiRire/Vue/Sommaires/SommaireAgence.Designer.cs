@@ -39,6 +39,7 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnFermer = new System.Windows.Forms.Button();
+            this.btnFiltres = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgence)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -154,12 +155,21 @@
             this.btnFermer.UseVisualStyleBackColor = true;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
+            // btnFiltres
+            // 
+            this.btnFiltres.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFiltres.Location = new System.Drawing.Point(1563, 17);
+            this.btnFiltres.Name = "btnFiltres";
+            this.btnFiltres.Size = new System.Drawing.Size(134, 23);
+            this.btnFiltres.TabIndex = 25;
+            this.btnFiltres.Text = "Filtres";
+            this.btnFiltres.UseVisualStyleBackColor = true;
+            // 
             // SommaireAgence
             // 
             this.AcceptButton = this.btnRechercher;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoSize = true;
             this.CancelButton = this.btnFermer;
             this.ClientSize = new System.Drawing.Size(1728, 438);
             this.Controls.Add(this.btnFermer);
@@ -189,5 +199,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ville;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telephone;
+        private System.Windows.Forms.Button btnFiltres;
     }
 }

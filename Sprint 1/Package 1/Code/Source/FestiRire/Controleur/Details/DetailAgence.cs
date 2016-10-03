@@ -56,6 +56,7 @@ namespace FestiRire.Controleur.Details
                 addr.extension = SanitariserTexte(poste);
                 a.nom = SanitariserTexte(name);
                 a.courriel = SanitariserCourriel(courr);
+                a.dateSupprime = null;
                 provider.Save();
                 return true;
             }

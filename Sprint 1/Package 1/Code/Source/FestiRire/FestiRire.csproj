@@ -152,6 +152,11 @@
     <Compile Include="Modele\vueSomStatut.cs">
       <DependentUpon>PE2_Officiel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SortableBindingList.cs" />
     <Compile Include="Vue\Details\DetailArtiste.cs">
       <SubType>Form</SubType>
@@ -277,14 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Vue\Sommaires\SommaireContrats.resx">
       <DependentUpon>SommaireContrats.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,8 +318,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\userlogin.bmp" />
     <None Include="bin\Debug\image\identification.png" />
     <None Include="bin\Debug\image\userlogin.png" />
+    <Content Include="Images\userlogin.png" />
     <Content Include="Modele\PE2_Officiel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PE2_Officiel.edmx</DependentUpon>

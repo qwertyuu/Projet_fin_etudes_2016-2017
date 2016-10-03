@@ -170,6 +170,7 @@ namespace FestiRire
         private void lstPhotoOfficiel_SelectedIndexChanged(object sender, EventArgs e)
         {
             var i = (lstPhotoOfficiel.SelectedItem as Modele.tblFichierOfficiel);
+
             if (i == null)
             {
                 pbApercu.Image = null;
@@ -180,6 +181,14 @@ namespace FestiRire
                 rtbCommentaire.Rtf = "";
                 this.selection = null;
                 return;
+            }
+            if (artiste.PhotoExiste(i))
+            {
+                cmbContrat.Enabled = false;
+            }
+            else
+            {
+                cmbContrat.Enabled = true;
             }
             var f = new FileInfo(((sender as ListBox).SelectedItem as Modele.tblFichierOfficiel).tblFichierPersonnel.chemin);
 
@@ -411,7 +420,17 @@ namespace FestiRire
 
         private void btnSupprimerArtiste_Click(object sender, EventArgs e)
         {
-            artiste.Supprimer((int)idartiste);
+            if (idartiste != null)
+            {
+                DialogResult result = result = MessageBox.Show("Voulez-vous supprimer cet artiste?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    artiste.Supprimer((int)idartiste);
+                    MessageBox.Show("Artiste supprimée avec succès");
+                    this.Close();
+                }
+
+            }
         }
 
         private void rtbCommentaire_TextChanged(object sender, EventArgs e)

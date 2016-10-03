@@ -63,16 +63,6 @@ namespace FestiRire.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap identification {
-            get {
-                object obj = ResourceManager.GetObject("identification", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap userlogin {
             get {
                 object obj = ResourceManager.GetObject("userlogin", resourceCulture);

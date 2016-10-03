@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FestiRire.Modele;
 
 namespace FestiRire
 {
@@ -116,7 +117,7 @@ namespace FestiRire
             rtbDescriptionContrat.Rtf = contratDuMoment.description;
 
             //sélectionner la bonne agence
-            cmbNomAgence.SelectedItem = conSomAgence.Tout().SingleOrDefault(a => a.noAgence == contratDuMoment.noAgence);
+            SelectionnerAgence(contratDuMoment);
 
             //sélectionner les artistes liés au contrat
             SelectionnerArtistes(contratDuMoment);
@@ -142,7 +143,7 @@ namespace FestiRire
                 txtExtensionTelephoneAgence.Text = ResponsableAgence.extension;
                 chkIdemAgence.Checked = ResponsableAgence.idem;
             }
-            
+
             //peupler le responsable du diffuseur
             var ResponsableDiffuseur = conContrat.ResponsableDiffuseur(idContrat);
             if (ResponsableDiffuseur != null)
@@ -168,6 +169,11 @@ namespace FestiRire
             //peupler le statut et associer les bon boutons de changement de statut
             lblStatutContrat.Text = contratDuMoment.tblStatut.nomStatut;
             verifierStatut();
+        }
+
+        private void SelectionnerAgence(tblContrat contratDuMoment)
+        {
+            cmbNomAgence.SelectedItem = (cmbNomAgence.DataSource as List<Modele.vueSomAgence>).SingleOrDefault(a => a.noAgence == contratDuMoment.noAgence);
         }
 
         private void PeuplerExigence()
@@ -327,6 +333,22 @@ namespace FestiRire
             {
                 btnStatut1.Visible = false;
                 btnStatut2.Visible = false;
+                DesactiverTout(this);
+
+            }
+        }
+        private void DesactiverTout(Control container)
+        {
+            foreach (Control c in container.Controls)
+            {
+                DesactiverTout(c);
+                if (c is TextBox || c is ComboBox || c is ListBox || c is Button || c is NumericUpDown || c is CheckBox || c is DateTimePicker || c is RichTextBox)
+                {
+                    if (c.Text != "Fermer")
+                    {
+                        c.Enabled = false;
+                    }
+                }
             }
         }
 
@@ -408,6 +430,12 @@ namespace FestiRire
             SommaireAgence sommaireAgence = new SommaireAgence();
             sommaireAgence.ShowDialog();
             PeuplerListes(listes.Agence);
+            var contratDuMoment = conContrat.SelectContrat(idContrat);
+            if (contratDuMoment != null)
+            {
+                //sélectionner la bonne agence
+                SelectionnerAgence(contratDuMoment);
+            }
         }
 
         private void chkIdemAgence_CheckedChanged(object sender, EventArgs e)
@@ -547,6 +575,11 @@ namespace FestiRire
                 }
 
             }
+            if (cmbNomAgence.SelectedItem == null)
+            {
+                MessageBox.Show("Vous devez choisir une agence");
+                return;
+            }
 
             //Si tout se passe bien on début l'enregistrement du contrat.
             var contratEcrit = conContrat.SelectContrat(txtNumeroContrat.Text);
@@ -623,7 +656,7 @@ namespace FestiRire
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
-                this.Close();       
+            this.Close();
         }
 
         private void dateSignatureAgence_ValueChanged(object sender, EventArgs e)

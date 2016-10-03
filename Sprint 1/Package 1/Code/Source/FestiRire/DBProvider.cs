@@ -16,7 +16,7 @@ namespace FestiRire
 
         public Modele.tblContrat SelectContrat(string idContrat)
         {
-            return BD.tblContrat.SingleOrDefault(a => a.noContrat == idContrat && a.dateSupprime == null);
+            return BD.tblContrat.SingleOrDefault(a => a.noContrat == idContrat);
         }
 
         internal tblResponsable SelectResponsableAgence(string idContrat)
@@ -79,7 +79,7 @@ namespace FestiRire
 
         public tblAgence SelectAgence(string _noAgence)
         {
-            return BD.tblAgence.SingleOrDefault(a => a.noAgence == _noAgence && a.dateSupprime == null);
+            return BD.tblAgence.SingleOrDefault(a => a.noAgence == _noAgence);
         }
 
         public void InsertArtiste(tblArtiste artiste)
@@ -102,6 +102,11 @@ namespace FestiRire
         public List<tblArtiste> ToutArtiste()
         {
             return BD.tblArtiste.ToList();
+        }
+
+        internal bool PhotoOfficielleExiste(tblFichierOfficiel i)
+        {
+            return BD.tblFichierOfficiel.Any(a => a.noArtiste == i.noArtiste && a.noContrat == i.noContrat && a.noFichier == i.noFichier);
         }
 
         public tblEngagement SelectEngagement(int idEngagement)

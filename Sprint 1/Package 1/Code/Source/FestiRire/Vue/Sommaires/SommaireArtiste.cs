@@ -87,7 +87,7 @@ namespace FestiRire
             e.Value = String.Join(" / ", conDetailArtiste.Tout()
                 .SingleOrDefault(artiste =>
                 artiste.noArtiste == (dgvArtiste.Rows[e.RowIndex].DataBoundItem as Modele.vueSomArtiste).noArtiste
-                ).tblCategorieArtiste.Select(catArt => catArt.nom));
+                ).tblCategorieArtiste.Where(catArt => catArt.dateSupprime == null).Select(catArt => catArt.nom));
         }
         private void btnRechercher_Click(object sender, EventArgs e)
         {
@@ -101,7 +101,7 @@ namespace FestiRire
                 categoriesLieesALartiste[item] = String.Join(" / ", conDetailArtiste.Tout()
                                                                     .SingleOrDefault(artiste =>
                                                                     artiste.noArtiste == item.noArtiste
-                                                                    ).tblCategorieArtiste.Select(catArt => catArt.nom));
+                                                                    ).tblCategorieArtiste.Where(catArt => catArt.dateSupprime == null).Select(catArt => catArt.nom));
             }
             if (string.IsNullOrEmpty(critere) || critere == "Recherche rapide".ToUpper())
             {
