@@ -26,8 +26,8 @@ namespace FestiRire.Controleur.Details
             if (catArt != null)
             {
                 //l'élément exite on fait une mise à jour.
-                catArt.nom = nom;
-                catArt.description = desc;
+                catArt.nom = SanitariserTexte(nom);
+                catArt.description =SanitariserTexte(desc);
                 provider.Save();
                 return false;
             }

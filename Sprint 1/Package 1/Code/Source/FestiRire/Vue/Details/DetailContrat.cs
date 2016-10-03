@@ -96,6 +96,7 @@ namespace FestiRire
             PeuplerInterface();
             verifierStatut();
             txtNumeroContrat.Enabled = false;
+            DesactiverTout(this);
         }
 
         private void SelectionnerArtistes(Modele.tblContrat contratDuMoment)
@@ -333,23 +334,27 @@ namespace FestiRire
             {
                 btnStatut1.Visible = false;
                 btnStatut2.Visible = false;
-                DesactiverTout(this);
+             
 
             }
         }
         private void DesactiverTout(Control container)
         {
-            foreach (Control c in container.Controls)
+            if(lblStatutContrat.Text== "Terminé")
             {
-                DesactiverTout(c);
-                if (c is TextBox || c is ComboBox || c is ListBox || c is Button || c is NumericUpDown || c is CheckBox || c is DateTimePicker || c is RichTextBox)
+                foreach (Control c in container.Controls)
                 {
-                    if (c.Text != "Fermer")
+                    DesactiverTout(c);
+                    if (c is TextBox || c is ComboBox || c is ListBox || c is Button || c is NumericUpDown || c is CheckBox || c is DateTimePicker || c is RichTextBox)
                     {
-                        c.Enabled = false;
+                        if (c.Text != "Fermer")
+                        {
+                            c.Enabled = false;
+                        }
                     }
                 }
             }
+
         }
 
         private void btnDetailEngagement_Click(object sender, EventArgs e)
