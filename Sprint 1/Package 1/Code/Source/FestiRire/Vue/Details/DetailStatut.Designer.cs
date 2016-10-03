@@ -40,6 +40,8 @@
             this.pbApercuCouleur = new System.Windows.Forms.PictureBox();
             this.label32 = new System.Windows.Forms.Label();
             this.rtbDescriptionStatut = new System.Windows.Forms.RichTextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbApercuCouleur)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,6 +152,30 @@
             this.rtbDescriptionStatut.TabIndex = 33;
             this.rtbDescriptionStatut.Text = "";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(11, 401);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(108, 13);
+            this.label18.TabIndex = 83;
+            this.label18.Text = "* Champs obligatoires";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(108, 15);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(17, 24);
+            this.label7.TabIndex = 84;
+            this.label7.Text = "*";
+            // 
             // DetailStatut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +183,8 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(740, 426);
             this.ControlBox = false;
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.rtbDescriptionStatut);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.pbApercuCouleur);
@@ -191,5 +219,7 @@
         private System.Windows.Forms.PictureBox pbApercuCouleur;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.RichTextBox rtbDescriptionStatut;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -66,6 +66,9 @@
             this.openFileDialogfichier = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogPhoto = new System.Windows.Forms.OpenFileDialog();
             this.lstCatArtiste = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -497,6 +500,42 @@
             this.lstCatArtiste.Size = new System.Drawing.Size(318, 108);
             this.lstCatArtiste.TabIndex = 55;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(94, 4);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 24);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(94, 54);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 24);
+            this.label5.TabIndex = 75;
+            this.label5.Text = "*";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(6, 641);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(108, 13);
+            this.label18.TabIndex = 76;
+            this.label18.Text = "* Champs obligatoires";
+            // 
             // DetailArtiste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,6 +543,9 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(858, 663);
             this.ControlBox = false;
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lstCatArtiste);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -575,5 +617,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialogPhoto;
         private System.Windows.Forms.ListBox lstCatArtiste;
         private System.Windows.Forms.Button btnOuvrirFichier;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label18;
     }
 }

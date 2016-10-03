@@ -57,6 +57,9 @@
             this.btnGrasDescriptionLongue = new System.Windows.Forms.Button();
             this.rtbDescriptionLongue = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionLongue)).BeginInit();
             this.SuspendLayout();
@@ -377,6 +380,42 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Description courte:";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(59, 33);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(17, 24);
+            this.label15.TabIndex = 82;
+            this.label15.Text = "*";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(59, 12);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(17, 24);
+            this.label7.TabIndex = 83;
+            this.label7.Text = "*";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(11, 374);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(108, 13);
+            this.label18.TabIndex = 84;
+            this.label18.Text = "* Champs obligatoires";
+            // 
             // DetailExigence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,6 +423,9 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(801, 398);
             this.ControlBox = false;
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.numPoliceDescriptionLongue);
             this.Controls.Add(this.btnEnumDescriptionLongue);
             this.Controls.Add(this.btnSouslignerDescriptionLongue);
@@ -454,5 +496,8 @@
         private System.Windows.Forms.Button btnGrasDescriptionLongue;
         private System.Windows.Forms.RichTextBox rtbDescriptionLongue;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label18;
     }
 }

@@ -38,6 +38,18 @@ namespace FestiRire
             verifierStatut();
         }
 
+        public void EnleverEtoile(bool Etat)
+        {
+            lbl0.Visible = Etat; lbl7.Visible = Etat;
+            lbl1.Visible = Etat;
+            lbl2.Visible = Etat;
+            lbl3.Visible = Etat;
+            lbl4.Visible = Etat;
+            lbl5.Visible = Etat;
+            lbl6.Visible = Etat;
+
+        }
+
         public void InitComplet()
         {
             //propriétés du datagridview engagement
@@ -265,6 +277,7 @@ namespace FestiRire
                         txtNumeroContrat.Enabled = false;
                         txtNomContrat.Enabled = false;
                         lblStatutContrat.Text = "En cours";
+                        EnleverEtoile(true);
                     }
                 }
 
@@ -299,6 +312,7 @@ namespace FestiRire
                 btnStatut1.Visible = true;
                 btnStatut2.Text = "Supprimer";
                 btnStatut2.Visible = true;
+                EnleverEtoile(false);
             }
             else if (lblStatutContrat.Text == "En cours")
             {
@@ -306,6 +320,8 @@ namespace FestiRire
                 btnStatut1.Visible = true;
                 btnStatut2.Text = "Annuler";
                 btnStatut2.Visible = true;
+                EnleverEtoile(true);
+
             }
             else if (lblStatutContrat.Text == "Annulé" || lblStatutContrat.Text == "Supprimé" || lblStatutContrat.Text == "Terminé")
             {
@@ -400,10 +416,13 @@ namespace FestiRire
             {
                 txtSignataireAgence.Text = null;
                 txtSignataireAgence.Enabled = false;
+                lblSiAgen.Visible = false;
+
             }
             else
             {
                 txtSignataireAgence.Enabled = true;
+                lblSiAgen.Visible = true;
             }
         }
 
@@ -413,10 +432,12 @@ namespace FestiRire
             {
                 txtSignataireDiffuseur.Text = null;
                 txtSignataireDiffuseur.Enabled = false;
+                lblSigDiff.Visible = false;
             }
             else
             {
                 txtSignataireDiffuseur.Enabled = true;
+                lblSigDiff.Visible = true;
             }
 
         }

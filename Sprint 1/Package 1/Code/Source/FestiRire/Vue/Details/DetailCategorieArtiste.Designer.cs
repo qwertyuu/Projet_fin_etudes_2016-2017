@@ -35,6 +35,8 @@
             this.btnEnregistrerArtiste = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnSupprimerArtiste = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -111,6 +113,30 @@
             this.btnSupprimerArtiste.UseVisualStyleBackColor = true;
             this.btnSupprimerArtiste.Click += new System.EventHandler(this.btnSupprimerArtiste_Click);
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(12, 402);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(108, 13);
+            this.label18.TabIndex = 77;
+            this.label18.Text = "* Champs obligatoires";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(58, 9);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 24);
+            this.label5.TabIndex = 78;
+            this.label5.Text = "*";
+            // 
             // DetailCategorieArtiste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +145,8 @@
             this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(768, 424);
             this.ControlBox = false;
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnSupprimerArtiste);
             this.Controls.Add(this.btnEnregistrerArtiste);
@@ -144,5 +172,7 @@
         private System.Windows.Forms.Button btnEnregistrerArtiste;
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Button btnSupprimerArtiste;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -122,6 +122,19 @@
             this.btnStatut2 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.lblStatutContrat = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lblSiAgen = new System.Windows.Forms.Label();
+            this.lblSigDiff = new System.Windows.Forms.Label();
+            this.lbl7 = new System.Windows.Forms.Label();
+            this.lbl6 = new System.Windows.Forms.Label();
+            this.lbl5 = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl0 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExigence)).BeginInit();
@@ -148,6 +161,10 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.lblSiAgen);
+            this.groupBox1.Controls.Add(this.lbl2);
+            this.groupBox1.Controls.Add(this.lbl1);
+            this.groupBox1.Controls.Add(this.lbl0);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtExtensionTelephoneAgence);
             this.groupBox1.Controls.Add(this.txtCellulaireAgence);
@@ -557,6 +574,10 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.lblSigDiff);
+            this.groupBox2.Controls.Add(this.lbl5);
+            this.groupBox2.Controls.Add(this.lbl4);
+            this.groupBox2.Controls.Add(this.lbl3);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.txtExtensionTelephoneDiffuseur);
             this.groupBox2.Controls.Add(this.dateSignatureDiffuseur);
@@ -804,6 +825,7 @@
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.lbl7);
             this.groupBox5.Controls.Add(this.btnAjouterArtiste);
             this.groupBox5.Controls.Add(this.lstArtiste);
             this.groupBox5.Controls.Add(this.label20);
@@ -933,7 +955,7 @@
             // 
             // txtNomContrat
             // 
-            this.txtNomContrat.Location = new System.Drawing.Point(607, 6);
+            this.txtNomContrat.Location = new System.Drawing.Point(626, 6);
             this.txtNomContrat.Name = "txtNomContrat";
             this.txtNomContrat.Size = new System.Drawing.Size(366, 20);
             this.txtNomContrat.TabIndex = 22;
@@ -1099,7 +1121,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(979, 9);
+            this.label22.Location = new System.Drawing.Point(997, 9);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(78, 13);
             this.label22.TabIndex = 34;
@@ -1107,7 +1129,7 @@
             // 
             // txtLieuContrat
             // 
-            this.txtLieuContrat.Location = new System.Drawing.Point(1068, 6);
+            this.txtLieuContrat.Location = new System.Drawing.Point(1081, 6);
             this.txtLieuContrat.MaxLength = 50;
             this.txtLieuContrat.Name = "txtLieuContrat";
             this.txtLieuContrat.Size = new System.Drawing.Size(366, 20);
@@ -1187,6 +1209,172 @@
             this.lblStatutContrat.Size = new System.Drawing.Size(0, 13);
             this.lblStatutContrat.TabIndex = 39;
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(118, 6);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(17, 24);
+            this.label25.TabIndex = 85;
+            this.label25.Text = "*";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Red;
+            this.label26.Location = new System.Drawing.Point(606, 6);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(17, 24);
+            this.label26.TabIndex = 85;
+            this.label26.Text = "*";
+            // 
+            // lblSiAgen
+            // 
+            this.lblSiAgen.AutoSize = true;
+            this.lblSiAgen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSiAgen.ForeColor = System.Drawing.Color.Red;
+            this.lblSiAgen.Location = new System.Drawing.Point(107, 140);
+            this.lblSiAgen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSiAgen.Name = "lblSiAgen";
+            this.lblSiAgen.Size = new System.Drawing.Size(17, 24);
+            this.lblSiAgen.TabIndex = 86;
+            this.lblSiAgen.Text = "*";
+            this.lblSiAgen.Visible = false;
+            // 
+            // lblSigDiff
+            // 
+            this.lblSigDiff.AutoSize = true;
+            this.lblSigDiff.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSigDiff.ForeColor = System.Drawing.Color.Red;
+            this.lblSigDiff.Location = new System.Drawing.Point(107, 141);
+            this.lblSigDiff.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSigDiff.Name = "lblSigDiff";
+            this.lblSigDiff.Size = new System.Drawing.Size(17, 24);
+            this.lblSigDiff.TabIndex = 87;
+            this.lblSigDiff.Text = "*";
+            this.lblSigDiff.Visible = false;
+            // 
+            // lbl7
+            // 
+            this.lbl7.AutoSize = true;
+            this.lbl7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl7.ForeColor = System.Drawing.Color.Red;
+            this.lbl7.Location = new System.Drawing.Point(42, 32);
+            this.lbl7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl7.Name = "lbl7";
+            this.lbl7.Size = new System.Drawing.Size(17, 24);
+            this.lbl7.TabIndex = 88;
+            this.lbl7.Text = "*";
+            this.lbl7.Visible = false;
+            // 
+            // lbl6
+            // 
+            this.lbl6.AutoSize = true;
+            this.lbl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl6.ForeColor = System.Drawing.Color.Red;
+            this.lbl6.Location = new System.Drawing.Point(1452, 1);
+            this.lbl6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(17, 24);
+            this.lbl6.TabIndex = 89;
+            this.lbl6.Text = "*";
+            this.lbl6.Visible = false;
+            // 
+            // lbl5
+            // 
+            this.lbl5.AutoSize = true;
+            this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl5.ForeColor = System.Drawing.Color.Red;
+            this.lbl5.Location = new System.Drawing.Point(527, 90);
+            this.lbl5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(17, 24);
+            this.lbl5.TabIndex = 90;
+            this.lbl5.Text = "*";
+            this.lbl5.Visible = false;
+            // 
+            // lbl4
+            // 
+            this.lbl4.AutoSize = true;
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4.ForeColor = System.Drawing.Color.Red;
+            this.lbl4.Location = new System.Drawing.Point(527, 66);
+            this.lbl4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(17, 24);
+            this.lbl4.TabIndex = 91;
+            this.lbl4.Text = "*";
+            this.lbl4.Visible = false;
+            // 
+            // lbl3
+            // 
+            this.lbl3.AutoSize = true;
+            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.ForeColor = System.Drawing.Color.Red;
+            this.lbl3.Location = new System.Drawing.Point(527, 45);
+            this.lbl3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(17, 24);
+            this.lbl3.TabIndex = 92;
+            this.lbl3.Text = "*";
+            this.lbl3.Visible = false;
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2.ForeColor = System.Drawing.Color.Red;
+            this.lbl2.Location = new System.Drawing.Point(536, 86);
+            this.lbl2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(17, 24);
+            this.lbl2.TabIndex = 93;
+            this.lbl2.Text = "*";
+            this.lbl2.Visible = false;
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.ForeColor = System.Drawing.Color.Red;
+            this.lbl1.Location = new System.Drawing.Point(536, 62);
+            this.lbl1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(17, 24);
+            this.lbl1.TabIndex = 94;
+            this.lbl1.Text = "*";
+            this.lbl1.Visible = false;
+            // 
+            // lbl0
+            // 
+            this.lbl0.AutoSize = true;
+            this.lbl0.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl0.ForeColor = System.Drawing.Color.Red;
+            this.lbl0.Location = new System.Drawing.Point(536, 42);
+            this.lbl0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl0.Name = "lbl0";
+            this.lbl0.Size = new System.Drawing.Size(17, 24);
+            this.lbl0.TabIndex = 95;
+            this.lbl0.Text = "*";
+            this.lbl0.Visible = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Red;
+            this.label27.Location = new System.Drawing.Point(8, 631);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(108, 13);
+            this.label27.TabIndex = 90;
+            this.label27.Text = "* Champs obligatoires";
+            // 
             // DetailContrat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1194,6 +1382,10 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1791, 653);
             this.ControlBox = false;
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.lbl6);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label25);
             this.Controls.Add(this.lblStatutContrat);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.btnStatut2);
@@ -1352,6 +1544,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn montant;
         private System.Windows.Forms.DataGridViewTextBoxColumn statut;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriCourte;
+        private System.Windows.Forms.Label lblSiAgen;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lbl0;
+        private System.Windows.Forms.Label lblSigDiff;
+        private System.Windows.Forms.Label lbl5;
+        private System.Windows.Forms.Label lbl4;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lbl7;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lbl6;
+        private System.Windows.Forms.Label label27;
     }
 }
 

@@ -18,9 +18,9 @@ namespace FestiRire
         string idContrat;
         private void btnEnregistrerEngagement_Click(object sender, EventArgs e)
         {
-            if(txtNatureEngagement.Text=="" || txtLieu.Text=="")
+            if(txtNatureEngagement.Text=="" || txtLieu.Text=="" || txtDuree.Text=="")
             {
-                MessageBox.Show("Veuillez entrer la nature et le lieu de l'engagement.");
+                MessageBox.Show("Veuillez entrer la nature, le lieu et la durée de l'engagement.");
                 return;
             }
             else
