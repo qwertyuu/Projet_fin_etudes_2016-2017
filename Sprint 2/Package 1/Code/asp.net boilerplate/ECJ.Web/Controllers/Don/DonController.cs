@@ -9,7 +9,7 @@ namespace ECJ.Web.Controllers.Don
     public class DonController : Controller
     {
         // GET: Don
-        public ActionResult Create()
+        public ActionResult Ajout()
         {
             return View();
         }
