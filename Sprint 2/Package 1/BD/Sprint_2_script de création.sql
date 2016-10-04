@@ -98,7 +98,8 @@ CREATE TABLE tblSousEvenement_tblForfait_tblSousEvenement (
 	,PRIMARY KEY (
 		tblSousEvenementnoSousEvenement
 		,tblForfait_tblSousEvenementnoSousEvenement
-		,tblForfait_tblSousEvenementnoForfait)
+		,tblForfait_tblSousEvenementnoForfait
+		)
 	);
 
 CREATE TABLE tblServiceRequis (
@@ -203,3 +204,60 @@ CREATE TABLE tblUtilisateur_tblUtilisateur (
 		,tblUtilisateuridUser2
 		)
 	);
+
+ALTER TABLE tblActivite ADD INDEX FKtblActivit579442 (noEvenement)
+	,ADD CONSTRAINT FKtblActivit579442 FOREIGN KEY (noEvenement) REFERENCES tblEvenement (noEvenement);
+
+ALTER TABLE tblSousEvenement ADD INDEX FKtblSousEve404055 (noEvenement)
+	,ADD CONSTRAINT FKtblSousEve404055 FOREIGN KEY (noEvenement) REFERENCES tblEvenement (noEvenement);
+
+ALTER TABLE tblActivite ADD INDEX FKtblActivit799145 (noSousEvenement)
+	,ADD CONSTRAINT FKtblActivit799145 FOREIGN KEY (noSousEvenement) REFERENCES tblSousEvenement (noSousEvenement);
+
+ALTER TABLE tblServiceRequis ADD INDEX FKtblService972911 (noService)
+	,ADD CONSTRAINT FKtblService972911 FOREIGN KEY (noService) REFERENCES tblService (noService);
+
+ALTER TABLE tblServiceRequis ADD INDEX FKtblService874855 (noSousEvenement)
+	,ADD CONSTRAINT FKtblService874855 FOREIGN KEY (noSousEvenement) REFERENCES tblSousEvenement (noSousEvenement);
+
+ALTER TABLE tblForfaitSousEvenement ADD INDEX FKtblForfait962815 (noForfait)
+	,ADD CONSTRAINT FKtblForfait962815 FOREIGN KEY (noForfait) REFERENCES tblForfait (noForfait);
+
+ALTER TABLE tblForfaitSousEvenement ADD INDEX FKtblForfait632562 (noSousEvenement)
+	,ADD CONSTRAINT FKtblForfait632562 FOREIGN KEY (noSousEvenement) REFERENCES tblSousEvenement (noSousEvenement);
+
+ALTER TABLE tblDon ADD INDEX FKtblDon369851 (noCommanditaire)
+	,ADD CONSTRAINT FKtblDon369851 FOREIGN KEY (noCommanditaire) REFERENCES tblCommanditaire (noCommanditaire);
+
+ALTER TABLE tblDon ADD INDEX FKtblDon671434 (noSousEvenement)
+	,ADD CONSTRAINT FKtblDon671434 FOREIGN KEY (noSousEvenement) REFERENCES tblSousEvenement (noSousEvenement);
+
+ALTER TABLE tblAppelOffreAgence ADD INDEX FKtblAppelOf499821 (OffrenoPublicite)
+	,ADD CONSTRAINT FKtblAppelOf499821 FOREIGN KEY (OffrenoPublicite) REFERENCES tblAppelOffre (noPublicite);
+
+ALTER TABLE tblAppelOffreAgence ADD INDEX FKtblAppelOf122169 (AgencePublicitenoAgencePub)
+	,ADD CONSTRAINT FKtblAppelOf122169 FOREIGN KEY (AgencePublicitenoAgencePub) REFERENCES AgencePublicite (noAgencePub);
+
+ALTER TABLE tblStatut ADD INDEX FKtblStatut274851 (tblAppelOffrenoPublicite)
+	,ADD CONSTRAINT FKtblStatut274851 FOREIGN KEY (tblAppelOffrenoPublicite) REFERENCES tblAppelOffre (noPublicite);
+
+ALTER TABLE tblAppelOffreAgence ADD INDEX FKtblAppelOf162394 (tblStatutnoStatut)
+	,ADD CONSTRAINT FKtblAppelOf162394 FOREIGN KEY (tblStatutnoStatut) REFERENCES tblStatut (noStatut);
+
+ALTER TABLE tblAppelOffreAgence ADD INDEX FKtblAppelOf643708 (tblSoumissionnoSoumission)
+	,ADD CONSTRAINT FKtblAppelOf643708 FOREIGN KEY (tblSoumissionnoSoumission) REFERENCES tblSoumission (noSoumission);
+
+ALTER TABLE tblAppelOffre ADD INDEX FKtblAppelOf542063 (tblEvenementnoEvenement)
+	,ADD CONSTRAINT FKtblAppelOf542063 FOREIGN KEY (tblEvenementnoEvenement) REFERENCES tblEvenement (noEvenement);
+
+ALTER TABLE tblServiceOffert ADD INDEX FKtblService279726 (noService)
+	,ADD CONSTRAINT FKtblService279726 FOREIGN KEY (noService) REFERENCES tblService (noService);
+
+ALTER TABLE tblServiceOffert ADD INDEX FKtblService429403 (noSalle)
+	,ADD CONSTRAINT FKtblService429403 FOREIGN KEY (noSalle) REFERENCES tblSalle (noSalle);
+
+ALTER TABLE tblMemo ADD INDEX FKtblMemo230164 (expediteur)
+	,ADD CONSTRAINT FKtblMemo230164 FOREIGN KEY (expediteur) REFERENCES tblUtilisateur (IdUser);
+
+ALTER TABLE tblMemo ADD INDEX FKtblMemo662987 (destinataire)
+	,ADD CONSTRAINT FKtblMemo662987 FOREIGN KEY (destinataire) REFERENCES tblUtilisateur (IdUser);
