@@ -1,21 +1,27 @@
-﻿@using Abp.Web.Mvc.Extensions
-@model Abp.Application.Services.Dto.ListResultOutput<ECJ.Users.Dto.UserListDto>
-@section scripts
-{
-    @Html.IncludeScript("~/Views/CMemo/Index.js")
-}
-
-<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+﻿<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
     <div class="container">
-        <div class="navbar-header">
-            <a href="/CMemo/Index" class="btn btn-primary" data-toggle="modal" data-target="#CMemo"><i class="fa fa-plus"></i> Créer un Mémo</a>
+        <div class="navbar-default">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
-
+        @*<div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                @Html.Action("TopMenu", "Layout", new { activeMenu = ViewBag.ActiveMenu })
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                Html.Action("LanguageSelection", "Layout")
+                @Html.Action("UserMenuOrLoginLink", "Layout")
+            </ul>
+        </div>*@
     </div>
 </div>
 
 
-<div class="modal fade" tabindex="-1" id="UserCreateModal" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
+@*<div class="modal fade" tabindex="-1" id="UserCreateModal" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form name="userCreateForm" role="form" novalidate class="form-validation">
@@ -43,4 +49,4 @@
             </form>
         </div>
     </div>
-</div>
+</div>*@
