@@ -21,8 +21,6 @@ Use PE2_Officiel
 GO
 
 CREATE SCHEMA S_Contrat
-GO
-CREATE SCHEMA S_Personnel
 
 GO
 
