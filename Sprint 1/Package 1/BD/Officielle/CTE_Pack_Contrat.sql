@@ -98,11 +98,6 @@ PRINT 'Création des PK et les contraintes NULL des tables du pakages Contrat'
  PRINT 'FIN des contraintes PK  de la table tblCatArtisteArt'
  GO
 
- ALTER TABLE S_personnel.tblUtilisateur ADD
- CONSTRAINT IDUSER_PK
- PRIMARY Key(IdUser) 
- PRINT 'FIN des contraintes PK  de la table tblUtilisateur'
- GO
  PRINT 'FIN  de création des contraintes PK des tables du pakage Contrat'
 
  GO
