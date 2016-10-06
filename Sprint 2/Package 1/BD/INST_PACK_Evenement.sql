@@ -1,3 +1,7 @@
+--Script d'insertion des évènements
+--Fait par: Pierre-Alexandre Pageau
+--Date: 5 Octobre 2016
+
 USE PE2_Test 
 
 GO
