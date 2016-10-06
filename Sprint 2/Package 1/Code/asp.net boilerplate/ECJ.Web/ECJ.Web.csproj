@@ -500,7 +500,6 @@
     <Content Include="Views\AppelOffre\Index.cshtml" />
     <Content Include="Views\AppelOffre\Ajout.cshtml" />
     <Content Include="Views\AppelOffre\Detail.cshtml" />
-    <Content Include="Views\Shared\BotomBar.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Events\Ajout.cshtml" />
     <Content Include="Views\Commanditaire\Index.cshtml" />
@@ -513,6 +512,7 @@
     <Content Include="Views\Calculateur\Index.cshtml" />
     <Content Include="Views\SousEvenements\Ajout.cshtml" />
     <Content Include="Views\Activite\Detail.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
