@@ -23,7 +23,7 @@ END
 GO
 
 CREATE TABLE S_evenement.tblActivite (
-	noActivite INT NOT NULL
+	noActivite INT NOT NULL IDENTITY(1,1)
 	,nomResponsable VARCHAR(50) NOT NULL
 	,etat tinyint NOT NULL
 	,dateCreation DATE NOT NULL
@@ -36,7 +36,7 @@ CREATE TABLE S_evenement.tblActivite (
 PRINT 'Fin de création de la table tblActivite'
 GO
 CREATE TABLE S_evenement.tblEvenement (
-	noEvenement INT NOT NULL
+	noEvenement INT NOT NULL IDENTITY(1,1)
 	,nom VARCHAR(100) NOT NULL
 	,dateDebut DATE NOT NULL
 	,datefin DATE NOT NULL
@@ -48,7 +48,7 @@ CREATE TABLE S_evenement.tblEvenement (
 PRINT 'Fin de création de la table tblEvenement'
 GO
 CREATE TABLE S_evenement.tblCommanditaire (
-	noCommanditaire INT NOT NULL
+	noCommanditaire INT NOT NULL IDENTITY(1,1)
 	,nomCommanditaire VARCHAR(50) NOT NULL
 	,nomContact VARCHAR(50) NOT NULL
 	,logo varBinary(max)
@@ -62,7 +62,7 @@ CREATE TABLE S_evenement.tblCommanditaire (
 PRINT 'Fin de création de la table tblActivite'
 GO
 CREATE TABLE S_evenement.tblSousEvenement (
-	noSousEvenement INT NOT NULL
+	noSousEvenement INT NOT NULL IDENTITY(1,1)
 	,nom VARCHAR(50) NOT NULL
 	,description TEXT  NULL
 	,noEvenement INT NOT NULL
@@ -71,7 +71,7 @@ CREATE TABLE S_evenement.tblSousEvenement (
 PRINT 'Fin de création de la table tblSousEvenement'
 GO
 CREATE TABLE S_evenement.tblDon (
-	noDon INT NOT NULL
+	noDon INT NOT NULL IDENTITY(1,1)
 	,noCommanditaire INT  NULL
 	,noSousEvenement INT  NULL
 	,Montant DECIMAL(19,2) NOT NULL

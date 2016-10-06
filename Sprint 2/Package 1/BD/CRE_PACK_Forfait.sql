@@ -20,7 +20,7 @@ END
 GO
 
 CREATE TABLE S_forfait.tblForfait (
-	noForfait INT NOT NULL
+	noForfait INT NOT NULL IDENTITY(1,1)
 	,nom VARCHAR(50) NOT NULL
 	,description TEXT  NULL
 	,dateSupprime DATETIME NULL
@@ -28,14 +28,14 @@ CREATE TABLE S_forfait.tblForfait (
 PRINT 'Fin de création de la table tblForfait'
 GO
 CREATE TABLE S_forfait.tblService (
-	noService INT NOT NULL
+	noService INT NOT NULL IDENTITY(1,1)
 	,nomService VARCHAR(25) NOT NULL
 	,dateSupprime DATETIME NULL
 	);
 PRINT 'Fin de création de la table tblService'
 GO
 CREATE TABLE S_forfait.tblSalle (
-	noSalle INT NOT NULL
+	noSalle INT NOT NULL IDENTITY(1,1)
 	,nomSalle VARCHAR(100) NOT NULL
 	,prix DECIMAL(19, 2) NOT NULL
 	,billet INT NOT NULL

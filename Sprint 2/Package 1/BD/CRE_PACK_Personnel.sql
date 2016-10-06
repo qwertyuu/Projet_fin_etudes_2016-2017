@@ -28,10 +28,10 @@ PRINT 'Fin de la création de la table d''utilisateur'
 
 PRINT 'Création de la table memo'
 CREATE TABLE S_personnel.tblMemo (
-	noMemo INT IDENTITY
-	,info TEXT
-	,statut BIT
-	,dateSupprime DATETIME NOT NULL
+	noMemo INT NOT NULL IDENTITY(1,1) 
+	,info TEXT NOT NULL
+	,statut BIT NOT NULL DEFAULT(0)
+	,dateSupprime DATETIME  NULL
 	,expediteur VARCHAR(30) NOT NULL
 	,destinataire VARCHAR(30) NOT NULL
 	);
