@@ -1,58 +1,83 @@
+--But: Création des tables du package Évènement.
+--Date:05-10-2016
+--Par: Simon Girard
+--Modification: Kevin Kuété
 
 
-GO
-CREATE SCHEMA S_evenement
+USE PE2_Officiel
+
+DECLARE @Sql VARCHAR(MAX), @Schema varchar(20)
+SET @Schema = 'S_evenement'
+
+SELECT @Sql = COALESCE(@Sql,'') + 'DROP TABLE ' + @Schema + '.' + QUOTENAME(TABLE_NAME) + ';' + CHAR(13)
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = @Schema
+AND TABLE_TYPE = 'BASE TABLE'
+Exec(@Sql)
+
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = @Schema)
+BEGIN
+EXEC('CREATE SCHEMA ' + @Schema)
+PRINT'Schéma créé'
+END
 GO
 
 CREATE TABLE S_evenement.tblActivite (
-	noActivite INT (11) NOT NULL
+	noActivite INT NOT NULL
 	,nomResponsable VARCHAR(50) NOT NULL
-	,etat tinyint(1) NOT NULL
+	,etat tinyint NOT NULL
 	,dateCreation DATE NOT NULL
 	,tache VARCHAR(50) NOT NULL
-	,detail TEXT
+	,detail TEXT NULL
 	,dateSupprime DATETIME NULL
-	,noEvenement INT (11) NOT NULL
-	,noSousEvenement INT (11) NOT NULL
+	,noEvenement INT NOT  NULL
+	,noSousEvenement INT NOT NULL
 	);
-
+PRINT 'Fin de création de la table tblActivite'
+GO
 CREATE TABLE S_evenement.tblEvenement (
-	noEvenement INT (11)
+	noEvenement INT NOT NULL
 	,nom VARCHAR(100) NOT NULL
 	,dateDebut DATE NOT NULL
 	,datefin DATE NOT NULL
-	,affiche blob
-	,url TEXT
-	,description TEXT
+	,affiche varBinary(max) NULL
+	,url TEXT NULL
+	,description TEXT NULL
 	,dateSupprime DATETIME NULL
 	);
-
+PRINT 'Fin de création de la table tblEvenement'
+GO
 CREATE TABLE S_evenement.tblCommanditaire (
-	noCommanditaire INT (11)
+	noCommanditaire INT NOT NULL
 	,nomCommanditaire VARCHAR(50) NOT NULL
 	,nomContact VARCHAR(50) NOT NULL
-	,logo blob
-	,url TEXT
+	,logo varBinary(max)
+	,url TEXT NULL
 	,textePresentation TEXT NOT NULL
-	,courrielContact VARCHAR(255)
+	,courrielContact VARCHAR(255) NULL
 	,numTel CHAR(10) NOT NULL
-	,extension VARCHAR(5)
+	,extension VARCHAR(5) NULL
 	,dateSupprimee DATETIME NULL
 	);
-
+PRINT 'Fin de création de la table tblActivite'
+GO
 CREATE TABLE S_evenement.tblSousEvenement (
-	noSousEvenement INT (11)
+	noSousEvenement INT NOT NULL
 	,nom VARCHAR(50) NOT NULL
-	,description TEXT NOT NULL
-	,noEvenement INT (11) NOT NULL
+	,description TEXT  NULL
+	,noEvenement INT NOT NULL
 	,dateSupprime DATETIME NULL
 	);
-
+PRINT 'Fin de création de la table tblSousEvenement'
+GO
 CREATE TABLE S_evenement.tblDon (
-	noDon INT (11) NOT NULL
-	,noCommanditaire INT (11) NOT NULL
-	,noSousEvenement INT (11) NOT NULL
-	,Montant DECIMAL(19, 0) NOT NULL
-	,dateDon DATE NOT NULL
+	noDon INT NOT NULL
+	,noCommanditaire INT  NULL
+	,noSousEvenement INT  NULL
+	,Montant DECIMAL(19,2) NOT NULL
+	,dateDon DATE  NULL
 	,dateSupprime DATETIME NULL
 	);
+PRINT 'Fin de création de la table tblDon'
+GO
+PRINT 'Fin de création des tables package évènement'
