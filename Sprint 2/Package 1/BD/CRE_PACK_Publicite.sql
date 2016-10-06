@@ -1,46 +1,74 @@
-CREATE SCHEMA S_publicite
+--Ce script permet de supprimer et de recréer l'ensemble des tables contenues dans le package publicité
+--Fait par: Raphaël Côté
+--En ce: 5 Octobre 2016
+USE PE2_Officiel
+
+DECLARE @Sql VARCHAR(MAX), @Schema varchar(20)
+SET @Schema = 'S_publicite'
+
+SELECT @Sql = COALESCE(@Sql,'') + 'DROP TABLE ' + @Schema + '.' + QUOTENAME(TABLE_NAME) + ';' + CHAR(13)
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = @Schema
+AND TABLE_TYPE = 'BASE TABLE'
+Exec(@Sql)
+
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = @Schema)
+BEGIN
+EXEC('CREATE SCHEMA ' + @Schema)
+END
 GO
 
 
+PRINT 'CRÉATION DE LA TABLE APPEL D''OFFRE'
 CREATE TABLE S_publicite.tblAppelOffre (
-	noPublicite INT (11) NOT NULL
+	noAppelOffre INT NOT NULL
 	,nom VARCHAR(50) NOT NULL
 	,media VARCHAR(25) NOT NULL
-	,dateRequise DATE NOT NULL
-	,dateEnvoie DATE NOT NULL
+	,dateRequis DATE NOT NULL
+	,dateEnvoi DATE NOT NULL
 	,description TEXT NOT NULL
 	,dateSupprime DATETIME NULL
-	,tblEvenementnoEvenement INT (11) NOT NULL
+	,noEvenement INT NOT NULL
+	,noStatut INT NOT NULL
 	);
+PRINT 'APPEL D''OFFRE RÉUSSI'
 
-CREATE TABLE S_publicite.AgencePublicite (
-	noAgencePub INT (11) NOT NULL
+PRINT 'CRÉATION DE LA TABLE AGENCEPUBLICITE'
+CREATE TABLE S_publicite.tblAgencePublicite (
+	noAgencePub INT NOT NULL
 	,nom VARCHAR(50) NOT NULL
 	,dateSupprime DATETIME NULL
 	);
+PRINT 'AgencePublicite RÉUSSI'
 
+PRINT 'CRÉATION DE LA TABLE STATUT'
 CREATE TABLE S_publicite.tblStatut (
-	noStatut INT (11) NOT NULL
+	noStatut INT NOT NULL
 	,nom VARCHAR(20) NOT NULL
 	,couleur CHAR(6) NOT NULL
 	,description TEXT
-	,tblAppelOffrenoPublicite INT (11) NOT NULL
 	);
+PRINT 'STATUT RÉUSSI'
 
+PRINT 'CRÉATION DE LA TABLE SOUMISSION'
 CREATE TABLE S_publicite.tblSoumission (
-	noSoumission INT (11) NOT NULL
+	noSoumission INT NOT NULL
 	,nom VARCHAR(20) NOT NULL
-	,prix DECIMAL(19, 0) NOT NULL
-	,statut TINYINT (1) NOT NULL
+	,prix DECIMAL(19, 2) NOT NULL
+	,statut BIT NOT NULL
 	,description TEXT NOT NULL
 	,dateSupprime DATETIME NULL
-	,noAppelOffre INT (11) NOT NULL
+	,noAppelOffre INT NOT NULL
 	);
+PRINT 'TABLE STATUT RÉUSSI'
 
+PRINT 'CRÉATION DE LA TABLE INTERSECTION ENTRE APPEL D''OFFRE ET AGENCEPUBLICITE'
 CREATE TABLE S_publicite.tblAppelOffreAgence (
-	noAppelOffre INT (11) NOT NULL
-	,noAgencePub INT (11) NOT NULL
-	,offreNoPublicite INT (11) NOT NULL
-	,noStatut INT (11) NOT NULL
-	,noSoumission INT (11) NOT NULL
+	noAppelOffre INT NOT NULL
+	,noAgencePub INT NOT NULL
+	,offreNoPublicite INT NOT NULL
+	,noStatut INT NOT NULL
+	,noSoumission INT NOT NULL
 	);
+	
+PRINT 'INTERSECTION ENTRE APPEL D''OFFRE ET AGENCEPUBLICITE REUSSI'
