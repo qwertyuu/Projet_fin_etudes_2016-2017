@@ -24,8 +24,8 @@ CREATE TABLE S_publicite.tblAppelOffre (
 	noAppelOffre INT NOT NULL IDENTITY(1,1)
 	,nom VARCHAR(50) NOT NULL
 	,media VARCHAR(25) NOT NULL
-	,dateRequis DATE NOT NULL
-	,dateEnvoi DATE NOT NULL
+	,dateRequis DATETIME NOT NULL
+	,dateEnvoi DATETIME NOT NULL
 	,description TEXT NOT NULL
 	,dateSupprime DATETIME NULL
 	,noEvenement INT NOT NULL
@@ -70,5 +70,18 @@ CREATE TABLE S_publicite.tblAppelOffreAgence (
 	,noStatut INT NOT NULL
 	,noSoumission INT NOT NULL
 	);
-	
+GO
+CREATE TABLE S_publicite.tblMedia (
+	 noMedia INT NOT NULL IDENTITY(1,1)
+	,nom  VARCHAR(20) NULL
+	,descriptio TEXT NULL
+	);
+
+GO
+CREATE TABLE S_publicite.tblMediaAppelOffre (
+	 noMedia INT NOT NULL,
+	 noAppelOffre INT NOT NULL	
+	);
+PRINT 'Fin de création de la table tblMediaAppelOffre'	
+GO
 PRINT 'INTERSECTION ENTRE APPEL D''OFFRE ET AGENCEPUBLICITE REUSSI'
