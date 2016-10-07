@@ -10,13 +10,6 @@ CONSTRAINT NOFOR_FOR_PK PRIMARY Key(noForfait)
 PRINT 'FIN des contraintes de la table tblForfait'
 GO
 
-ALTER TABLE S_forfait.tblForfaitSousEvenement ADD
-CONSTRAINT NOFORSOUSEVEN_FORSEVEN_PK PRIMARY Key(noForfait,noSousEvenement),
-CONSTRAINT FORF_SOUSEVENFORF_NOFOR_FK FOREIGN Key(noForfait) REFERENCES S_forfait.tblForfait(noForfait),
-CONSTRAINT SOUSEVEN_SOUSEVENFORF_NOSOUSEVEN_FK FOREIGN Key(noSousEvenement) REFERENCES S_evenement.tblSousEvenement(noSousEvenement)
-PRINT 'FIN des contraintes de la table tblForfaitSousEvenement'
-GO
-
 ALTER TABLE S_forfait.tblSalle ADD
 CONSTRAINT NOSAL_SAL_PK PRIMARY Key(noSalle)
 PRINT 'FIN des contraintes de la table tblSalle'
@@ -25,6 +18,13 @@ GO
 ALTER TABLE S_forfait.tblService ADD
 CONSTRAINT NOSERV_SERV_PK PRIMARY Key(noService)
 PRINT 'FIN des contraintes de la table tblService'
+GO
+
+ALTER TABLE S_forfait.tblForfaitSousEvenement ADD
+CONSTRAINT NOFORSOUSEVEN_FORSEVEN_PK PRIMARY Key(noForfait,noSousEvenement),
+CONSTRAINT FORF_SOUSEVENFORF_NOFOR_FK FOREIGN Key(noForfait) REFERENCES S_forfait.tblForfait(noForfait),
+CONSTRAINT SOUSEVEN_SOUSEVENFORF_NOSOUSEVEN_FK FOREIGN Key(noSousEvenement) REFERENCES S_evenement.tblSousEvenement(noSousEvenement)
+PRINT 'FIN des contraintes de la table tblForfaitSousEvenement'
 GO
 
 ALTER TABLE S_forfait.tblServiceOffert ADD
