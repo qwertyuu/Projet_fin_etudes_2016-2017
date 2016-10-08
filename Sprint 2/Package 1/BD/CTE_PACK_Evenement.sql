@@ -1,37 +1,53 @@
---But: Création des contraintes des tables du package Évènement.
---Date:05-10-2016
---Par: Kevin Kuété
+--Ce script permet de créer l'ensemble des contraintes contenues dans le package évènement
+--Fait par: Pierre-Alexandre Pageau
+--En ce: 6 Octobre 2016
 
 USE PE2_Officiel
-GO
-ALTER TABLE S_evenement.tblEvenement ADD
-CONSTRAINT NOEVEN_EVEN_PK PRIMARY Key(noEvenement)
-PRINT 'FIN des contraintes de la table tblEvenement'
+
+ALTER TABLE S_Evenement.tblEvenement ADD
+CONSTRAINT NOEVEN_EVEN_PK PRIMARY KEY(noEvenement)
+PRINT('Fin des contraintes PK des évènements')
+
 GO
 
-ALTER TABLE S_evenement.tblSousEvenement ADD
-CONSTRAINT NOSOUSEVEN_SOUSEVEN_PK PRIMARY Key(noSousEvenement),
-CONSTRAINT SOUSEVEN_EVEN_NOSOUSEVEN_FK FOREIGN Key(noEvenement) REFERENCES S_evenement.tblEvenement(noEvenement)
-PRINT 'FIN des contraintes de la table tblSousEvenement'
-GO
-ALTER TABLE S_evenement.tblActivite ADD
-CONSTRAINT NO_ACT_PK PRIMARY Key(noActivite),
-CONSTRAINT EVEN_ACT_NOEVEN_FK FOREIGN Key(noEvenement) REFERENCES S_evenement.tblEvenement(noEvenement),
-CONSTRAINT SOUSEVEN_ACT_NOSOUSEVEN_FK FOREIGN Key(noSousEvenement) REFERENCES S_evenement.tblSousEvenement(noSousEvenement)
-PRINT 'FIN des contraintes de la table tblActivite'
+ALTER TABLE S_Evenement.tblSousEvenement ADD
+CONSTRAINT NOSOUSEVEN_SOUSEVEN_PK PRIMARY KEY(noSousEvenement)
+PRINT('Fin des contraintes PK des sous-évènements')
+
 GO
 
-ALTER TABLE S_evenement.tblCommanditaire ADD
-CONSTRAINT NOCOM_COM_PK PRIMARY Key(noCommanditaire)
-PRINT 'FIN des contraintes de la table tblCommanditaire'
+ALTER TABLE S_Evenement.tblActivite ADD
+CONSTRAINT NOACT_ACT_PK PRIMARY KEY(noActivite)
+PRINT('Fin des contraintes PK des activitées')
+
 GO
 
-ALTER TABLE S_evenement.tblDon ADD
-CONSTRAINT DOn_NODON_PK PRIMARY Key(noDon),
-CONSTRAINT EVEN_DON_NOEVEN_FK FOREIGN Key(noCommanditaire) REFERENCES S_evenement.tblCommanditaire(noCommanditaire),
-CONSTRAINT SOUSEVEN_DON_NOSOUSEVEN_FK FOREIGN Key(noSousEvenement) REFERENCES S_evenement.tblSousEvenement(noSousEvenement)
-PRINT 'FIN des contraintes de la table tblDon'
+ALTER TABLE S_Evenement.tblCommanditaire ADD
+CONSTRAINT NOCOMM_COMM_PK PRIMARY KEY(noCommanditaire)
+PRINT('Fin des contraintes PK des commanditaires')
+
 GO
 
-PRINT 'FIN des contraintes des tables pour le package Évèmenent'
+ALTER TABLE S_Evenement.tblDon ADD
+CONSTRAINT NODON_DON_PK PRIMARY KEY(noDon)
+PRINT('Fin des contraintes PK des dons')
 
+GO
+
+ALTER TABLE S_Evenement.tblSousEvenement ADD
+CONSTRAINT NOEVEN_ACT_FK FOREIGN KEY(noEvenement) REFERENCES S_Evenement.tblEvenement(noEvenement),
+CONSTRAINT NOSOUSEVEN_ACT_FK FOREIGN KEY(noSousEvenement) REFERENCES S_Evenement.tblSousEvenement(noSousEvenement)
+PRINT('Fin des contraintes FK des sous-évènements')
+
+GO
+
+ALTER TABLE S_Evenement.tblDon ADD
+CONSTRAINT NOCOMM_DON_FK FOREIGN KEY(noCommanditaire) REFERENCES S_Evenement.tblCommanditaire(noCommanditaire),
+CONSTRAINT NOSOUSEVEN_DON_FK FOREIGN KEY(noSousEvenement) REFERENCES S_Evenement.tblSousEvenement(noSousEvenement)
+PRINT('Fin des contraintes FK des dons')
+
+GO
+
+ALTER TABLE S_Evenement.tblCommanditaire ADD
+CONSTRAINT CHE_COUR_FORM_COMM CHECK(courrielContact like '%_@__%.__%')
+PRINT 'Fin création des contraintes CHECK de table commanditaire'
