@@ -1,5 +1,5 @@
---Ce script permet de supprimer et de (re)crÃ©er l'ensemble des tables contenues dans le package personnel
---Fait par: RaphaÃ«l CÃ´tÃ©
+--Ce script permet de supprimer et de (re)créer l'ensemble des tables contenues dans le package personnel
+--Fait par: Raphaël Côté
 --En ce: 5 Octobre 2016
 USE PE2_Officiel
 
@@ -17,17 +17,17 @@ BEGIN
 EXEC('CREATE SCHEMA ' + @Schema)
 END
 
-PRINT 'CrÃ©ation de la table d''utilisateur'
+PRINT 'Création de la table d''utilisateur'
 
 CREATE TABLE S_personnel.tblUtilisateur
 (
 	IdUser  varchar(30)NOT NULL,
 	motPasse char(24) NOT NULL
 )
-PRINT 'Fin de la crÃ©ation de la table d''utilisateur'
+PRINT 'Fin de la création de la table d''utilisateur'
 
 GO
-PRINT 'CrÃ©ation de la table memo'
+PRINT 'Création de la table memo'
 CREATE TABLE S_personnel.tblMemo (
 	noMemo INT NOT NULL IDENTITY(1,1) 
 	,info TEXT NOT NULL
@@ -37,5 +37,5 @@ CREATE TABLE S_personnel.tblMemo (
 	,expediteur VARCHAR(30) NOT NULL
 	,destinataire VARCHAR(30) NOT NULL
 	);
-PRINT 'Fin de la crÃ©ation de la table memo'
+PRINT 'Fin de la création de la table memo'
  

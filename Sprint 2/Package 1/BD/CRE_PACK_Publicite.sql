@@ -25,7 +25,7 @@ CREATE TABLE S_publicite.tblAppelOffre (
 	,nom VARCHAR(50) NOT NULL
 	,dateRequis DATETIME NOT NULL
 	,dateEnvoi DATETIME NOT NULL
-	,description TEXT NOT NULL
+	,description TEXT
 	,dateSupprime DATETIME NULL
 	,noEvenement INT NOT NULL
 	,noStatut INT NOT NULL
@@ -67,6 +67,7 @@ CREATE TABLE S_publicite.tblAppelOffreAgence (
 	,noAgencePub INT NOT NULL
 	,noAppelOffre INT NOT NULL 
 	,noStatut INT NOT NULL
+	,noSoumission INT NOT NULL
 	);
 GO
 CREATE TABLE S_publicite.tblMedia (

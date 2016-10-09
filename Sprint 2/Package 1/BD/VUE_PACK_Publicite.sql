@@ -1,6 +1,6 @@
---But: Création des vues du package Contrat.
---Date:06-09-2016
---Par: Kevin Kuété Moffo
+--But: Création des vues du package publicite.
+--Date:09-10-2016
+--Par: Raphaël Côté
 
 USE PE2_Officiel
 

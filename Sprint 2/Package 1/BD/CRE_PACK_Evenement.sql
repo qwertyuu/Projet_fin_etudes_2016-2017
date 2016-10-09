@@ -8,13 +8,11 @@ USE PE2_Officiel
 
 DECLARE @Sql VARCHAR(MAX), @Schema varchar(20)
 SET @Schema = 'S_evenement'
-
-SELECT @Sql = COALESCE(@Sql,'') + 'DROP TABLE ' + @Schema + '.' + QUOTENAME(TABLE_NAME) + ';' + CHAR(13)
+SELECT @Sql = COALESCE(@Sql,'') + 'DROP TABLE ' + @Schema + '.' + QUOTENAME(TABLE_NAME) + '; WITH NOCHECK ' + CHAR(13)
 FROM INFORMATION_SCHEMA.TABLES
 WHERE TABLE_SCHEMA = @Schema
 AND TABLE_TYPE = 'BASE TABLE'
 Exec(@Sql)
-
 IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = @Schema)
 BEGIN
 EXEC('CREATE SCHEMA ' + @Schema)
@@ -57,7 +55,7 @@ CREATE TABLE S_evenement.tblCommanditaire (
 	,courrielContact VARCHAR(255) NULL
 	,numTel CHAR(10) NOT NULL
 	,extension VARCHAR(5) NULL
-	,dateSupprimee DATETIME NULL
+	,dateSupprime DATETIME NULL
 	);
 PRINT 'Fin de création de la table tblActivite'
 GO
@@ -75,7 +73,7 @@ CREATE TABLE S_evenement.tblDon (
 	,noCommanditaire INT  NULL
 	,noSousEvenement INT  NULL
 	,Montant DECIMAL(19,2) NOT NULL
-	,dateDon DATE  NULL
+	,dateDon DATE NULL
 	,dateSupprime DATETIME NULL
 	);
 PRINT 'Fin de création de la table tblDon'

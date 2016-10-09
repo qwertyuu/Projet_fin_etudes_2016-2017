@@ -4,6 +4,10 @@
 SET NOCOUNT ON
 
 PRINT 'CREATING DATABASE'
+DROP DATABASE PE2_Officiel;
+GO
+CREATE DATABASE PE2_Officiel;
+GO
 
 :r CRE_PACK_Evenement.sql
 :r CRE_PACK_Forfait.sql
