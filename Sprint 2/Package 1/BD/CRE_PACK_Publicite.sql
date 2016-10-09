@@ -23,7 +23,6 @@ PRINT 'CRÉATION DE LA TABLE APPEL D''OFFRE'
 CREATE TABLE S_publicite.tblAppelOffre (
 	noAppelOffre INT NOT NULL IDENTITY(1,1)
 	,nom VARCHAR(50) NOT NULL
-	,media VARCHAR(25) NOT NULL
 	,dateRequis DATETIME NOT NULL
 	,dateEnvoi DATETIME NOT NULL
 	,description TEXT NOT NULL
@@ -64,17 +63,16 @@ PRINT 'TABLE STATUT RÉUSSI'
 
 PRINT 'CRÉATION DE LA TABLE INTERSECTION ENTRE APPEL D''OFFRE ET AGENCEPUBLICITE'
 CREATE TABLE S_publicite.tblAppelOffreAgence (
-	noAppelOffre INT NOT NULL IDENTITY(1,1)
+	offreNoPublicite INT NOT NULL IDENTITY(1,1)
 	,noAgencePub INT NOT NULL
-	,offreNoPublicite INT NOT NULL
+	,noAppelOffre INT NOT NULL 
 	,noStatut INT NOT NULL
-	,noSoumission INT NOT NULL
 	);
 GO
 CREATE TABLE S_publicite.tblMedia (
 	 noMedia INT NOT NULL IDENTITY(1,1)
 	,nom  VARCHAR(20) NULL
-	,descriptio TEXT NULL
+	,description TEXT NULL
 	);
 
 GO
