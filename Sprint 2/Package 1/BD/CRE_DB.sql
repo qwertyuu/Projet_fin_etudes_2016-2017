@@ -21,6 +21,8 @@ GO
 :r INST_PACK_Forfait.sql
 :r INST_PACK_Personnel.sql
 :r INST_PACK_Publicite.sql
+:r VUE_PACK_Publicite.sql
+:r VUE_PACK_Evenement.sql
 
 SET NOCOUNT OFF
 

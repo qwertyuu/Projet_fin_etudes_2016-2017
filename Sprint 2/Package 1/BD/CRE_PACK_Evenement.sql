@@ -72,7 +72,7 @@ CREATE TABLE S_evenement.tblDon (
 	noDon INT NOT NULL IDENTITY(1,1)
 	,noCommanditaire INT  NULL
 	,noSousEvenement INT  NULL
-	,Montant DECIMAL(19,2) NOT NULL
+	,montant DECIMAL(19,2) NOT NULL
 	,dateDon DATE NULL
 	,dateSupprime DATETIME NULL
 	);

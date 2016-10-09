@@ -49,5 +49,6 @@ PRINT('Fin des contraintes FK des dons')
 GO
 
 ALTER TABLE S_Evenement.tblCommanditaire ADD
-CONSTRAINT CHE_COUR_FORM_COMM CHECK(courrielContact like '%_@__%.__%')
+CONSTRAINT CHE_COUR_FORM_COMM CHECK(courrielContact like '%_@__%.__%'),
+CONSTRAINT CHE_NO_TEL CHECK(numTel NOT LIKE '%[^0-9]%')
 PRINT 'Fin création des contraintes CHECK de table commanditaire'
