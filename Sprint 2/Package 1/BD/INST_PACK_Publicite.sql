@@ -43,10 +43,11 @@ INSERT INTO S_publicite.tblStatut(nom,couleur,description)VALUES('Annulé','0281F
 PRINT 'Fin d''insertion de table tblStatut'
 
 GO
-INSERT INTO S_publicite.tblMedia(nom,description)VALUES('Radio','la publicité sera communiqué au moyen de la radio')
-INSERT INTO S_publicite.tblMedia(nom,description)VALUES('Télévision','la publicité sera communiqué au moyen de la télévision')
-INSERT INTO S_publicite.tblMedia(nom,description)VALUES('Journal','la publicité sera communiquer au moyen des journaux')
-INSERT INTO S_publicite.tblMedia(nom)VALUES('Réseaux sociaux')
+INSERT INTO S_publicite.tblMedia(nom,description)VALUES('Radio','la publicité sera communiqué au moyen de la radio');
+INSERT INTO S_publicite.tblMedia([nom],[description]) VALUES('Blog','velit. Cras lorem lorem, luctus ut,');
+INSERT INTO S_publicite.tblMedia(nom,description)VALUES('Télévision','la publicité sera communiqué au moyen de la télévision');
+INSERT INTO S_publicite.tblMedia(nom,description)VALUES('Journal','la publicité sera communiquer au moyen des journaux');
+INSERT INTO S_publicite.tblMedia(nom)VALUES('Réseaux sociaux');
 PRINT 'Fin d''insertion de table tblMedia'
 
 GO
@@ -64,59 +65,61 @@ INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[noEvenemen
 PRINT 'Fin d''insertion de table tblAppelOffre'
 
 GO
-INSERT INTO S_publicite.S_publicite.tblAppelOffreAgence([noMedia],[noAppelOffre]) VALUES(2,8);
-INSERT INTO S_publicite.S_publicite.tblAppelOffreAgence([noMedia],[noAppelOffre]) VALUES(3,5);
-INSERT INTO S_publicite.S_publicite.tblAppelOffreAgence([noMedia],[noAppelOffre]) VALUES(1,4);
-INSERT INTO S_publicite.S_publicite.tblAppelOffreAgence([noMedia],[noAppelOffre]) VALUES(1,6);
-INSERT INTO S_publicite.S_publicite.tblAppelOffreAgence([noMedia],[noAppelOffre]) VALUES(3,9);
-INSERT INTO S_publicite.S_publicite.tblAppelOffreAgence([noMedia],[noAppelOffre]) VALUES(4,7);
-INSERT INTO S_publicite.S_publicite.tblAppelOffreAgence([noMedia],[noAppelOffre]) VALUES(3,5);
-INSERT INTO S_publicite.S_publicite.tblAppelOffreAgence([noMedia],[noAppelOffre]) VALUES(1,9);
-INSERT INTO S_publicite.S_publicite.tblAppelOffreAgence([noMedia],[noAppelOffre]) VALUES(1,2);
-INSERT INTO S_publicite.S_publicite.tblAppelOffreAgence([noMedia],[noAppelOffre]) VALUES(3,4);
-PRINT 'Fin d''insertion de table S_publicite.tblAppelOffreAgence'
 
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(23,5,4);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(25,4,2);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(2,8,4);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(15,1,2);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(12,4,4);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(16,3,3);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(17,6,2);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(14,2,3);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(21,9,3);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(11,1,3);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(13,4,4);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(3,4,2);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(23,8,3);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(4,4,3);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(17,7,4);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(9,7,2);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(25,9,2);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(23,3,2);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(11,5,3);
-INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[noAppelOffre],[noStatut]) VALUES(26,4,2);
-PRINT 'Fin d''insertion de table S_publicite.tblAppelOffreAgence'
-
+INSERT INTO S_publicite.tblSoumission([nom],[prix],[statut],[description],[dateSupprime],[noAppelOffre]) VALUES('mattis. Integer eu lacus. Quisque','2.7473126874043',0,'quis turpis vitae purus',NULL,7);
+INSERT INTO S_publicite.tblSoumission([nom],[prix],[statut],[description],[dateSupprime],[noAppelOffre]) VALUES('hendrerit neque. In ornare sagittis','3.0586347691344',0,'nascetur ridiculus mus. Aenean',NULL,10);
+INSERT INTO S_publicite.tblSoumission([nom],[prix],[statut],[description],[dateSupprime],[noAppelOffre]) VALUES('lorem eu metus. In lorem.','2.7900857747429',1,'suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum',NULL,4);
+INSERT INTO S_publicite.tblSoumission([nom],[prix],[statut],[description],[dateSupprime],[noAppelOffre]) VALUES('risus odio, auctor vitae, aliquet','3.3862742683918',1,'erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus',NULL,3);
+INSERT INTO S_publicite.tblSoumission([nom],[prix],[statut],[description],[dateSupprime],[noAppelOffre]) VALUES('Aliquam rutrum lorem ac risus.','2.9022601300456',0,'dictum sapien. Aenean massa. Integer vitae',NULL,7);
+INSERT INTO S_publicite.tblSoumission([nom],[prix],[statut],[description],[dateSupprime],[noAppelOffre]) VALUES('vulputate, posuere vulputate, lacus. Cras','3.0335540204716',0,'magna sed dui. Fusce aliquam, enim nec tempus','2016/06/24',2);
+INSERT INTO S_publicite.tblSoumission([nom],[prix],[statut],[description],[dateSupprime],[noAppelOffre]) VALUES('ante. Vivamus non lorem vitae','2.7943151809682',1,'sed leo. Cras vehicula aliquet libero. Integer in magna.',NULL,1);
+INSERT INTO S_publicite.tblSoumission([nom],[prix],[statut],[description],[dateSupprime],[noAppelOffre]) VALUES('eu erat semper rutrum. Fusce','3.0202206588346',0,'tincidunt dui augue eu tellus.',NULL,9);
+INSERT INTO S_publicite.tblSoumission([nom],[prix],[statut],[description],[dateSupprime],[noAppelOffre]) VALUES('lorem. Donec elementum, lorem ut','2.9419528415708',0,'laoreet ipsum. Curabitur consequat, lectus sit',NULL,4);
+INSERT INTO S_publicite.tblSoumission([nom],[prix],[statut],[description],[dateSupprime],[noAppelOffre]) VALUES('Nullam scelerisque neque sed sem','2.8802014906253',1,'Duis sit amet','2016/06/24',8);
+PRINT 'Fin d''insertion de table tblSoumission'
 GO
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission1','$58.05',0,8);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission2','$40.86',1,6);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission3','$31.75',1,2);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission4','$96.00',0,3);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission5','$43.34',0,11);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission6','$35.95',1,12);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission7','$43.03',1,5);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission8','$95.89',1,15);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission9','$74.28',0,5);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission10','$79.06',1,6);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission11','$89.61',0,4);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission12','$98.42',1,15);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission13','$89.00',0,11);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission14','$36.41',0,12);
-INSERT INTO S_publicite.tblSoumission([nom],[prix],[Statut],[offreNoPublicite]) VALUES('Soumission15','$46.66',0,6);
-PRINT 'Fin d''insertion de table S_publicite.tblSoumission'
 
+INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[offreNoPublicite],[noStatut],[noSoumission]) VALUES(4,10,2,8);
+INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[offreNoPublicite],[noStatut],[noSoumission]) VALUES(4,1,2,6);
+INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[offreNoPublicite],[noStatut],[noSoumission]) VALUES(9,3,2,3);
+INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[offreNoPublicite],[noStatut],[noSoumission]) VALUES(4,1,3,8);
+INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[offreNoPublicite],[noStatut],[noSoumission]) VALUES(8,8,4,1);
+INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[offreNoPublicite],[noStatut],[noSoumission]) VALUES(1,7,4,8);
+INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[offreNoPublicite],[noStatut],[noSoumission]) VALUES(7,2,1,7);
+INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[offreNoPublicite],[noStatut],[noSoumission]) VALUES(3,4,3,5);
+INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[offreNoPublicite],[noStatut],[noSoumission]) VALUES(2,2,4,1);
+INSERT INTO S_publicite.tblAppelOffreAgence([noAgencePub],[offreNoPublicite],[noStatut],[noSoumission]) VALUES(3,2,1,7);
+PRINT 'Fin d''insertion de table tblAppelOffreAgence'
 GO
-PRINT 'Fin d''insertion des tables du package Publicité'
 
-
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(1,1);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(1,8);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(10,1);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(1,9);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(4,4);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(4,10);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(6,3);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(2,10);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(8,4);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(9,6);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(4,5);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(9,9);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(4,4);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(9,7);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(8,7);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(2,3);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(7,5);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(2,2);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(5,1);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(6,6);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(10,3);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(5,1);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(9,4);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(2,1);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(3,8);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(3,7);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(9,4);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(7,5);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(2,8);
+INSERT INTO S_publicite.tblMediaAppelOffre([noMedia],[noAppelOffre]) VALUES(1,10);
+PRINT 'Fin d''insertion de table tblMediaAppelOffre'
