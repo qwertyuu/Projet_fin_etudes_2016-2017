@@ -15,8 +15,8 @@ GO
 
 GO
 CREATE VIEW S_forfait.vueSomService WITH SCHEMABINDING AS
-SELECT forf.noService, forf.nom
-FROM S_forfait.tblForfait AS forf
+SELECT forf.noService, forf.nomService
+FROM S_forfait.tblService AS forf
 WHERE  forf.dateSupprime IS NULL
 GO
 PRINT 'Création de la vue pour sommaire services'
