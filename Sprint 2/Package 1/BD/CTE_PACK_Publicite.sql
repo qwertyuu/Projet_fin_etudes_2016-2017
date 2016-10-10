@@ -33,16 +33,16 @@ CONSTRAINT NO_AGENCE_PUB_PK PRIMARY Key(noAgencePub)
 PRINT 'FIN des contraintes de la table tblAgencePublicite'
 GO
 
-ALTER TABLE S_publicite.tblSoumission ADD
-CONSTRAINT NO_SOUMISSION_PK PRIMARY Key(noSoumission),
-CONSTRAINT SOUMISSION_APPEL_OFFRE_FK FOREIGN Key(offreNoPublicite) REFERENCES S_publicite.tblAppelOffreAgence(offreNoPublicite)
-PRINT 'FIN des contraintes de la table tblSoumission'
-GO
-
 ALTER TABLE S_publicite.tblAppelOffreAgence ADD
 CONSTRAINT NO_APPEL_OFFRE_NO_AGENCE_PUB_PK PRIMARY KEY(offreNoPublicite),
 CONSTRAINT APPEL_OFFRE_FK FOREIGN Key(noAppelOffre) REFERENCES S_publicite.tblAppelOffre(noAppelOffre),
 CONSTRAINT AGENCE_PUB_FK FOREIGN Key(noAgencePub) REFERENCES S_publicite.tblAgencePublicite(noAgencePub),
 CONSTRAINT STATUT_APPEL_OFFRE_AGENCE_FK FOREIGN Key(noStatut) REFERENCES S_publicite.tblStatut(noStatut)
 PRINT 'FIN des contraintes de la table tblAppelOffreAgence'
+GO
+
+ALTER TABLE S_publicite.tblSoumission ADD
+CONSTRAINT NO_SOUMISSION_PK PRIMARY Key(noSoumission),
+CONSTRAINT SOUMISSION_APPEL_OFFRE_FK FOREIGN Key(offreNoPublicite) REFERENCES S_publicite.tblAppelOffreAgence(offreNoPublicite)
+PRINT 'FIN des contraintes de la table tblSoumission'
 GO

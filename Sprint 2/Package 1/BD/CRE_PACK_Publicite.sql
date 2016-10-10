@@ -58,6 +58,7 @@ CREATE TABLE S_publicite.tblSoumission (
 	,description TEXT NOT NULL
 	,dateSupprime DATETIME NULL
 	,noAppelOffre INT NOT NULL
+	,offreNoPublicite INT
 	);
 PRINT 'TABLE STATUT RÉUSSI'
 
