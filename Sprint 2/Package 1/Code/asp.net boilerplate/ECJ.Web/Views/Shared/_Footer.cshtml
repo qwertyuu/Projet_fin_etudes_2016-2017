@@ -1,7 +1,40 @@
-﻿<div class="footer-distributed">
+﻿<div class="modal fade" id="UserCreateModal" tabindex="-1" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form name="userCreateForm" role="form" novalidate class="form-validation">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span>Créer un nouveau mémo</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="form-group">
+                        <label>Destinataire</label>
+                        <input type="text" name="Name" class="form-control" required maxlength="@ECJ.Users.User.MaxNameLength">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="EmailAddress" class="form-control" rows="10" cols="5" required></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@L("Cancel")</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="footer-distributed">
     <footer>
         <div class="container">
             <div class="footer-left">
+                <button data-toggle="modal" data-target="#UserCreateModal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> @L("CreateNewUser")</button>
                 <a href="" class="btn btn-primary" id="btn_memo"><i class="fa fa-plus"></i> Créer un mémo</a>
                 <h3>Cégep de Jonquière<span></span></h3>
                 <p class="footer-company-name">Cégep de Jonquière &copy; 2015</p>
