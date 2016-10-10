@@ -14,5 +14,16 @@ ON ao.noStatut=sta.noStatut
 WHERE ao.dateSupprime IS NULL
 GO
 PRINT 'Création de la vue reliée a l''affichage du sommaire appel offre'
---J'AFFICHE QUOI DE LA SOUMISSION
+
+GO
+CREATE VIEW S_publicite.vueSomSoumission WITH SCHEMABINDING AS
+SELECT soumi.nom,soumi.prix,appelOfrre.nom, soumi.description
+FROM S_publicite.tblSoumission soumi
+LEFT JOIN S_publicite.tblAppelOffreAgence offreAgence
+ON offreAgence.offreNoPublicite=soumi.offreNoPublicite
+LEFT JOIN S_publicite.tblAppelOffre appelOfrre
+ON appelOfrre.noAppelOffre=offreAgence.noAppelOffre
+WHERE soumi.dateSupprime IS NULL
+GO
+PRINT 'Création de la vue reliée a l''affichage du sommaire de soumission'
 
