@@ -34,9 +34,14 @@ PRINT('Fin des contraintes PK des dons')
 
 GO
 
-ALTER TABLE S_Evenement.tblSousEvenement ADD
-CONSTRAINT NOEVEN_ACT_FK FOREIGN KEY(noEvenement) REFERENCES S_Evenement.tblEvenement(noEvenement),
+ALTER TABLE S_Evenement.tblActivite ADD
 CONSTRAINT NOSOUSEVEN_ACT_FK FOREIGN KEY(noSousEvenement) REFERENCES S_Evenement.tblSousEvenement(noSousEvenement)
+PRINT('Fin des contraintes FK des activitées')
+
+GO
+
+ALTER TABLE S_Evenement.tblSousEvenement ADD
+CONSTRAINT NOEVEN_ACT_FK FOREIGN KEY(noEvenement) REFERENCES S_Evenement.tblEvenement(noEvenement)
 PRINT('Fin des contraintes FK des sous-évènements')
 
 GO
