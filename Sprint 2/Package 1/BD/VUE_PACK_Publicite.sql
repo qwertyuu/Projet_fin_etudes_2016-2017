@@ -17,7 +17,7 @@ PRINT 'Création de la vue reliée a l''affichage du sommaire appel offre'
 
 GO
 CREATE VIEW S_publicite.vueSomSoumission WITH SCHEMABINDING AS
-SELECT soumi.nom as nomSoumission,soumi.prix,appelOfrre.nom as nomAppelOffre, soumi.description
+SELECT soumi.nom as nomSoumission,soumi.prix,appelOfrre.nom as nomAppelOffre, soumi.description, soumi.noSoumission
 FROM S_publicite.tblSoumission soumi
 LEFT JOIN S_publicite.tblAppelOffreAgence offreAgence
 ON offreAgence.offreNoPublicite=soumi.offreNoPublicite
