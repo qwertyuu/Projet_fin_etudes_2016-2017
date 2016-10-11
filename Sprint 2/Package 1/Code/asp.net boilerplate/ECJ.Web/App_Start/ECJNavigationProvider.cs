@@ -33,14 +33,6 @@ namespace ECJ.Web
                         )
                 )*/.AddItem(
                     new MenuItemDefinition(
-                        "Activite",
-                        L("Act"),
-                        url: "Activite",
-                        icon: "fa fa-puzzle-piece",
-                        requiresAuthentication: true
-                        )
-                ).AddItem(
-                    new MenuItemDefinition(
                         "Events",
                         L("Events"),
                         url: "Events",
@@ -63,23 +55,7 @@ namespace ECJ.Web
                         icon: "fa fa-thumbs-up",
                         requiresAuthentication: true
                         )
-                )/*.AddItem(
-                //    new MenuItemDefinition(
-                //        "About",
-                //        L("About"),
-                //        url: "About",
-                //        icon: "fa fa-info-circle",
-                //        requiresAuthentication: true
-                //        )
-                )*/.AddItem(
-                    new MenuItemDefinition(
-                        "Calculateur",
-                        L("Cal"),
-                        url: "Calculateur",
-                        icon: "fa fa-money",
-                        requiresAuthentication: true
-                        )
-                ); ;
+                );
         }
 
         private static ILocalizableString L(string name)
