@@ -12,21 +12,27 @@ namespace ECJ.Web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblUtilisateur
+    public partial class tblEngagement
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblUtilisateur()
+        public tblEngagement()
         {
-            this.tblMemo = new HashSet<tblMemo>();
-            this.tblMemo1 = new HashSet<tblMemo>();
+            this.tblSousEvenement = new HashSet<tblSousEvenement>();
         }
     
-        public string IdUser { get; set; }
-        public string motPasse { get; set; }
+        public int noEngagement { get; set; }
+        public string duree { get; set; }
+        public string lieu { get; set; }
+        public Nullable<System.DateTime> date { get; set; }
+        public Nullable<System.TimeSpan> heure { get; set; }
+        public string nature { get; set; }
+        public string commentaire { get; set; }
+        public string description { get; set; }
+        public string descriptionCourte { get; set; }
+        public Nullable<System.DateTime> dateSupprime { get; set; }
+        public string noContrat { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblMemo> tblMemo { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblMemo> tblMemo1 { get; set; }
+        public virtual ICollection<tblSousEvenement> tblSousEvenement { get; set; }
     }
 }

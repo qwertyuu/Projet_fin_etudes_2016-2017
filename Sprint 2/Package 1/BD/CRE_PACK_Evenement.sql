@@ -65,6 +65,7 @@ CREATE TABLE S_evenement.tblSousEvenement (
 	,description TEXT  NULL
 	,noEvenement INT NOT NULL
 	,dateSupprime DATETIME NULL
+	,noEngagement INT NULL
 	);
 PRINT 'Fin de création de la table tblSousEvenement'
 GO
