@@ -1,30 +1,37 @@
-﻿
+﻿@using Abp.Web.Mvc.Extensions
+
 @{
     ViewBag.Title = "ViewCalculateur";
 }
 <h2>Calculateur</h2>
-<div class="row" id="calculateur">
+
+@section scripts
+{
+    @Html.IncludeScript("~/Views/Calculateur/Index.js")
+    @Html.IncludeStyle("~/Views/Calculateur/Index.css")
+}
+<div class="row">
     <form class="form-horizontal">
-        <div class="col-md-6">
-            <table class="table">
+        <div class="col-md-6" id="calculateur" >
+            <table class="table" >
                 <tbody>
                     <tr>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="inputDefault">Billets</label>
-                                <input type="text" class="form-control" id="inputDefault">
+                                <input type="text" class="form-control" id="nbBillet" onblur="calculBillet()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="inputDefault">Prix</label>
-                                <input type="text" class="form-control" id="inputDefault">
+                                <input type="text" class="form-control" id="prixBillet" onblur="calculBillet()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="disabledInput">Total</label>
-                                <input class="form-control" id="disabledInput" type="text" disabled="">
+                                <input class="form-control" id="totalBillet" type="text" disabled="">
                             </div>
                         </th>
                     </tr>
@@ -32,19 +39,19 @@
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="inputDefault">Billets V.I.P</label>
-                                <input type="text" class="form-control" id="inputDefault">
+                                <input type="text" class="form-control" id="nbBilletVIP" onblur="calculBilletVIP()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="inputDefault">Prix</label>
-                                <input type="text" class="form-control" id="inputDefault">
+                                <input type="text" class="form-control" id="prixBilletVIP" onblur="calculBilletVIP()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="disabledInput">Total</label>
-                                <input class="form-control" id="disabledInput" type="text" disabled="">
+                                <input class="form-control" id="totalBilletVIP" type="text" disabled="">
                             </div>
                         </th>
                     </tr>
@@ -76,28 +83,9 @@
         </div>
     </form>
 </div>
-
 <form class="form-horizontal">
     <div class="row" id="SouperPlaces">
-        <div class="col-md-6" id="forfaits">
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <th>Forfaits inclus</th>
-                    </tr>
-                    <tr>
-                        <td>Souper Spectacle</td>
-                    </tr>
-                    <tr>
-                        <td>Rabais par l'âge</td>
-                    </tr>
-                    <tr>
-                        <td>Réductions de prix</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-6" id="souper">  
+        <div class="col-md-6" id="souper">
             Souper Spectacle
             <table class="table">
                 <tbody>
@@ -124,17 +112,41 @@
                 </tbody>
             </table>
         </div>
+        <div class="col-md-6" id="forfaits">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Forfaits inclus</th>
+                    </tr>
+                    <tr>
+                        <td>Souper Spectacle</td>
+                    </tr>
+                    <tr>
+                        <td>Rabais par l'âge</td>
+                    </tr>
+                    <tr>
+                        <td>Réductions de prix</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </form>
 
 <form class="form-horizontal">
-    <div class="col-md-6" id="age">
+    <div class="col-md-6"  id="age">
         <table class="table">
             Reduction selon les tranches d'âge
             <tr>
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Jeunes % Rabais</label>
+                        <input type="text" class="form-control" id="inputDefault">
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label" for="inputDefault">Nombre de billets</label>
                         <input type="text" class="form-control" id="inputDefault">
                     </div>
                 </th>
@@ -154,6 +166,12 @@
                 </th>
                 <th>
                     <div class="form-group">
+                        <label class="control-label" for="inputDefault">Nombre de billets</label>
+                        <input type="text" class="form-control" id="inputDefault">
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
                         <label class="control-label" for="disabledInput">Total</label>
                         <input class="form-control" id="disabledInput" type="text" disabled="">
                     </div>
@@ -168,6 +186,12 @@
                 </th>
                 <th>
                     <div class="form-group">
+                        <label class="control-label" for="inputDefault">Nombre de billets</label>
+                        <input type="text" class="form-control" id="inputDefault">
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
                         <label class="control-label" for="disabledInput">Total</label>
                         <input class="form-control" id="disabledInput" type="text" disabled="">
                     </div>
@@ -176,9 +200,13 @@
         </table>
     </div>
 </form>
+<div class="col-md-6" id="carte">
+    Carte de l'emplacement de la salle.
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2648.6453269213494!2d-71.24667188474935!3d48.405753937193936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2dd30e450fd3bd83!2zQ8OpZ2VwIGRlIEpvbnF1acOocmU!5e0!3m2!1sfr!2sca!4v1476204181668" width="350" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
 <form class="form-horizontal">
-    <div class="row" id="rabais">
-        <div class="col-md-6">
+    <div class="row">
+        <div class="col-md-6"  id="rabais">
             Billet a prix réduits.
             <table class="table">
                 <tbody>
@@ -198,7 +226,7 @@
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="disabledInput">Total</label>
-                                <input class="form-control" id="disabledInput" type="text"disabled="">
+                                <input class="form-control" id="disabledInput" type="text" disabled="">
                             </div>
                         </th>
                     </tr>
@@ -218,7 +246,7 @@
                     </tr>
                     <tr>
                         <th>
-                           2800.00$
+                            2800.00$
                         </th>
                         <th>
                             3500.00$
@@ -227,6 +255,10 @@
                 </thead>
             </table>
             <a href="#" class="btn btn-default">Calculer</a>
+        </div>
+        <div class="col-md-6" id="map">
+            Plan de la salle
+            <img src="http://i.imgur.com/2VxTEYs.png" height="700" width="500"/>
         </div>
     </div>
 </form>
