@@ -13,5 +13,12 @@ namespace ECJ.Web.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [Route("CMemo/FirstAjax/")]
+        public ActionResult FirstAjax(string expediteur, string destinataire, string message)
+        {
+            return Content(expediteur + destinataire + message);
+        }
     }
 }

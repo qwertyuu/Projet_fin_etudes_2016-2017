@@ -1,28 +1,54 @@
-﻿<div class="modal fade" id="MemoCreateModal" tabindex="-1" role="dialog" aria-labelledby="MemoCreateModalLabel" data-backdrop="static">
+﻿s<div class="modal fade" id="MemoCreateModal" tabindex="-1" role="dialog" aria-labelledby="MemoCreateModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form name="userCreateForm" role="form" novalidate class="form-validation">
+            <form id="memoForm" name="memoCreateForm" role="form" novalidate class="form-validation">
+
                 <div class="modal-header">
+
                     <h4 class="modal-title">
                         <span>Créer un nouveau mémo</span>
                     </h4>
                 </div>
                 <div class="modal-body">
-
+                    @{ 
+                        List<string> utilisateurs = new List<string>()
+                        {
+                            "admin",
+                            "user"
+                        };
+                    }
 
                     <div class="form-group">
                         <label>Destinataire</label>
-                        <input type="text" name="destinataire" class="form-control" required maxlength="@ECJ.Users.User.MaxNameLength">
+                        <select name="destinataire" class="form-control" required>
+                            @foreach (string utilisateur in utilisateurs)
+                            {
+                                <option value="@utilisateur">@utilisateur</option>
+                            }
+                        </select> 
                     </div>
 
                     <div class="form-group">
                         <label>Message</label>
                         <textarea name="message" class="form-control" rows="10" cols="5" required></textarea>
                     </div>
+                    <div class="form-group">
+                        <div id="messageSucces" class="alert alert-success" style="display:none;">
+                            <i class="fa fa-check"></i><strong> Message envoyé</strong> avec succès.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="messageErreur" class="alert alert-danger" style="display:none;">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-ban fa-stack-2x fa-lg"></i><i class="fa fa-envelope-o fa-stack-1x fa-lg"></i>
+                            </span>
+                            <strong> Message envoyé</strong> avec succès.
+                        </div>
+                    </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary blue"><i class="fa fa-arrow-right"></i> <span>Envoyer</span></button>
+                    <button type="button" id="envoyerMemo" class="btn btn-primary blue"><i class="fa fa-arrow-right"></i> <span>Envoyer</span></button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">@L("Cancel")</button>
                 </div>
             </form>
