@@ -1,0 +1,157 @@
+﻿@using Abp.Authorization.Users
+@using Abp.Web.Mvc.Extensions
+@{
+    ViewBag.Title = "Detail";
+}
+@section scripts
+{
+    @Html.IncludeScript("~/Views/Events/Detail.js")
+}
+
+<h2>Détail d'un évènement</h2>
+@{
+    List<string[]> elements = new List<string[]>()
+    {
+        new string[] {"Nom", "FestiRire 2017" },
+        new string[] {"Date de début", "24/06/2017" },
+        new string[] {"Date de fin", "24/09/2017" },
+        new string[] {"Lien hypertexte", "http://www.hahaha.com/fr" }
+    };
+}
+<form name="createPub" role="form" novalidate class="form-validation">
+
+    @foreach (var user in elements)
+    {
+        <div class="form-group">
+            <label>@user[0]</label>
+            <div class="well well-sm">
+                @user[1]
+            </div>
+        </div>
+    }
+    <div class="form-group">
+        <label>Description</label>
+        <div class="well well-lg">
+            Ceci est la description du festirire 2017
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Affiche</label>
+        <div class="well well-sm">
+            <img src="http://img.over-blog-kiwi.com/0/54/21/78/20160706/ob_c88687_affiche-festirire-web.jpg" height="500" />
+        </div>
+    </div>
+    <label>Sous-Évènements</label>
+    <a href="/sousEvenements/Ajout" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un sous-évènement</a>
+    <div class="form-group">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>Sous-Evenement 1</td>
+                    <td>
+                        <a href="/sousEvenements/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sous-Evenement 2</td>
+                    <td>
+                        <a href="/sousEvenements/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sous-Evenement 3</td>
+                    <td>
+                        <a href="/sousEvenements/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <label>Activités</label>
+    <a href="/Activite/Ajout" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#liste" data-toggle="tab" aria-expanded="true">Liste</a></li>
+        <li class=""><a href="#calendrier" data-toggle="tab" aria-expanded="false">Calendrier</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane active fade in" id="liste">
+            <div class="form-group">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Responsable</th>
+                            <th>Tâche</th>
+                            <th>Détails</th>
+                            <th>Date</th>
+                            <th class="col-md-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>Jean Tremblay</td>
+                            <td>Passer le balai</td>
+                            <td>Jean a passé le balai dans la salle</td>
+                            <td>24-09-2016</td>
+                            <td>
+                                <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jean-Claude Bouchard</td>
+                            <td>Passer le balai</td>
+                            <td>Jean-Claude a passé le balai derrière Jean Tremblay</td>
+                            <td>25-09-2016</td>
+                            <td>
+                                <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Rémy Brassard</td>
+                            <td>Vérifier les lieux</td>
+                            <td>Rémy à vérifié la salle et tout est OK</td>
+                            <td>26-09-2016</td>
+                            <td>
+                                <a href="/Events/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane fade in clearfix" id="calendrier">
+            <div id="calendrier-inner" class="col-md-4 col-md-offset-4">
+
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</form>

@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "CreerActivite";
+}
+
+<h2>CreerActivite</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tblJeu</legend>
+
+        <label for="responsable">responsable</label>
+
+        <input type="text" name="responsable"><br>
+
+        <label for="Etat">Etat</label>
+
+        <input type="text" name="Etat"><br>
+
+        <label for="Taches">Taches</label>
+
+        <input type="text" name="Taches"><br>
+
+        <label for="Details">Details</label>
+
+        <input type="text" name="Details"><br>
+
+        <label for="Date">Date</label>
+        <form>
+            Date :
+            <input type="datetime-local" name="Date">
+        </form>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+                        }

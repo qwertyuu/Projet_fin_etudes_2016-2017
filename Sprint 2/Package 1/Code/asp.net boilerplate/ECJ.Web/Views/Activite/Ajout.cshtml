@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Activité</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+
+        <div class="form-group">
+            <label>Nom du Responsable : </label>
+            <input class="form-control" type="text" name="UserName" required maxlength="50" minlength="2">
+        </div>
+
+        <div class="form-group">
+            <label>État : </label>
+            <input class="form-control" type="text" name="UserName" required maxlength="25" minlength="2">
+        </div>
+
+        <div class="form-group">
+            <label>Tâches : </label>
+            <input class="form-control" type="text" name="UserName" required maxlength="50" minlength="2">
+        </div>
+
+        <div class="form-group">
+            <label>Details : </label>
+            <input class="form-control" type="text" name="UserName">
+        </div>
+
+        <form>
+            Date :
+            <input class="form-control" type="date" name="date">
+        </form>
+
+        <p>
+            <input type="submit" value="Create" class="btn btn-primary pull-right" />
+        </p>
+    </fieldset>
+}

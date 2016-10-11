@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Ajout";
+}
+
+<h2>Créer un don</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+
+        <div class="form-group">
+            <label>Nom du Commanditaire : </label>
+            <input class="form-control" type="text" name="UserName" required maxlength="25" minlength="2">
+        </div>
+
+        <div class="form-group">
+            <label>Montant à donner : </label>
+            <input class="form-control" type="text" name="Number" required maxlength="25" minlength="1">
+        </div>
+
+        <p>
+            <input type="submit" value="Create" class="btn btn-primary pull-right" />
+        </p>
+
+    </fieldset>
+}

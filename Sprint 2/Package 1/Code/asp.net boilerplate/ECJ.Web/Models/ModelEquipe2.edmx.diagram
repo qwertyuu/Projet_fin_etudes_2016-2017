@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="148f2eb51671487da8703732341953db" Name="Diagram1">
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblEngagement" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblActivite" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblCommanditaire" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblDon" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblEvenement" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblSousEvenement" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblForfait" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblSalle" Width="1.5" PointX="1.5" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblService" Width="1.5" PointX="0.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblMemo" Width="1.5" PointX="11" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblUtilisateur" Width="1.5" PointX="8.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAgencePublicite" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffre" Width="1.5" PointX="6" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffreAgence" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblMedia" Width="1.5" PointX="8.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblSoumission" Width="1.5" PointX="10.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblStatut" Width="1.5" PointX="3.75" PointY="16.5" IsExpanded="true" />
+        <AssociationConnector Association="PE2_OfficielModel.NOENG_SOUSEVEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.NOSOUSEVEN_ACT_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.NOCOMM_DON_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.NOSOUSEVEN_DON_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.EVENEMENT_APPEL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.NOEVEN_SOUSEVEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.DESTINATAIRE_UTILISATEUR_MEMO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.EXPEDITEUR_UTILISATEUR_MEMO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.AGENCE_PUB_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.APPEL_OFFRE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.STATUT_APPEL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.SOUMISSION_APPEL_OFFRE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.STATUT_APPEL_OFFRE_AGENCE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.tblForfaitSousEvenement" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.tblServiceOffert" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.tblServiceRequis" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.tblMediaAppelOffre" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Activités</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <form class="page-header">
+            <div class="input-group">
+                <input class="form-control" type="search">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary pull-right" type="button">Rechercher</button>
+                </span>
+            </div>
+        </form>
+        <a href="/Activite/Ajout" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
+        <table class="table" align="center">
+            <thead>
+                <tr>
+                    <th>Nom du responsable</th>
+                    <th>Tâche</th>
+                    <th>Détails</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="success">
+                    <td>Gilles Tremblay</td>
+                    <td>Faire une entrevue à la radio</td>
+                    <td>Le transport doit être fourni et les repas doivent être payé (matin-midi-soir)</td>
+                    <td>30/09/2016</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+
+                <tr class="danger">
+                    <td>Michelin Harvey</td>
+                    <td>Faire l'éclairage ainsi que le sons.</td>
+                    <td>La lumière doit etre ajustée selon la norme et le sons doit etre d'une belle qualitée.</td>
+                    <td>12/09/2016</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+
+                <tr class="danger">
+                    <td>Paul Gauthier</td>
+                    <td>Faire une publication</td>
+                    <td>La publication doit promouvoir un sous-évènement. Elle doit être publié sur Facebook, twitter et sur instagram(avec une photo de l'évènement)</td>
+                    <td>14/10/2016</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

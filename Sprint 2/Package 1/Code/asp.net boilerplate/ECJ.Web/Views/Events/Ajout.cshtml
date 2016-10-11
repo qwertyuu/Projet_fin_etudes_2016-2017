@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Ajout";
+}
+
+<h2>Créer un évènement</h2>
+@{
+    List<string> elements = new List<string>()
+    {
+        "Nom",
+        "Date de début",
+        "Date de fin",
+        "Lien hypertexte",
+
+    };
+}
+<form name="createPub" role="form" novalidate class="form-validation">
+
+    @foreach (var user in elements)
+    {
+        <div class="form-group">
+            <label>@user</label>
+            <input class="form-control" type="text" name="nom" required>
+        </div>
+    }
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" rows="5" id="textArea" required></textarea>
+    </div>
+    <div class="form-group">
+        <label>Affiche</label>
+        <input type="file" name="pic" accept="image/*">
+    </div>
+    <div class="form-group pull-right">
+        <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Ajouter</span></button>
+        <a href="/Events" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
+</form>

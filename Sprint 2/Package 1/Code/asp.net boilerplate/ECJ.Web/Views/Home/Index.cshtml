@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.ActiveMenu = "Home"; //The menu item will be active for this page.
+}
+<h1>@L("WellcomeMessage")</h1>
+
+<div class="jumbotron">
+    <h1>ECJ</h1>
+    <p class="lead">ECJ, qui veut dire Évènement du cégep de Jonquière, est une entreprise qui créer, gère et applique des évènement au cégep de jonquière.</p>
+</div>
+
+<h3>Memos</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Expediteur</th>
+            <th>Informations</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tr class="warning">
+        <td>Pierre-Alexandre Pageau</td>
+        <td>Corriger l'affichage de l'interface de commanditaires</td>
+        <td>2016/10/02</td>
+        <td>
+            <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+        </td>
+    </tr>
+    <tr>
+        <td>Guillaume Gendron</td>
+        <td>Apeller la radio pour parler de l'évènement de 2017</td>
+        <td>2016/09/17</td>
+        <td>
+            <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+        </td>
+    </tr>
+    <tr class="success">
+        <td>François Gabriel</td>
+        <td>Vérifier les dates des évènements</td>
+        <td>2016/09/02</td>
+        <td>
+            <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+        </td>
+    </tr>
+</table>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Évènements</h2>
+        <p>
+            Ici contient tous les informations par rapports aux événements. Il est possible de voir chaque évènement, ainsi que leurs dates et l'heure de ces derniers.
+        </p>
+        <p><a class="btn btn-primary" href="/Events/Index">Voir les Évènements &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Publicités</h2>
+        <p>
+            Ici contient tous les informations par rapports aux publicités. Il est possible de voir l'affiche, le média ainsi que la date de la sortie.
+        </p>
+        <p><a class="btn btn-primary" href="/AppelOffre/Index">Voir les publicitées &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Calculateur de forfaits</h2>
+        <p>Ici contient tous les informations par rapport aux forfaits. Il est possible de voir les types de forfaits, les places, le prix ainsi que de faire un approximatif du prix final selon le nombre de place.</p>
+        <p><a class="btn btn-primary" href="/Calculateur/Index">Voir les forfaits &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Activités</h2>
+        <p>Ici contient tous les informations par rapport aux activités. Il est possible de voir les responsables, les tâches ainsi que les details des activités .</p>
+        <p><a class="btn btn-primary" href="/Activite/Index">Voir les activités &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Commanditaires</h2>
+        <p>Ici contient tous les informations par rapport aux commanditaires. Il est possible de voir les commanditaires, leurs dons ainsi que leurs logo.</p>
+        <p><a class="btn btn-primary" href="/Commanditaire/Index">Voir les commanditaires &raquo;</a></p>
+    </div>
+</div>
