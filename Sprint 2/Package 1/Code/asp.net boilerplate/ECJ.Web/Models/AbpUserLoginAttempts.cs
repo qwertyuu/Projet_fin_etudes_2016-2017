@@ -12,12 +12,17 @@ namespace ECJ.Web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class vueSomEvenement
+    public partial class AbpUserLoginAttempts
     {
-        public string nom { get; set; }
-        public System.DateTime dateDebut { get; set; }
-        public System.DateTime dateFin { get; set; }
-        public string description { get; set; }
-        public int noEvenement { get; set; }
+        public long Id { get; set; }
+        public Nullable<int> TenantId { get; set; }
+        public string TenancyName { get; set; }
+        public Nullable<long> UserId { get; set; }
+        public string UserNameOrEmailAddress { get; set; }
+        public string ClientIpAddress { get; set; }
+        public string ClientName { get; set; }
+        public string BrowserInfo { get; set; }
+        public byte Result { get; set; }
+        public System.DateTime CreationTime { get; set; }
     }
 }

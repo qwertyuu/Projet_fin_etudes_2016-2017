@@ -30,12 +30,10 @@ namespace ECJ.Web.Models
         public Nullable<System.DateTime> dateSupprime { get; set; }
         public Nullable<int> noEngagement { get; set; }
     
-        public virtual tblEngagement tblEngagement { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblActivite> tblActivite { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblDon> tblDon { get; set; }
-        public virtual tblEvenement tblEvenement { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblForfait> tblForfait { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

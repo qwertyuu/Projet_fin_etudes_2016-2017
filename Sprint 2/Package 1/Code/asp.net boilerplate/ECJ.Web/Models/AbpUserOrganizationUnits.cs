@@ -12,12 +12,13 @@ namespace ECJ.Web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class vueSomEvenement
+    public partial class AbpUserOrganizationUnits
     {
-        public string nom { get; set; }
-        public System.DateTime dateDebut { get; set; }
-        public System.DateTime dateFin { get; set; }
-        public string description { get; set; }
-        public int noEvenement { get; set; }
+        public long Id { get; set; }
+        public Nullable<int> TenantId { get; set; }
+        public long UserId { get; set; }
+        public long OrganizationUnitId { get; set; }
+        public System.DateTime CreationTime { get; set; }
+        public Nullable<long> CreatorUserId { get; set; }
     }
 }

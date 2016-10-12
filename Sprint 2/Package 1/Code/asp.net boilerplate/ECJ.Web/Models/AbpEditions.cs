@@ -12,27 +12,29 @@ namespace ECJ.Web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblEvenement
+    public partial class AbpEditions
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblEvenement()
+        public AbpEditions()
         {
-            this.tblActivite = new HashSet<tblActivite>();
-            this.tblAppelOffre = new HashSet<tblAppelOffre>();
+            this.AbpFeatures = new HashSet<AbpFeatures>();
+            this.AbpTenants = new HashSet<AbpTenants>();
         }
     
-        public int noEvenement { get; set; }
-        public string nom { get; set; }
-        public System.DateTime dateDebut { get; set; }
-        public System.DateTime datefin { get; set; }
-        public byte[] affiche { get; set; }
-        public string url { get; set; }
-        public string description { get; set; }
-        public Nullable<System.DateTime> dateSupprime { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string DisplayName { get; set; }
+        public bool IsDeleted { get; set; }
+        public Nullable<long> DeleterUserId { get; set; }
+        public Nullable<System.DateTime> DeletionTime { get; set; }
+        public Nullable<System.DateTime> LastModificationTime { get; set; }
+        public Nullable<long> LastModifierUserId { get; set; }
+        public System.DateTime CreationTime { get; set; }
+        public Nullable<long> CreatorUserId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblActivite> tblActivite { get; set; }
+        public virtual ICollection<AbpFeatures> AbpFeatures { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblAppelOffre> tblAppelOffre { get; set; }
+        public virtual ICollection<AbpTenants> AbpTenants { get; set; }
     }
 }

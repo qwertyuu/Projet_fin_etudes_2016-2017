@@ -12,12 +12,17 @@ namespace ECJ.Web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class vueSomEvenement
+    public partial class AbpLanguageTexts
     {
-        public string nom { get; set; }
-        public System.DateTime dateDebut { get; set; }
-        public System.DateTime dateFin { get; set; }
-        public string description { get; set; }
-        public int noEvenement { get; set; }
+        public long Id { get; set; }
+        public Nullable<int> TenantId { get; set; }
+        public string LanguageName { get; set; }
+        public string Source { get; set; }
+        public string Key { get; set; }
+        public string Value { get; set; }
+        public Nullable<System.DateTime> LastModificationTime { get; set; }
+        public Nullable<long> LastModifierUserId { get; set; }
+        public System.DateTime CreationTime { get; set; }
+        public Nullable<long> CreatorUserId { get; set; }
     }
 }

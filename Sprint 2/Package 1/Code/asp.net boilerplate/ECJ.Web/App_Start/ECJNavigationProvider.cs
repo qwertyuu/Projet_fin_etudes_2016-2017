@@ -41,9 +41,9 @@ namespace ECJ.Web
                         )
                ).AddItem(
                     new MenuItemDefinition(
-                        "AppelOffre",
+                        "AppellOffre",
                         L("pub"),
-                        url: "AppelOffre",
+                        url: "AppellOffre",
                         icon: "fa fa-television",
                         requiresAuthentication: true
                         )

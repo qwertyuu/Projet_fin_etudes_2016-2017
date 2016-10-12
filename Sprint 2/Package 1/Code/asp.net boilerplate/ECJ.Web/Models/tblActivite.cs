@@ -24,6 +24,7 @@ namespace ECJ.Web.Models
         public int noEvenement { get; set; }
         public int noSousEvenement { get; set; }
     
+        public virtual tblEvenement tblEvenement { get; set; }
         public virtual tblSousEvenement tblSousEvenement { get; set; }
     }
 }

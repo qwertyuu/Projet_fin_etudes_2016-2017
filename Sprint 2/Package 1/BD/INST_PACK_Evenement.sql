@@ -14,7 +14,7 @@ PRINT('Début des insertion de la table des évènements')
 
 GO
 
-<<<<<<< HEAD
+
 INSERT INTO S_Evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url],[description],[dateSupprime]) VALUES('Festi-rire 2010','2010/01/02','2010/11/02',NULL,'https://jimdo.com/pulvinar/sed/nisl/nunc/rhoncus.json?dictumst=enim&morbi=sit&vestibulum=amet&velit=nunc&id=viverra&pretium=dapibus&iaculis=nulla&diam=suscipit&erat=ligula&fermentum=in&justo=lacus&nec=curabitur&condimentum=at&neque=ipsum&sapien=ac&placerat=tellus&ante=semper&nulla=interdum&justo=mauris&aliquam=ullamcorper&quis=purus&turpis=sit&eget=amet&elit=nulla&sodales=quisque&scelerisque=arcu&mauris=libero','dictum eu, placerat eget, venenatis a, magna. Lorem',NULL);
 INSERT INTO S_Evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url],[description],[dateSupprime]) VALUES('Festi-rire 2011','2011/01/02','2011/11/02',NULL,'http://disqus.com/neque/libero/convallis/eget/eleifend.jsp?consequat=proin&in=risus&consequat=praesent&ut=lectus&nulla=vestibulum&sed=quam&accumsan=sapien&felis=varius&ut=ut&at=blandit&dolor=non&quis=interdum&odio=in&consequat=ante&varius=vestibulum&integer=ante&ac=ipsum&leo=primis&pellentesque=in&ultrices=faucibus&mattis=orci&odio=luctus&donec=et&vitae=ultrices&nisi=posuere&nam=cubilia&ultrices=curae&libero=duis&non=faucibus&mattis=accumsan&pulvinar=odio&nulla=curabitur&pede=convallis&ullamcorper=duis&augue=consequat&a=dui&suscipit=nec&nulla=nisi&elit=volutpat&ac=eleifend&nulla=donec&sed=ut&vel=dolor&enim=morbi&sit=vel&amet=lectus&nunc=in&viverra=quam&dapibus=fringilla&nulla=rhoncus&suscipit=mauris&ligula=enim&in=leo&lacus=rhoncus&curabitur=sed&at=vestibulum&ipsum=sit&ac=amet&tellus=cursus&semper=id&interdum=turpis&mauris=integer&ullamcorper=aliquet&purus=massa&sit=id&amet=lobortis&nulla=convallis&quisque=tortor&arcu=risus&libero=dapibus&rutrum=augue&ac=vel&lobortis=accumsan&vel=tellus','vulputate eu, odio. Phasellus at augue id ante dictum cursus. Nunc mauris elit, dictum eu, eleifend nec, malesuada ut, sem. Nulla interdum. Curabitur dictum. Phasellus in felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris sit amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In mi pede,',NULL);
 INSERT INTO S_Evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url],[description],[dateSupprime]) VALUES('Festi-rire 2012','2012/01/02','2012/11/02',NULL,'http://e-recht24.de/non/interdum/in/ante/vestibulum.aspx?odio=molestie&odio=lorem&elementum=quisque&eu=ut&interdum=erat&eu=curabitur&tincidunt=gravida&in=nisi&leo=at&maecenas=nibh&pulvinar=in&lobortis=hac&est=habitasse&phasellus=platea&sit=dictumst&amet=aliquam&erat=augue&nulla=quam&tempus=sollicitudin&vivamus=vitae&in=consectetuer&felis=eget&eu=rutrum&sapien=at&cursus=lorem&vestibulum=integer&proin=tincidunt&eu=ante&mi=vel&nulla=ipsum&ac=praesent&enim=blandit&in=lacinia&tempor=erat&turpis=vestibulum&nec=sed&euismod=magna&scelerisque=at&quam=nunc&turpis=commodo&adipiscing=placerat&lorem=praesent&vitae=blandit&mattis=nam&nibh=nulla&ligula=integer&nec=pede&sem=justo&duis=lacinia&aliquam=eget&convallis=tincidunt&nunc=eget&proin=tempus&at=vel&turpis=pede&a=morbi&pede=porttitor&posuere=lorem&nonummy=id&integer=ligula&non=suspendisse&velit=ornare&donec=consequat&diam=lectus&neque=in&vestibulum=est&eget=risus&vulputate=auctor&ut=sed&ultrices=tristique&vel=in&augue=tempus&vestibulum=sit&ante=amet&ipsum=sem&primis=fusce&in=consequat','Phasellus ornare. Fusce mollis. Duis sit amet diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at, velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class',NULL);
@@ -26,7 +26,7 @@ INSERT INTO S_Evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url]
 INSERT INTO S_Evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url],[description],[dateSupprime]) VALUES('Festi-rire 2018','2018/01/02','2018/11/02',NULL,'https://wix.com/erat/eros.jpg?et=magnis&commodo=dis&vulputate=parturient&justo=montes&in=nascetur&blandit=ridiculus&ultrices=mus&enim=vivamus&lorem=vestibulum&ipsum=sagittis&dolor=sapien&sit=cum&amet=sociis&consectetuer=natoque&adipiscing=penatibus&elit=et&proin=magnis&interdum=dis&mauris=parturient&non=montes&ligula=nascetur&pellentesque=ridiculus&ultrices=mus&phasellus=etiam&id=vel&sapien=augue&in=vestibulum&sapien=rutrum&iaculis=rutrum&congue=neque&vivamus=aenean&metus=auctor&arcu=gravida&adipiscing=sem&molestie=praesent&hendrerit=id&at=massa&vulputate=id&vitae=nisl&nisl=venenatis&aenean=lacinia&lectus=aenean&pellentesque=sit&eget=amet&nunc=justo&donec=morbi&quis=ut&orci=odio&eget=cras&orci=mi&vehicula=pede&condimentum=malesuada&curabitur=in&in=imperdiet&libero=et&ut=commodo&massa=vulputate&volutpat=justo&convallis=in&morbi=blandit&odio=ultrices&odio=enim','Sed eget lacus. Mauris non dui nec urna suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum ante ipsum primis in faucibus orci',NULL);
 INSERT INTO S_Evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url],[description],[dateSupprime]) VALUES('Festi-rire 2019','2019/01/02','2019/11/02',NULL,NULL,'arcu ac orci. Ut semper pretium neque. Morbi quis urna.',NULL);
 INSERT INTO S_Evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url],[description],[dateSupprime]) VALUES('Festi-rire 2009','2009/01/02','2009/11/02',NULL,NULL,'arcu ac orci. Ut semper pretium neque. Morbi quis urna.',NULL);
-=======
+
 INSERT INTO S_evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url],[description],[dateSupprime]) VALUES('Festi-rire 2010','2010/01/02','2010/11/02',NULL,'https://jimdo.com/pulvinar/sed/nisl/nunc/rhoncus.json?dictumst=enim&morbi=sit&vestibulum=amet&velit=nunc&id=viverra&pretium=dapibus&iaculis=nulla&diam=suscipit&erat=ligula&fermentum=in&justo=lacus&nec=curabitur&condimentum=at&neque=ipsum&sapien=ac&placerat=tellus&ante=semper&nulla=interdum&justo=mauris&aliquam=ullamcorper&quis=purus&turpis=sit&eget=amet&elit=nulla&sodales=quisque&scelerisque=arcu&mauris=libero','dictum eu, placerat eget, venenatis a, magna. Lorem',NULL);
 INSERT INTO S_evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url],[description],[dateSupprime]) VALUES('Festi-rire 2011','2011/01/02','2011/11/02',NULL,'http://disqus.com/neque/libero/convallis/eget/eleifend.jsp?consequat=proin&in=risus&consequat=praesent&ut=lectus&nulla=vestibulum&sed=quam&accumsan=sapien&felis=varius&ut=ut&at=blandit&dolor=non&quis=interdum&odio=in&consequat=ante&varius=vestibulum&integer=ante&ac=ipsum&leo=primis&pellentesque=in&ultrices=faucibus&mattis=orci&odio=luctus&donec=et&vitae=ultrices&nisi=posuere&nam=cubilia&ultrices=curae&libero=duis&non=faucibus&mattis=accumsan&pulvinar=odio&nulla=curabitur&pede=convallis&ullamcorper=duis&augue=consequat&a=dui&suscipit=nec&nulla=nisi&elit=volutpat&ac=eleifend&nulla=donec&sed=ut&vel=dolor&enim=morbi&sit=vel&amet=lectus&nunc=in&viverra=quam&dapibus=fringilla&nulla=rhoncus&suscipit=mauris&ligula=enim&in=leo&lacus=rhoncus&curabitur=sed&at=vestibulum&ipsum=sit&ac=amet&tellus=cursus&semper=id&interdum=turpis&mauris=integer&ullamcorper=aliquet&purus=massa&sit=id&amet=lobortis&nulla=convallis&quisque=tortor&arcu=risus&libero=dapibus&rutrum=augue&ac=vel&lobortis=accumsan&vel=tellus','vulputate eu, odio. Phasellus at augue id ante dictum cursus. Nunc mauris elit, dictum eu, eleifend nec, malesuada ut, sem. Nulla interdum. Curabitur dictum. Phasellus in felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris sit amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In mi pede,',NULL);
 INSERT INTO S_evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url],[description],[dateSupprime]) VALUES('Festi-rire 2012','2012/01/02','2012/11/02',NULL,'http://e-recht24.de/non/interdum/in/ante/vestibulum.aspx?odio=molestie&odio=lorem&elementum=quisque&eu=ut&interdum=erat&eu=curabitur&tincidunt=gravida&in=nisi&leo=at&maecenas=nibh&pulvinar=in&lobortis=hac&est=habitasse&phasellus=platea&sit=dictumst&amet=aliquam&erat=augue&nulla=quam&tempus=sollicitudin&vivamus=vitae&in=consectetuer&felis=eget&eu=rutrum&sapien=at&cursus=lorem&vestibulum=integer&proin=tincidunt&eu=ante&mi=vel&nulla=ipsum&ac=praesent&enim=blandit&in=lacinia&tempor=erat&turpis=vestibulum&nec=sed&euismod=magna&scelerisque=at&quam=nunc&turpis=commodo&adipiscing=placerat&lorem=praesent&vitae=blandit&mattis=nam&nibh=nulla&ligula=integer&nec=pede&sem=justo&duis=lacinia&aliquam=eget&convallis=tincidunt&nunc=eget&proin=tempus&at=vel&turpis=pede&a=morbi&pede=porttitor&posuere=lorem&nonummy=id&integer=ligula&non=suspendisse&velit=ornare&donec=consequat&diam=lectus&neque=in&vestibulum=est&eget=risus&vulputate=auctor&ut=sed&ultrices=tristique&vel=in&augue=tempus&vestibulum=sit&ante=amet&ipsum=sem&primis=fusce&in=consequat','Phasellus ornare. Fusce mollis. Duis sit amet diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at, velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class',NULL);
@@ -38,7 +38,6 @@ INSERT INTO S_evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url]
 INSERT INTO S_evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url],[description],[dateSupprime]) VALUES('Festi-rire 2018','2018/01/02','2018/11/02',NULL,'https://wix.com/erat/eros.jpg?et=magnis&commodo=dis&vulputate=parturient&justo=montes&in=nascetur&blandit=ridiculus&ultrices=mus&enim=vivamus&lorem=vestibulum&ipsum=sagittis&dolor=sapien&sit=cum&amet=sociis&consectetuer=natoque&adipiscing=penatibus&elit=et&proin=magnis&interdum=dis&mauris=parturient&non=montes&ligula=nascetur&pellentesque=ridiculus&ultrices=mus&phasellus=etiam&id=vel&sapien=augue&in=vestibulum&sapien=rutrum&iaculis=rutrum&congue=neque&vivamus=aenean&metus=auctor&arcu=gravida&adipiscing=sem&molestie=praesent&hendrerit=id&at=massa&vulputate=id&vitae=nisl&nisl=venenatis&aenean=lacinia&lectus=aenean&pellentesque=sit&eget=amet&nunc=justo&donec=morbi&quis=ut&orci=odio&eget=cras&orci=mi&vehicula=pede&condimentum=malesuada&curabitur=in&in=imperdiet&libero=et&ut=commodo&massa=vulputate&volutpat=justo&convallis=in&morbi=blandit&odio=ultrices&odio=enim','Sed eget lacus. Mauris non dui nec urna suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum ante ipsum primis in faucibus orci',NULL);
 INSERT INTO S_evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url],[description],[dateSupprime]) VALUES('Festi-rire 2019','2019/01/02','2019/11/02',NULL,NULL,'arcu ac orci. Ut semper pretium neque. Morbi quis urna.',NULL);
 INSERT INTO S_evenement.tblEvenement([nom],[dateDebut],[dateFin],[affiche],[url],[description],[dateSupprime]) VALUES('Festi-rire 2009','2009/01/02','2009/11/02',NULL,NULL,'arcu ac orci. Ut semper pretium neque. Morbi quis urna.',NULL);
->>>>>>> Analyse-Sprint2
 
 GO
 
@@ -50,7 +49,7 @@ PRINT('Début des insertions de la table des sous-évènements')
 
 GO
 
-<<<<<<< HEAD
+
 INSERT INTO S_Evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Spectacle 2013','justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a,',NULL,4);
 INSERT INTO S_Evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Collecte de fond 2013','mus. Aenean eget magna. Suspendisse tristique neque venenatis lacus. Etiam bibendum fermentum metus. Aenean sed pede nec ante blandit viverra. Donec tempus, lorem fringilla',NULL,4);
 INSERT INTO S_Evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Spectacle 2019','luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at,',NULL,10);
@@ -66,7 +65,7 @@ INSERT INTO S_Evenement.tblSousEvenement([nom],[description],[dateSupprime],[noE
 INSERT INTO S_Evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Spectacle 2016','est ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim,',NULL,7);
 INSERT INTO S_Evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Collecte de fond 2019','eu','2013/12/08',10);
 INSERT INTO S_Evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Spectacle 2009','eu','2009/12/08',11);
-=======
+
 INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement],[noEngagement]) VALUES('Spectacle 2013','justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a,',NULL,4,2);
 INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement],[noEngagement]) VALUES('Collecte de fond 2013','mus. Aenean eget magna. Suspendisse tristique neque venenatis lacus. Etiam bibendum fermentum metus. Aenean sed pede nec ante blandit viverra. Donec tempus, lorem fringilla',NULL,4,1);
 INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement],[noEngagement]) VALUES('Spectacle 2019','luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at,',NULL,10,3);
@@ -82,7 +81,7 @@ INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noE
 INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement],[noEngagement]) VALUES('Spectacle 2016','est ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim,',NULL,7,13);
 INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement],[noEngagement]) VALUES('Collecte de fond 2019','eu','2013/12/08',10,14);
 INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement],[noEngagement]) VALUES('Spectacle 2009','eu','2009/12/08',11,15);
->>>>>>> Analyse-Sprint2
+
 
 GO
 
@@ -94,7 +93,7 @@ PRINT('Début des insertions de la table des activités')
 
 GO
 
-<<<<<<< HEAD
+
 INSERT INTO S_Evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tache],[detail],[dateSupprime],[noEvenement],[noSousEvenement]) VALUES('Mia Glenn','0','2015/03/05','Euismod PC','quam. Curabitur',NULL,'1',10);
 INSERT INTO S_Evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tache],[detail],[dateSupprime],[noEvenement],[noSousEvenement]) VALUES('Brooke Austin','0','2013/11/22','Massa Rutrum Magna Limited','aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis','2014/04/12','10',14);
 INSERT INTO S_Evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tache],[detail],[dateSupprime],[noEvenement],[noSousEvenement]) VALUES('Athena Hebert','1','2015/06/20','Aliquet Sem Ut Limited','Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam',NULL,'3',13);
@@ -105,7 +104,7 @@ INSERT INTO S_Evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tach
 INSERT INTO S_Evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tache],[detail],[dateSupprime],[noEvenement],[noSousEvenement]) VALUES('Bevis George','0','2014/01/12','Proin Nisl Sem Industries','lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In mi pede, nonummy ut,','2014/11/22','6',9);
 INSERT INTO S_Evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tache],[detail],[dateSupprime],[noEvenement],[noSousEvenement]) VALUES('Cassandra Roth','1','2014/09/13','Fusce Industries','senectus et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit.',NULL,'8',9);
 INSERT INTO S_Evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tache],[detail],[dateSupprime],[noEvenement],[noSousEvenement]) VALUES('Hasad Christensen','1','2015/04/23','Libero Nec PC','et, euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in',NULL,'3',3);
-=======
+
 INSERT INTO S_evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tache],[detail],[dateSupprime],[noEvenement],[noSousEvenement]) VALUES('Mia Glenn','0','2015/03/05','Euismod PC','quam. Curabitur',NULL,'1',10);
 INSERT INTO S_evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tache],[detail],[dateSupprime],[noEvenement],[noSousEvenement]) VALUES('Brooke Austin','0','2013/11/22','Massa Rutrum Magna Limited','aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis','2014/04/12','10',14);
 INSERT INTO S_evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tache],[detail],[dateSupprime],[noEvenement],[noSousEvenement]) VALUES('Athena Hebert','1','2015/06/20','Aliquet Sem Ut Limited','Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam',NULL,'3',13);
@@ -116,7 +115,7 @@ INSERT INTO S_evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tach
 INSERT INTO S_evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tache],[detail],[dateSupprime],[noEvenement],[noSousEvenement]) VALUES('Bevis George','0','2014/01/12','Proin Nisl Sem Industries','lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In mi pede, nonummy ut,','2014/11/22','6',9);
 INSERT INTO S_evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tache],[detail],[dateSupprime],[noEvenement],[noSousEvenement]) VALUES('Cassandra Roth','1','2014/09/13','Fusce Industries','senectus et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit.',NULL,'8',9);
 INSERT INTO S_evenement.tblActivite([nomResponsable],[etat],[dateCreation],[tache],[detail],[dateSupprime],[noEvenement],[noSousEvenement]) VALUES('Hasad Christensen','1','2015/04/23','Libero Nec PC','et, euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in',NULL,'3',3);
->>>>>>> Analyse-Sprint2
+
 
 GO
 
@@ -128,7 +127,7 @@ PRINT('Début des insertions de la table des Commanditaires')
 
 GO
 
-<<<<<<< HEAD
+
 INSERT INTO S_Evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],[url],[textePresentation],[courrielContact],[numTel],[extension],[dateSupprime]) VALUES('In Sodales Consulting','Brent Downs',NULL,NULL,'id enim. Curabitur massa. Vestibulum accumsan neque et','dui.semper.et@eu.co.uk','(418) 471-7024','87332','2017/03/29');
 INSERT INTO S_Evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],[url],[textePresentation],[courrielContact],[numTel],[extension],[dateSupprime]) VALUES('Adipiscing Enim Institute','Jael Rogers',NULL,NULL,'metus eu erat semper rutrum. Fusce dolor quam,','elit.pede.malesuada@Quisquenonummyipsum.edu','(418) 893-8464','98364',NULL);
 INSERT INTO S_Evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],[url],[textePresentation],[courrielContact],[numTel],[extension],[dateSupprime]) VALUES('Fringilla Donec Company','Irma Morse',NULL,NULL,'Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc','magna.nec@Inlorem.net','(418) 039-7810','4455',NULL);
@@ -149,7 +148,7 @@ INSERT INTO S_Evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],
 INSERT INTO S_Evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],[url],[textePresentation],[courrielContact],[numTel],[extension],[dateSupprime]) VALUES('Quis Corporation','Malachi Burris',NULL,NULL,'erat vitae risus.','Vivamus.nisi@ridiculus.com','(418) 188-9164','58123',NULL);
 INSERT INTO S_Evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],[url],[textePresentation],[courrielContact],[numTel],[extension],[dateSupprime]) VALUES('Donec Egestas Duis LLP','Tate Rutledge',NULL,NULL,'consequat, lectus sit amet luctus vulputate,','iaculis@diam.edu','(418) 394-7397','76569',NULL);
 INSERT INTO S_Evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],[url],[textePresentation],[courrielContact],[numTel],[extension],[dateSupprime]) VALUES('At Fringilla Purus LLP','Mara Sellers',NULL,NULL,'feugiat metus sit amet ante. Vivamus non lorem vitae','neque.sed.dictum@Curabiturdictum.ca','(418) 426-1929','16123','2016/12/04');
-=======
+
 INSERT INTO S_evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],[url],[textePresentation],[courrielContact],[numTel],[extension],[dateSupprime]) VALUES('In Sodales Consulting','Brent Downs',NULL,NULL,'id enim. Curabitur massa. Vestibulum accumsan neque et','dui.semper.et@eu.co.uk','8338354826','87332','2017/03/29');
 INSERT INTO S_evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],[url],[textePresentation],[courrielContact],[numTel],[extension],[dateSupprime]) VALUES('Adipiscing Enim Institute','Jael Rogers',NULL,NULL,'metus eu erat semper rutrum. Fusce dolor quam,','elit.pede.malesuada@Quisquenonummyipsum.edu','3171318382','98364',NULL);
 INSERT INTO S_evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],[url],[textePresentation],[courrielContact],[numTel],[extension],[dateSupprime]) VALUES('Fringilla Donec Company','Irma Morse',NULL,NULL,'Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc','magna.nec@Inlorem.net','1675258218','4455',NULL);
@@ -170,7 +169,7 @@ INSERT INTO S_evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],
 INSERT INTO S_evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],[url],[textePresentation],[courrielContact],[numTel],[extension],[dateSupprime]) VALUES('Quis Corporation','Malachi Burris',NULL,NULL,'erat vitae risus.','Vivamus.nisi@ridiculus.com','7846946917','58123',NULL);
 INSERT INTO S_evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],[url],[textePresentation],[courrielContact],[numTel],[extension],[dateSupprime]) VALUES('Donec Egestas Duis LLP','Tate Rutledge',NULL,NULL,'consequat, lectus sit amet luctus vulputate,','iaculis@diam.edu','2778722746','76569',NULL);
 INSERT INTO S_evenement.tblCommanditaire([nomCommanditaire],[nomContact],[logo],[url],[textePresentation],[courrielContact],[numTel],[extension],[dateSupprime]) VALUES('At Fringilla Purus LLP','Mara Sellers',NULL,NULL,'feugiat metus sit amet ante. Vivamus non lorem vitae','neque.sed.dictum@Curabiturdictum.ca','5236843781','16123','2016/12/04');
->>>>>>> Analyse-Sprint2
+
 
 GO
 
@@ -178,7 +177,7 @@ PRINT('Fin des insertions des commanditaires')
 
 GO
 
-<<<<<<< HEAD
+
 PRINT('Début de création de la table des dons')
 
 GO
@@ -203,7 +202,7 @@ INSERT INTO S_Evenement.tblDon([noCommanditaire],[noSousEvenement],[montant],[da
 INSERT INTO S_Evenement.tblDon([noCommanditaire],[noSousEvenement],[montant],[dateDon],[dateSupprime]) VALUES(14,5,689,'2014/10/27',NULL);
 INSERT INTO S_Evenement.tblDon([noCommanditaire],[noSousEvenement],[montant],[dateDon],[dateSupprime]) VALUES(14,2,656,'2014/05/08',NULL);
 INSERT INTO S_Evenement.tblDon([noCommanditaire],[noSousEvenement],[montant],[dateDon],[dateSupprime]) VALUES(19,7,796,'2014/01/04','2014/01/09');
-=======
+
 PRINT('Début des insertions de la table des dons')
 
 GO
@@ -233,4 +232,4 @@ GO
 
 PRINT('Fin des insertions de la table des dons')
 GO
->>>>>>> Analyse-Sprint2
+

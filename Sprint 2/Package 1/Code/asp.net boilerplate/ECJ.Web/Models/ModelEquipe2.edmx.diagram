@@ -4,30 +4,71 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="148f2eb51671487da8703732341953db" Name="Diagram1">
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblEngagement" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblActivite" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblCommanditaire" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblDon" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblEvenement" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblSousEvenement" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblForfait" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblSalle" Width="1.5" PointX="1.5" PointY="17.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblService" Width="1.5" PointX="0.75" PointY="14" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblMemo" Width="1.5" PointX="11" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblUtilisateur" Width="1.5" PointX="8.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblAgencePublicite" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffre" Width="1.5" PointX="6" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffreAgence" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblMedia" Width="1.5" PointX="8.25" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblSoumission" Width="1.5" PointX="10.5" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblStatut" Width="1.5" PointX="3.75" PointY="16.5" IsExpanded="true" />
-        <AssociationConnector Association="PE2_OfficielModel.NOENG_SOUSEVEN_FK" ManuallyRouted="false" />
+      <Diagram DiagramId="f47d525341244e979010ae93f0e64e7e" Name="Diagram1">
+        <EntityTypeShape EntityType="PE2_OfficielModel.C__MigrationHistory" Width="1.5" PointX="2.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpAuditLogs" Width="1.5" PointX="12.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpBackgroundJobs" Width="1.5" PointX="10.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpEditions" Width="1.5" PointX="5.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpFeatures" Width="1.5" PointX="8" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpLanguages" Width="1.5" PointX="12.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpLanguageTexts" Width="1.5" PointX="14.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpNotifications" Width="1.5" PointX="14.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpNotificationSubscriptions" Width="1.5" PointX="7.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpOrganizationUnits" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpPermissions" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpRoles" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpSettings" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpTenantNotifications" Width="1.5" PointX="16.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpTenants" Width="1.5" PointX="8" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserAccounts" Width="1.5" PointX="16.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserLoginAttempts" Width="1.5" PointX="18.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserLogins" Width="1.5" PointX="3" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserNotifications" Width="1.5" PointX="5.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserOrganizationUnits" Width="1.5" PointX="10.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserRoles" Width="1.5" PointX="3" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUsers" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblActivite" Width="1.5" PointX="13" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblCommanditaire" Width="1.5" PointX="10.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblDon" Width="1.5" PointX="13" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblEvenement" Width="1.5" PointX="10.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblSousEvenement" Width="1.5" PointX="10.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblForfait" Width="1.5" PointX="8.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblSalle" Width="1.5" PointX="6.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblService" Width="1.5" PointX="8.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblMemo" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblUtilisateur" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAgencePublicite" Width="1.5" PointX="16" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffre" Width="1.5" PointX="16" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffreAgence" Width="1.5" PointX="18.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblMedia" Width="1.5" PointX="18.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblSoumission" Width="1.5" PointX="20.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblStatut" Width="1.5" PointX="13.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomCommanditaire" Width="1.5" PointX="18.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomEvenement" Width="1.5" PointX="12.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAppelOffre" Width="1.5" PointX="18.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomSoumission" Width="1.5" PointX="0.75" PointY="23.875" IsExpanded="true" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpFeatures_dbo_AbpEditions_EditionId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpEditions_EditionId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpOrganizationUnits_dbo_AbpOrganizationUnits_ParentId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpRoles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_LastModifierUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpSettings_dbo_AbpUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_CreatorUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_DeleterUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_LastModifierUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUserLogins_dbo_AbpUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUserRoles_dbo_AbpUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PE2_OfficielModel.NOEVEN_ACT_FK" ManuallyRouted="false" />
         <AssociationConnector Association="PE2_OfficielModel.NOSOUSEVEN_ACT_FK" ManuallyRouted="false" />
         <AssociationConnector Association="PE2_OfficielModel.NOCOMM_DON_FK" ManuallyRouted="false" />
         <AssociationConnector Association="PE2_OfficielModel.NOSOUSEVEN_DON_FK" ManuallyRouted="false" />
         <AssociationConnector Association="PE2_OfficielModel.EVENEMENT_APPEL_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="PE2_OfficielModel.NOEVEN_SOUSEVEN_FK" ManuallyRouted="false" />
         <AssociationConnector Association="PE2_OfficielModel.DESTINATAIRE_UTILISATEUR_MEMO_FK" ManuallyRouted="false" />
         <AssociationConnector Association="PE2_OfficielModel.EXPEDITEUR_UTILISATEUR_MEMO_FK" ManuallyRouted="false" />
         <AssociationConnector Association="PE2_OfficielModel.AGENCE_PUB_FK" ManuallyRouted="false" />
