@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PE2_OfficielModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PE2_OfficielModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -498,6 +498,7 @@
           <Property Name="dateSupprime" Type="datetime" />
           <Property Name="noEvenement" Type="int" Nullable="false" />
           <Property Name="noStatut" Type="int" Nullable="false" />
+          <Property Name="tag" Type="text" />
         </EntityType>
         <EntityType Name="tblAppelOffreAgence">
           <Key>
@@ -1307,8 +1308,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblAppelOffreAgence" EntitySet="tblAppelOffreAgence" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PE2_OfficielModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1839,6 +1839,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <NavigationProperty Name="tblAppelOffreAgence" Relationship="Self.APPEL_OFFRE_FK" FromRole="tblAppelOffre" ToRole="tblAppelOffreAgence" />
           <NavigationProperty Name="tblStatut" Relationship="Self.STATUT_APPEL_FK" FromRole="tblAppelOffre" ToRole="tblStatut" />
           <NavigationProperty Name="tblMedia" Relationship="Self.tblMediaAppelOffre" FromRole="tblAppelOffre" ToRole="tblMedia" />
+          <Property Name="tag" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tblAppelOffreAgence">
           <Key>
@@ -2998,6 +2999,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySetMapping Name="tblAppelOffre">
             <EntityTypeMapping TypeName="PE2_OfficielModel.tblAppelOffre">
               <MappingFragment StoreEntitySet="tblAppelOffre">
+                <ScalarProperty Name="tag" ColumnName="tag" />
                 <ScalarProperty Name="noAppelOffre" ColumnName="noAppelOffre" />
                 <ScalarProperty Name="nom" ColumnName="nom" />
                 <ScalarProperty Name="dateRequis" ColumnName="dateRequis" />

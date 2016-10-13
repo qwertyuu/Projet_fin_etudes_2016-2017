@@ -1,15 +1,21 @@
 ﻿@model IEnumerable<ECJ.Web.Models.tblAppelOffre>
 <div class="row">
     <div class="col-md-12">
-        <form class="page-header">
-            <div class="input-group">
-                <input class="form-control" type="search">
-                <span class="input-group-btn">
-                    <button class="btn btn-primary pull-right" type="button">Rechercher</button>
-                </span>
-            </div>
-        </form>
-        </div>
+       
+              @using (Html.BeginForm("Index", "AppellOffre", FormMethod.Get))
+              {
+                        <p>
+                            @Html.TextBox("SearchString") 
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary pull-right" type="submit">Rechercher</button>
+                            </span>                        
+                        </p>
+                    }
+
+                
+
+        <br />
+                    
         <a href="/AppellOffre/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
         <table class="table" align="center">
             <tr>
@@ -64,4 +70,5 @@
             }
 
         </table>
+ </div>
 </div>

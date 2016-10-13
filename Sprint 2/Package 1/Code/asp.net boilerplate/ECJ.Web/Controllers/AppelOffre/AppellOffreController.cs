@@ -15,9 +15,17 @@ namespace ECJ.Web.Controllers.AppelOffre
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
 
         // GET: AppellOffre
-        public ActionResult Index()
+        public ActionResult Index(string SearchString)
         {
             var tblAppelOffre = db.tblAppelOffre.Include(t => t.tblEvenement).Include(t => t.tblStatut);
+            tblAppelOffre = from q in db.tblAppelOffre
+                            where q.dateSupprime == null
+                            orderby q.noStatut
+                            select q;
+            if(!String.IsNullOrEmpty(SearchString))
+            {
+                tblAppelOffre = tblAppelOffre.Where(a => a.tag.Contains(SearchString.ToUpper()));
+            }
             return View(tblAppelOffre.ToList());
         }
 
@@ -53,6 +61,13 @@ namespace ECJ.Web.Controllers.AppelOffre
         {
             if (ModelState.IsValid)
             {
+                var statut = (from q in db.tblStatut
+                              where q.noStatut == tblAppelOffre.noStatut
+                              select q).FirstOrDefault();
+                var evenement = (from q in db.tblEvenement
+                                 where q.noEvenement == tblAppelOffre.noEvenement
+                                 select q).FirstOrDefault();
+
                 db.tblAppelOffre.Add(tblAppelOffre);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -68,7 +83,6 @@ namespace ECJ.Web.Controllers.AppelOffre
         {
             if (id == null)
             {
-                Create();
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             tblAppelOffre tblAppelOffre = db.tblAppelOffre.Find(id);
@@ -88,10 +102,20 @@ namespace ECJ.Web.Controllers.AppelOffre
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noStatut")] tblAppelOffre tblAppelOffre)
         {
+          
             if (ModelState.IsValid)
             {
+                var statut =( from q in db.tblStatut
+                             where q.noStatut == tblAppelOffre.noStatut
+                             select q).FirstOrDefault();
+                var evenement = (from q in db.tblEvenement
+                              where q.noEvenement == tblAppelOffre.noEvenement
+                              select q).FirstOrDefault();
+
                 db.Entry(tblAppelOffre).State = EntityState.Modified;
+                tblAppelOffre.tag = tblAppelOffre.nom + evenement.nom + statut.nom + tblAppelOffre.description; //On charge le tag se qui permettra de faire la recherche.
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblAppelOffre.noEvenement);
@@ -120,7 +144,8 @@ namespace ECJ.Web.Controllers.AppelOffre
         public ActionResult DeleteConfirmed(int id)
         {
             tblAppelOffre tblAppelOffre = db.tblAppelOffre.Find(id);
-            db.tblAppelOffre.Remove(tblAppelOffre);
+            tblAppelOffre.dateSupprime = DateTime.Now;
+           // db.tblAppelOffre.Remove(tblAppelOffre);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,0 +1,82 @@
+﻿@model ECJ.Web.Models.tblSoumission
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>tblSoumission</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nom)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.nom)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.prix)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.prix)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.statut)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.statut)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.description)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.description)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.dateSupprime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.dateSupprime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.noAppelOffre)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.noAppelOffre)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.tblAppelOffreAgence.offreNoPublicite)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tblAppelOffreAgence.offreNoPublicite)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.noSoumission }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

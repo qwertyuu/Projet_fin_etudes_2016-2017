@@ -11,7 +11,9 @@ namespace ECJ.Web.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+
     public partial class tblAppelOffre
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,12 +25,16 @@ namespace ECJ.Web.Models
     
         public int noAppelOffre { get; set; }
         public string nom { get; set; }
+        [DataType(DataType.DateTime)]
         public System.DateTime dateRequis { get; set; }
+        [DataType(DataType.DateTime)]
         public System.DateTime dateEnvoi { get; set; }
+        [DataType(DataType.MultilineText)]
         public string description { get; set; }
         public Nullable<System.DateTime> dateSupprime { get; set; }
         public int noEvenement { get; set; }
         public int noStatut { get; set; }
+        public string tag { get; set; }
     
         public virtual tblEvenement tblEvenement { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

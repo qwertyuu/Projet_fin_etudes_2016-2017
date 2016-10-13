@@ -29,6 +29,7 @@ CREATE TABLE S_publicite.tblAppelOffre (
 	,dateSupprime DATETIME NULL
 	,noEvenement INT NOT NULL
 	,noStatut INT NOT NULL
+	,tag TEXT 
 	);
 PRINT 'APPEL D''OFFRE RÉUSSI'
 
@@ -59,6 +60,7 @@ CREATE TABLE S_publicite.tblSoumission (
 	,dateSupprime DATETIME NULL
 	,noAppelOffre INT NOT NULL
 	,offreNoPublicite INT
+	,tag TEXT
 	);
 PRINT 'TABLE STATUT RÉUSSI'
 

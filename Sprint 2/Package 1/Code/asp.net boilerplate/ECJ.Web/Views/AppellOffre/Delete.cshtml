@@ -1,88 +1,81 @@
 ﻿@model ECJ.Web.Models.tblAppelOffre
 
-@{
-    Layout = null;
-}
-
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Delete</title>
+    <title>Supprimer</title>
 </head>
 <body>
-    <h3>Are you sure you want to delete this?</h3>
+    <h3>Êtes vous sure de vouloir supprimer cet d'appel d'offre?</h3>
     <div>
-        <h4>tblAppelOffre</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.nom)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.nom)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.dateRequis)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.dateRequis)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.dateEnvoi)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.dateEnvoi)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.description)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.description)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.dateSupprime)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.dateSupprime)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.tblEvenement.nom)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.tblEvenement.nom)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.tblStatut.nom)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.tblStatut.nom)
-            </dd>
-    
-        </dl>
-    
-        @using (Html.BeginForm()) {
-            @Html.AntiForgeryToken()
-    
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
+   <form name="createPub" role="form" novalidate class="form-validation">
+
+            <div class="form-group">
+                <label>Évènement</label>
+                <div class="well well-sm">
+                    @Html.DisplayFor(model => model.tblEvenement.nom)
+                </div>
             </div>
-        }
-    </div>
+
+            <div class="form-group">
+                <label>Nom</label>
+                <div class="well well-sm">
+                    @Html.DisplayFor(model => model.nom)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Média</label>
+                <div class="well well-sm">
+                    Radio
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Date d'envoi</label>
+                <div class="well well-sm">
+                    @Html.DisplayFor(model => model.dateEnvoi)
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Date requise</label>
+                <div class="well well-sm">
+                    @Html.DisplayFor(model => model.dateRequis)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Statut</label>
+                <div class="well well-sm">
+                    @Html.DisplayFor(model => model.tblStatut.nom)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Agence de publicité</label>
+                <div class="well well-sm">
+                    Médiative
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <div class="well well-sm">
+                    @Html.DisplayFor(model => model.description)
+                </div>
+            </div>
+</form>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <br /><br /><br />
+                <div class="form-actions no-color pull-right">
+                    <button class="btn btn-primary blue" type="submit"><i class="fa fa-trash"> </i> Supprimer</button>
+                    <a href="/AppellOffre/Index" class="btn btn-default" data-dismiss="modal">Annuler</a>
+                </div>
+            }
+</div>
 </body>
 </html>
