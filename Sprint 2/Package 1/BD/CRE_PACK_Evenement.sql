@@ -8,16 +8,8 @@ USE PE2_Officiel
 
 DECLARE @Sql VARCHAR(MAX), @Schema varchar(20)
 SET @Schema = 'S_evenement'
-SELECT @Sql = COALESCE(@Sql,'') + 'DROP TABLE ' + @Schema + '.' + QUOTENAME(TABLE_NAME) + '; WITH NOCHECK ' + CHAR(13)
-FROM INFORMATION_SCHEMA.TABLES
-WHERE TABLE_SCHEMA = @Schema
-AND TABLE_TYPE = 'BASE TABLE'
-Exec(@Sql)
-IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = @Schema)
-BEGIN
 EXEC('CREATE SCHEMA ' + @Schema)
 PRINT'Schéma créé'
-END
 GO
 
 CREATE TABLE S_evenement.tblActivite (
@@ -28,8 +20,8 @@ CREATE TABLE S_evenement.tblActivite (
 	,tache VARCHAR(50) NOT NULL
 	,detail TEXT NULL
 	,dateSupprime DATETIME NULL
-	,noEvenement INT NOT  NULL
-	,noSousEvenement INT NOT NULL
+	,noEvenement INT
+	,noSousEvenement INT
 	);
 PRINT 'Fin de création de la table tblActivite'
 GO

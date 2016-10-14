@@ -36,7 +36,8 @@ GO
 
 ALTER TABLE S_Evenement.tblActivite ADD
 CONSTRAINT NOSOUSEVEN_ACT_FK FOREIGN KEY(noSousEvenement) REFERENCES S_Evenement.tblSousEvenement(noSousEvenement),
-CONSTRAINT NOEVEN_ACT_FK FOREIGN KEY(noEvenement) REFERENCES S_Evenement.tblEvenement(noEvenement)
+CONSTRAINT NOEVEN_ACT_FK FOREIGN KEY(noEvenement) REFERENCES S_Evenement.tblEvenement(noEvenement),
+CONSTRAINT PILE_UNE_FK CHECK(((CASE WHEN noSousEvenement IS NULL THEN 0 ELSE 1 END) + (CASE WHEN noEvenement IS NULL THEN 0 ELSE 1 END)) = 1)
 PRINT('Fin des contraintes FK des activitées')
 
 GO

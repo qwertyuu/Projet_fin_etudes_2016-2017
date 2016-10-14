@@ -1,2 +1,2 @@
-sqlcmd -S DEPTINFO420 -U P2016_Equipe2 -P Rasipike -i CRE_DB.sql
+"C:\Program Files\Microsoft SQL Server\110\Tools\Binn\SQLCMD.EXE" -S DESKTOP-BFKLC5V\SQLEXPRESS -E -i CRE_DB.sql
 PAUSE

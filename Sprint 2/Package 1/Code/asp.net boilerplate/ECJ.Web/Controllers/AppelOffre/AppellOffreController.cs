@@ -17,7 +17,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         // GET: AppellOffre
         public ActionResult Index(string SearchString)
         {
-            var tblAppelOffre = db.tblAppelOffre.Include(t => t.tblEvenement).Include(t => t.tblStatut);
+            var tblAppelOffre = db.tblAppelOffre.Include(t => t.tblEvenement).Include(t => t.tblStatut1);
             tblAppelOffre = from q in db.tblAppelOffre
                             where q.dateSupprime == null
                             orderby q.noStatut
@@ -113,7 +113,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                               select q).FirstOrDefault();
 
                 db.Entry(tblAppelOffre).State = EntityState.Modified;
-                tblAppelOffre.tag = tblAppelOffre.nom + evenement.nom + statut.nom + tblAppelOffre.description; //On charge le tag se qui permettra de faire la recherche.
+                tblAppelOffre.tag = tblAppelOffre.nom + evenement.nom + statut.nomStatut + tblAppelOffre.description; //On charge le tag se qui permettra de faire la recherche.
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
