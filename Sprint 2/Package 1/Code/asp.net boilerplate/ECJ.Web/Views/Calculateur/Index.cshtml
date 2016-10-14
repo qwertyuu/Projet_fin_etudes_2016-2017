@@ -73,8 +73,8 @@
                 </thead>
                 <tr>
                     <td>Saint-François Brassard</td>
-                    <td>40</td>
-                    <td>320</td>
+                    <td id="vip">40</td>
+                    <td id="billet">320</td>
                     <td>1500.00</td>
                     <td>Grande salle de spectacle avec des balcons</td>
                     <td>2016/11/03</td>
@@ -141,7 +141,7 @@
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Jeunes % Rabais</label>
-                        <input type="text" class="form-control" id="inputDefault">
+                        <input type="text" class="form-control" id="JeunePourcent" onblur="PourcentCheck()">
                     </div>
                 </th>
                 <th>
@@ -161,7 +161,7 @@
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Adultes % Rabais</label>
-                        <input type="text" class="form-control" id="inputDefault">
+                        <input type="text" class="form-control" id="AdultesPourcent" onblur="PourcentCheck()">
                     </div>
                 </th>
                 <th>
@@ -181,7 +181,7 @@
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Ainés % Rabais</label>
-                        <input type="text" class="form-control" id="inputDefault">
+                        <input type="text" class="form-control" id="AinePourcent" onblur="PourcentCheck()">
                     </div>
                 </th>
                 <th>
