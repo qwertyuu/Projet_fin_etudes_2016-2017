@@ -42,7 +42,7 @@ CREATE TABLE S_publicite.tblAgencePublicite (
 PRINT 'AgencePublicite RÉUSSI'
 
 PRINT 'CRÉATION DE LA TABLE STATUT'
-CREATE TABLE S_publicite.tblStatut (
+CREATE TABLE S_publicite.tblStatutAppelOffre (
 	noStatut INT NOT NULL IDENTITY(1,1)
 	,nom VARCHAR(20) NOT NULL
 	,couleur CHAR(6) NOT NULL

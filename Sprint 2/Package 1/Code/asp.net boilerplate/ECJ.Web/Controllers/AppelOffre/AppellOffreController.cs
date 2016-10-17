@@ -17,16 +17,21 @@ namespace ECJ.Web.Controllers.AppelOffre
         // GET: AppellOffre
         public ActionResult Index(string SearchString)
         {
-            var tblAppelOffre = db.tblAppelOffre.Include(t => t.tblEvenement).Include(t => t.tblStatut1);
-            tblAppelOffre = from q in db.tblAppelOffre
-                            where q.dateSupprime == null
-                            orderby q.noStatut
-                            select q;
-            if(!String.IsNullOrEmpty(SearchString))
+            //var tblAppelOffre = db.tblAppelOffre.Include(t => t.tblEvenement).Include(t => t.tblStatutAppelOffre);
+
+            var appelOfrre = from q in db.vueSomAppelOffre
+                             select q;
+            if (!String.IsNullOrEmpty(SearchString))
             {
-                tblAppelOffre = tblAppelOffre.Where(a => a.tag.Contains(SearchString.ToUpper()));
+                appelOfrre = db.vueSomAppelOffre.Where(a=> a.tag.Contains(SearchString.ToUpper()));
+
             }
-            return View(tblAppelOffre.ToList());
+
+            appelOfrre = from q in appelOfrre
+                         orderby q.noStatut
+                         select q;
+
+            return View(appelOfrre.ToList());
         }
 
         // GET: AppellOffre/Details/5

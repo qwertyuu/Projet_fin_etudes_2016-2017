@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ECJ.Web.Models.tblAppelOffre>
+﻿@model IEnumerable<ECJ.Web.Models.vueSomAppelOffre>
 <div class="row">
     <div class="col-md-12">
        
@@ -50,7 +50,7 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.nom)
+                        @Html.DisplayFor(modelItem => item.nomAppelOffre)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.dateRequis)
@@ -59,16 +59,16 @@
                         @Html.DisplayFor(modelItem => item.dateEnvoi)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.tblEvenement.nom)
+                        @Html.DisplayFor(modelItem => item.nomEvent)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.tblStatut1.nom)
-                    </td>
+                        @Html.DisplayFor(modelItem => item.nomStatut)                   
+                     </td>
                     <td>
-
+                        @Html.DisplayFor(modelItem => item.nomAgence)
                     </td>
-                    <td>
-
+                    <td>                   
+                        @Html.DisplayFor(modelItem => item.nomSoumission)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.description)

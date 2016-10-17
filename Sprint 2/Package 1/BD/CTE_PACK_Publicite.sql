@@ -4,10 +4,10 @@
 USE PE2_Officiel
 
 GO
-ALTER TABLE S_publicite.tblStatut ADD
+ALTER TABLE S_publicite.tblStatutAppelOffre ADD
 CONSTRAINT NO_STATUT_PK PRIMARY Key(noStatut),
 CONSTRAINT CHK_COULEUR CHECK(couleur LIKE '%[0-9A-F]%')
-PRINT 'FIN des contraintes de la table tblStatut'
+PRINT 'FIN des contraintes de la table tblStatutAppelOffre'
 GO
 
 ALTER TABLE S_publicite.tblMedia ADD
@@ -18,7 +18,7 @@ GO
 ALTER TABLE S_publicite.tblAppelOffre ADD
 CONSTRAINT NO_APPEL_OFFRE_PK PRIMARY Key(noAppelOffre),
 CONSTRAINT EVENEMENT_APPEL_FK FOREIGN Key(noEvenement) REFERENCES S_evenement.tblEvenement(noEvenement),
-CONSTRAINT STATUT_APPEL_FK FOREIGN Key(noStatut) REFERENCES S_publicite.tblStatut(noStatut)
+CONSTRAINT STATUT_APPEL_FK FOREIGN Key(noStatut) REFERENCES S_publicite.tblStatutAppelOffre(noStatut)
 PRINT 'FIN des contraintes de la table tblAppelOffre'
 
 GO
@@ -37,7 +37,7 @@ ALTER TABLE S_publicite.tblAppelOffreAgence ADD
 CONSTRAINT NO_APPEL_OFFRE_NO_AGENCE_PUB_PK PRIMARY KEY(offreNoPublicite),
 CONSTRAINT APPEL_OFFRE_FK FOREIGN Key(noAppelOffre) REFERENCES S_publicite.tblAppelOffre(noAppelOffre),
 CONSTRAINT AGENCE_PUB_FK FOREIGN Key(noAgencePub) REFERENCES S_publicite.tblAgencePublicite(noAgencePub),
-CONSTRAINT STATUT_APPEL_OFFRE_AGENCE_FK FOREIGN Key(noStatut) REFERENCES S_publicite.tblStatut(noStatut)
+CONSTRAINT STATUT_APPEL_OFFRE_AGENCE_FK FOREIGN Key(noStatut) REFERENCES S_publicite.tblStatutAppelOffre(noStatut)
 PRINT 'FIN des contraintes de la table tblAppelOffreAgence'
 GO
 

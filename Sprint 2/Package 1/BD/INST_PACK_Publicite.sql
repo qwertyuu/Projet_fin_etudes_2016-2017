@@ -36,11 +36,11 @@ INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Donec PC');
 PRINT 'Fin d''insertion de table tblAgencePublicite'
 
 GO
-INSERT INTO S_publicite.tblStatut(nom,couleur,description)VALUES('En Création','F90202','L''appel d''offre est en création et n''est pas encore envoyée à l''agence')
-INSERT INTO S_publicite.tblStatut(nom,couleur,description)VALUES('Envoyé','022BF9','L''appel d''offre est envoyée')
-INSERT INTO S_publicite.tblStatut(nom,couleur,description)VALUES('Complété','DBF902','L''appel d''offre est complétée et une soumission est envoyée par l''agence')
-INSERT INTO S_publicite.tblStatut(nom,couleur,description)VALUES('Annulé','0281F9','L''appel d''offre est annulée')
-PRINT 'Fin d''insertion de table tblStatut'
+INSERT INTO S_publicite.tblStatutAppelOffre(nom,couleur,description)VALUES('En Création','F90202','L''appel d''offre est en création et n''est pas encore envoyée à l''agence')
+INSERT INTO S_publicite.tblStatutAppelOffre(nom,couleur,description)VALUES('Envoyé','022BF9','L''appel d''offre est envoyée')
+INSERT INTO S_publicite.tblStatutAppelOffre(nom,couleur,description)VALUES('Complété','DBF902','L''appel d''offre est complétée et une soumission est envoyée par l''agence')
+INSERT INTO S_publicite.tblStatutAppelOffre(nom,couleur,description)VALUES('Annulé','0281F9','L''appel d''offre est annulée')
+PRINT 'Fin d''insertion de table tblStatutAppelOffre'
 
 GO
 INSERT INTO S_publicite.tblMedia(nom,description)VALUES('Radio','la publicité sera communiqué au moyen de la radio');

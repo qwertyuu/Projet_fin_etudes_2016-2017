@@ -5,8 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f47d525341244e979010ae93f0e64e7e" Name="Diagram1" ZoomLevel="89">
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblAdresse" Width="1.5" PointX="1.5" PointY="2.375" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblAgence" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAdresse" Width="1.5" PointX="1.5" PointY="21.5" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAgence" Width="1.5" PointX="0.75" PointY="15.875" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblArtiste" Width="1.5" PointX="0.75" PointY="11.375" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblCategorieArtiste" Width="1.5" PointX="3" PointY="14.625" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblContrat" Width="1.5" PointX="3" PointY="9.625" />
@@ -16,7 +16,7 @@
         <EntityTypeShape EntityType="PE2_OfficielModel.tblFichierOfficiel" Width="1.5" PointX="5.25" PointY="13.625" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblFichierPersonnel" Width="1.5" PointX="3" PointY="17.375" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblResponsable" Width="1.5" PointX="8.25" PointY="9.5" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblStatut" Width="1.5" PointX="0.75" PointY="15.5" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblStatut" Width="1.5" PointX="0.75" PointY="7.375" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblActivite" Width="1.5" PointX="12.75" PointY="19" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblCommanditaire" Width="1.5" PointX="7.5" PointY="15" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblDon" Width="1.5" PointX="9.75" PointY="19.25" />
@@ -25,25 +25,24 @@
         <EntityTypeShape EntityType="PE2_OfficielModel.tblForfait" Width="1.5" PointX="5.25" PointY="23.875" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblSalle" Width="1.5" PointX="3" PointY="26.625" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblService" Width="1.5" PointX="5.25" PointY="27" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblMemo" Width="1.5" PointX="6" PointY="1" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblUtilisateur" Width="1.5" PointX="3.75" PointY="1.5" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblMemo" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblUtilisateur" Width="1.5" PointX="0.75" PointY="1.5" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblAgencePublicite" Width="1.5" PointX="7.5" PointY="26.75" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffre" Width="1.5" PointX="7.5" PointY="29.875" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffreAgence" Width="1.5" PointX="9.75" PointY="30.25" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblMedia" Width="1.5" PointX="9.75" PointY="34.375" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblSoumission" Width="1.5" PointX="12" PointY="30.125" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblStatutAppelOffre" Width="1.5" PointX="5.25" PointY="34.5" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAgence" Width="1.5" PointX="8.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomArtiste" Width="1.5" PointX="8.75" PointY="3.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomCatArtiste" Width="1.5" PointX="8.75" PointY="6.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomContrat" Width="1.5" PointX="10.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomEngagement" Width="1.5" PointX="10.75" PointY="3.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomExigence" Width="1.5" PointX="10.75" PointY="7.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomStatut" Width="1.5" PointX="10.75" PointY="11.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomCommanditaire" Width="1.5" PointX="12.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomEvenement" Width="1.5" PointX="12.75" PointY="4.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAppelOffre" Width="1.5" PointX="12.75" PointY="7.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomSoumission" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAgence" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomArtiste" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomCatArtiste" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomContrat" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomEngagement" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomExigence" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomStatut" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomCommanditaire" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomEvenement" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomSoumission" Width="1.5" PointX="12.75" PointY="8.75" />
         <AssociationConnector Association="PE2_OfficielModel.AGE_ADR_FK" />
         <AssociationConnector Association="PE2_OfficielModel.DIF_ADR_FK" />
         <AssociationConnector Association="PE2_OfficielModel.CON_AGE_FK" />
@@ -78,45 +77,7 @@
         <AssociationConnector Association="PE2_OfficielModel.tblServiceOffert" />
         <AssociationConnector Association="PE2_OfficielModel.tblServiceRequis" />
         <AssociationConnector Association="PE2_OfficielModel.tblMediaAppelOffre" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.C__MigrationHistory" Width="1.5" PointX="10.75" PointY="14.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpAuditLogs" Width="1.5" PointX="17.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpBackgroundJobs" Width="1.5" PointX="12.75" PointY="14.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpEditions" Width="1.5" PointX="18.75" PointY="14.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpFeatures" Width="1.5" PointX="21" PointY="17.125" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpLanguages" Width="1.5" PointX="15.75" PointY="18.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpLanguageTexts" Width="1.5" PointX="19.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpNotifications" Width="1.5" PointX="0.75" PointY="20.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpNotificationSubscriptions" Width="1.5" PointX="17.75" PointY="19.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpOrganizationUnits" Width="1.5" PointX="15.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpPermissions" Width="1.5" PointX="23.25" PointY="11.875" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpRoles" Width="1.5" PointX="18" PointY="9.5" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpSettings" Width="1.5" PointX="18" PointY="26.375" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpTenantNotifications" Width="1.5" PointX="2.75" PointY="20.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpTenants" Width="1.5" PointX="21" PointY="11.25" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserAccounts" Width="1.5" PointX="20.75" PointY="4.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserLoginAttempts" Width="1.5" PointX="20.75" PointY="20.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserLogins" Width="1.5" PointX="18" PointY="23.5" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserNotifications" Width="1.5" PointX="21.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserOrganizationUnits" Width="1.5" PointX="22.75" PointY="3.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserRoles" Width="1.5" PointX="18" PointY="6.375" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUsers" Width="1.5" PointX="15.75" PointY="9.5" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpFeatures_dbo_AbpEditions_EditionId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpEditions_EditionId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpOrganizationUnits_dbo_AbpOrganizationUnits_ParentId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpRoles_RoleId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_LastModifierUserId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpSettings_dbo_AbpUsers_UserId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_CreatorUserId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_DeleterUserId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_LastModifierUserId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUserLogins_dbo_AbpUsers_UserId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUserRoles_dbo_AbpUsers_UserId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId" />
-        <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAppelOffre" Width="1.5" PointX="13.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
