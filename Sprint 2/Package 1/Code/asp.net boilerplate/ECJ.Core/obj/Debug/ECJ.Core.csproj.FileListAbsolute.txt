@@ -88,6 +88,5 @@ C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprin
 C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Core\bin\Debug\Nito.AsyncEx.Concurrent.xml
 C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Core\bin\Debug\Nito.AsyncEx.Enlightenment.xml
 C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Core\bin\Debug\System.Collections.Immutable.xml
-C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Core\obj\Debug\ECJ.Core.csprojResolveAssemblyReference.cache
 C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Core\obj\Debug\ECJ.Core.dll
 C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Core\obj\Debug\ECJ.Core.pdb

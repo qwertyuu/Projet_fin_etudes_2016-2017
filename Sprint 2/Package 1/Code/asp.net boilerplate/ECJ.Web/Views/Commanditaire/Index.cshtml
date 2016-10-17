@@ -1,77 +1,91 @@
-﻿@{
+﻿@model IEnumerable<ECJ.Web.Models.tblCommanditaire>
+
+@{
     ViewBag.Title = "Index";
     ViewBag.ActiveMenu = "Commanditaires";
 }
 
-<h2>Commanditaires</h2>
+<!DOCTYPE html>
 
-<div class="row">
-    <div class="col-md-12">
-        <form class="page-header">
-            <div class="input-group">
-                <input class="form-control" type="search">
-                <span class="input-group-btn">
-                    <button class="btn btn-primary pull-right" type="button">Rechercher</button>
-                </span>
-            </div>
-        </form>
-        <a href="/Commanditaire/Ajout" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
-        <table class="table" align="center">
-            <thead>
-                <tr>
-                    <th>Nom du commanditaire</th>
-                    <th>Nom du contact</th>
-                    @*<th>Logo</th>
-                        <th>URL</th>*@
-                    <th>Présentation</th>
-                    <th>courriel</th>
-                    <th>Numéro de téléphone</th>
-                    <th>Poste</th>
-                    <th>Argent donnée</th>
-                    <th>Rang</th>
-                    <th>Action</th>
-                </tr>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="row">
+        <table class="col-md-12">
+            <form class="page-header">
+                <div class="input-group">
+                    <input class="form-control" type="search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary pull-right" type="button">Rechercher</button>
+                    </span>
+                </div>
+            </form>
+            <a href="/tblCommanditaires/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
+            <table class="table" align="center">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.nomCommanditaire)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.nomContact)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.courrielContact)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.numTel)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.extension)
+                        </th>
+                        <th>
+                            Montant
+                        </th>
+                        <th>
+                            Rang
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
                 </thead>
 
-            <tbody>
-                <tr>
-                    <td>Tim Hortons</td>
-                    <td>Jean-Paul Desgagné</td>
-                    @*<td><image src="http://www.actuallywecreate.com/wp-content/uploads/2012/10/tim-hortons-always-fresh.jpg" style="width:200px"></image></td>
-                        <td><a href="http://www.timhortons.com/ca/en/index.php">http://www.timhortons.com/ca/en/index.php</a></td>*@
-                    <td>Notre participation au sein des communautés va bien au-delà de notre café ...</td>
-                    <td>timHortons@hotmail.com</td>
-                    <td>418-547-3225</td>
-                    <td>535</td>
-                    <td>1532.56$</td>
-                    <td>Or</td>
-                    <td>
-                        <a href="/Commanditaire/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-                        <a href="/don/Ajout" class="btn btn-sm btn-primary" title="Ajouter don"><i class="fa fa-money"></i></a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>McDonald's</td>
-                    <td>Ronald McDonald</td>
-                    @*<td><image src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Mcdonalds-90s-logo.svg/2000px-Mcdonalds-90s-logo.svg.png" style="width:200px"></image></td>
-                        <td><a href="http://www.mcdonalds.ca/ca/fr.html">http://www.mcdonalds.ca/ca/fr.html</a></td>*@
-                    <td>Depuis le début, nous sommes engagés à faire la bonne chose. Les politiques, programmes et pratiques en place ...</td>
-                    <td>mcdonald@hotmail.com</td>
-                    <td>418-542-2356</td>
-                    <td>8765</td>
-                    <td>1054.34$</td>
-                    <td>Agent</td>
-                    <td>
-                        <a href="" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-primary" title="Ajouter don"><i class="fa fa-money"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nomCommanditaire)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nomContact)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.courrielContact)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.numTel)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.extension)
+                        </td>
+                        <td>
+                            10
+                        </td>
+                        <td>
+                            or
+                        </td>
+                        <td>
+                            <a href="/tblCommanditaires/Details/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                            <a href="/tblCommanditaires/Edit/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                            <a href="/tblCommanditaires/Delete/@item.noCommanditaire" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                        </td>
+                    </tr>
+                }
+            </table>
     </div>
-</div>
+</body>
+</html>

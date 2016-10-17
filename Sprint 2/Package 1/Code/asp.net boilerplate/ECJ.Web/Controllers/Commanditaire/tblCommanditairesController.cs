@@ -10,11 +10,11 @@ using ECJ.Web.Models;
 
 namespace ECJ.Web.Controllers.Commanditaire
 {
-    public class CommanditaireController : Controller
+    public class tblCommanditairesController : Controller
     {
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
 
-        // GET: Commanditaire
+        // GET: tblCommanditaires
         public ActionResult Index()
         {
             return View(db.tblCommanditaire.ToList());

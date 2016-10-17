@@ -1,0 +1,84 @@
+﻿@model ECJ.Web.Models.tblCommanditaire
+
+<div>
+    <h4>tblCommanditaire</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomCommanditaire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomCommanditaire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.textePresentation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.textePresentation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.courrielContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.courrielContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numTel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numTel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.extension)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.extension)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateSupprime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateSupprime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.noCommanditaire }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>

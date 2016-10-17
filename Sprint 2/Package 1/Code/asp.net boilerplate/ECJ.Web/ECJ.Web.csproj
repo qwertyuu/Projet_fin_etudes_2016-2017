@@ -476,6 +476,7 @@
     <Compile Include="Controllers\AppelOffre\AppellOffreController.cs" />
     <Compile Include="Controllers\AppelOffre\SoumisionController.cs" />
     <Compile Include="Controllers\AppelOffre\SoumissionController.cs" />
+    <Compile Include="Controllers\Commanditaire\tblCommanditairesController.cs" />
     <Compile Include="Controllers\Memo\CMemoController.cs" />
     <Compile Include="Controllers\Calculateur\CalculateurController.cs" />
     <Compile Include="Controllers\Commanditaire\CommanditaireController.cs" />
@@ -657,7 +658,7 @@
     <Content Include="Views\Events\Ajout.cshtml" />
     <Content Include="Views\Commanditaire\Index.cshtml" />
     <Content Include="Views\Events\Detail.cshtml" />
-    <Content Include="Views\Commanditaire\Ajout.cshtml" />
+    <Content Include="Views\Commanditaire\Create.cshtml" />
     <Content Include="Views\Commanditaire\Detail.cshtml" />
     <Compile Include="Controllers\Don\DonController.cs" />
     <Content Include="Views\don\Ajout.cshtml" />
@@ -677,7 +678,10 @@
     <Content Include="Views\Soumision\Details.cshtml" />
     <Content Include="Views\Soumision\Edit.cshtml" />
     <Content Include="Views\Soumision\Index.cshtml" />
-    <Content Include="Views\Events\Modifier.cshtml" />
+    <Content Include="Views\tblCommanditaires\Create.cshtml" />
+    <Content Include="Views\tblCommanditaires\Delete.cshtml" />
+    <Content Include="Views\tblCommanditaires\Details.cshtml" />
+    <Content Include="Views\tblCommanditaires\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
