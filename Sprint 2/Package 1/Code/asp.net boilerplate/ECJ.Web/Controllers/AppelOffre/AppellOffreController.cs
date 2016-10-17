@@ -48,7 +48,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         public ActionResult Create()
         {
             ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom");
-            ViewBag.noStatut = new SelectList(db.tblStatut, "noStatut", "nom");
+            ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom");
             return View();
         }
 
@@ -61,7 +61,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         {
             if (ModelState.IsValid)
             {
-                var statut = (from q in db.tblStatut
+                var statut = (from q in db.tblStatutAppelOffre
                               where q.noStatut == tblAppelOffre.noStatut
                               select q).FirstOrDefault();
                 var evenement = (from q in db.tblEvenement
@@ -74,7 +74,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             }
 
             ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblAppelOffre.noEvenement);
-            ViewBag.noStatut = new SelectList(db.tblStatut, "noStatut", "nom", tblAppelOffre.noStatut);
+            ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom", tblAppelOffre.noStatut);
             return View(tblAppelOffre);
         }
 
@@ -91,7 +91,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                 return HttpNotFound();
             }
             ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblAppelOffre.noEvenement);
-            ViewBag.noStatut = new SelectList(db.tblStatut, "noStatut", "nom", tblAppelOffre.noStatut);
+            ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom", tblAppelOffre.noStatut);
             return View(tblAppelOffre);
         }
 
@@ -105,21 +105,21 @@ namespace ECJ.Web.Controllers.AppelOffre
           
             if (ModelState.IsValid)
             {
-                var statut =( from q in db.tblStatut
-                             where q.noStatut == tblAppelOffre.noStatut
+                var statut =( from q in db.tblStatutAppelOffre
+                              where q.noStatut == tblAppelOffre.noStatut
                              select q).FirstOrDefault();
                 var evenement = (from q in db.tblEvenement
                               where q.noEvenement == tblAppelOffre.noEvenement
                               select q).FirstOrDefault();
 
                 db.Entry(tblAppelOffre).State = EntityState.Modified;
-                tblAppelOffre.tag = tblAppelOffre.nom + evenement.nom + statut.nomStatut + tblAppelOffre.description; //On charge le tag se qui permettra de faire la recherche.
+                tblAppelOffre.tag = tblAppelOffre.nom + evenement.nom + statut.nom + tblAppelOffre.description; //On charge le tag se qui permettra de faire la recherche.
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
             ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblAppelOffre.noEvenement);
-            ViewBag.noStatut = new SelectList(db.tblStatut, "noStatut", "nom", tblAppelOffre.noStatut);
+            ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom", tblAppelOffre.noStatut);
             return View(tblAppelOffre);
         }
 

@@ -20,7 +20,7 @@
         <table class="table" align="center">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.nom)
+                   Nom de l'appel d'offre
                 </th>
                 <th>
                     Date requise
@@ -35,9 +35,15 @@
                     Statut
                 </th>
                 <th>
+                    Agence de publicité
+                </th>
+                <th>
+                    Soumission
+                </th>
+                <th>
                     Description
                 </th>
-                <th></th>
+                <th>Action</th>
             </tr>
 
             @foreach (var item in Model)
@@ -56,15 +62,21 @@
                         @Html.DisplayFor(modelItem => item.tblEvenement.nom)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.tblStatut.nom)
+                        @Html.DisplayFor(modelItem => item.tblStatut1.nom)
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.description)
                     </td>
                     <td>
-                         @Html.ActionLink("Edit", "Edit", new { id = item.noAppelOffre }) 
-                        @Html.ActionLink("Details", "Details", new { id = item.noAppelOffre }) 
-                        @Html.ActionLink("Delete", "Delete", new { id = item.noAppelOffre })
+                        <a href="/AppellOffre/Details/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                        <a href="/AppellOffre/Edit/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a href="/AppellOffre/Delete/@item.noAppelOffre" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
                     </td>
                 </tr>
             }

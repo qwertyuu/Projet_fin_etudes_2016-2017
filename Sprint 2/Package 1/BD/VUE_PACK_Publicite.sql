@@ -7,10 +7,18 @@ USE PE2_Officiel
 GO
 
 CREATE VIEW  S_publicite.vueSomAppelOffre WITH SCHEMABINDING AS
-SELECT ao.[noAppelOffre],ao.[nom] as nomAppelOffre ,ao.[dateRequis],ao.[dateEnvoi],ao.[description],ao.[dateSupprime],ao.[noEvenement],ao.[noStatut], sta.nom as nomStatut, sta.couleur
+SELECT ao.[noAppelOffre],ao.[nom] as nomAppelOffre ,ao.[dateRequis],ao.[dateEnvoi],ao.[description],ao.[dateSupprime],ao.[noEvenement],ao.[noStatut], sta.nom as nomStatut, sta.couleur, agen.nom AS nomAgence,soumi.nom AS nomSoumission
 FROM S_publicite.tblAppelOffre AS ao  
-LEFT JOIN S_publicite.tblStatut AS sta 
+LEFT JOIN S_publicite.tblStatut AS sta
 ON ao.noStatut=sta.noStatut
+LEFT JOIN S_publicite.tblAppelOffreAgence aoa
+ON aoa.noAppelOffre=ao.noAppelOffre
+LEFT JOIN S_publicite.tblAgencePublicite agen
+ON agen.noAgencePub=aoa.noAgencePub
+LEFT JOIN S_publicite.tblSoumission soumi
+ON soumi.noSoumission=aoa.noSoumission
+
+
 WHERE ao.dateSupprime IS NULL
 GO
 PRINT 'Création de la vue reliée a l''affichage du sommaire appel offre'

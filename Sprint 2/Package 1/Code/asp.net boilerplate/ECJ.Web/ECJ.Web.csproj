@@ -474,6 +474,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Activite\ActiviteController.cs" />
     <Compile Include="Controllers\AppelOffre\AppellOffreController.cs" />
+    <Compile Include="Controllers\AppelOffre\PE2_OfficielEntities.cs" />
     <Compile Include="Controllers\AppelOffre\SoumisionController.cs" />
     <Compile Include="Controllers\AppelOffre\SoumissionController.cs" />
     <Compile Include="Controllers\Memo\CMemoController.cs" />
@@ -481,77 +482,10 @@
     <Compile Include="Controllers\Commanditaire\CommanditaireController.cs" />
     <Compile Include="Controllers\SousEvents\SousEvenementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\AppelOffre\AppelOffreController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="Controllers\TenantsController.cs" />
     <Compile Include="Controllers\Events\EventsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Models\AbpAuditLogs.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpBackgroundJobs.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpEditions.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpFeatures.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpLanguages.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpLanguageTexts.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpNotifications.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpNotificationSubscriptions.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpOrganizationUnits.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpPermissions.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpRoles.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpSettings.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpTenantNotifications.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpTenants.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpUserAccounts.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpUserLoginAttempts.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpUserLogins.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpUserNotifications.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpUserOrganizationUnits.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpUserRoles.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AbpUsers.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\C__MigrationHistory.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Layout\UserMenuOrLoginLinkViewModel.cs" />
     <Compile Include="Models\Account\LoginFormViewModel.cs" />
     <Compile Include="Models\Account\LoginViewModel.cs" />
@@ -580,123 +514,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelEquipe2.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblActivite.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblAdresse.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblAgence.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblAgencePublicite.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblAppelOffre.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblAppelOffreAgence.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblArtiste.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblCategorieArtiste.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblCommanditaire.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblContrat.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblDiffuseur.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblDon.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblEngagement.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblEvenement.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblExigence.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblFichierOfficiel.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblFichierPersonnel.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblForfait.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblMedia.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblMemo.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblResponsable.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblSalle.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblService.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblSoumission.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblSousEvenement.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblStatut.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblStatutAppelOffre.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblUtilisateur.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vueSomAgence.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vueSomAppelOffre.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vueSomArtiste.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vueSomCatArtiste.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vueSomCommanditaire.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vueSomContrat.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vueSomEngagement.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vueSomEvenement.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vueSomExigence.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vueSomSoumission.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vueSomStatut.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\ECJWebViewPageBase.cs" />
     <Compile Include="Views\UrlChecker.cs" />
@@ -720,9 +537,6 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Activite\Index.cshtml" />
     <Content Include="Views\Activite\Ajout.cshtml" />
-    <Content Include="Views\AppelOffre\Index.cshtml" />
-    <Content Include="Views\AppelOffre\Ajout.cshtml" />
-    <Content Include="Views\AppelOffre\Detail.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Events\Ajout.cshtml" />
     <Content Include="Views\Commanditaire\Index.cshtml" />
