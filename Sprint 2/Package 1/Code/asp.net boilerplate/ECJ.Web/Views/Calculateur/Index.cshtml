@@ -19,19 +19,19 @@
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="inputDefault">Billets</label>
-                                <input type="text" class="form-control" id="nbBillet" onblur="calculBillet()">
+                                <input type="number" class="form-control" id="nbBillet" onblur="calculBillet()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="inputDefault">Prix</label>
-                                <input type="text" class="form-control" id="prixBillet" onblur="calculBillet()">
+                                <input type="number" class="form-control" id="prixBillet" onblur="calculBillet()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="disabledInput">Total</label>
-                                <input class="form-control" id="totalBillet" type="text" disabled="">
+                                <input class="form-control" id="totalBillet" type="number" disabled="">
                             </div>
                         </th>
                     </tr>
@@ -39,19 +39,19 @@
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="inputDefault">Billets V.I.P</label>
-                                <input type="text" class="form-control" id="nbBilletVIP" onblur="calculBilletVIP()">
+                                <input type="number" class="form-control" id="nbBilletVIP" onblur="calculBilletVIP()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="inputDefault">Prix</label>
-                                <input type="text" class="form-control" id="prixBilletVIP" onblur="calculBilletVIP()">
+                                <input type="number" class="form-control" id="prixBilletVIP" onblur="calculBilletVIP()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="disabledInput">Total</label>
-                                <input class="form-control" id="totalBilletVIP" type="text" disabled="">
+                                <input class="form-control" id="totalBilletVIP" type="number" disabled="">
                             </div>
                         </th>
                     </tr>
@@ -93,19 +93,19 @@
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="inputDefault">Nombre de places</label>
-                                <input type="text" class="form-control" id="inputDefault">
+                                <input type="number" class="form-control" id="nbBilletSouper" onblur="calculSouperSpectacle()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="inputDefault">Prix</label>
-                                <input type="text" class="form-control" id="inputDefault">
+                                <input type="number" class="form-control" id="prixSouper" onblur="calculSouperSpectacle()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="disabledInput">Total</label>
-                                <input class="form-control" id="disabledInput" type="text" disabled="">
+                                <input class="form-control" id="totalSouper" type="number" disabled="">
                             </div>
                         </th>
                     </tr>
@@ -141,19 +141,19 @@
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Jeunes % Rabais</label>
-                        <input type="text" class="form-control" id="JeunePourcent" onblur="PourcentCheck()">
+                        <input type="number" class="form-control" id="JeunePourcent" onblur="pourcentCheck()">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Nombre de billets</label>
-                        <input type="text" class="form-control" id="inputDefault">
+                        <input type="number" class="form-control" id="nbBilletJeune">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="disabledInput">Total</label>
-                        <input class="form-control" id="disabledInput" type="text" disabled="">
+                        <input class="form-control" id="totalPourcentRabaisJeune" type="number" disabled="">
                     </div>
                 </th>
             </tr>
@@ -161,19 +161,19 @@
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Adultes % Rabais</label>
-                        <input type="text" class="form-control" id="AdultesPourcent" onblur="PourcentCheck()">
+                        <input type="number" class="form-control" id="AdultesPourcent" onblur="pourcentCheck()">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Nombre de billets</label>
-                        <input type="text" class="form-control" id="inputDefault">
+                        <input type="number" class="form-control" id="inputDefault">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="disabledInput">Total</label>
-                        <input class="form-control" id="disabledInput" type="text" disabled="">
+                        <input class="form-control" id="disabledInput" type="number" disabled="">
                     </div>
                 </th>
             </tr>
@@ -181,19 +181,19 @@
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Ainés % Rabais</label>
-                        <input type="text" class="form-control" id="AinePourcent" onblur="PourcentCheck()">
+                        <input type="number" class="form-control" id="AinePourcent" onblur="pourcentCheck()">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Nombre de billets</label>
-                        <input type="text" class="form-control" id="inputDefault">
+                        <input type="number" class="form-control" id="inputDefault">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="disabledInput">Total</label>
-                        <input class="form-control" id="disabledInput" type="text" disabled="">
+                        <input class="form-control" id="disabledInput" type="number" disabled="">
                     </div>
                 </th>
             </tr>
