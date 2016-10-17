@@ -146,14 +146,20 @@
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="inputDefault">Nombre de billets</label>
-                        <input type="number" class="form-control" id="nbBilletJeune">
+                        <label class="control-label" for="inputDefault">Ratio %</label>
+                        <input type="number" class="form-control" id="RatioJeune" onblur="calculRabaisAge()">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="disabledInput">Total</label>
-                        <input class="form-control" id="totalPourcentRabaisJeune" type="number" disabled="">
+                        <label class="control-label" for="disabledInput">Nbre de Billets</label>
+                        <input class="form-control" id="nbBilletJeune" type="number" disabled="">
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label" for="disabledInput">Rabais/Billet</label>
+                        <input class="form-control" id="rabaisBilletJeune" type="number" disabled="">
                     </div>
                 </th>
             </tr>
@@ -161,39 +167,51 @@
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="inputDefault">Adultes % Rabais</label>
-                        <input type="number" class="form-control" id="AdultesPourcent" onblur="pourcentCheck()">
+                        <input type="number" class="form-control" id="AdultePourcent" onblur="pourcentCheck()">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="inputDefault">Nombre de billets</label>
-                        <input type="number" class="form-control" id="inputDefault">
+                        <label class="control-label" for="inputDefault">Ratio %</label>
+                        <input type="number" class="form-control" id="RatioAdulte" onblur="calculRabaisAge()">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="disabledInput">Total</label>
-                        <input class="form-control" id="disabledInput" type="number" disabled="">
+                        <label class="control-label" for="disabledInput">Nbre de Billets</label>
+                        <input class="form-control" id="nbBilletAdulte" type="number" disabled="">
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label" for="disabledInput">Rabais/Billet</label>
+                        <input class="form-control" id="rabaisBilletAdulte" type="number" disabled="">
                     </div>
                 </th>
             </tr>
             <tr>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="inputDefault">Ainés % Rabais</label>
+                        <label class="control-label" for="AinePourcent">Ainés % Rabais</label>
                         <input type="number" class="form-control" id="AinePourcent" onblur="pourcentCheck()">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="inputDefault">Nombre de billets</label>
-                        <input type="number" class="form-control" id="inputDefault">
+                        <label class="control-label" for="RatioAine">Ratio %</label>
+                        <input type="number" class="form-control" id="RatioAine" onblur="calculRabaisAge()">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="disabledInput">Total</label>
-                        <input class="form-control" id="disabledInput" type="number" disabled="">
+                        <label class="control-label" for="disabledInput">Nbre de Billets</label>
+                        <input class="form-control" id="rabaisBilletAine" type="number" disabled="">
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <label class="control-label" for="disabledInput">Rabais/Billet</label>
+                        <input class="form-control" id="rabaisBilletAine" type="number" disabled="">
                     </div>
                 </th>
             </tr>
