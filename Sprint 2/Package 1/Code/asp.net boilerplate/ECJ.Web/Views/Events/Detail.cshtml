@@ -59,7 +59,7 @@
         </div>
     </div>
     <label>Sous-Évènements</label>
-    <a href="/sousEvenements/Ajout" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un sous-évènement</a>
+    <a href="/sousEvenements/Ajout" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un sous-événement</a>
     <div class="form-group">
         <table class="table table-striped table-hover">
             <thead>
@@ -86,7 +86,7 @@
         </table>
     </div>
     <label>Activités</label>
-    <a href="/Activite/Ajout" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
+    <a href="/Activite/Ajout/?evenement_id=@Model.noEvenement" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
     <ul class="nav nav-tabs">
         <li class="active"><a href="#liste" data-toggle="tab" aria-expanded="true">Liste</a></li>
         <li class=""><a href="#calendrier" data-toggle="tab" aria-expanded="false">Calendrier</a></li>
@@ -150,5 +150,9 @@
         </div>
     </div>
 </form>
-
-<script>var dates_calendrier = @(new HtmlString("[" + dates.ToString().Substring(0, dates.ToString().Length - 1) + "]"));</script>
+@{
+    if (dates.Length > 0)
+    {
+        <script>var dates_calendrier = @(new HtmlString("[" + dates.ToString().Substring(0, dates.ToString().Length - 1) + "]"));</script>
+    }
+}
