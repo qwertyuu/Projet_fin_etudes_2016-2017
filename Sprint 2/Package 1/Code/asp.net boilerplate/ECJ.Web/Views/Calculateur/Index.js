@@ -2,6 +2,7 @@ var nbBillet;
 var nbBilletVIP;
 var TotalBillet;
 var PrixMoyen;
+
 function calculTotalBillet() {
     return TotalBillet = parseInt(nbBillet) + parseInt(nbBilletVIP);
 } //Met a jour le nombre de billet entré et le retourne 
@@ -21,7 +22,7 @@ function calculBillet() {
 
         var total = nbBillet * prixBillet;
 
-        $("#totalBillet").val(total);
+        $("#totalBillet").val(round_argent(total));
     }
 } //Calcule le prix des billets normaux
 
@@ -35,7 +36,7 @@ function calculBilletVIP() {
 
         var total = nbBilletVIP * prixBilletVIP;
 
-        $("#totalBilletVIP").val(total);
+        $("#totalBilletVIP").val(round_argent(total));
     }
 } //Calcule le prix des billets VIP
 
@@ -45,9 +46,9 @@ function pourcentCheck() {
 
         return false
     }
-    //if (parseInt($("#RatioJeune").val()) + parseInt($("#RatioAdulte").val()) + parseInt($("#RatioAine").val()) == 100) {
-        
-    //}
+        //if (parseInt($("#RatioJeune").val()) + parseInt($("#RatioAdulte").val()) + parseInt($("#RatioAine").val()) == 100) {
+
+        //}
     else {
         return true
     }
@@ -58,10 +59,16 @@ function ratioCheck() {
         if (parseInt($("#RatioJeune").val()) + parseInt($("#RatioAdulte").val()) + parseInt($("#RatioAine").val()) == 100) {
             return true
         }
+        else if ($("#RatioAdulte").val() != "" && $("#RatioAine").val() != "")//un check pour s'assurer que les cases ne sont pas vide.. ça évite le spam inutile
+        {
+             alert("Veuiller entrer un ratio total de 100");
+        } 
     }
-    alert("Veuiller entrer un ratio entre 0 et 100 seulement");
-    return false
-} //Vérifie que les ratios entrés soient entre 0 et 100 pour ensuite vérifier si additionnés ils = 100 ensuite retourne un bool
+    else {
+        alert("Veuiller entrer un ratio entre 0 et 100 seulement");
+        return false
+    }
+} //Vérifie que les ratios entrés soient entre 0 et 100 pour ensuite vérifier si additionnés ils égalent 100 ensuite retourne un bool
 
 function positifBilletCheck() {
     if ($("#nbBillet").val() <= -1 || $("#nbBilletVIP").val() <= -1) {
@@ -72,7 +79,7 @@ function positifBilletCheck() {
     else {
         return true
     }
-} //Vérifie que le nombres de billet et billet VIP entrés soient positifs et retourne un bool
+} //Vérifie que le nombres de billets et billets VIP entrés soient positifs et retourne un bool
 
 function calculSouperSpectacle() {
 
@@ -84,9 +91,9 @@ function calculSouperSpectacle() {
     else {
         var totalSouper = parseInt($("#nbBilletSouper").val()) * parseInt($("#prixSouper").val());
 
-        $("#totalSouper").val(totalSouper);
+        $("#totalSouper").val(round_argent(totalSouper));
     }
-} //Calcule le prix des souper spectacle après avoir vérifier que les données entrées soient bonnes
+} //Calcule le prix des soupers spectacles après avoir vérifié que les données entrées soient bonnes
 
 function calculRabaisAge() {
     if (pourcentCheck() == true && ratioCheck() == true) {
@@ -101,12 +108,17 @@ function calculRabaisAge() {
         calculMoyenne();
         calculTotalBillet();
 
-        $("#nbBilletJeune").val(TotalBillet * ratioJeune);
-        $("#nbBilletAdulte").val(TotalBillet * ratioAdulte);
-        $("#nbBilletAine").val(TotalBillet * ratioAine);
+        $("#nbBilletJeune").val(Math.round(TotalBillet * ratioJeune));
+        $("#nbBilletAdulte").val(Math.round(TotalBillet * ratioAdulte));
+        $("#nbBilletAine").val(Math.round(TotalBillet * ratioAine));
 
-        $("#rabaisBilletJeune").val(PrixMoyen * jeune);
-        $("#rabaisBilletAdulte").val(PrixMoyen * adulte);
-        $("#rabaisBilletAine").val(PrixMoyen * aine);
+        $("#rabaisBilletJeune").val(round_argent(PrixMoyen * jeune));
+        $("#rabaisBilletAdulte").val(round_argent(PrixMoyen * adulte));
+        $("#rabaisBilletAine").val(round_argent(PrixMoyen * aine));
     }
 }//Calcule les rabais après avoir vérifié les données
+
+function round_argent(value) {
+    var decimals = 2
+    return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals).toFixed(decimals);
+}//Aroundie les valeurs avec 2 décimales
