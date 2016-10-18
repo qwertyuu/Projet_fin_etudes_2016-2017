@@ -110,7 +110,9 @@ namespace ECJ.Web.Controllers.Commanditaire
         public ActionResult DeleteConfirmed(int id)
         {
             tblCommanditaire tblCommanditaire = db.tblCommanditaire.Find(id);
-            db.tblCommanditaire.Remove(tblCommanditaire);
+            //db.tblCommanditaire.Remove(tblCommanditaire);
+            DateTime thisDay = DateTime.Today;
+            tblCommanditaire.dateSupprime = thisDay;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

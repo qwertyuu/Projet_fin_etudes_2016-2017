@@ -1,84 +1,109 @@
 ﻿@model ECJ.Web.Models.tblCommanditaire
 
-<div>
-    <h4>tblCommanditaire</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nomCommanditaire)
-        </dt>
+@{
+    ViewBag.Title = "Details";
+}
 
-        <dd>
-            @Html.DisplayFor(model => model.nomCommanditaire)
-        </dd>
+<h2>Commanditaires</h2>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.nomContact)
-        </dt>
+<!DOCTYPE html>
 
-        <dd>
-            @Html.DisplayFor(model => model.nomContact)
-        </dd>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.logo)
-        </dt>
+<body>
+    <div>
+        <h4>Commanditaire</h4>
 
-        <dd>
-            @Html.DisplayFor(model => model.logo)
-        </dd>
+        <hr />
 
-        <dt>
-            @Html.DisplayNameFor(model => model.url)
-        </dt>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nomCommanditaire)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.url)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.nomCommanditaire)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.textePresentation)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.nomContact)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.textePresentation)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.nomContact)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.courrielContact)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.logo)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.courrielContact)
-        </dd>
+            <dd>
+                @if (Model.logo == null)
+                {
+                    <p>null</p>
+                }
+                else
+                {
+                    @Html.DisplayFor(model => model.logo)
+                }
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.numTel)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.url)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.numTel)
-        </dd>
+            <dd>
+                @if (Model.url == null)
+                {
+                    <p>null</p>
+                }
+                else
+                {
+                    @Html.DisplayFor(model => model.url)
+                }
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.extension)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.textePresentation)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.extension)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.textePresentation)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.dateSupprime)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.courrielContact)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.dateSupprime)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.courrielContact)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.noCommanditaire }) |*@
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            <dt>
+                @Html.DisplayNameFor(model => model.numTel)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.numTel)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.extension)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.extension)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        <a href="/Commanditaire/Edit/@Model.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+        <a href="/Commanditaire/Index" class="btn btn-sm btn-primary" title="Index"> Retourner à la liste</a>
+    </p>
+</body>
+</html>

@@ -1,8 +1,10 @@
 ﻿@model ECJ.Web.Models.tblCommanditaire
 
 @{
-    Layout = null;
+    ViewBag.Title = "Create";
 }
+
+<h2>Commanditaires</h2>
 
 <!DOCTYPE html>
 
@@ -95,8 +97,8 @@
             @Html.AntiForgeryToken()
     
             <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
+                <input type="submit" value="Delete" class="btn btn-default" />
+                <a href="/Commanditaire/Index" class="btn btn-sm btn-primary" title="Index"> Retourner à la liste</a>
             </div>
         }
     </div>

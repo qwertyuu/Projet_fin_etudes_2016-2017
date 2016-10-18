@@ -3,7 +3,10 @@
 @{
     ViewBag.Title = "Index";
     ViewBag.ActiveMenu = "Commanditaires";
+    decimal test = 0;
 }
+
+<h2>Commanditaires</h2>
 
 <!DOCTYPE html>
 
@@ -23,7 +26,7 @@
                     </span>
                 </div>
             </form>
-            <a href="/tblCommanditaires/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
+            <a href="/Commanditaire/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
             <table class="table" align="center">
                 <thead>
                     <tr>
@@ -56,35 +59,82 @@
 
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.nomCommanditaire)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.nomContact)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.courrielContact)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.numTel)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.extension)
-                        </td>
-                        <td>
-                            10
-                        </td>
-                        <td>
-                            or
-                        </td>
-                        <td>
-                            <a href="/tblCommanditaires/Details/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                            <a href="/tblCommanditaires/Edit/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                            <a href="/tblCommanditaires/Delete/@item.noCommanditaire" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-                        </td>
-                    </tr>
-                }
+                    if (item.dateSupprime == null)
+                    {
+
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nomCommanditaire)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nomContact)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.courrielContact)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.numTel)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.extension)
+                            </td>
+                            <td>
+                                @foreach (var don in item.tblDon)
+                                {
+                                    if (don.noCommanditaire == item.noCommanditaire)
+                                    {
+                                        <p>@don.montant.ToString() $</p>
+                                    }
+                                }
+                            </td>
+                            <td>
+
+                                @{foreach (var Don in item.tblDon)
+                                    {
+                                        if (Don.noCommanditaire == item.noCommanditaire)
+                                        {
+                                            test += Don.montant;
+                                        }
+                                    }
+
+                                    if (test >= 1500)
+                                    {
+                                        <p>Or</p>
+                                        test = 0;
+                                    }
+                                    else if (test >= 1000)
+                                    {
+                                        <p>Argent</p>
+                                        test = 0;
+                                    }
+                                    else if (test >= 500)
+                                    {
+                                        <p>Bronze</p>
+                                        test = 0;
+                                    }
+                                    else if (test > 0)
+                                    {
+                                        <p>Ami</p>
+                                        test = 0;
+                                    }
+                                    else
+                                    {
+                                        <p>Aucun rang</p>
+                                        test = 0;
+                                    }
+
+                                }
+                            </td>
+                            <td>
+                                <a href="/Commanditaire/Details/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="/Commanditaire/Edit/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="/Don/Ajout/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Ajouter"><i class="fa fa-money fa-lg"></i></a>
+                                <a href="/Commanditaire/Delete/@item.noCommanditaire" class="btn btn-sm btn-danger" title="Supprimer" value="Delete"><i class="fa fa-trash fa-lg"></i></a>
+
+                            </td>
+                        </tr>
+                                        }
+                                    }
             </table>
     </div>
 </body>
