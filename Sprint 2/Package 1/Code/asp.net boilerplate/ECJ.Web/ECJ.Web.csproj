@@ -476,6 +476,8 @@
     <Compile Include="Controllers\AppelOffre\AppellOffreController.cs" />
     <Compile Include="Controllers\AppelOffre\SoumisionController.cs" />
     <Compile Include="Controllers\AppelOffre\SoumissionController.cs" />
+    <Compile Include="Controllers\AppelOffre\testController.cs" />
+    <Compile Include="Controllers\DBProvider.cs" />
     <Compile Include="Controllers\Memo\CMemoController.cs" />
     <Compile Include="Controllers\Calculateur\CalculateurController.cs" />
     <Compile Include="Controllers\Commanditaire\CommanditaireController.cs" />
@@ -679,6 +681,11 @@
     <Content Include="Views\Soumision\Index.cshtml" />
     <Content Include="Views\Commanditaire\Delete.cshtml" />
     <Content Include="Views\Commanditaire\Edit.cshtml" />
+    <Content Include="Views\test\Create.cshtml" />
+    <Content Include="Views\test\Delete.cshtml" />
+    <Content Include="Views\test\Details.cshtml" />
+    <Content Include="Views\test\Edit.cshtml" />
+    <Content Include="Views\test\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -115,7 +115,7 @@ html {
 
 .footer-distributed .footer-center p a{
 	color:  #5383d3;
-	text-decoration: none;;
+	text-decoration: none;
 }
 
 
@@ -160,5 +160,9 @@ html {
 
 	margin-right: 3px;
 	margin-bottom: 5px;
+}
+#colorStatut{
+    width:50px;
+    height:50px;
 }
 

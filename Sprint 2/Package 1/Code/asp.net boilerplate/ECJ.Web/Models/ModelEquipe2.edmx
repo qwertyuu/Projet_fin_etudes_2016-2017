@@ -332,6 +332,7 @@
           <Property Name="dateSupprime" Type="datetime" />
           <Property Name="noEvenement" Type="int" Nullable="false" />
           <Property Name="noStatut" Type="int" Nullable="false" />
+          <Property Name="noMedia" Type="int" Nullable="false" />
           <Property Name="tag" Type="text" />
         </EntityType>
         <EntityType Name="tblAppelOffreAgence">
@@ -351,14 +352,6 @@
           <Property Name="noMedia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="20" />
           <Property Name="description" Type="text" />
-        </EntityType>
-        <EntityType Name="tblMediaAppelOffre">
-          <Key>
-            <PropertyRef Name="noMedia" />
-            <PropertyRef Name="noAppelOffre" />
-          </Key>
-          <Property Name="noMedia" Type="int" Nullable="false" />
-          <Property Name="noAppelOffre" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="tblSoumission">
           <Key>
@@ -517,7 +510,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomAppelOffre' n'a
             <PropertyRef Name="nomAppelOffre" />
             <PropertyRef Name="dateRequis" />
             <PropertyRef Name="dateEnvoi" />
-            <PropertyRef Name="nomEvent" />
             <PropertyRef Name="noStatut" />
           </Key>
           <Property Name="noAppelOffre" Type="int" Nullable="false" />
@@ -526,7 +518,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomAppelOffre' n'a
           <Property Name="dateEnvoi" Type="datetime" Nullable="false" />
           <Property Name="description" Type="text" />
           <Property Name="dateSupprime" Type="datetime" />
-          <Property Name="nomEvent" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nomEvent" Type="varchar" MaxLength="100" />
           <Property Name="noStatut" Type="int" Nullable="false" />
           <Property Name="nomStatut" Type="varchar" MaxLength="20" />
           <Property Name="couleur" Type="char" MaxLength="6" />
@@ -801,6 +793,18 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="MED_APPEL_FK">
+          <End Role="tblMedia" Type="Self.tblMedia" Multiplicity="1" />
+          <End Role="tblAppelOffre" Type="Self.tblAppelOffre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMedia">
+              <PropertyRef Name="noMedia" />
+            </Principal>
+            <Dependent Role="tblAppelOffre">
+              <PropertyRef Name="noMedia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="NOCOMM_DON_FK">
           <End Role="tblCommanditaire" Type="Self.tblCommanditaire" Multiplicity="0..1" />
           <End Role="tblDon" Type="Self.tblDon" Multiplicity="*" />
@@ -870,30 +874,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Principal>
             <Dependent Role="tblDon">
               <PropertyRef Name="noSousEvenement" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="OFFMED_APPELOFFRE_FK">
-          <End Role="tblAppelOffre" Type="Self.tblAppelOffre" Multiplicity="1" />
-          <End Role="tblMediaAppelOffre" Type="Self.tblMediaAppelOffre" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblAppelOffre">
-              <PropertyRef Name="noAppelOffre" />
-            </Principal>
-            <Dependent Role="tblMediaAppelOffre">
-              <PropertyRef Name="noAppelOffre" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="OFFMED_MED_NOMED_FK">
-          <End Role="tblMedia" Type="Self.tblMedia" Multiplicity="1" />
-          <End Role="tblMediaAppelOffre" Type="Self.tblMediaAppelOffre" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblMedia">
-              <PropertyRef Name="noMedia" />
-            </Principal>
-            <Dependent Role="tblMediaAppelOffre">
-              <PropertyRef Name="noMedia" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1074,7 +1054,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySet Name="tblAppelOffre" EntityType="Self.tblAppelOffre" Schema="S_publicite" store:Type="Tables" />
           <EntitySet Name="tblAppelOffreAgence" EntityType="Self.tblAppelOffreAgence" Schema="S_publicite" store:Type="Tables" />
           <EntitySet Name="tblMedia" EntityType="Self.tblMedia" Schema="S_publicite" store:Type="Tables" />
-          <EntitySet Name="tblMediaAppelOffre" EntityType="Self.tblMediaAppelOffre" Schema="S_publicite" store:Type="Tables" />
           <EntitySet Name="tblSoumission" EntityType="Self.tblSoumission" Schema="S_publicite" store:Type="Tables" />
           <EntitySet Name="tblStatutAppelOffre" EntityType="Self.tblStatutAppelOffre" Schema="S_publicite" store:Type="Tables" />
           <EntitySet Name="vueSomAgence" EntityType="Self.vueSomAgence" store:Type="Views" store:Schema="S_Contrat">
@@ -1270,6 +1249,10 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblForfait" EntitySet="tblForfait" />
             <End Role="tblForfaitSousEvenement" EntitySet="tblForfaitSousEvenement" />
           </AssociationSet>
+          <AssociationSet Name="MED_APPEL_FK" Association="Self.MED_APPEL_FK">
+            <End Role="tblMedia" EntitySet="tblMedia" />
+            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
+          </AssociationSet>
           <AssociationSet Name="NOCOMM_DON_FK" Association="Self.NOCOMM_DON_FK">
             <End Role="tblCommanditaire" EntitySet="tblCommanditaire" />
             <End Role="tblDon" EntitySet="tblDon" />
@@ -1293,14 +1276,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <AssociationSet Name="NOSOUSEVEN_DON_FK" Association="Self.NOSOUSEVEN_DON_FK">
             <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
             <End Role="tblDon" EntitySet="tblDon" />
-          </AssociationSet>
-          <AssociationSet Name="OFFMED_APPELOFFRE_FK" Association="Self.OFFMED_APPELOFFRE_FK">
-            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
-            <End Role="tblMediaAppelOffre" EntitySet="tblMediaAppelOffre" />
-          </AssociationSet>
-          <AssociationSet Name="OFFMED_MED_NOMED_FK" Association="Self.OFFMED_MED_NOMED_FK">
-            <End Role="tblMedia" EntitySet="tblMedia" />
-            <End Role="tblMediaAppelOffre" EntitySet="tblMediaAppelOffre" />
           </AssociationSet>
           <AssociationSet Name="RES_AGE_FK" Association="Self.RES_AGE_FK">
             <End Role="tblAgence" EntitySet="tblAgence" />
@@ -1490,6 +1465,10 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
             <End Role="tblAppelOffreAgence" EntitySet="tblAppelOffreAgence" />
           </AssociationSet>
+          <AssociationSet Name="MED_APPEL_FK" Association="PE2_OfficielModel.MED_APPEL_FK">
+            <End Role="tblMedia" EntitySet="tblMedia" />
+            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
+          </AssociationSet>
           <AssociationSet Name="STATUT_APPEL_FK" Association="PE2_OfficielModel.STATUT_APPEL_FK">
             <End Role="tblStatutAppelOffre" EntitySet="tblStatutAppelOffre" />
             <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
@@ -1525,10 +1504,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <AssociationSet Name="tblServiceRequis" Association="PE2_OfficielModel.tblServiceRequis">
             <End Role="tblService" EntitySet="tblService" />
             <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
-          </AssociationSet>
-          <AssociationSet Name="tblMediaAppelOffre" Association="PE2_OfficielModel.tblMediaAppelOffre">
-            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
-            <End Role="tblMedia" EntitySet="tblMedia" />
           </AssociationSet>
           <EntitySet Name="vueSomAppelOffre" EntityType="PE2_OfficielModel.vueSomAppelOffre" />
         </EntityContainer>
@@ -1867,11 +1842,12 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
           <Property Name="noEvenement" Type="Int32" Nullable="false" />
           <Property Name="noStatut" Type="Int32" Nullable="false" />
+          <Property Name="noMedia" Type="Int32" Nullable="false" />
           <Property Name="tag" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tblEvenement" Relationship="PE2_OfficielModel.EVENEMENT_APPEL_FK" FromRole="tblAppelOffre" ToRole="tblEvenement" />
           <NavigationProperty Name="tblAppelOffreAgence" Relationship="PE2_OfficielModel.APPEL_OFFRE_FK" FromRole="tblAppelOffre" ToRole="tblAppelOffreAgence" />
+          <NavigationProperty Name="tblMedia" Relationship="PE2_OfficielModel.MED_APPEL_FK" FromRole="tblAppelOffre" ToRole="tblMedia" />
           <NavigationProperty Name="tblStatutAppelOffre" Relationship="PE2_OfficielModel.STATUT_APPEL_FK" FromRole="tblAppelOffre" ToRole="tblStatutAppelOffre" />
-          <NavigationProperty Name="tblMedia" Relationship="PE2_OfficielModel.tblMediaAppelOffre" FromRole="tblAppelOffre" ToRole="tblMedia" />
         </EntityType>
         <EntityType Name="tblAppelOffreAgence">
           <Key>
@@ -1894,7 +1870,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="noMedia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblAppelOffre" Relationship="PE2_OfficielModel.tblMediaAppelOffre" FromRole="tblMedia" ToRole="tblAppelOffre" />
+          <NavigationProperty Name="tblAppelOffre" Relationship="PE2_OfficielModel.MED_APPEL_FK" FromRole="tblMedia" ToRole="tblAppelOffre" />
         </EntityType>
         <EntityType Name="tblSoumission">
           <Key>
@@ -2331,6 +2307,18 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="MED_APPEL_FK">
+          <End Type="PE2_OfficielModel.tblMedia" Role="tblMedia" Multiplicity="1" />
+          <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMedia">
+              <PropertyRef Name="noMedia" />
+            </Principal>
+            <Dependent Role="tblAppelOffre">
+              <PropertyRef Name="noMedia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="STATUT_APPEL_FK">
           <End Type="PE2_OfficielModel.tblStatutAppelOffre" Role="tblStatutAppelOffre" Multiplicity="1" />
           <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="*" />
@@ -2391,17 +2379,12 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <End Type="PE2_OfficielModel.tblService" Role="tblService" Multiplicity="*" />
           <End Type="PE2_OfficielModel.tblSousEvenement" Role="tblSousEvenement" Multiplicity="*" />
         </Association>
-        <Association Name="tblMediaAppelOffre">
-          <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="*" />
-          <End Type="PE2_OfficielModel.tblMedia" Role="tblMedia" Multiplicity="*" />
-        </Association>
         <EntityType Name="vueSomAppelOffre">
           <Key>
             <PropertyRef Name="noAppelOffre" />
             <PropertyRef Name="nomAppelOffre" />
             <PropertyRef Name="dateRequis" />
             <PropertyRef Name="dateEnvoi" />
-            <PropertyRef Name="nomEvent" />
             <PropertyRef Name="noStatut" />
           </Key>
           <Property Name="noAppelOffre" Type="Int32" Nullable="false" />
@@ -2410,7 +2393,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="dateEnvoi" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
-          <Property Name="nomEvent" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nomEvent" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="noStatut" Type="Int32" Nullable="false" />
           <Property Name="nomStatut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="couleur" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
@@ -2716,6 +2699,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <EntityTypeMapping TypeName="PE2_OfficielModel.tblAppelOffre">
               <MappingFragment StoreEntitySet="tblAppelOffre">
                 <ScalarProperty Name="tag" ColumnName="tag" />
+                <ScalarProperty Name="noMedia" ColumnName="noMedia" />
                 <ScalarProperty Name="noStatut" ColumnName="noStatut" />
                 <ScalarProperty Name="noEvenement" ColumnName="noEvenement" />
                 <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
@@ -2930,14 +2914,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </EndProperty>
             <EndProperty Name="tblService">
               <ScalarProperty Name="noService" ColumnName="noService" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="tblMediaAppelOffre" TypeName="PE2_OfficielModel.tblMediaAppelOffre" StoreEntitySet="tblMediaAppelOffre">
-            <EndProperty Name="tblMedia">
-              <ScalarProperty Name="noMedia" ColumnName="noMedia" />
-            </EndProperty>
-            <EndProperty Name="tblAppelOffre">
-              <ScalarProperty Name="noAppelOffre" ColumnName="noAppelOffre" />
             </EndProperty>
           </AssociationSetMapping>
           <EntitySetMapping Name="vueSomAppelOffre">

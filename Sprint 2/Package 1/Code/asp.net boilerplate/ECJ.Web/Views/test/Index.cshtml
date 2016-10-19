@@ -1,0 +1,83 @@
+﻿@model IEnumerable<ECJ.Web.Models.tblAppelOffre>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateRequis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateEnvoi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateSupprime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tblEvenement.nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tblStatutAppelOffre.nom)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateRequis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateEnvoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateSupprime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblEvenement.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblStatutAppelOffre.nom)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.noAppelOffre }) |
+                @Html.ActionLink("Details", "Details", new { id=item.noAppelOffre }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.noAppelOffre })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

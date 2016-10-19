@@ -18,7 +18,6 @@ namespace ECJ.Web.Models
         public tblAppelOffre()
         {
             this.tblAppelOffreAgence = new HashSet<tblAppelOffreAgence>();
-            this.tblMedia = new HashSet<tblMedia>();
         }
     
         public int noAppelOffre { get; set; }
@@ -29,13 +28,13 @@ namespace ECJ.Web.Models
         public Nullable<System.DateTime> dateSupprime { get; set; }
         public int noEvenement { get; set; }
         public int noStatut { get; set; }
+        public int noMedia { get; set; }
         public string tag { get; set; }
     
         public virtual tblEvenement tblEvenement { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAppelOffreAgence> tblAppelOffreAgence { get; set; }
+        public virtual tblMedia tblMedia { get; set; }
         public virtual tblStatutAppelOffre tblStatutAppelOffre { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblMedia> tblMedia { get; set; }
     }
 }

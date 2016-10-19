@@ -49,7 +49,17 @@
     <div class="form-group">
         <label>Agence de publicité</label>
         <div class="well well-sm">
-            Médiative
+          @foreach(var agenPub in ViewBag.agencePub)
+          {
+              <span>@agenPub.nom</span>
+          }
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Media</label>
+        <div class="well well-sm">
+            @Html.DisplayFor(model => model.tblMedia.nom)
+
         </div>
     </div>
 
@@ -57,7 +67,6 @@
         <label>Description</label>
         <div class="well well-sm">
             @Html.DisplayFor(model => model.description)
-
         </div>
     </div>
     <br />
@@ -72,30 +81,19 @@
             </thead>
             <tbody>
 
-                <tr>
-                    <td>Soumission1</td>
-                    <td>
-                        <a href="/Soumission/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Soumission 2</td>
-                    <td>
-                        <a href="/AppelOffre/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Soumission 3</td>
-                    <td>
-                        <a href="/AppelOffre/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
-                    </td>
-                </tr>
+                @foreach (var soumi in ViewBag.soumission)
+                {
+
+                    <tr>
+                        <td>@soumi.nom</td>
+                        <td>
+                            <a href="/Soumission/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                            <a href="" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
+                            <a href="" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
+                        </td>
+                    </tr>
+                }
+
             </tbody>
         </table>
     </div>

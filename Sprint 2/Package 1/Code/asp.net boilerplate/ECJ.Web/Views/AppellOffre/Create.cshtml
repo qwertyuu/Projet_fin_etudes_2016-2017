@@ -26,7 +26,7 @@
         <div class="form-group">
             <label>Date d'envoi</label>
             <div>
-                @Html.EditorFor(model => model.dateEnvoi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.dateEnvoi, new {  htmlAttributes = new { @class = "form-control" , @type="date"} })
                 @Html.ValidationMessageFor(model => model.dateEnvoi, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,8 +34,7 @@
         <div class="form-group">
             <label>Date requise</label>
             <div>
-                @*@Html.EditorFor(model => model.dateRequis, new { htmlAttributes = new { @class = "form-control" } })*@
-                @Html.TextBoxFor(model => model.dateRequis, "{0:MM/dd/yyyy}", new { @class = "form-control default-date-picker" })
+                @Html.EditorFor(model => model.dateRequis, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                 @Html.ValidationMessageFor(model => model.dateRequis, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -47,13 +46,23 @@
                 @Html.ValidationMessageFor(model => model.noStatut, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group">
+            Media
+            <div>
+                @Html.DropDownList("noMedia", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.noMedia, "", new { @class = "text-danger" })
+            </div>
+      
+        </div>
 
         <div class="form-group">
             <label>Agence de publicité</label>
             <select name="type" class="form-control" required multiple>
-                <option>Médiative</option>
-                <option>Agence Masse</option>
-                <option>Côté fleuve Inc</option>
+                @foreach (var agence in ViewBag.AllAgence)
+                {
+                    <option>@agence.nom</option>
+                }
+
             </select>
         </div>
 
