@@ -1,0 +1,66 @@
+﻿@model ECJ.Web.Models.tblDon
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>tblDon</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.montant)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.montant)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.dateDon)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.dateDon)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.dateSupprime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.dateSupprime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.tblCommanditaire.nomCommanditaire)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tblCommanditaire.nomCommanditaire)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.tblSousEvenement.nom)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tblSousEvenement.nom)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.noDon }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

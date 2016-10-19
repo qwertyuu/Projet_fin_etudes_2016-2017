@@ -20,6 +20,15 @@ namespace ECJ.Web.Controllers.Commanditaire
             return View(db.tblCommanditaire.ToList());
         }
 
+        public FileContentResult GetFile(int id)
+        {
+
+            tblCommanditaire comm = db.tblCommanditaire.Find(id);
+
+            return new FileContentResult(comm.logo,"");
+
+        }
+
         // GET: tblCommanditaires/Details/5
         public ActionResult Details(int? id)
         {

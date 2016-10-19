@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ECJ.Web.Models.tblDon>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.montant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateDon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateSupprime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tblCommanditaire.nomCommanditaire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tblSousEvenement.nom)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.montant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateDon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateSupprime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblCommanditaire.nomCommanditaire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblSousEvenement.nom)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.noDon }) |
+                @Html.ActionLink("Details", "Details", new { id=item.noDon }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.noDon })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

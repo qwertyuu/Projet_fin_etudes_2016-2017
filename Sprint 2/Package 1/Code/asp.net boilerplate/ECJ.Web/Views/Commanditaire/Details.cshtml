@@ -42,14 +42,15 @@
             </dt>
 
             <dd>
-                @if (Model.logo == null)
+                @*@if (Model.logo == null)
                 {
                     <p>null</p>
                 }
                 else
-                {
-                    @Html.DisplayFor(model => model.logo)
-                }
+                {                    
+                    <img src="C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\images\abp-logo.png" alt="Logo" width="200" >
+                }*@
+                <img src="@Url.Action("GetFile","Media", new { id = Model.logo})" alt="Logo"/>
             </dd>
 
             <dt>

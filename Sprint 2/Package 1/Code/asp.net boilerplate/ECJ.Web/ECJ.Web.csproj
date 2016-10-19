@@ -662,7 +662,7 @@
     <Content Include="Views\Commanditaire\Create.cshtml" />
     <Content Include="Views\Commanditaire\Details.cshtml" />
     <Compile Include="Controllers\Don\DonController.cs" />
-    <Content Include="Views\don\Ajout.cshtml" />
+    <Content Include="Views\don\Create.cshtml" />
     <Content Include="Views\SousEvenements\Detail.cshtml" />
     <Content Include="Views\Calculateur\Index.cshtml" />
     <Content Include="Views\SousEvenements\Ajout.cshtml" />
@@ -681,11 +681,11 @@
     <Content Include="Views\Soumision\Index.cshtml" />
     <Content Include="Views\Commanditaire\Delete.cshtml" />
     <Content Include="Views\Commanditaire\Edit.cshtml" />
-    <Content Include="Views\test\Create.cshtml" />
-    <Content Include="Views\test\Delete.cshtml" />
-    <Content Include="Views\test\Details.cshtml" />
-    <Content Include="Views\test\Edit.cshtml" />
-    <Content Include="Views\test\Index.cshtml" />
+    <Content Include="Views\tblDons\Create.cshtml" />
+    <Content Include="Views\tblDons\Delete.cshtml" />
+    <Content Include="Views\tblDons\Details.cshtml" />
+    <Content Include="Views\tblDons\Edit.cshtml" />
+    <Content Include="Views\tblDons\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

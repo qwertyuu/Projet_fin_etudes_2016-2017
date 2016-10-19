@@ -75,7 +75,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.extension, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.extension, new { htmlAttributes = new { @class = "form-control", @type = "tel", @maxlength = "4" } })
+                    @Html.EditorFor(model => model.extension, new { htmlAttributes = new { @class = "form-control", @type = "tel", @maxlength = "5" } })
                     @Html.ValidationMessageFor(model => model.extension, "", new { @class = "text-danger" })
                 </div>
             </div>
