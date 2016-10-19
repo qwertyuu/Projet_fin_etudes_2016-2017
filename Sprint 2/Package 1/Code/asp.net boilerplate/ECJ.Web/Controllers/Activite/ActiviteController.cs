@@ -25,8 +25,9 @@ namespace ECJ.Web.Controllers.Activite
             return View(new Tuple<int?, int?>(evenement_id, sousevenement_id));
         }
         [HttpPost]
-        public ActionResult Ajout(tblActivite tblActivite)
+        public ActionResult Ajout([Bind(Include = "nomResponsable,etat,tache,detail,dateCreation,noEvenement,noSousEvenement")] tblActivite tblActivite)
         {
+
             //traiter l'Ajout
             return View();
         }

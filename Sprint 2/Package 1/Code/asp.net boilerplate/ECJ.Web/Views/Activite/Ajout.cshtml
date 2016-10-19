@@ -9,36 +9,48 @@
 <h2>Activité</h2>
 <!-- Evenement, Sous-Evenement-->
 @model Tuple<int?, int?>
+    @{ 
+        string nomHidden = "noEvenement";
+        int valeur = 0;
+        if (Model.Item1 == null)
+        {
+            nomHidden = "noSousEvenement";
+            valeur = (int)Model.Item2;
+        }
+        else
+        {
+            valeur = (int)Model.Item1;
+        }
+    }
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
     <form name="createPub" role="form" novalidate class="form-validation">
         <div class="form-group">
             <label>Nom du Responsable : </label>
-            <input class="form-control" type="text" name="UserName" required maxlength="50" minlength="2">
+            <input class="form-control" type="text" name="nomResponsable" required maxlength="50" minlength="2">
         </div>
 
         <div class="form-group">
             <label>État : </label>
-            <input class="form-control" type="text" name="UserName" required maxlength="25" minlength="2">
+            <input class="form-control" type="text" name="etat" required maxlength="25" minlength="2">
         </div>
 
         <div class="form-group">
             <label>Tâches : </label>
-            <input class="form-control" type="text" name="UserName" required maxlength="50" minlength="2">
+            <input class="form-control" type="text" name="tache" required maxlength="50" minlength="2">
         </div>
 
         <div class="form-group">
             <label>Details : </label>
-            <input class="form-control" type="text" name="UserName">
+            <input class="form-control" type="text" name="detail">
         </div>
         <div class="form-group">
             <label>Date : </label>
-            <input class="form-control" type="text" name="UserName">
+            <input class="form-control" type="text" name="dateCreation">
         </div>
-
+        <input class="form-control" type="hidden" name="@nomHidden" value="@valeur">
         <input type="submit" value="Créer" class="btn btn-primary pull-right" />
     </form>
 }

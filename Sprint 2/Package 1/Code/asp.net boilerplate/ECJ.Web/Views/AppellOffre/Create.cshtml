@@ -35,8 +35,8 @@
             <label>Date requise</label>
             <div>
                 @*@Html.EditorFor(model => model.dateRequis, new { htmlAttributes = new { @class = "form-control" } })*@
-                @Html.ValidationMessageFor(model => model.dateRequis, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.dateRequis, "{0:MM/dd/yyyy}", new { @class = "form-control default-date-picker" })
+                @Html.ValidationMessageFor(model => model.dateRequis, "", new { @class = "text-danger" })
             </div>
         </div>
 
