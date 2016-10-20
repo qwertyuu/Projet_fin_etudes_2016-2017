@@ -84,16 +84,16 @@ function calculRabaisAge() {
         calculMoyenne();
         calculTotalBillet();
 
-        var totBilletJeune = $("#nbBilletJeune").val(Math.round(TotalBillet * ratioJeune));
-        var totBilletAdulte = $("#nbBilletAdulte").val(Math.round(TotalBillet * ratioAdulte));
-        var totBilletAine = $("#nbBilletAine").val(Math.round(TotalBillet * ratioAine));
+        var totBilletJeune = $("#nbBilletJeune").val(Math.round(TotalBillet * ratioJeune)).val();
+        var totBilletAdulte = $("#nbBilletAdulte").val(Math.round(TotalBillet * ratioAdulte)).val();
+        var totBilletAine = $("#nbBilletAine").val(Math.round(TotalBillet * ratioAine)).val();
 
-        var totRabaisJeune = $("#rabaisBilletJeune").val(round_argent(PrixMoyen * jeune));
-        var totRabaisAdulte = $("#rabaisBilletAdulte").val(round_argent(PrixMoyen * adulte));
-        var totRabaisAine = $("#rabaisBilletAine").val(round_argent(PrixMoyen * aine));
+        var totRabaisJeune = $("#rabaisBilletJeune").val(round_argent(PrixMoyen * jeune)).val();
+        var totRabaisAdulte = $("#rabaisBilletAdulte").val(round_argent(PrixMoyen * adulte)).val();
+        var totRabaisAine = $("#rabaisBilletAine").val(round_argent(PrixMoyen * aine)).val();
 
         var total;
-        total = parseFloat((totBilletJeune * totRabaisJeune) + (totBilletAdulte * totRabaisAdulte) + (totBilletAine * totRabaisAine));
+        total = (totBilletJeune * totRabaisJeune) + (totBilletAdulte * totRabaisAdulte) + (totBilletAine * totRabaisAine);
         return total;
     }
     else {
