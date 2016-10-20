@@ -20,6 +20,11 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
+        public void CreateSoumission(string nom)
+        {
+            var soumission = new tblSoumission { nom = nom };
+            provider.InsertSoumission(soumission);
+        }
         // GET: AppellOffre
         public ActionResult Index(string SearchString)
         {
@@ -38,14 +43,6 @@ namespace ECJ.Web.Controllers.AppelOffre
                          select q;
 
             return View(appelOfrre.ToList());
-        }
-
-        public void RetunMedia(int ? id)
-        {
-            if (id != null)
-            {
-
-            }
         }
 
 

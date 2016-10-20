@@ -16,7 +16,7 @@ ON aoa.noAppelOffre=ao.noAppelOffre
 LEFT JOIN S_publicite.tblAgencePublicite agen
 ON agen.noAgencePub=aoa.noAgencePub
 LEFT JOIN S_publicite.tblSoumission soumi
-ON soumi.noSoumission=aoa.noSoumission
+ON soumi.offreNoPublicite=aoa.offreNoPublicite
 LEFT JOIN S_evenement.tblEvenement even
 ON even.noEvenement=ao.noEvenement
 WHERE ao.dateSupprime IS NULL

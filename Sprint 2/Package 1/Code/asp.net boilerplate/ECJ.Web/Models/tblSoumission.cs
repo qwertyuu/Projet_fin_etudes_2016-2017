@@ -20,8 +20,7 @@ namespace ECJ.Web.Models
         public bool statut { get; set; }
         public string description { get; set; }
         public Nullable<System.DateTime> dateSupprime { get; set; }
-        public int noAppelOffre { get; set; }
-        public Nullable<int> offreNoPublicite { get; set; }
+        public int offreNoPublicite { get; set; }
         public string tag { get; set; }
     
         public virtual tblAppelOffreAgence tblAppelOffreAgence { get; set; }

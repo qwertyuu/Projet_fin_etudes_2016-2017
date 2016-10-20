@@ -476,7 +476,6 @@
     <Compile Include="Controllers\AppelOffre\AppellOffreController.cs" />
     <Compile Include="Controllers\AppelOffre\SoumisionController.cs" />
     <Compile Include="Controllers\AppelOffre\SoumissionController.cs" />
-    <Compile Include="Controllers\AppelOffre\testController.cs" />
     <Compile Include="Controllers\DBProvider.cs" />
     <Compile Include="Controllers\Memo\CMemoController.cs" />
     <Compile Include="Controllers\Calculateur\CalculateurController.cs" />

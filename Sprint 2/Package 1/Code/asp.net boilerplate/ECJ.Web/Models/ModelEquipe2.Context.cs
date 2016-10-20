@@ -62,7 +62,7 @@ namespace ECJ.Web.Models
         public virtual DbSet<vueSomStatut> vueSomStatut { get; set; }
         public virtual DbSet<vueSomCommanditaire> vueSomCommanditaire { get; set; }
         public virtual DbSet<vueSomEvenement> vueSomEvenement { get; set; }
-        public virtual DbSet<vueSomSoumission> vueSomSoumission { get; set; }
         public virtual DbSet<vueSomAppelOffre> vueSomAppelOffre { get; set; }
+        public virtual DbSet<vueSomSoumission> vueSomSoumission { get; set; }
     }
 }

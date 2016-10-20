@@ -17,7 +17,7 @@ namespace ECJ.Web.Controllers
             {
                return (from soumi in db.tblSoumission
                                                 join aoa in db.tblAppelOffreAgence
-                                                on soumi.noSoumission equals aoa.noSoumission
+                                                on soumi.offreNoPublicite equals aoa.offreNoPublicite
                                                 where aoa.noAppelOffre == id
                                                 select soumi).ToList();
             }
@@ -42,6 +42,12 @@ namespace ECJ.Web.Controllers
                                        select ag).ToList();
             }
 
+        }
+
+        public void InsertSoumission(tblSoumission soumi)
+        {
+            db.tblSoumission.Add(soumi);
+            db.SaveChanges();
         }
 
 

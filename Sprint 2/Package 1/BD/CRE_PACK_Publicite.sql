@@ -59,8 +59,7 @@ CREATE TABLE S_publicite.tblSoumission (
 	,statut BIT NOT NULL
 	,description TEXT NOT NULL
 	,dateSupprime DATETIME NULL
-	,noAppelOffre INT NOT NULL
-	,offreNoPublicite INT
+	,offreNoPublicite INT NOT NULL
 	,tag TEXT
 	);
 PRINT 'TABLE STATUT RÉUSSI'
@@ -71,7 +70,6 @@ CREATE TABLE S_publicite.tblAppelOffreAgence (
 	,noAgencePub INT NOT NULL
 	,noAppelOffre INT NOT NULL 
 	,noStatut INT NOT NULL
-	,noSoumission INT NOT NULL
 	);
 GO
 CREATE TABLE S_publicite.tblMedia (

@@ -24,7 +24,6 @@ namespace ECJ.Web.Models
         public int noAgencePub { get; set; }
         public int noAppelOffre { get; set; }
         public int noStatut { get; set; }
-        public int noSoumission { get; set; }
     
         public virtual tblAgencePublicite tblAgencePublicite { get; set; }
         public virtual tblAppelOffre tblAppelOffre { get; set; }
