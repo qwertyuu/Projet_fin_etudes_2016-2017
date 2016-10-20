@@ -67,10 +67,15 @@ namespace ECJ.Web.Controllers.Commanditaire
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire)
+        public ActionResult Create([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
+                using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                {
+                    tblCommanditaire.logo = reader.ReadBytes(upload.ContentLength);
+                }
+
                 db.tblCommanditaire.Add(tblCommanditaire);
                 db.SaveChanges();
                 return RedirectToAction("Index");
