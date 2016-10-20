@@ -42,15 +42,15 @@
             </dt>
 
             <dd>
-                @*@if (Model.logo == null)
+                @if (Model.logo == null)
                 {
                     <p>null</p>
                 }
                 else
-                {                    
-                    <img src="C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\images\abp-logo.png" alt="Logo" width="200" >
-                }*@
-                <img src="@Url.Action("GetFile","Media", new { id = Model.logo})" alt="Logo"/>
+                {           
+                    <img width="200" src="@Url.Action("GetFile","commanditaire", new { id = Model.noCommanditaire})" alt="Logo" />
+                }
+                
             </dd>
 
             <dt>
@@ -64,7 +64,7 @@
                 }
                 else
                 {
-                    @Html.DisplayFor(model => model.url)
+                    <a href="@Model.url">@Model.url</a>
                 }
             </dd>
 

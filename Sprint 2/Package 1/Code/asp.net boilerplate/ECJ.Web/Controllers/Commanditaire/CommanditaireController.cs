@@ -15,17 +15,29 @@ namespace ECJ.Web.Controllers.Commanditaire
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
 
         // GET: Commanditaire
-        public ActionResult Index()
+        public ActionResult Index(string SearchString)
         {
+            var commanditaire = from q in db.tblCommanditaire
+                                select q;
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                commanditaire = db.tblCommanditaire.Where(a => a.nomCommanditaire.Contains(SearchString.ToUpper()));
+
+            }
+
+            commanditaire = from q in commanditaire
+                            orderby q.noCommanditaire
+                            select q;
+
             return View(db.tblCommanditaire.ToList());
         }
 
         public FileContentResult GetFile(int id)
         {
-
             tblCommanditaire comm = db.tblCommanditaire.Find(id);
+            var imagedata = comm.logo;
 
-            return new FileContentResult(comm.logo,"");
+            return new FileContentResult(imagedata,"image/png");
 
         }
 

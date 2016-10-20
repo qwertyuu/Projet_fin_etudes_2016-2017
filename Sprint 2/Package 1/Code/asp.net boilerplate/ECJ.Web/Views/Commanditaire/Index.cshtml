@@ -22,7 +22,12 @@
                 <div class="input-group">
                     <input class="form-control" type="search">
                     <span class="input-group-btn">
-                        <button class="btn btn-primary pull-right" type="button">Rechercher</button>
+                        <p>
+                            @Html.TextBox("SearchString") 
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary pull-right" type="submit">Rechercher</button>
+                            </span>                        
+                        </p>
                     </span>
                 </div>
             </form>
@@ -38,12 +43,6 @@
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.courrielContact)
-                        </th>
-                        <th>z
-                            @Html.DisplayNameFor(model => model.numTel)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.extension)
                         </th>
                         <th>
                             Montant
@@ -71,12 +70,6 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.courrielContact)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.numTel)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.extension)
                             </td>
                             <td>
                                 @foreach (var don in item.tblDon)

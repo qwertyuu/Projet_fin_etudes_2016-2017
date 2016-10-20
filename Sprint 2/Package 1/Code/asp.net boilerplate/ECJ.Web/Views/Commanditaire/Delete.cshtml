@@ -40,7 +40,14 @@
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.logo)
+                @if (Model.logo == null)
+                {
+                    <p>null</p>
+                }
+                else
+                {
+                    <img width="200" src="@Url.Action("GetFile","commanditaire", new { id = Model.noCommanditaire})" alt="Logo" />
+                }
             </dd>
     
             <dt>
@@ -48,7 +55,14 @@
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.url)
+                @if (Model.url == null)
+                {
+                    <p>null</p>
+                }
+                else
+                {
+                    <a href="@Model.url">@Model.url</a>
+                }
             </dd>
     
             <dt>
@@ -83,21 +97,13 @@
                 @Html.DisplayFor(model => model.extension)
             </dd>
     
-            <dt>
-                @Html.DisplayNameFor(model => model.dateSupprime)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.dateSupprime)
-            </dd>
-    
         </dl>
     
         @using (Html.BeginForm()) {
             @Html.AntiForgeryToken()
     
             <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" />
+                <input type="submit" value="Delete" class="btn btn-sm btn-danger" />
                 <a href="/Commanditaire/Index" class="btn btn-sm btn-primary" title="Index"> Retourner à la liste</a>
             </div>
         }
