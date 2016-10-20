@@ -12,25 +12,25 @@
 }
 <div class="row">
     <form class="form-horizontal">
-        <div class="col-md-6" id="calculateur" >
-            <table class="table" >
+        <div class="col-md-6" id="calculateur">
+            <table class="table">
                 <tbody>
                     <tr>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" for="inputDefault">Billets</label>
+                                <label class="control-label" for="nbBillet">Billets</label>
                                 <input type="number" class="form-control" id="nbBillet" onblur="calculBillet()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" for="inputDefault">Prix</label>
+                                <label class="control-label" for="prixBillet">Prix</label>
                                 <input type="number" class="form-control" id="prixBillet" onblur="calculBillet()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" for="disabledInput">Total</label>
+                                <label class="control-label" for="totalBillet">Total</label>
                                 <input class="form-control" id="totalBillet" type="number" disabled="">
                             </div>
                         </th>
@@ -38,19 +38,19 @@
                     <tr>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" for="inputDefault">Billets V.I.P</label>
+                                <label class="control-label" for="nbBilletVIP">Billets V.I.P</label>
                                 <input type="number" class="form-control" id="nbBilletVIP" onblur="calculBilletVIP()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" for="inputDefault">Prix</label>
+                                <label class="control-label" for="prixBilletVIP">Prix</label>
                                 <input type="number" class="form-control" id="prixBilletVIP" onblur="calculBilletVIP()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" for="disabledInput">Total</label>
+                                <label class="control-label" for="totalBilletVIP">Total</label>
                                 <input class="form-control" id="totalBilletVIP" type="number" disabled="">
                             </div>
                         </th>
@@ -92,19 +92,19 @@
                     <tr>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" for="inputDefault">Nombre de places</label>
+                                <label class="control-label" for="nbBilletSouper">Nombre de places</label>
                                 <input type="number" class="form-control" id="nbBilletSouper" onblur="calculSouperSpectacle()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" for="inputDefault">Prix</label>
+                                <label class="control-label" for="prixSouper">Prix</label>
                                 <input type="number" class="form-control" id="prixSouper" onblur="calculSouperSpectacle()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" for="disabledInput">Total</label>
+                                <label class="control-label" for="totalSouper">Total</label>
                                 <input class="form-control" id="totalSouper" type="number" disabled="">
                             </div>
                         </th>
@@ -134,31 +134,31 @@
 </form>
 
 <form class="form-horizontal">
-    <div class="col-md-6"  id="age">
+    <div class="col-md-6" id="age">
         <table class="table">
             Reduction selon les tranches d'âge
             <tr>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="inputDefault">Jeunes % Rabais</label>
+                        <label class="control-label" for="JeunePourcent">Jeunes % Rabais</label>
                         <input type="number" class="form-control" id="JeunePourcent" onblur="pourcentCheck()">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="inputDefault">Ratio %</label>
+                        <label class="control-label" for="RatioJeune">Ratio %</label>
                         <input type="number" class="form-control" id="RatioJeune" onblur="calculRabaisAge()">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="disabledInput">Nbre de Billets</label>
+                        <label class="control-label" for="nbBilletJeune">Nbre de Billets</label>
                         <input class="form-control" id="nbBilletJeune" type="number" disabled="">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="disabledInput">Rabais/Billet</label>
+                        <label class="control-label" for="rabaisBilletJeune">Rabais/Billet</label>
                         <input class="form-control" id="rabaisBilletJeune" type="number" disabled="">
                     </div>
                 </th>
@@ -166,25 +166,25 @@
             <tr>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="inputDefault">Adultes % Rabais</label>
+                        <label class="control-label" for="AdultePourcent">Adultes % Rabais</label>
                         <input type="number" class="form-control" id="AdultePourcent" onblur="pourcentCheck()">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="inputDefault">Ratio %</label>
+                        <label class="control-label" for="RatioAdulte">Ratio %</label>
                         <input type="number" class="form-control" id="RatioAdulte" onblur="calculRabaisAge()">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="disabledInput">Nbre de Billets</label>
+                        <label class="control-label" for="nbBilletAdulte">Nbre de Billets</label>
                         <input class="form-control" id="nbBilletAdulte" type="number" disabled="">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="disabledInput">Rabais/Billet</label>
+                        <label class="control-label" for="rabaisBilletAdulte">Rabais/Billet</label>
                         <input class="form-control" id="rabaisBilletAdulte" type="number" disabled="">
                     </div>
                 </th>
@@ -204,13 +204,13 @@
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="disabledInput">Nbre de Billets</label>
+                        <label class="control-label" for="nbBilletAine">Nbre de Billets</label>
                         <input class="form-control" id="nbBilletAine" type="number" disabled="">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
-                        <label class="control-label" for="disabledInput">Rabais/Billet</label>
+                        <label class="control-label" for="rabaisBilletAine">Rabais/Billet</label>
                         <input class="form-control" id="rabaisBilletAine" type="number" disabled="">
                     </div>
                 </th>
@@ -224,28 +224,70 @@
 </div>
 <form class="form-horizontal">
     <div class="row">
-        <div class="col-md-6"  id="rabais">
+        <div class="col-md-6" id="rabais">
             Billet a prix réduits.
             <table class="table">
                 <tbody>
                     <tr>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" for="inputDefault">Nombre de billets</label>
-                                <input type="text" class="form-control" id="inputDefault">
+                                <label class="control-label">Nom du rabais</label>
+
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" for="inputDefault">Prix</label>
-                                <input type="text" class="form-control" id="inputDefault">
+                                <label class="control-label">Nb de billets</label>
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" for="disabledInput">Total</label>
-                                <input class="form-control" id="disabledInput" type="text" disabled="">
+                                <label class="control-label" >% de rabais</label>
                             </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Promotionnel</label>
+                        </th>
+                        <th>
+                            <input type="number" class="form-control" id="nbBilletGratuit">
+                        </th>
+                        <th>
+                            <input class="form-control" id="disabledInput" type="text" disabled="" value="100%">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Prévente</label>
+                        </th>
+                        <th>
+                            <input type="number" class="form-control" id="nbBilletPreVente">
+                        </th>
+                        <th>
+                            <input class="form-control" id="disabledInput" type="text" disabled="" value="25%">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <input type="text" class="form-control" id="NomRabaisCustom2">
+                        </th>
+                        <th>
+                            <input type="number" class="form-control" id="NbBilletRabaisCustom1">
+                        </th>
+                        <th>
+                            <input type="number" class="form-control" id="PourcentRabaisCustom1">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <input type="text" class="form-control" id="NomRabaisCustom2">
+                        </th>
+                        <th>
+                            <input type="number" class="form-control" id="NbBilletRabaisCustom2">
+                        </th>
+                        <th>
+                            <input type="number" class="form-control" id="PourcentRabaisCustom2">
                         </th>
                     </tr>
                 </tbody>
@@ -263,8 +305,8 @@
                         <th>Dépenses total</th>
                     </tr>
                     <tr>
-                        <th>
-                            2800.00$
+                        <th id="TotFinal">
+                            00.00$
                         </th>
                         <th>
                             3500.00$
@@ -272,11 +314,11 @@
                     </tr>
                 </thead>
             </table>
-            <a href="#" class="btn btn-default">Calculer</a>
+            <a href="#" class="btn btn-default" onclick="Calcultotal()" >Calculer</a>
         </div>
         <div class="col-md-6" id="map">
             Plan de la salle
-            <img src="http://i.imgur.com/2VxTEYs.png" height="700" width="500"/>
+            <img src="http://i.imgur.com/2VxTEYs.png" height="700" width="500" />
         </div>
     </div>
 </form>
