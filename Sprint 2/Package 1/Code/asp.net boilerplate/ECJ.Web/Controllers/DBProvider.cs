@@ -33,6 +33,18 @@ namespace ECJ.Web.Controllers
 
         }
 
+        internal void InsertServiceRequis(int id, int serviceAAjouter)
+        {
+            db.tblSousEvenement.Find(id).tblService.Add(db.tblService.Find(serviceAAjouter));
+            db.SaveChanges();
+        }
+
+        internal void SupprimerServiceRequis(int id, int serviceASupprimer)
+        {
+            db.tblSousEvenement.Find(id).tblService.Remove(db.tblService.Find(serviceASupprimer));
+            db.SaveChanges();
+        }
+
         internal List<tblService> ToutService()
         {
             return db.tblService.ToList();

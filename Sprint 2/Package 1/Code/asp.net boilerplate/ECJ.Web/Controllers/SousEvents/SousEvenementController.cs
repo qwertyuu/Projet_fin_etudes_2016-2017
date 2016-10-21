@@ -26,6 +26,19 @@ namespace ECJ.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            var serviceAAjouter = Request.Form["service"];
+            //ajouter le service requis
+            if (serviceAAjouter != null)
+            {
+                db.InsertServiceRequis((int)id, int.Parse(serviceAAjouter));
+            }
+            //supprimer un service requis
+            var serviceASupprimer = Request.Form["service_suppr"];
+            if (serviceASupprimer != null)
+            {
+                db.SupprimerServiceRequis((int)id, int.Parse(serviceASupprimer));
+            }
+
             var elementADetailler = db.FindSousEvenement((int)id);
 
             if (elementADetailler == null)
@@ -42,6 +55,7 @@ namespace ECJ.Web.Controllers
             //Service, Salle, Forfait, Engagement
             return View();
         }
+
         public ActionResult Ajout()
         {
             return View();

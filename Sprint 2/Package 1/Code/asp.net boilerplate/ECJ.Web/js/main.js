@@ -27,4 +27,10 @@
         $.blockUI.defaults.baseZ = 2000;
     }
 
+    $("[title=\"Supprimer\"]").click(function (e) {
+        if (!confirm("Êtes-vous sur de vouloir supprimer cet élément?")) {
+            e.preventDefault();
+        }
+    });
+
 })(jQuery);

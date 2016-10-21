@@ -3,12 +3,14 @@
 @using ECJ.Web.Models
 @{
     ViewBag.Title = "Detail";
+    @*Service, Salle, Forfait, Engagement*@
+
+    //bug avec le model par défaut lorsqu'on utilise un tuple avec 5 éléments...
     Tuple<tblSousEvenement, List<tblService>, List<tblSalle>, List<tblForfait>, List<tblEngagement>> Model = ViewBag.listTuple;
 }
 <a href="~/Calculateur/@Model.Item1.noSousEvenement" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-calculator"></i> Ouvrir le calculateur</a>
 
 <h2>Détail d'un sous-évènement</h2>
-@*Service, Salle, Forfait, Engagement*@
 
 @section scripts
 {
@@ -31,6 +33,10 @@
     <label>Services requis</label>
     <button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
     <div class="form-group">
+        @using (Html.BeginForm())
+        {
+         @Html.AntiForgeryToken()
+         @Html.ValidationSummary(true)
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -44,12 +50,13 @@
                     <tr>
                         <td>@s.nomService</td>
                         <td>
-                            <a href="~/Views/ServiceRequis/Delete/@s.noService" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            <button name="service_suppr" value="@s.noService" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
+        }
     </div>
     <label>Salles</label>
     <a href="/sousEvenements/Ajout" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une salle</a>
@@ -201,10 +208,14 @@
         <script>var dates_calendrier = [];</script>
     }
 }
+@*Modal pour le choix d'un service*@
 <div class="modal fade" id="ServiceAjoutModal" tabindex="-1" role="dialog" aria-labelledby="ServiceAjoutModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form name="userAjoutForm" role="form" novalidate class="form-validation">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
                 <div class="modal-header">
                     <h4 class="modal-title">
                         <span>Choisir un service</span>
@@ -220,33 +231,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Bar</td>
-                                <td><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Restaurant</td>
-                                <td><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Techniciens</td>
-                                <td><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Grande scène</td>
-                                <td><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td>Filets pour acrobates</td>
-                                <td><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button></td>
-                            </tr>
+                            @foreach (var s in Model.Item2)
+                            {
+                                <tr>
+                                    <td>@s.nomService</td>
+                                    <td><button name="service" value="@s.noService" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button></td>
+                                </tr>
+                                }
                         </tbody>
                     </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
                 </div>
-            </form>
+            }
         </div>
     </div>
 </div>
