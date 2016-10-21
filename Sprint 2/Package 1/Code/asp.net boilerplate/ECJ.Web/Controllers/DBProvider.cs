@@ -45,6 +45,18 @@ namespace ECJ.Web.Controllers
             db.SaveChanges();
         }
 
+        internal void LierForfait(int id, int forfaitALier)
+        {
+            db.tblSousEvenement.Find(id).tblForfait.Add(db.tblForfait.Find(forfaitALier));
+            db.SaveChanges();
+        }
+
+        internal void DelierForfait(int id, int forfaitASupprimer)
+        {
+            db.tblSousEvenement.Find(id).tblForfait.Remove(db.tblForfait.Find(forfaitASupprimer));
+            db.SaveChanges();
+        }
+
         internal List<tblService> ToutService()
         {
             return db.tblService.ToList();

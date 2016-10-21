@@ -38,7 +38,19 @@ namespace ECJ.Web.Controllers
             {
                 db.SupprimerServiceRequis((int)id, int.Parse(serviceASupprimer));
             }
+            //ajouter le forfait sélectionné
+            var forfaitAAjouter = Request.Form["forfait"];
+            if (forfaitAAjouter != null)
+            {
+                db.LierForfait((int)id, int.Parse(forfaitAAjouter));
+            }
 
+            //supprimer le forfait sélectionné
+            var forfaitASupprimer = Request.Form["forfait_suppr"];
+            if (forfaitASupprimer != null)
+            {
+                db.DelierForfait((int)id, int.Parse(forfaitASupprimer));
+            }
             var elementADetailler = db.FindSousEvenement((int)id);
 
             if (elementADetailler == null)

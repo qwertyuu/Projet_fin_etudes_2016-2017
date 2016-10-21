@@ -166,3 +166,6 @@ html {
     height:50px;
 }
 
+thead tr th:last-child{
+    width: 170px;
+}
