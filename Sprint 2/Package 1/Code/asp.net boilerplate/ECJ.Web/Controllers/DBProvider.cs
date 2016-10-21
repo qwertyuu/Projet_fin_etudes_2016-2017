@@ -8,7 +8,15 @@ namespace ECJ.Web.Controllers
 {
     public class DBProvider
     {
-        private static PE2_OfficielEntities db = new PE2_OfficielEntities();
+        private static PE2_OfficielEntities db;
+
+        public DBProvider()
+        {
+            if (db == null)
+            {
+                db = new PE2_OfficielEntities();
+            }
+        }
 
         //Requête sur la table tblAppelOffre
         public List<tblSoumission> RetunSoumission(int? id)
@@ -23,6 +31,26 @@ namespace ECJ.Web.Controllers
             }
             return null;
 
+        }
+
+        internal List<tblService> ToutService()
+        {
+            return db.tblService.ToList();
+        }
+
+        internal List<tblForfait> ToutForfait()
+        {
+            return db.tblForfait.ToList();
+        }
+
+        internal List<tblEngagement> ToutEngagement()
+        {
+            return db.tblEngagement.ToList();
+        }
+
+        internal List<tblSalle> ToutSalle()
+        {
+            return db.tblSalle.ToList();
         }
 
         public List<tblAgencePublicite> ReturnAgence(int? id)
@@ -50,6 +78,21 @@ namespace ECJ.Web.Controllers
             db.SaveChanges();
         }
 
+        public void InsertActivite(tblActivite _acti)
+        {
+            db.tblActivite.Add(_acti);
+            db.SaveChanges();
+        }
+        public void InsertSousEvenement(tblSousEvenement _sousEvenement)
+        {
+            db.tblSousEvenement.Add(_sousEvenement);
+            db.SaveChanges();
+        }
+
+        public tblSousEvenement FindSousEvenement(int id)
+        {
+            return db.tblSousEvenement.Find(id);
+        }
 
     }
 }
