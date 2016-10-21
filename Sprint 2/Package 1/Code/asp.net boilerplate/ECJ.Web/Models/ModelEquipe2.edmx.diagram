@@ -5,45 +5,45 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f47d525341244e979010ae93f0e64e7e" Name="Diagram1" ZoomLevel="89">
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblAdresse" Width="1.5" PointX="1.5" PointY="5.375" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblAgence" Width="1.5" PointX="3.75" PointY="5.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAdresse" Width="1.5" PointX="1.5" PointY="2.375" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAgence" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblArtiste" Width="1.5" PointX="0.75" PointY="11.375" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblCategorieArtiste" Width="1.5" PointX="3" PointY="10" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblContrat" Width="1.5" PointX="6" PointY="10.625" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblDiffuseur" Width="1.5" PointX="9" PointY="6.375" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblEngagement" Width="1.5" PointX="8.25" PointY="17.875" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblExigence" Width="1.5" PointX="8.25" PointY="9.875" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblFichierOfficiel" Width="1.5" PointX="8.25" PointY="14.125" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblFichierPersonnel" Width="1.5" PointX="3" PointY="17.375" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblResponsable" Width="1.5" PointX="11.25" PointY="10.5" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblStatut" Width="1.5" PointX="3.75" PointY="13.5" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblActivite" Width="1.5" PointX="15.75" PointY="18.125" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblCommanditaire" Width="1.5" PointX="10.5" PointY="22.125" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblDon" Width="1.5" PointX="12.75" PointY="18.375" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblEvenement" Width="1.5" PointX="8.25" PointY="23" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblSousEvenement" Width="1.5" PointX="10.5" PointY="18" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblForfait" Width="1.5" PointX="8.25" PointY="30.375" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblSalle" Width="1.5" PointX="6" PointY="26.875" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblService" Width="1.5" PointX="8.25" PointY="27.25" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblMemo" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblUtilisateur" Width="1.5" PointX="0.75" PointY="1.5" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblAgencePublicite" Width="1.5" PointX="13.5" PointY="27.625" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffre" Width="1.5" PointX="13.5" PointY="22.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffreAgence" Width="1.5" PointX="15.75" PointY="23.25" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblMedia" Width="1.5" PointX="11.25" PointY="29.125" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblSoumission" Width="1.5" PointX="18" PointY="23.125" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblStatutAppelOffre" Width="1.5" PointX="11.25" PointY="26.25" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAgence" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomArtiste" Width="1.5" PointX="5.75" PointY="3.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomCatArtiste" Width="1.5" PointX="5.75" PointY="6.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomContrat" Width="1.5" PointX="7.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomEngagement" Width="1.5" PointX="9.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomExigence" Width="1.5" PointX="11.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomStatut" Width="1.5" PointX="11.75" PointY="4.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomCommanditaire" Width="1.5" PointX="13.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomEvenement" Width="1.5" PointX="11.75" PointY="7.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAppelOffre" Width="1.5" PointX="13.75" PointY="4.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomSoumission" Width="1.5" PointX="13.75" PointY="9.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblCategorieArtiste" Width="1.5" PointX="3" PointY="17.875" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblContrat" Width="1.5" PointX="3" PointY="9.625" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblDiffuseur" Width="1.5" PointX="6" PointY="15.375" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblEngagement" Width="1.5" PointX="5.25" PointY="18.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblExigence" Width="1.5" PointX="5.25" PointY="7.875" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblFichierOfficiel" Width="1.5" PointX="5.25" PointY="12.375" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblFichierPersonnel" Width="1.5" PointX="3" PointY="14.625" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblResponsable" Width="1.5" PointX="8.25" PointY="9.5" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblStatut" Width="1.5" PointX="0.75" PointY="15.5" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblActivite" Width="1.5" PointX="12.75" PointY="19" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblCommanditaire" Width="1.5" PointX="7.5" PointY="23" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblDon" Width="1.5" PointX="9.75" PointY="19.25" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblEvenement" Width="1.5" PointX="5.25" PointY="30.125" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblSousEvenement" Width="1.5" PointX="7.5" PointY="18.875" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblForfait" Width="1.5" PointX="5.25" PointY="27.375" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblSalle" Width="1.5" PointX="3" PointY="23.875" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblService" Width="1.5" PointX="5.25" PointY="24.25" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblMemo" Width="1.5" PointX="6" PointY="1" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblUtilisateur" Width="1.5" PointX="3.75" PointY="1.5" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAgencePublicite" Width="1.5" PointX="7.5" PointY="34.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffre" Width="1.5" PointX="7.5" PointY="29.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffreAgence" Width="1.5" PointX="9.75" PointY="30.375" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblMedia" Width="1.5" PointX="5.25" PointY="34.25" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblSoumission" Width="1.5" PointX="12" PointY="30.25" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblStatutAppelOffre" Width="1.5" PointX="5.25" PointY="36.875" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAgence" Width="1.5" PointX="3.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomArtiste" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomCatArtiste" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomContrat" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomEngagement" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomExigence" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomStatut" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomCommanditaire" Width="1.5" PointX="11.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomEvenement" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAppelOffre" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomSoumission" Width="1.5" PointX="12.75" PointY="0.75" />
         <AssociationConnector Association="PE2_OfficielModel.AGE_ADR_FK" />
         <AssociationConnector Association="PE2_OfficielModel.DIF_ADR_FK" />
         <AssociationConnector Association="PE2_OfficielModel.CON_AGE_FK" />

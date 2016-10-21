@@ -16,8 +16,8 @@ namespace ECJ.Web.Models
     {
         public int noSoumission { get; set; }
         public string nom { get; set; }
-        public decimal prix { get; set; }
-        public bool statut { get; set; }
+        public Nullable<decimal> prix { get; set; }
+        public Nullable<bool> statut { get; set; }
         public string description { get; set; }
         public Nullable<System.DateTime> dateSupprime { get; set; }
         public int offreNoPublicite { get; set; }

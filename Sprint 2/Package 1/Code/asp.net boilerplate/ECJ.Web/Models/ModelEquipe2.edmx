@@ -358,9 +358,9 @@
           </Key>
           <Property Name="noSoumission" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="prix" Type="decimal" Precision="19" Scale="2" Nullable="false" />
-          <Property Name="statut" Type="bit" Nullable="false" />
-          <Property Name="description" Type="text" Nullable="false" />
+          <Property Name="prix" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="statut" Type="bit" />
+          <Property Name="description" Type="text" />
           <Property Name="dateSupprime" Type="datetime" />
           <Property Name="offreNoPublicite" Type="int" Nullable="false" />
           <Property Name="tag" Type="text" />
@@ -529,14 +529,12 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
         <EntityType Name="vueSomSoumission">
           <Key>
             <PropertyRef Name="nomSoumission" />
-            <PropertyRef Name="prix" />
-            <PropertyRef Name="description" />
             <PropertyRef Name="noSoumission" />
           </Key>
           <Property Name="nomSoumission" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="prix" Type="decimal" Precision="19" Scale="2" Nullable="false" />
+          <Property Name="prix" Type="decimal" Precision="19" Scale="2" />
           <Property Name="nomAppelOffre" Type="varchar" MaxLength="50" />
-          <Property Name="description" Type="text" Nullable="false" />
+          <Property Name="description" Type="text" />
           <Property Name="noSoumission" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="AGE_ADR_FK">
@@ -1875,9 +1873,9 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           </Key>
           <Property Name="noSoumission" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="prix" Type="Decimal" Nullable="false" Precision="19" Scale="2" />
-          <Property Name="statut" Type="Boolean" Nullable="false" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="prix" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="statut" Type="Boolean" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
           <Property Name="offreNoPublicite" Type="Int32" Nullable="false" />
           <Property Name="tag" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -2027,14 +2025,12 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
         <EntityType Name="vueSomSoumission">
           <Key>
             <PropertyRef Name="nomSoumission" />
-            <PropertyRef Name="prix" />
-            <PropertyRef Name="description" />
             <PropertyRef Name="noSoumission" />
           </Key>
           <Property Name="nomSoumission" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="prix" Type="Decimal" Nullable="false" Precision="19" Scale="2" />
+          <Property Name="prix" Type="Decimal" Precision="19" Scale="2" />
           <Property Name="nomAppelOffre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="noSoumission" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="AGE_ADR_FK">

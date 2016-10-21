@@ -99,6 +99,7 @@ namespace ECJ.Web.Controllers.AppelOffre
 
                 db.tblAppelOffre.Add(tblAppelOffre);
                 db.SaveChanges();
+                CreateSoumission(tblAppelOffre.nom);
                 return RedirectToAction("Index");
             }
 

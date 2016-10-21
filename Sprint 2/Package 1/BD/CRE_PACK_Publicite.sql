@@ -55,10 +55,10 @@ PRINT 'CRÉATION DE LA TABLE SOUMISSION'
 CREATE TABLE S_publicite.tblSoumission (
 	noSoumission INT NOT NULL IDENTITY(1,1)
 	,nom VARCHAR(20) NOT NULL
-	,prix DECIMAL(19, 2) NOT NULL
-	,statut BIT NOT NULL
-	,description TEXT NOT NULL
-	,dateSupprime DATETIME NULL
+	,prix DECIMAL(19, 2) 
+	,statut BIT DEFAULT(0)
+	,description TEXT 
+	,dateSupprime DATETIME 
 	,offreNoPublicite INT NOT NULL
 	,tag TEXT
 	);
