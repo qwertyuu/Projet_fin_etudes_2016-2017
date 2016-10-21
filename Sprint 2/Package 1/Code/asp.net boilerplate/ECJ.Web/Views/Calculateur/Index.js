@@ -109,17 +109,19 @@ function calculPrixReduit() {
 
     if (checkRabaisCustom1 == true) {
         TotBilletRabaisCustom1 = parseFloat($("#NbBilletRabaisCustom1").val());
-
         TotBilletRabaisCustom1 = (TotBilletRabaisCustom1 * (PourcentRabaisCustom1 / 100));
     }
     if (checkRabaisCustom2 == true) {
         TotBilletRabaisCustom2 = parseFloat($("#NbBilletRabaisCustom2").val());
-
         TotBilletRabaisCustom2 = (TotBilletRabaisCustom2 * (PourcentRabaisCustom2 / 100));
     }
 
-    TotBilletGratuit = (TotBilletGratuit * PrixMoyen)
-    TotBilletPreVente = (TotBilletPreVente * PrixMoyen) * 0.25
+    if (TotBilletGratuit == "") {
+        TotBilletGratuit = (TotBilletGratuit * PrixMoyen)
+    }
+    if (TotBilletPreVente = "") {
+        TotBilletPreVente = (TotBilletPreVente * PrixMoyen) * 0.25
+    }
 
     if (checkRabaisCustom1 == true && checkRabaisCustom2 == true) {
         total = TotBilletGratuit + TotBilletPreVente + TotBilletRabaisCustom1 + TotBilletRabaisCustom2
@@ -183,8 +185,8 @@ function ratioCheck() {
 } //Vérifie que les ratios entrés soient entre 0 et 100 pour ensuite vérifier si additionnés ils égalent 100 ensuite retourne un bool
 
 function checkRabaisCustom1() {
-    if ($("#NomRabaisCustom1" != "") && $("#NbBilletRabaisCustom1") != "" && $("#PourcentRabaisCustom1") != "") {
-        if ($("#PourcentRabaisCustom1") < 101 || $("#PourcentRabaisCustom1").val() > -1) {
+    if ($("#NomRabaisCustom1").val() != "" && $("#NbBilletRabaisCustom1").val() != "" && $("#PourcentRabaisCustom1").val() != "") {
+        if ($("#PourcentRabaisCustom1").val() < 101 || $("#PourcentRabaisCustom1").val() > -1) {
             return true;
         }
         else {
@@ -195,8 +197,8 @@ function checkRabaisCustom1() {
 }// vérifie si le rabais custom #1 est rempli et ensuite vérifie le %
 
 function checkRabaisCustom2() {
-    if ($("#NomRabaisCustom2" != "") && $("#NbBilletRabaisCustom2") != "" && $("#PourcentRabaisCustom2") != "") {
-        if ($("#PourcentRabaisCustom2") < 101 || $("#PourcentRabaisCustom2").val() > -1) {
+    if ($("#NomRabaisCustom2").val() != "" && $("#NbBilletRabaisCustom2").val() != "" && $("#PourcentRabaisCustom2").val() != "") {
+        if ($("#PourcentRabaisCustom2").val() < 101 || $("#PourcentRabaisCustom2").val() > -1) {
             return true;
         }
         else {
@@ -220,4 +222,4 @@ function positifBilletCheck() {
 function round_argent(value) {
     var decimals = 2
     return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals).toFixed(decimals);
-}//Aroundie les valeurs avec 2 décimales
+}//Aroundie les valeurs avec 2 décimale
