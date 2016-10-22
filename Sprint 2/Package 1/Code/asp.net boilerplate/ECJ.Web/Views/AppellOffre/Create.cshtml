@@ -1,5 +1,5 @@
-﻿@model ECJ.Web.Models.tblAppelOffre
-
+﻿
+@model ECJ.Web.Models.tblAppelOffre
 <h2>Appel d'offre</h2>
 @using (Html.BeginForm())
 {
@@ -57,14 +57,18 @@
 
         <div class="form-group">
             <label>Agence de publicité</label>
-            <select name="agence" class="form-control" required multiple>
-                @foreach (var agence in ViewBag.AllAgence)
-                {
-                    <option>@agence.nom</option>
-                }
+            <div>
+                <asp:ListBox ID="lblMultiSelect" SelectionMode="multiple">
+                </asp:ListBox>
+                    @foreach (var agence in ViewBag.AllAgence)
+                    {
+                       
+                    }
 
-            </select>
-        </div>
+          
+              
+            </div>
+            </div>
 
         <div class="form-group">
             <label>Description</label>

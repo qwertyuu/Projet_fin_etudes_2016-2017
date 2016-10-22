@@ -71,7 +71,6 @@
         <AssociationConnector Association="PE2_OfficielModel.APPEL_OFFRE_FK" />
         <AssociationConnector Association="PE2_OfficielModel.MED_APPEL_FK" />
         <AssociationConnector Association="PE2_OfficielModel.STATUT_APPEL_FK" />
-        <AssociationConnector Association="PE2_OfficielModel.SOUMISSION_APPEL_OFFRE_FK" />
         <AssociationConnector Association="PE2_OfficielModel.STATUT_APPEL_OFFRE_AGENCE_FK" />
         <AssociationConnector Association="PE2_OfficielModel.tblCatArtisteArt" />
         <AssociationConnector Association="PE2_OfficielModel.tblContratArtiste" />

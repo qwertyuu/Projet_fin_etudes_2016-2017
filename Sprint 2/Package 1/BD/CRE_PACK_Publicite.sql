@@ -51,26 +51,21 @@ CREATE TABLE S_publicite.tblStatutAppelOffre (
 	);
 PRINT 'STATUT RÉUSSI'
 
-PRINT 'CRÉATION DE LA TABLE SOUMISSION'
-CREATE TABLE S_publicite.tblSoumission (
-	noSoumission INT NOT NULL IDENTITY(1,1)
-	,nom VARCHAR(20) NOT NULL
-	,prix DECIMAL(19, 2) 
-	,statut BIT DEFAULT(0)
-	,description TEXT 
-	,dateSupprime DATETIME 
-	,offreNoPublicite INT NOT NULL
-	,tag TEXT
-	);
-PRINT 'TABLE STATUT RÉUSSI'
 
-PRINT 'CRÉATION DE LA TABLE INTERSECTION ENTRE APPEL D''OFFRE ET AGENCEPUBLICITE'
-CREATE TABLE S_publicite.tblAppelOffreAgence (
-	offreNoPublicite INT NOT NULL IDENTITY(1,1)
-	,noAgencePub INT NOT NULL
+CREATE TABLE S_publicite.tblSoumission (
+    noSoumission INT NOT NULL IDENTITY(1,1)
+	,noSoumissionAgence varchar(15)  NULL
+	,nom varchar(50) NULL
+	,prix DECIMAL(19, 2) DEFAULT(0.00)
+	,statut BIT DEFAULT(0) NOT NULL
+	,commentaire TEXT 
+    ,noAgencePub INT NOT NULL
 	,noAppelOffre INT NOT NULL 
 	,noStatut INT NOT NULL
+    ,dateSupprime DATETIME 
 	);
+	
+PRINT 'CRÉATION DE LA TABLE SOUMISSION'
 GO
 CREATE TABLE S_publicite.tblMedia (
 	 noMedia INT NOT NULL IDENTITY(1,1)

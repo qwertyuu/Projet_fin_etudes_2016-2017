@@ -20,11 +20,18 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
-        public void CreateSoumission(string nom)
-        {
-            var soumission = new tblSoumission { nom = nom };
-            provider.InsertSoumission(soumission);
-        }
+        //public void CreateSoumission(string nom, int noAgenP, int noApp, int noSat)
+        //{
+        //    var soumission = new tblSoumission { nom = nom,offreNoPublicite = CreateAppelOffreAgence(noAgenP, noApp, noSat).offreNoPublicite};
+        //    provider.InsertSoumission(soumission);
+        //}
+
+        //public tblAppelOffreAgence CreateAppelOffreAgence(int noap, int noao,int noSta)
+        //{
+        //    var aoa = new tblAppelOffreAgence { noAgencePub = noao, noAppelOffre = noao, noStatut = noSta };
+        //    provider.InsertAppelOfreAgence(aoa);
+        //    return aoa;
+        //}
         // GET: AppellOffre
         public ActionResult Index(string SearchString)
         {
@@ -34,7 +41,8 @@ namespace ECJ.Web.Controllers.AppelOffre
                              select q;
             if (!String.IsNullOrEmpty(SearchString))
             {
-                appelOfrre = db.vueSomAppelOffre.Where(a=> a.tag.Contains(SearchString.ToUpper()));
+                
+                appelOfrre = appelOfrre.Where(a=> (a.nomAppelOffre ?? "").ToUpper().Contains(SearchString) || (a.nomStatut ?? "").ToUpper().Contains(SearchString)||(a.nomEvent ?? "").ToUpper().Contains(SearchString) || (a.nomAgence ?? "").ToUpper().Contains(SearchString) || (a.nomSoumission ?? "").ToUpper().Contains(SearchString)||(a.description ?? "").ToUpper().Contains(SearchString));
 
             }
 
@@ -74,6 +82,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom");
             ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom");
             ViewBag.noMedia = new SelectList(db.tblMedia, "noMedia", "nom");
+            ViewBag.noAgencePub = new SelectList(db.tblAgencePublicite, "noAgencePub", "nom");
             ViewBag.AllAgence = provider.ReturnAgence(null);
             return View();
         }
@@ -96,10 +105,12 @@ namespace ECJ.Web.Controllers.AppelOffre
                 var media = (from q in db.tblMedia
                                  where q.noMedia == tblAppelOffre.noMedia
                                  select q).FirstOrDefault();
+                var agence = (from q in db.tblAgencePublicite
+                              select q).FirstOrDefault();
 
                 db.tblAppelOffre.Add(tblAppelOffre);
                 db.SaveChanges();
-                CreateSoumission(tblAppelOffre.nom);
+               //CreateSoumission(tblAppelOffre.nom,agence.noAgencePub,tblAppelOffre.noAppelOffre,tblAppelOffre.noStatut);
                 return RedirectToAction("Index");
             }
 

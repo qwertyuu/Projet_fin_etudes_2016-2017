@@ -17,7 +17,7 @@ namespace ECJ.Web.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblAgencePublicite()
         {
-            this.tblAppelOffreAgence = new HashSet<tblAppelOffreAgence>();
+            this.tblSoumission = new HashSet<tblSoumission>();
         }
     
         public int noAgencePub { get; set; }
@@ -25,6 +25,6 @@ namespace ECJ.Web.Models
         public Nullable<System.DateTime> dateSupprime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblAppelOffreAgence> tblAppelOffreAgence { get; set; }
+        public virtual ICollection<tblSoumission> tblSoumission { get; set; }
     }
 }

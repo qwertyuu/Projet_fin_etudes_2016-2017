@@ -49,7 +49,6 @@ namespace ECJ.Web.Models
         public virtual DbSet<tblUtilisateur> tblUtilisateur { get; set; }
         public virtual DbSet<tblAgencePublicite> tblAgencePublicite { get; set; }
         public virtual DbSet<tblAppelOffre> tblAppelOffre { get; set; }
-        public virtual DbSet<tblAppelOffreAgence> tblAppelOffreAgence { get; set; }
         public virtual DbSet<tblMedia> tblMedia { get; set; }
         public virtual DbSet<tblSoumission> tblSoumission { get; set; }
         public virtual DbSet<tblStatutAppelOffre> tblStatutAppelOffre { get; set; }

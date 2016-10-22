@@ -474,7 +474,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Activite\ActiviteController.cs" />
     <Compile Include="Controllers\AppelOffre\AppellOffreController.cs" />
-    <Compile Include="Controllers\AppelOffre\SoumisionController.cs" />
     <Compile Include="Controllers\AppelOffre\SoumissionController.cs" />
     <Compile Include="Controllers\DBProvider.cs" />
     <Compile Include="Controllers\Memo\CMemoController.cs" />
@@ -527,9 +526,6 @@
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblAppelOffre.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblAppelOffreAgence.cs">
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblArtiste.cs">
@@ -673,11 +669,6 @@
     <Content Include="Views\AppellOffre\Details.cshtml" />
     <Content Include="Views\AppellOffre\Edit.cshtml" />
     <Content Include="Views\AppellOffre\Index.cshtml" />
-    <Content Include="Views\Soumision\Create.cshtml" />
-    <Content Include="Views\Soumision\Delete.cshtml" />
-    <Content Include="Views\Soumision\Details.cshtml" />
-    <Content Include="Views\Soumision\Edit.cshtml" />
-    <Content Include="Views\Soumision\Index.cshtml" />
     <Content Include="Views\Commanditaire\Delete.cshtml" />
     <Content Include="Views\Commanditaire\Edit.cshtml" />
     <Content Include="Views\tblDons\Create.cshtml" />

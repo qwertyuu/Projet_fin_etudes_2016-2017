@@ -17,7 +17,7 @@ namespace ECJ.Web.Models
         public string nomSoumission { get; set; }
         public Nullable<decimal> prix { get; set; }
         public string nomAppelOffre { get; set; }
-        public string description { get; set; }
+        public string commentaire { get; set; }
         public int noSoumission { get; set; }
     }
 }

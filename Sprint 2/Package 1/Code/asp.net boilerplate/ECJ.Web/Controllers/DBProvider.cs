@@ -24,9 +24,9 @@ namespace ECJ.Web.Controllers
             if (id != null)
             {
                return (from soumi in db.tblSoumission
-                                                join aoa in db.tblAppelOffreAgence
-                                                on soumi.offreNoPublicite equals aoa.offreNoPublicite
-                                                where aoa.noAppelOffre == id
+                                                join ao in db.tblAppelOffre
+                                                on soumi.noAppelOffre equals ao.noAppelOffre
+                                                where ao.noAppelOffre == id
                                                 select soumi).ToList();
             }
             return null;
@@ -106,9 +106,9 @@ namespace ECJ.Web.Controllers
             if (id != null)
             {
                return  (from ag in db.tblAgencePublicite
-                                       join aoa in db.tblAppelOffreAgence
-                                       on ag.noAgencePub equals aoa.noAgencePub
-                                       where aoa.noAppelOffre == id
+                                       join soumi in db.tblSoumission 
+                                       on ag.noAgencePub equals soumi.noAgencePub
+                                       where soumi.noAppelOffre == id
                                        select ag).ToList();
 
             }

@@ -18,7 +18,7 @@ namespace ECJ.Web.Models
         public tblStatutAppelOffre()
         {
             this.tblAppelOffre = new HashSet<tblAppelOffre>();
-            this.tblAppelOffreAgence = new HashSet<tblAppelOffreAgence>();
+            this.tblSoumission = new HashSet<tblSoumission>();
         }
     
         public int noStatut { get; set; }
@@ -29,6 +29,6 @@ namespace ECJ.Web.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAppelOffre> tblAppelOffre { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblAppelOffreAgence> tblAppelOffreAgence { get; set; }
+        public virtual ICollection<tblSoumission> tblSoumission { get; set; }
     }
 }
