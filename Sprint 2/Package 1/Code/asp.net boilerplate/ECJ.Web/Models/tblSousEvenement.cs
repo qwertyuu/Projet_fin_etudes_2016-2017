@@ -17,6 +17,7 @@ namespace ECJ.Web.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblSousEvenement()
         {
+            this.tblEngagement = new HashSet<tblEngagement>();
             this.tblActivite = new HashSet<tblActivite>();
             this.tblDon = new HashSet<tblDon>();
             this.tblForfait = new HashSet<tblForfait>();
@@ -27,15 +28,17 @@ namespace ECJ.Web.Models
         public string nom { get; set; }
         public string description { get; set; }
         public int noEvenement { get; set; }
+        public Nullable<int> noSalle { get; set; }
         public Nullable<System.DateTime> dateSupprime { get; set; }
-        public Nullable<int> noEngagement { get; set; }
     
-        public virtual tblEngagement tblEngagement { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblEngagement> tblEngagement { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblActivite> tblActivite { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblDon> tblDon { get; set; }
         public virtual tblEvenement tblEvenement { get; set; }
+        public virtual tblSalle tblSalle { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblForfait> tblForfait { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

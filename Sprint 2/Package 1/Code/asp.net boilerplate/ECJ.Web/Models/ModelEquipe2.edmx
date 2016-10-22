@@ -100,6 +100,7 @@
           <Property Name="commentaire" Type="text" />
           <Property Name="description" Type="text" />
           <Property Name="descriptionCourte" Type="varchar" MaxLength="255" />
+          <Property Name="noSousEvenement" Type="int" />
           <Property Name="dateSupprime" Type="datetime" />
           <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
@@ -236,8 +237,8 @@
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="description" Type="text" />
           <Property Name="noEvenement" Type="int" Nullable="false" />
+          <Property Name="noSalle" Type="int" />
           <Property Name="dateSupprime" Type="datetime" />
-          <Property Name="noEngagement" Type="int" />
         </EntityType>
         <EntityType Name="tblForfait">
           <Key>
@@ -813,18 +814,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="NOENG_SOUSEVEN_FK">
-          <End Role="tblEngagement" Type="Self.tblEngagement" Multiplicity="0..1" />
-          <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblEngagement">
-              <PropertyRef Name="noEngagement" />
-            </Principal>
-            <Dependent Role="tblSousEvenement">
-              <PropertyRef Name="noEngagement" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="NOEVEN_ACT_FK">
           <End Role="tblEvenement" Type="Self.tblEvenement" Multiplicity="0..1" />
           <End Role="tblActivite" Type="Self.tblActivite" Multiplicity="*" />
@@ -849,6 +838,18 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="NOSALLE">
+          <End Role="tblSalle" Type="Self.tblSalle" Multiplicity="0..1" />
+          <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSalle">
+              <PropertyRef Name="noSalle" />
+            </Principal>
+            <Dependent Role="tblSousEvenement">
+              <PropertyRef Name="noSalle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="NOSOUSEVEN_ACT_FK">
           <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="0..1" />
           <End Role="tblActivite" Type="Self.tblActivite" Multiplicity="*" />
@@ -869,6 +870,18 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
               <PropertyRef Name="noSousEvenement" />
             </Principal>
             <Dependent Role="tblDon">
+              <PropertyRef Name="noSousEvenement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NOSOUSEVENEMENT_ENGAGEMENT">
+          <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="0..1" />
+          <End Role="tblEngagement" Type="Self.tblEngagement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSousEvenement">
+              <PropertyRef Name="noSousEvenement" />
+            </Principal>
+            <Dependent Role="tblEngagement">
               <PropertyRef Name="noSousEvenement" />
             </Dependent>
           </ReferentialConstraint>
@@ -1253,16 +1266,16 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblCommanditaire" EntitySet="tblCommanditaire" />
             <End Role="tblDon" EntitySet="tblDon" />
           </AssociationSet>
-          <AssociationSet Name="NOENG_SOUSEVEN_FK" Association="Self.NOENG_SOUSEVEN_FK">
-            <End Role="tblEngagement" EntitySet="tblEngagement" />
-            <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
-          </AssociationSet>
           <AssociationSet Name="NOEVEN_ACT_FK" Association="Self.NOEVEN_ACT_FK">
             <End Role="tblEvenement" EntitySet="tblEvenement" />
             <End Role="tblActivite" EntitySet="tblActivite" />
           </AssociationSet>
           <AssociationSet Name="NOEVEN_SOUSEVEN_FK" Association="Self.NOEVEN_SOUSEVEN_FK">
             <End Role="tblEvenement" EntitySet="tblEvenement" />
+            <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+          </AssociationSet>
+          <AssociationSet Name="NOSALLE" Association="Self.NOSALLE">
+            <End Role="tblSalle" EntitySet="tblSalle" />
             <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
           </AssociationSet>
           <AssociationSet Name="NOSOUSEVEN_ACT_FK" Association="Self.NOSOUSEVEN_ACT_FK">
@@ -1272,6 +1285,10 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <AssociationSet Name="NOSOUSEVEN_DON_FK" Association="Self.NOSOUSEVEN_DON_FK">
             <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
             <End Role="tblDon" EntitySet="tblDon" />
+          </AssociationSet>
+          <AssociationSet Name="NOSOUSEVENEMENT_ENGAGEMENT" Association="Self.NOSOUSEVENEMENT_ENGAGEMENT">
+            <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+            <End Role="tblEngagement" EntitySet="tblEngagement" />
           </AssociationSet>
           <AssociationSet Name="RES_AGE_FK" Association="Self.RES_AGE_FK">
             <End Role="tblAgence" EntitySet="tblAgence" />
@@ -1410,9 +1427,9 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblDiffuseur" EntitySet="tblDiffuseur" />
             <End Role="tblResponsable" EntitySet="tblResponsable" />
           </AssociationSet>
-          <AssociationSet Name="NOENG_SOUSEVEN_FK" Association="PE2_OfficielModel.NOENG_SOUSEVEN_FK">
-            <End Role="tblEngagement" EntitySet="tblEngagement" />
+          <AssociationSet Name="NOSOUSEVENEMENT_ENGAGEMENT" Association="PE2_OfficielModel.NOSOUSEVENEMENT_ENGAGEMENT">
             <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+            <End Role="tblEngagement" EntitySet="tblEngagement" />
           </AssociationSet>
           <AssociationSet Name="EXI_STA_FK" Association="PE2_OfficielModel.EXI_STA_FK">
             <End Role="tblStatut" EntitySet="tblStatut" />
@@ -1444,6 +1461,10 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           </AssociationSet>
           <AssociationSet Name="NOEVEN_SOUSEVEN_FK" Association="PE2_OfficielModel.NOEVEN_SOUSEVEN_FK">
             <End Role="tblEvenement" EntitySet="tblEvenement" />
+            <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+          </AssociationSet>
+          <AssociationSet Name="NOSALLE" Association="PE2_OfficielModel.NOSALLE">
+            <End Role="tblSalle" EntitySet="tblSalle" />
             <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
           </AssociationSet>
           <AssociationSet Name="DESTINATAIRE_UTILISATEUR_MEMO_FK" Association="PE2_OfficielModel.DESTINATAIRE_UTILISATEUR_MEMO_FK">
@@ -1601,10 +1622,11 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="descriptionCourte" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="noSousEvenement" Type="Int32" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
           <Property Name="noContrat" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tblContrat" Relationship="PE2_OfficielModel.ENG_CON_FK" FromRole="tblEngagement" ToRole="tblContrat" />
-          <NavigationProperty Name="tblSousEvenement" Relationship="PE2_OfficielModel.NOENG_SOUSEVEN_FK" FromRole="tblEngagement" ToRole="tblSousEvenement" />
+          <NavigationProperty Name="tblSousEvenement" Relationship="PE2_OfficielModel.NOSOUSEVENEMENT_ENGAGEMENT" FromRole="tblEngagement" ToRole="tblSousEvenement" />
         </EntityType>
         <EntityType Name="tblExigence">
           <Key>
@@ -1751,12 +1773,13 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="nom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="noEvenement" Type="Int32" Nullable="false" />
+          <Property Name="noSalle" Type="Int32" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
-          <Property Name="noEngagement" Type="Int32" />
-          <NavigationProperty Name="tblEngagement" Relationship="PE2_OfficielModel.NOENG_SOUSEVEN_FK" FromRole="tblSousEvenement" ToRole="tblEngagement" />
+          <NavigationProperty Name="tblEngagement" Relationship="PE2_OfficielModel.NOSOUSEVENEMENT_ENGAGEMENT" FromRole="tblSousEvenement" ToRole="tblEngagement" />
           <NavigationProperty Name="tblActivite" Relationship="PE2_OfficielModel.NOSOUSEVEN_ACT_FK" FromRole="tblSousEvenement" ToRole="tblActivite" />
           <NavigationProperty Name="tblDon" Relationship="PE2_OfficielModel.NOSOUSEVEN_DON_FK" FromRole="tblSousEvenement" ToRole="tblDon" />
           <NavigationProperty Name="tblEvenement" Relationship="PE2_OfficielModel.NOEVEN_SOUSEVEN_FK" FromRole="tblSousEvenement" ToRole="tblEvenement" />
+          <NavigationProperty Name="tblSalle" Relationship="PE2_OfficielModel.NOSALLE" FromRole="tblSousEvenement" ToRole="tblSalle" />
           <NavigationProperty Name="tblForfait" Relationship="PE2_OfficielModel.tblForfaitSousEvenement" FromRole="tblSousEvenement" ToRole="tblForfait" />
           <NavigationProperty Name="tblService" Relationship="PE2_OfficielModel.tblServiceRequis" FromRole="tblSousEvenement" ToRole="tblService" />
         </EntityType>
@@ -1782,6 +1805,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="photoSalle" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
           <Property Name="urlGoogleMap" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblSousEvenement" Relationship="PE2_OfficielModel.NOSALLE" FromRole="tblSalle" ToRole="tblSousEvenement" />
           <NavigationProperty Name="tblService" Relationship="PE2_OfficielModel.tblServiceOffert" FromRole="tblSalle" ToRole="tblService" />
         </EntityType>
         <EntityType Name="tblService">
@@ -2165,15 +2189,15 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="NOENG_SOUSEVEN_FK">
-          <End Type="PE2_OfficielModel.tblEngagement" Role="tblEngagement" Multiplicity="0..1" />
-          <End Type="PE2_OfficielModel.tblSousEvenement" Role="tblSousEvenement" Multiplicity="*" />
+        <Association Name="NOSOUSEVENEMENT_ENGAGEMENT">
+          <End Type="PE2_OfficielModel.tblSousEvenement" Role="tblSousEvenement" Multiplicity="0..1" />
+          <End Type="PE2_OfficielModel.tblEngagement" Role="tblEngagement" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tblEngagement">
-              <PropertyRef Name="noEngagement" />
+            <Principal Role="tblSousEvenement">
+              <PropertyRef Name="noSousEvenement" />
             </Principal>
-            <Dependent Role="tblSousEvenement">
-              <PropertyRef Name="noEngagement" />
+            <Dependent Role="tblEngagement">
+              <PropertyRef Name="noSousEvenement" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2270,6 +2294,18 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Principal>
             <Dependent Role="tblSousEvenement">
               <PropertyRef Name="noEvenement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NOSALLE">
+          <End Type="PE2_OfficielModel.tblSalle" Role="tblSalle" Multiplicity="0..1" />
+          <End Type="PE2_OfficielModel.tblSousEvenement" Role="tblSousEvenement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSalle">
+              <PropertyRef Name="noSalle" />
+            </Principal>
+            <Dependent Role="tblSousEvenement">
+              <PropertyRef Name="noSalle" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2476,6 +2512,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
               <MappingFragment StoreEntitySet="tblEngagement">
                 <ScalarProperty Name="noContrat" ColumnName="noContrat" />
                 <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+                <ScalarProperty Name="noSousEvenement" ColumnName="noSousEvenement" />
                 <ScalarProperty Name="descriptionCourte" ColumnName="descriptionCourte" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="commentaire" ColumnName="commentaire" />
@@ -2615,8 +2652,8 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySetMapping Name="tblSousEvenement">
             <EntityTypeMapping TypeName="PE2_OfficielModel.tblSousEvenement">
               <MappingFragment StoreEntitySet="tblSousEvenement">
-                <ScalarProperty Name="noEngagement" ColumnName="noEngagement" />
                 <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+                <ScalarProperty Name="noSalle" ColumnName="noSalle" />
                 <ScalarProperty Name="noEvenement" ColumnName="noEvenement" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="nom" ColumnName="nom" />

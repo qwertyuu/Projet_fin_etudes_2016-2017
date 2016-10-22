@@ -56,8 +56,8 @@ CREATE TABLE S_evenement.tblSousEvenement (
 	,nom VARCHAR(50) NOT NULL
 	,description TEXT  NULL
 	,noEvenement INT NOT NULL
+	,noSalle INT NULL
 	,dateSupprime DATETIME NULL
-	,noEngagement INT NULL
 	);
 PRINT 'Fin de création de la table tblSousEvenement'
 GO

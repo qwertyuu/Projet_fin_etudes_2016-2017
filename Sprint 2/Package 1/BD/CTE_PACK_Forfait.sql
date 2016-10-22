@@ -44,3 +44,7 @@ GO
 PRINT 'FIN des contraintes des tables du package forfait '
 
 
+ALTER TABLE S_Evenement.tblSousEvenement ADD
+CONSTRAINT NOSALLE FOREIGN KEY(noSalle) REFERENCES S_forfait.tblSalle(noSalle)
+GO
+PRINT('Fin des contraintes FK des sous-évènements')

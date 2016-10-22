@@ -13,6 +13,20 @@ VALUES('Salle François Brassard',1000,700,60,null,null,null),
 ('Salle Pierrette Gaudreault',750,500,50,null,'2015/05/03',null);
 GO
 PRINT 'INSERTION RÉUSSI'
+
+PRINT('Ajout de FK vers les salles dans la table sous-evenement')
+
+GO
+
+UPDATE S_evenement.tblSousEvenement SET noSalle = ABS(1 + ((CAST(ABS(CHECKSUM(NEWID())) % 101 AS FLOAT) / 100) * 2)) WHERE noSousEvenement IN
+(
+    SELECT TOP 75 PERCENT noSousEvenement FROM S_evenement.tblSousEvenement ORDER BY NEWID()
+)
+
+GO
+PRINT('Fin de l''ajout de FK vers les salles dans la table sous-evenement')
+
+
 PRINT 'INSERTION DE LA tblForfait'
 GO
 INSERT INTO S_forfait.tblForfait (nom,description,dateSupprime)
@@ -96,4 +110,4 @@ VALUES(4,1),
 
 GO
 PRINT 'INSERTION RÉUSSI'
-GO
+

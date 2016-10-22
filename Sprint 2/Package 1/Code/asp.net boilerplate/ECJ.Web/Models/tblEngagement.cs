@@ -14,12 +14,6 @@ namespace ECJ.Web.Models
     
     public partial class tblEngagement
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblEngagement()
-        {
-            this.tblSousEvenement = new HashSet<tblSousEvenement>();
-        }
-    
         public int noEngagement { get; set; }
         public string duree { get; set; }
         public string lieu { get; set; }
@@ -29,11 +23,11 @@ namespace ECJ.Web.Models
         public string commentaire { get; set; }
         public string description { get; set; }
         public string descriptionCourte { get; set; }
+        public Nullable<int> noSousEvenement { get; set; }
         public Nullable<System.DateTime> dateSupprime { get; set; }
         public string noContrat { get; set; }
     
         public virtual tblContrat tblContrat { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblSousEvenement> tblSousEvenement { get; set; }
+        public virtual tblSousEvenement tblSousEvenement { get; set; }
     }
 }

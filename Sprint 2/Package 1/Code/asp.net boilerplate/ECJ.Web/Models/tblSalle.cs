@@ -17,6 +17,7 @@ namespace ECJ.Web.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblSalle()
         {
+            this.tblSousEvenement = new HashSet<tblSousEvenement>();
             this.tblService = new HashSet<tblService>();
         }
     
@@ -29,6 +30,8 @@ namespace ECJ.Web.Models
         public Nullable<System.DateTime> dateSupprime { get; set; }
         public string urlGoogleMap { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblSousEvenement> tblSousEvenement { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblService> tblService { get; set; }
     }

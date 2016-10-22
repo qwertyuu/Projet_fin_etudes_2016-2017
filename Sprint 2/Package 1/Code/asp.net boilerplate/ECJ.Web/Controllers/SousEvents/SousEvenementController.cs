@@ -38,19 +38,47 @@ namespace ECJ.Web.Controllers
             {
                 db.SupprimerServiceRequis((int)id, int.Parse(serviceASupprimer));
             }
+
             //ajouter le forfait sélectionné
             var forfaitAAjouter = Request.Form["forfait"];
             if (forfaitAAjouter != null)
             {
                 db.LierForfait((int)id, int.Parse(forfaitAAjouter));
             }
-
             //supprimer le forfait sélectionné
             var forfaitASupprimer = Request.Form["forfait_suppr"];
             if (forfaitASupprimer != null)
             {
                 db.DelierForfait((int)id, int.Parse(forfaitASupprimer));
             }
+
+            //ajouter la salle sélectionnée
+            var salleAAjouter = Request.Form["salle"];
+            if (salleAAjouter != null)
+            {
+                db.LierSalle((int)id, int.Parse(salleAAjouter));
+            }
+            //supprimer la salle sélectionnée
+            var salleASupprimer = Request.Form["salle_suppr"];
+            if (salleASupprimer != null)
+            {
+                db.DelierSalle((int)id, int.Parse(salleASupprimer));
+            }
+
+            //ajouter l'engagement sélectionné
+            var engagementAAjouter = Request.Form["engagement"];
+            if (engagementAAjouter != null)
+            {
+                db.LierEngagement((int)id, int.Parse(engagementAAjouter));
+            }
+            //supprimer l'engagement sélectionné
+            var engagementASupprimer = Request.Form["engagement_suppr"];
+            if (engagementASupprimer != null)
+            {
+                db.DelierEngagement((int)id, int.Parse(engagementASupprimer));
+            }
+
+
             var elementADetailler = db.FindSousEvenement((int)id);
 
             if (elementADetailler == null)
@@ -58,11 +86,9 @@ namespace ECJ.Web.Controllers
                 return HttpNotFound();
             }
             var service = db.ToutService().Except(elementADetailler.tblService).ToList();
-            var salle = new List<tblSalle>();
-            //var salle = db.ToutSalle().Except(elementADetailler.tblSalle).ToList();
+            var salle = db.ToutSalle().Except(new List<tblSalle> { elementADetailler.tblSalle }).ToList();
             var forfait = db.ToutForfait().Except(elementADetailler.tblForfait).ToList();
-            var engagement = new List<tblEngagement>();
-            //var engagement = db.ToutEngagement().Except(elementADetailler.tblEngagement).ToList();
+            var engagement = db.ToutEngagement().Except(elementADetailler.tblEngagement).ToList();
             ViewBag.listTuple = new Tuple<tblSousEvenement, List<tblService>, List<tblSalle>, List<tblForfait>, List<tblEngagement>>(elementADetailler, service, salle, forfait, engagement);
             //Service, Salle, Forfait, Engagement
             return View();

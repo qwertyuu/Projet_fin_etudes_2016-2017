@@ -83,6 +83,7 @@ CREATE TABLE S_Contrat.tblEngagement
 	commentaire text,					/*RTF*/
 	description text,					/*RTF*/
 	descriptionCourte varchar(255),
+	noSousEvenement int NULL,
 	dateSupprime datetime,
 	noContrat varchar(20) NOT NULL
 )

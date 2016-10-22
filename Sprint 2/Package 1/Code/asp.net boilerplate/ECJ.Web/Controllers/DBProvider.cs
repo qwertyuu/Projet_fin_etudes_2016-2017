@@ -62,9 +62,21 @@ namespace ECJ.Web.Controllers
             return db.tblService.ToList();
         }
 
+        internal void LierSalle(int id, int salle_id)
+        {
+            db.tblSousEvenement.Find(id).tblSalle = db.tblSalle.Find(salle_id);
+            db.SaveChanges();
+        }
+
         internal List<tblForfait> ToutForfait()
         {
             return db.tblForfait.ToList();
+        }
+
+        internal void DelierSalle(int id, int salle_id)
+        {
+            db.tblSousEvenement.Find(id).tblSalle = null;
+            db.SaveChanges();
         }
 
         internal List<tblEngagement> ToutEngagement()
@@ -72,9 +84,21 @@ namespace ECJ.Web.Controllers
             return db.tblEngagement.ToList();
         }
 
+        internal void LierEngagement(int id, int engagement_id)
+        {
+            db.tblSousEvenement.Find(id).tblEngagement.Add(db.tblEngagement.Find(engagement_id));
+            db.SaveChanges();
+        }
+
         internal List<tblSalle> ToutSalle()
         {
             return db.tblSalle.ToList();
+        }
+
+        internal void DelierEngagement(int id, int engagement_id)
+        {
+            db.tblSousEvenement.Find(id).tblEngagement.Remove(db.tblEngagement.Find(engagement_id));
+            db.SaveChanges();
         }
 
         public List<tblAgencePublicite> ReturnAgence(int? id)
