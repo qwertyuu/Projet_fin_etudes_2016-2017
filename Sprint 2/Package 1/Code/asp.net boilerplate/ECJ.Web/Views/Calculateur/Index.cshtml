@@ -1,4 +1,5 @@
 ﻿@using Abp.Web.Mvc.Extensions
+@model ECJ.Web.Models.tblSalle
 
 @{
     ViewBag.Title = "ViewCalculateur";
@@ -8,7 +9,7 @@
 @section scripts
 {
     @Html.IncludeScript("~/Views/Calculateur/Index.js")
-    @Html.IncludeStyle("~/Views/Calculateur/Index.css")
+    @Html.IncludeStyle("~/Views/Calculateur/Index.css") @*Il reste a enlever le curseur par dessus les champs disabled*@
 }
 <div class="row">
     <form class="form-horizontal">
@@ -63,21 +64,18 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Nom de la salle</th>
-                        <th>Nombre de places V.I.P</th>
-                        <th>Nombre de places</th>
-                        <th>Coûts</th>
-                        <th>Détails</th>
-                        <th>Date</th>
+                        <th @Html.DisplayNameFor(model => model.nomSalle)>Nom de la salle</th>
+                        <th @Html.DisplayNameFor(model => model.billetVIP)>Nombre de places V.I.P</th>
+                        <th @Html.DisplayFor(model => model.billet)>Nombre de places</th>
+                        <th @Html.DisplayFor(model => model.prix)>Coûts</th>
                     </tr>
                 </thead>
                 <tr>
-                    <td>Saint-François Brassard</td>
-                    <td id="vip">40</td>
-                    <td id="billet">320</td>
-                    <td>1500.00</td>
-                    <td>Grande salle de spectacle avec des balcons</td>
-                    <td>2016/11/03</td>
+                    <td>@Html.DisplayFor(model => model.nomSalle)</td>
+                    <td id="vip">@Html.DisplayFor(model => model.billetVIP)</td>
+                    <td id="billet">@Html.DisplayFor(model => model.billet)</td>
+                    <td>@Html.DisplayFor(model => model.prix)</td>
+                    
                 </tr>
             </table>
         </div>
