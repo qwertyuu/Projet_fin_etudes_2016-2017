@@ -677,6 +677,7 @@
     <Content Include="Views\tblDons\Edit.cshtml" />
     <Content Include="Views\tblDons\Index.cshtml" />
     <Content Include="Views\Events\Modifier.cshtml" />
+    <Content Include="Views\SousEvenements\Modifier.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

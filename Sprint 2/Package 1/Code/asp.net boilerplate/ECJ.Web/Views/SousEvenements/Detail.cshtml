@@ -62,7 +62,7 @@
         }
     </div>
     <label>Salle</label>
-    @if (Model.Item1.noSalle == null)
+    @if (Model.Item1.noSalle == null || Model.Item1.tblSalle.dateSupprime != null)
     {
         <button data-target="#SalleAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Choisir une salle</button>
     }
@@ -82,7 +82,7 @@
                 </tr>
             </thead>
             <tbody>
-                @if (Model.Item1.noSalle != null)
+                @if (Model.Item1.noSalle != null && Model.Item1.tblSalle.dateSupprime == null)
                 {
                     <tr>
                         <td>@Model.Item1.tblSalle.nomSalle</td>
@@ -115,7 +115,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var f in Model.Item1.tblForfait)
+                @foreach (var f in Model.Item1.tblForfait.Where(element => element.dateSupprime == null))
                 {
                     <tr>
                         <td>@f.nom</td>
@@ -150,7 +150,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var e in Model.Item1.tblEngagement)
+                @foreach (var e in Model.Item1.tblEngagement.Where(element => element.dateSupprime == null))
                 {
                     <tr>
                         <td>@e.nature</td>
@@ -190,7 +190,7 @@
                     </thead>
                     <tbody>
                         @{StringBuilder dates = new StringBuilder(); }
-                        @foreach (var a in Model.Item1.tblActivite)
+                        @foreach (var a in Model.Item1.tblActivite.Where(element => element.dateSupprime == null))
                         {
                             dates.Append("{ date: \"" + String.Format("{0:yyyy-MM-dd}", a.dateCreation) + "\" },");
                             <tr>
@@ -215,6 +215,7 @@
             </div>
         </div>
     </div>
+    <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Retour</a>
 </div>
 @{
     if (dates.Length > 0)

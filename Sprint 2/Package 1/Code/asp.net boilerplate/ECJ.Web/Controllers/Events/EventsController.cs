@@ -68,13 +68,14 @@ namespace ECJ.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Ajout([Bind(Include = "noEvenement,nom,dateDebut,datefin,affiche,url,description,dateSupprime")] tblEvenement tblEvenement, HttpPostedFileBase pic)
+        public ActionResult Ajout([Bind(Include = "noEvenement,nom,dateDebut,datefin,affiche,url,description,dateSupprime")] tblEvenement tblEvenement)
         {
 
             if (ModelState.IsValid)
             {
-                if (pic != null)
+                if (Request.Files["pic"].ContentLength > 0)
                 {
+                    var pic = Request.Files["pic"];
                     using (var reader = new System.IO.BinaryReader(pic.InputStream))
                     {
                         tblEvenement.affiche = reader.ReadBytes(pic.ContentLength);
@@ -104,7 +105,7 @@ namespace ECJ.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Modifier([Bind(Include = "noEvenement,nom,dateDebut,datefin,url,description,dateSupprime")] tblEvenement tblEvenement)
+        public ActionResult Modifier([Bind(Include = "noEvenement,nom,dateDebut,datefin,affiche,url,description,dateSupprime")] tblEvenement tblEvenement)
         {
 
             if (ModelState.IsValid)

@@ -30,14 +30,24 @@
         <label>Description</label>
         <textarea class="form-control" rows="5" id="textArea" name="description" required>@Model.description</textarea>
     </div>
-    <div class="form-group">
-        <label>Supprimer l'affiche?</label>
-        <input type="checkbox" name="SupprimerAffiche" value="1" />
-    </div>
-    <div class="form-group">
-        <label>Affiche</label>
-        <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
-    </div>
+    if (Model.affiche != null)
+    {
+        <div class="form-group">
+            <label>Supprimer l'affiche?</label>
+            <input type="checkbox" name="SupprimerAffiche" value="1" />
+        </div>
+        <div class="form-group">
+            <label>Modifier l'affiche (laisser vide pour garder l'ancienne)</label>
+            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            <label>Ajouter une affiche</label>
+            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+        </div>
+    }
     <div class="form-group pull-right">
         <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
         <a href="/Events" class="btn btn-default" data-dismiss="modal">Annuler</a>

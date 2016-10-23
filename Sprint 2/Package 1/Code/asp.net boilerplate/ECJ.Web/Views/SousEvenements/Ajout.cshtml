@@ -3,78 +3,23 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Sous-Évènement</h2>
+<h2>Créer un sous-événement</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend></legend>
-
-        <div class="form-group">
-            <label>Nom du sous-évènement : </label>
-            <input class="form-control" type="text" name="UserName" required maxlength="50" minlength="2">
-        </div>
-
-        <div class="form-group">
-            <label>Description : </label>
-            <input class="form-control" type="text" name="text" >
-        </div>
-
-        @*<div class="form-group">
-            <label>Salle : </label>
-            <form action="">
-                <input type="checkbox" name="Salle" value="1">Salle 1<br>
-                <input type="checkbox" name="Salle" value="2">Salle 2
-            </form>
-        </div>
-
-        <div class="form-group">
-            <label>Service : </label>
-            <form action="">
-                <input type="checkbox" name="Service" value="1">Restauration<br>
-                <input type="checkbox" name="Service" value="2">Techniciens audio
-            </form>
-        </div>
-
-        <div class="form-group">
-            <label>Forfait : </label>
-            <form action="">
-                <input type="checkbox" name="Forfait" value="1">Etudiant<br>
-                <input type="checkbox" name="Forfait" value="2">Familiale
-            </form>
-        </div>
-
-        <div class="form-group">
-            <label>Engagement : </label>
-            <form action="">
-                <input type="checkbox" name="engagement" value="1">Éclairage<br>
-                <input type="checkbox" name="engagement" value="2">Musique
-            </form>
-        </div>
-
-        <div class="form-group">
-            <label>Don : </label>
-            <form action="">
-                <input type="checkbox" name="don" value="1">McDonald's 350$<br>
-                <input type="checkbox" name="don" value="2">Tim Hortons 650$
-            </form>
-        </div>
-
-        <div class="form-group">
-            <label>Activité : </label>
-            <form action="">
-                <input type="checkbox" name="Activite" value="1">Faire une entrevue à la radio<br>
-                <input type="checkbox" name="Activite" value="2">Faire une publication
-            </form>
-        </div>*@
-
-        <p>
-            <input type="submit" value="Créer" class="btn btn-primary pull-right" />
-        </p>
-
-    </fieldset>
+    <input type="hidden" name="noEvenement" value="@ViewBag.noEvenement" />
+    <div class="form-group">
+        <label>Nom</label>
+        <input class="form-control" type="text" name="nom" maxlength="50" required>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" rows="5" id="description" name="description"></textarea>
+    </div>
+    <div class="form-group pull-right">
+        <button class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Ajouter</span></button>
+        <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
 }
-

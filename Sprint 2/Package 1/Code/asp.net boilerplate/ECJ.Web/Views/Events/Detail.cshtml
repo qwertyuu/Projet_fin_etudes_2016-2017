@@ -49,7 +49,7 @@
         <div class="well well-sm">
             @if (Model.affiche == null)
             {
-                <p>Aucune affiche</p>
+                <span>Aucune affiche</span>
             }
             else
             {
@@ -58,7 +58,7 @@
         </div>
     </div>
     <label>Sous-Évènements</label>
-    <a href="/sousEvenements/Ajout" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un sous-événement</a>
+    <a href="/sousEvenements/Ajout?evenement_id=@Model.noEvenement&return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un sous-événement</a>
     <div class="form-group">
         <table class="table table-striped table-hover">
             <thead>
@@ -69,15 +69,15 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var sE in Model.tblSousEvenement)
+                @foreach (var sE in Model.tblSousEvenement.Where(element => element.dateSupprime == null))
                 {
                     <tr>
                         <td>@sE.nom</td>
                         <td>@sE.description</td>
                         <td>
                             <a href="/sousEvenements/Detail/@sE.noSousEvenement" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                            <a href="/sousEvenements/Modifier/@sE.noSousEvenement" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                            <a href="/sousEvenements/Supprimer/@sE.noSousEvenement" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            <a href="/sousEvenements/Modifier/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                            <a href="/sousEvenements/Supprimer/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
                         </td>
                     </tr>
                 }
@@ -112,7 +112,7 @@
                                 activites = activites.Concat(item.tblActivite);
                             }
                             StringBuilder dates = new StringBuilder();
-                            foreach (var activite in activites)
+                            foreach (var activite in activites.Where(element => element.dateSupprime == null))
                             {
                                 dates.Append("{ date: \"" + String.Format("{0:yyyy-MM-dd}", activite.dateCreation) + "\" },");
                                 <tr>
@@ -132,8 +132,8 @@
                                         }
                                     <td>
                                         <a href="/Activite/Detail/@activite.noActivite" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                                        <a href="/Activite/Modifier/@activite.noActivite" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                                        <a href="/Activite/Supprimer/@activite.noActivite" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                                        <a href="/Activite/Modifier/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                        <a href="/Activite/Supprimer/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
                                     </td>
                                 </tr>
                             }
@@ -148,6 +148,7 @@
             </div>
         </div>
     </div>
+    <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Retour</a>
 </form>
 @{
     if (dates.Length > 0)

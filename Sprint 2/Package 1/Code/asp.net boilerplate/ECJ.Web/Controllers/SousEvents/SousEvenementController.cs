@@ -96,6 +96,21 @@ namespace ECJ.Web.Controllers
 
         public ActionResult Ajout()
         {
+            ViewBag.noEvenement = Request.QueryString["evenement_id"];
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Ajout([Bind(Include = "noSousEvenement,nom,description,noEvenement,noSalle,dateSupprime")] tblSousEvenement tblSousEvenement)
+        {
+
+            if (ModelState.IsValid)
+            {
+                db.InsertSousEvenement(tblSousEvenement);
+
+                return Redirect(Request.QueryString["return"]);
+            }
             return View();
         }
 
@@ -117,12 +132,11 @@ namespace ECJ.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Modifier([Bind(Include = "noSousEvenement,nom,description,noEvenement,noSalle,dateSupprime")] tblSousEvenement tblSousEvenement)
         {
-
             if (ModelState.IsValid)
             {
                 db.UpdateSousEvenement(tblSousEvenement);
 
-                return RedirectToAction("Index");
+                return Redirect(Request.QueryString["return"]);
             }
             return View(tblSousEvenement);
         }
@@ -134,7 +148,7 @@ namespace ECJ.Web.Controllers
             {
                 db.SupprimerSousEvenement((int)id);
             }
-            return RedirectToAction("Index");
+            return Redirect(Request.QueryString["return"]);
         }
     }
 }

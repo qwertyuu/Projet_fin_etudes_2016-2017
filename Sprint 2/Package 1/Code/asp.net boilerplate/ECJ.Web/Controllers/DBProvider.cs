@@ -11,10 +11,6 @@ namespace ECJ.Web.Controllers
     public class DBProvider
     {
         private static PE2_OfficielEntities db;
-
-
-
-
         public DBProvider()
         {
             if (db == null)
