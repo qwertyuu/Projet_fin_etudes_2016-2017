@@ -98,5 +98,43 @@ namespace ECJ.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Modifier(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var elementAModifier = db.ReturnSousEvenement((int)id);
+            if (elementAModifier == null)
+            {
+                return HttpNotFound();
+            }
+            return View(elementAModifier);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Modifier([Bind(Include = "noSousEvenement,nom,description,noEvenement,noSalle,dateSupprime")] tblSousEvenement tblSousEvenement)
+        {
+
+            if (ModelState.IsValid)
+            {
+                db.UpdateSousEvenement(tblSousEvenement);
+
+                return RedirectToAction("Index");
+            }
+            return View(tblSousEvenement);
+        }
+
+
+        public ActionResult Supprimer(int? id)
+        {
+            if (id != null)
+            {
+                db.SupprimerSousEvenement((int)id);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using ECJ.Web.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -10,6 +12,9 @@ namespace ECJ.Web.Controllers
     {
         private static PE2_OfficielEntities db;
 
+
+
+
         public DBProvider()
         {
             if (db == null)
@@ -18,16 +23,69 @@ namespace ECJ.Web.Controllers
             }
         }
 
+        #region décodeur de type d'image depuis byte[]
+        private static Dictionary<byte[], ImageFormat> imageFormatDecoders = new Dictionary<byte[], ImageFormat>()
+        {
+            { new byte[]{ 0x42, 0x4D }, ImageFormat.Bmp},
+            { new byte[]{ 0x47, 0x49, 0x46, 0x38, 0x37, 0x61 }, ImageFormat.Gif },
+            { new byte[]{ 0x47, 0x49, 0x46, 0x38, 0x39, 0x61 }, ImageFormat.Gif },
+            { new byte[]{ 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A }, ImageFormat.Png },
+            { new byte[]{ 0xff, 0xd8 }, ImageFormat.Jpeg }
+        };
+
+        public static ImageFormat GetContentType(byte[] imageBytes)
+        {
+            MemoryStream ms = new MemoryStream(imageBytes);
+
+            using (BinaryReader br = new BinaryReader(ms))
+            {
+                int maxMagicBytesLength = imageFormatDecoders.Keys.OrderByDescending(x => x.Length).First().Length;
+
+                byte[] magicBytes = new byte[maxMagicBytesLength];
+
+                for (int i = 0; i < maxMagicBytesLength; i += 1)
+                {
+                    magicBytes[i] = br.ReadByte();
+
+                    foreach (var kvPair in imageFormatDecoders)
+                    {
+                        if (StartsWith(magicBytes, kvPair.Key))
+                        {
+                            return kvPair.Value;
+                        }
+                    }
+                }
+
+                return ImageFormat.Png;
+            }
+        }
+
+        private static bool StartsWith(byte[] thisBytes, byte[] thatBytes)
+        {
+            for (int i = 0; i < thatBytes.Length; i += 1)
+            {
+                if (thisBytes[i] != thatBytes[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        #endregion
+
+
         //Requête sur la table tblAppelOffre
         public List<tblSoumission> RetunSoumission(int? id)
         {
             if (id != null)
             {
                return (from soumi in db.tblSoumission
-                                                join ao in db.tblAppelOffre
-                                                on soumi.noAppelOffre equals ao.noAppelOffre
-                                                where ao.noAppelOffre == id
-                                                select soumi).ToList();
+                        join ao in db.tblAppelOffre
+                        on soumi.noAppelOffre equals ao.noAppelOffre
+                        where ao.noAppelOffre == id
+                        where soumi.dateSupprime == null
+                        where ao.dateSupprime == null
+                        select soumi).ToList();
             }
             return null;
 
@@ -59,7 +117,7 @@ namespace ECJ.Web.Controllers
 
         internal List<tblService> ToutService()
         {
-            return db.tblService.ToList();
+            return db.tblService.Where(s => s.dateSupprime == null).ToList();
         }
 
         internal void LierSalle(int id, int salle_id)
@@ -70,7 +128,7 @@ namespace ECJ.Web.Controllers
 
         internal List<tblForfait> ToutForfait()
         {
-            return db.tblForfait.ToList();
+            return db.tblForfait.Where(f => f.dateSupprime == null).ToList();
         }
 
         internal void DelierSalle(int id, int salle_id)
@@ -81,7 +139,7 @@ namespace ECJ.Web.Controllers
 
         internal List<tblEngagement> ToutEngagement()
         {
-            return db.tblEngagement.ToList();
+            return db.tblEngagement.Where(e => e.dateSupprime == null).ToList();
         }
 
         internal void LierEngagement(int id, int engagement_id)
@@ -92,7 +150,7 @@ namespace ECJ.Web.Controllers
 
         internal List<tblSalle> ToutSalle()
         {
-            return db.tblSalle.ToList();
+            return db.tblSalle.Where(s => s.dateSupprime == null).ToList();
         }
 
         internal void DelierEngagement(int id, int engagement_id)
@@ -106,18 +164,38 @@ namespace ECJ.Web.Controllers
             if (id != null)
             {
                return  (from ag in db.tblAgencePublicite
-                                       join soumi in db.tblSoumission 
-                                       on ag.noAgencePub equals soumi.noAgencePub
-                                       where soumi.noAppelOffre == id
-                                       select ag).ToList();
+                       join soumi in db.tblSoumission 
+                       on ag.noAgencePub equals soumi.noAgencePub
+                       where soumi.noAppelOffre == id
+                       where soumi.dateSupprime == null
+                       where ag.dateSupprime == null
+                       select ag).ToList();
 
             }
             else
             {
                return (from ag in db.tblAgencePublicite
+                       where ag.dateSupprime == null
                                        select ag).ToList();
             }
 
+        }
+
+        internal object ReturnSousEvenement(int id)
+        {
+            return db.tblSousEvenement.Find(id);
+        }
+
+        internal void SupprimerSousEvenement(int id)
+        {
+            db.tblSousEvenement.Find(id).dateSupprime = DateTime.Now;
+            db.SaveChanges();
+        }
+
+        internal void UpdateSousEvenement(tblSousEvenement tblSousEvenement)
+        {
+            db.Entry(tblSousEvenement).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void InsertSoumission(tblSoumission soumi)

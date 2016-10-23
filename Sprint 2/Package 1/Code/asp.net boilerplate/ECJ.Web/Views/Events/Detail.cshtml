@@ -47,7 +47,14 @@
     <div class="form-group">
         <label>Affiche</label>
         <div class="well well-sm">
-            <img src="http://img.over-blog-kiwi.com/0/54/21/78/20160706/ob_c88687_affiche-festirire-web.jpg" height="500" />
+            @if (Model.affiche == null)
+            {
+                <p>Aucune affiche</p>
+            }
+            else
+            {
+                <img height="500" src="~/Events/GetFile/@Model.noEvenement" alt="Affiche" />
+            }
         </div>
     </div>
     <label>Sous-Évènements</label>

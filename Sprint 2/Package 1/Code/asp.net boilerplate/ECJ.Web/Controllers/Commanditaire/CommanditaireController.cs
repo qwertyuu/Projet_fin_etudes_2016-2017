@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ECJ.Web.Models;
+using System.Drawing.Imaging;
+using System.Drawing;
 
 namespace ECJ.Web.Controllers.Commanditaire
 {
@@ -34,10 +36,10 @@ namespace ECJ.Web.Controllers.Commanditaire
 
         public FileContentResult GetFile(int id)
         {
-            tblCommanditaire comm = db.tblCommanditaire.Find(id);
+            var comm = db.tblCommanditaire.Find(id);
             var imagedata = comm.logo;
-
-            return new FileContentResult(imagedata,"image/png");
+            var contentType = DBProvider.GetContentType(imagedata);
+            return new FileContentResult(imagedata,string.Format("image/{0}", contentType.ToString().ToLower()));
 
         }
 

@@ -35,13 +35,59 @@ namespace ECJ.Web.Controllers
         }
         public ActionResult Index()
         {
-            var tblEvenement = db.vueSomEvenement;
+            var tblEvenement = db.vueSomEvenement.ToList();
+            var recherche = Request.QueryString["recherche"];
+
+            if (recherche != null)
+            {
+                if (recherche.Trim() == "")
+                {
+                    return RedirectToAction("Index");
+                }
+                ViewBag.recherche = recherche;
+                recherche = recherche.Trim().ToUpper();
+                tblEvenement = tblEvenement.Where(e => 
+                e.dateDebut.ToString().ToUpper().Contains(recherche) ||
+                e.dateFin.ToString().ToUpper().Contains(recherche) ||
+                (e.description ?? "").ToUpper().Contains(recherche) || 
+                e.nom.ToUpper().Contains(recherche)).ToList();
+            }
             return View(tblEvenement);
         }
         public ActionResult Ajout()
         {
             return View();
         }
+
+        public FileContentResult GetFile(int id)
+        {
+            var imagedata = db.tblEvenement.Find(id).affiche;
+            var contentType = DBProvider.GetContentType(imagedata);
+            return new FileContentResult(imagedata, string.Format("image/{0}", contentType.ToString().ToLower()));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Ajout([Bind(Include = "noEvenement,nom,dateDebut,datefin,affiche,url,description,dateSupprime")] tblEvenement tblEvenement, HttpPostedFileBase pic)
+        {
+
+            if (ModelState.IsValid)
+            {
+                if (pic != null)
+                {
+                    using (var reader = new System.IO.BinaryReader(pic.InputStream))
+                    {
+                        tblEvenement.affiche = reader.ReadBytes(pic.ContentLength);
+                    }
+                }
+                db.tblEvenement.Add(tblEvenement);
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
         public ActionResult Modifier(int? id)
         {
             if (id == null)
@@ -54,6 +100,49 @@ namespace ECJ.Web.Controllers
                 return HttpNotFound();
             }
             return View(elementAModifier);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Modifier([Bind(Include = "noEvenement,nom,dateDebut,datefin,url,description,dateSupprime")] tblEvenement tblEvenement)
+        {
+
+            if (ModelState.IsValid)
+            {
+                if(Request.Form["SupprimerAffiche"] != null)
+                {
+                    tblEvenement.affiche = null;
+                }
+                else if (Request.Files["pic"].ContentLength > 0)
+                {
+                    var pic = Request.Files["pic"];
+                    using (var reader = new System.IO.BinaryReader(pic.InputStream))
+                    {
+                        tblEvenement.affiche = reader.ReadBytes(pic.ContentLength);
+                    }
+                }
+                else
+                {
+                    tblEvenement.affiche = db.tblEvenement.Find(tblEvenement.noEvenement).affiche;
+                }
+                db.Entry(tblEvenement).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            return View(tblEvenement);
+        }
+
+
+        public ActionResult Supprimer(int? id)
+        {
+            if (id != null)
+            {
+                var elementAModifier = db.tblEvenement.Find((int)id);
+                elementAModifier.dateSupprime = DateTime.Now;
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
         }
     }
 }

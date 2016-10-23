@@ -4,34 +4,42 @@
 }
 @model ECJ.Web.Models.tblEvenement
 <h2>Modifier cet évènement</h2>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
-<form name="createPub" role="form" novalidate class="form-validation">
+    <input type="hidden" name="noEvenement" value="@Model.noEvenement">
     <div class="form-group">
         <label>Nom</label>
         <input class="form-control" type="text" name="nom" value="@Model.nom" required>
     </div>
     <div class="form-group">
         <label>Date de début</label>
-        <input class="form-control" type="text" name="nom" value="@Model.dateDebut" required>
+        <input class="form-control dp" type="text" name="dateDebut" value="@String.Format("{0:yyyy/MM/dd}", Model.dateDebut)" required>
     </div>
     <div class="form-group">
         <label>Date de fin</label>
-        <input class="form-control" type="text" name="nom" value="@Model.datefin" required>
+        <input class="form-control dp" type="text" name="datefin" value="@String.Format("{0:yyyy/MM/dd}", Model.datefin)" required>
     </div>
     <div class="form-group">
         <label>Lien hypertexte</label>
-        <input class="form-control" type="text" name="nom" value="@Model.url" required>
+        <input class="form-control" type="text" name="url" value="@Model.url" required>
     </div>
     <div class="form-group">
         <label>Description</label>
-        <textarea class="form-control" rows="5" id="textArea" required>@Model.description</textarea>
+        <textarea class="form-control" rows="5" id="textArea" name="description" required>@Model.description</textarea>
+    </div>
+    <div class="form-group">
+        <label>Supprimer l'affiche?</label>
+        <input type="checkbox" name="SupprimerAffiche" value="1" />
     </div>
     <div class="form-group">
         <label>Affiche</label>
-        <input type="file" name="pic" accept="image/*">
+        <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
     </div>
     <div class="form-group pull-right">
         <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
         <a href="/Events" class="btn btn-default" data-dismiss="modal">Annuler</a>
     </div>
-</form>
+}

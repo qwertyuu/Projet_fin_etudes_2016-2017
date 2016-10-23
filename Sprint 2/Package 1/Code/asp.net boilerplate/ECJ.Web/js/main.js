@@ -33,4 +33,6 @@
         }
     });
 
+    $(".dp").datepicker({ dateFormat: 'yy/mm/dd' });
+
 })(jQuery);
