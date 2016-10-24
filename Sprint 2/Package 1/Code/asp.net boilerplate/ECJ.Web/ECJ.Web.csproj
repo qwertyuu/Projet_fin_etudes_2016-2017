@@ -486,6 +486,72 @@
     <Compile Include="Controllers\TenantsController.cs" />
     <Compile Include="Controllers\Events\EventsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Models\AbpAuditLogs.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpBackgroundJobs.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpEditions.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpFeatures.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpLanguages.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpLanguageTexts.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpNotifications.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpNotificationSubscriptions.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpOrganizationUnits.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpPermissions.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpRoles.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpSettings.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpTenantNotifications.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpTenants.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpUserAccounts.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpUserLoginAttempts.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpUserLogins.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpUserNotifications.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpUserOrganizationUnits.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpUserRoles.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbpUsers.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Layout\UserMenuOrLoginLinkViewModel.cs" />
     <Compile Include="Models\Account\LoginFormViewModel.cs" />
     <Compile Include="Models\Account\LoginViewModel.cs" />

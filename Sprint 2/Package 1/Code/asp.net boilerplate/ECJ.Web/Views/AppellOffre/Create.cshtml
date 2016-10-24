@@ -58,8 +58,7 @@
         <div class="form-group">
             <label>Agences de publicité</label>
             <div>
-                @Html.ListBox("noAgencePub", (MultiSelectList)ViewBag.AllAgence)
-                //validationMessageFor???
+                @Html.ListBox("noAgencePub", (MultiSelectList)ViewBag.noAgencePub, new {@class= "form-control" })
             </div>
         </div>
 

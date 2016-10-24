@@ -211,5 +211,15 @@ namespace ECJ.Web.Controllers
             return db.tblSousEvenement.Find(id);
         }
 
+        public void Save()
+        {
+            db.SaveChanges();
+        }
+
+        public tblSoumission SleclectSoumi(int noApp, int noAgence)
+        {
+            return db.tblSoumission.Where(s => s.noAgencePub == noAgence && s.noAppelOffre == noApp).FirstOrDefault();
+        }
+
     }
 }

@@ -58,25 +58,7 @@
                 <label>Agence de publicité</label>
                 <div>
 
-                    @Html.DropDownList("noAgencePub", null, htmlAttributes: new { @class = "form-control", multiple = "multiple" } )                   
-                    @*<select name="type" class="form-control" required multiple>
-                        @foreach (var agence in ViewBag.AllAgence)
-                        {
-                            foreach (var agenceApell in ViewBag.agencePub)
-                            {
-                                if (@agence.nom == agenceApell.nom)
-                                {
-                                    <option selected>@agence.nom</option>
-                                }
-                                else
-                                {
-                                    <option>@agence.nom</option>
-                                }
-
-                            }
-                        }
-
-                    </select>*@
+                    @Html.ListBox("noAgencePub", (MultiSelectList)ViewBag.noAgencePub, new { @class = "form-control" })
                 </div>
             </div>
 

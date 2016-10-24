@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-md-12">
        
-              @using (Html.BeginForm("Index", "AppellOffre", FormMethod.Get))
+              @using (Html.BeginForm("Index", "AppellOffre", FormMethod.Get,new{ @class = "page-header" }))
               {
                         <p>
                             @Html.Editor("SearchString", new { htmlAttributes = new { @class = "form-control" } }) 
