@@ -3,14 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
+using ECJ.Web.Models;
+
+
 
 namespace ECJ.Web.Controllers
 {
     public class CalculateurController : Controller
     {
-        // GET: Calculateur
-        public ActionResult Index()
+        DBProvider db;
+        tblSousEvenement tblSousEvenement_;
+        public tblSalle tblSalle_;
+        public CalculateurController()
         {
+            db = new DBProvider();
+        }
+        public ActionResult Index(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tblSousEvenement_ = (tblSousEvenement)db.ReturnSousEvenement((int)id);
+
+            ViewBag.AllSalle = tblSousEvenement_.tblSalle;
             return View();
         }
     }
