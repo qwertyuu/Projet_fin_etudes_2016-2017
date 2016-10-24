@@ -1,4 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <soumission>
-  
+  <noSoumission>2</noSoumission>
+  <nom>soumission1</nom>
+  <noSoumissionAgence>AAAA3</noSoumissionAgence>
+  <prix>13.90</prix>
+  <noAgencePub>3</noAgencePub>
+  <noAppelOffre>7</noAppelOffre>
+  <statut>0</statut>
+  <commetaire>soumission test</commetaire> 
 </soumission>

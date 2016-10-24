@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ECJ.Web.Models;
-
+using System.Xml.Serialization;
 namespace ECJ.Web.Controllers.AppelOffre
 {
     public class AppellOffreController : Controller
