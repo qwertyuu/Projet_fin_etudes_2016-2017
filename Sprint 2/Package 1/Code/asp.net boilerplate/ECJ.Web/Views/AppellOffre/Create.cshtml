@@ -58,15 +58,7 @@
         <div class="form-group">
             <label>Agence de publicité</label>
             <div>
-                <asp:ListBox ID="lblMultiSelect" SelectionMode="multiple">
-                </asp:ListBox>
-                    @foreach (var agence in ViewBag.AllAgence)
-                    {
-                       
-                    }
-
-          
-              
+               @Html.DropDownList("noAgencePub", null, htmlAttributes: new { @class = "form-control", multiple = "multiple", @name="agencePub"})      
             </div>
             </div>
 

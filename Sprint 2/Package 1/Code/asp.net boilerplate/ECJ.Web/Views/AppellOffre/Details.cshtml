@@ -76,16 +76,18 @@
             <thead>
                 <tr>
                     <th>Nom</th>
+                    <th>Commentaire</th>
                     <th class="col-md-2">Action</th>
                 </tr>
             </thead>
             <tbody>
 
-                @foreach (var soumi in ViewBag.soumission)
+                @foreach (var soumi in Model.tblSoumission)
                 {
 
                     <tr>
                         <td>@soumi.nom</td>
+                        <td>@soumi.commentaire</td>
                         <td>
                             <a href="/Soumission/Detail" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
                             <a href="" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>

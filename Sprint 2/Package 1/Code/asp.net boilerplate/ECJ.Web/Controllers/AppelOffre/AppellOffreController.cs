@@ -14,24 +14,23 @@ namespace ECJ.Web.Controllers.AppelOffre
     {
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
         private DBProvider provider = new DBProvider();
+        DataSet ds = new DataSet();
 
         public AppellOffreController()
         {
 
         }
 
-        //public void CreateSoumission(string nom, int noAgenP, int noApp, int noSat)
-        //{
-        //    var soumission = new tblSoumission { nom = nom,offreNoPublicite = CreateAppelOffreAgence(noAgenP, noApp, noSat).offreNoPublicite};
-        //    provider.InsertSoumission(soumission);
-        //}
+        public void WriteXml()
+        {
+            ds.WriteXml("test.xml");
+        }
+        public void CreateSoumission(int noAgenP, int noApp, int noSat)
+        {
+            var soumission = new tblSoumission { noAgencePub=noAgenP,noAppelOffre=noApp,noStatut=noSat};
+            provider.InsertSoumission(soumission);
+        }
 
-        //public tblAppelOffreAgence CreateAppelOffreAgence(int noap, int noao,int noSta)
-        //{
-        //    var aoa = new tblAppelOffreAgence { noAgencePub = noao, noAppelOffre = noao, noStatut = noSta };
-        //    provider.InsertAppelOfreAgence(aoa);
-        //    return aoa;
-        //}
         // GET: AppellOffre
         public ActionResult Index(string SearchString)
         {
@@ -82,8 +81,9 @@ namespace ECJ.Web.Controllers.AppelOffre
             ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom");
             ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom");
             ViewBag.noMedia = new SelectList(db.tblMedia, "noMedia", "nom");
-            ViewBag.noAgencePub = new SelectList(db.tblAgencePublicite, "noAgencePub", "nom");
+            ViewBag.noAgencePub = new MultiSelectList(db.tblAgencePublicite, "noAgencePub", "nom");
             ViewBag.AllAgence = provider.ReturnAgence(null);
+            //WriteXml();
             return View();
         }
 
@@ -94,6 +94,9 @@ namespace ECJ.Web.Controllers.AppelOffre
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noStatut,noMedia")] tblAppelOffre tblAppelOffre)
         {
+           List<int> idSelect = new List<int>();
+            ViewBag.noAgencePub = new MultiSelectList(db.tblAgencePublicite, "noAgencePub", "nom",idSelect);
+            
             if (ModelState.IsValid)
             {
                 var statut = (from q in db.tblStatutAppelOffre
@@ -105,26 +108,35 @@ namespace ECJ.Web.Controllers.AppelOffre
                 var media = (from q in db.tblMedia
                                  where q.noMedia == tblAppelOffre.noMedia
                                  select q).FirstOrDefault();
-                var agence = (from q in db.tblAgencePublicite
-                              select q).FirstOrDefault();
 
                 db.tblAppelOffre.Add(tblAppelOffre);
                 db.SaveChanges();
-               //CreateSoumission(tblAppelOffre.nom,agence.noAgencePub,tblAppelOffre.noAppelOffre,tblAppelOffre.noStatut);
+                foreach(var agenceselect in idSelect)
+                {
+                    CreateSoumission(Convert.ToInt32(agenceselect.ToString()), tblAppelOffre.noAppelOffre, tblAppelOffre.noStatut);
+                }
+              
                 return RedirectToAction("Index");
             }
 
             ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblAppelOffre.noEvenement);
             ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom", tblAppelOffre.noStatut);
             ViewBag.noMedia = new SelectList(db.tblMedia, "noMedia", "nom",tblAppelOffre.noMedia);
+            ViewBag.noAgencePub = new MultiSelectList(db.tblAgencePublicite, "noAgencePub", "nom");
             return View(tblAppelOffre);
         }
 
         // GET: AppellOffre/Edit/5
         public ActionResult Edit(int? id)
         {
-            ViewBag.AllAgence = provider.ReturnAgence(null);
-            ViewBag.agencePub = provider.ReturnAgence(id);
+            int no = 0;
+            List<tblAgencePublicite> listAgencePub = provider.ReturnAgence(id);
+            int[] noAgence = new int[listAgencePub.Count];
+            foreach (var agence in listAgencePub)
+            {
+                noAgence[no] = agence.noAgencePub;
+                no++;
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -137,6 +149,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblAppelOffre.noEvenement);
             ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom", tblAppelOffre.noStatut);
             ViewBag.noMedia = new SelectList(db.tblMedia, "noMedia", "nom", tblAppelOffre.noMedia);
+            ViewBag.noAgencePub = new MultiSelectList(db.tblAgencePublicite, "noAgencePub", "nom", noAgence);
             return View(tblAppelOffre);
         }
 
@@ -166,6 +179,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblAppelOffre.noEvenement);
             ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom", tblAppelOffre.noStatut);
             ViewBag.noMedia = new SelectList(db.tblMedia, "noMedia", "nom", tblAppelOffre.noMedia);
+            ViewBag.noAgencePub = new SelectList(db.tblAgencePublicite, "noAgencePub", "nom");
             return View(tblAppelOffre);
         }
 
