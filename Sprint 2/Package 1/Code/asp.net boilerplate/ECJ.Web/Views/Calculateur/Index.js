@@ -58,16 +58,20 @@ function calculBilletVIP() {
 function calculSouperSpectacle() {
 
     var TotalBillet = calculTotalBillet();
-    var totalSouper = null;
+    var totalSouper = 0;
 
-    if ($("#nbBilletSouper").val() > TotalBillet || TotalBillet == null) {
-        alert("Il doit y avoir un nombre de billets plus petit que le nombre total de billet");
+    if ($("#nbBilletSouper").val() == "") {
+        return 0;
     }
-    else {
+    if ($("#nbBilletSouper").val() < TotalBillet && TotalBillet != "") {
         totalSouper = parseInt($("#nbBilletSouper").val()) * parseInt($("#prixSouper").val());
 
         $("#totalSouper").val(round_argent(totalSouper));
         return totalSouper;
+    }
+    else {
+        alert("Il doit y avoir un nombre de billets plus petit que le nombre total de billet");
+        return 0;
     }
 } //Calcule le prix des soupers spectacles après avoir vérifié que les données entrées soient bonnes
 
@@ -102,47 +106,46 @@ function calculRabaisAge() {
 }//Calcule les rabais après avoir vérifié les données
 
 function calculPrixReduit() {
-    var nbBilletGratuit, nbBilletPreVente, total, TotBilletRabaisCustom1, TotBilletRabaisCustom2
+    var nbBilletGratuit, nbBilletPreVente, TotBilletRabaisCustom1, TotBilletRabaisCustom2, total
 
-    TotBilletGratuit = parseFloat($("#nbBilletSouper").val());
-    TotBilletPreVente = parseFloat($("#nbBilletPreVente").val());
+    calculMoyenne();
+    
+    if ($("#nbBilletGratuit").val() != "") {
+        nbBilletGratuit = parseFloat($("#nbBilletGratuit").val());
+    }
+    else {
+        nbBilletGratuit = 0;
+    }
+
+    if ($("#nbBilletPreVente").val() != "") {
+        nbBilletPreVente = parseFloat($("#nbBilletPreVente").val());
+    }
+    else {
+        nbBilletPreVente = 0;
+    }
 
     if (checkRabaisCustom1 == true) {
         TotBilletRabaisCustom1 = parseFloat($("#NbBilletRabaisCustom1").val());
         TotBilletRabaisCustom1 = (TotBilletRabaisCustom1 * (PourcentRabaisCustom1 / 100));
     }
+    else {
+        TotBilletRabaisCustom1 = 0;
+    }
+
     if (checkRabaisCustom2 == true) {
         TotBilletRabaisCustom2 = parseFloat($("#NbBilletRabaisCustom2").val());
         TotBilletRabaisCustom2 = (TotBilletRabaisCustom2 * (PourcentRabaisCustom2 / 100));
     }
-
-    if (TotBilletGratuit == "") {
-        TotBilletGratuit = (TotBilletGratuit * PrixMoyen)
-    }
-    if (TotBilletPreVente = "") {
-        TotBilletPreVente = (TotBilletPreVente * PrixMoyen) * 0.25
-    }
-
-    if (checkRabaisCustom1 == true && checkRabaisCustom2 == true) {
-        total = TotBilletGratuit + TotBilletPreVente + TotBilletRabaisCustom1 + TotBilletRabaisCustom2
-        round_argent(total);
-        return total;
-    }
-    else if (checkRabaisCustom1 == true) {
-        total = TotBilletGratuit + TotBilletPreVente + TotBilletRabaisCustom1
-        round_argent(total);
-        return total;
-    }
-    else if (checkRabaisCustom2 == true) {
-        total = TotBilletGratuit + TotBilletPreVente + TotBilletRabaisCustom2
-        round_argent(total);
-        return total;
-    }
     else {
+        TotBilletRabaisCustom2 = 0;
+    }
+
+        var TotBilletGratuit = (nbBilletGratuit * PrixMoyen)
+        var TotBilletPreVente = (nbBilletPreVente * PrixMoyen) * 0.25
+
         total = TotBilletGratuit + TotBilletPreVente
         round_argent(total);
         return total;
-    }
 }  //Calcule la section des prix réduits
 
 function Calcultotal() {

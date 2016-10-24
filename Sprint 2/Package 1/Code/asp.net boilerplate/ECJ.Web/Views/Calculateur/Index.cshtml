@@ -64,18 +64,17 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th @Html.DisplayNameFor(model => model.nomSalle)>Nom de la salle</th>
-                        <th @Html.DisplayNameFor(model => model.billetVIP)>Nombre de places V.I.P</th>
-                        <th @Html.DisplayFor(model => model.billet)>Nombre de places</th>
-                        <th @Html.DisplayFor(model => model.prix)>Coûts</th>
+                        <th>Nom de la salle</th>
+                        <th>Nombre de places V.I.P</th>
+                        <th>Nombre de places</th>
+                        <th>Coûts</th>
                     </tr>
                 </thead>
                 <tr>
-                    <td>@Html.DisplayFor(model => model.nomSalle)</td>
-                    <td id="vip">@Html.DisplayFor(model => model.billetVIP)</td>
-                    <td id="billet">@Html.DisplayFor(model => model.billet)</td>
-                    <td>@Html.DisplayFor(model => model.prix)</td>
-                    
+                    @*<td>@Model.nomSalle</td>
+                    <td id="vip">@Model.billetVIP</td>
+                    <td id="billet">@Model.billet </ td >
+                    <td>@Model.prix</ td >*@
                 </tr>
             </table>
         </div>
@@ -83,7 +82,7 @@
 </div>
 <form class="form-horizontal">
     <div class="row" id="SouperPlaces">
-        <div class="col-md-6" id="souper">
+        <div class="col-md-6" id="souper" hidden>
             Souper Spectacle
             <table class="table">
                 <tbody>
@@ -132,7 +131,7 @@
 </form>
 
 <form class="form-horizontal">
-    <div class="col-md-6" id="age">
+    <div class="col-md-6" id="age" hidden>
         <table class="table">
             Reduction selon les tranches d'âge
             <tr>
@@ -222,7 +221,7 @@
 </div>
 <form class="form-horizontal">
     <div class="row">
-        <div class="col-md-6" id="rabais">
+        <div class="col-md-6" id="rabais" hidden>
             Billet a prix réduits.
             <table class="table">
                 <tbody>
@@ -304,7 +303,7 @@
                     </tr>
                     <tr>
                         <th id="TotFinal">
-                            00.00$
+                            0.00$
                         </th>
                         <th>
                             3500.00$
