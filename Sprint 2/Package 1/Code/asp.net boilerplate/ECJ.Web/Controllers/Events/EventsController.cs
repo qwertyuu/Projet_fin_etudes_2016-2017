@@ -107,7 +107,8 @@ namespace ECJ.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Modifier([Bind(Include = "noEvenement,nom,dateDebut,datefin,affiche,url,description,dateSupprime")] tblEvenement tblEvenement)
         {
-
+            //var a = db.tblEvenement.Find(tblEvenement.noEvenement) == tblEvenement;
+            var modif = false;
             if (ModelState.IsValid)
             {
                 if(Request.Form["SupprimerAffiche"] != null)
@@ -125,8 +126,16 @@ namespace ECJ.Web.Controllers
                 else
                 {
                     tblEvenement.affiche = db.tblEvenement.Find(tblEvenement.noEvenement).affiche;
+                    modif = true;
                 }
-                db.Entry(tblEvenement).State = EntityState.Modified;
+                if (modif)
+                {
+                    db.Entry(db.tblEvenement.Find(tblEvenement.noEvenement)).CurrentValues.SetValues(tblEvenement);
+                }
+                else
+                {
+                    db.Entry(tblEvenement).State = EntityState.Modified;
+                }
                 db.SaveChanges();
 
                 return RedirectToAction("Index");

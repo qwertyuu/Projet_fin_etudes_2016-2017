@@ -190,7 +190,7 @@ namespace ECJ.Web.Controllers
 
         internal void UpdateSousEvenement(tblSousEvenement tblSousEvenement)
         {
-            db.Entry(tblSousEvenement).State = System.Data.Entity.EntityState.Modified;
+            db.Entry(db.tblEvenement.Find(tblSousEvenement.noSousEvenement)).CurrentValues.SetValues(tblSousEvenement);
             db.SaveChanges();
         }
 
