@@ -177,11 +177,6 @@ namespace ECJ.Web.Controllers
 
         }
 
-        internal object ReturnSousEvenement(int id)
-        {
-            return db.tblSousEvenement.Find(id);
-        }
-
         internal void SupprimerSousEvenement(int id)
         {
             db.tblSousEvenement.Find(id).dateSupprime = DateTime.Now;

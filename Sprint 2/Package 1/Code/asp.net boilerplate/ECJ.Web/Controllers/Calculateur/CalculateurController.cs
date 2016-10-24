@@ -13,8 +13,6 @@ namespace ECJ.Web.Controllers
     public class CalculateurController : Controller
     {
         DBProvider db;
-        tblSousEvenement tblSousEvenement_;
-        public tblSalle tblSalle_;
         public CalculateurController()
         {
             db = new DBProvider();
@@ -25,9 +23,7 @@ namespace ECJ.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblSousEvenement_ = (tblSousEvenement)db.ReturnSousEvenement((int)id);
-
-            ViewBag.AllSalle = tblSousEvenement_.tblSalle;
+            ViewBag.Salle = db.FindSousEvenement((int)id).tblSalle;
             return View();
         }
     }

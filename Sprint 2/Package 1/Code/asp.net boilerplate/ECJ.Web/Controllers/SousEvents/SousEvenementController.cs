@@ -120,7 +120,7 @@ namespace ECJ.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var elementAModifier = db.ReturnSousEvenement((int)id);
+            var elementAModifier = db.FindSousEvenement((int)id);
             if (elementAModifier == null)
             {
                 return HttpNotFound();

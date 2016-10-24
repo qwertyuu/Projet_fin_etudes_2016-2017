@@ -70,16 +70,14 @@
                         <th>Coûts</th>
                     </tr>
                 </thead>
-                <tr>
-                    @foreach (var salle in ViewBag.AllSalle)
-                    {
-                        <td>@salle.nomSalle</td>
-                        <td id="vip">@salle.billetVIP</td>
-                        <td id="billet">@salle.billet </td>
-                        <td>@salle.prix </td>
-                    }
-
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>@ViewBag.Salle.nomSalle</td>
+                        <td id="vip">@ViewBag.Salle.billetVIP</td>
+                        <td id="billet">@ViewBag.Salle.billet </td>
+                        <td>@ViewBag.Salle.prix </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </form>
