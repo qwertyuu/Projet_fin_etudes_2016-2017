@@ -18,70 +18,74 @@
                     
         <a href="/AppellOffre/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
         <table class="table" align="center">
-            <tr>
-                <th>
-                   Nom de l'appel d'offre
-                </th>
-                <th>
-                    Date requise
-                </th>
-                <th>
-                   Date d'envoie
-                </th>
-                <th>
-                   Évènement
-                </th>
-                <th>
-                    Statut
-                </th>
-                <th>
-                    Agence de publicité
-                </th>
-                <th>
-                    Soumission
-                </th>
-                <th>
-                    Description
-                </th>
-                <th>Action</th>
-            </tr>
-            
-            @foreach (var item in Model)
-            {
-                var @color ="#"+item.couleur;
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.nomAppelOffre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.dateRequis)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.dateEnvoi)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.nomEvent)
-                    </td>
-                    <td>
-                        <div id ="colorStatut"  style="background-color:@color">  </div>
-                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.nomAgence)
-                    </td>
-                    <td>                   
-                        @Html.DisplayFor(modelItem => item.nomSoumission)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.description)
-                    </td>
-                    <td>
-                        <a href="/AppellOffre/Details/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                        <a href="/AppellOffre/Edit/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                        <a href="/AppellOffre/Delete/@item.noAppelOffre" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-                    </td>
+                    <th>
+                        Nom de l'appel d'offre
+                    </th>
+                    <th>
+                        Date requise
+                    </th>
+                    <th>
+                        Date d'envoie
+                    </th>
+                    <th>
+                        Évènement
+                    </th>
+                    <th>
+                        Statut
+                    </th>
+                    <th>
+                        Agence de publicité
+                    </th>
+                    <th>
+                        Soumission
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>Action</th>
                 </tr>
-            }
+            </thead>
+            <tbody>
 
+                @foreach (var item in Model)
+                {
+                    var @color = "#" + item.couleur;
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nomAppelOffre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.dateRequis)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.dateEnvoi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nomEvent)
+                        </td>
+                        <td>
+                            <div id="colorStatut" style="background-color:@color">  </div>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nomAgence)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nomSoumission)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.description)
+                        </td>
+                        <td>
+                            <a href="/AppellOffre/Details/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                            <a href="/AppellOffre/Edit/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                            <a href="/AppellOffre/Delete/@item.noAppelOffre" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
         </table>
  </div>
 </div>

@@ -13,7 +13,7 @@
     <a href="~/Calculateur/index/@Model.Item1.noSousEvenement" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-calculator"></i> Ouvrir le calculateur</a>
 }
 
-<h2>Détail d'un sous-évènement</h2>
+<h2>Détail d'un sous-événement</h2>
 
 @section scripts
 {
@@ -22,7 +22,7 @@
 <div name="createPub" role="form" novalidate class="form-validation">
     
     <div class="form-group">
-        <label>Évènement</label>
+        <label>Nom</label>
         <div class="well well-sm">
             @Model.Item1.nom
         </div>
@@ -215,7 +215,7 @@
             </div>
         </div>
     </div>
-    <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Retour</a>
+    <a href="@Request.QueryString["return"]" class="btn btn-default" data-dismiss="modal">Retour</a>
 </div>
 @{
     if (dates.Length > 0)
@@ -231,7 +231,7 @@
 <div class="modal fade" id="ServiceAjoutModal" tabindex="-1" role="dialog" aria-labelledby="ServiceAjoutModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            @using (Html.BeginForm())
+            @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
             {
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true)
@@ -272,7 +272,7 @@
 <div class="modal fade" id="ForfaitAjoutModal" tabindex="-1" role="dialog" aria-labelledby="ForfaitAjoutModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            @using (Html.BeginForm())
+            @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
             {
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true)
@@ -313,7 +313,7 @@
 <div class="modal fade" id="EngagementAjoutModal" tabindex="-1" role="dialog" aria-labelledby="ForfaitAjoutModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            @using (Html.BeginForm())
+            @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
             {
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true)
@@ -357,7 +357,7 @@
 <div class="modal fade" id="SalleAjoutModal" tabindex="-1" role="dialog" aria-labelledby="SalleAjoutModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            @using (Html.BeginForm())
+            @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
             {
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true)

@@ -169,3 +169,7 @@ html {
 table:not(.ui-datepicker-calendar) thead tr th:last-child{
     width: 170px;
 }
+img{
+    max-width:100%;
+    max-height:500px;
+}

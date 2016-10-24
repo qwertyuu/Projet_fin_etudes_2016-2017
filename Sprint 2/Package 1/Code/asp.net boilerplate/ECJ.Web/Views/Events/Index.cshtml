@@ -6,7 +6,7 @@
     ViewBag.ActiveMenu = "Events";
 }
 <div>
-    <h1>@L("Events")</h1>
+    <h1>Événements</h1>
     <div class="row">
         <div class="col-md-12">
             @using (Html.BeginForm(null, null, FormMethod.Get, new { @class="page-header" }))
@@ -14,7 +14,7 @@
                 <div class="input-group">
                     <input class="form-control" type="text" name="recherche" value="@ViewBag.recherche">
                     <span class="input-group-btn">
-                        <button class="btn btn-default">Rechercher</button>
+                        <button class="btn btn-primary">Rechercher</button>
                     </span>
                 </div>
             }
