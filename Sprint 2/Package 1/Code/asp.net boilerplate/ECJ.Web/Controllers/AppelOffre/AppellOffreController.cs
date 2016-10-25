@@ -118,12 +118,17 @@ namespace ECJ.Web.Controllers.AppelOffre
                 }
 
             }
-
             appelOfrre = from q in appelOfrre
                          orderby q.noStatut
                          select q;
 
-            return View(appelOfrre.ToList());
+            var appelGoupBy = appelOfrre.GroupBy(aoa => new { aoa.noAppelOffre,aoa.nomAppelOffre,aoa.nomAgence,aoa.nomEvent,aoa.nomStatut,aoa.nomSoumission,aoa.description })
+                         .Select(a => new {a.Key.nomAppelOffre,a.Key.nomAgence,a.Key.nomEvent,a.Key.nomStatut,a.Key.nomSoumission,a.Key.description});
+
+            
+            
+
+            return View(appelGoupBy.ToList());
         }
 
 

@@ -83,7 +83,13 @@ namespace ECJ.Web.Controllers
                         where ao.dateSupprime == null
                         select soumi).ToList();
             }
-            return null;
+            else
+            {
+                return (from soumi in db.tblSoumission
+                        where soumi.dateSupprime == null
+                        select soumi).ToList();
+
+            }
 
         }
 
