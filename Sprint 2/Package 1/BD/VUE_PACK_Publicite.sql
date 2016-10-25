@@ -7,7 +7,7 @@ USE PE2_Officiel
 GO
 
 CREATE VIEW  S_publicite.vueSomAppelOffre WITH SCHEMABINDING AS
-SELECT  ao.[noAppelOffre], ao.[nom] as nomAppelOffre ,ao.[dateRequis],ao.[dateEnvoi],ao.[description],ao.[dateSupprime],even.nom as nomEvent,ao.[noStatut], sta.nom as nomStatut, sta.couleur, agen.nom AS nomAgence,soumi.nom AS nomSoumission,ao.tag
+SELECT  ao.[noAppelOffre], ao.[nom] as nomAppelOffre ,ao.[dateRequis],ao.[dateEnvoi],CAST(ao.[description] AS VARCHAR(MAX)) description,ao.[dateSupprime],even.nom as nomEvent,ao.[noStatut], sta.nom as nomStatut, sta.couleur, agen.nom AS nomAgence,soumi.nom AS nomSoumission
 FROM S_publicite.tblAppelOffre AS ao  
 LEFT JOIN S_publicite.tblStatutAppelOffre AS sta
 ON ao.noStatut=sta.noStatut

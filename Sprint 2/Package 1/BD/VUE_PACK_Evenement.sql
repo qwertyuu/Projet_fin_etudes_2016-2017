@@ -24,7 +24,7 @@ PRINT 'Création de la vue reliée a l''affichage du sommaire des évènements'
 GO
 
 CREATE VIEW S_evenement.vueSomEvenement WITH SCHEMABINDING AS
-SELECT e.nom, e.dateDebut, e.dateFin, e.description, e.noEvenement
+SELECT e.nom, e.dateDebut, e.dateFin, CAST(e.description AS VARCHAR(MAX)) description, e.noEvenement
 FROM S_evenement.tblEvenement AS e
 WHERE e.dateSupprime IS NULL
 GO
