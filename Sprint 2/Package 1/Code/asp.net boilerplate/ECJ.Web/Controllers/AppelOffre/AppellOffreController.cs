@@ -103,8 +103,19 @@ namespace ECJ.Web.Controllers.AppelOffre
                              select q;
             if (!String.IsNullOrEmpty(SearchString))
             {
-                
-                appelOfrre = appelOfrre.Where(a=> (a.nomAppelOffre ?? "").ToUpper().Contains(SearchString) || (a.nomStatut ?? "").ToUpper().Contains(SearchString)||(a.nomEvent ?? "").ToUpper().Contains(SearchString) || (a.nomAgence ?? "").ToUpper().Contains(SearchString) || (a.nomSoumission ?? "").ToUpper().Contains(SearchString)||(a.description ?? "").ToUpper().Contains(SearchString));
+                SearchString = SearchString.Trim().ToUpper();
+                if (SearchString=="")
+                    return RedirectToAction("Index");
+                else
+                {
+                    appelOfrre = appelOfrre.Where(
+                        a => (a.nomAppelOffre ?? "").ToString().ToUpper().Contains(SearchString) ||
+                        (a.nomStatut ?? "").ToString().ToUpper().Contains(SearchString) || 
+                        (a.nomEvent ?? "").ToString().ToUpper().Contains(SearchString) || 
+                        (a.nomAgence ?? "").ToString().ToUpper().Contains(SearchString) || 
+                        (a.nomSoumission ?? "").ToString().ToUpper().Contains(SearchString) || 
+                        (a.description ?? "").ToString().ToUpper().Contains(SearchString));
+                }
 
             }
 
