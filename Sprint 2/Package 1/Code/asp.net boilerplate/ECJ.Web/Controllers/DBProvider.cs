@@ -127,7 +127,7 @@ namespace ECJ.Web.Controllers
             return db.tblForfait.Where(f => f.dateSupprime == null).ToList();
         }
 
-        internal void DelierSalle(int id, int salle_id)
+        internal void DelierSalle(int id)
         {
             db.tblSousEvenement.Find(id).tblSalle = null;
             db.SaveChanges();

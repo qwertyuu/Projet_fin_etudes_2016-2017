@@ -26,7 +26,7 @@ namespace ECJ.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var serviceAAjouter = Request.Form["service"];
+            var serviceAAjouter = Request.Form["service"] ?? Request.Form["service_delete_salle"];
             //ajouter le service requis
             if (serviceAAjouter != null)
             {
@@ -58,11 +58,11 @@ namespace ECJ.Web.Controllers
             {
                 db.LierSalle((int)id, int.Parse(salleAAjouter));
             }
-            //supprimer la salle sélectionnée
-            var salleASupprimer = Request.Form["salle_suppr"];
-            if (salleASupprimer != null)
+
+            //supprimer la salle sélectionnée ou si le service ajouté est de trop
+            if (Request.Form["salle_suppr"] != null || Request.Form["service_delete_salle"] != null)
             {
-                db.DelierSalle((int)id, int.Parse(salleASupprimer));
+                db.DelierSalle((int)id);
             }
 
             //ajouter l'engagement sélectionné
@@ -79,17 +79,29 @@ namespace ECJ.Web.Controllers
             }
 
 
-            var elementADetailler = db.FindSousEvenement((int)id);
+            var SousEvenementCourrant = db.FindSousEvenement((int)id);
+            if(SousEvenementCourrant.tblSalle != null)
+            {
+                ViewBag.ServicesOfferts = SousEvenementCourrant.tblSalle.tblService;
+            }
 
-            if (elementADetailler == null)
+            if (SousEvenementCourrant == null)
             {
                 return HttpNotFound();
             }
-            var service = db.ToutService().Except(elementADetailler.tblService).ToList();
-            var salle = db.ToutSalle().Except(new List<tblSalle> { elementADetailler.tblSalle }).ToList();
-            var forfait = db.ToutForfait().Except(elementADetailler.tblForfait).ToList();
-            var engagement = db.ToutEngagement().Except(elementADetailler.tblEngagement).ToList();
-            ViewBag.listTuple = new Tuple<tblSousEvenement, List<tblService>, List<tblSalle>, List<tblForfait>, List<tblEngagement>>(elementADetailler, service, salle, forfait, engagement);
+            var service = db.ToutService().Except(SousEvenementCourrant.tblService).ToList();
+            //sortir seulement les salles n'étant pas celle sélectionnée (peu probable, car la view ne permet pas de choisir une salle lorsqu'il y en a déjà une de sélectionnée)
+            //et sortir seulement les salles offrant au minimum les services requis.
+            var salle = db.ToutSalle().Except(new List<tblSalle> { SousEvenementCourrant.tblSalle })
+                .Where(Salle =>
+                    //Services requis par le sous-evenement sont tous (All) dans la liste des services offerts de la salle
+                    SousEvenementCourrant.tblService.All(ServiceRequis =>
+                        Salle.tblService.Contains(ServiceRequis)
+                    )
+                ).ToList();
+            var forfait = db.ToutForfait().Except(SousEvenementCourrant.tblForfait).ToList();
+            var engagement = db.ToutEngagement().Except(SousEvenementCourrant.tblEngagement).ToList();
+            ViewBag.listTuple = new Tuple<tblSousEvenement, List<tblService>, List<tblSalle>, List<tblForfait>, List<tblEngagement>>(SousEvenementCourrant, service, salle, forfait, engagement);
             //Service, Salle, Forfait, Engagement
             return View();
         }

@@ -456,6 +456,7 @@
     <Content Include="Views\CMemo\Index.js" />
     <Content Include="Views\Events\Detail.js" />
     <Content Include="Views\Shared\_Footer.js" />
+    <Content Include="Views\SousEvenements\Detail.js" />
     <Content Include="Views\Tenants\Index.js" />
     <Content Include="Views\Users\Index.js" />
     <Content Include="Web.config">

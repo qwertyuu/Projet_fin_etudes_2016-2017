@@ -227,7 +227,7 @@
         <script>var dates_calendrier = [];</script>
     }
 }
-@*Modal pour le choix d'un service*@
+@*Modal pour le choix d'un service requis*@
 <div class="modal fade" id="ServiceAjoutModal" tabindex="-1" role="dialog" aria-labelledby="ServiceAjoutModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -250,13 +250,22 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @* 
+                            Si il y a une salle, changer le name
+                            *@
+
                             @foreach (var s in Model.Item2)
                             {
+                                var name = "service";
+                                if (Model.Item1.tblSalle != null && !ViewBag.ServicesOfferts.Contains(s))
+                                {
+                                    name = "service_delete_salle";
+                                }
                                 <tr>
                                     <td>@s.nomService</td>
-                                    <td><button name="service" value="@s.noService" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button></td>
+                                    <td><button name="@name" value="@s.noService" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button></td>
                                 </tr>
-                                }
+                            }
                         </tbody>
                     </table>
                 </div>
