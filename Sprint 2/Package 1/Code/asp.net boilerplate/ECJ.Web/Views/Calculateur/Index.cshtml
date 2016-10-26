@@ -1,5 +1,5 @@
 ﻿@using Abp.Web.Mvc.Extensions
-@model ECJ.Web.Models.tblSalle
+@using System.Linq;
 
 @{
     ViewBag.Title = "ViewCalculateur";
@@ -61,7 +61,7 @@
         </div>
 
         <div class="col-md-6" id="salle">
-            <table class="table">
+            <table class="table" id="infoSalle">
                 <thead>
                     <tr>
                         <th>Nom de la salle</th>
@@ -73,15 +73,16 @@
                 <tbody>
                     <tr>
                         <td>@ViewBag.Salle.nomSalle</td>
-                        <td id="vip">@ViewBag.Salle.billetVIP</td>
-                        <td id="billet">@ViewBag.Salle.billet </td>
-                        <td>@ViewBag.Salle.prix </td>
+                        <td>@ViewBag.Salle.billetVIP</td>
+                        <td>@ViewBag.Salle.billet</td>
+                        <td>@ViewBag.Salle.prix$</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </form>
 </div>
+
 <form class="form-horizontal">
     <div class="row" id="SouperPlaces">
         <div class="col-md-6" id="souper">
@@ -115,17 +116,14 @@
             <table class="table">
                 <tbody>
                     <tr>
-                        <th>Forfaits inclus</th>
+                        Forfaits inclus
                     </tr>
-                    <tr>
-                        <td>Souper Spectacle</td>
-                    </tr>
-                    <tr>
-                        <td>Rabais par l'âge</td>
-                    </tr>
-                    <tr>
-                        <td>Réductions de prix</td>
-                    </tr>
+                    @foreach (var f in ViewBag.Forfait)
+                    {
+                        <tr>
+                            <th>@f.nom</th>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
@@ -133,7 +131,7 @@
 </form>
 
 <form class="form-horizontal">
-    <div class="col-md-6" id="age" >
+    <div class="col-md-6" id="age">
         <table class="table">
             Reduction selon les tranches d'âge
             <tr>
@@ -217,13 +215,15 @@
         </table>
     </div>
 </form>
+
 <div class="col-md-6" id="carte">
     Carte de l'emplacement de la salle.
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2648.6453269213494!2d-71.24667188474935!3d48.405753937193936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2dd30e450fd3bd83!2zQ8OpZ2VwIGRlIEpvbnF1acOocmU!5e0!3m2!1sfr!2sca!4v1476204181668" width="350" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <iframe src="@ViewBag.Salle.urlGoogleMap" width="350" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
+
 <form class="form-horizontal">
     <div class="row">
-        <div class="col-md-6" id="rabais" >
+        <div class="col-md-6" id="reduction">
             Billet a prix réduits.
             <table class="table">
                 <tbody>
@@ -241,7 +241,7 @@
                         </th>
                         <th>
                             <div class="form-group">
-                                <label class="control-label" >% de rabais</label>
+                                <label class="control-label">% de rabais</label>
                             </div>
                         </th>
                     </tr>
@@ -294,6 +294,7 @@
         </div>
     </div>
 </form>
+
 <form class="form-horizontal">
     <div class="row" id="calculfinal">
         <div class="col-md-6">
@@ -304,16 +305,12 @@
                         <th>Dépenses total</th>
                     </tr>
                     <tr>
-                        <th id="TotFinal">
-                            0.00$
-                        </th>
-                        <th>
-                            3500.00$
-                        </th>
+                        <th id="TotFinal"> 0.00$</th>
+                        <th>@ViewBag.Salle.prix$</th>
                     </tr>
                 </thead>
             </table>
-            <a href="#" class="btn btn-default" onclick="Calcultotal()" >Calculer</a>
+            <a href="#" class="btn btn-default" onclick="Calcultotal()">Calculer</a>
         </div>
         <div class="col-md-6" id="map">
             Plan de la salle
@@ -321,3 +318,38 @@
         </div>
     </div>
 </form>
+
+<script>
+    var maxBillet = @ViewBag.Salle.billet;
+    var maxVIP = @ViewBag.Salle.billetVIP;
+    var chkSalle = false;
+    var chkAge = false;
+    var chkRed = false;
+    var test;
+
+    alert("1");
+
+    @{string test1 = "allo";}
+    @foreach(var f in ViewBag.Forfait)
+    {
+        if (f.noForfait == 1)
+        {
+            test1 += " 2";
+                    @:chkAge = true;
+                        }
+        if (f.noForfait == 2) {
+           test1 += " coucou";
+                @:chkSalle = true;
+                            }
+        if (f.noForfait == 3) {
+            test1 += " bonjour";
+            @:chkRed =true;
+                            }
+    }
+    @*@:test = @:test1;*@
+    alert(test);
+    @*T[] myArray = System.Linq.Enumerable.ToArray(@ViewBag.Forfait);*@
+    alert("2");
+    @*var tab = @ViewBag.Forfait.noForfait;*@
+    alert("3");
+</script>

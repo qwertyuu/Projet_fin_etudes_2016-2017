@@ -395,6 +395,7 @@
     <Content Include="Models\ModelEquipe2.edmx.diagram">
       <DependentUpon>ModelEquipe2.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Models\ModelEquipe2.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

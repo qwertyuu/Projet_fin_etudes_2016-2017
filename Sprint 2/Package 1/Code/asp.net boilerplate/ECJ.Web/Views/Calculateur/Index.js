@@ -2,6 +2,10 @@ var nbBillet;
 var nbBilletVIP;
 var TotalBillet;
 var PrixMoyen;
+var billetMax;
+var VIPMax;
+
+this.onload = function () { setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed) };
 
 function calculTotalBillet() {
     if (nbBillet == "" || nbBillet == "") {
@@ -21,7 +25,7 @@ function calculBillet() {
 
     var prixBillet;
 
-    if (positifBilletCheck() == true) {
+    if (positifBilletCheck() == true && billetMaxCheck() == true) {
         nbBillet = $("#nbBillet").val();
         prixBillet = $("#prixBillet").val();
 
@@ -40,7 +44,7 @@ function calculBilletVIP() {
 
     var prixBilletVIP;
 
-    if (positifBilletCheck() == true) {
+    if (positifBilletCheck() == true && billetMaxCheck() == true) {
         nbBilletVIP = $("#nbBilletVIP").val();
         prixBilletVIP = $("#prixBilletVIP").val();
 
@@ -222,7 +226,36 @@ function positifBilletCheck() {
     }
 } //Vérifie que le nombres de billets et billets VIP entrés soient positifs et retourne un bool
 
+function billetMaxCheck() {
+    if (parseInt($("#nbBillet").val()) > billetMax || $("#nbBilletVIP").val() > VIPMax) {
+        alert("Veuiller entrer un nombre de billet inférieur ou égal au nombre de places totales dans la salle.");
+
+        return false
+    }
+    else {
+        return true
+    }
+}//Vérifie que les nombres de billets et billets VIP entrés soient inférieur que le nombre de places dans la salle.
+
 function round_argent(value) {
     var decimals = 2
     return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals).toFixed(decimals);
 }//Aroundie les valeurs avec 2 décimale
+
+function setBillet(maxbillet, maxvip) {
+    billetMax = parseInt(maxbillet);
+    VIPMax = parseInt(maxvip);
+} //Reçoit et set le maximum des billets et billets VIP
+
+function setForfait(chkSalle, chkAge, chkRed) {
+
+    if (chkAge == false) {
+        $("#age").attr("hidden", "true");
+    }
+    if (chkSalle == false) {
+        $("#souper").attr("hidden", "true");
+    }
+    if (chkRed == false) {
+        $("#reduction").attr("hidden", "true");
+    }
+}

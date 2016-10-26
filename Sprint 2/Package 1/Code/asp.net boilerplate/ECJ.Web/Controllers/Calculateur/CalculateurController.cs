@@ -24,6 +24,8 @@ namespace ECJ.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ViewBag.Salle = db.FindSousEvenement((int)id).tblSalle;
+
+            ViewBag.Forfait = db.FindSousEvenement((int)id).tblForfait;
             return View();
         }
     }

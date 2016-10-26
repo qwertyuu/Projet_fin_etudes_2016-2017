@@ -132,6 +132,10 @@ namespace ECJ.Web.Controllers
         {
             return db.tblForfait.Where(f => f.dateSupprime == null).ToList();
         }
+        internal List<tblForfait> ToutForfaitLieeEvent(int id)
+        {
+            return db.tblForfait.Where(f => f.dateSupprime == null).ToList();
+        }
 
         internal void DelierSalle(int id)
         {
