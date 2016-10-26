@@ -123,10 +123,11 @@ namespace ECJ.Web.Controllers.AppelOffre
                          select q;
 
             var appelGoupBy = appelOfrre.GroupBy(aoa => new { aoa.noAppelOffre,aoa.nomAppelOffre,aoa.nomAgence,aoa.nomEvent,aoa.nomStatut,aoa.nomSoumission,aoa.description })
-                         .Select(a => new {a.Key.nomAppelOffre,a.Key.nomAgence,a.Key.nomEvent,a.Key.nomStatut,a.Key.nomSoumission,a.Key.description});
+                         .Select(a =>  new {nomAppelOffre= a.Key.nomAppelOffre, nomEvent=a.Key.nomEvent, nomStatut=a.Key.nomStatut, nomSoumission= string.Join(",", a.Select(i => i.nomSoumission)),description= a.Key.description, nomAgence=string.Join(",", a.Select(i=>i.nomAgence))}).ToList()
+                         .Select(aoa => new vueSomAppelOffre { nomAppelOffre = aoa.nomAppelOffre, nomEvent = aoa.nomEvent, nomStatut = aoa.nomStatut, nomSoumission = aoa.nomSoumission, description = aoa.description, nomAgence = aoa.nomAgence });
 
-            
-            
+
+
 
             return View(appelGoupBy.ToList());
         }
@@ -274,22 +275,12 @@ namespace ECJ.Web.Controllers.AppelOffre
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             tblAppelOffre tblAppelOffre = db.tblAppelOffre.Find(id);
+            tblAppelOffre.dateSupprime = DateTime.Now;
+            db.SaveChanges();
             if (tblAppelOffre == null)
             {
                 return HttpNotFound();
             }
-            return View(tblAppelOffre);
-        }
-
-        // POST: AppellOffre/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            tblAppelOffre tblAppelOffre = db.tblAppelOffre.Find(id);
-            tblAppelOffre.dateSupprime = DateTime.Now;
-           // db.tblAppelOffre.Remove(tblAppelOffre);
-            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
