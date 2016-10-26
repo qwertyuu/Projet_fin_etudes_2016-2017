@@ -23,15 +23,14 @@ namespace ECJ.Web.Controllers.Commanditaire
                                 select q;
             if (!String.IsNullOrEmpty(SearchString))
             {
-                commanditaire = db.tblCommanditaire.Where(a => a.nomCommanditaire.Contains(SearchString.ToUpper()));
-
+                commanditaire = db.tblCommanditaire.Where(a => a.nomCommanditaire.Contains(SearchString.ToUpper()) || a.courrielContact.Contains(SearchString.ToUpper()) || a.nomContact.Contains(SearchString.ToUpper()) || a.numTel.Contains(SearchString.ToUpper()));
             }
 
             commanditaire = from q in commanditaire
-                            orderby q.noCommanditaire
+                            orderby q.nomCommanditaire
                             select q;
 
-            return View(db.tblCommanditaire.ToList());
+            return View(commanditaire.ToList());
         }
 
         public FileContentResult GetFile(int id)
@@ -102,14 +101,23 @@ namespace ECJ.Web.Controllers.Commanditaire
         }
 
         // POST: tblCommanditaires/Edit/5
-        // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
-        // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire)
+        public ActionResult Edit([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
+              if (tblCommanditaire.logo == null)
+                {
+                    if (db.tblCommanditaire.Find(tblCommanditaire.noCommanditaire).logo != null)
+                    {
+                        using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                        {
+                            tblCommanditaire.logo = reader.ReadBytes(upload.ContentLength);
+                        }
+                    }
+                }
+
                 db.Entry(tblCommanditaire).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -118,31 +126,22 @@ namespace ECJ.Web.Controllers.Commanditaire
         }
 
         // GET: tblCommanditaires/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Supprimer(int? id)
         {
-            if (id == null)
+            if (id != null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                var elementAModifier = db.tblCommanditaire.Find((int)id);
+                elementAModifier.dateSupprime = DateTime.Now;
+                db.SaveChanges();
             }
-            tblCommanditaire tblCommanditaire = db.tblCommanditaire.Find(id);
-            if (tblCommanditaire == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tblCommanditaire);
+            return RedirectToAction("Index");
         }
 
-        // POST: tblCommanditaires/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteImage(int id)
         {
-            tblCommanditaire tblCommanditaire = db.tblCommanditaire.Find(id);
-            //db.tblCommanditaire.Remove(tblCommanditaire);
-            DateTime thisDay = DateTime.Today;
-            tblCommanditaire.dateSupprime = thisDay;
+            db.tblCommanditaire.Find(id).logo = null;
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Edit/" + id.ToString());
         }
 
         protected override void Dispose(bool disposing)

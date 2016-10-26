@@ -737,7 +737,6 @@
     <Content Include="Views\AppellOffre\Details.cshtml" />
     <Content Include="Views\AppellOffre\Edit.cshtml" />
     <Content Include="Views\AppellOffre\Index.cshtml" />
-    <Content Include="Views\Commanditaire\Delete.cshtml" />
     <Content Include="Views\Commanditaire\Edit.cshtml" />
     <Content Include="Views\tblDons\Create.cshtml" />
     <Content Include="Views\tblDons\Delete.cshtml" />

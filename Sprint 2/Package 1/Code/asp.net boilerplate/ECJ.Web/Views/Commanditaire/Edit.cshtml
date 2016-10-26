@@ -8,7 +8,6 @@
 <h2>Commanditaires</h2>
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -16,12 +15,11 @@
 </head>
 <body>
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Edit", "Commanditaire", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
-            <h4>tblCommanditaire</h4>
+        < class="form-horizontal">
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.noCommanditaire)
@@ -45,17 +43,11 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.logo, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @if (Model.logo == null)
-                    {
-                        <input name="ImageFile" type="file" />
-                    }
-                    else
-                    {
-                        <img width="200" src="@Url.Action("GetFile","commanditaire", new { id = Model.noCommanditaire})" alt="Logo" />
-                        <input name="ImageFile" type="file" />
-                    }
+                    <input name="ImageFile" type="file" />
                 </div>
             </div>
+
+        <button name="DeleteImage" type="submit" value="Effacer l'image" class="btn-primary pull-right" />            
 
             <div class="form-group">
                 @Html.LabelFor(model => model.url, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -99,7 +91,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-primary pull-right" />
+                    <input type="submit" value="Sauvegarder" class="btn btn-primary pull-right" />
                 </div>
             </div>
         </div>
