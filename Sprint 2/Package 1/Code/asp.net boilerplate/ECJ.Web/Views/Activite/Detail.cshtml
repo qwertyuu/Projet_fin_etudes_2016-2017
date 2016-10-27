@@ -1,43 +1,65 @@
-﻿
+﻿@model ECJ.Web.Models.tblActivite
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = "Details";
 }
 
-<h2>Detail d'une activité</h2>
+    <div>
+        <h4>Activite</h4>
 
-<div>
-    <div class="form-group">
-        <label>Nom du responsable : </label>
-        <div class="well well-lg">
-            Gilles Tremblay
-        </div>
-    </div>
+        <hr />
 
-    <div class="form-group">
-        <label>Tâche : </label>
-        <div class="well well-lg">
-            Faire une entrevue à la radio
-        </div>
-    </div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nomResponsable)
+            </dt>
 
-    <div class="form-group">
-        <label>Etat : </label>
-        <div class="well well-lg">
-            Terminé
-        </div>
-    </div>
+            <dd>
+                @Html.DisplayFor(model => model.nomResponsable)
+            </dd>
 
-    <div class="form-group">
-        <label>Details : </label>
-        <div class="well well-lg">
-            Le transport doit être fourni et les repas doivent être payé (matin-midi-soir)
-        </div>
-    </div>
+            <dt>
+                @Html.DisplayNameFor(model => model.etat)
+            </dt>
 
-    <div class="form-group">
-        <label>Date : </label>
-        <div class="well well-lg">
-            30/09/2016
-        </div>
+            <dd>
+                @Html.DisplayFor(model => model.etat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.dateCreation)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dateCreation)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tache)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tache)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.detail)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.detail)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => "nom Evenement/ nom de sous-evenements")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.noEvenement)
+                @Html.DisplayFor(model => model.noSousEvenement)
+            </dd>
+
+        </dl>
     </div>
-</div>
+    <p>
+        <a href="/Activite/Index" class="btn btn-sm btn-primary" title="Index"> Retourner à la liste</a>
+    </p>

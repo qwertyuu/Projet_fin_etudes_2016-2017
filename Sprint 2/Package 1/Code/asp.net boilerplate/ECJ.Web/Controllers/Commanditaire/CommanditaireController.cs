@@ -60,6 +60,9 @@ namespace ECJ.Web.Controllers.Commanditaire
         // GET: tblCommanditaires/Create
         public ActionResult Create()
         {
+            ViewBag.noCommanditaire = new SelectList(db.tblCommanditaire, "noCommanditaire", "nomCommanditaire");
+            ViewBag.noSousEvenement = new SelectList(db.tblSousEvenement, "noSousEvenement", "nom");
+
             return View();
         }
 
@@ -105,21 +108,36 @@ namespace ECJ.Web.Controllers.Commanditaire
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire, HttpPostedFileBase upload)
         {
+            var modif = false;
             if (ModelState.IsValid)
             {
-              if (tblCommanditaire.logo == null)
+                if (Request.Form["SupprimerAffiche"] != null)
                 {
-                    if (db.tblCommanditaire.Find(tblCommanditaire.noCommanditaire).logo != null)
+                    tblCommanditaire.logo = null;
+                }
+                else if (Request.Files["pic"].ContentLength > 0)
+                {
+                    var pic = Request.Files["pic"];
+                    using (var reader = new System.IO.BinaryReader(pic.InputStream))
                     {
-                        using (var reader = new System.IO.BinaryReader(upload.InputStream))
-                        {
-                            tblCommanditaire.logo = reader.ReadBytes(upload.ContentLength);
-                        }
+                        tblCommanditaire.logo = reader.ReadBytes(pic.ContentLength);
                     }
                 }
-
-                db.Entry(tblCommanditaire).State = EntityState.Modified;
+                else
+                {
+                    tblCommanditaire.logo = db.tblCommanditaire.Find(tblCommanditaire.noCommanditaire).logo;
+                    modif = true;
+                }
+                if (modif)
+                {
+                    db.Entry(db.tblCommanditaire.Find(tblCommanditaire.noCommanditaire)).CurrentValues.SetValues(tblCommanditaire);
+                }
+                else
+                {
+                    db.Entry(tblCommanditaire).State = EntityState.Modified;
+                }
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             return View(tblCommanditaire);
@@ -135,13 +153,6 @@ namespace ECJ.Web.Controllers.Commanditaire
                 db.SaveChanges();
             }
             return RedirectToAction("Index");
-        }
-
-        public ActionResult DeleteImage(int id)
-        {
-            db.tblCommanditaire.Find(id).logo = null;
-            db.SaveChanges();
-            return RedirectToAction("Edit/" + id.ToString());
         }
 
         protected override void Dispose(bool disposing)

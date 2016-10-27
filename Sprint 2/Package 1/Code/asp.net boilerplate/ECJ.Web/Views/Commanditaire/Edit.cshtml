@@ -19,7 +19,7 @@
     {
         @Html.AntiForgeryToken()
 
-        < class="form-horizontal">
+        <div class="form-horizontal">
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.noCommanditaire)
@@ -43,11 +43,29 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.logo, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    <input name="ImageFile" type="file" />
+                    @{
+                    if (Model.logo != null)
+                    {
+                        <div class="form-group">
+                            <label>Supprimer l'affiche?</label>
+                            <input type="checkbox" name="SupprimerAffiche" value="1" />
+                        </div>
+                        <div class="form-group">
+                            <label>Modifier l'affiche (laisser vide pour garder l'ancienne)</label>
+                            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+                        </div>
+                        <img width="200" src="@Url.Action("GetFile","commanditaire", new { id = Model.noCommanditaire})" alt="Logo" />
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <label>Ajouter une affiche</label>
+                            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+                        </div>
+                    }
+                }
                 </div>
             </div>
-
-        <button name="DeleteImage" type="submit" value="Effacer l'image" class="btn-primary pull-right" />            
 
             <div class="form-group">
                 @Html.LabelFor(model => model.url, htmlAttributes: new { @class = "control-label col-md-2" })

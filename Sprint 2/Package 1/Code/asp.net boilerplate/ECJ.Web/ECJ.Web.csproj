@@ -730,7 +730,6 @@
     <Content Include="Views\SousEvenements\Detail.cshtml" />
     <Content Include="Views\Calculateur\Index.cshtml" />
     <Content Include="Views\SousEvenements\Ajout.cshtml" />
-    <Content Include="Views\Activite\Detail.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Soumission\Detail.cshtml" />
     <Content Include="Views\AppellOffre\Create.cshtml" />
@@ -746,6 +745,7 @@
     <Content Include="Views\tblDons\Index.cshtml" />
     <Content Include="Views\Events\Modifier.cshtml" />
     <Content Include="Views\SousEvenements\Modifier.cshtml" />
+    <Content Include="Views\Activite\Detail.cshtml" />
     <Content Include="Views\Shared\_BottomMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

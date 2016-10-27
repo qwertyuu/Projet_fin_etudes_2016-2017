@@ -31,29 +31,33 @@ namespace ECJ.Web.Controllers
 
         public static ImageFormat GetContentType(byte[] imageBytes)
         {
-            MemoryStream ms = new MemoryStream(imageBytes);
-
-            using (BinaryReader br = new BinaryReader(ms))
+            if (imageBytes != null)
             {
-                int maxMagicBytesLength = imageFormatDecoders.Keys.OrderByDescending(x => x.Length).First().Length;
+                MemoryStream ms = new MemoryStream(imageBytes);
 
-                byte[] magicBytes = new byte[maxMagicBytesLength];
-
-                for (int i = 0; i < maxMagicBytesLength; i += 1)
+                using (BinaryReader br = new BinaryReader(ms))
                 {
-                    magicBytes[i] = br.ReadByte();
+                    int maxMagicBytesLength = imageFormatDecoders.Keys.OrderByDescending(x => x.Length).First().Length;
 
-                    foreach (var kvPair in imageFormatDecoders)
+                    byte[] magicBytes = new byte[maxMagicBytesLength];
+
+                    for (int i = 0; i < maxMagicBytesLength; i += 1)
                     {
-                        if (StartsWith(magicBytes, kvPair.Key))
+                        magicBytes[i] = br.ReadByte();
+
+                        foreach (var kvPair in imageFormatDecoders)
                         {
-                            return kvPair.Value;
+                            if (StartsWith(magicBytes, kvPair.Key))
+                            {
+                                return kvPair.Value;
+                            }
                         }
                     }
-                }
 
-                return ImageFormat.Png;
+                    return ImageFormat.Png;
+                }
             }
+            return null;
         }
 
         private static bool StartsWith(byte[] thisBytes, byte[] thatBytes)

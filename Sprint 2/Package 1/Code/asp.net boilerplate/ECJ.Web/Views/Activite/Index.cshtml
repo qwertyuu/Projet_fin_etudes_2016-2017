@@ -1,65 +1,73 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@using Abp.Authorization.Users
+@using Abp.Web.Mvc.Extensions
+@model IEnumerable<ECJ.Web.Models.tblActivite>
+@{
+    ViewBag.Title = "Activite";
+    ViewBag.ActiveMenu = "Activite";
+    string etat = "";
 }
+<div>
+    <h1>Activité</h1>
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "page-header" }))
+            {
 
-<h2>Activités</h2>
+                <div class="input-group">
+                    <input class="form-control" type="text" name="SearchString" value="@ViewBag.SearchString">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary">Rechercher</button>
+                    </span>
+                </div>
+            }
+            <a href="/Activite/Ajout" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un activité</a>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Nom du responsable</th>
+                        <th>Tâche</th>
+                        <th>Date</th>
+                        <th>Etat</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var e in Model)
+                    {
+                        if (e.dateSupprime == null)
+                        {
+                            if (e.etat == 0)
+                            {
+                                etat = "";
+                            }
+                            else
+                            {
+                                etat = "warning";
+                            }
 
-<div class="row">
-    <div class="col-md-12">
-        <form class="page-header">
-            <div class="input-group">
-                <input class="form-control" type="search">
-                <span class="input-group-btn">
-                    <button class="btn btn-primary pull-right" type="button">Rechercher</button>
-                </span>
-            </div>
-        </form>
-        <a href="/Activite/Ajout" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
-        <table class="table" align="center">
-            <thead>
-                <tr>
-                    <th>Nom du responsable</th>
-                    <th>Tâche</th>
-                    <th>Détails</th>
-                    <th>Date</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr class="success">
-                    <td>Gilles Tremblay</td>
-                    <td>Faire une entrevue à la radio</td>
-                    <td>Le transport doit être fourni et les repas doivent être payé (matin-midi-soir)</td>
-                    <td>30/09/2016</td>
-                    <td>
-                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-                    </td>
-                </tr>
-
-                <tr class="danger">
-                    <td>Michelin Harvey</td>
-                    <td>Faire l'éclairage ainsi que le sons.</td>
-                    <td>La lumière doit etre ajustée selon la norme et le sons doit etre d'une belle qualitée.</td>
-                    <td>12/09/2016</td>
-                    <td>
-                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-                    </td>
-                </tr>
-
-                <tr class="danger">
-                    <td>Paul Gauthier</td>
-                    <td>Faire une publication</td>
-                    <td>La publication doit promouvoir un sous-évènement. Elle doit être publié sur Facebook, twitter et sur instagram(avec une photo de l'évènement)</td>
-                    <td>14/10/2016</td>
-                    <td>
-                        <a href="" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                        <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        <tr class="@etat">
+                            <td>@e.nomResponsable</td>
+                            <td>@e.tache</td>
+                            <td>@String.Format("{0:yyyy/MM/dd}", e.dateCreation)</td>
+                            <td>
+                                @if (e.etat == 0)
+                                {
+                                    <a href="/Activite/Modifier/@e.noActivite" class="btn btn-sm btn-primary" title="Modifier">non réalisé</a>
+                                }
+                                else
+                                {
+                                    <a href="/Activite/Modifier/@e.noActivite" class="btn btn-sm btn-primary" title="Modifier">réalisé</a>
+                                }
+                            </td>
+                            <td>
+                                <a href="/Activite/Detail/@e.noActivite" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="/Activite/Supprimer/@e.noActivite" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            </td>
+                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
