@@ -1,36 +1,59 @@
-﻿@{
-    ViewBag.Title = "Detail";
-}
+﻿@model ECJ.Web.Models.tblSoumission
 <h2>Détail de la soumission</h2>
+
+<h2>Détail d'une soumission</h2>
 
 <form name="createPub" role="form" novalidate class="form-validation">
 
     <div class="form-group">
-        <label>Nom</label>
+        <label>Numéro de la Soumission</label>
         <div class="well well-sm">
-           Soumission1
+            @Html.DisplayFor(model=> model.noSoumission)
         </div>
     </div>
+
+    <div class="form-group">
+        <label>Numéro de l'agence</label>
+        <div class="well well-sm">
+            @Html.DisplayFor(model => model.noSoumissionAgence)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Nom de la soumission</label>
+        <div class="well well-sm">
+            @Html.DisplayFor(model => model.nom)
+        </div>
+    </div>
+
     <div class="form-group">
         <label>Prix</label>
         <div class="well well-sm">
-           45.95$
+            @Html.DisplayFor(model => model.prix)
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Commentaire</label>
+        <div class="well well-sm">
+            @Html.DisplayFor(model => model.commentaire)
         </div>
     </div>
 
     <div class="form-group">
-        <label>Nom de l'appel d'offre</label>
+        <label>Statut</label>
         <div class="well well-sm">
-            l'humoriste de l'année
+            @Html.DisplayFor(model => model.tblStatutAppelOffre.nom)
         </div>
     </div>
 
     <div class="form-group">
-        <label>Description</label>
+        <label>Statut de l'agence</label>
         <div class="well well-sm">
-           Première soumission
+            @Html.DisplayFor(model => model.statut)
         </div>
     </div>
+    <br />    
     <br />
-    <a href="/AppelOffre/Detail" class="btn btn-default pull-right " data-dismiss="modal">Retour</a>
+    <a href="/AppellOffre/Index" class="btn btn-default pull-right " data-dismiss="modal">Retour</a>
+
 </form>
