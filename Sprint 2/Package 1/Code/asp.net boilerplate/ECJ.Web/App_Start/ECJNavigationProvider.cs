@@ -14,6 +14,16 @@ namespace ECJ.Web
     {
         public override void SetNavigation(INavigationProviderContext context)
         {
+            context.Manager.Menus.Add("Footer", new MenuDefinition(
+                "BottomMenu", L("Footer"))
+                .AddItem(
+                    new MenuItemDefinition(
+                        "Memo",
+                        L("Créer un mémo"),
+                        icon: "fa fa-plus",
+                        requiresAuthentication: true,
+                        url: ""
+            )));
             context.Manager.MainMenu
                 .AddItem(
                     new MenuItemDefinition(

@@ -41,6 +41,12 @@ namespace ECJ.Web.Controllers
         }
 
         [ChildActionOnly]
+        public PartialViewResult BottomMenu(string activeMenu = "")
+        {
+            return PartialView("_BottomMenu", AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("Footer", AbpSession.ToUserIdentifier())));
+        }
+
+        [ChildActionOnly]
         public PartialViewResult LanguageSelection()
         {
             var model = new LanguageSelectionViewModel

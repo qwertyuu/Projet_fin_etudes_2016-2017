@@ -118,17 +118,22 @@ namespace ECJ.Web.Controllers.AppelOffre
                 }
 
             }
-            appelOfrre = from q in appelOfrre
-                         orderby q.noStatut
-                         select q;
 
-            var appelGoupBy = appelOfrre.GroupBy(aoa => new { aoa.noAppelOffre,aoa.nomAppelOffre,aoa.nomAgence,aoa.nomEvent,aoa.nomStatut,aoa.nomSoumission,aoa.description })
-                         .Select(a =>  new {nomAppelOffre= a.Key.nomAppelOffre, nomEvent=a.Key.nomEvent, nomStatut=a.Key.nomStatut, nomSoumission= string.Join(",", a.Select(i => i.nomSoumission)),description= a.Key.description, nomAgence=string.Join(",", a.Select(i=>i.nomAgence))}).ToList()
-                         .Select(aoa => new vueSomAppelOffre { nomAppelOffre = aoa.nomAppelOffre, nomEvent = aoa.nomEvent, nomStatut = aoa.nomStatut, nomSoumission = aoa.nomSoumission, description = aoa.description, nomAgence = aoa.nomAgence });
-
-
-
-
+            var appelGoupBy = appelOfrre.GroupBy(aoa => new { aoa.noAppelOffre, aoa.nomAppelOffre, aoa.nomEvent, aoa.noStatut, aoa.description, aoa.dateEnvoi, aoa.dateRequis, aoa.couleur }).ToList()
+                         .Select(a => new vueSomAppelOffre
+                         {
+                             noAppelOffre = a.Key.noAppelOffre,
+                             nomAppelOffre = a.Key.nomAppelOffre,
+                             nomEvent = a.Key.nomEvent,
+                             noStatut = a.Key.noStatut,
+                             nomSoumission = string.Join(",\n", db.vueSomAppelOffre.Where(j => j.noAppelOffre == a.Key.noAppelOffre).Select(i => i.nomSoumission)),
+                             description = a.Key.description,
+                             nomAgence = string.Join(",\n", db.vueSomAppelOffre.Where(j => j.noAppelOffre == a.Key.noAppelOffre).Select(i => i.nomAgence)),
+                             dateRequis = a.Key.dateRequis,
+                             dateEnvoi = a.Key.dateEnvoi,
+                             couleur = a.Key.couleur
+                         }).OrderBy(a => a.noStatut);
+            
             return View(appelGoupBy.ToList());
         }
 
