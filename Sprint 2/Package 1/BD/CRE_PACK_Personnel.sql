@@ -17,15 +17,6 @@ BEGIN
 EXEC('CREATE SCHEMA ' + @Schema)
 END
 
-PRINT 'Création de la table d''utilisateur'
-
-CREATE TABLE S_personnel.tblUtilisateur
-(
-	IdUser  varchar(30)NOT NULL,
-	motPasse char(24) NOT NULL
-)
-PRINT 'Fin de la création de la table d''utilisateur'
-
 GO
 PRINT 'Création de la table memo'
 CREATE TABLE S_personnel.tblMemo (
@@ -34,8 +25,8 @@ CREATE TABLE S_personnel.tblMemo (
 	,statut BIT NOT NULL DEFAULT(0)
 	,dateEnvoi DATETIME NOT NULL DEFAULT(GETDATE())
 	,dateSupprime DATETIME  NULL
-	,expediteur VARCHAR(30) NOT NULL
-	,destinataire VARCHAR(30) NOT NULL
+	,expediteur BIGINT NOT NULL
+	,destinataire BIGINT NOT NULL
 	);
 PRINT 'Fin de la création de la table memo'
  
