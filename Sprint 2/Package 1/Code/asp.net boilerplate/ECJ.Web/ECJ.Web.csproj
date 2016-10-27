@@ -717,7 +717,6 @@
     <Content Include="Views\Layout\_UserMenuOrLoginLink.cshtml" />
     <Content Include="Views\Tenants\Index.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Activite\Index.cshtml" />
     <Content Include="Views\Activite\Ajout.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Events\Ajout.cshtml" />
@@ -747,6 +746,7 @@
     <Content Include="Views\SousEvenements\Modifier.cshtml" />
     <Content Include="Views\Activite\Detail.cshtml" />
     <Content Include="Views\Shared\_BottomMenu.cshtml" />
+    <Content Include="Views\Activite\Modifier.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
