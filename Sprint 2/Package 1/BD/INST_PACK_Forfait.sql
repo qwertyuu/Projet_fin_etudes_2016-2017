@@ -96,16 +96,16 @@ INSERT INTO S_forfait.tblForfaitSousEvenement (noForfait,noSousEvenement)
 VALUES(4,1),
 (4,2),
 (4,3),
-(5,10),
-(5,11),
+(2,10),
+(3,11),
 (1,12),
 (2,12),
 (3,12),
-(5,12),
+(4,12),
 (1,13),
 (2,13),
 (3,13),
-(5,13);
+(4,13);
 
 GO
 PRINT 'INSERTION RÉUSSI'
