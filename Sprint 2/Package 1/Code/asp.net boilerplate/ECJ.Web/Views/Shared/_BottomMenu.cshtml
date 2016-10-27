@@ -1,0 +1,6 @@
+﻿@using Abp.Application.Navigation;
+@model UserMenu
+@foreach (var i in Model.Items)
+{
+    <button data-toggle="modal" data-target="#MemoCreateModal" class="btn btn-primary"><i class="@i.Icon"></i> @i.DisplayName</button>
+}

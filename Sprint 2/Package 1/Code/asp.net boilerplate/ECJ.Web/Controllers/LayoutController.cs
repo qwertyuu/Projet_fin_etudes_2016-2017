@@ -41,7 +41,7 @@ namespace ECJ.Web.Controllers
         }
 
         [ChildActionOnly]
-        public PartialViewResult BottomMenu(string activeMenu = "")
+        public PartialViewResult BottomMenu()
         {
             return PartialView("_BottomMenu", AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("Footer", AbpSession.ToUserIdentifier())));
         }

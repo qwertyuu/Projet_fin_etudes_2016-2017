@@ -4,7 +4,6 @@
     <text name="HomePage" value="Accueil" />
     <text name="About" value="À propos" />
     <text name="WellcomeMessage" value="Bienvenue sur ECJ !" />
-    
     <text name="FormIsNotValidMessage" value="Le formulaire n'est pas valide. Veuillez le corriger." />
     <text name="TenantNameCanNotBeEmpty" value="Le nom de client (tenant) doit être renseigné." />
 
@@ -51,6 +50,7 @@
     <text name="pub" value="Publicité" />
     <text name="memo" value="Créer un Mémo" />
     <text name="Cal" value="Calculateur" />
+    <text name="Memo" value="Créer un mémo" />
 
   </texts>
 </localizationDictionary>
