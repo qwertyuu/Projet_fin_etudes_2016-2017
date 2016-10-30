@@ -57,7 +57,7 @@ CREATE TABLE S_publicite.tblSoumission (
 	,noSoumissionAgence varchar(15)  NULL
 	,nom varchar(50) NULL
 	,prix DECIMAL(19, 2) DEFAULT(0.00)
-	,statut BIT DEFAULT(0) NOT NULL
+	,statut bit  NULL
 	,commentaire TEXT 
     ,noAgencePub INT NOT NULL
 	,noAppelOffre INT NOT NULL 

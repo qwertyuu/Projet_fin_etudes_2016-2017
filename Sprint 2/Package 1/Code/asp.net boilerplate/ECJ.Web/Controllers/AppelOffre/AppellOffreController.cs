@@ -9,12 +9,14 @@ using System.Web.Mvc;
 using ECJ.Web.Models;
 using System.Xml.Serialization;
 using System.Xml;
+using System.Data.SqlClient;
 
 namespace ECJ.Web.Controllers.AppelOffre
 {
     public class AppellOffreController : Controller
     {
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
+        SqlConnection conn = new SqlConnection();
         private DBProvider provider = new DBProvider();
         DataSet ds = new DataSet();
 
@@ -23,6 +25,7 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
+       
         //--Gestion de la création du xml d'une soumision.-----
         public XmlNode CrerUneSoumissionXml(XmlDocument doc, tblSoumission soumi)
         {
@@ -68,11 +71,34 @@ namespace ECJ.Web.Controllers.AppelOffre
             XmlNode Racine = doc.CreateNode(XmlNodeType.Element, "SoumissionAgence", "");
             doc.AppendChild(Racine);
             Racine.AppendChild(CrerUneSoumissionXml(doc, soumi));
-            string filename = "//deptinfo420/P2016_Equipe2/soumission" + soumi.noSoumission + ".xml";
+            string filename = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission" + soumi.noSoumission + ".xml";
             doc.Save(filename);
         }
 
-        private tblSoumission CreateSoumission(int noAgenP, int noApp, int noSat)
+        private void RetournerSoumissionXml(string nomSoumiXml)
+        {
+            List<tblSoumission> list = new List<tblSoumission>();
+            
+            XmlDocument doc = new XmlDocument();
+            doc.Load(nomSoumiXml);
+            XmlTextReader reader = new XmlTextReader(nomSoumiXml);
+            while(reader.Read())
+            {
+                tblSoumission soumi = new tblSoumission
+                {
+                    noSoumission = Convert.ToInt32(reader.Value),
+                    noSoumissionAgence = reader.Value,
+                    nom = reader.Value,
+                    statut = Convert.ToBoolean(reader.Value),
+                    noAgencePub = Convert.ToInt32(reader.Value)
+                };
+            }
+
+
+
+        }
+
+        private tblSoumission CreateSoumission(string nomSoumi,int noAgenP, int noApp, int noSat)
         {
             tblSoumission soumi = provider.SleclectSoumi(noApp, noAgenP);
             if (soumi!=null)//update soumission
@@ -80,12 +106,13 @@ namespace ECJ.Web.Controllers.AppelOffre
                 soumi.noAgencePub = noAgenP;
                 soumi.noAppelOffre = noApp;
                 soumi.noStatut = noSat;
+                soumi.nom = nomSoumi;
                 provider.Save();
                 return soumi;
             }
             else
             {
-                var soumission = new tblSoumission { noAgencePub = noAgenP, noAppelOffre = noApp, noStatut = noSat };
+                var soumission = new tblSoumission {nom=nomSoumi, noAgencePub = noAgenP, noAppelOffre = noApp, noStatut = noSat };
                 provider.InsertSoumission(soumission);
                 return soumission;
 
@@ -175,8 +202,10 @@ namespace ECJ.Web.Controllers.AppelOffre
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noStatut,noMedia")] tblAppelOffre tblAppelOffre, int[] noAgencePub)
+        [mult]
+        public ActionResult Create([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre, int[] noAgencePub, FormCollection form)
         {
+            string nomSoumoi = "";
             List<int> idSelect = new List<int>();
             ViewBag.noAgencePub = new MultiSelectList(db.tblAgencePublicite, "noAgencePub", "nom",idSelect);
             
@@ -193,13 +222,28 @@ namespace ECJ.Web.Controllers.AppelOffre
                                  select q).FirstOrDefault();
 
                 db.tblAppelOffre.Add(tblAppelOffre);
-                db.SaveChanges();
-                //On créer les soumissions réliées à l'appel d'offre.
-                foreach(int no in noAgencePub)
+                if(form["Sauvegarder"] !=null)
                 {
-                    tblSoumission souimi= CreateSoumission(no,tblAppelOffre.noAppelOffre,tblAppelOffre.noStatut);
+                    tblAppelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "En Création").FirstOrDefault().noStatut;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                //si l'Appel d'offre n'est pas en création il tombe à envoyé.
+                tblAppelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "Envoyé").FirstOrDefault().noStatut;
+                db.SaveChanges();
+
+                //On créer les soumissions réliées à l'appel d'offre.
+
+                //On ouvre la connection
+                //provider.ConnectionServer(conn);
+                foreach (int no in noAgencePub)
+                {
+                    tblSoumission lastSoumi = db.tblSoumission.ToList().LastOrDefault();
+                    nomSoumoi = "Soumission" + (lastSoumi.noSoumission + 1);
+                    tblSoumission souimi= CreateSoumission(nomSoumoi, no,tblAppelOffre.noAppelOffre,tblAppelOffre.noStatut);
                     CreateSoumissionXml(souimi);
                 }
+               // conn.Close(); //On ferme la connection.
                 return RedirectToAction("Index");
             }
 
@@ -242,9 +286,9 @@ namespace ECJ.Web.Controllers.AppelOffre
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noStatut,noMedia")] tblAppelOffre tblAppelOffre, int[] noAgencePub)
+        public ActionResult Edit([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre, int[] noAgencePub)
         {
-          
+            string nomSoumi = "";
             if (ModelState.IsValid)
             {
                 var statut =( from q in db.tblStatutAppelOffre
@@ -261,7 +305,9 @@ namespace ECJ.Web.Controllers.AppelOffre
                 //On créer les soumissions réliées à l'appel d'offre.
                 foreach (int no in noAgencePub)
                 {
-                    CreateSoumission(no, tblAppelOffre.noAppelOffre, tblAppelOffre.noStatut);
+                    tblSoumission lastSoumi = db.tblSoumission.Last();
+                    nomSoumi = "Soumission" + lastSoumi.noSoumission + 1;
+                    CreateSoumission(nomSoumi,no, tblAppelOffre.noAppelOffre, tblAppelOffre.noStatut);
                 }
                 return RedirectToAction("Index");
             }
@@ -280,7 +326,20 @@ namespace ECJ.Web.Controllers.AppelOffre
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             tblAppelOffre tblAppelOffre = db.tblAppelOffre.Find(id);
-            tblAppelOffre.dateSupprime = DateTime.Now;
+            if(tblAppelOffre.noStatut== db.tblStatutAppelOffre.Where(s => s.nom == "En Création").FirstOrDefault().noStatut) //Statut en création on supprime l'appel d'offre.
+            {
+               tblAppelOffre.dateSupprime = DateTime.Now;
+            }
+            else
+            {
+                tblAppelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "Annulé").FirstOrDefault().noStatut;
+            }
+
+            //On supprime toutes les soumissions réliées à cet appel d'offre
+            foreach (tblSoumission soumi in provider.RetunSoumission(tblAppelOffre.noAppelOffre))
+            {
+                soumi.dateSupprime = DateTime.Now;
+            }
             db.SaveChanges();
             if (tblAppelOffre == null)
             {

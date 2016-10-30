@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Data.SqlClient;
 using System.Web;
 
 namespace ECJ.Web.Controllers
@@ -234,6 +235,21 @@ namespace ECJ.Web.Controllers
         {
             return db.tblSoumission.Where(s => s.noAgencePub == noAgence && s.noAppelOffre == noApp).FirstOrDefault();
         }
+        public void ConnectionServer(SqlConnection conn)
+        {
+            conn.ConnectionString = "Data Source=10.10.8.42;Initial Catalog=PE2_Officiel;Integrated Security=False;User ID=P2016_Equipe2;Password=Rasipike2";
+            conn.Open();
+        }
+
+        public tblAppelOffre SelectAppelParSoumi(int ? idSoumi)
+        {
+            return (from a in db.tblAppelOffre
+                   join s in db.tblSoumission
+                   on a.noAppelOffre equals s.noAppelOffre
+                   where s.noSoumission == idSoumi
+                   select a).FirstOrDefault();
+        }
+
 
     }
 }

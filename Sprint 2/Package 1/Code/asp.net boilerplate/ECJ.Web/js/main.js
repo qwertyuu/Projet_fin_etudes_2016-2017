@@ -33,6 +33,17 @@
         }
     });
 
+    $("[title=\"SupprimerAppel\"]").click(function (e) {
+        if (!confirm("Si vous supprimez cet appel d'offre il sera suprimé definitivement ou son statut tombera à Annulé en fonction de son statut présent.n\ Êtes-vous sur de vouloir le faire?")) {
+            e.preventDefault();
+        }
+    });
+
     $(".dp").datepicker({ dateFormat: 'yy/mm/dd' });
+
+    //désactiver le lien 
+    $("#AppelComplete").click(function (event) {
+        return false;
+    });
 
 })(jQuery);

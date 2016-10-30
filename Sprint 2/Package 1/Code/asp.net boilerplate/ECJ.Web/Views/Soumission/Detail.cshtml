@@ -1,8 +1,6 @@
 ﻿@model ECJ.Web.Models.tblSoumission
 <h2>Détail de la soumission</h2>
 
-<h2>Détail d'une soumission</h2>
-
 <form name="createPub" role="form" novalidate class="form-validation">
 
     <div class="form-group">
@@ -40,20 +38,20 @@
     </div>
 
     <div class="form-group">
-        <label>Statut</label>
+        <label>Statut de l'appel d'offre</label>
         <div class="well well-sm">
             @Html.DisplayFor(model => model.tblStatutAppelOffre.nom)
         </div>
     </div>
 
     <div class="form-group">
-        <label>Statut de l'agence</label>
+        <label>Statut de la soumission</label>
         <div class="well well-sm">
             @Html.DisplayFor(model => model.statut)
         </div>
     </div>
     <br />    
     <br />
-    <a href="/AppellOffre/Index" class="btn btn-default pull-right " data-dismiss="modal">Retour</a>
+    <a href="/AppellOffre/Details/@Model.noAppelOffre" class="btn btn-default pull-right " data-dismiss="modal">Retour</a>
 
 </form>

@@ -51,7 +51,7 @@
         <div class="well well-sm">
           @foreach(var agenPub in ViewBag.agencePub)
           {
-              <span>@agenPub.nom</span>
+              <span>@agenPub.nom</span><br />
           }
         </div>
     </div>
@@ -76,6 +76,7 @@
             <thead>
                 <tr>
                     <th>Nom</th>
+                    <th>Statut</th>
                     <th>Commentaire</th>
                     <th class="col-md-2">Action</th>
                 </tr>
@@ -87,11 +88,27 @@
 
                     <tr>
                         <td>@soumi.nom</td>
+                        @if (soumi.statut)
+                        {
+                            <td>Acceptée</td>
+                        }
+                        else
+                        {
+                            <td>Réfusée</td>
+                        }
                         <td>@soumi.commentaire</td>
                         <td>
+                            @if (Model.tblStatutAppelOffre.nom == "Complété" || Model.tblStatutAppelOffre.nom=="Annulé")
+                            {
+                                <a href="/Soumission/Accepter/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Accepter" onclick="return false;" style="cursor:not-allowed"><i class="fa fa-check-circle fa-lg"></i></a>
+                                <a href="/Soumission/Refuser/@soumi.noSoumission" class="btn btn-sm btn-danger" title="Refuser" onclick="return false;" style="cursor:not-allowed"><i class="fa fa-times fa-lg"></i></a>
+                            }
+                            else
+                            {
+                                <a href="/Soumission/Accepter/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
+                                <a href="/Soumission/Refuser/@soumi.noSoumission" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
+                            }
                             <a href="/Soumission/Detail/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                            <a href="" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
-                            <a href="" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
                         </td>
                     </tr>
                 }
