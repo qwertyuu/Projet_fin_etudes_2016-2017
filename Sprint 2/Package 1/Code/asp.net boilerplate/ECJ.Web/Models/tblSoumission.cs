@@ -18,7 +18,7 @@ namespace ECJ.Web.Models
         public string noSoumissionAgence { get; set; }
         public string nom { get; set; }
         public Nullable<decimal> prix { get; set; }
-        public bool statut { get; set; }
+        public Nullable<byte> statut { get; set; }
         public string commentaire { get; set; }
         public int noAgencePub { get; set; }
         public int noAppelOffre { get; set; }

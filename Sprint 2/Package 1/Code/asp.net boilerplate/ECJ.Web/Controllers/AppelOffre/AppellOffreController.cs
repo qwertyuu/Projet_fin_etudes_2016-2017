@@ -42,7 +42,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             XmlNode xmlnoAppelOffre = doc.CreateNode(XmlNodeType.Element, "noAppelOffre", "");
             xmlnoAppelOffre.InnerText = soumi.noAppelOffre.ToString();
             XmlNode xmlStatut = doc.CreateNode(XmlNodeType.Element, "Statut", "");
-            if(soumi.statut)
+            if(soumi.statut==1)
                xmlStatut.InnerText = "Acceptée";
             else
                 xmlStatut.InnerText = "Réfusée";
@@ -89,7 +89,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                     noSoumission = Convert.ToInt32(reader.Value),
                     noSoumissionAgence = reader.Value,
                     nom = reader.Value,
-                    statut = Convert.ToBoolean(reader.Value),
+                    statut = Convert.ToByte(reader.Value),
                     noAgencePub = Convert.ToInt32(reader.Value)
                 };
             }
@@ -202,7 +202,6 @@ namespace ECJ.Web.Controllers.AppelOffre
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [mult]
         public ActionResult Create([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre, int[] noAgencePub, FormCollection form)
         {
             string nomSoumoi = "";
@@ -222,7 +221,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                                  select q).FirstOrDefault();
 
                 db.tblAppelOffre.Add(tblAppelOffre);
-                if(form["Sauvegarder"] !=null)
+                if(Request.Form.Get("save")== "Save")
                 {
                     tblAppelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "En Création").FirstOrDefault().noStatut;
                     db.SaveChanges();

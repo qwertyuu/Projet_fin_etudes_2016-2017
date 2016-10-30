@@ -639,15 +639,8 @@
           <Property Name="statut" Type="bit" Nullable="false" />
           <Property Name="dateEnvoi" Type="datetime" Nullable="false" />
           <Property Name="dateSupprime" Type="datetime" />
-          <Property Name="expediteur" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="destinataire" Type="varchar" MaxLength="30" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblUtilisateur">
-          <Key>
-            <PropertyRef Name="IdUser" />
-          </Key>
-          <Property Name="IdUser" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="motPasse" Type="char" MaxLength="24" Nullable="false" />
+          <Property Name="expediteur" Type="bigint" Nullable="false" />
+          <Property Name="destinataire" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="tblAgencePublicite">
           <Key>
@@ -688,7 +681,7 @@
           <Property Name="noSoumissionAgence" Type="varchar" MaxLength="15" />
           <Property Name="nom" Type="varchar" MaxLength="50" />
           <Property Name="prix" Type="decimal" Precision="19" Scale="2" />
-          <Property Name="statut" Type="bit" Nullable="false" />
+          <Property Name="statut" Type="tinyint" />
           <Property Name="commentaire" Type="text" />
           <Property Name="noAgencePub" Type="int" Nullable="false" />
           <Property Name="noAppelOffre" Type="int" Nullable="false" />
@@ -973,18 +966,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="DESTINATAIRE_UTILISATEUR_MEMO_FK">
-          <End Role="tblUtilisateur" Type="Self.tblUtilisateur" Multiplicity="1" />
-          <End Role="tblMemo" Type="Self.tblMemo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblUtilisateur">
-              <PropertyRef Name="IdUser" />
-            </Principal>
-            <Dependent Role="tblMemo">
-              <PropertyRef Name="destinataire" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="DIF_ADR_FK">
           <End Role="tblAdresse" Type="Self.tblAdresse" Multiplicity="1" />
           <End Role="tblDiffuseur" Type="Self.tblDiffuseur" Multiplicity="*" />
@@ -1042,18 +1023,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Principal>
             <Dependent Role="tblExigence">
               <PropertyRef Name="noStatut" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="EXPEDITEUR_UTILISATEUR_MEMO_FK">
-          <End Role="tblUtilisateur" Type="Self.tblUtilisateur" Multiplicity="1" />
-          <End Role="tblMemo" Type="Self.tblMemo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblUtilisateur">
-              <PropertyRef Name="IdUser" />
-            </Principal>
-            <Dependent Role="tblMemo">
-              <PropertyRef Name="expediteur" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1609,7 +1578,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySet Name="tblServiceOffert" EntityType="Self.tblServiceOffert" Schema="S_forfait" store:Type="Tables" />
           <EntitySet Name="tblServiceRequis" EntityType="Self.tblServiceRequis" Schema="S_forfait" store:Type="Tables" />
           <EntitySet Name="tblMemo" EntityType="Self.tblMemo" Schema="S_personnel" store:Type="Tables" />
-          <EntitySet Name="tblUtilisateur" EntityType="Self.tblUtilisateur" Schema="S_personnel" store:Type="Tables" />
           <EntitySet Name="tblAgencePublicite" EntityType="Self.tblAgencePublicite" Schema="S_publicite" store:Type="Tables" />
           <EntitySet Name="tblAppelOffre" EntityType="Self.tblAppelOffre" Schema="S_publicite" store:Type="Tables" />
           <EntitySet Name="tblMedia" EntityType="Self.tblMedia" Schema="S_publicite" store:Type="Tables" />
@@ -1759,10 +1727,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblContrat" EntitySet="tblContrat" />
             <End Role="tblContratArtiste" EntitySet="tblContratArtiste" />
           </AssociationSet>
-          <AssociationSet Name="DESTINATAIRE_UTILISATEUR_MEMO_FK" Association="Self.DESTINATAIRE_UTILISATEUR_MEMO_FK">
-            <End Role="tblUtilisateur" EntitySet="tblUtilisateur" />
-            <End Role="tblMemo" EntitySet="tblMemo" />
-          </AssociationSet>
           <AssociationSet Name="DIF_ADR_FK" Association="Self.DIF_ADR_FK">
             <End Role="tblAdresse" EntitySet="tblAdresse" />
             <End Role="tblDiffuseur" EntitySet="tblDiffuseur" />
@@ -1782,10 +1746,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <AssociationSet Name="EXI_STA_FK" Association="Self.EXI_STA_FK">
             <End Role="tblStatut" EntitySet="tblStatut" />
             <End Role="tblExigence" EntitySet="tblExigence" />
-          </AssociationSet>
-          <AssociationSet Name="EXPEDITEUR_UTILISATEUR_MEMO_FK" Association="Self.EXPEDITEUR_UTILISATEUR_MEMO_FK">
-            <End Role="tblUtilisateur" EntitySet="tblUtilisateur" />
-            <End Role="tblMemo" EntitySet="tblMemo" />
           </AssociationSet>
           <AssociationSet Name="FIC_ART_FK" Association="Self.FIC_ART_FK">
             <End Role="tblArtiste" EntitySet="tblArtiste" />
@@ -2000,7 +1960,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySet Name="tblSalle" EntityType="PE2_OfficielModel.tblSalle" />
           <EntitySet Name="tblService" EntityType="PE2_OfficielModel.tblService" />
           <EntitySet Name="tblMemo" EntityType="PE2_OfficielModel.tblMemo" />
-          <EntitySet Name="tblUtilisateur" EntityType="PE2_OfficielModel.tblUtilisateur" />
           <EntitySet Name="tblAgencePublicite" EntityType="PE2_OfficielModel.tblAgencePublicite" />
           <EntitySet Name="tblAppelOffre" EntityType="PE2_OfficielModel.tblAppelOffre" />
           <EntitySet Name="tblMedia" EntityType="PE2_OfficielModel.tblMedia" />
@@ -2168,14 +2127,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <AssociationSet Name="NOSALLE" Association="PE2_OfficielModel.NOSALLE">
             <End Role="tblSalle" EntitySet="tblSalle" />
             <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
-          </AssociationSet>
-          <AssociationSet Name="DESTINATAIRE_UTILISATEUR_MEMO_FK" Association="PE2_OfficielModel.DESTINATAIRE_UTILISATEUR_MEMO_FK">
-            <End Role="tblUtilisateur" EntitySet="tblUtilisateur" />
-            <End Role="tblMemo" EntitySet="tblMemo" />
-          </AssociationSet>
-          <AssociationSet Name="EXPEDITEUR_UTILISATEUR_MEMO_FK" Association="PE2_OfficielModel.EXPEDITEUR_UTILISATEUR_MEMO_FK">
-            <End Role="tblUtilisateur" EntitySet="tblUtilisateur" />
-            <End Role="tblMemo" EntitySet="tblMemo" />
           </AssociationSet>
           <AssociationSet Name="AGENCE_PUB_FK" Association="PE2_OfficielModel.AGENCE_PUB_FK">
             <End Role="tblAgencePublicite" EntitySet="tblAgencePublicite" />
@@ -2895,19 +2846,8 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="statut" Type="Boolean" Nullable="false" />
           <Property Name="dateEnvoi" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
-          <Property Name="expediteur" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="destinataire" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblUtilisateur" Relationship="PE2_OfficielModel.DESTINATAIRE_UTILISATEUR_MEMO_FK" FromRole="tblMemo" ToRole="tblUtilisateur" />
-          <NavigationProperty Name="tblUtilisateur1" Relationship="PE2_OfficielModel.EXPEDITEUR_UTILISATEUR_MEMO_FK" FromRole="tblMemo" ToRole="tblUtilisateur" />
-        </EntityType>
-        <EntityType Name="tblUtilisateur">
-          <Key>
-            <PropertyRef Name="IdUser" />
-          </Key>
-          <Property Name="IdUser" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="motPasse" Type="String" Nullable="false" MaxLength="24" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="tblMemo" Relationship="PE2_OfficielModel.DESTINATAIRE_UTILISATEUR_MEMO_FK" FromRole="tblUtilisateur" ToRole="tblMemo" />
-          <NavigationProperty Name="tblMemo1" Relationship="PE2_OfficielModel.EXPEDITEUR_UTILISATEUR_MEMO_FK" FromRole="tblUtilisateur" ToRole="tblMemo" />
+          <Property Name="expediteur" Type="Int64" Nullable="false" />
+          <Property Name="destinataire" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="tblAgencePublicite">
           <Key>
@@ -2954,7 +2894,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="noSoumissionAgence" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="prix" Type="Decimal" Precision="19" Scale="2" />
-          <Property Name="statut" Type="Boolean" Nullable="false" />
+          <Property Name="statut" Type="Byte" />
           <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="noAgencePub" Type="Int32" Nullable="false" />
           <Property Name="noAppelOffre" Type="Int32" Nullable="false" />
@@ -3577,30 +3517,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Principal>
             <Dependent Role="tblSousEvenement">
               <PropertyRef Name="noSalle" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DESTINATAIRE_UTILISATEUR_MEMO_FK">
-          <End Type="PE2_OfficielModel.tblUtilisateur" Role="tblUtilisateur" Multiplicity="1" />
-          <End Type="PE2_OfficielModel.tblMemo" Role="tblMemo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblUtilisateur">
-              <PropertyRef Name="IdUser" />
-            </Principal>
-            <Dependent Role="tblMemo">
-              <PropertyRef Name="destinataire" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="EXPEDITEUR_UTILISATEUR_MEMO_FK">
-          <End Type="PE2_OfficielModel.tblUtilisateur" Role="tblUtilisateur" Multiplicity="1" />
-          <End Type="PE2_OfficielModel.tblMemo" Role="tblMemo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblUtilisateur">
-              <PropertyRef Name="IdUser" />
-            </Principal>
-            <Dependent Role="tblMemo">
-              <PropertyRef Name="expediteur" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4320,14 +4236,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
                 <ScalarProperty Name="statut" ColumnName="statut" />
                 <ScalarProperty Name="info" ColumnName="info" />
                 <ScalarProperty Name="noMemo" ColumnName="noMemo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblUtilisateur">
-            <EntityTypeMapping TypeName="PE2_OfficielModel.tblUtilisateur">
-              <MappingFragment StoreEntitySet="tblUtilisateur">
-                <ScalarProperty Name="motPasse" ColumnName="motPasse" />
-                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

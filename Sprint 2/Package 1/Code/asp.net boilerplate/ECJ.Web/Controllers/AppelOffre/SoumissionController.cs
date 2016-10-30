@@ -52,14 +52,14 @@ namespace ECJ.Web.Controllers.AppelOffre
                 return HttpNotFound();
             }
 
-            soumi.statut = true;
+            soumi.statut = 1;
             appelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "Complété").FirstOrDefault().noStatut;
 
             //Les autres soumissions tombent à réfuseés
             foreach(tblSoumission s in provider.RetunSoumission(appelOffre.noAppelOffre))
             {
                 if (s.noSoumission != id)
-                    s.statut = false;
+                    s.statut = 0;
             }
             provider.Save();
 
@@ -72,7 +72,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         {
             tblSoumission soumi = db.tblSoumission.Find(id);
             tblAppelOffre appelOffre = provider.SelectAppelParSoumi(id);
-            soumi.statut = false;
+            soumi.statut = 1;
             provider.Save();
             return RedirectToAction("Details/" + appelOffre.noAppelOffre, "AppellOffre");
 

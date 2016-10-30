@@ -88,13 +88,21 @@
 
                     <tr>
                         <td>@soumi.nom</td>
-                        @if (soumi.statut)
+                        @if (soumi.statut==1)
                         {
                             <td>Acceptée</td>
                         }
                         else
                         {
-                            <td>Réfusée</td>
+                            if (soumi.statut == 0)
+                            {
+                                <td>Réfusée</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+
                         }
                         <td>@soumi.commentaire</td>
                         <td>

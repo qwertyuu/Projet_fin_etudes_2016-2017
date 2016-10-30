@@ -660,9 +660,6 @@
     <Compile Include="Models\tblStatutAppelOffre.cs">
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblUtilisateur.cs">
-      <DependentUpon>ModelEquipe2.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\vueSomAgence.cs">
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>

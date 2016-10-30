@@ -19,10 +19,7 @@ namespace ECJ.Web.Models
         public bool statut { get; set; }
         public System.DateTime dateEnvoi { get; set; }
         public Nullable<System.DateTime> dateSupprime { get; set; }
-        public string expediteur { get; set; }
-        public string destinataire { get; set; }
-    
-        public virtual tblUtilisateur tblUtilisateur { get; set; }
-        public virtual tblUtilisateur tblUtilisateur1 { get; set; }
+        public long expediteur { get; set; }
+        public long destinataire { get; set; }
     }
 }
