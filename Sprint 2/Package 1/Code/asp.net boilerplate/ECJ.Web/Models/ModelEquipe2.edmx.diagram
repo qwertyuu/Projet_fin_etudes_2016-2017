@@ -114,6 +114,8 @@
         <AssociationConnector Association="PE2_OfficielModel.tblForfaitSousEvenement" />
         <AssociationConnector Association="PE2_OfficielModel.tblServiceOffert" />
         <AssociationConnector Association="PE2_OfficielModel.tblServiceRequis" />
+        <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_DESTINATAIRE" />
+        <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

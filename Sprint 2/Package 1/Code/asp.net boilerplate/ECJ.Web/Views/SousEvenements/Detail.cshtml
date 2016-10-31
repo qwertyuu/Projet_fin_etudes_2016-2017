@@ -10,7 +10,7 @@
 }
 @if (Model.Item1.noSalle != null)
 {
-    <a href="~/Calculateur/index/@Model.Item1.noSousEvenement" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-calculator"></i> Ouvrir le calculateur</a>
+    <a href="~/Calculateur/index/@Model.Item1.noSousEvenement?return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-calculator"></i> Ouvrir le calculateur</a>
 }
 
 <h2>Détail d'un sous-événement</h2>

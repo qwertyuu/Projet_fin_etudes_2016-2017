@@ -65,7 +65,7 @@
     @RenderSection("scripts", required: false)
 
     @Html.IncludeScript("~/Views/Shared/_Footer.js")
-    @Html.Partial("_Footer")
+    @Html.Action("BottomMenu", "Layout")
 
 </body>
 </html>

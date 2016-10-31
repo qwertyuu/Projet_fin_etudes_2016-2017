@@ -2,6 +2,9 @@
 using Abp.UI;
 using Abp.Web.Mvc.Controllers;
 using Microsoft.AspNet.Identity;
+using Abp.Web.Mvc.Authorization;
+using System;
+using System.Reflection;
 
 namespace ECJ.Web.Controllers
 {
@@ -13,6 +16,14 @@ namespace ECJ.Web.Controllers
         protected ECJControllerBase()
         {
             LocalizationSourceName = ECJConsts.LocalizationSourceName;
+        }
+
+        //Code pour lister les permissions requises pour un controlleur héritant de cette classe
+        //utile pour générer la liste d'utilisateurs pouvant visionner ou non une page
+        public void GetPermissions()
+        {
+            AbpMvcAuthorizeAttribute[] MyAttributes = (AbpMvcAuthorizeAttribute[])Attribute.GetCustomAttributes(this.GetType(), typeof(AbpMvcAuthorizeAttribute));
+            LayoutController.pagePermission = MyAttributes[0];
         }
 
         protected virtual void CheckModelState()

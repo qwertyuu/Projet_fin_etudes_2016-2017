@@ -17,8 +17,8 @@
     <text name="Password" value="Mot de passe" />
     <text name="RememberMe" value="Se rappeler de moi" />
     <text name="LogIn" value="Se connecter" />
-    <text name="Event" value="Évènement" />
-    <text name="Events" value="Évènements" />
+    <text name="Event" value="Événement" />
+    <text name="Events" value="Événements" />
     <text name="Users" value="Utilisateurs" />
     <text name="Activite" value="Activité" />
 
@@ -51,6 +51,7 @@
     <text name="memo" value="Créer un Mémo" />
     <text name="Cal" value="Calculateur" />
     <text name="Memo" value="Créer un mémo" />
+    <text name="Salles" value="Salles" />
 
   </texts>
 </localizationDictionary>

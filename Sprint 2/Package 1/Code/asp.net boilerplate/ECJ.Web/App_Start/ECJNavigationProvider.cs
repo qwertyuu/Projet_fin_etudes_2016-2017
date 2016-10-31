@@ -65,6 +65,14 @@ namespace ECJ.Web
                         icon: "fa fa-thumbs-up",
                         requiresAuthentication: true
                         )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        "Salles",
+                        L("Salles"),
+                        url: "Salles",
+                        icon: "fa fa-bed",
+                        requiresAuthentication: true
+                        )
                 );
         }
 

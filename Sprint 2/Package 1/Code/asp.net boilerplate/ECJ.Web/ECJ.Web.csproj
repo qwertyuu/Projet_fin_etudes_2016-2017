@@ -726,7 +726,6 @@
     <Content Include="Views\SousEvenements\Detail.cshtml" />
     <Content Include="Views\Calculateur\Index.cshtml" />
     <Content Include="Views\SousEvenements\Ajout.cshtml" />
-    <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Soumission\Detail.cshtml" />
     <Content Include="Views\AppellOffre\Create.cshtml" />
     <Content Include="Views\AppellOffre\Delete.cshtml" />

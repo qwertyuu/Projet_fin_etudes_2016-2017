@@ -6,6 +6,8 @@ using Abp.Runtime.Session;
 using Abp.Threading;
 using ECJ.Sessions;
 using ECJ.Web.Models.Layout;
+using System.Linq;
+using Abp.Web.Mvc.Authorization;
 
 namespace ECJ.Web.Controllers
 {
@@ -15,6 +17,9 @@ namespace ECJ.Web.Controllers
         private readonly ILocalizationManager _localizationManager;
         private readonly ISessionAppService _sessionAppService;
         private readonly IMultiTenancyConfig _multiTenancyConfig;
+        DBProvider provider;
+
+        public static AbpMvcAuthorizeAttribute pagePermission;
 
         public LayoutController(
             IUserNavigationManager userNavigationManager, 
@@ -26,6 +31,7 @@ namespace ECJ.Web.Controllers
             _localizationManager = localizationManager;
             _sessionAppService = sessionAppService;
             _multiTenancyConfig = multiTenancyConfig;
+            provider = new DBProvider();
         }
 
         [ChildActionOnly]
@@ -43,7 +49,21 @@ namespace ECJ.Web.Controllers
         [ChildActionOnly]
         public PartialViewResult BottomMenu()
         {
+            if (pagePermission != null)
+            {
+                ViewBag.users = provider.ToutUtilisateurs().Where(u => u.AbpUserRoles.Any(r => provider.SelectRole(r.RoleId).AbpPermissions.Where(p => p.Name == pagePermission.Permissions[0]).Any()));
+            }
+            else
+            {
+                ViewBag.users = provider.ToutUtilisateurs();
+            }
             return PartialView("_BottomMenu", AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("Footer", AbpSession.ToUserIdentifier())));
+        }
+
+        public ActionResult ResetPerm()
+        {
+            pagePermission = null;
+            return new EmptyResult();
         }
 
         [ChildActionOnly]

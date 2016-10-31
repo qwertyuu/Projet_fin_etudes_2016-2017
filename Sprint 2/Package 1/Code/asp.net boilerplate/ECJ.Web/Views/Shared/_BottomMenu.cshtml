@@ -1,6 +1,99 @@
 ﻿@using Abp.Application.Navigation;
+@using ECJ.Web.Models;
 @model UserMenu
-@foreach (var i in Model.Items)
-{
-    <button data-toggle="modal" data-target="#MemoCreateModal" class="btn btn-primary"><i class="@i.Icon"></i> @i.DisplayName</button>
-}
+
+
+<div class="modal fade" id="MemoCreateModal" tabindex="-1" role="dialog" aria-labelledby="MemoCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="memoForm" name="memoCreateForm" role="form" novalidate class="form-validation">
+
+                <div class="modal-header">
+
+                    <h4 class="modal-title">
+                        <span>Créer un nouveau mémo</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Destinataire</label>
+                        <select name="destinataire" class="form-control" required>
+                            @if (Model.Items.Count > 0)
+                            {
+                                foreach (AbpUsers utilisateur in ViewBag.users)
+                                {
+                                    <option value="@utilisateur.UserName">@utilisateur.UserName</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" class="form-control" rows="10" cols="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div id="messageSucces" class="alert alert-success" style="display:none;">
+                            <i class="fa fa-check"></i><strong> Message envoyé</strong> avec succès.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="messageErreur" class="alert alert-danger" style="display:none;">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-ban fa-stack-2x"></i>
+                            </span>
+                            <strong> Le message</strong> n'a pas pu être envoyé.
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="envoyerMemo" class="btn btn-primary blue"><i class="fa fa-arrow-right"></i> <span>Envoyer</span></button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@L("Cancel")</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="footer-distributed">
+    <footer>
+        <div class="container">
+            <div class="footer-left">
+                @foreach (var i in Model.Items)
+                {
+                    <button data-toggle="modal" data-target="#MemoCreateModal" class="btn btn-primary"><i class="@i.Icon"></i> @i.DisplayName</button>
+                }
+                <h3>Cégep de Jonquière<span></span></h3>
+                <p class="footer-company-name">Cégep de Jonquière &copy; 2016</p>
+            </div>
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>2505, rue Saint-Hubert</span> Jonquière, Québec G7X 7W2 </p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>418 547-2191</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">cegepjonquiere@company.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>About the company</span>
+                    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+                </p>
+                <div class="footer-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</div>
+@Html.Action("ResetPerm", "Layout")

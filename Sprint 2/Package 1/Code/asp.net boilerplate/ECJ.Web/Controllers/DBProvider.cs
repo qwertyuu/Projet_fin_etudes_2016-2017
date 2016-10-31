@@ -61,6 +61,16 @@ namespace ECJ.Web.Controllers
             return null;
         }
 
+        internal AbpRoles SelectRole(int roleId)
+        {
+            return db.AbpRoles.Find(roleId);
+        }
+
+        internal List<ECJ.Web.Models.AbpUsers> ToutUtilisateurs()
+        {
+            return db.AbpUsers.Where(u => u.Id != 1).ToList();
+        }
+
         private static bool StartsWith(byte[] thisBytes, byte[] thatBytes)
         {
             for (int i = 0; i < thatBytes.Length; i += 1)

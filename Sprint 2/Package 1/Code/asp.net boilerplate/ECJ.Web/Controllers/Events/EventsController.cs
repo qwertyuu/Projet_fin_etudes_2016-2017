@@ -15,10 +15,15 @@ using System.Web;
 
 namespace ECJ.Web.Controllers
 {
-    //[AbpMvcAuthorize(PermissionNames.Pages)]
+    [AbpMvcAuthorize(PermissionNames.Pages)]
     public class EventsController : ECJControllerBase
     {
-        private PE2_OfficielEntities db = new PE2_OfficielEntities();
+        private PE2_OfficielEntities db;
+        public EventsController()
+        {
+            db = new PE2_OfficielEntities();
+            GetPermissions();
+        }
         public ActionResult Detail(int? id)
         {
             if (id == null)
