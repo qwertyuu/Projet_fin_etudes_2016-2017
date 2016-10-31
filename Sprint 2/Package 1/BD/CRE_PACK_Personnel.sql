@@ -23,6 +23,7 @@ CREATE TABLE S_personnel.tblMemo (
 	noMemo INT NOT NULL IDENTITY(1,1) 
 	,info TEXT NOT NULL
 	,statut BIT NOT NULL DEFAULT(0)
+	,lien varchar(max) NOT NULL
 	,dateEnvoi DATETIME NOT NULL DEFAULT(GETDATE())
 	,dateSupprime DATETIME  NULL
 	,expediteur BIGINT NOT NULL

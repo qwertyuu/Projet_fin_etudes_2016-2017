@@ -57,6 +57,7 @@ namespace ECJ.Web.Controllers
             {
                 ViewBag.users = provider.ToutUtilisateurs();
             }
+            ViewBag.uId = AbpSession.UserId;
             return PartialView("_BottomMenu", AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("Footer", AbpSession.ToUserIdentifier())));
         }
 

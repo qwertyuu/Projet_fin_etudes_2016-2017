@@ -456,6 +456,7 @@
     <Content Include="Views\Calculateur\Index.js" />
     <Content Include="Views\CMemo\Index.js" />
     <Content Include="Views\Events\Detail.js" />
+    <Content Include="Views\Home\Index.js" />
     <Content Include="Views\Shared\_Footer.js" />
     <Content Include="Views\SousEvenements\Detail.js" />
     <Content Include="Views\Tenants\Index.js" />
@@ -479,6 +480,7 @@
     <Compile Include="Controllers\AppelOffre\AppellOffreController.cs" />
     <Compile Include="Controllers\AppelOffre\SoumissionController.cs" />
     <Compile Include="Controllers\DBProvider.cs" />
+    <Compile Include="Controllers\LireController.cs" />
     <Compile Include="Controllers\Memo\CMemoController.cs" />
     <Compile Include="Controllers\Calculateur\CalculateurController.cs" />
     <Compile Include="Controllers\Commanditaire\CommanditaireController.cs" />
@@ -551,6 +553,7 @@
     <Compile Include="Models\AbpUsers.cs">
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Calendrier.cs" />
     <Compile Include="Models\C__MigrationHistory.cs">
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>
@@ -768,7 +771,9 @@
       <Name>ECJ.WebApi</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Lire\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

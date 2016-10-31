@@ -3,14 +3,15 @@
         $("#envoyerMemo").click(function (e) {
             $.ajax({
                 type: "POST",
-                url: 'CMemo/FirstAjax/',
-                data: { expediteur: 'testing', destinataire: 'testing', message: 'lol haha' },
+                url: '/CMemo/Send/',
+                data: { expediteur: $("#expediteur").val(), destinataire: $("#destinataire").val(), message: $("#message").val(), lien: $("#lien").val() },
                 success: function (data) {
                     console.log(data);
-                    //afficherSucces();
-                    afficherErreur();
+                    afficherSucces();
                 },
-                error: function (a) { console.log(a); }
+                error: function (data) {
+                    afficherErreur();
+                }
             });
         });
 

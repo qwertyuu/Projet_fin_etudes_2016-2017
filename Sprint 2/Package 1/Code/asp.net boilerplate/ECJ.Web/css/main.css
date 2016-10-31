@@ -176,3 +176,6 @@ img{
 #AppelComplete{
     cursor:not-allowed;
 }
+tooltip{
+    clear:both;
+}

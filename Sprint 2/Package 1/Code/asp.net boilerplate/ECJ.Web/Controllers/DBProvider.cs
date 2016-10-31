@@ -20,6 +20,36 @@ namespace ECJ.Web.Controllers
             }
         }
 
+        internal void LireMemo(int v)
+        {
+            db.tblMemo.Find(v).statut = true;
+            db.SaveChanges();
+        }
+
+        internal void CreerMemo(int expediteur, int destinataire, string message, string lien)
+        {
+            db.tblMemo.Add(new tblMemo()
+            {
+                expediteur = expediteur,
+                destinataire = destinataire,
+                info = message,
+                lien = lien,
+                dateEnvoi = DateTime.Now
+            });
+            db.SaveChanges();
+        }
+
+        internal void SupprimerMemo(int v)
+        {
+            db.tblMemo.Find(v).dateSupprime = DateTime.Now;
+            db.SaveChanges();
+        }
+
+        internal List<tblMemo> MemosUtilisateur(long userId)
+        {
+            return db.tblMemo.Where(m => m.destinataire == userId && m.dateSupprime == null).ToList();
+        }
+
         #region décodeur de type d'image depuis byte[]
         private static Dictionary<byte[], ImageFormat> imageFormatDecoders = new Dictionary<byte[], ImageFormat>()
         {

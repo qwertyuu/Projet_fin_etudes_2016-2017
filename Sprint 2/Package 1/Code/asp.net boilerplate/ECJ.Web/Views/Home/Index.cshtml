@@ -1,5 +1,13 @@
-﻿@{
+﻿@using Abp.Authorization.Users
+@using Abp.Web.Mvc.Extensions
+@using System.Web.Script.Serialization
+@using System.Text
+@{
     ViewBag.ActiveMenu = "Home"; //The menu item will be active for this page.
+}
+@section scripts
+{
+    @Html.IncludeScript("~/Views/Home/Index.js")
 }
 <h1>@L("WellcomeMessage")</h1>
 
@@ -9,43 +17,42 @@
 </div>
 
 <h3>Mémos</h3>
-<table class="table">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+<table class="table sommaireMemo table-striped table-hover">
     <thead>
         <tr>
-            <th>Expediteur</th>
+            <th>Expéditeur</th>
             <th>Informations</th>
-            <th>Date</th>
+            <th>Envoyé le</th>
+            <th>Lien</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
 
-        <tr class="warning">
-            <td>Pierre-Alexandre Pageau</td>
-            <td>Corriger l'affichage de l'interface de commanditaires</td>
-            <td>2016/10/02</td>
-            <td>
-                <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-            </td>
-        </tr>
-        <tr>
-            <td>Guillaume Gendron</td>
-            <td>Apeller la radio pour parler de l'événement de 2017</td>
-            <td>2016/09/17</td>
-            <td>
-                <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-            </td>
-        </tr>
-        <tr class="success">
-            <td>François Gabriel</td>
-            <td>Vérifier les dates des événements</td>
-            <td>2016/09/02</td>
-            <td>
-                <a href="" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-            </td>
-        </tr>
+        @foreach (ECJ.Web.Models.tblMemo m in ViewBag.memos)
+        {
+            var Etat = "warning";
+            if (m.statut)
+            {
+                Etat = "";
+            }
+            <tr class="@Etat" data-id="@m.noMemo">
+                <td>@m.AbpUsers1.UserName</td>
+                <td>@m.info</td>
+                <td>@String.Format("{0:yyyy/MM/dd HH:mm:ss}", m.dateEnvoi)</td>
+                <td> <a href="@m.lien">Accéder à la page liée au mémo</a></td>
+                <td>
+                    <button name="memo_suppr" value="@m.noMemo" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+}
 <div class="row">
     <div class="col-md-4">
         <h2>Événements</h2>

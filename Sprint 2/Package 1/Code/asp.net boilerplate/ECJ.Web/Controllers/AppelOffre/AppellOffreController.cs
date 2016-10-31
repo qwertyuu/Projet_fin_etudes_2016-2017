@@ -113,6 +113,10 @@ namespace ECJ.Web.Controllers.AppelOffre
 
                 ViewBag.PathLong = PathEx.Message;
             }
+            catch (IOException IOEx)
+            {
+                ViewBag.IO = IOEx.Message;
+            }
 
 
 

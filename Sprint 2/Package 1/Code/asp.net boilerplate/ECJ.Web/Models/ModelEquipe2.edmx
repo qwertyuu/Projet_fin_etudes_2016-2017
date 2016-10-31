@@ -637,6 +637,7 @@
           <Property Name="noMemo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="info" Type="text" Nullable="false" />
           <Property Name="statut" Type="bit" Nullable="false" />
+          <Property Name="lien" Type="varchar(max)" Nullable="false" />
           <Property Name="dateEnvoi" Type="datetime" Nullable="false" />
           <Property Name="dateSupprime" Type="datetime" />
           <Property Name="expediteur" Type="bigint" Nullable="false" />
@@ -697,8 +698,8 @@
           <Property Name="couleur" Type="char" MaxLength="6" Nullable="false" />
           <Property Name="description" Type="text" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomAgence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomAgence' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomAgence">
           <Key>
             <PropertyRef Name="noAgence" />
@@ -710,8 +711,8 @@ warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomAgence' does not have
           <Property Name="telBureau" Type="char" MaxLength="10" />
           <Property Name="telCellulaire" Type="char" MaxLength="10" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomArtiste' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomArtiste' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomArtiste">
           <Key>
             <PropertyRef Name="noArtiste" />
@@ -721,8 +722,8 @@ warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomArtiste' does not hav
           <Property Name="nomAriste" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="nomCat" Type="varchar" MaxLength="20" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomCatArtiste' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomCatArtiste' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomCatArtiste">
           <Key>
             <PropertyRef Name="noCategorie" />
@@ -732,8 +733,8 @@ warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomCatArtiste' does not 
           <Property Name="nom" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="description" Type="text" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomContrat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomContrat' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomContrat">
           <Key>
             <PropertyRef Name="noContrat" />
@@ -743,8 +744,8 @@ warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomContrat' does not hav
           <Property Name="nomStatut" Type="varchar" MaxLength="20" />
           <Property Name="lieu" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomEngagement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomEngagement' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomEngagement">
           <Key>
             <PropertyRef Name="noEngagement" />
@@ -760,8 +761,8 @@ warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomEngagement' does not 
           <Property Name="lieu" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="noContrat" Type="varchar" MaxLength="20" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomExigence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomExigence">
           <Key>
             <PropertyRef Name="noExigence" />
@@ -776,8 +777,8 @@ warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomExigence' does not ha
           <Property Name="noStatut" Type="int" Nullable="false" />
           <Property Name="noContrat" Type="varchar" MaxLength="20" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomStatut' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomStatut">
           <Key>
             <PropertyRef Name="noStatut" />
@@ -790,8 +791,8 @@ warning 6002: The table/view 'PE2_Officiel.S_Contrat.vueSomStatut' does not have
           <Property Name="couleur" Type="char" MaxLength="6" Nullable="false" />
           <Property Name="dateSupprime" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PE2_Officiel.S_evenement.vueSomCommanditaire' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_evenement.vueSomCommanditaire' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomCommanditaire">
           <Key>
             <PropertyRef Name="nomCommanditaire" />
@@ -808,8 +809,8 @@ warning 6002: The table/view 'PE2_Officiel.S_evenement.vueSomCommanditaire' does
           <Property Name="montantTotalDon" Type="decimal" Precision="38" Scale="2" />
           <Property Name="noCommanditaire" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PE2_Officiel.S_evenement.vueSomEvenement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_evenement.vueSomEvenement' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomEvenement">
           <Key>
             <PropertyRef Name="nom" />
@@ -823,8 +824,8 @@ warning 6002: The table/view 'PE2_Officiel.S_evenement.vueSomEvenement' does not
           <Property Name="description" Type="varchar(max)" />
           <Property Name="noEvenement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PE2_Officiel.S_publicite.vueSomAppelOffre' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomAppelOffre' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomAppelOffre">
           <Key>
             <PropertyRef Name="noAppelOffre" />
@@ -846,8 +847,8 @@ warning 6002: The table/view 'PE2_Officiel.S_publicite.vueSomAppelOffre' does no
           <Property Name="nomAgence" Type="varchar" MaxLength="50" />
           <Property Name="nomSoumission" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'PE2_Officiel.S_publicite.vueSomSoumission' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomSoumission">
           <Key>
             <PropertyRef Name="noSoumission" />
@@ -2892,6 +2893,7 @@ warning 6002: The table/view 'PE2_Officiel.S_publicite.vueSomSoumission' does no
           <Property Name="destinataire" Type="Int64" Nullable="false" />
           <NavigationProperty Name="AbpUsers" Relationship="PE2_OfficielModel.NO_UTILISATEUR_DESTINATAIRE" FromRole="tblMemo" ToRole="AbpUsers" />
           <NavigationProperty Name="AbpUsers1" Relationship="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR" FromRole="tblMemo" ToRole="AbpUsers" />
+          <Property Name="lien" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tblAgencePublicite">
           <Key>
@@ -4297,6 +4299,7 @@ warning 6002: The table/view 'PE2_Officiel.S_publicite.vueSomSoumission' does no
           <EntitySetMapping Name="tblMemo">
             <EntityTypeMapping TypeName="PE2_OfficielModel.tblMemo">
               <MappingFragment StoreEntitySet="tblMemo">
+                <ScalarProperty Name="lien" ColumnName="lien" />
                 <ScalarProperty Name="destinataire" ColumnName="destinataire" />
                 <ScalarProperty Name="expediteur" ColumnName="expediteur" />
                 <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />

@@ -8,16 +8,19 @@ namespace ECJ.Web.Controllers
 {
     public class CMemoController : Controller
     {
-        // GET: CMemo
-        public ActionResult Index()
-        {
-            return View();
-        }
+        DBProvider db = new DBProvider();
 
         [HttpPost]
         [Route("CMemo/FirstAjax/")]
         public ActionResult FirstAjax(string expediteur, string destinataire, string message)
         {
+            return Content(expediteur + destinataire + message);
+        }
+
+        [HttpPost]
+        public ActionResult Send(int expediteur, int destinataire, string message, string lien)
+        {
+            db.CreerMemo(expediteur, destinataire, message, lien);
             return Content(expediteur + destinataire + message);
         }
     }
