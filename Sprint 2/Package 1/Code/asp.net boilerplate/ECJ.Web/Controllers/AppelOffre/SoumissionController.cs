@@ -14,7 +14,6 @@ namespace ECJ.Web.Controllers.AppelOffre
         // GET: Soumission
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
         private DBProvider provider = new DBProvider();
-        private AppellOffreController CAppel = new AppellOffreController();
 
 
         public ActionResult Index()
@@ -30,7 +29,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblSoumission soumission = db.tblSoumission.Find(id);
+            tblSoumission soumission = provider.ReturnUneSoumi(id);
             if (soumission == null)
             {
                 return HttpNotFound();
@@ -45,7 +44,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblSoumission soumi = db.tblSoumission.Find(id);
+            tblSoumission soumi = provider.ReturnUneSoumi(id);
 
             if(soumi==null)
             {
@@ -53,7 +52,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             }
 
             soumi.statut = 1;
-            appelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "Complété").FirstOrDefault().noStatut;
+            appelOffre.noStatut = provider.ReturnStatut("Complété").noStatut;
 
             //Les autres soumissions tombent à réfuseés
             foreach(tblSoumission s in provider.RetunSoumission(appelOffre.noAppelOffre))
@@ -70,9 +69,9 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         public ActionResult Refuser(int ? id)
         {
-            tblSoumission soumi = db.tblSoumission.Find(id);
+            tblSoumission soumi =provider.ReturnUneSoumi(id);
             tblAppelOffre appelOffre = provider.SelectAppelParSoumi(id);
-            soumi.statut = 1;
+            soumi.statut = 0;
             provider.Save();
             return RedirectToAction("Details/" + appelOffre.noAppelOffre, "AppellOffre");
 

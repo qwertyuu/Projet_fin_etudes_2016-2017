@@ -47,7 +47,22 @@
     <div class="form-group">
         <label>Statut de la soumission</label>
         <div class="well well-sm">
-            @Html.DisplayFor(model => model.statut)
+            @if(Model.statut==1)
+            {
+                <span>Acceptée</span>
+            }
+            else
+            {
+                if (Model.statut == 0)
+                {
+                    <span>Réfusée</span>
+                }
+                else
+                {
+                    <span></span>
+                }
+            }
+   
         </div>
     </div>
     <br />    

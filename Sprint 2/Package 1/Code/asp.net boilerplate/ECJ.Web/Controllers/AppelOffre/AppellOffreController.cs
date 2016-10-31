@@ -10,6 +10,7 @@ using ECJ.Web.Models;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace ECJ.Web.Controllers.AppelOffre
 {
@@ -41,12 +42,8 @@ namespace ECJ.Web.Controllers.AppelOffre
             xmlnoAgencePub.InnerText = soumi.noAgencePub.ToString();
             XmlNode xmlnoAppelOffre = doc.CreateNode(XmlNodeType.Element, "noAppelOffre", "");
             xmlnoAppelOffre.InnerText = soumi.noAppelOffre.ToString();
-            XmlNode xmlStatut = doc.CreateNode(XmlNodeType.Element, "Statut", "");
-            if(soumi.statut==1)
-               xmlStatut.InnerText = "Acceptée";
-            else
-                xmlStatut.InnerText = "Réfusée";
-
+            XmlNode xmlStatut = doc.CreateNode(XmlNodeType.Element, "Statut", "");     
+             xmlStatut.InnerText = soumi.statut.ToString();
             XmlNode xmlCommentaire = doc.CreateNode(XmlNodeType.Element, "Commentaire", "");
             xmlCommentaire.InnerText = soumi.commentaire;
             XmlNode xmlSoumission = doc.CreateNode(XmlNodeType.Element, "Soumission", "");
@@ -75,24 +72,49 @@ namespace ECJ.Web.Controllers.AppelOffre
             doc.Save(filename);
         }
 
-        private void RetournerSoumissionXml(string nomSoumiXml)
+        private void RetournerSoumissionXml()
         {
-            List<tblSoumission> list = new List<tblSoumission>();
             
             XmlDocument doc = new XmlDocument();
-            doc.Load(nomSoumiXml);
-            XmlTextReader reader = new XmlTextReader(nomSoumiXml);
-            while(reader.Read())
+            //On prcoure tous les xmls contenus dans le dossier
+            try
             {
-                tblSoumission soumi = new tblSoumission
+                var files = from file in Directory.EnumerateFiles("//deptinfo420/P2016_Equipe2/Soumission_retour", "*.xml", SearchOption.AllDirectories)
+                            select new
+                            {
+                                file
+                            };
+               foreach(var f in files)
                 {
-                    noSoumission = Convert.ToInt32(reader.Value),
-                    noSoumissionAgence = reader.Value,
-                    nom = reader.Value,
-                    statut = Convert.ToByte(reader.Value),
-                    noAgencePub = Convert.ToInt32(reader.Value)
-                };
+                    doc.Load(f.file);
+                    XmlNode racine = doc.SelectSingleNode("SoumissionAgence");
+                    XmlNode soumission = racine.SelectSingleNode("Soumission");
+                        tblSoumission soumi = provider.ReturnUneSoumi(Convert.ToInt32(soumission["NoSoumission"].InnerText));
+                        if (soumi != null)
+                        {
+                            soumi.noSoumissionAgence = soumission["noSoumissionAgence"].InnerText;
+                            soumi.nom = soumission["Nom"].InnerText;
+                            soumi.prix = Convert.ToDecimal(soumission["Prix"].InnerText);
+                            //soumi.noAgencePub = Convert.ToInt32(soumission["noAgencePub"].InnerText);
+                            //soumi.noAppelOffre = Convert.ToInt32(soumission["noAppelOffre"].InnerText);
+                            //soumi.statut = Convert.ToByte(soumission["Statut"].InnerText);
+                            soumi.commentaire = soumission["Commentaire"].InnerText;
+                            provider.Save();
+                        }
+                }                   
+                
             }
+            catch (UnauthorizedAccessException UAEx)
+            {
+                ViewBag.Autorisation = UAEx.Message;
+            }
+            catch (PathTooLongException PathEx)
+            {
+
+                ViewBag.PathLong = PathEx.Message;
+            }
+
+
 
 
 
@@ -105,6 +127,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             {
                 soumi.noAgencePub = noAgenP;
                 soumi.noAppelOffre = noApp;
+                soumi.statut = null;
                 soumi.noStatut = noSat;
                 soumi.nom = nomSoumi;
                 provider.Save();
@@ -112,7 +135,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             }
             else
             {
-                var soumission = new tblSoumission {nom=nomSoumi, noAgencePub = noAgenP, noAppelOffre = noApp, noStatut = noSat };
+                var soumission = new tblSoumission {nom=nomSoumi, noAgencePub = noAgenP, noAppelOffre = noApp, statut=null, noStatut=noSat };
                 provider.InsertSoumission(soumission);
                 return soumission;
 
@@ -160,6 +183,9 @@ namespace ECJ.Web.Controllers.AppelOffre
                              dateEnvoi = a.Key.dateEnvoi,
                              couleur = a.Key.couleur
                          }).OrderBy(a => a.noStatut);
+
+            //Retourner les soumission du xml vers la bad
+            RetournerSoumissionXml();
             
             return View(appelGoupBy.ToList());
         }

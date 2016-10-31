@@ -250,6 +250,16 @@ namespace ECJ.Web.Controllers
                    select a).FirstOrDefault();
         }
 
+        public tblStatutAppelOffre ReturnStatut(string nom)
+        {
+            return db.tblStatutAppelOffre.Where(s => s.nom == nom).FirstOrDefault();
+        }
+
+        public tblSoumission ReturnUneSoumi(int ?id )
+        {
+            return db.tblSoumission.Find(id);
+        }
+
 
     }
 }
