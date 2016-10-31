@@ -20,13 +20,13 @@
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="nbBillet">Billets</label>
-                                <input type="number" class="form-control" id="nbBillet" onblur="calculBillet()">
+                                <input type="number" max="@ViewBag.Salle.billet" class="form-control" id="nbBillet" onblur="calculBillet()">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="prixBillet">Prix</label>
-                                <input type="number" class="form-control" id="prixBillet" onblur="calculBillet()">
+                                <input type="number" max="@ViewBag.Salle.billetVIP" class="form-control" id="prixBillet" onblur="calculBillet()">
                             </div>
                         </th>
                         <th>
@@ -120,9 +120,9 @@
                     </tr>
                     @foreach (var f in ViewBag.Forfait)
                     {
-                        <tr>
-                            <th>@f.nom</th>
-                        </tr>
+                    <tr>
+                        <th>@f.nom</th>
+                    </tr>
                     }
                 </tbody>
             </table>
@@ -318,38 +318,23 @@
         </div>
     </div>
 </form>
-
+jasfoaofaoifioafjafsoiu
 <script>
     var maxBillet = @ViewBag.Salle.billet;
     var maxVIP = @ViewBag.Salle.billetVIP;
-    var chkSalle = false;
-    var chkAge = false;
-    var chkRed = false;
-    var test;
+    var chkSalle = false,chkAge = false,chkRed = false;
 
-    alert("1");
-
-    @{string test1 = "allo";}
     @foreach(var f in ViewBag.Forfait)
     {
         if (f.noForfait == 1)
         {
-            test1 += " 2";
-                    @:chkAge = true;
-                        }
+             @:chkAge = true;
+        }
         if (f.noForfait == 2) {
-           test1 += " coucou";
-                @:chkSalle = true;
-                            }
+             @:chkSalle = true;
+        }
         if (f.noForfait == 3) {
-            test1 += " bonjour";
             @:chkRed =true;
-                            }
+        }
     }
-    @*@:test = @:test1;*@
-    alert(test);
-    @*T[] myArray = System.Linq.Enumerable.ToArray(@ViewBag.Forfait);*@
-    alert("2");
-    @*var tab = @ViewBag.Forfait.noForfait;*@
-    alert("3");
 </script>

@@ -219,6 +219,8 @@ function positifBilletCheck() {
     if ($("#nbBillet").val() <= -1 || $("#nbBilletVIP").val() <= -1) {
         alert("Veuiller entrer un nombre de billet valide.");
 
+        $("#nbBillet").val(0);
+        $("#nbBilletVIP").val(0);
         return false
     }
     else {
@@ -227,14 +229,16 @@ function positifBilletCheck() {
 } //Vérifie que le nombres de billets et billets VIP entrés soient positifs et retourne un bool
 
 function billetMaxCheck() {
-    if (parseInt($("#nbBillet").val()) > billetMax || $("#nbBilletVIP").val() > VIPMax) {
-        alert("Veuiller entrer un nombre de billet inférieur ou égal au nombre de places totales dans la salle.");
 
-        return false
-    }
-    else {
-        return true
-    }
+        if (parseInt($("#nbBillet").val()) > billetMax) {
+            $("#nbBillet").val(billetMax);
+            return false;
+        }
+        if ($("#nbBilletVIP").val() > VIPMax) {
+            $("#nbBilletVIP").val(VIPMax);
+            return false;
+        }
+return true;
 }//Vérifie que les nombres de billets et billets VIP entrés soient inférieur que le nombre de places dans la salle.
 
 function round_argent(value) {
@@ -258,4 +262,4 @@ function setForfait(chkSalle, chkAge, chkRed) {
     if (chkRed == false) {
         $("#reduction").attr("hidden", "true");
     }
-}
+} //Reçoit les bool a propos des forfaits du sous-event et enlève ceux qui sont a "false"
