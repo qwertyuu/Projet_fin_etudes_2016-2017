@@ -11,7 +11,8 @@ namespace ECJ.Web.Controllers.Activite
 {
     public class ActiviteController : ECJControllerBase
     {
-        private PE2_OfficielEntities db = new PE2_OfficielEntities();
+        //private PE2_OfficielEntities db = new PE2_OfficielEntities();
+        DBProvider db = new DBProvider();
 
         public ActionResult Ajout()
         {
@@ -37,9 +38,7 @@ namespace ECJ.Web.Controllers.Activite
                     tblActivite.noEvenement = Convert.ToInt32(idEvent);
                     tblActivite.noSousEvenement = null;
                 }
-
-                db.tblActivite.Add(tblActivite);
-                db.SaveChanges();
+                db.InsertActivite(tblActivite);
                 return RedirectToAction("../" + retour);
             }
 
@@ -52,7 +51,7 @@ namespace ECJ.Web.Controllers.Activite
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblActivite activite = db.tblActivite.Find(id);
+            tblActivite activite = db.ReturnActivite((int)id);
             if (activite == null)
             {
                 return HttpNotFound();
@@ -66,9 +65,7 @@ namespace ECJ.Web.Controllers.Activite
 
             if (id != null)
             {
-                var elementAModifier = db.tblActivite.Find((int)id);
-                elementAModifier.dateSupprime = DateTime.Now;
-                db.SaveChanges();
+                db.SupprimerActivite((int)id);
             }
             return RedirectToAction(retour);
         }
@@ -79,15 +76,9 @@ namespace ECJ.Web.Controllers.Activite
 
             if (id != null)
             {
-                var elementAModifier = db.tblActivite.Find((int)id);
-                if (elementAModifier.etat == 1)
-                    elementAModifier.etat = 0;
-                else
-                    elementAModifier.etat = 1;
-
-                db.SaveChanges();
+                db.ToggleEtatActivite((int)id);
             }
-            return RedirectToAction("../" + retour);
+            return Redirect(retour);
         }
 
         public ActionResult Modifier(int? id)
@@ -96,8 +87,7 @@ namespace ECJ.Web.Controllers.Activite
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var elementAModifier = db.tblActivite.Find((int)id);
-
+            tblActivite elementAModifier = db.ReturnActivite((int)id);
             if (elementAModifier == null)
             {
                 return HttpNotFound();
@@ -115,19 +105,17 @@ namespace ECJ.Web.Controllers.Activite
 
             if (ModelState.IsValid)
             {
-                if(db.tblActivite.Find(tblActivite.noActivite).noEvenement != null)
-                    tblActivite.noEvenement = db.tblActivite.Find(tblActivite.noActivite).noEvenement;
+                if(db.ReturnActivite(tblActivite.noActivite).noEvenement != null)
+                    tblActivite.noEvenement = db.ReturnActivite(tblActivite.noActivite).noEvenement;
                 else
-                    tblActivite.noSousEvenement = db.tblActivite.Find(tblActivite.noActivite).noSousEvenement;
-
-                db.Entry(db.tblActivite.Find(tblActivite.noActivite)).CurrentValues.SetValues(tblActivite);
-                db.SaveChanges();
+                    tblActivite.noSousEvenement = db.ReturnActivite(tblActivite.noActivite).noSousEvenement;
+                db.UpdateActivite(tblActivite);
 
                 return RedirectToAction("../"+retour);
             }
 
-            ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblActivite.noEvenement);
-            ViewBag.noSousEvenement = new SelectList(db.tblSousEvenement, "noSousEvenement", "nom", tblActivite.noSousEvenement);
+            ViewBag.noEvenement = new SelectList(db.ToutEvenement(), "noEvenement", "nom", tblActivite.noEvenement);
+            ViewBag.noSousEvenement = new SelectList(db.ToutSousEvenement(), "noSousEvenement", "nom", tblActivite.noSousEvenement);
 
             return View(tblActivite);
         }

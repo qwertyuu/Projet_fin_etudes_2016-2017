@@ -1,6 +1,7 @@
 ﻿@using Abp.Web.Mvc.Extensions
 @using System.Text
 @using ECJ.Web.Models
+@using System.Runtime.Serialization.Json
 @{
     ViewBag.Title = "Detail";
     @*Service, Salle, Forfait, Engagement*@
@@ -189,32 +190,52 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @{StringBuilder dates = new StringBuilder(); }
-                        @foreach (var a in Model.Item1.tblActivite.Where(element => element.dateSupprime == null))
-                        {
-                            dates.Append("{ date: \"" + String.Format("{0:yyyy-MM-dd}", a.dateCreation) + "\" },");
-                            <tr>
-                                <td>@a.nomResponsable</td>
-                                <td>@a.tache</td>
-                                <td>@a.detail</td>
-                                <td>@String.Format("{0:yyyy/MM/dd}", a.dateCreation)</td>
-                                <td>
-                                    @if (a.etat == 1)
-                                    {
-                                        <a href="/Activite/ChangeEtat/@a.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-warning" title="Changer pour non-réalisé"><i class="fa fa-times fa-lg"></i></a>
+                        @{
+                            List<ECJ.Web.Models.Calendrier> cals = new List<ECJ.Web.Models.Calendrier>();
+                            Dictionary<string, string> actInfo = new Dictionary<string, string>();
 
-                                    }
-                                    else
-                                    {
-                                        <a href="/Activite/ChangeEtat/@a.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-success" title="Changer pour réalisé"><i class="fa fa-check fa-lg"></i></a>
-                                    }
-                                    <a href="/Activite/Detail/@a.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                                    <a href="/Activite/Edit/@a.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                                    <a href="/Activite/Delete/@a.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-                                </td>
-                            </tr>
+                            foreach (var activite in Model.Item1.tblActivite.Where(element => element.dateSupprime == null))
+                            {
+                                var date = String.Format("{0:yyyy-MM-dd}", activite.dateCreation);
+                                var nomAct = activite.tache;// + ": " + ((activite.etat == 1) ? "Réalisé" : "Non réalisé");
+                                if (actInfo.ContainsKey(date))
+                                {
+                                    actInfo[date] += ",<br>" + nomAct;
+                                }
+                                else
+                                {
+                                    actInfo[date] = nomAct;
+                                }
+                                <tr>
+                                    <td>@activite.nomResponsable</td>
+                                    <td>@activite.tache</td>
+                                    <td>@activite.detail</td>
+                                    <td>@String.Format("{0:yyyy/MM/dd}", activite.dateCreation)</td>
+                                    <td>
+                                        @if (activite.etat == 1)
+                                        {
+                                            <a href="~/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-warning" title="Changer pour non-réalisé"><i class="fa fa-times-circle fa-lg"></i></a>
+
+                                        }
+                                        else
+                                        {
+                                            <a href="~/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-success" title="Changer pour réalisé"><i class="fa fa-check-square fa-lg"></i></a>
+                                        }
+                                        <a href="/Activite/Detail/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                        <a href="/Activite/Modifier/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                        <a href="/Activite/Supprimer/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+
+                                    </td>
+                                </tr>
+                                        }
+
+                                        foreach (var d in actInfo)
+                                        {
+                                            cals.Add(new ECJ.Web.Models.Calendrier() { date = d.Key, badge = true, title = d.Value });
+                                        }
                         }
                     </tbody>
+
                 </table>
             </div>
         </div>
@@ -227,9 +248,17 @@
     <a href="@Request.QueryString["return"]" class="btn btn-default pull-right" data-dismiss="modal">Retour à l'événement parent</a>
 </div>
 @{
-    if (dates.Length > 0)
+    if (cals.Count > 0)
     {
-        <script>var dates_calendrier = @(new HtmlString("[" + dates.ToString().Substring(0, dates.ToString().Length - 1) + "]"));</script>
+        string dateCal = "[]";
+        using (MemoryStream ms = new MemoryStream())
+        {
+
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(ECJ.Web.Models.Calendrier[]));
+            ser.WriteObject(ms, cals.ToArray());
+            dateCal = Encoding.UTF8.GetString(ms.ToArray());
+        }
+        <script>var dates_calendrier = @(new HtmlString(dateCal));</script>
     }
     else
     {

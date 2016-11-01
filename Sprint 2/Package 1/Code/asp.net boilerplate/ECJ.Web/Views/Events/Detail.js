@@ -4,6 +4,7 @@
     });
     $('body').on('DOMNodeInserted', '.event-styled', function () {
         $(this).data("container", "body");
+        $(this).data("html", "true");
         $(this).tooltip({ placement: "top" });
     });
 });

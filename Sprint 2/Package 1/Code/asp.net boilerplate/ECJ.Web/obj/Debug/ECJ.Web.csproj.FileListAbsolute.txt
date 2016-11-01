@@ -548,3 +548,4 @@ C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprin
 C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\obj\Debug\ECJ.Web.pdb
 C:\Users\utilisateur.DESKTOP-H9OHE1F\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\bin\fr\EntityFramework.resources.dll
 C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\bin\fr\EntityFramework.resources.dll
+C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\bin\fr\EntityFramework.resources.dll

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Data.SqlClient;
 using System.Web;
+using System.Collections;
 
 namespace ECJ.Web.Controllers
 {
@@ -59,6 +60,11 @@ namespace ECJ.Web.Controllers
             { new byte[]{ 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A }, ImageFormat.Png },
             { new byte[]{ 0xff, 0xd8 }, ImageFormat.Jpeg }
         };
+        #endregion
+        internal tblActivite ReturnActivite(int id)
+        {
+            return db.tblActivite.Find(id);
+        }
 
         public static ImageFormat GetContentType(byte[] imageBytes)
         {
@@ -91,6 +97,27 @@ namespace ECJ.Web.Controllers
             return null;
         }
 
+        internal void ToggleEtatActivite(int id)
+        {
+            var a = db.tblActivite.Find(id);
+            if (a.etat == 0)
+            {
+                a.etat = 1;
+            }
+            else
+            {
+                a.etat = 0;
+            }
+            db.SaveChanges();
+        }
+
+        internal void SupprimerActivite(int id)
+        {
+            var a = db.tblActivite.Find(id);
+            a.dateSupprime = DateTime.Now;
+            db.SaveChanges();
+        }
+
         internal AbpRoles SelectRole(int roleId)
         {
             return db.AbpRoles.Find(roleId);
@@ -99,6 +126,12 @@ namespace ECJ.Web.Controllers
         internal List<ECJ.Web.Models.AbpUsers> ToutUtilisateurs()
         {
             return db.AbpUsers.Where(u => u.Id != 1).ToList();
+        }
+
+        internal void UpdateActivite(tblActivite tblActivite)
+        {
+            db.Entry(db.tblActivite.Find(tblActivite.noActivite)).CurrentValues.SetValues(tblActivite);
+            db.SaveChanges();
         }
 
         private static bool StartsWith(byte[] thisBytes, byte[] thatBytes)
@@ -112,7 +145,16 @@ namespace ECJ.Web.Controllers
             }
             return true;
         }
-        #endregion
+
+        internal IEnumerable ToutSousEvenement()
+        {
+            return db.tblSousEvenement.Where(se => se.dateSupprime == null);
+        }
+
+        internal IEnumerable ToutEvenement()
+        {
+            return db.tblEvenement.Where(e => e.dateSupprime == null);
+        }
 
 
         //Requête sur la table tblAppelOffre
