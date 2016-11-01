@@ -484,6 +484,7 @@
     <Compile Include="Controllers\Memo\CMemoController.cs" />
     <Compile Include="Controllers\Calculateur\CalculateurController.cs" />
     <Compile Include="Controllers\Commanditaire\CommanditaireController.cs" />
+    <Compile Include="Controllers\Salles\SallesController.cs" />
     <Compile Include="Controllers\SousEvents\SousEvenementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
@@ -746,6 +747,7 @@
     <Content Include="Views\Activite\Detail.cshtml" />
     <Content Include="Views\Shared\_BottomMenu.cshtml" />
     <Content Include="Views\Activite\Modifier.cshtml" />
+    <Content Include="Views\Salles\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "IndexSalles";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Salles</title>
+</head>
+<body>
+
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span>Liste des salles.</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prix</th>
+                    <th>Billets standard</th>
+                    <th>Billets VIP</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in ViewBag.Salle)
+                {
+                    <tr>
+                        <td>@s.nomSalle</td>
+                        <td>@s.prix$</td>
+                        <td>@s.billet</td>
+                        <td>@s.billetVIP</td>
+                        <td>
+                            <a href="/Salles/Details/@s.noSalle" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

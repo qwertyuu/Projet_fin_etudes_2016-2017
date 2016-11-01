@@ -10,7 +10,7 @@ using ECJ.Web.Models;
 
 namespace ECJ.Web.Controllers
 {
-    public class CalculateurController : Controller
+    public class CalculateurController : ECJControllerBase
     {
         DBProvider db;
         public CalculateurController()

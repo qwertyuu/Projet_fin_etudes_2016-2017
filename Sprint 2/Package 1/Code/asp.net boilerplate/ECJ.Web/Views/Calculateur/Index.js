@@ -25,7 +25,7 @@ function calculBillet() {
 
     var prixBillet;
 
-    if (positifBilletCheck() == true && billetMaxCheck() == true) {
+    if (billetMaxCheck() == true) {
         nbBillet = $("#nbBillet").val();
         prixBillet = $("#prixBillet").val();
 
@@ -44,7 +44,7 @@ function calculBilletVIP() {
 
     var prixBilletVIP;
 
-    if (positifBilletCheck() == true && billetMaxCheck() == true) {
+    if (billetMaxCheck() == true) {
         nbBilletVIP = $("#nbBilletVIP").val();
         prixBilletVIP = $("#prixBilletVIP").val();
 
@@ -74,13 +74,13 @@ function calculSouperSpectacle() {
         return totalSouper;
     }
     else {
-        alert("Il doit y avoir un nombre de billets plus petit que le nombre total de billet");
+        $("#nbBilletSouper").val(0);
         return 0;
     }
 } //Calcule le prix des soupers spectacles après avoir vérifié que les données entrées soient bonnes
 
 function calculRabaisAge() {
-    if (pourcentCheck() == true && ratioCheck() == true) {
+    if (ratioCheck() == true) {
         var jeune = parseFloat($("#JeunePourcent").val()) / 100;
         var adulte = parseFloat($("#AdultePourcent").val()) / 100;
         var aine = parseFloat($("#AinePourcent").val()) / 100;
@@ -116,6 +116,7 @@ function calculPrixReduit() {
     
     if ($("#nbBilletGratuit").val() != "") {
         nbBilletGratuit = parseFloat($("#nbBilletGratuit").val());
+        checkNbBilletReduction();
     }
     else {
         nbBilletGratuit = 0;
@@ -123,6 +124,7 @@ function calculPrixReduit() {
 
     if ($("#nbBilletPreVente").val() != "") {
         nbBilletPreVente = parseFloat($("#nbBilletPreVente").val());
+        checkNbBilletReduction();
     }
     else {
         nbBilletPreVente = 0;
@@ -131,6 +133,7 @@ function calculPrixReduit() {
     if (checkRabaisCustom1 == true) {
         TotBilletRabaisCustom1 = parseFloat($("#NbBilletRabaisCustom1").val());
         TotBilletRabaisCustom1 = (TotBilletRabaisCustom1 * (PourcentRabaisCustom1 / 100));
+        checkNbBilletReduction();
     }
     else {
         TotBilletRabaisCustom1 = 0;
@@ -139,17 +142,18 @@ function calculPrixReduit() {
     if (checkRabaisCustom2 == true) {
         TotBilletRabaisCustom2 = parseFloat($("#NbBilletRabaisCustom2").val());
         TotBilletRabaisCustom2 = (TotBilletRabaisCustom2 * (PourcentRabaisCustom2 / 100));
+        checkNbBilletReduction();
     }
     else {
         TotBilletRabaisCustom2 = 0;
     }
 
-        var TotBilletGratuit = (nbBilletGratuit * PrixMoyen)
-        var TotBilletPreVente = (nbBilletPreVente * PrixMoyen) * 0.25
+    var TotBilletGratuit = (nbBilletGratuit * PrixMoyen)
+    var TotBilletPreVente = (nbBilletPreVente * PrixMoyen) * 0.25
 
-        total = TotBilletGratuit + TotBilletPreVente
-        round_argent(total);
-        return total;
+    total = TotBilletGratuit + TotBilletPreVente
+    round_argent(total);
+    return total;
 }  //Calcule la section des prix réduits
 
 function Calcultotal() {
@@ -162,18 +166,25 @@ function Calcultotal() {
 } //Calcule le montant total et l'envoie 
 
 function pourcentCheck() {
-    if ($("#JeunePourcent").val() > 101 || $("#JeunePourcent").val() < -1 || $("#AdultePourcent").val() > 101 || $("#AdultePourcent").val() < -1 || $("#AinePourcent").val() > 101 || $("#AinePourcent").val() < -1) {
-        alert("Veuiller entrer un pourcentage de rabais valide.");
-
-        return false
+    if ($("#JeunePourcent").val() < -1 ) {
+        $("#JeunePourcent").val(0);
     }
-        //if (parseInt($("#RatioJeune").val()) + parseInt($("#RatioAdulte").val()) + parseInt($("#RatioAine").val()) == 100) {
-
-        //}
-    else {
-        return true
+    if ($("#AdultePourcent").val() < -1 ) {
+        $("#AdultePourcent").val(0);
     }
-} //Vérifie que les % des âges sont Positif et moins que 100 et retourne un bool
+    if ($("#AinePourcent").val() < -1) {
+        $("#AinePourcent").val(0);
+    }
+    if ($("#JeunePourcent").val() > 101) {
+        $("#JeunePourcent").val(100);
+    }
+    if ($("#AdultePourcent").val() > 101) {
+        $("#AdultePourcent").val(100);
+    }
+    if ($("#AinePourcent").val() > 101) {
+        $("#AinePourcent").val(100);
+    }
+} //Vérifie que les % des âges sont Positif et moins que 100
 
 function ratioCheck() {
     if ($("#RatioJeune").val() > -1 && $("#RatioJeune").val() < 101 || $("#RatioAdulte").val() > -1 && $("#RatioAdulte").val() < 101 || $("#RatioAdulte").val() > -1 && $("#RatioAine").val() < 101) {
@@ -216,30 +227,54 @@ function checkRabaisCustom2() {
 }// vérifie si le rabais custom #2 est rempli et ensuite vérifie le %
 
 function positifBilletCheck() {
-    if ($("#nbBillet").val() <= -1 || $("#nbBilletVIP").val() <= -1) {
+    if ($("#nbBillet").val() <= -1) {
         alert("Veuiller entrer un nombre de billet valide.");
 
         $("#nbBillet").val(0);
+    }
+    if (($("#nbBilletVIP").val() <= -1)) {
         $("#nbBilletVIP").val(0);
-        return false
     }
-    else {
-        return true
-    }
+    return true;
 } //Vérifie que le nombres de billets et billets VIP entrés soient positifs et retourne un bool
+
+function checkNbBilletReduction() {
+    if (parseInt($("#nbBilletGratuit").val()) > TotalBillet) {
+        $("#nbBilletGratuit").val(TotalBillet);
+    }
+    if (parseInt($("#nbBilletPreVente").val()) > TotalBillet) {
+        $("#nbBilletPreVente").val(TotalBillet);
+    }
+    if (parseInt($("#NbBilletRabaisCustom1").val()) > TotalBillet) {
+        $("#NbBilletRabaisCustom1").val(TotalBillet);
+    }
+    if (parseInt($("#NbBilletRabaisCustom2").val()) > TotalBillet) {
+        $("#NbBilletRabaisCustom2").val(TotalBillet);
+    }
+    if (parseInt($("#nbBilletGratuit").val()) < 0) {
+        $("#nbBilletGratuit").val(0);
+    }
+    if (parseInt($("#nbBilletPreVente").val()) < 0) {
+        $("#nbBilletPreVente").val(0);
+    }
+    if (parseInt($("#NbBilletRabaisCustom1").val()) < 0) {
+        $("#nbBilletGratuit").val(0);
+    }
+    if (parseInt($("#NbBilletRabaisCustom2").val()) < 0) {
+        $("#nbBilletGratuit").val(0);
+    }
+}//Vérifie le nombre de billets dans les cases de réduction
 
 function billetMaxCheck() {
 
-        if (parseInt($("#nbBillet").val()) > billetMax) {
-            $("#nbBillet").val(billetMax);
-            return false;
-        }
-        if ($("#nbBilletVIP").val() > VIPMax) {
-            $("#nbBilletVIP").val(VIPMax);
-            return false;
-        }
-return true;
-}//Vérifie que les nombres de billets et billets VIP entrés soient inférieur que le nombre de places dans la salle.
+    if (parseInt($("#nbBillet").val()) >= billetMax) {
+        $("#nbBillet").val(billetMax);
+    }
+    if ($("#nbBilletVIP").val() >= VIPMax) {
+        $("#nbBilletVIP").val(VIPMax);
+    }
+    return true;
+}//Vérifie que les nombres de billets et billets VIP entrés soient inférieur ou égaux au nombre de places dans la salle.
 
 function round_argent(value) {
     var decimals = 2
