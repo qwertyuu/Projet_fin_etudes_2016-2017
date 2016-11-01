@@ -25,6 +25,5 @@ namespace ECJ.Web.Models
         public string nomStatut { get; set; }
         public string couleur { get; set; }
         public string nomAgence { get; set; }
-        public string nomSoumission { get; set; }
     }
 }

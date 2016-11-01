@@ -14,7 +14,6 @@ namespace ECJ.Web.Models
     
     public partial class vueSomSoumission
     {
-        public string nomSoumission { get; set; }
         public Nullable<decimal> prix { get; set; }
         public string nomAppelOffre { get; set; }
         public string commentaire { get; set; }

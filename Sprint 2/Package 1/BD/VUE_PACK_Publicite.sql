@@ -7,7 +7,7 @@ USE PE2_Officiel
 GO
 
 CREATE VIEW  S_publicite.vueSomAppelOffre WITH SCHEMABINDING AS
-SELECT  ao.[noAppelOffre], ao.[nom] as nomAppelOffre ,ao.[dateRequis],ao.[dateEnvoi],CAST(ao.[description] AS VARCHAR(MAX)) description,ao.[dateSupprime],even.nom as nomEvent,ao.[noStatut], sta.nom as nomStatut, sta.couleur, agen.nom AS nomAgence,soumi.nom AS nomSoumission
+SELECT  ao.[noAppelOffre], ao.[nom] as nomAppelOffre ,ao.[dateRequis],ao.[dateEnvoi],CAST(ao.[description] AS VARCHAR(MAX)) description,ao.[dateSupprime],even.nom as nomEvent,ao.[noStatut], sta.nom as nomStatut, sta.couleur, agen.nom AS nomAgence
 FROM S_publicite.tblAppelOffre AS ao  
 LEFT JOIN S_publicite.tblStatutAppelOffre AS sta
 ON ao.noStatut=sta.noStatut
@@ -23,7 +23,7 @@ PRINT 'Création de la vue reliée a l''affichage du sommaire appel offre'
 
 GO
 CREATE VIEW S_publicite.vueSomSoumission WITH SCHEMABINDING AS
-SELECT soumi.nom as nomSoumission,soumi.prix,appelOfrre.nom as nomAppelOffre, soumi.commentaire, soumi.noSoumission
+SELECT soumi.prix,appelOfrre.nom as nomAppelOffre, soumi.commentaire, soumi.noSoumission
 FROM S_publicite.tblSoumission soumi
 LEFT JOIN S_publicite.tblAppelOffre appelOfrre
 ON soumi.noAppelOffre=appelOfrre.noAppelOffre

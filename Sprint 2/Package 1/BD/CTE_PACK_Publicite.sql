@@ -32,8 +32,7 @@ GO
 ALTER TABLE S_publicite.tblSoumission ADD
 CONSTRAINT NO_APPEL_OFFRE_NO_AGENCE_PUB_PK PRIMARY KEY(noSoumission),
 CONSTRAINT APPEL_OFFRE_FK FOREIGN Key(noAppelOffre) REFERENCES S_publicite.tblAppelOffre(noAppelOffre),
-CONSTRAINT AGENCE_PUB_FK FOREIGN Key(noAgencePub) REFERENCES S_publicite.tblAgencePublicite(noAgencePub),
-CONSTRAINT STATUT_APPEL_OFFRE_AGENCE_FK FOREIGN Key(noStatut) REFERENCES S_publicite.tblStatutAppelOffre(noStatut)
+CONSTRAINT AGENCE_PUB_FK FOREIGN Key(noAgencePub) REFERENCES S_publicite.tblAgencePublicite(noAgencePub)
 PRINT 'FIN des contraintes de la table tblSoumission'
 GO
 

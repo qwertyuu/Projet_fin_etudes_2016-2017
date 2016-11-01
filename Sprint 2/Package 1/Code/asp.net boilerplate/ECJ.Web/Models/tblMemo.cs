@@ -17,11 +17,11 @@ namespace ECJ.Web.Models
         public int noMemo { get; set; }
         public string info { get; set; }
         public bool statut { get; set; }
+        public string lien { get; set; }
         public System.DateTime dateEnvoi { get; set; }
         public Nullable<System.DateTime> dateSupprime { get; set; }
         public long expediteur { get; set; }
         public long destinataire { get; set; }
-        public string lien { get; set; }
     
         public virtual AbpUsers AbpUsers { get; set; }
         public virtual AbpUsers AbpUsers1 { get; set; }

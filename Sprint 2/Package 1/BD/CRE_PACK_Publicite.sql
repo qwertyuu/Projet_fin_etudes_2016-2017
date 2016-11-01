@@ -55,13 +55,11 @@ PRINT 'STATUT RÉUSSI'
 CREATE TABLE S_publicite.tblSoumission (
     noSoumission INT NOT NULL IDENTITY(1,1)
 	,noSoumissionAgence varchar(15)  NULL
-	,nom varchar(50) NULL
 	,prix DECIMAL(19, 2) DEFAULT(0.00)
 	,statut tinyint  NULL
 	,commentaire TEXT 
     ,noAgencePub INT NOT NULL
 	,noAppelOffre INT NOT NULL 
-	,noStatut INT NOT NULL
     ,dateSupprime DATETIME 
 	);
 	

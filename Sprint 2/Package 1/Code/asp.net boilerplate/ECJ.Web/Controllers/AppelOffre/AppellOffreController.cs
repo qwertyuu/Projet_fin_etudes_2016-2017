@@ -14,7 +14,7 @@ using System.IO;
 
 namespace ECJ.Web.Controllers.AppelOffre
 {
-    public class AppellOffreController : Controller
+    public class AppellOffreController : ECJControllerBase
     {
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
         SqlConnection conn = new SqlConnection();
@@ -28,12 +28,12 @@ namespace ECJ.Web.Controllers.AppelOffre
 
        
         //--Gestion de la création du xml d'une soumision.-----
-        public XmlNode CrerUneSoumissionXml(XmlDocument doc, tblSoumission soumi)
+        public XmlNode CrerUneSoumissionXml(XmlDocument doc, tblSoumission soumi, string nomAppelOffre)
         {
             XmlNode xmlnoSoumi = doc.CreateNode(XmlNodeType.Element, "NoSoumission", "");
             xmlnoSoumi.InnerText = soumi.noSoumission.ToString();
             XmlNode xmlNom = doc.CreateNode(XmlNodeType.Element, "Nom", "");
-            xmlNom.InnerText = soumi.nom;
+            xmlNom.InnerText = nomAppelOffre;
             XmlNode xmlNoSoumiAgence = doc.CreateNode(XmlNodeType.Element, "noSoumissionAgence", "");
             xmlNom.InnerText = soumi.noSoumissionAgence;
             XmlNode xmlPrix = doc.CreateNode(XmlNodeType.Element, "Prix", "");
@@ -62,14 +62,31 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
-        private void CreateSoumissionXml(tblSoumission soumi)
+        private void CreateSoumissionXml(tblSoumission soumi,string nomAppelOffre)
         {
             XmlDocument doc = new XmlDocument();
             XmlNode Racine = doc.CreateNode(XmlNodeType.Element, "SoumissionAgence", "");
             doc.AppendChild(Racine);
-            Racine.AppendChild(CrerUneSoumissionXml(doc, soumi));
-            string filename = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission" + soumi.noSoumission + ".xml";
-            doc.Save(filename);
+            Racine.AppendChild(CrerUneSoumissionXml(doc, soumi, nomAppelOffre));
+            try
+            {
+                string filename = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission" + soumi.noSoumission + ".xml";
+                doc.Save(filename);
+
+            }
+            catch (UnauthorizedAccessException UAEx)
+            {
+                ViewBag.Autorisation = UAEx.Message;
+            }
+            catch (PathTooLongException PathEx)
+            {
+
+                ViewBag.PathLong = PathEx.Message;
+            }
+            catch (IOException IOEx)
+            {
+                ViewBag.IO = IOEx.Message;
+            }
         }
 
         private void RetournerSoumissionXml()
@@ -93,7 +110,6 @@ namespace ECJ.Web.Controllers.AppelOffre
                         if (soumi != null)
                         {
                             soumi.noSoumissionAgence = soumission["noSoumissionAgence"].InnerText;
-                            soumi.nom = soumission["Nom"].InnerText;
                             soumi.prix = Convert.ToDecimal(soumission["Prix"].InnerText);
                             //soumi.noAgencePub = Convert.ToInt32(soumission["noAgencePub"].InnerText);
                             //soumi.noAppelOffre = Convert.ToInt32(soumission["noAppelOffre"].InnerText);
@@ -124,7 +140,7 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
-        private tblSoumission CreateSoumission(string nomSoumi,int noAgenP, int noApp, int noSat)
+        private tblSoumission CreateSoumission(string nomSoumi,int noAgenP, int noApp)
         {
             tblSoumission soumi = provider.SleclectSoumi(noApp, noAgenP);
             if (soumi!=null)//update soumission
@@ -132,14 +148,12 @@ namespace ECJ.Web.Controllers.AppelOffre
                 soumi.noAgencePub = noAgenP;
                 soumi.noAppelOffre = noApp;
                 soumi.statut = null;
-                soumi.noStatut = noSat;
-                soumi.nom = nomSoumi;
                 provider.Save();
                 return soumi;
             }
             else
             {
-                var soumission = new tblSoumission {nom=nomSoumi, noAgencePub = noAgenP, noAppelOffre = noApp, statut=null, noStatut=noSat };
+                var soumission = new tblSoumission { noAgencePub = noAgenP, noAppelOffre = noApp, statut=null, };
                 provider.InsertSoumission(soumission);
                 return soumission;
 
@@ -166,8 +180,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                         a => (a.nomAppelOffre ?? "").ToString().ToUpper().Contains(SearchString) ||
                         (a.nomStatut ?? "").ToString().ToUpper().Contains(SearchString) || 
                         (a.nomEvent ?? "").ToString().ToUpper().Contains(SearchString) || 
-                        (a.nomAgence ?? "").ToString().ToUpper().Contains(SearchString) || 
-                        (a.nomSoumission ?? "").ToString().ToUpper().Contains(SearchString) || 
+                        (a.nomAgence ?? "").ToString().ToUpper().Contains(SearchString) ||                       
                         (a.description ?? "").ToString().ToUpper().Contains(SearchString));
                 }
 
@@ -180,7 +193,6 @@ namespace ECJ.Web.Controllers.AppelOffre
                              nomAppelOffre = a.Key.nomAppelOffre,
                              nomEvent = a.Key.nomEvent,
                              noStatut = a.Key.noStatut,
-                             nomSoumission = string.Join(",\n", db.vueSomAppelOffre.Where(j => j.noAppelOffre == a.Key.noAppelOffre).Select(i => i.nomSoumission)),
                              description = a.Key.description,
                              nomAgence = string.Join(",\n", db.vueSomAppelOffre.Where(j => j.noAppelOffre == a.Key.noAppelOffre).Select(i => i.nomAgence)),
                              dateRequis = a.Key.dateRequis,
@@ -269,8 +281,8 @@ namespace ECJ.Web.Controllers.AppelOffre
                 {
                     tblSoumission lastSoumi = db.tblSoumission.ToList().LastOrDefault();
                     nomSoumoi = "Soumission" + (lastSoumi.noSoumission + 1);
-                    tblSoumission souimi= CreateSoumission(nomSoumoi, no,tblAppelOffre.noAppelOffre,tblAppelOffre.noStatut);
-                    CreateSoumissionXml(souimi);
+                    tblSoumission souimi= CreateSoumission(nomSoumoi, no,tblAppelOffre.noAppelOffre);
+                    CreateSoumissionXml(souimi, tblAppelOffre.nom);
                 }
                // conn.Close(); //On ferme la connection.
                 return RedirectToAction("Index");
@@ -336,7 +348,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                 {
                     tblSoumission lastSoumi = db.tblSoumission.Last();
                     nomSoumi = "Soumission" + lastSoumi.noSoumission + 1;
-                    CreateSoumission(nomSoumi,no, tblAppelOffre.noAppelOffre, tblAppelOffre.noStatut);
+                    CreateSoumission(nomSoumi,no, tblAppelOffre.noAppelOffre);
                 }
                 return RedirectToAction("Index");
             }

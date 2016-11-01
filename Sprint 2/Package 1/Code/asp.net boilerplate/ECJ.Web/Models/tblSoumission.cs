@@ -16,17 +16,14 @@ namespace ECJ.Web.Models
     {
         public int noSoumission { get; set; }
         public string noSoumissionAgence { get; set; }
-        public string nom { get; set; }
         public Nullable<decimal> prix { get; set; }
         public Nullable<byte> statut { get; set; }
         public string commentaire { get; set; }
         public int noAgencePub { get; set; }
         public int noAppelOffre { get; set; }
-        public int noStatut { get; set; }
         public Nullable<System.DateTime> dateSupprime { get; set; }
     
         public virtual tblAgencePublicite tblAgencePublicite { get; set; }
         public virtual tblAppelOffre tblAppelOffre { get; set; }
-        public virtual tblStatutAppelOffre tblStatutAppelOffre { get; set; }
     }
 }
