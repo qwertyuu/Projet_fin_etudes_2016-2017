@@ -17,20 +17,29 @@ namespace ECJ.Web.Controllers.Commanditaire
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
 
         // GET: Commanditaire
-        public ActionResult Index(string SearchString)
+        public ActionResult Index()
         {
-            var commanditaire = from q in db.tblCommanditaire
-                                select q;
-            if (!String.IsNullOrEmpty(SearchString))
+            var recherche = Request.QueryString["recherche"];
+            var Commanditaire = db.tblCommanditaire.ToList();
+
+            if (recherche != null)
             {
-                commanditaire = db.tblCommanditaire.Where(a => a.nomCommanditaire.Contains(SearchString.ToUpper()) || a.courrielContact.Contains(SearchString.ToUpper()) || a.nomContact.Contains(SearchString.ToUpper()) || a.numTel.Contains(SearchString.ToUpper()));
+                if (recherche.Trim() == "")
+                {
+                    return RedirectToAction("Index");
+                }
+
+                ViewBag.recherche = recherche;
+                recherche = recherche.Trim().ToUpper();
+
+                Commanditaire = Commanditaire.Where(
+                a => a.nomCommanditaire.ToString().ToUpper().Contains(recherche) ||
+                a.courrielContact.ToString().ToUpper().Contains(recherche) ||
+                a.nomContact.ToString().ToUpper().Contains(recherche) ||
+                a.numTel.ToString().ToUpper().Contains(recherche)).ToList();
             }
 
-            commanditaire = from q in commanditaire
-                            orderby q.nomCommanditaire
-                            select q;
-
-            return View(commanditaire.ToList());
+            return View(Commanditaire);
         }
 
         public FileContentResult GetFile(int id)
@@ -71,13 +80,17 @@ namespace ECJ.Web.Controllers.Commanditaire
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire, HttpPostedFileBase upload)
+        public ActionResult Create([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire)
         {
             if (ModelState.IsValid)
             {
-                using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                if (Request.Files["pic"].ContentLength > 0)
                 {
-                    tblCommanditaire.logo = reader.ReadBytes(upload.ContentLength);
+                    var pic = Request.Files["pic"];
+                    using (var reader = new System.IO.BinaryReader(pic.InputStream))
+                    {
+                        tblCommanditaire.logo = reader.ReadBytes(pic.ContentLength);
+                    }
                 }
 
                 db.tblCommanditaire.Add(tblCommanditaire);
@@ -95,20 +108,21 @@ namespace ECJ.Web.Controllers.Commanditaire
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblCommanditaire tblCommanditaire = db.tblCommanditaire.Find(id);
-            if (tblCommanditaire == null)
+            var elementAModifier = db.tblCommanditaire.Find((int)id);
+            if (elementAModifier == null)
             {
                 return HttpNotFound();
             }
-            return View(tblCommanditaire);
+            return View(elementAModifier);
         }
 
         // POST: tblCommanditaires/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire, HttpPostedFileBase upload)
+        public ActionResult Edit([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire)
         {
             var modif = false;
+
             if (ModelState.IsValid)
             {
                 if (Request.Form["SupprimerAffiche"] != null)

@@ -6,88 +6,46 @@
 
 <h2>Commanditaires</h2>
 
-@using (Html.BeginForm("Create", "Commanditaire", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend></legend>
+    <div class="form-group">
+        <label>Nom du commanditaire</label>
+        <input class="form-control" type="text" name="nomCommanditaire" required>
+    </div>
+    <div class="form-group">
+        <label>Nom du contact</label>
+        <input class="form-control" type="text" name="nomContact" required>
+    </div>
+    <div class="form-group">
+        <label>Affiche</label>
+        <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+    </div>
+    <div class="form-group">
+        <label>Lien hypertexte</label>
+        <input class="form-control" type="text" name="url" required>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" rows="5" id="description" name="textePresentation"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Courriel contact</label>
+        <input class="form-control" type="text" name="courrielContact" required>
+    </div>
+    <div class="form-group">
+        <label>Numéro de téléphone</label>
+        <input class="form-control" type="text" name="numTel" required>
+    </div>
+    <div class="form-group">
+        <label>Extension</label>
+        <input class="form-control" type="text" name="extension" required>
+    </div>
 
-        <div class="form-horizontal">
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.nomCommanditaire, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.nomCommanditaire, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.nomCommanditaire, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.nomContact, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.nomContact, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.nomContact, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.logo, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                        <input name="upload" type="file" />
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.url, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.url, new { htmlAttributes = new { @class = "form-control", @type="url" } })
-                    @Html.ValidationMessageFor(model => model.url, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.textePresentation, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.textePresentation, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.textePresentation, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.courrielContact, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.courrielContact, new { htmlAttributes = new { @class = "form-control" , @type="email"} })
-                    @Html.ValidationMessageFor(model => model.courrielContact, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.numTel, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.numTel, new { htmlAttributes = new { @class = "form-control" , @type = "number", @name = "quantity", @min = "1000000000", @max = "9999999999" } })
-                    @Html.ValidationMessageFor(model => model.numTel, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.extension, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.extension, new { htmlAttributes = new { @class = "form-control", @type="number" } })
-                    @Html.ValidationMessageFor(model => model.extension, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-primary pull-right" />
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <a href="/Commanditaire/Index" class="btn btn-sm btn-primary" title="Index"> Retourner à la liste</a>
-        </div>
-    </fieldset>
+    <div class="form-group pull-right">
+        <button class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Ajouter</span></button>
+        <a href="/Commanditaire" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
 }

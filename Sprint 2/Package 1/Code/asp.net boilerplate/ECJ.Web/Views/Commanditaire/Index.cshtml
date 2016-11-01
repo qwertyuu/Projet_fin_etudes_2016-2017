@@ -5,128 +5,115 @@
     ViewBag.ActiveMenu = "Commanditaires";
     decimal test = 0;
 }
+<h1>Commanditaire</h1>
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "page-header" }))
+        {
+            <div class="input-group">
+                <input class="form-control" type="text" name="recherche" value="@ViewBag.recherche">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary">Rechercher</button>
+                </span>
+            </div>
+        }
+        <a href="/Commanditaire/Create" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un commanditaire</a>
+        <table class="table" align="center">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.nomCommanditaire)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.nomContact)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.courrielContact)
+                    </th>
+                    <th>
+                        Montant
+                    </th>
+                    <th>
+                        Rang
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </thead>
 
-<h2>Commanditaires</h2>
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div class="row">
-        <div class="col-md-12">
-            @using (Html.BeginForm("Index", "Commanditaire", FormMethod.Get))
+            @foreach (var item in Model)
             {
-                <p>
-                    @Html.Editor("SearchString", new { htmlAttributes = new { @class = "form-control" } })
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary pull-right" type="submit">Rechercher</button>
-                    </span>
-                </p>
-            }
-
-            <a href="/Commanditaire/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
-            <table class="table" align="center">
-                <thead>
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.nomCommanditaire)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.nomContact)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.courrielContact)
-                        </th>
-                        <th>
-                            Montant
-                        </th>
-                        <th>
-                            Rang
-                        </th>
-                        <th>
-                            Action
-                        </th>
-                    </tr>
-                </thead>
-
-                @foreach (var item in Model)
+                if (item.dateSupprime == null)
                 {
-                    if (item.dateSupprime == null)
-                    {
 
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nomCommanditaire)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nomContact)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.courrielContact)
-                            </td>
-                            <td>
-                                @foreach (var don in item.tblDon)
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nomCommanditaire)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nomContact)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.courrielContact)
+                        </td>
+                        <td>
+                            @foreach (var don in item.tblDon)
+                            {
+                                if (don.noCommanditaire == item.noCommanditaire)
                                 {
-                                    if (don.noCommanditaire == item.noCommanditaire)
+                                    <p>@don.montant.ToString() $</p>
+                                }
+                            }
+                        </td>
+                        <td>
+
+                            @{foreach (var Don in item.tblDon)
+                                {
+                                    if (Don.noCommanditaire == item.noCommanditaire)
                                     {
-                                        <p>@don.montant.ToString() $</p>
+                                        test += Don.montant;
                                     }
                                 }
-                            </td>
-                            <td>
 
-                                @{foreach (var Don in item.tblDon)
-                                    {
-                                        if (Don.noCommanditaire == item.noCommanditaire)
-                                        {
-                                            test += Don.montant;
-                                        }
-                                    }
-
-                                    if (test >= 1500)
-                                    {
-                                        <p>Or</p>
-                                        test = 0;
-                                    }
-                                    else if (test >= 1000)
-                                    {
-                                        <p>Argent</p>
-                                        test = 0;
-                                    }
-                                    else if (test >= 500)
-                                    {
-                                        <p>Bronze</p>
-                                        test = 0;
-                                    }
-                                    else if (test > 0)
-                                    {
-                                        <p>Ami</p>
-                                        test = 0;
-                                    }
-                                    else
-                                    {
-                                        <p>Aucun rang</p>
-                                        test = 0;
-                                    }
-
+                                if (test >= 1500)
+                                {
+                                    <p>Or</p>
+                                    test = 0;
                                 }
-                            </td>
-                            <td>
-                                <a href="/Commanditaire/Details/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                                <a href="/Commanditaire/Edit/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                                <a href="/Don/Create/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Ajouter"><i class="fa fa-money fa-lg"></i></a>
-                                <a href="/Commanditaire/Supprimer/@item.noCommanditaire" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                                else if (test >= 1000)
+                                {
+                                    <p>Argent</p>
+                                    test = 0;
+                                }
+                                else if (test >= 500)
+                                {
+                                    <p>Bronze</p>
+                                    test = 0;
+                                }
+                                else if (test > 0)
+                                {
+                                    <p>Ami</p>
+                                    test = 0;
+                                }
+                                else
+                                {
+                                    <p>Aucun rang</p>
+                                    test = 0;
+                                }
 
-                            </td>
-                        </tr>
-                                        }
+                            }
+                        </td>
+                        <td>
+                            <a href="/Commanditaire/Details/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                            <a href="/Commanditaire/Edit/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                            <a href="/Don/Create/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Ajouter"><i class="fa fa-money fa-lg"></i></a>
+                            <a href="/Commanditaire/Supprimer/@item.noCommanditaire" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+
+                        </td>
+                    </tr>
                                     }
-            </table>
-        </div>
+                                }
+        </table>
     </div>
-</body>
-</html>
+</div>
