@@ -107,8 +107,6 @@ namespace ECJ.Web.Controllers.Activite
         }
 
         // POST: tblActivites/Edit/5
-        // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
-        // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Modifier([Bind(Include = "noActivite,nomResponsable,etat,dateCreation,tache,detail,dateSupprime,noEvenement,noSousEvenement")] tblActivite tblActivite)
@@ -117,10 +115,14 @@ namespace ECJ.Web.Controllers.Activite
 
             if (ModelState.IsValid)
             {
-                tblActivite.noEvenement = db.tblActivite.Find(tblActivite.noActivite).noEvenement;
+                if(db.tblActivite.Find(tblActivite.noActivite).noEvenement != null)
+                    tblActivite.noEvenement = db.tblActivite.Find(tblActivite.noActivite).noEvenement;
+                else
+                    tblActivite.noSousEvenement = db.tblActivite.Find(tblActivite.noActivite).noSousEvenement;
+
                 db.Entry(db.tblActivite.Find(tblActivite.noActivite)).CurrentValues.SetValues(tblActivite);
-                //db.Entry(tblActivite).State = EntityState.Modified;
                 db.SaveChanges();
+
                 return RedirectToAction("../"+retour);
             }
 

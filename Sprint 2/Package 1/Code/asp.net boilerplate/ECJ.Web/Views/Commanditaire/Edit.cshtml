@@ -1,42 +1,38 @@
-﻿@model ECJ.Web.Models.tblCommanditaire
-
-@{
-    ViewBag.Title = "Index";
-    ViewBag.ActiveMenu = "Commanditaires";
+﻿@{
+    ViewBag.Title = "Ajout";
 }
+@model ECJ.Web.Models.tblCommanditaire
 
-<h2>Commanditaires</h2>
+<h2>Modifier un Commanditaire</h2>
 
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Modifier</title>
-</head>
-
-@using (Html.BeginForm("Edit", "Commanditaire", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-    <input type="hidden" name="noEvenement" value="@Model.noCommanditaire">
+    <input type="hidden" name="noCommanditaire" value="@Model.noCommanditaire">
+
     <div class="form-group">
         <label>Nom Commanditaire</label>
-        <input class="form-control" type="text" name="nom" value="@Model.nomCommanditaire" required>
+        <input class="form-control" type="text" name="nomCommanditaire" value="@Model.nomCommanditaire" required>
     </div>
-        <input type="hidden" name="noEvenement" value="@Model.noCommanditaire">
-        <div class="form-group">
-            <label>Contact</label>
-            <input class="form-control" type="text" name="nom" value="@Model.nomContact" required>
-        </div>
+
+    <div class="form-group">
+        <label>Contact</label>
+        <input class="form-control" type="text" name="nomContact" value="@Model.nomContact" required>
+    </div>
+
     if (Model.logo != null)
     {
         <div class="form-group">
             <label>Supprimer l'affiche?</label>
             <input type="checkbox" name="SupprimerAffiche" value="1" />
         </div>
-                    <div class="form-group">
-                        <label>Modifier l'affiche (laisser vide pour garder l'ancienne)</label>
-                        <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
-                    </div>
+
+        <div class="form-group">
+            <label>Modifier l'affiche (laisser vide pour garder l'ancienne)</label>
+            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+        </div>
                     <img width="200" src="@Url.Action("GetFile","commanditaire", new { id = Model.noCommanditaire})" alt="Logo" />
     }
     else
@@ -46,35 +42,34 @@
             <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
         </div>
     }
+
     <div class="form-group">
         <label>Lien hypertexte</label>
-        <input class="form-control" type="text" name="url" value="@Model.url" required>
+        <input class="form-control" type="text" name="url" value="@Model.url">
     </div>
 
-                <div class="form-group">
-                    <label>exte de présentation :</label>
-                    <textarea class="form-control" rows="5" id="textArea" name="description" required>@Model.textePresentation</textarea>
-                </div>
+    <div class="form-group">
+        <label>Texte de présentation :</label>
+        <textarea class="form-control" rows="5" id="textArea" name="textePresentation" >@Model.textePresentation</textarea>
+    </div>
 
-                <div class="form-group">
-                    <label>Email</label>
-                    <input class="form-control" type="email" name="nom" value="@Model.courrielContact" required>
-                </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" type="email" name="courrielContact" value="@Model.courrielContact" required>
+    </div>
 
-                <div class="form-group">
-                    <label>Numero de téléphone</label>
-                    <input class="form-control" type="number" name="nom" value="@Model.numTel" required>
-                </div>
+    <div class="form-group">
+        <label>Numero de téléphone</label>
+        <input class="form-control" type="text" name="numTel" value="@Model.numTel" required>
+    </div>
 
-                <div class="form-group">
-                    <label>Extension</label>
-                    <input class="form-control" type="number" name="nom" value="@Model.extension" required>
-                </div>
+    <div class="form-group">
+        <label>Extension</label>
+        <input class="form-control" type="number" name="extension" value="@Model.extension">
+    </div>
 
-
-
-                <div class="form-group pull-right">
-                    <a href="/Commanditaire/Index" class="btn btn-sm btn-primary" title="Index"> Retourner à la liste</a>
-                    <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
-                </div>
+    <div class="form-group pull-right">
+        <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
+        <a href="/Index" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
 }

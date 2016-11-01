@@ -6,104 +6,77 @@
 
 <h2>Commanditaires</h2>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-
-<body>
     <div>
-        <h4>Commanditaire</h4>
+    <h4>Commanditaire</h4>
 
-        <hr />
-
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.nomCommanditaire)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.nomCommanditaire)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.nomContact)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.nomContact)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.logo)
-            </dt>
-
-            <dd>
-                @if (Model.logo == null)
-                {
-                    <p>null</p>
-                }
-                else
-                {           
-                    <img width="200" src="@Url.Action("GetFile","commanditaire", new { id = Model.noCommanditaire})" alt="Logo" />
-                }
-                
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.url)
-            </dt>
-
-            <dd>
-                @if (Model.url == null)
-                {
-                    <p>null</p>
-                }
-                else
-                {
-                    <a href="@Model.url">@Model.url</a>
-                }
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.textePresentation)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.textePresentation)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.courrielContact)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.courrielContact)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.numTel)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.numTel)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.extension)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.extension)
-            </dd>
-
-        </dl>
+    <div class="form-group">
+        <label>Nom du commanditaire</label>
+        <div class="well well-sm">
+            @Model.nomCommanditaire
+        </div>
     </div>
-    <p>
-        <a href="/Commanditaire/Index" class="btn btn-sm btn-primary" title="Index"> Retourner à la liste</a>
-    </p>
-</body>
-</html>
+
+    <div class="form-group">
+        <label>Nom du contact</label>
+        <div class="well well-sm">
+            @Model.nomContact
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Affiche</label>
+        <div class="well well-sm">
+            @if (Model.logo == null)
+            {
+                <span>Aucune affiche</span>
+            }
+            else
+            {
+                <img width="200" src="@Url.Action("GetFile","commanditaire", new { id = Model.noCommanditaire})" alt="Logo" />
+            }
+        </div>
+    </div>
+
+        <div class="form-group">
+            <label>Lien hypertexte</label>
+            <div class="well well-sm">
+                @if (Model.url != null)
+            {
+                    <a href="@Model.url" target="_blank"><i class="fa fa-globe fa-3x"></i><i class="fa fa-external-link"></i></a>
+                }
+                else
+                {
+                    <span>Aucun lien n'a été fourni</span>
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Description</label>
+            <div class="well well-lg">
+                @Model.textePresentation
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Courriel</label>
+            <div class="well well-sm">
+                @Model.courrielContact
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Numéro de téléphone</label>
+            <div class="well well-sm">
+                @Model.numTel
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Extension</label>
+            <div class="well well-sm">
+                @Model.extension
+            </div>
+        </div>
+</div>
+<a href="~/Commanditaire/Index" class="btn btn-default pull-right" data-dismiss="modal">Retour à la liste de commanditaire</a>
