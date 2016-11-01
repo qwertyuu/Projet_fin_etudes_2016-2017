@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace ECJ.Web.Controllers.Activite
 {
-    public class ActiviteController : Controller
+    public class ActiviteController : ECJControllerBase
     {
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
 
@@ -96,14 +96,14 @@ namespace ECJ.Web.Controllers.Activite
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblActivite tblActivite = db.tblActivite.Find(id);
-            if (tblActivite == null)
+            var elementAModifier = db.tblActivite.Find((int)id);
+
+            if (elementAModifier == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblActivite.noEvenement);
-            ViewBag.noSousEvenement = new SelectList(db.tblSousEvenement, "noSousEvenement", "nom", tblActivite.noSousEvenement);
-            return View(tblActivite);
+
+            return View(elementAModifier);
         }
 
         // POST: tblActivites/Edit/5
@@ -117,7 +117,9 @@ namespace ECJ.Web.Controllers.Activite
 
             if (ModelState.IsValid)
             {
-                db.Entry(tblActivite).State = EntityState.Modified;
+                tblActivite.noEvenement = db.tblActivite.Find(tblActivite.noActivite).noEvenement;
+                db.Entry(db.tblActivite.Find(tblActivite.noActivite)).CurrentValues.SetValues(tblActivite);
+                //db.Entry(tblActivite).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("../"+retour);
             }

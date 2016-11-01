@@ -24,6 +24,7 @@ namespace ECJ.Web.Controllers
             db = new PE2_OfficielEntities();
             GetPermissions();
         }
+
         public ActionResult Detail(int? id)
         {
             if (id == null)
@@ -38,6 +39,7 @@ namespace ECJ.Web.Controllers
             }
             return View(elementADetailler);
         }
+
         public ActionResult Index()
         {
             var tblEvenement = db.vueSomEvenement.ToList();

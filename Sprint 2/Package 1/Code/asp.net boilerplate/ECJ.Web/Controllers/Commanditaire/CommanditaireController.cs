@@ -12,7 +12,7 @@ using System.Drawing;
 
 namespace ECJ.Web.Controllers.Commanditaire
 {
-    public class CommanditaireController : Controller
+    public class CommanditaireController : ECJControllerBase
     {
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
 
