@@ -199,19 +199,18 @@
                                 <td>@a.detail</td>
                                 <td>@String.Format("{0:yyyy/MM/dd}", a.dateCreation)</td>
                                 <td>
-                                    @if (activite.etat == 1)
+                                    @if (a.etat == 1)
                                     {
-                                        <a href="/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-warning" title="Changer pour non-réalisé"><i class="fa fa-times fa-lg"></i></a>
+                                        <a href="/Activite/ChangeEtat/@a.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-warning" title="Changer pour non-réalisé"><i class="fa fa-times fa-lg"></i></a>
 
                                     }
                                     else
                                     {
-                                        <a href="/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-success" title="Changer pour réalisé"><i class="fa fa-check fa-lg"></i></a>
+                                        <a href="/Activite/ChangeEtat/@a.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-success" title="Changer pour réalisé"><i class="fa fa-check fa-lg"></i></a>
                                     }
                                     <a href="/Activite/Detail/@a.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
                                     <a href="/Activite/Edit/@a.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                                    <a href="/Activite/Delete/@a.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>@if (activite.etat == 1)
-x
+                                    <a href="/Activite/Delete/@a.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
                                 </td>
                             </tr>
                         }
