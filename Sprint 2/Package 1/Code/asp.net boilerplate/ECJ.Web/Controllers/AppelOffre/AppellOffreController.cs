@@ -4,13 +4,13 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using ECJ.Web.Models;
-using System.Xml.Serialization;
 using System.Xml;
+using System.Xml.Schema;
 using System.Data.SqlClient;
 using System.IO;
+using System.Xml.Linq;
 
 namespace ECJ.Web.Controllers.AppelOffre
 {
@@ -27,7 +27,7 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
-       
+
         //--Gestion de la création du xml d'une soumision.-----
         public XmlNode CrerUneSoumissionXml(XmlDocument doc, tblSoumission soumi, tblAppelOffre appelOffre)
         {
@@ -47,7 +47,7 @@ namespace ECJ.Web.Controllers.AppelOffre
              xmlStatut.InnerText = soumi.statut.ToString();
             XmlNode xmlCommentaire = doc.CreateNode(XmlNodeType.Element, "Commentaire", "");
             xmlCommentaire.InnerText = soumi.commentaire;
-            XmlNode xmlSoumission = doc.CreateNode(XmlNodeType.Element, "Soumission", "http://tempuri.org/SoumissionAgence.xsd");
+            XmlNode xmlSoumission = doc.CreateNode(XmlNodeType.Element, "Soumission", "");
 
             //On ajoute une soumision.
             xmlSoumission.AppendChild(xmlnoSoumi);
@@ -63,6 +63,24 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
+        public void validerXML(String fichierXML, XmlDocument doc)
+        {
+
+            XmlSchemaSet schema = new XmlSchemaSet();
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.DtdProcessing = DtdProcessing.Parse;
+            settings.ValidationType = ValidationType.DTD;
+            XmlReader reader = XmlReader.Create(fichierXML, settings);
+            schema.Add("http://tempuri.org/SoumissionAgence.xsd", reader);
+            XDocument custOrdDoc = XDocument.Load(fichierXML);
+            custOrdDoc.Validate(schema, (o, e) =>
+                                 {
+                                     string log = "//deptinfo420/P2016_Equipe2/logErreur.txt";
+                                     doc.Save(log);
+                                 });
+        }
+
+
         private void CreateSoumissionXml(tblSoumission soumi,tblAppelOffre appelOffre)
         {
             CptSoumi++;
@@ -72,8 +90,10 @@ namespace ECJ.Web.Controllers.AppelOffre
             Racine.AppendChild(CrerUneSoumissionXml(doc, soumi, appelOffre));
             try
             {
-                string filename = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission" + appelOffre.nom + CptSoumi +".xml";
-                doc.Save(filename);
+                string path = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission" + appelOffre.nom + CptSoumi +".xml";
+                doc.Save(path);
+                string filename = "soumission" + appelOffre.nom + CptSoumi + ".xml";
+                validerXML(filename, doc);
 
             }
             catch (UnauthorizedAccessException UAEx)
@@ -106,7 +126,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                foreach(var f in files)
                 {
                     doc.Load(f.file);
-                    XmlNode racine = doc.SelectSingleNode("SoumissionAgence");
+                    XmlNode racine = doc.FirstChild; 
                     XmlNode soumission = racine.SelectSingleNode("Soumission");
                         tblSoumission soumi = provider.ReturnUneSoumi(Convert.ToInt32(soumission["NoSoumission"].InnerText));
                         if (soumi != null)
@@ -142,7 +162,7 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
-        private tblSoumission CreateSoumission(string nomSoumi,int noAgenP, int noApp)
+        private tblSoumission CreateSoumission(int noAgenP, int noApp)
         {
             tblSoumission soumi = provider.SleclectSoumi(noApp, noAgenP);
             if (soumi!=null)//update soumission
@@ -155,7 +175,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             }
             else
             {
-                var soumission = new tblSoumission { noAgencePub = noAgenP, noAppelOffre = noApp, statut=null, };
+                var soumission = new tblSoumission { noAgencePub = noAgenP, noAppelOffre = noApp, statut=null};
                 provider.InsertSoumission(soumission);
                 return soumission;
 
@@ -202,13 +222,8 @@ namespace ECJ.Web.Controllers.AppelOffre
                              couleur = a.Key.couleur
                          }).OrderBy(a => a.noStatut);
 
-            //Retourner les soumission du xml vers la bad
+            //Retourner les soumission du xml vers la bd
             RetournerSoumissionXml();
-
-            if(Request.Form.Get("nomAppellOffre")!=null)
-            {
-                appelGoupBy = appelGoupBy.OrderByDescending(a => a.nomAppelOffre);
-            }
             
             return View(appelGoupBy.ToList());
         }
@@ -253,7 +268,6 @@ namespace ECJ.Web.Controllers.AppelOffre
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre, int[] noAgencePub)
         {
-            string nomSoumoi = "";
             List<int> idSelect = new List<int>();
             ViewBag.noAgencePub = new MultiSelectList(db.tblAgencePublicite, "noAgencePub", "nom",idSelect);
             
@@ -286,9 +300,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                 //provider.ConnectionServer(conn);
                 foreach (int no in noAgencePub)
                 {
-                    tblSoumission lastSoumi = db.tblSoumission.ToList().LastOrDefault();
-                    nomSoumoi = "Soumission" + (lastSoumi.noSoumission + 1);
-                    tblSoumission souimi= CreateSoumission(nomSoumoi, no,tblAppelOffre.noAppelOffre);
+                    tblSoumission souimi= CreateSoumission(no,tblAppelOffre.noAppelOffre);
                     CreateSoumissionXml(souimi, tblAppelOffre);
                 }
                // conn.Close(); //On ferme la connection.
@@ -325,7 +337,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblAppelOffre.noEvenement);
             ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom", tblAppelOffre.noStatut);
             ViewBag.noMedia = new SelectList(db.tblMedia, "noMedia", "nom", tblAppelOffre.noMedia);
-            ViewBag.noAgencePub = new MultiSelectList(db.tblAgencePublicite, "noAgencePub", "nom", noAgence);
+            ViewBag.noAgencePub = new MultiSelectList(db.tblAgencePublicite, "noAgencePub", "nom", new[] { 1,3,5});
             return View(tblAppelOffre);
         }
 
@@ -336,7 +348,6 @@ namespace ECJ.Web.Controllers.AppelOffre
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre, int[] noAgencePub)
         {
-            string nomSoumi = "";
             if (ModelState.IsValid)
             {
                 var statut =( from q in db.tblStatutAppelOffre
@@ -349,13 +360,23 @@ namespace ECJ.Web.Controllers.AppelOffre
                              where q.noMedia == tblAppelOffre.noMedia
                              select q).FirstOrDefault();
                 db.Entry(tblAppelOffre).State = EntityState.Modified;
+                if(noAgencePub.Length==0)
+                {
+                    tblAppelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "En Création").FirstOrDefault().noStatut;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+
+
+                }
+                //si l'Appel d'offre n'est pas en création il tombe à envoyé.
+                tblAppelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "Envoyé").FirstOrDefault().noStatut;
                 db.SaveChanges();
+
                 //On créer les soumissions réliées à l'appel d'offre.
                 foreach (int no in noAgencePub)
                 {
-                    tblSoumission lastSoumi = db.tblSoumission.Last();
-                    nomSoumi = "Soumission" + lastSoumi.noSoumission + 1;
-                    CreateSoumission(nomSoumi,no, tblAppelOffre.noAppelOffre);
+                   tblSoumission soumi= CreateSoumission(no, tblAppelOffre.noAppelOffre);
+                    CreateSoumissionXml(soumi, tblAppelOffre);
                 }
                 return RedirectToAction("Index");
             }

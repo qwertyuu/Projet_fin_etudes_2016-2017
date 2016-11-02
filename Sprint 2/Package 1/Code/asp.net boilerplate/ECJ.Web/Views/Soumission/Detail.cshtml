@@ -18,9 +18,9 @@
     </div>
 
     <div class="form-group">
-        <label>Nom de la soumission</label>
+        <label>Nom de l'appel d'offre relié à la soumission</label>
         <div class="well well-sm">
-            @Html.DisplayFor(model => model.nom)
+            @Html.DisplayFor(model => model.tblAppelOffre.nom)
         </div>
     </div>
 
@@ -34,13 +34,6 @@
         <label>Commentaire</label>
         <div class="well well-sm">
             @Html.DisplayFor(model => model.commentaire)
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label>Statut de l'appel d'offre</label>
-        <div class="well well-sm">
-            @Html.DisplayFor(model => model.tblStatutAppelOffre.nom)
         </div>
     </div>
 
