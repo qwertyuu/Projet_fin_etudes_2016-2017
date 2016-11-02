@@ -39,14 +39,12 @@
             @Model.detail
         </div>
     </div>
-    @{
-        if (Model.noEvenement != null)
-        {
-            <a href="~/Events/Detail/@Model.noEvenement" class="btn btn-default pull-right" data-dismiss="modal">Retour à un détails d'événement</a>
-        }
-        else
-        {
-            <a href="~/sousEvenements/Detail/@Model.noSousEvenement" class="btn btn-default pull-right" data-dismiss="modal">Retour à un détails de sous-événement</a>
-        }
-    }
+
+    <button class="btn btn-default pull-right" data-dismiss="modal" onclick="goBack()">Retour à un détails d'événement</button>
 </form>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>

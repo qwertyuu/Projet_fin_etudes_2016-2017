@@ -38,16 +38,13 @@
 
         <div class="form-group pull-right">
             <button type="submit" class="btn btn-primary blue pull-right"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
-            @{
-                if (Model.noEvenement != null)
-                {
-                    <a href="~/Events/Detail/@Model.noEvenement" class="btn btn-default pull-right" data-dismiss="modal">Retour à un détails d'événement</a>
-                }
-                else
-                {
-                    <a href="~/sousEvenements/Detail/@Model.noSousEvenement" class="btn btn-default pull-right" data-dismiss="modal">Retour à un détails de sous-événement</a>
-                }
-            }
+             <button class="btn btn-default pull-right" data-dismiss="modal" onclick="goBack()">Retour à un détails d'événement</button>
         </div>
     </div>
 }
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
