@@ -341,7 +341,9 @@ namespace ECJ.Web.Controllers
         {
             return db.tblSoumission.Find(id);
         }
-
-
+        public tblSalle ReturnSalle(int id)
+        {
+            return db.tblSalle.Where(s => s.noSalle == id).FirstOrDefault();
+        }
     }
 }

@@ -1,7 +1,7 @@
-﻿#calculateur,#souper,#age,#calculfinal{
+﻿#calculateur,#souper,#age{
     float:left;
 }
 
-#infoSalle,#forfaits,#carte,#image{
+#infoSalle,#forfaits,#carte{
     float:right;
 }

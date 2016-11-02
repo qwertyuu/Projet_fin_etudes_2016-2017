@@ -121,7 +121,7 @@
                     @foreach (var f in ViewBag.Forfait)
                     {
                     <tr>
-                        <th>@f.nom</th>
+                        <th>@f.nom</th>                        
                     </tr>
                     }
                 </tbody>
@@ -216,11 +216,6 @@
     </div>
 </form>
 
-<div class="col-md-6" id="carte">
-    Carte de l'emplacement de la salle.
-    <iframe src="@ViewBag.Salle.urlGoogleMap" width="350" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
-</div>
-
 <form class="form-horizontal">
     <div class="row">
         <div class="col-md-6" id="reduction">
@@ -231,7 +226,6 @@
                         <th>
                             <div class="form-group">
                                 <label class="control-label">Nom du rabais</label>
-
                             </div>
                         </th>
                         <th>
@@ -305,16 +299,25 @@
                         <th>Dépenses total</th>
                     </tr>
                     <tr>
-                        <th id="TotFinal"> 0.00$</th>
+                        <th id="TotFinal">0.00$</th>
                         <th>@ViewBag.Salle.prix$</th>
                     </tr>
                 </thead>
             </table>
             <a href="#" class="btn btn-default" onclick="Calcultotal()">Calculer</a>
         </div>
+    </div>
+</form>
+
+<form class="form-horizontal">
+    <div class="row" id="infos">
+        <div class="col-md-6" id="carte">
+            Carte de l'emplacement de la salle.
+            <iframe src="@ViewBag.Salle.urlGoogleMap" width="350" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
         <div class="col-md-6" id="image">
             Plan de la salle
-            <img src="http://i.imgur.com/2VxTEYs.png" height="700" width="500" />
+            <img src="@ViewBag.Salle.photoSalle" height="700" width="500" />
         </div>
     </div>
 </form>
@@ -335,6 +338,6 @@
         }
         if (f.noForfait == 3) {
             @:chkRed =true;
-        }
+            }
     }
 </script>

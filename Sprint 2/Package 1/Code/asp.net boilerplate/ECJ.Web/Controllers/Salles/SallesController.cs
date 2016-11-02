@@ -19,9 +19,9 @@ namespace ECJ.Web.Controllers.Salles
 
             return View();
         }
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
-            ViewBag.Salle = db.ToutSalle();
+            ViewBag.Salle = db.ReturnSalle(id);
 
             return View();
         }

@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "DetailSalles";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Details</title>
+</head>
+<body>
+    <div class="form-group">
+        <label>Nom</label>
+        <div class="well well-sm">
+            @ViewBag.Salle.nomSalle
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Prix</label>
+        <div class="well well-sm">
+            @ViewBag.Salle.prix$
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Billets standard</label>
+        <div class="well well-sm">
+            @ViewBag.Salle.billet
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Billets VIP</label>
+        <div class="well well-sm">
+            @ViewBag.Salle.billetVIP
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Plan de la salle</label>
+        <div class="well well-sm">
+            <img src="@ViewBag.Salle.photoSalle" height="700" width="500" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Carte</label>
+        <div class="well well-sm">
+            <iframe src="@ViewBag.Salle.urlGoogleMap" width="500" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+</body>
+</html>
