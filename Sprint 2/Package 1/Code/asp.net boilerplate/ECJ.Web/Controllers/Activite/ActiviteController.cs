@@ -25,7 +25,7 @@ namespace ECJ.Web.Controllers.Activite
             var idEvent = Request.QueryString["evenement_id"];
             var idSousEvent = Request.QueryString["sousevenement_id"];
             var retour = Request.QueryString["return"];
-
+            
             if (ModelState.IsValid)
             {
                 if (retour.Contains("sousEvenements"))
@@ -39,7 +39,7 @@ namespace ECJ.Web.Controllers.Activite
                     tblActivite.noSousEvenement = null;
                 }
                 db.InsertActivite(tblActivite);
-                return RedirectToAction("../" + retour);
+                return Redirect(retour);
             }
 
             return View(tblActivite);
@@ -67,7 +67,7 @@ namespace ECJ.Web.Controllers.Activite
             {
                 db.SupprimerActivite((int)id);
             }
-            return RedirectToAction(retour);
+            return Redirect(retour);
         }
 
         public ActionResult ChangeEtat(int? id)
@@ -111,7 +111,7 @@ namespace ECJ.Web.Controllers.Activite
                     tblActivite.noSousEvenement = db.ReturnActivite(tblActivite.noActivite).noSousEvenement;
                 db.UpdateActivite(tblActivite);
 
-                return RedirectToAction("../"+retour);
+                return Redirect(retour);
             }
 
             ViewBag.noEvenement = new SelectList(db.ToutEvenement(), "noEvenement", "nom", tblActivite.noEvenement);
