@@ -306,7 +306,7 @@
     <Content Include="Abp\Framework\styles\abp.mixings.css" />
     <Content Include="Abp\Framework\styles\abp.mixings.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
-    <Content Include="App_Data\testSoumission.xml" />
+    <Content Include="App_Data\XMLSoumission.xml" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -395,6 +395,9 @@
     <Content Include="Models\ModelEquipe2.edmx.diagram">
       <DependentUpon>ModelEquipe2.edmx</DependentUpon>
     </Content>
+    <None Include="App_Data\SoumissionAgence.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Models\ModelEquipe2.Context.tt">

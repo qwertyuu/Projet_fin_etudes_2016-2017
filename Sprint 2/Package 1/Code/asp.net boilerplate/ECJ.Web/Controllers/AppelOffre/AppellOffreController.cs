@@ -19,6 +19,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
         SqlConnection conn = new SqlConnection();
         private DBProvider provider = new DBProvider();
+        int CptSoumi = 0;
         DataSet ds = new DataSet();
 
         public AppellOffreController()
@@ -28,12 +29,12 @@ namespace ECJ.Web.Controllers.AppelOffre
 
        
         //--Gestion de la création du xml d'une soumision.-----
-        public XmlNode CrerUneSoumissionXml(XmlDocument doc, tblSoumission soumi, string nomAppelOffre)
+        public XmlNode CrerUneSoumissionXml(XmlDocument doc, tblSoumission soumi, tblAppelOffre appelOffre)
         {
             XmlNode xmlnoSoumi = doc.CreateNode(XmlNodeType.Element, "NoSoumission", "");
             xmlnoSoumi.InnerText = soumi.noSoumission.ToString();
             XmlNode xmlNom = doc.CreateNode(XmlNodeType.Element, "Nom", "");
-            xmlNom.InnerText = nomAppelOffre;
+            xmlNom.InnerText = appelOffre.nom;
             XmlNode xmlNoSoumiAgence = doc.CreateNode(XmlNodeType.Element, "noSoumissionAgence", "");
             xmlNom.InnerText = soumi.noSoumissionAgence;
             XmlNode xmlPrix = doc.CreateNode(XmlNodeType.Element, "Prix", "");
@@ -46,7 +47,7 @@ namespace ECJ.Web.Controllers.AppelOffre
              xmlStatut.InnerText = soumi.statut.ToString();
             XmlNode xmlCommentaire = doc.CreateNode(XmlNodeType.Element, "Commentaire", "");
             xmlCommentaire.InnerText = soumi.commentaire;
-            XmlNode xmlSoumission = doc.CreateNode(XmlNodeType.Element, "Soumission", "");
+            XmlNode xmlSoumission = doc.CreateNode(XmlNodeType.Element, "Soumission", "http://tempuri.org/SoumissionAgence.xsd");
 
             //On ajoute une soumision.
             xmlSoumission.AppendChild(xmlnoSoumi);
@@ -62,15 +63,16 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
-        private void CreateSoumissionXml(tblSoumission soumi,string nomAppelOffre)
+        private void CreateSoumissionXml(tblSoumission soumi,tblAppelOffre appelOffre)
         {
+            CptSoumi++;
             XmlDocument doc = new XmlDocument();
-            XmlNode Racine = doc.CreateNode(XmlNodeType.Element, "SoumissionAgence", "");
+            XmlNode Racine = doc.CreateNode(XmlNodeType.Element, "SoumissionAgence", "http://tempuri.org/SoumissionAgence.xsd");
             doc.AppendChild(Racine);
-            Racine.AppendChild(CrerUneSoumissionXml(doc, soumi, nomAppelOffre));
+            Racine.AppendChild(CrerUneSoumissionXml(doc, soumi, appelOffre));
             try
             {
-                string filename = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission" + soumi.noSoumission + ".xml";
+                string filename = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission" + appelOffre.nom + CptSoumi +".xml";
                 doc.Save(filename);
 
             }
@@ -202,6 +204,11 @@ namespace ECJ.Web.Controllers.AppelOffre
 
             //Retourner les soumission du xml vers la bad
             RetournerSoumissionXml();
+
+            if(Request.Form.Get("nomAppellOffre")!=null)
+            {
+                appelGoupBy = appelGoupBy.OrderByDescending(a => a.nomAppelOffre);
+            }
             
             return View(appelGoupBy.ToList());
         }
@@ -244,7 +251,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre, int[] noAgencePub, FormCollection form)
+        public ActionResult Create([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre, int[] noAgencePub)
         {
             string nomSoumoi = "";
             List<int> idSelect = new List<int>();
@@ -282,7 +289,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                     tblSoumission lastSoumi = db.tblSoumission.ToList().LastOrDefault();
                     nomSoumoi = "Soumission" + (lastSoumi.noSoumission + 1);
                     tblSoumission souimi= CreateSoumission(nomSoumoi, no,tblAppelOffre.noAppelOffre);
-                    CreateSoumissionXml(souimi, tblAppelOffre.nom);
+                    CreateSoumissionXml(souimi, tblAppelOffre);
                 }
                // conn.Close(); //On ferme la connection.
                 return RedirectToAction("Index");
