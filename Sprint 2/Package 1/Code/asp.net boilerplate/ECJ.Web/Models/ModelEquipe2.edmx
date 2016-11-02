@@ -602,7 +602,7 @@
           <Property Name="prix" Type="decimal" Precision="19" Scale="2" Nullable="false" />
           <Property Name="billet" Type="int" Nullable="false" />
           <Property Name="billetVIP" Type="int" Nullable="false" />
-          <Property Name="photoSalle" Type="varbinary(max)" />
+          <Property Name="photoSalle" Type="varchar" MaxLength="500" />
           <Property Name="dateSupprime" Type="datetime" />
           <Property Name="urlGoogleMap" Type="text" />
         </EntityType>
@@ -2466,7 +2466,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="prix" Type="Decimal" Nullable="false" Precision="19" Scale="2" />
           <Property Name="billet" Type="Int32" Nullable="false" />
           <Property Name="billetVIP" Type="Int32" Nullable="false" />
-          <Property Name="photoSalle" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="photoSalle" Type="String" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
           <Property Name="urlGoogleMap" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tblSousEvenement" Relationship="PE2_OfficielModel.NOSALLE" FromRole="tblSalle" ToRole="tblSousEvenement" />

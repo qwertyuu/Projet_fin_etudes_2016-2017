@@ -40,7 +40,7 @@ CREATE TABLE S_forfait.tblSalle (
 	,prix DECIMAL(19, 2) NOT NULL
 	,billet INT NOT NULL
 	,billetVIP INT NOT NULL
-	,photoSalle TEXT NULL
+	,photoSalle VARCHAR(500) NULL
 	,dateSupprime DATETIME NULL
 	,urlGoogleMap TEXT NULL
 	);

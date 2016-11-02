@@ -26,7 +26,7 @@ namespace ECJ.Web.Models
         public decimal prix { get; set; }
         public int billet { get; set; }
         public int billetVIP { get; set; }
-        public byte[] photoSalle { get; set; }
+        public string photoSalle { get; set; }
         public Nullable<System.DateTime> dateSupprime { get; set; }
         public string urlGoogleMap { get; set; }
     
