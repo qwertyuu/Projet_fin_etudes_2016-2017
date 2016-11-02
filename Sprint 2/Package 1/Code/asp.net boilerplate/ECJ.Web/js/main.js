@@ -46,4 +46,88 @@
         return false;
     });
 
+    //validation des champs
+    $(".valid").closest("form").submit(function (e) {
+        if (!validerChamps(this)) {
+            return false;
+        }
+        else {
+            Sanitariser();
+        }
+        return true;
+    });
+
+
 })(jQuery);
+
+function validerDates(form) {
+    var dates = $(form).find("input.dp");
+    var toReturn = true;
+    dates.each(function () {
+        var date = $(this).val().trim();
+        if (!isFinite(new Date(date))) {
+            alert("La date n'a pas le bon format!");
+            toReturn = false;
+        }
+    });
+    if (!toReturn) {
+        return false;
+    }
+    return true;
+}
+
+function validerNoTel(form) {
+    var noTels = $(form).find("input.tel");
+    noTels.each(function () {
+        var noTel = $(this).val().trim();
+        var charAccepte = "0123456789".split('');
+        var noTelFinal = [];
+        var i = noTel.length;
+        while (i--) {
+            if (charAccepte.indexOf(noTel[i]) != -1) {
+                noTelFinal.push(noTel[i]);
+            }
+        }
+        if (noTelFinal.length != 10) {
+            alert("Le numéro de téléphone est invalide.\nN'oubliez pas l'indicatif régional.");
+            return false;
+        }
+    });
+    return true;
+}
+
+function validerChamps(f) {
+    var req = $(f).find("[required]");
+    var toReturn = true;
+    req.each(function () {
+        if (!$(this).val()) {
+            alert("Veuillez entrer une valeur dans les champs obligatoires");
+            toReturn = false;
+        }
+    });
+    if (!toReturn) {
+        return false;
+    }
+    if (!validerDates(f)) {
+        return false;
+    }
+    if (!validerNoTel(f)) {
+        return false;
+    }
+    if (!validerCodePostal(f)) {
+        return false;
+    }
+    if (!validerPoste(f)) {
+        return false;
+    }
+    if (!validerCourriel(f)) {
+        return false;
+    }
+    if (!validerURL(f)) {
+        return false;
+    }
+    if (!validerIntPositif(f)) {
+        return false;
+    }
+    return true;
+}
