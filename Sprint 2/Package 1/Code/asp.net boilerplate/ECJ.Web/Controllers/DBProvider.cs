@@ -7,6 +7,7 @@ using System.Linq;
 using System.Data.SqlClient;
 using System.Web;
 using System.Collections;
+using System.Net.Mail;
 
 namespace ECJ.Web.Controllers
 {
@@ -110,6 +111,31 @@ namespace ECJ.Web.Controllers
             }
             db.SaveChanges();
         }
+
+        internal void CreateEmail(string Courriel, decimal montant)
+        {
+            string to = "jane@contoso.com";
+            string from = "ben@contoso.com";
+            MailMessage message = new MailMessage(from, to);
+            message.Subject = "Don à ECJ";
+            message.Body = @"Merci de votre don de : " + montant + ".";
+            SmtpClient client = new SmtpClient(Courriel);
+            // Credentials are necessary if the server requires the client 
+            // to authenticate before it will send e-mail on the client's behalf.
+            client.UseDefaultCredentials = true;
+
+            try
+            {
+                client.Send(message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught in CreateMessage(): {0}",
+                            ex.ToString());
+            }
+        }
+
+
 
         internal void SupprimerActivite(int id)
         {

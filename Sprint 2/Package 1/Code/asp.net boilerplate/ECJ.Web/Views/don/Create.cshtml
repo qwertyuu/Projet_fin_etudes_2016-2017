@@ -9,52 +9,36 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
-    <div class="form-horizontal">
-        <h4>tblDon</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.noCommanditaire, "noCommanditaire", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("noCommanditaire", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.noCommanditaire, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.noSousEvenement, "noSousEvenement", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("noSousEvenement", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.noSousEvenement, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.montant, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.montant, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
-                @Html.ValidationMessageFor(model => model.montant, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.dateDon, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.dateDon, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
-                @Html.ValidationMessageFor(model => model.dateDon, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+    <div class="form-group">
+        <label>Commanditaires</label>
+            @Html.DropDownList("noCommanditaire",null, htmlAttributes: new { @class = "form-control" })
     </div>
+
+        <div class="form-group">
+            <label>Sous-évènements</label>
+            @Html.DropDownList("noSousEvenement", null, htmlAttributes: new { @class = "form-control" })
+        </div>
+
+            <div class="form-group">
+                <label>Montant</label>
+                <input class="form-control" type="number" name="montant" required>
+            </div>
+
+            <div class="form-group">
+                <label>Date de don</label>
+                <input class="form-control dp" type="text" name="dateDon" required>
+            </div>
+
+            <div class="form-group pull-right">
+                <button class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Ajouter</span></button>
+                <button class="btn btn-default pull-right" data-dismiss="modal" onclick="goBack()">Annuler</button>
+            </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "../Commanditaire/Index")
-</div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>

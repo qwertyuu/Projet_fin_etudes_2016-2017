@@ -177,5 +177,31 @@ namespace ECJ.Web.Controllers.Commanditaire
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult DetailsDon(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            List<tblDon> don = new List<Models.tblDon>();
+            var tblDon = db.tblDon.ToList();
+
+            foreach (var d in tblDon)
+            {
+                if (d.noCommanditaire == id)
+                {
+                    don.Add(d);
+                }
+            }
+
+            if (tblDon == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(don);
+        }
     }
 }

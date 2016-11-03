@@ -4,6 +4,7 @@
     ViewBag.Title = "Index";
     ViewBag.ActiveMenu = "Commanditaires";
     decimal test = 0;
+    decimal donCumul = 0;
 }
 <h1>Commanditaire</h1>
 <div class="row">
@@ -22,13 +23,13 @@
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.nomCommanditaire)
+                        Nom du commanditaire
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.nomContact)
+                        nom du contact
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.courrielContact)
+                        Courriel
                     </th>
                     <th>
                         Montant
@@ -43,9 +44,10 @@
             </thead>
 
             @foreach (var item in Model)
-            {
-                if (item.dateSupprime == null)
-                {
+                        {
+                            donCumul = 0;
+                            if (item.dateSupprime == null)
+                            {
 
                     <tr>
                         <td>
@@ -58,52 +60,55 @@
                             @Html.DisplayFor(modelItem => item.courrielContact)
                         </td>
                         <td>
-                            @foreach (var don in item.tblDon)
-                            {
-                                if (don.noCommanditaire == item.noCommanditaire)
-                                {
-                                    <p>@don.montant.ToString() $</p>
-                                }
-                            }
-                        </td>
-                        <td>
 
-                            @{foreach (var Don in item.tblDon)
-                                {
-                                    if (Don.noCommanditaire == item.noCommanditaire)
+                            @foreach (var don in item.tblDon)
+                                        {
+                                    if (don.noCommanditaire == item.noCommanditaire)
                                     {
-                                        test += Don.montant;
+                                        donCumul += don.montant;
                                     }
                                 }
+                            <p>@donCumul$</p>
+                        </td>
+                        <td>
+            
+                            @{foreach (var Don in item.tblDon)
+                                    {
+                                        if (Don.noCommanditaire == item.noCommanditaire)
+                                        {
+                                            test += Don.montant;
+                                        }
+                                    }
 
-                                if (test >= 1500)
-                                {
+                                    if (test >= 1500)
+                                    {
                                     <p>Or</p>
                                     test = 0;
-                                }
-                                else if (test >= 1000)
-                                {
+                                    }
+                                    else if (test >= 1000)
+                                    {
                                     <p>Argent</p>
                                     test = 0;
-                                }
-                                else if (test >= 500)
-                                {
+                                    }
+                                    else if (test >= 500)
+                                    {
                                     <p>Bronze</p>
                                     test = 0;
-                                }
-                                else if (test > 0)
-                                {
+                                    }
+                                    else if (test > 0)
+                                    {
                                     <p>Ami</p>
                                     test = 0;
-                                }
-                                else
-                                {
+                                    }
+                                    else
+                                    {
                                     <p>Aucun rang</p>
                                     test = 0;
-                                }
+                                    }
 
-                            }
+                                }
                         </td>
+
                         <td>
                             <a href="/Commanditaire/Details/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
                             <a href="/Commanditaire/Edit/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
@@ -113,7 +118,7 @@
                         </td>
                     </tr>
                                     }
-                                }
+            }
         </table>
     </div>
 </div>
