@@ -20,6 +20,11 @@ CONSTRAINT NOSERV_SERV_PK PRIMARY Key(noService)
 PRINT 'FIN des contraintes de la table tblService'
 GO
 
+ALTER TABLE S_forfait.tblCalculateur ADD
+CONSTRAINT NOSSEvent_CALC_PK PRIMARY Key(noSousEvenement)
+PRINT 'FIN des contraintes de la table tblCalculateur'
+GO
+
 ALTER TABLE S_forfait.tblForfaitSousEvenement ADD
 CONSTRAINT NOFORSOUSEVEN_FORSEVEN_PK PRIMARY Key(noForfait,noSousEvenement),
 CONSTRAINT FORF_SOUSEVENFORF_NOFOR_FK FOREIGN Key(noForfait) REFERENCES S_forfait.tblForfait(noForfait),
@@ -48,3 +53,8 @@ ALTER TABLE S_Evenement.tblSousEvenement ADD
 CONSTRAINT NOSALLE FOREIGN KEY(noSalle) REFERENCES S_forfait.tblSalle(noSalle)
 GO
 PRINT('Fin des contraintes FK des sous-évènements')
+
+ALTER TABLE S_forfait.tblCalculateur ADD
+CONSTRAINT SOUSEVEN_CALC_NOSEVENL_FK FOREIGN Key(noSousEvenement) REFERENCES S_evenement.tblSousEvenement(noSousEvenement)
+PRINT('Fin des contraintes FK du Calculateur')
+GO

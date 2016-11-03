@@ -576,6 +576,32 @@
           <Property Name="noSalle" Type="int" />
           <Property Name="dateSupprime" Type="datetime" />
         </EntityType>
+        <EntityType Name="tblCalculateur">
+          <Key>
+            <PropertyRef Name="noSousEvenement" />
+          </Key>
+          <Property Name="noSousEvenement" Type="int" Nullable="false" />
+          <Property Name="billet" Type="int" />
+          <Property Name="billetVIP" Type="int" />
+          <Property Name="prixBillet" Type="int" />
+          <Property Name="prixBilletVIP" Type="int" />
+          <Property Name="souperSpectacle" Type="int" />
+          <Property Name="prixSouper" Type="int" />
+          <Property Name="jeunePourcent" Type="int" />
+          <Property Name="adultePourcent" Type="int" />
+          <Property Name="ainePourcent" Type="int" />
+          <Property Name="jeuneRatio" Type="int" />
+          <Property Name="adulteRatio" Type="int" />
+          <Property Name="aineRatio" Type="int" />
+          <Property Name="promo" Type="int" />
+          <Property Name="prevente" Type="int" />
+          <Property Name="customBillet1" Type="int" />
+          <Property Name="customBillet2" Type="int" />
+          <Property Name="customPrix1" Type="int" />
+          <Property Name="customPrix2" Type="int" />
+          <Property Name="customNom1" Type="varchar" MaxLength="50" />
+          <Property Name="customNom2" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="tblForfait">
           <Key>
             <PropertyRef Name="noForfait" />
@@ -1501,6 +1527,18 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="SOUSEVEN_CALC_NOSEVENL_FK">
+          <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="1" />
+          <End Role="tblCalculateur" Type="Self.tblCalculateur" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tblSousEvenement">
+              <PropertyRef Name="noSousEvenement" />
+            </Principal>
+            <Dependent Role="tblCalculateur">
+              <PropertyRef Name="noSousEvenement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="SOUSEVEN_SEROFF_NOSEVENL_FK">
           <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="1" />
           <End Role="tblServiceRequis" Type="Self.tblServiceRequis" Multiplicity="*" />
@@ -1580,6 +1618,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySet Name="tblDon" EntityType="Self.tblDon" Schema="S_evenement" store:Type="Tables" />
           <EntitySet Name="tblEvenement" EntityType="Self.tblEvenement" Schema="S_evenement" store:Type="Tables" />
           <EntitySet Name="tblSousEvenement" EntityType="Self.tblSousEvenement" Schema="S_evenement" store:Type="Tables" />
+          <EntitySet Name="tblCalculateur" EntityType="Self.tblCalculateur" Schema="S_forfait" store:Type="Tables" />
           <EntitySet Name="tblForfait" EntityType="Self.tblForfait" Schema="S_forfait" store:Type="Tables" />
           <EntitySet Name="tblForfaitSousEvenement" EntityType="Self.tblForfaitSousEvenement" Schema="S_forfait" store:Type="Tables" />
           <EntitySet Name="tblSalle" EntityType="Self.tblSalle" Schema="S_forfait" store:Type="Tables" />
@@ -1910,6 +1949,10 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblService" EntitySet="tblService" />
             <End Role="tblServiceRequis" EntitySet="tblServiceRequis" />
           </AssociationSet>
+          <AssociationSet Name="SOUSEVEN_CALC_NOSEVENL_FK" Association="Self.SOUSEVEN_CALC_NOSEVENL_FK">
+            <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+            <End Role="tblCalculateur" EntitySet="tblCalculateur" />
+          </AssociationSet>
           <AssociationSet Name="SOUSEVEN_SEROFF_NOSEVENL_FK" Association="Self.SOUSEVEN_SEROFF_NOSEVENL_FK">
             <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
             <End Role="tblServiceRequis" EntitySet="tblServiceRequis" />
@@ -2187,6 +2230,11 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="AbpUsers" EntitySet="AbpUsers" />
             <End Role="tblMemo" EntitySet="tblMemo" />
           </AssociationSet>
+          <EntitySet Name="tblCalculateur" EntityType="PE2_OfficielModel.tblCalculateur" />
+          <AssociationSet Name="SOUSEVEN_CALC_NOSEVENL_FK" Association="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK">
+            <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+            <End Role="tblCalculateur" EntitySet="tblCalculateur" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="tblAdresse">
           <Key>
@@ -2446,6 +2494,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <NavigationProperty Name="tblSalle" Relationship="PE2_OfficielModel.NOSALLE" FromRole="tblSousEvenement" ToRole="tblSalle" />
           <NavigationProperty Name="tblForfait" Relationship="PE2_OfficielModel.tblForfaitSousEvenement" FromRole="tblSousEvenement" ToRole="tblForfait" />
           <NavigationProperty Name="tblService" Relationship="PE2_OfficielModel.tblServiceRequis" FromRole="tblSousEvenement" ToRole="tblService" />
+          <NavigationProperty Name="tblCalculateur" Relationship="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK" FromRole="tblSousEvenement" ToRole="tblCalculateur" />
         </EntityType>
         <EntityType Name="tblForfait">
           <Key>
@@ -2466,7 +2515,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="prix" Type="Decimal" Nullable="false" Precision="19" Scale="2" />
           <Property Name="billet" Type="Int32" Nullable="false" />
           <Property Name="billetVIP" Type="Int32" Nullable="false" />
-          <Property Name="photoSalle" Type="String" />
+          <Property Name="photoSalle" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
           <Property Name="dateSupprime" Type="DateTime" Precision="3" />
           <Property Name="urlGoogleMap" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tblSousEvenement" Relationship="PE2_OfficielModel.NOSALLE" FromRole="tblSalle" ToRole="tblSousEvenement" />
@@ -3630,6 +3679,45 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tblCalculateur">
+          <Key>
+            <PropertyRef Name="noSousEvenement" />
+          </Key>
+          <Property Name="noSousEvenement" Type="Int32" Nullable="false" />
+          <Property Name="billet" Type="Int32" />
+          <Property Name="billetVIP" Type="Int32" />
+          <Property Name="prixBillet" Type="Int32" />
+          <Property Name="prixBilletVIP" Type="Int32" />
+          <Property Name="souperSpectacle" Type="Int32" />
+          <Property Name="prixSouper" Type="Int32" />
+          <Property Name="jeunePourcent" Type="Int32" />
+          <Property Name="adultePourcent" Type="Int32" />
+          <Property Name="ainePourcent" Type="Int32" />
+          <Property Name="jeuneRatio" Type="Int32" />
+          <Property Name="adulteRatio" Type="Int32" />
+          <Property Name="aineRatio" Type="Int32" />
+          <Property Name="promo" Type="Int32" />
+          <Property Name="prevente" Type="Int32" />
+          <Property Name="customBillet1" Type="Int32" />
+          <Property Name="customBillet2" Type="Int32" />
+          <Property Name="customPrix1" Type="Int32" />
+          <Property Name="customPrix2" Type="Int32" />
+          <Property Name="customNom1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customNom2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblSousEvenement" Relationship="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK" FromRole="tblCalculateur" ToRole="tblSousEvenement" />
+        </EntityType>
+        <Association Name="SOUSEVEN_CALC_NOSEVENL_FK">
+          <End Type="PE2_OfficielModel.tblSousEvenement" Role="tblSousEvenement" Multiplicity="1" />
+          <End Type="PE2_OfficielModel.tblCalculateur" Role="tblCalculateur" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tblSousEvenement">
+              <PropertyRef Name="noSousEvenement" />
+            </Principal>
+            <Dependent Role="tblCalculateur">
+              <PropertyRef Name="noSousEvenement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4497,6 +4585,33 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
                 <ScalarProperty Name="AuthenticationSource" ColumnName="AuthenticationSource" />
                 <ScalarProperty Name="TenantId" ColumnName="TenantId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCalculateur">
+            <EntityTypeMapping TypeName="PE2_OfficielModel.tblCalculateur">
+              <MappingFragment StoreEntitySet="tblCalculateur">
+                <ScalarProperty Name="customNom2" ColumnName="customNom2" />
+                <ScalarProperty Name="customNom1" ColumnName="customNom1" />
+                <ScalarProperty Name="customPrix2" ColumnName="customPrix2" />
+                <ScalarProperty Name="customPrix1" ColumnName="customPrix1" />
+                <ScalarProperty Name="customBillet2" ColumnName="customBillet2" />
+                <ScalarProperty Name="customBillet1" ColumnName="customBillet1" />
+                <ScalarProperty Name="prevente" ColumnName="prevente" />
+                <ScalarProperty Name="promo" ColumnName="promo" />
+                <ScalarProperty Name="aineRatio" ColumnName="aineRatio" />
+                <ScalarProperty Name="adulteRatio" ColumnName="adulteRatio" />
+                <ScalarProperty Name="jeuneRatio" ColumnName="jeuneRatio" />
+                <ScalarProperty Name="ainePourcent" ColumnName="ainePourcent" />
+                <ScalarProperty Name="adultePourcent" ColumnName="adultePourcent" />
+                <ScalarProperty Name="jeunePourcent" ColumnName="jeunePourcent" />
+                <ScalarProperty Name="prixSouper" ColumnName="prixSouper" />
+                <ScalarProperty Name="souperSpectacle" ColumnName="souperSpectacle" />
+                <ScalarProperty Name="prixBilletVIP" ColumnName="prixBilletVIP" />
+                <ScalarProperty Name="prixBillet" ColumnName="prixBillet" />
+                <ScalarProperty Name="billetVIP" ColumnName="billetVIP" />
+                <ScalarProperty Name="billet" ColumnName="billet" />
+                <ScalarProperty Name="noSousEvenement" ColumnName="noSousEvenement" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
