@@ -215,7 +215,6 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Activities" />
     <Reference Include="System.Collections.Immutable, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
       <Private>True</Private>
@@ -307,7 +306,7 @@
     <Content Include="Abp\Framework\styles\abp.mixings.css" />
     <Content Include="Abp\Framework\styles\abp.mixings.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
-    <Content Include="Models\XMLSoumission.xml" />
+    <Content Include="App_Data\XMLSoumission.xml" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -396,7 +395,7 @@
     <Content Include="Models\ModelEquipe2.edmx.diagram">
       <DependentUpon>ModelEquipe2.edmx</DependentUpon>
     </Content>
-    <None Include="Models\SoumissionAgence.xsd">
+    <None Include="App_Data\SoumissionAgence.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\test.pubxml" />
@@ -608,6 +607,9 @@
     <Compile Include="Models\tblArtiste.cs">
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tblCalculateur.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tblCategorieArtiste.cs">
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>
@@ -779,7 +781,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Lire\" />
   </ItemGroup>
   <ItemGroup>

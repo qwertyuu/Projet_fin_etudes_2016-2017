@@ -345,5 +345,9 @@ namespace ECJ.Web.Controllers
         {
             return db.tblSalle.Where(s => s.noSalle == id).FirstOrDefault();
         }
+        public tblCalculateur ReturnCalculateur(int id)
+        {
+            return db.tblCalculateur.Where(s => s.noSousEvenement == id).FirstOrDefault();
+        }
     }
 }
