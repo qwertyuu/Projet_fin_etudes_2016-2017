@@ -300,6 +300,10 @@ function validerSelect(form) {
             return;
         }
     });
+    if (!valide) {
+        return false;
+    }
+    return true;
 }
 
 function validerChamps(f) {
