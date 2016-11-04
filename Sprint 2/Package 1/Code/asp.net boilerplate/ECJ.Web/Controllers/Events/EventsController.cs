@@ -18,10 +18,10 @@ namespace ECJ.Web.Controllers
     [AbpMvcAuthorize(PermissionNames.Pages)]
     public class EventsController : ECJControllerBase
     {
-        private PE2_OfficielEntities db;
+        private DBProvider db;
         public EventsController()
         {
-            db = new PE2_OfficielEntities();
+            db = new DBProvider();
             GetPermissions();
         }
 
@@ -31,7 +31,7 @@ namespace ECJ.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var elementADetailler = db.tblEvenement.Find((int)id);
+            var elementADetailler = db.ReturnEvenement((int)id);
 
             if (elementADetailler == null)
             {
@@ -42,7 +42,7 @@ namespace ECJ.Web.Controllers
 
         public ActionResult Index()
         {
-            var tblEvenement = db.vueSomEvenement.ToList();
+            var tblEvenement = db.ToutSomEvenement();
             var recherche = Request.QueryString["recherche"];
 
             if (recherche != null)
@@ -59,6 +59,7 @@ namespace ECJ.Web.Controllers
                 (e.description ?? "").ToUpper().Contains(recherche) || 
                 e.nom.ToUpper().Contains(recherche)).ToList();
             }
+            ViewBag.PeutAjouterEvenement = PermissionChecker.IsGrantedAsync("Pages").Result;
             return View(tblEvenement);
         }
         public ActionResult Ajout()
@@ -68,7 +69,7 @@ namespace ECJ.Web.Controllers
 
         public FileContentResult GetFile(int id)
         {
-            var imagedata = db.tblEvenement.Find(id).affiche;
+            var imagedata = db.ReturnEvenement(id).affiche;
             var contentType = DBProvider.GetContentType(imagedata);
             return new FileContentResult(imagedata, string.Format("image/{0}", contentType.ToString().ToLower()));
         }
@@ -88,8 +89,7 @@ namespace ECJ.Web.Controllers
                         tblEvenement.affiche = reader.ReadBytes(pic.ContentLength);
                     }
                 }
-                db.tblEvenement.Add(tblEvenement);
-                db.SaveChanges();
+                db.InsertEvenement(tblEvenement);
 
                 return RedirectToAction("Index");
             }
@@ -102,7 +102,7 @@ namespace ECJ.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var elementAModifier = db.tblEvenement.Find((int)id);
+            var elementAModifier = db.ReturnEvenement((int)id);
             if (elementAModifier == null)
             {
                 return HttpNotFound();
@@ -115,7 +115,6 @@ namespace ECJ.Web.Controllers
         public ActionResult Modifier([Bind(Include = "noEvenement,nom,dateDebut,datefin,affiche,url,description,dateSupprime")] tblEvenement tblEvenement)
         {
             //var a = db.tblEvenement.Find(tblEvenement.noEvenement) == tblEvenement;
-            var modif = false;
             if (ModelState.IsValid)
             {
                 if(Request.Form["SupprimerAffiche"] != null)
@@ -132,18 +131,9 @@ namespace ECJ.Web.Controllers
                 }
                 else
                 {
-                    tblEvenement.affiche = db.tblEvenement.Find(tblEvenement.noEvenement).affiche;
-                    modif = true;
+                    tblEvenement.affiche = db.ReturnEvenement(tblEvenement.noEvenement).affiche;
                 }
-                if (modif)
-                {
-                    db.Entry(db.tblEvenement.Find(tblEvenement.noEvenement)).CurrentValues.SetValues(tblEvenement);
-                }
-                else
-                {
-                    db.Entry(tblEvenement).State = EntityState.Modified;
-                }
-                db.SaveChanges();
+                db.UpdateEvenement(tblEvenement);
 
                 return RedirectToAction("Index");
             }
@@ -155,9 +145,7 @@ namespace ECJ.Web.Controllers
         {
             if (id != null)
             {
-                var elementAModifier = db.tblEvenement.Find((int)id);
-                elementAModifier.dateSupprime = DateTime.Now;
-                db.SaveChanges();
+                db.SupprimerEvenement((int)id);
             }
             return RedirectToAction("Index");
         }

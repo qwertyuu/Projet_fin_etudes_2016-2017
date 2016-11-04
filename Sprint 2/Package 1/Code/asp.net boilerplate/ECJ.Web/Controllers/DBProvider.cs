@@ -41,6 +41,16 @@ namespace ECJ.Web.Controllers
             db.SaveChanges();
         }
 
+        internal tblEvenement ReturnEvenement(int id)
+        {
+            return db.tblEvenement.Find(id);
+        }
+
+        internal List<vueSomEvenement> ToutSomEvenement()
+        {
+            return db.vueSomEvenement.ToList();
+        }
+
         internal void SupprimerMemo(int v)
         {
             db.tblMemo.Find(v).dateSupprime = DateTime.Now;
@@ -98,6 +108,12 @@ namespace ECJ.Web.Controllers
             return null;
         }
 
+        internal void InsertEvenement(tblEvenement tblEvenement)
+        {
+            db.tblEvenement.Add(tblEvenement);
+            db.SaveChanges();
+        }
+
         internal void ToggleEtatActivite(int id)
         {
             var a = db.tblActivite.Find(id);
@@ -135,7 +151,11 @@ namespace ECJ.Web.Controllers
             }
         }
 
-
+        internal void UpdateEvenement(tblEvenement tblEvenement)
+        {
+            db.Entry(db.tblEvenement.Find(tblEvenement.noEvenement)).CurrentValues.SetValues(tblEvenement);
+            db.SaveChanges();
+        }
 
         internal void SupprimerActivite(int id)
         {
@@ -152,6 +172,12 @@ namespace ECJ.Web.Controllers
         internal List<ECJ.Web.Models.AbpUsers> ToutUtilisateurs()
         {
             return db.AbpUsers.Where(u => u.Id != 1).ToList();
+        }
+
+        internal void SupprimerEvenement(int id)
+        {
+            db.tblEvenement.Find(id).dateSupprime = DateTime.Now;
+            db.SaveChanges();
         }
 
         internal void UpdateActivite(tblActivite tblActivite)
