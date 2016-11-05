@@ -580,7 +580,7 @@
           <Key>
             <PropertyRef Name="noSousEvenement" />
           </Key>
-          <Property Name="noSousEvenement" Type="int" Nullable="false" />
+          <Property Name="noSousEvenement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="billet" Type="int" />
           <Property Name="billetVIP" Type="int" />
           <Property Name="prixBillet" Type="int" />
@@ -2494,7 +2494,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <NavigationProperty Name="tblSalle" Relationship="PE2_OfficielModel.NOSALLE" FromRole="tblSousEvenement" ToRole="tblSalle" />
           <NavigationProperty Name="tblForfait" Relationship="PE2_OfficielModel.tblForfaitSousEvenement" FromRole="tblSousEvenement" ToRole="tblForfait" />
           <NavigationProperty Name="tblService" Relationship="PE2_OfficielModel.tblServiceRequis" FromRole="tblSousEvenement" ToRole="tblService" />
-          <NavigationProperty Name="tblCalculateur" Relationship="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK" FromRole="tblSousEvenement" ToRole="tblCalculateur" />
         </EntityType>
         <EntityType Name="tblForfait">
           <Key>
@@ -3684,26 +3683,26 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <PropertyRef Name="noSousEvenement" />
           </Key>
           <Property Name="noSousEvenement" Type="Int32" Nullable="false" />
-          <Property Name="billet" Type="Int32" />
-          <Property Name="billetVIP" Type="Int32" />
-          <Property Name="prixBillet" Type="Int32" />
-          <Property Name="prixBilletVIP" Type="Int32" />
-          <Property Name="souperSpectacle" Type="Int32" />
-          <Property Name="prixSouper" Type="Int32" />
-          <Property Name="jeunePourcent" Type="Int32" />
-          <Property Name="adultePourcent" Type="Int32" />
-          <Property Name="ainePourcent" Type="Int32" />
-          <Property Name="jeuneRatio" Type="Int32" />
-          <Property Name="adulteRatio" Type="Int32" />
-          <Property Name="aineRatio" Type="Int32" />
-          <Property Name="promo" Type="Int32" />
-          <Property Name="prevente" Type="Int32" />
-          <Property Name="customBillet1" Type="Int32" />
-          <Property Name="customBillet2" Type="Int32" />
-          <Property Name="customPrix1" Type="Int32" />
-          <Property Name="customPrix2" Type="Int32" />
-          <Property Name="customNom1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="customNom2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="billet" Type="Int32" Nullable="true" />
+          <Property Name="billetVIP" Type="Int32" Nullable="true" />
+          <Property Name="prixBillet" Type="Int32" Nullable="true" />
+          <Property Name="prixBilletVIP" Type="Int32" Nullable="true" />
+          <Property Name="souperSpectacle" Type="Int32" Nullable="true" />
+          <Property Name="prixSouper" Type="Int32" Nullable="true" />
+          <Property Name="jeunePourcent" Type="Int32" Nullable="true" />
+          <Property Name="adultePourcent" Type="Int32" Nullable="true" />
+          <Property Name="ainePourcent" Type="Int32" Nullable="true" />
+          <Property Name="jeuneRatio" Type="Int32" Nullable="true" />
+          <Property Name="adulteRatio" Type="Int32" Nullable="true" />
+          <Property Name="aineRatio" Type="Int32" Nullable="true" />
+          <Property Name="promo" Type="Int32" Nullable="true" />
+          <Property Name="prevente" Type="Int32" Nullable="true" />
+          <Property Name="customBillet1" Type="Int32" Nullable="true" />
+          <Property Name="customBillet2" Type="Int32" Nullable="true" />
+          <Property Name="customPrix1" Type="Int32" Nullable="true" />
+          <Property Name="customPrix2" Type="Int32" Nullable="true" />
+          <Property Name="customNom1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="customNom2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="true" />
           <NavigationProperty Name="tblSousEvenement" Relationship="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK" FromRole="tblCalculateur" ToRole="tblSousEvenement" />
         </EntityType>
         <Association Name="SOUSEVEN_CALC_NOSEVENL_FK">

@@ -298,3 +298,21 @@ function setForfait(chkSalle, chkAge, chkRed) {
         $("#reduction").attr("hidden", "true");
     }
 } //Reçoit les bool a propos des forfaits du sous-event et enlève ceux qui sont a "false"
+
+function checkIntNull(nombre) {
+    if (nombre == null) {
+        return 0;
+    }
+    else {
+        return nombre;
+    }
+}
+
+function checkStringNull(txt) {
+    if (txt == null) {
+        return "";
+    }
+    else {
+        return txt;
+    }
+}

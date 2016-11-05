@@ -109,4 +109,24 @@ VALUES(4,1),
 
 GO
 PRINT 'INSERTION RÉUSSI'
+PRINT 'INSERTION DE LA tblCalculateur'
+GO
+INSERT INTO S_forfait.tblCalculateur (billet,billetVIP,prixBillet,prixBilletVIP,souperSpectacle,prixSouper,jeunePourcent,adultePourcent,ainePourcent,jeuneRatio,adulteRatio,aineRatio,promo,prevente,customBillet1,customBillet2,customPrix1,customPrix2,customNom1,customNom2)
+VALUES(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
 
+GO
+PRINT 'INSERTION RÉUSSI'

@@ -25,9 +25,9 @@ namespace ECJ.Web.Controllers
             }
             ViewBag.Salle = db.FindSousEvenement((int)id).tblSalle;
 
-            ViewBag.Forfait = db.FindSousEvenement((int)id).tblForfait;
+            ViewBag.Calcul = db.ReturnCalculateur(db.FindSousEvenement((int)id).noSousEvenement);
 
-            ViewBag.Calcul = db.ReturnCalculateur((int)id);
+            ViewBag.Forfait = db.FindSousEvenement((int)id).tblForfait;
 
             return View();
         }
