@@ -11,9 +11,12 @@ using System.Xml.Schema;
 using System.Data.SqlClient;
 using System.IO;
 using System.Xml.Linq;
+using Abp.Web.Mvc.Authorization;
+using ECJ.Authorization;
 
 namespace ECJ.Web.Controllers.AppelOffre
 {
+    [AbpMvcAuthorize(PermissionNames.ConsulterAppelOffre)]
     public class AppellOffreController : ECJControllerBase
     {
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
@@ -164,6 +167,10 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         private tblSoumission CreateSoumission(int noAgenP, int noApp)
         {
+            //if (!PermissionChecker.IsGrantedAsync("CreerSoumission").Result)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
             tblSoumission soumi = provider.SleclectSoumi(noApp, noAgenP);
             if (soumi!=null)//update soumission
             {
@@ -224,7 +231,7 @@ namespace ECJ.Web.Controllers.AppelOffre
 
             //Retourner les soumission du xml vers la bd
             RetournerSoumissionXml();
-            
+            ViewBag.PeutCreerAppelOffre = PermissionChecker.IsGrantedAsync(PermissionNames.CreerAppelOffre).Result;
             return View(appelGoupBy.ToList());
         }
 
@@ -250,6 +257,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             return View(tblAppelOffre);
         }
 
+        [AbpMvcAuthorize(PermissionNames.CreerAppelOffre)]
         // GET: AppellOffre/Create
         public ActionResult Create()
         {

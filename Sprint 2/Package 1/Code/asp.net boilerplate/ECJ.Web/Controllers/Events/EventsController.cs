@@ -15,7 +15,7 @@ using System.Web;
 
 namespace ECJ.Web.Controllers
 {
-    [AbpMvcAuthorize(PermissionNames.Pages)]
+    [AbpMvcAuthorize]
     public class EventsController : ECJControllerBase
     {
         private DBProvider db;
@@ -37,6 +37,7 @@ namespace ECJ.Web.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.PeutModifierSousEvenement = PermissionChecker.IsGrantedAsync(PermissionNames.GererSousEvenement);
             return View(elementADetailler);
         }
 

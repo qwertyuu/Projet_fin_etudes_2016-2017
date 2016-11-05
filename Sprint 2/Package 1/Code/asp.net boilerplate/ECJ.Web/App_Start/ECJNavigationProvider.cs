@@ -22,7 +22,8 @@ namespace ECJ.Web
                         L("Memo"),
                         icon: "fa fa-plus",
                         requiresAuthentication: true,
-                        url: ""
+                        url: "",
+                        requiredPermissionName: PermissionNames.CreerMemo
             )));
             context.Manager.MainMenu
                 .AddItem(
@@ -55,7 +56,8 @@ namespace ECJ.Web
                         L("pub"),
                         url: "AppellOffre",
                         icon: "fa fa-television",
-                        requiresAuthentication: true
+                        requiresAuthentication: true,
+                        requiredPermissionName: PermissionNames.ConsulterAppelOffre
                         )
                 ).AddItem(
                     new MenuItemDefinition(

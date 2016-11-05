@@ -17,11 +17,32 @@ namespace ECJ.Authorization
 
             var users = pages.CreateChildPermission(PermissionNames.Pages_Users, L("Users"));
 
-
-            var events = pages.CreateChildPermission(PermissionNames.Pages_Events, L("Events"));
-
             //Host permissions
             var tenants = pages.CreateChildPermission(PermissionNames.Pages_Tenants, L("Tenants"), multiTenancySides: MultiTenancySides.Host);
+            
+            var creer_appel_offre = context.CreatePermission(PermissionNames.CreerAppelOffre, isGrantedByDefault: false);
+
+            var creer_soumission = context.CreatePermission(PermissionNames.CreerSoumission, isGrantedByDefault: false);
+
+            var creer_memo = context.CreatePermission(PermissionNames.CreerMemo, isGrantedByDefault: false);
+
+            var consulter_appel_offre = context.CreatePermission(PermissionNames.ConsulterAppelOffre, isGrantedByDefault: false);
+
+            var consulter_soumission = context.CreatePermission(PermissionNames.ConsulterSoumission, isGrantedByDefault: false); 
+
+            var gerer_commanditaire = context.CreatePermission(PermissionNames.GererCommanditaire, isGrantedByDefault: false);
+
+            var gerer_don = context.CreatePermission(PermissionNames.GererDon, isGrantedByDefault: false);
+
+            var gerer_evenement = context.CreatePermission(PermissionNames.GererEvenement, isGrantedByDefault: false);
+
+            var gerer_salle = context.CreatePermission(PermissionNames.GererSalle, isGrantedByDefault: false);
+
+            var gerer_sousevenement = context.CreatePermission(PermissionNames.GererSousEvenement, isGrantedByDefault: false);
+
+            var approuver_soumission = context.CreatePermission(PermissionNames.ApprouverSoumission, isGrantedByDefault: false);
+
+            
         }
 
         private static ILocalizableString L(string name)

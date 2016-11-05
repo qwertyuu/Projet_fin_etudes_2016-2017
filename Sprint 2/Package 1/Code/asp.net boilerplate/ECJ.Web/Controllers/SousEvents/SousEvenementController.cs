@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace ECJ.Web.Controllers
 {
-    [AbpMvcAuthorize(PermissionNames.Pages)]
+    [AbpMvcAuthorize]
     public class SousEvenementsController : ECJControllerBase
     {
         DBProvider db;
@@ -26,57 +26,62 @@ namespace ECJ.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var serviceAAjouter = Request.Form["service"] ?? Request.Form["service_delete_salle"];
-            //ajouter le service requis
-            if (serviceAAjouter != null)
+            var peutModifier = PermissionChecker.IsGrantedAsync(PermissionNames.GererSousEvenement).Result;
+            if (peutModifier)
             {
-                db.InsertServiceRequis((int)id, int.Parse(serviceAAjouter));
-            }
-            //supprimer un service requis
-            var serviceASupprimer = Request.Form["service_suppr"];
-            if (serviceASupprimer != null)
-            {
-                db.SupprimerServiceRequis((int)id, int.Parse(serviceASupprimer));
+                var serviceAAjouter = Request.Form["service"] ?? Request.Form["service_delete_salle"];
+                //ajouter le service requis
+                if (serviceAAjouter != null)
+                {
+                    db.InsertServiceRequis((int)id, int.Parse(serviceAAjouter));
+                }
+                //supprimer un service requis
+                var serviceASupprimer = Request.Form["service_suppr"];
+                if (serviceASupprimer != null)
+                {
+                    db.SupprimerServiceRequis((int)id, int.Parse(serviceASupprimer));
+                }
+
+                //ajouter le forfait sélectionné
+                var forfaitAAjouter = Request.Form["forfait"];
+                if (forfaitAAjouter != null)
+                {
+                    db.LierForfait((int)id, int.Parse(forfaitAAjouter));
+                }
+                //supprimer le forfait sélectionné
+                var forfaitASupprimer = Request.Form["forfait_suppr"];
+                if (forfaitASupprimer != null)
+                {
+                    db.DelierForfait((int)id, int.Parse(forfaitASupprimer));
+                }
+
+                //ajouter la salle sélectionnée
+                var salleAAjouter = Request.Form["salle"];
+                if (salleAAjouter != null)
+                {
+                    db.LierSalle((int)id, int.Parse(salleAAjouter));
+                }
+
+                //supprimer la salle sélectionnée ou si le service ajouté est de trop
+                if (Request.Form["salle_suppr"] != null || Request.Form["service_delete_salle"] != null)
+                {
+                    db.DelierSalle((int)id);
+                }
+
+                //ajouter l'engagement sélectionné
+                var engagementAAjouter = Request.Form["engagement"];
+                if (engagementAAjouter != null)
+                {
+                    db.LierEngagement((int)id, int.Parse(engagementAAjouter));
+                }
+                //supprimer l'engagement sélectionné
+                var engagementASupprimer = Request.Form["engagement_suppr"];
+                if (engagementASupprimer != null)
+                {
+                    db.DelierEngagement((int)id, int.Parse(engagementASupprimer));
+                }
             }
 
-            //ajouter le forfait sélectionné
-            var forfaitAAjouter = Request.Form["forfait"];
-            if (forfaitAAjouter != null)
-            {
-                db.LierForfait((int)id, int.Parse(forfaitAAjouter));
-            }
-            //supprimer le forfait sélectionné
-            var forfaitASupprimer = Request.Form["forfait_suppr"];
-            if (forfaitASupprimer != null)
-            {
-                db.DelierForfait((int)id, int.Parse(forfaitASupprimer));
-            }
-
-            //ajouter la salle sélectionnée
-            var salleAAjouter = Request.Form["salle"];
-            if (salleAAjouter != null)
-            {
-                db.LierSalle((int)id, int.Parse(salleAAjouter));
-            }
-
-            //supprimer la salle sélectionnée ou si le service ajouté est de trop
-            if (Request.Form["salle_suppr"] != null || Request.Form["service_delete_salle"] != null)
-            {
-                db.DelierSalle((int)id);
-            }
-
-            //ajouter l'engagement sélectionné
-            var engagementAAjouter = Request.Form["engagement"];
-            if (engagementAAjouter != null)
-            {
-                db.LierEngagement((int)id, int.Parse(engagementAAjouter));
-            }
-            //supprimer l'engagement sélectionné
-            var engagementASupprimer = Request.Form["engagement_suppr"];
-            if (engagementASupprimer != null)
-            {
-                db.DelierEngagement((int)id, int.Parse(engagementASupprimer));
-            }
 
 
             var SousEvenementCourrant = db.FindSousEvenement((int)id);
@@ -102,10 +107,12 @@ namespace ECJ.Web.Controllers
             var forfait = db.ToutForfait().Except(SousEvenementCourrant.tblForfait).ToList();
             var engagement = db.ToutEngagement().Except(SousEvenementCourrant.tblEngagement).ToList();
             ViewBag.listTuple = new Tuple<tblSousEvenement, List<tblService>, List<tblSalle>, List<tblForfait>, List<tblEngagement>>(SousEvenementCourrant, service, salle, forfait, engagement);
+            ViewBag.PeutModifier = peutModifier;
             //Service, Salle, Forfait, Engagement
             return View();
         }
 
+        [AbpMvcAuthorize(PermissionNames.GererSousEvenement)]
         public ActionResult Ajout()
         {
             ViewBag.noEvenement = Request.QueryString["evenement_id"];
@@ -126,6 +133,7 @@ namespace ECJ.Web.Controllers
             return View();
         }
 
+        [AbpMvcAuthorize(PermissionNames.GererSousEvenement)]
         public ActionResult Modifier(int? id)
         {
             if (id == null)
@@ -142,6 +150,7 @@ namespace ECJ.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AbpMvcAuthorize(PermissionNames.GererSousEvenement)]
         public ActionResult Modifier([Bind(Include = "noSousEvenement,nom,description,noEvenement,noSalle,dateSupprime")] tblSousEvenement tblSousEvenement)
         {
             if (ModelState.IsValid)
@@ -153,7 +162,7 @@ namespace ECJ.Web.Controllers
             return View(tblSousEvenement);
         }
 
-
+        [AbpMvcAuthorize(PermissionNames.GererSousEvenement)]
         public ActionResult Supprimer(int? id)
         {
             if (id != null)

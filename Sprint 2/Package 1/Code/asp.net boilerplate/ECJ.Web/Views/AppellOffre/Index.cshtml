@@ -22,8 +22,10 @@
               }           
 
         <br />
-                    
-        <a href="/AppellOffre/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
+        @if (ViewBag.PeutCreerAppelOffre)
+        {
+            <a href="/AppellOffre/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
+        }
         <table class="table" align="center">
             <thead>
                 <tr>
