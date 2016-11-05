@@ -750,7 +750,6 @@
     <Content Include="Views\Shared\_BottomMenu.cshtml" />
     <Content Include="Views\Activite\Modifier.cshtml" />
     <Content Include="Views\Salles\Index.cshtml" />
-    <Content Include="Views\Commanditaire\DetailsDon.cshtml" />
     <Content Include="Views\Salles\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

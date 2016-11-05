@@ -130,14 +130,15 @@ namespace ECJ.Web.Controllers
 
         internal void CreateEmail(string Courriel, decimal montant)
         {
-            string to = "jane@contoso.com";
-            string from = "ben@contoso.com";
+            string to = "PagPi1433443@etu.cegepJonquiere.ca";
+            //string to = Courriel.ToString();
+            string from = "PagPi1433443@etu.cegepJonquiere.ca";
             MailMessage message = new MailMessage(from, to);
-            message.Subject = "Don à ECJ";
-            message.Body = @"Merci de votre don de : " + montant + ".";
-            SmtpClient client = new SmtpClient(Courriel);
-            // Credentials are necessary if the server requires the client 
-            // to authenticate before it will send e-mail on the client's behalf.
+            message.Subject = "Don à Évènement Cegep Jonquière";
+            message.Body = @"Bonjours, /n Merci de votre don de : " + montant + ". /n De la part de l'équipe d'ECJ";
+            SmtpClient client = new SmtpClient("smtp.office365.com", 587);
+            client.EnableSsl = true;
+            client.Credentials = new System.Net.NetworkCredential("PagPi1433443@etu.cegepjonquiere.ca", "PAPageau04");
             client.UseDefaultCredentials = true;
 
             try
@@ -214,7 +215,7 @@ namespace ECJ.Web.Controllers
         {
             if (id != null)
             {
-               return (from soumi in db.tblSoumission
+                return (from soumi in db.tblSoumission
                         join ao in db.tblAppelOffre
                         on soumi.noAppelOffre equals ao.noAppelOffre
                         where ao.noAppelOffre == id
@@ -308,20 +309,20 @@ namespace ECJ.Web.Controllers
         {
             if (id != null)
             {
-               return  (from ag in db.tblAgencePublicite
-                       join soumi in db.tblSoumission 
-                       on ag.noAgencePub equals soumi.noAgencePub
-                       where soumi.noAppelOffre == id
-                       where soumi.dateSupprime == null
-                       where ag.dateSupprime == null
-                       select ag).ToList();
+                return (from ag in db.tblAgencePublicite
+                        join soumi in db.tblSoumission
+                        on ag.noAgencePub equals soumi.noAgencePub
+                        where soumi.noAppelOffre == id
+                        where soumi.dateSupprime == null
+                        where ag.dateSupprime == null
+                        select ag).ToList();
 
             }
             else
             {
-               return (from ag in db.tblAgencePublicite
-                       where ag.dateSupprime == null
-                                       select ag).ToList();
+                return (from ag in db.tblAgencePublicite
+                        where ag.dateSupprime == null
+                        select ag).ToList();
             }
 
         }
@@ -375,13 +376,13 @@ namespace ECJ.Web.Controllers
             conn.Open();
         }
 
-        public tblAppelOffre SelectAppelParSoumi(int ? idSoumi)
+        public tblAppelOffre SelectAppelParSoumi(int? idSoumi)
         {
             return (from a in db.tblAppelOffre
-                   join s in db.tblSoumission
-                   on a.noAppelOffre equals s.noAppelOffre
-                   where s.noSoumission == idSoumi
-                   select a).FirstOrDefault();
+                    join s in db.tblSoumission
+                    on a.noAppelOffre equals s.noAppelOffre
+                    where s.noSoumission == idSoumi
+                    select a).FirstOrDefault();
         }
 
         public tblStatutAppelOffre ReturnStatut(string nom)
@@ -389,7 +390,7 @@ namespace ECJ.Web.Controllers
             return db.tblStatutAppelOffre.Where(s => s.nom == nom).FirstOrDefault();
         }
 
-        public tblSoumission ReturnUneSoumi(int ?id )
+        public tblSoumission ReturnUneSoumi(int? id)
         {
             return db.tblSoumission.Find(id);
         }
@@ -400,6 +401,11 @@ namespace ECJ.Web.Controllers
         public tblCalculateur ReturnCalculateur(int id)
         {
             return db.tblCalculateur.Where(s => s.noSousEvenement == id).FirstOrDefault();
+        }
+
+        public tblCommanditaire nomCommanditaire(int id)
+        {
+            return db.tblCommanditaire.Where(c => c.noCommanditaire == id).FirstOrDefault();
         }
     }
 }

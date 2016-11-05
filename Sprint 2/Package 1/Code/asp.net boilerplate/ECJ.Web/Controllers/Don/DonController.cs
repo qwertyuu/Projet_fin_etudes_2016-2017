@@ -13,13 +13,34 @@ namespace ECJ.Web.Controllers.Don
     public class DonController : Controller
     {
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
-        DBProvider provider;
+        DBProvider provider = new DBProvider();
         // GET: Don
 
         public ActionResult Create()
         {
-            ViewBag.noCommanditaire = new SelectList(db.tblCommanditaire, "noCommanditaire", "nomCommanditaire");
-            ViewBag.noSousEvenement = new SelectList(db.tblSousEvenement, "noSousEvenement", "nom");
+            List<tblCommanditaire> comm = new List<tblCommanditaire>();
+            List<tblSousEvenement> sousEvent = new List<tblSousEvenement>();
+
+            var id = Request.QueryString["id"];
+
+            foreach (var c in db.tblCommanditaire)
+            {
+                if (c.dateSupprime == null)
+                {
+                    comm.Add(c);
+                }
+            }
+
+            foreach (var sE in db.tblSousEvenement)
+            {
+                if (sE.dateSupprime == null)
+                {
+                    sousEvent.Add(sE);
+                }
+            }
+
+            ViewBag.nomCommanditaire = provider.nomCommanditaire(Convert.ToInt32(id)).nomCommanditaire;
+            ViewBag.noSousEvenement = new SelectList(sousEvent, "noSousEvenement", "nom");
 
             return View();
         }
@@ -29,18 +50,18 @@ namespace ECJ.Web.Controllers.Don
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "noDon,noCommanditaire,noSousEvenement,montant,dateDon,dateSupprime")] tblDon tblDon)
         {
+            var id = Request.QueryString["id"];
+
             if (ModelState.IsValid)
             {
+                tblDon.noCommanditaire = Convert.ToInt32(id);
                 db.tblDon.Add(tblDon);
                 db.SaveChanges();
-                return RedirectToAction("../Commanditaire/Index");
             }
-            
+
             provider.CreateEmail(db.tblCommanditaire.Find(tblDon.noCommanditaire).courrielContact, tblDon.montant);
 
-            ViewBag.noCommanditaire = new SelectList(db.tblCommanditaire, "noCommanditaire", "nomCommanditaire", tblDon.noCommanditaire);
-            ViewBag.noSousEvenement = new SelectList(db.tblSousEvenement, "noSousEvenement", "nom", tblDon.noSousEvenement);
-            return View(tblDon);
+            return RedirectToAction("../Commanditaire/Index");
         }
     }
 }

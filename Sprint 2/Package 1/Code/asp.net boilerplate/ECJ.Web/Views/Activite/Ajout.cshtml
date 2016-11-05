@@ -16,15 +16,16 @@
         <input class="form-control" type="text" name="nomResponsable" required>
     </div>
     <div class="form-group">
-        <label>Etat : Choisir entre 0 et 1 (0 etant réalisé, 1 etant non-réalisé)</label>
+        <label>Réalisé</label>
         <input class="form-control" type="number" name="etat" required>
+        @*<input type="checkbox" value="réalisé"><br>*@
     </div>
     <div class="form-group">
-        <label>Date de création</label>
+        <label>Date</label>
         <input class="form-control dp" type="text" name="dateCreation" required>
     </div>
     <div class="form-group">
-        <label>Tâches</label>
+        <label>Tâche</label>
         <input class="form-control" type="text" name="tache" required>
     </div>
     <div class="form-group">
@@ -33,8 +34,8 @@
     </div>
 
     <div class="form-group pull-right">
-        <button class="btn btn-primary blue" ><i class="fa fa-save"></i> <span>Ajouter</span></button>
-        <button class="btn btn-default pull-right" data-dismiss="modal" onclick="goBack()">Retour à un détails d'événement</button>
+        <button class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Ajouter</span></button>
+        <button class="btn btn-default pull-right" data-dismiss="modal" onclick="goBack()">Retour à un détail d'événement</button>
     </div>
 }
 

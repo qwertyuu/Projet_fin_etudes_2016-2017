@@ -6,6 +6,7 @@
     decimal test = 0;
     decimal donCumul = 0;
 }
+
 <h1>Commanditaire</h1>
 <div class="row">
     <div class="col-md-12">
@@ -42,37 +43,37 @@
                     </th>
                 </tr>
             </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    donCumul = 0;
+                    if (item.dateSupprime == null)
+                    {
 
-            @foreach (var item in Model)
-                        {
-                            donCumul = 0;
-                            if (item.dateSupprime == null)
-                            {
-
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.nomCommanditaire)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.nomContact)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.courrielContact)
-                        </td>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nomCommanditaire)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nomContact)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.courrielContact)
+                            </td>
                         <td class="{sorter:'monetaryValue'}">
 
-                            @foreach (var don in item.tblDon)
-                                        {
+                                @foreach (var don in item.tblDon)
+                                {
                                     if (don.noCommanditaire == item.noCommanditaire)
                                     {
                                         donCumul += don.montant;
                                     }
                                 }
-                            @donCumul$
-                        </td>
-                        <td>
-            
-                            @{foreach (var Don in item.tblDon)
+                                <p>@donCumul$</p>
+                            </td>
+                            <td>
+
+                                @{foreach (var Don in item.tblDon)
                                     {
                                         if (Don.noCommanditaire == item.noCommanditaire)
                                         {
@@ -82,43 +83,44 @@
 
                                     if (test >= 1500)
                                     {
-                                    <p>Or</p>
-                                    test = 0;
+                                        <p>Or</p>
+                                        test = 0;
                                     }
                                     else if (test >= 1000)
                                     {
-                                    <p>Argent</p>
-                                    test = 0;
+                                        <p>Argent</p>
+                                        test = 0;
                                     }
                                     else if (test >= 500)
                                     {
-                                    <p>Bronze</p>
-                                    test = 0;
+                                        <p>Bronze</p>
+                                        test = 0;
                                     }
                                     else if (test > 0)
                                     {
-                                    <p>Ami</p>
-                                    test = 0;
+                                        <p>Ami</p>
+                                        test = 0;
                                     }
                                     else
                                     {
-                                    <p>Aucun rang</p>
-                                    test = 0;
+                                        <p>Aucun rang</p>
+                                        test = 0;
                                     }
 
                                 }
-                        </td>
+                            </td>
 
-                        <td>
-                            <a href="/Commanditaire/Details/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                            <a href="/Commanditaire/Edit/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                            <a href="/Don/Create/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Ajouter"><i class="fa fa-money fa-lg"></i></a>
-                            <a href="/Commanditaire/Supprimer/@item.noCommanditaire" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            <td>
+                                <a href="/Commanditaire/Details/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="/Commanditaire/Edit/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="/Don/Create/@item.noCommanditaire?id=@item.noCommanditaire" class="btn btn-sm btn-primary" title="Ajouter"><i class="fa fa-money fa-lg"></i></a>
+                                <a href="/Commanditaire/Supprimer/@item.noCommanditaire" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
 
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
+                                        }
                                     }
-            }
+            </tbody>
         </table>
     </div>
 </div>

@@ -33,7 +33,7 @@
             <label>Modifier l'affiche (laisser vide pour garder l'ancienne)</label>
             <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
         </div>
-                    <img width="200" src="@Url.Action("GetFile","commanditaire", new { id = Model.noCommanditaire})" alt="Logo" />
+        <img width="200" src="@Url.Action("GetFile","commanditaire", new { id = Model.noCommanditaire})" alt="Logo" />
     }
     else
     {
@@ -50,7 +50,7 @@
 
     <div class="form-group">
         <label>Texte de présentation :</label>
-        <textarea class="form-control" rows="5" id="textArea" name="textePresentation" >@Model.textePresentation</textarea>
+        <textarea class="form-control" rows="5" id="textArea" name="textePresentation">@Model.textePresentation</textarea>
     </div>
 
     <div class="form-group">
@@ -69,7 +69,7 @@
     </div>
 
     <div class="form-group pull-right">
-        <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
-        <a href="/Commanditaire" class="btn btn-default" data-dismiss="modal">Annuler</a>
+        <button type="submit" class="btn btn-primary blue pull-right"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
+        <a href="/Commanditaire" class="btn btn-default pull-right" data-dismiss="modal">Annuler</a>
     </div>
 }

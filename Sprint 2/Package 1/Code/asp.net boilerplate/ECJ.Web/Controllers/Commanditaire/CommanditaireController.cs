@@ -47,7 +47,7 @@ namespace ECJ.Web.Controllers.Commanditaire
             var comm = db.tblCommanditaire.Find(id);
             var imagedata = comm.logo;
             var contentType = DBProvider.GetContentType(imagedata);
-            return new FileContentResult(imagedata,string.Format("image/{0}", contentType.ToString().ToLower()));
+            return new FileContentResult(imagedata, string.Format("image/{0}", contentType.ToString().ToLower()));
 
         }
 
@@ -184,24 +184,14 @@ namespace ECJ.Web.Controllers.Commanditaire
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            tblCommanditaire tblCommanditaire = db.tblCommanditaire.Find(id);
 
-            List<tblDon> don = new List<Models.tblDon>();
-            var tblDon = db.tblDon.ToList();
-
-            foreach (var d in tblDon)
-            {
-                if (d.noCommanditaire == id)
-                {
-                    don.Add(d);
-                }
-            }
-
-            if (tblDon == null)
+            if (tblCommanditaire == null)
             {
                 return HttpNotFound();
             }
 
-            return View(don);
+            return View(tblCommanditaire);
         }
     }
 }
