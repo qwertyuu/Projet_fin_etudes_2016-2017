@@ -48,7 +48,7 @@ namespace ECJ.Web.Controllers
 
         internal List<vueSomEvenement> ToutSomEvenement()
         {
-            return db.vueSomEvenement.ToList();
+            return db.vueSomEvenement.AsNoTracking().ToList();
         }
 
         internal void SupprimerMemo(int v)

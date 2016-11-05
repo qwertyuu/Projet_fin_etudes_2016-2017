@@ -27,7 +27,7 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         public AppellOffreController()
         {
-
+            GetPermissions();
         }
 
 

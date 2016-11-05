@@ -1,5 +1,6 @@
 ﻿@using Abp.Authorization.Users
 @using Abp.Web.Mvc.Extensions
+@using ECJ.Authorization;
 @model IEnumerable<ECJ.Web.Models.vueSomEvenement>
 @{
     ViewBag.Title = "Events";
@@ -21,7 +22,7 @@
                     </span>
                 </div>
             }
-            @if (ViewBag.PeutAjouterEvenement)
+            @if (IsGranted(PermissionNames.GererEvenement))
             {
                 <a href="/Events/Ajout" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un événement</a>
             }
@@ -45,11 +46,15 @@
                             <td>@e.description</td>
                             <td>
                                 <a href="/Events/Detail/@e.noEvenement" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+@if (IsGranted(PermissionNames.GererEvenement))
+{
                                 <a href="/Events/Modifier/@e.noEvenement" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
                                 <a href="/Events/Supprimer/@e.noEvenement" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+
+}
                             </td>
                         </tr>
-                        }
+                    }
                 </tbody>
             </table>
         </div>

@@ -19,7 +19,7 @@ namespace ECJ.Web.Controllers
         private readonly IMultiTenancyConfig _multiTenancyConfig;
         DBProvider provider;
 
-        public static AbpMvcAuthorizeAttribute pagePermission;
+        public static string pagePermission;
 
         public LayoutController(
             IUserNavigationManager userNavigationManager, 
@@ -51,7 +51,7 @@ namespace ECJ.Web.Controllers
         {
             if (pagePermission != null)
             {
-                ViewBag.users = provider.ToutUtilisateurs().Where(u => u.AbpUserRoles.Any(r => provider.SelectRole(r.RoleId).AbpPermissions.Where(p => p.Name == pagePermission.Permissions[0]).Any()));
+                ViewBag.users = provider.ToutUtilisateurs().Where(u => u.AbpUserRoles.Any(r => provider.SelectRole(r.RoleId).AbpPermissions.Where(p => p.Name == pagePermission).Any()));
             }
             else
             {

@@ -37,7 +37,7 @@ namespace ECJ.Web.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.PeutModifierSousEvenement = PermissionChecker.IsGrantedAsync(PermissionNames.GererSousEvenement);
+            ViewBag.PeutModifierSousEvenement = PermissionChecker.IsGrantedAsync(PermissionNames.GererSousEvenement).Result;
             return View(elementADetailler);
         }
 
@@ -60,11 +60,13 @@ namespace ECJ.Web.Controllers
                 (e.description ?? "").ToUpper().Contains(recherche) || 
                 e.nom.ToUpper().Contains(recherche)).ToList();
             }
-            ViewBag.PeutAjouterEvenement = PermissionChecker.IsGrantedAsync("Pages").Result;
             return View(tblEvenement);
         }
+
+        [AbpMvcAuthorize(PermissionNames.GererEvenement)]
         public ActionResult Ajout()
         {
+            LayoutController.pagePermission = PermissionNames.GererEvenement;
             return View();
         }
 
@@ -97,6 +99,7 @@ namespace ECJ.Web.Controllers
             return View();
         }
 
+        [AbpMvcAuthorize(PermissionNames.GererEvenement)]
         public ActionResult Modifier(int? id)
         {
             if (id == null)
@@ -108,11 +111,13 @@ namespace ECJ.Web.Controllers
             {
                 return HttpNotFound();
             }
+            LayoutController.pagePermission = PermissionNames.GererEvenement;
             return View(elementAModifier);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AbpMvcAuthorize(PermissionNames.GererEvenement)]
         public ActionResult Modifier([Bind(Include = "noEvenement,nom,dateDebut,datefin,affiche,url,description,dateSupprime")] tblEvenement tblEvenement)
         {
             //var a = db.tblEvenement.Find(tblEvenement.noEvenement) == tblEvenement;
@@ -138,16 +143,19 @@ namespace ECJ.Web.Controllers
 
                 return RedirectToAction("Index");
             }
+            LayoutController.pagePermission = PermissionNames.GererEvenement;
             return View(tblEvenement);
         }
 
 
+        [AbpMvcAuthorize(PermissionNames.GererEvenement)]
         public ActionResult Supprimer(int? id)
         {
             if (id != null)
             {
                 db.SupprimerEvenement((int)id);
             }
+            LayoutController.pagePermission = PermissionNames.GererEvenement;
             return RedirectToAction("Index");
         }
     }
