@@ -26,8 +26,7 @@ namespace ECJ.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var peutModifier = PermissionChecker.IsGrantedAsync(PermissionNames.GererSousEvenement).Result;
-            if (peutModifier)
+            if (IsGranted(PermissionNames.GererSousEvenement))
             {
                 var serviceAAjouter = Request.Form["service"] ?? Request.Form["service_delete_salle"];
                 //ajouter le service requis
@@ -107,7 +106,6 @@ namespace ECJ.Web.Controllers
             var forfait = db.ToutForfait().Except(SousEvenementCourrant.tblForfait).ToList();
             var engagement = db.ToutEngagement().Except(SousEvenementCourrant.tblEngagement).ToList();
             ViewBag.listTuple = new Tuple<tblSousEvenement, List<tblService>, List<tblSalle>, List<tblForfait>, List<tblEngagement>>(SousEvenementCourrant, service, salle, forfait, engagement);
-            ViewBag.PeutModifier = peutModifier;
             //Service, Salle, Forfait, Engagement
             return View();
         }
@@ -116,6 +114,7 @@ namespace ECJ.Web.Controllers
         public ActionResult Ajout()
         {
             ViewBag.noEvenement = Request.QueryString["evenement_id"];
+            LayoutController.pagePermission = PermissionNames.GererSousEvenement;
             return View();
         }
 
@@ -145,6 +144,7 @@ namespace ECJ.Web.Controllers
             {
                 return HttpNotFound();
             }
+            LayoutController.pagePermission = PermissionNames.GererSousEvenement;
             return View(elementAModifier);
         }
 
@@ -159,6 +159,7 @@ namespace ECJ.Web.Controllers
 
                 return Redirect(Request.QueryString["return"]);
             }
+            LayoutController.pagePermission = PermissionNames.GererSousEvenement;
             return View(tblSousEvenement);
         }
 
@@ -169,6 +170,7 @@ namespace ECJ.Web.Controllers
             {
                 db.SupprimerSousEvenement((int)id);
             }
+            LayoutController.pagePermission = PermissionNames.GererSousEvenement;
             return Redirect(Request.QueryString["return"]);
         }
     }

@@ -37,7 +37,6 @@ namespace ECJ.Web.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.PeutModifierSousEvenement = PermissionChecker.IsGrantedAsync(PermissionNames.GererSousEvenement).Result;
             return View(elementADetailler);
         }
 

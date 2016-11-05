@@ -2,6 +2,7 @@
 @using System.Text
 @using ECJ.Web.Models
 @using System.Runtime.Serialization.Json
+@using ECJ.Authorization;
 @{
     ViewBag.Title = "Detail";
     @*Service, Salle, Forfait, Engagement*@
@@ -35,7 +36,7 @@
         </div>
     </div>
     <label>Services requis</label>
-@if (ViewBag.PeutModifier)
+@if (IsGranted(PermissionNames.GererSousEvenement))
 {
     <button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
 }
@@ -57,7 +58,7 @@
                     <tr>
                         <td>@s.nomService</td>
                         <td>
-                            @if (ViewBag.PeutModifier)
+                            @if (IsGranted(PermissionNames.GererSousEvenement))
                             {
                                 <button name="service_suppr" value="@s.noService" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
                             }
@@ -71,7 +72,7 @@
     <label>Salle</label>
     @if (Model.Item1.noSalle == null || Model.Item1.tblSalle.dateSupprime != null)
     {
-        if (ViewBag.PeutModifier)
+        if (IsGranted(PermissionNames.GererSousEvenement))
         {
             <button data-target="#SalleAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Choisir une salle</button>
         }
@@ -101,7 +102,7 @@
                         <td>@Model.Item1.tblSalle.billetVIP</td>
                         <td>
 
-                        @if (ViewBag.PeutModifier)
+                        @if (IsGranted(PermissionNames.GererSousEvenement))
                         {
                             <button name="salle_suppr" value="@Model.Item1.noSalle" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
                         }
@@ -115,7 +116,7 @@
 
     <label>Forfaits</label>
 
-@if (ViewBag.PeutModifier)
+@if (IsGranted(PermissionNames.GererSousEvenement))
 {
     <button data-target="#ForfaitAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un forfait</button>
 }
@@ -139,7 +140,7 @@
                         <td>@f.nom</td>
                         <td>@f.description</td>
                         <td>
-@if (ViewBag.PeutModifier)
+@if (IsGranted(PermissionNames.GererSousEvenement))
 {
                             <button name="forfait_suppr" value="@f.noForfait" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
 }
@@ -153,7 +154,7 @@
 
     <label>Engagement</label>
 
-@if (ViewBag.PeutModifier)
+@if (IsGranted(PermissionNames.GererSousEvenement))
 {
     <button data-target="#EngagementAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un engagement</button>
 }
@@ -186,7 +187,7 @@
                         <td>@e.descriptionCourte</td>
                         <td>
 
-@if (ViewBag.PeutModifier)
+@if (IsGranted(PermissionNames.GererSousEvenement))
 {
                             <button name="engagement_suppr" value="@e.noEngagement" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
 }
@@ -200,7 +201,7 @@
 
     <label>Activités</label>
 
-@if (ViewBag.PeutModifier)
+@if (IsGranted(PermissionNames.GererSousEvenement))
 {
     <a href="/Activite/Ajout/?sousevenement_id=@Model.Item1.noSousEvenement&return=@Request.RawUrl" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
 }
@@ -244,7 +245,9 @@
                                     <td>@activite.detail</td>
                                     <td>@String.Format("{0:yyyy/MM/dd}", activite.dateCreation)</td>
                                     <td>
-                                        @if (activite.etat == 1)
+@if (IsGranted(PermissionNames.GererSousEvenement))
+{
+                                        if (activite.etat == 1)
                                         {
                                             <a href="~/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-warning" title="Changer pour non-réalisé"><i class="fa fa-times-circle fa-lg"></i></a>
 
@@ -253,9 +256,10 @@
                                         {
                                             <a href="~/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-success" title="Changer pour réalisé"><i class="fa fa-check-square fa-lg"></i></a>
                                         }
+}
                                         <a href="/Activite/Detail/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
 
-@if (ViewBag.PeutModifier)
+@if (IsGranted(PermissionNames.GererSousEvenement))
 {
                                         <a href="/Activite/Modifier/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
                                         <a href="/Activite/Supprimer/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
