@@ -59,7 +59,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.courrielContact)
                         </td>
-                        <td>
+                        <td class="{sorter:'monetaryValue'}">
 
                             @foreach (var don in item.tblDon)
                                         {
@@ -68,7 +68,7 @@
                                         donCumul += don.montant;
                                     }
                                 }
-                            <p>@donCumul$</p>
+                            @donCumul$
                         </td>
                         <td>
             

@@ -57,6 +57,18 @@
         return true;
     });
 
+    $.tablesorter.addParser({
+        id: "monetaryValue",
+        is: function (s) {
+            var sp = s.replace(/,/, '.');
+            var test = (/([£$€] ?\d+\.?\d*|\d+\.?\d* ?)/.test(sp)); //check currency with symbol
+            return test;
+        }, format: function (s) {
+            return $.tablesorter.formatFloat(s.replace(new RegExp(/[^\d\.]/g), ""));
+        }, type: "numeric"
+    });
+
+    $("table:not(.ui-datepicker-calendar)").tablesorter();
 
 
 

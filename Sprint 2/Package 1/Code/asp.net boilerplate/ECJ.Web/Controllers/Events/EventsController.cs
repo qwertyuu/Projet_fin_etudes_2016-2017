@@ -53,9 +53,9 @@ namespace ECJ.Web.Controllers
                 }
                 ViewBag.recherche = recherche;
                 recherche = recherche.Trim().ToUpper();
-                tblEvenement = tblEvenement.Where(e => 
-                e.dateDebut.ToString().ToUpper().Contains(recherche) ||
-                e.dateFin.ToString().ToUpper().Contains(recherche) ||
+                tblEvenement = tblEvenement.Where(e =>
+                String.Format("{0:yyyy/MM/dd}", e.dateDebut).Contains(recherche) ||
+                String.Format("{0:yyyy/MM/dd}", e.dateFin).Contains(recherche) ||
                 (e.description ?? "").ToUpper().Contains(recherche) || 
                 e.nom.ToUpper().Contains(recherche)).ToList();
             }

@@ -1,4 +1,4 @@
-body {
+﻿body {
   padding-top: 80px;
   height:100%;
 }
@@ -178,4 +178,13 @@ img{
 }
 tooltip{
     clear:both;
+}
+.headerSortUp::after{
+    font-size:10px;
+    content:' ▼';
+}
+
+.headerSortDown::after{
+    font-size:10px;
+    content:' ▲';
 }

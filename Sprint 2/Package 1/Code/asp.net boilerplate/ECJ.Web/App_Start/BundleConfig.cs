@@ -39,6 +39,7 @@ namespace ECJ.Web
 
                         "~/Scripts/jquery-2.2.0.min.js",
                         "~/Scripts/jquery-ui-1.11.4.min.js",
+                        "~/Scripts/jquery.tablesorter.js",
                         "~/Scripts/zabuto_calendar.js",
 
                         "~/Scripts/bootstrap.min.js",
