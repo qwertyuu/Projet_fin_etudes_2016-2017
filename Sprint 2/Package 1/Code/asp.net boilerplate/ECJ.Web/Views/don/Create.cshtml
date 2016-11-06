@@ -33,12 +33,6 @@
 
             <div class="form-group pull-right">
                 <button class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Ajouter</span></button>
-                <button class="btn btn-default pull-right" data-dismiss="modal" onclick="goBack()">Annuler</button>
+                <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Retour à un détail d'événement</a>
             </div>
 }
-
-<script>
-    function goBack() {
-        window.history.back();
-    }
-</script>

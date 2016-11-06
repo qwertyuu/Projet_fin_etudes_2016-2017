@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 using System.Web;
 using System.Collections;
 using System.Net.Mail;
+using System.Data;
+using System.Data.Entity;
 
 namespace ECJ.Web.Controllers
 {
@@ -28,6 +30,15 @@ namespace ECJ.Web.Controllers
             db.SaveChanges();
         }
 
+        internal List<tblCommanditaire> CommanditaireList()
+        {
+            return db.tblCommanditaire.ToList();
+        }
+
+        internal tblCommanditaire returnCommanditaire(int id)
+        {
+            return db.tblCommanditaire.Find(id);
+        }
         internal void CreerMemo(int expediteur, int destinataire, string message, string lien)
         {
             db.tblMemo.Add(new tblMemo()
@@ -61,6 +72,29 @@ namespace ECJ.Web.Controllers
         {
             return db.tblMemo.Where(m => m.destinataire == userId && m.dateSupprime == null).ToList();
         }
+
+        internal void AjouterCommanditaire(tblCommanditaire comm)
+        {
+            db.tblCommanditaire.Add(comm);
+            db.SaveChanges();
+        }
+
+        internal tblCommanditaire ReturnCommLogo(tblCommanditaire comm)
+        {
+            return db.tblCommanditaire.Find(comm.noCommanditaire);
+        }
+
+        internal void EnregistrerCommanditaire(tblCommanditaire comm)
+        {
+            db.Entry(db.tblCommanditaire.Find(comm.noCommanditaire)).CurrentValues.SetValues(comm);
+        }
+
+        internal void ModifCommanditaire(tblCommanditaire comm)
+        {
+            db.Entry(comm).State = EntityState.Modified;
+        }
+
+
 
         #region décodeur de type d'image depuis byte[]
         private static Dictionary<byte[], ImageFormat> imageFormatDecoders = new Dictionary<byte[], ImageFormat>()
@@ -364,6 +398,11 @@ namespace ECJ.Web.Controllers
         public void Save()
         {
             db.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            db.Dispose();
         }
 
         public tblSoumission SleclectSoumi(int noApp, int noAgence)

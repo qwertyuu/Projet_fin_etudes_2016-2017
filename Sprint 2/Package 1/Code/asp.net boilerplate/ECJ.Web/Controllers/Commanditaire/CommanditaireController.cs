@@ -14,13 +14,13 @@ namespace ECJ.Web.Controllers.Commanditaire
 {
     public class CommanditaireController : ECJControllerBase
     {
-        private PE2_OfficielEntities db = new PE2_OfficielEntities();
+        DBProvider provider = new DBProvider();
 
         // GET: Commanditaire
         public ActionResult Index()
         {
             var recherche = Request.QueryString["recherche"];
-            var Commanditaire = db.tblCommanditaire.ToList();
+            var Commanditaire = provider.CommanditaireList();
 
             if (recherche != null)
             {
@@ -44,7 +44,7 @@ namespace ECJ.Web.Controllers.Commanditaire
 
         public FileContentResult GetFile(int id)
         {
-            var comm = db.tblCommanditaire.Find(id);
+            var comm = provider.returnCommanditaire(id);
             var imagedata = comm.logo;
             var contentType = DBProvider.GetContentType(imagedata);
             return new FileContentResult(imagedata, string.Format("image/{0}", contentType.ToString().ToLower()));
@@ -58,7 +58,7 @@ namespace ECJ.Web.Controllers.Commanditaire
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblCommanditaire tblCommanditaire = db.tblCommanditaire.Find(id);
+            tblCommanditaire tblCommanditaire = provider.returnCommanditaire(Convert.ToInt32(id));
             if (tblCommanditaire == null)
             {
                 return HttpNotFound();
@@ -69,8 +69,6 @@ namespace ECJ.Web.Controllers.Commanditaire
         // GET: tblCommanditaires/Create
         public ActionResult Create()
         {
-            ViewBag.noCommanditaire = new SelectList(db.tblCommanditaire, "noCommanditaire", "nomCommanditaire");
-            ViewBag.noSousEvenement = new SelectList(db.tblSousEvenement, "noSousEvenement", "nom");
 
             return View();
         }
@@ -93,8 +91,7 @@ namespace ECJ.Web.Controllers.Commanditaire
                     }
                 }
 
-                db.tblCommanditaire.Add(tblCommanditaire);
-                db.SaveChanges();
+                provider.AjouterCommanditaire(tblCommanditaire);
                 return RedirectToAction("Index");
             }
 
@@ -108,7 +105,7 @@ namespace ECJ.Web.Controllers.Commanditaire
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var elementAModifier = db.tblCommanditaire.Find((int)id);
+            var elementAModifier = provider.returnCommanditaire(Convert.ToInt32(id));
             if (elementAModifier == null)
             {
                 return HttpNotFound();
@@ -139,18 +136,18 @@ namespace ECJ.Web.Controllers.Commanditaire
                 }
                 else
                 {
-                    tblCommanditaire.logo = db.tblCommanditaire.Find(tblCommanditaire.noCommanditaire).logo;
+                    tblCommanditaire.logo = provider.ReturnCommLogo(tblCommanditaire).logo;
                     modif = true;
                 }
                 if (modif)
                 {
-                    db.Entry(db.tblCommanditaire.Find(tblCommanditaire.noCommanditaire)).CurrentValues.SetValues(tblCommanditaire);
+                    provider.EnregistrerCommanditaire(tblCommanditaire);
                 }
                 else
                 {
-                    db.Entry(tblCommanditaire).State = EntityState.Modified;
+                    provider.ModifCommanditaire(tblCommanditaire);
                 }
-                db.SaveChanges();
+                provider.Save();
 
                 return RedirectToAction("Index");
             }
@@ -162,9 +159,9 @@ namespace ECJ.Web.Controllers.Commanditaire
         {
             if (id != null)
             {
-                var elementAModifier = db.tblCommanditaire.Find((int)id);
+                var elementAModifier = provider.returnCommanditaire(Convert.ToInt32(id));
                 elementAModifier.dateSupprime = DateTime.Now;
-                db.SaveChanges();
+                provider.Save();
             }
             return RedirectToAction("Index");
         }
@@ -173,7 +170,7 @@ namespace ECJ.Web.Controllers.Commanditaire
         {
             if (disposing)
             {
-                db.Dispose();
+                provider.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -184,7 +181,7 @@ namespace ECJ.Web.Controllers.Commanditaire
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblCommanditaire tblCommanditaire = db.tblCommanditaire.Find(id);
+            tblCommanditaire tblCommanditaire = provider.returnCommanditaire(Convert.ToInt32(id));
 
             if (tblCommanditaire == null)
             {

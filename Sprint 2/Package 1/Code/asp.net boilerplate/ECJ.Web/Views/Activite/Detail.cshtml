@@ -13,9 +13,20 @@
     </div>
 
     <div class="form-group">
-        <label>Etat (0 = réalisé, 1 = non-réalisé)</label>
+        <label>Statut</label>
         <div class="well well-sm">
-            @Model.etat
+            @if(Model.etat == 1)
+            {
+                <div>
+                    Réalisé
+                </div>
+            }
+            else
+            {
+                <div>
+                    Non-Réalisé
+                </div>
+            }
         </div>
     </div>
 
@@ -40,11 +51,7 @@
         </div>
     </div>
 
-    <button class="btn btn-default pull-right" data-dismiss="modal" onclick="goBack()">Retour à un détails d'événement</button>
+    <div class="form-group pull-right">
+        <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
 </form>
-
-<script>
-function goBack() {
-    window.history.back();
-}
-</script>
