@@ -71,7 +71,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             settings.DtdProcessing = DtdProcessing.Parse;
             settings.ValidationType = ValidationType.DTD;
             XmlReader reader = XmlReader.Create(fichierXML, settings);
-            schema.Add("http://tempuri.org/SoumissionAgence.xsd", reader);
+            //schema.Add("//deptinfo420/P2016_Equipe2/Soumission_alle/SoumissionAgence.xsd", reader);
             XDocument custOrdDoc = XDocument.Load(fichierXML);
             custOrdDoc.Validate(schema, (o, e) =>
                                  {
@@ -93,7 +93,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                 string path = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission" + appelOffre.nom + CptSoumi +".xml";
                 doc.Save(path);
                 string filename = "soumission" + appelOffre.nom + CptSoumi + ".xml";
-                validerXML(filename, doc);
+                validerXML(path, doc);
 
             }
             catch (UnauthorizedAccessException UAEx)

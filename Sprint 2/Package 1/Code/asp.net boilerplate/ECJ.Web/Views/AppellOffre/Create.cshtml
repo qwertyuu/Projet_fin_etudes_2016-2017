@@ -18,7 +18,7 @@
         <div class="form-group">
             <label>Nom</label>
             <div>
-                @Html.EditorFor(model => model.nom, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.nom, new { @class = "form-control", required = "required" })
                 @Html.ValidationMessageFor(model => model.nom, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,7 +50,7 @@
         <div class="form-group">
             <label>Agences de publicité</label>
             <div>
-                @Html.ListBox("noAgencePub", (MultiSelectList)ViewBag.noAgencePub, new {@class= "form-control" })
+                @Html.ListBox("noAgencePub", (MultiSelectList)ViewBag.noAgencePub, new {@class= "form-control", required = "required", @id="agencePub" })
             </div>
         </div>
 
@@ -64,8 +64,8 @@
 
         <br /><br /><br />
         <div class="pull-right">
-            <button class="btn btn-primary blue" value="Save" name="save"><i class="fa fa-save"> </i> Créer</button>
-            <button  class="btn btn-primary blue" value="Soumettre" name="save"><i class="fa fa-paper-plane"> </i> Soumettre</button>
+            <button class="btn btn-primary blue valid" value="Save" name="save"><i class="fa fa-save"> </i> Créer</button>
+            <button  class="btn btn-primary blue valid" value="Soumettre" name="save"><i class="fa fa-paper-plane"> </i> Soumettre</button>
             <a href="/AppellOffre/Index" class="btn btn-default" data-dismiss="modal">Annuler</a>
         </div>
     </form>

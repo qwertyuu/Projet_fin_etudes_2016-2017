@@ -19,7 +19,7 @@
         <div class="form-group">
             <label>Nom</label>
             <div>
-                @Html.EditorFor(model => model.nom, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.nom, new { @class = "form-control", required = "required" })
                 @Html.ValidationMessageFor(model => model.nom, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,7 +50,7 @@
             <div class="form-group">
                 <label>Agence de publicité</label>
                 <div>
-                    @Html.DropDownList("noAgencePub", (MultiSelectList)ViewBag.noAgencePub, htmlAttributes: new { @class = "form-control", multiple="multiple"})
+                    @Html.ListBox("noAgencePub", (MultiSelectList)ViewBag.noAgencePub, new { @class = "form-control", required = "required", @id = "agencePub" })
                 </div>
             </div>
 
