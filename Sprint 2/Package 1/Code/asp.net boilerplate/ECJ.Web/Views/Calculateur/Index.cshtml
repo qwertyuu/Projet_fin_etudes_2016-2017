@@ -114,15 +114,17 @@
         </div>
         <div class="col-md-6" id="forfaits">
             <table class="table">
-                <tbody>
+                <thead>
                     <tr>
                         Forfaits inclus
                     </tr>
+                </thead>
+                <tbody>
                     @foreach (var f in ViewBag.Forfait)
                     {
-                    <tr>
-                        <th>@f.nom</th>                        
-                    </tr>
+                        <tr>
+                            <th>@f.nom</th>
+                        </tr>
                     }
                 </tbody>
             </table>
@@ -332,12 +334,12 @@
         if (f.noForfait == 1)
         {
              @:chkAge = true;
-        }
+                }
         if (f.noForfait == 2) {
              @:chkSalle = true;
-        }
+                }
         if (f.noForfait == 3) {
             @:chkRed =true;
-            }
+                    }
     }
 </script>
