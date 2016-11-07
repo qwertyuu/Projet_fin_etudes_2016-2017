@@ -65,6 +65,8 @@ namespace ECJ.Web.Controllers.Don
             {
                 tblDon.noCommanditaire = Convert.ToInt32(id);
             }
+            tblDon.montant = Convert.ToDecimal(tblDon.montant + ",00");
+
             provider.AjouterDon(tblDon);
 
             /* CREATION DE MAIL NON-FONCTIONNEL

@@ -1,6 +1,4 @@
-﻿@model ECJ.Web.Models.tblCommanditaire
-
-@{
+﻿@{
     ViewBag.Title = "Create";
 }
 
@@ -25,7 +23,7 @@
     </div>
     <div class="form-group">
         <label>Lien hypertexte</label>
-        <input class="form-control" type="text" name="url">
+        <input class="form-control url" type="text" name="url">
     </div>
     <div class="form-group">
         <label>Description</label>
@@ -33,19 +31,19 @@
     </div>
     <div class="form-group">
         <label>Courriel contact</label>
-        <input class="form-control" type="text" name="courrielContact" required>
+        <input class="form-control courriel" type="text" name="courrielContact" required>
     </div>
     <div class="form-group">
         <label>Numéro de téléphone</label>
         <input class="form-control tel" type="text" name="numTel" required>
     </div>
     <div class="form-group">
-        <label>Extension</label>
-        <input class="form-control" type="text" name="extension">
+        <label>Poste</label>
+        <input class="form-control poste" type="text" name="extension">
     </div>
 
     <div class="form-group pull-right">
-        <button class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Ajouter</span></button>
+        <button class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Ajouter</span></button>
         <a href="/Commanditaire" class="btn btn-default" data-dismiss="modal">Annuler</a>
     </div>
 }

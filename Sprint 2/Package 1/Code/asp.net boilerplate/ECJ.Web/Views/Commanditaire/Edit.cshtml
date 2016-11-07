@@ -45,7 +45,7 @@
 
     <div class="form-group">
         <label>Lien hypertexte</label>
-        <input class="form-control" type="text" name="url" value="@Model.url">
+        <input class="form-control url" type="text" name="url" value="@Model.url">
     </div>
 
     <div class="form-group">
@@ -55,21 +55,21 @@
 
     <div class="form-group">
         <label>Email</label>
-        <input class="form-control" type="email" name="courrielContact" value="@Model.courrielContact" required>
+        <input class="form-control courriel" type="email" name="courrielContact" value="@Model.courrielContact" required>
     </div>
 
     <div class="form-group">
         <label>Numero de téléphone</label>
-        <input class="form-control" type="text" name="numTel" value="@Model.numTel" required>
+        <input class="form-control tel" type="text" name="numTel" value="@Model.numTel" required>
     </div>
 
     <div class="form-group">
-        <label>Extension</label>
-        <input class="form-control" type="number" name="extension" value="@Model.extension">
+        <label>Poste</label>
+        <input class="form-control poste positif" type="number" name="extension" value="@Model.extension">
     </div>
 
     <div class="form-group pull-right">
-        <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
+        <button type="submit" class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
         <a href="/Commanditaire" class="btn btn-default" data-dismiss="modal">Annuler</a>
     </div>
 }

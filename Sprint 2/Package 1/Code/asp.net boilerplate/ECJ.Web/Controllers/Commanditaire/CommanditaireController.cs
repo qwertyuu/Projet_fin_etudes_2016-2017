@@ -79,7 +79,6 @@ namespace ECJ.Web.Controllers.Commanditaire
         // GET: tblCommanditaires/Create
         public ActionResult Create()
         {
-
             return View();
         }
 
