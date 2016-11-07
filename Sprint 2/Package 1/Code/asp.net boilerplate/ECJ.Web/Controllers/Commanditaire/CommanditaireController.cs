@@ -166,15 +166,6 @@ namespace ECJ.Web.Controllers.Commanditaire
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                provider.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
         public ActionResult DetailsDon(int? id)
         {
             if (id == null)

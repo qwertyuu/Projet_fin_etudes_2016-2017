@@ -400,11 +400,6 @@ namespace ECJ.Web.Controllers
             db.SaveChanges();
         }
 
-        public void Dispose()
-        {
-            db.Dispose();
-        }
-
         public tblSoumission SleclectSoumi(int noApp, int noAgence)
         {
             return db.tblSoumission.Where(s => s.noAgencePub == noAgence && s.noAppelOffre == noApp).FirstOrDefault();

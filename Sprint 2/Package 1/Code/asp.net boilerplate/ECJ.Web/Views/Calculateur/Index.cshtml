@@ -116,14 +116,16 @@
             <table class="table">
                 <thead>
                     <tr>
-                        Forfaits inclus
+                        <th>
+                            Forfaits inclus
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var f in ViewBag.Forfait)
                     {
                         <tr>
-                            <th>@f.nom</th>
+                            <td>@f.nom</td>
                         </tr>
                     }
                 </tbody>
