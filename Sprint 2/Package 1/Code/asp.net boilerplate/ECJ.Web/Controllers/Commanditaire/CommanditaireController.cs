@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using Abp.Web.Mvc.Authorization;
+using ECJ.Authorization;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -12,9 +14,17 @@ using System.Drawing;
 
 namespace ECJ.Web.Controllers.Commanditaire
 {
+    [AbpMvcAuthorize(PermissionNames.Pages)]
     public class CommanditaireController : ECJControllerBase
     {
-        DBProvider provider = new DBProvider();
+        DBProvider provider;
+
+
+        public CommanditaireController()
+        {
+            provider = new DBProvider();
+            GetPermissions();
+        }
 
         // GET: Commanditaire
         public ActionResult Index()
@@ -74,8 +84,6 @@ namespace ECJ.Web.Controllers.Commanditaire
         }
 
         // POST: tblCommanditaires/Create
-        // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
-        // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire)

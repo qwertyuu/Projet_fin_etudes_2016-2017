@@ -7,14 +7,23 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ECJ.Web.Models;
+using System.Net.Mail;
+using Abp.Web.Mvc.Authorization;
+using ECJ.Authorization;
 
 namespace ECJ.Web.Controllers.Don
 {
-    public class DonController : Controller
+    [AbpMvcAuthorize(PermissionNames.Pages)]
+    public class DonController : ECJControllerBase
     {
-        private PE2_OfficielEntities db = new PE2_OfficielEntities();
-        DBProvider provider = new DBProvider();
+        DBProvider provider;
         // GET: Don
+
+        public DonController()
+        {
+            provider = new DBProvider();
+            GetPermissions();
+        }
 
         public ActionResult Create()
         {
@@ -23,7 +32,7 @@ namespace ECJ.Web.Controllers.Don
 
             var id = Request.QueryString["id"];
 
-            foreach (var c in db.tblCommanditaire)
+            foreach (var c in provider.CommanditaireList())
             {
                 if (c.dateSupprime == null)
                 {
@@ -31,7 +40,7 @@ namespace ECJ.Web.Controllers.Don
                 }
             }
 
-            foreach (var sE in db.tblSousEvenement)
+            foreach (var sE in provider.returnSousEvenement())
             {
                 if (sE.dateSupprime == null)
                 {
@@ -55,11 +64,32 @@ namespace ECJ.Web.Controllers.Don
             if (ModelState.IsValid)
             {
                 tblDon.noCommanditaire = Convert.ToInt32(id);
-                db.tblDon.Add(tblDon);
-                db.SaveChanges();
             }
+            provider.AjouterDon(tblDon);
 
-            provider.CreateEmail(db.tblCommanditaire.Find(tblDon.noCommanditaire).courrielContact, tblDon.montant);
+            /* CREATION DE MAIL NON-FONCTIONNEL
+            string to = "PagPi1433443@etu.cegepJonquiere.ca";
+            //string to = Courriel.ToString();
+            string from = "PagPi1433443@etu.cegepJonquiere.ca";
+            MailMessage message = new MailMessage(from, to);
+            message.Subject = "Don à Évènement Cegep Jonquière";
+            message.Body = @"Bonjours, /n Merci de votre don de : " + tblDon.montant + ". /n De la part de l'équipe d'ECJ";
+            SmtpClient client = new SmtpClient("smtp.office365.com", 587);
+            client.EnableSsl = true;
+            client.Credentials = new System.Net.NetworkCredential("PagPi1433443@etu.cegepjonquiere.ca", "PAPageau04");
+            client.UseDefaultCredentials = true;
+
+            try
+            {
+                client.Send(message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught in CreateMessage(): {0}",
+                            ex.ToString());
+            }
+            
+             */
 
             return RedirectToAction("../Commanditaire/Index");
         }

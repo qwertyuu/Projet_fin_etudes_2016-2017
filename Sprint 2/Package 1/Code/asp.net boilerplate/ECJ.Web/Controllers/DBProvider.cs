@@ -52,9 +52,20 @@ namespace ECJ.Web.Controllers
             db.SaveChanges();
         }
 
+        internal void AjouterDon(tblDon tblDon)
+        {
+            db.tblDon.Add(tblDon);
+            db.SaveChanges();
+        }
+
         internal tblEvenement ReturnEvenement(int id)
         {
             return db.tblEvenement.Find(id);
+        }
+
+        internal List<tblSousEvenement> returnSousEvenement()
+        {
+            return db.tblSousEvenement.ToList();
         }
 
         internal List<vueSomEvenement> ToutSomEvenement()
@@ -160,30 +171,6 @@ namespace ECJ.Web.Controllers
                 a.etat = 0;
             }
             db.SaveChanges();
-        }
-
-        internal void CreateEmail(string Courriel, decimal montant)
-        {
-            string to = "PagPi1433443@etu.cegepJonquiere.ca";
-            //string to = Courriel.ToString();
-            string from = "PagPi1433443@etu.cegepJonquiere.ca";
-            MailMessage message = new MailMessage(from, to);
-            message.Subject = "Don à Évènement Cegep Jonquière";
-            message.Body = @"Bonjours, /n Merci de votre don de : " + montant + ". /n De la part de l'équipe d'ECJ";
-            SmtpClient client = new SmtpClient("smtp.office365.com", 587);
-            client.EnableSsl = true;
-            client.Credentials = new System.Net.NetworkCredential("PagPi1433443@etu.cegepjonquiere.ca", "PAPageau04");
-            client.UseDefaultCredentials = true;
-
-            try
-            {
-                client.Send(message);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception caught in CreateMessage(): {0}",
-                            ex.ToString());
-            }
         }
 
         internal void UpdateEvenement(tblEvenement tblEvenement)

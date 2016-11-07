@@ -6,13 +6,22 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using Abp.Web.Mvc.Authorization;
+using ECJ.Authorization;
 
 namespace ECJ.Web.Controllers.Activite
 {
+    [AbpMvcAuthorize(PermissionNames.Pages)]
     public class ActiviteController : ECJControllerBase
     {
         //private PE2_OfficielEntities db = new PE2_OfficielEntities();
-        DBProvider db = new DBProvider();
+        DBProvider db;
+
+        public ActiviteController()
+        {
+            db = new DBProvider();
+            GetPermissions();
+        }
 
         public ActionResult Ajout()
         {
