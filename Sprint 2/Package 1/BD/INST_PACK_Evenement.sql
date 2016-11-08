@@ -48,7 +48,7 @@ INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noE
 INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Souper 2019','aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet odio. Etiam ligula tortor, dictum eu, placerat eget, venenatis a, magna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam laoreet,',NULL,10);
 INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Spectacle 2016','est ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim,',NULL,7);
 INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Collecte de fond 2019','eu','2013/12/08',10);
-INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Spectacle 2009','eu','2009/12/08',11);
+INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Spectacle 2009','eu','2009/12/08',10);
 
 
 GO
