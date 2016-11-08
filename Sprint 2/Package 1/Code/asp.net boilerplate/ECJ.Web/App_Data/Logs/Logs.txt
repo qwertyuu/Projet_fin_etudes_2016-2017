@@ -1089,3 +1089,178 @@ DEBUG 2016-11-07 21:37:13,714 [72   ] Abp.Web.SignalR.Hubs.AbpCommonHub        -
 DEBUG 2016-11-07 21:37:13,765 [76   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ae143e7b-4c68-40dd-b181-0db8da394b32","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-07T21:37:13.7649089-05:00","Properties":{}}
 DEBUG 2016-11-07 21:37:13,787 [71   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f3b3f91e-9575-4373-9757-d7c8c2dcb9f1","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-07T21:37:13.7869246-05:00","Properties":{}}
 DEBUG 2016-11-07 21:37:13,810 [76   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"82683af1-72b9-449c-b130-458d90721314","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-07T21:37:13.8109409-05:00","Properties":{}}
+DEBUG 2016-11-08 07:10:22,426 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-11-08 07:10:22,445 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-11-08 07:10:22,453 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,457 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,458 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,458 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,458 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,459 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,459 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,459 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,459 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,460 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,460 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,461 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,461 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,462 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,463 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:22,469 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-11-08 07:10:22,644 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-08 07:10:22,644 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-08 07:10:22,644 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-08 07:10:22,644 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-08 07:10:23,057 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-08 07:10:25,673 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-11-08 07:10:25,682 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-11-08 07:10:25,684 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-11-08 07:10:25,685 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-11-08 07:10:25,686 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-11-08 07:10:25,871 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-11-08 07:10:26,119 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-11-08 07:10:26,119 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-11-08 07:10:26,123 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-11-08 07:10:26,123 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-11-08 07:10:26,124 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-11-08 07:10:26,124 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-11-08 07:10:26,124 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-11-08 07:10:26,124 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-11-08 07:10:29,127 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-11-08 07:10:29,128 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-11-08 07:10:29,130 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-11-08 07:10:29,131 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+ERROR 2016-11-08 07:10:39,948 [6    ] ECJ.Web.Controllers.HomeController       - There is no tenant with given id: 1
+Abp.AbpException: There is no tenant with given id: 1
+   à Abp.MultiTenancy.TenantCache`2.Get(Int32 tenantId) dans D:\Halil\GitHub\module-zero\src\Abp.Zero\MultiTenancy\TenantCache.cs:ligne 35
+   à Castle.Proxies.TenantCache`2Proxy.Get_callback(Int32 tenantId)
+   à Castle.Proxies.Invocations.TenantCache`2_Get.InvokeMethodOnTarget()
+   à Castle.DynamicProxy.AbstractInvocation.Proceed()
+   à Abp.Domain.Uow.UnitOfWorkInterceptor.Intercept(IInvocation invocation) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:ligne 29
+   à Castle.DynamicProxy.AbstractInvocation.Proceed()
+   à Castle.Proxies.TenantCache`2Proxy.Get(Int32 tenantId)
+   à Abp.Zero.EntityFramework.DbPerTenantConnectionStringResolver.GetNameOrConnectionString(DbPerTenantConnectionStringResolveArgs args) dans D:\Halil\GitHub\module-zero\src\Abp.Zero.EntityFramework\Zero\EntityFramework\DbPerTenantConnectionStringResolver.cs:ligne 57
+   à Abp.Zero.EntityFramework.DbPerTenantConnectionStringResolver.GetNameOrConnectionString(ConnectionStringResolveArgs args) dans D:\Halil\GitHub\module-zero\src\Abp.Zero.EntityFramework\Zero\EntityFramework\DbPerTenantConnectionStringResolver.cs:ligne 46
+   à Abp.Domain.Uow.UnitOfWorkBase.ResolveConnectionString(ConnectionStringResolveArgs args) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkBase.cs:ligne 327
+   à Abp.EntityFramework.Uow.EfUnitOfWork.GetOrCreateDbContext[TDbContext](Nullable`1 multiTenancySide) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.EntityFramework\EntityFramework\Uow\EfUnitOfWork.cs:ligne 122
+   à Abp.EntityFramework.Uow.UnitOfWorkExtensions.GetDbContext[TDbContext](IActiveUnitOfWork unitOfWork, Nullable`1 multiTenancySide) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.EntityFramework\EntityFramework\Uow\UnitOfWorkExtensions.cs:ligne 38
+   à Abp.EntityFramework.Uow.UnitOfWorkDbContextProvider`1.GetDbContext(Nullable`1 multiTenancySide) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.EntityFramework\EntityFramework\Uow\UnitOfWorkDbContextProvider.cs:ligne 38
+   à Castle.Proxies.EfRepositoryBase`2Proxy.get_Context_callback()
+   à Castle.Proxies.Invocations.EfRepositoryBase`3_get_Context.InvokeMethodOnTarget()
+   à Castle.DynamicProxy.AbstractInvocation.Proceed()
+   à Abp.Domain.Uow.UnitOfWorkInterceptor.PerformSyncUow(IInvocation invocation, UnitOfWorkOptions options) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:ligne 53
+   à Abp.Domain.Uow.UnitOfWorkInterceptor.PerformUow(IInvocation invocation, UnitOfWorkOptions options) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:ligne 45
+   à Abp.Domain.Uow.UnitOfWorkInterceptor.Intercept(IInvocation invocation) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:ligne 35
+   à Castle.DynamicProxy.AbstractInvocation.Proceed()
+   à Castle.Proxies.EfRepositoryBase`2Proxy.get_Context()
+   à Abp.EntityFramework.Repositories.EfRepositoryBase`3.get_Table() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.EntityFramework\EntityFramework\Repositories\EfRepositoryBaseOfTEntityAndTPrimaryKey.cs:ligne 31
+   à Castle.Proxies.EfRepositoryBase`2Proxy.get_Table_callback()
+   à Castle.Proxies.Invocations.EfRepositoryBase`3_get_Table.InvokeMethodOnTarget()
+   à Castle.DynamicProxy.AbstractInvocation.Proceed()
+   à Abp.Domain.Uow.UnitOfWorkInterceptor.PerformSyncUow(IInvocation invocation, UnitOfWorkOptions options) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:ligne 53
+   à Abp.Domain.Uow.UnitOfWorkInterceptor.PerformUow(IInvocation invocation, UnitOfWorkOptions options) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:ligne 45
+   à Abp.Domain.Uow.UnitOfWorkInterceptor.Intercept(IInvocation invocation) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:ligne 35
+   à Castle.DynamicProxy.AbstractInvocation.Proceed()
+   à Castle.Proxies.EfRepositoryBase`2Proxy.get_Table()
+   à Castle.Proxies.EfRepositoryBase`2Proxy.GetAll_callback()
+   à Castle.Proxies.Invocations.EfRepositoryBase`3_GetAll.InvokeMethodOnTarget()
+   à Castle.DynamicProxy.AbstractInvocation.Proceed()
+   à Abp.Domain.Uow.UnitOfWorkInterceptor.PerformSyncUow(IInvocation invocation, UnitOfWorkOptions options) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:ligne 53
+   à Abp.Domain.Uow.UnitOfWorkInterceptor.PerformUow(IInvocation invocation, UnitOfWorkOptions options) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:ligne 45
+   à Abp.Domain.Uow.UnitOfWorkInterceptor.Intercept(IInvocation invocation) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:ligne 35
+   à Castle.DynamicProxy.AbstractInvocation.Proceed()
+   à Castle.Proxies.EfRepositoryBase`2Proxy.GetAll()
+   à Abp.EntityFramework.Repositories.EfRepositoryBase`3.<GetAllListAsync>d__8.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.EntityFramework\EntityFramework\Repositories\EfRepositoryBaseOfTEntityAndTPrimaryKey.cs:ligne 68
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à Abp.Threading.InternalAsyncHelper.<AwaitTaskWithPostActionAndFinallyAndGetResult>d__5`1.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\InternalAsyncHelper.cs:ligne 120
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à Abp.Localization.ApplicationLanguageManager.<GetLanguagesFromDatabaseAsync>d__17.MoveNext() dans D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\ApplicationLanguageManager.cs:ligne 204
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à Abp.Threading.InternalAsyncHelper.<AwaitTaskWithPostActionAndFinallyAndGetResult>d__5`1.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\InternalAsyncHelper.cs:ligne 120
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à Abp.Runtime.Caching.CacheExtensions.<>c__DisplayClass5_0`2.<<GetAsync>b__0>d.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Runtime\Caching\CacheExtensions.cs:ligne 40
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à Abp.Runtime.Caching.CacheBase.<GetAsync>d__15.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Runtime\Caching\CacheBase.cs:ligne 69
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à Abp.Runtime.Caching.CacheExtensions.<GetAsync>d__5`2.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Runtime\Caching\CacheExtensions.cs:ligne 38
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à Abp.Localization.ApplicationLanguageManager.<GetLanguageDictionary>d__15.MoveNext() dans D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\ApplicationLanguageManager.cs:ligne 186
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à Abp.Localization.ApplicationLanguageManager.<GetLanguagesAsync>d__8.MoveNext() dans D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\ApplicationLanguageManager.cs:ligne 60
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   à Nito.AsyncEx.AsyncContext.<>c__DisplayClass7`1.<Run>b__5(Task`1 t)
+   à System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   à System.Threading.Tasks.Task.Execute()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   à Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   à Abp.Threading.AsyncHelper.RunSync[TResult](Func`1 func) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\AsyncHelper.cs:ligne 33
+   à Abp.Localization.ApplicationLanguageProvider.GetLanguages() dans D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\ApplicationLanguageProvider.cs:ligne 35
+   à Abp.Localization.LanguageManager.GetLanguages() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Localization\LanguageManager.cs:ligne 21
+   à Abp.Localization.MultiTenantLocalizationDictionaryProvider.GetDictionaries() dans D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\MultiTenantLocalizationDictionaryProvider.cs:ligne 56
+   à Abp.Localization.MultiTenantLocalizationDictionaryProvider.get_Dictionaries() dans D:\Halil\GitHub\module-zero\src\Abp.Zero\Localization\MultiTenantLocalizationDictionaryProvider.cs:ligne 25
+   à Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource.GetStringOrNull(String name, CultureInfo culture, Boolean tryDefaults) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Localization\Dictionaries\DictionaryBasedLocalizationSource.cs:ligne 84
+   à Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource.GetString(String name, CultureInfo culture) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Localization\Dictionaries\DictionaryBasedLocalizationSource.cs:ligne 67
+   à Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource.GetString(String name) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Localization\Dictionaries\DictionaryBasedLocalizationSource.cs:ligne 61
+   à Abp.Localization.LocalizationManagerExtensions.GetString(ILocalizationManager localizationManager, String sourceName, String name) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Localization\LocalizationManagerExtensions.cs:ligne 34
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__18.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 37
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__21.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 85
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:ligne 52
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.<>c__DisplayClass3.<Run>b__1(Task t)
+   à System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   à System.Threading.Tasks.Task.Execute()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   à Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   à Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   à Abp.Threading.AsyncHelper.RunSync(Func`1 action) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\AsyncHelper.cs:ligne 42
+   à Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelperExtensions.cs:ligne 27
+   à Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Mvc\Web\Mvc\Authorization\AbpMvcAuthorizeFilter.cs:ligne 35
+   à System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
