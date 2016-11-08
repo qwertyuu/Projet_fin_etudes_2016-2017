@@ -22,6 +22,7 @@ CREATE TABLE S_evenement.tblActivite (
 	,dateSupprime DATETIME NULL
 	,noEvenement INT
 	,noSousEvenement INT
+	,noUtilisateur BIGINT
 	);
 PRINT 'Fin de création de la table tblActivite'
 GO

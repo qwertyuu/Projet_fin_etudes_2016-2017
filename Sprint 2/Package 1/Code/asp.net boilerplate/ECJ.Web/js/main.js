@@ -38,7 +38,6 @@
             e.preventDefault();
         }
     });
-
     $(".dp").datepicker({ dateFormat: 'yy/mm/dd' });
 
     //validation des champs

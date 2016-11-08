@@ -295,13 +295,15 @@
                             @foreach (var s in Model.Item2)
                             {
                                 var name = "service";
+                                var classe = "btn-primary";
                                 if (Model.Item1.tblSalle != null && !ViewBag.ServicesOfferts.Contains(s))
                                 {
                                     name = "service_delete_salle";
+                                    classe = "btn-default";
                                 }
                                 <tr>
                                     <td>@s.nomService</td>
-                                    <td><button name="@name" value="@s.noService" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button></td>
+                                    <td><button name="@name" value="@s.noService" class="btn @classe btn-sm"><i class="fa fa-check-square"></i></button></td>
                                 </tr>
                             }
                         </tbody>

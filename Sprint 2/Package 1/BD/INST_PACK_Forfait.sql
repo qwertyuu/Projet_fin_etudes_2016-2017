@@ -65,6 +65,7 @@ INSERT INTO S_forfait.tblServiceRequis(noService,noSousEvenement)
 VALUES(1,1),
 (1,2),
 (1,3),
+(2,3),
 (2,4),
 (2,5),
 (2,6),
@@ -105,6 +106,10 @@ VALUES(4,1),
 (1,13),
 (2,13),
 (3,13),
+(1, 1),
+(1, 3),
+(2, 1),
+(2, 2),
 (4,13);
 
 GO
@@ -130,3 +135,4 @@ VALUES(null,null,null,null,null,null,null,null,null,null,null,null,null,null,nul
 
 GO
 PRINT 'INSERTION RÉUSSI'
+
