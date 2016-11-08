@@ -41,11 +41,6 @@
 
     $(".dp").datepicker({ dateFormat: 'yy/mm/dd' });
 
-    //désactiver le lien 
-    $("#AppelComplete").click(function (event) {
-        return false;
-    });
-
     //validation des champs
     $(".valid").closest("form").submit(function (e) {
         if (!validerChamps(this)) {
@@ -380,11 +375,6 @@ function IsAgenceSelect(form){
         }
     }
 }
-
-$(".valid").closest.submit(function (e) {
-    IsAgenceSelect(this)
-});
-
 
 
 

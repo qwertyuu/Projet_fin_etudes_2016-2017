@@ -161,9 +161,19 @@ html {
 	margin-right: 3px;
 	margin-bottom: 5px;
 }
-#colorStatut{
+.colorStatut{
     width:50px;
     height:50px;
+    
+}
+
+.colorStatutHalf{
+    width:30px;
+    height:30px;
+    display:inline-block;
+}
+#legend{
+  list-style:none;
 }
 
 table:not(.ui-datepicker-calendar) thead tr th:last-child{
@@ -173,9 +183,7 @@ img{
     max-width:100%;
     max-height:500px;
 }
-#AppelComplete{
-    cursor:not-allowed;
-}
+
 tooltip{
     clear:both;
 }

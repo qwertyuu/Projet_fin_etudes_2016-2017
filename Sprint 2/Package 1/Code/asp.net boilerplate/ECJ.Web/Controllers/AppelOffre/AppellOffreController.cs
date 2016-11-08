@@ -17,14 +17,13 @@ namespace ECJ.Web.Controllers.AppelOffre
     public class AppellOffreController : ECJControllerBase
     {
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
-        SqlConnection conn = new SqlConnection();
-        private DBProvider provider = new DBProvider();
+        private DBProvider provider;
         int CptSoumi = 0;
         DataSet ds = new DataSet();
 
         public AppellOffreController()
         {
-
+            provider = new DBProvider();
         }
 
 
@@ -71,12 +70,14 @@ namespace ECJ.Web.Controllers.AppelOffre
             settings.DtdProcessing = DtdProcessing.Parse;
             settings.ValidationType = ValidationType.DTD;
             XmlReader reader = XmlReader.Create(fichierXML, settings);
-            //schema.Add("//deptinfo420/P2016_Equipe2/Soumission_alle/SoumissionAgence.xsd", reader);
+            schema.Add("//deptinfo420/P2016_Equipe2/Soumission_alle/SoumissionAgence.xsd", reader);
             XDocument custOrdDoc = XDocument.Load(fichierXML);
             custOrdDoc.Validate(schema, (o, e) =>
                                  {
-                                     string log = "//deptinfo420/P2016_Equipe2/logErreur.txt";
-                                     doc.Save(log);
+                                     StreamWriter fileLog = new StreamWriter("//deptinfo420/P2016_Equipe2/logErreur.txt", true);
+                                     fileLog.WriteLine(e.ToString());
+                                     doc.Save(fileLog);
+                                     fileLog.Close();
                                  });
         }
 
@@ -155,11 +156,6 @@ namespace ECJ.Web.Controllers.AppelOffre
             {
                 ViewBag.IO = IOEx.Message;
             }
-
-
-
-
-
         }
 
         private tblSoumission CreateSoumission(int noAgenP, int noApp)
@@ -242,7 +238,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblAppelOffre tblAppelOffre = db.tblAppelOffre.Find(id);
+            tblAppelOffre tblAppelOffre =provider.returnAppel(id);
             if (tblAppelOffre == null)
             {
                 return HttpNotFound();
@@ -254,10 +250,10 @@ namespace ECJ.Web.Controllers.AppelOffre
         public ActionResult Create()
         {
 
-            ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom");
-            ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom");
-            ViewBag.noMedia = new SelectList(db.tblMedia, "noMedia", "nom");
-            ViewBag.noAgencePub = new MultiSelectList(db.tblAgencePublicite, "noAgencePub", "nom");
+            ViewBag.noEvenement = new SelectList(provider.ToutEvenement(), "noEvenement", "nom");
+            ViewBag.noStatut = new SelectList(provider.ToutStatutAppel(), "noStatut", "nom");
+            ViewBag.noMedia = new SelectList(provider.ToutMedia(), "noMedia", "nom");
+            ViewBag.noAgencePub = new MultiSelectList(provider.ToutAgencePublicite(), "noAgencePub", "nom");
             return View();
         }
 
@@ -269,30 +265,24 @@ namespace ECJ.Web.Controllers.AppelOffre
         public ActionResult Create([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre, int[] noAgencePub)
         {
             List<int> idSelect = new List<int>();
-            ViewBag.noAgencePub = new MultiSelectList(db.tblAgencePublicite, "noAgencePub", "nom",idSelect);
+            ViewBag.noAgencePub = new MultiSelectList(provider.ToutAgencePublicite(), "noAgencePub", "nom",idSelect);
             
             if (ModelState.IsValid)
             {
-                var statut = (from q in db.tblStatutAppelOffre
-                              where q.noStatut == tblAppelOffre.noStatut
-                              select q).FirstOrDefault();
-                var evenement = (from q in db.tblEvenement
-                                 where q.noEvenement == tblAppelOffre.noEvenement
-                                 select q).FirstOrDefault();
-                var media = (from q in db.tblMedia
-                                 where q.noMedia == tblAppelOffre.noMedia
-                                 select q).FirstOrDefault();
+               // var statut = provider.ReturnStatAppel(tblAppelOffre);
+                var evenement = provider.ReturnEvenAppel(tblAppelOffre);
+                var media = provider.ReturnMediaAppel(tblAppelOffre);
 
-                db.tblAppelOffre.Add(tblAppelOffre);
+                provider.AjoutAppelOffre(tblAppelOffre);
                 if(Request.Form.Get("save")== "Save")
                 {
-                    tblAppelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "En Création").FirstOrDefault().noStatut;
-                    db.SaveChanges();
+                    tblAppelOffre.noStatut = provider.ReturnNoStatut("En Création");
+                    provider.Save();
                     return RedirectToAction("Index");
                 }
                 //si l'Appel d'offre n'est pas en création il tombe à envoyé.
-                tblAppelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "Envoyé").FirstOrDefault().noStatut;
-                db.SaveChanges();
+                tblAppelOffre.noStatut = provider.ReturnNoStatut("Envoyé");
+                provider.Save();
 
                 //On créer les soumissions réliées à l'appel d'offre.
 
@@ -307,10 +297,10 @@ namespace ECJ.Web.Controllers.AppelOffre
                 return RedirectToAction("Index");
             }
 
-            ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblAppelOffre.noEvenement);
-            ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom", tblAppelOffre.noStatut);
-            ViewBag.noMedia = new SelectList(db.tblMedia, "noMedia", "nom",tblAppelOffre.noMedia);
-            ViewBag.noAgencePub = new MultiSelectList(db.tblAgencePublicite, "noAgencePub", "nom");
+            ViewBag.noEvenement = new SelectList(provider.ToutEvenement(), "noEvenement", "nom", tblAppelOffre.noEvenement);
+            ViewBag.noStatut = new SelectList(provider.ToutStatutAppel(), "noStatut", "nom", tblAppelOffre.noStatut);
+            ViewBag.noMedia = new SelectList(provider.ToutMedia(), "noMedia", "nom",tblAppelOffre.noMedia);
+            ViewBag.noAgencePub = new MultiSelectList(provider.ToutAgencePublicite(), "noAgencePub", "nom");
             return View(tblAppelOffre);
         }
 
@@ -329,15 +319,15 @@ namespace ECJ.Web.Controllers.AppelOffre
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblAppelOffre tblAppelOffre = db.tblAppelOffre.Find(id);
+            tblAppelOffre tblAppelOffre = provider.returnAppel(id);
             if (tblAppelOffre == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblAppelOffre.noEvenement);
-            ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom", tblAppelOffre.noStatut);
-            ViewBag.noMedia = new SelectList(db.tblMedia, "noMedia", "nom", tblAppelOffre.noMedia);
-            ViewBag.noAgencePub = new MultiSelectList(db.tblAgencePublicite, "noAgencePub", "nom", new[] { 1,3,5});
+            ViewBag.noEvenement = new SelectList(provider.ToutEvenement(), "noEvenement", "nom", tblAppelOffre.noEvenement);
+            ViewBag.noStatut = new SelectList(provider.ToutStatutAppel(), "noStatut", "nom", tblAppelOffre.noStatut);
+            ViewBag.noMedia = new SelectList(provider.ToutMedia(), "noMedia", "nom", tblAppelOffre.noMedia);
+            ViewBag.noAgencePub = new MultiSelectList(provider.ToutAgencePublicite(), "noAgencePub", "nom", noAgence);
             return View(tblAppelOffre);
         }
 
@@ -350,27 +340,21 @@ namespace ECJ.Web.Controllers.AppelOffre
         {
             if (ModelState.IsValid)
             {
-                var statut =( from q in db.tblStatutAppelOffre
-                              where q.noStatut == tblAppelOffre.noStatut
-                             select q).FirstOrDefault();
-                var evenement = (from q in db.tblEvenement
-                              where q.noEvenement == tblAppelOffre.noEvenement
-                              select q).FirstOrDefault();
-                var media = (from q in db.tblMedia
-                             where q.noMedia == tblAppelOffre.noMedia
-                             select q).FirstOrDefault();
-                db.Entry(tblAppelOffre).State = EntityState.Modified;
-                if(noAgencePub.Length==0)
+                var statut = provider.ReturnStatAppel(tblAppelOffre);
+                var evenement = provider.ReturnEvenAppel(tblAppelOffre);
+                var media = provider.ReturnMediaAppel(tblAppelOffre);
+
+                if (noAgencePub.Length == 0)
                 {
-                    tblAppelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "En Création").FirstOrDefault().noStatut;
-                    db.SaveChanges();
+                    tblAppelOffre.noStatut = provider.ReturnNoStatut("En Création");
+                    provider.Save();
                     return RedirectToAction("Index");
 
 
                 }
                 //si l'Appel d'offre n'est pas en création il tombe à envoyé.
-                tblAppelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "Envoyé").FirstOrDefault().noStatut;
-                db.SaveChanges();
+                tblAppelOffre.noStatut = provider.ReturnNoStatut("Envoyé");
+                provider.UpdateAppelOffre(tblAppelOffre);
 
                 //On créer les soumissions réliées à l'appel d'offre.
                 foreach (int no in noAgencePub)
@@ -380,10 +364,10 @@ namespace ECJ.Web.Controllers.AppelOffre
                 }
                 return RedirectToAction("Index");
             }
-            ViewBag.noEvenement = new SelectList(db.tblEvenement, "noEvenement", "nom", tblAppelOffre.noEvenement);
-            ViewBag.noStatut = new SelectList(db.tblStatutAppelOffre, "noStatut", "nom", tblAppelOffre.noStatut);
-            ViewBag.noMedia = new SelectList(db.tblMedia, "noMedia", "nom", tblAppelOffre.noMedia);
-            ViewBag.noAgencePub = new SelectList(db.tblAgencePublicite, "noAgencePub", "nom");
+            ViewBag.noEvenement = new SelectList(provider.ToutEvenement(), "noEvenement", "nom", tblAppelOffre.noEvenement);
+            ViewBag.noStatut = new SelectList(provider.ToutStatutAppel(), "noStatut", "nom", tblAppelOffre.noStatut);
+            ViewBag.noMedia = new SelectList(provider.ToutMedia(), "noMedia", "nom", tblAppelOffre.noMedia);
+            ViewBag.noAgencePub = new SelectList(provider.ToutAgencePublicite(), "noAgencePub", "nom");
             return View(tblAppelOffre);
         }
 
@@ -394,14 +378,14 @@ namespace ECJ.Web.Controllers.AppelOffre
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblAppelOffre tblAppelOffre = db.tblAppelOffre.Find(id);
-            if(tblAppelOffre.noStatut== db.tblStatutAppelOffre.Where(s => s.nom == "En Création").FirstOrDefault().noStatut) //Statut en création on supprime l'appel d'offre.
+            tblAppelOffre tblAppelOffre = provider.returnAppel(id);
+            if(tblAppelOffre.noStatut== provider.ReturnNoStatut("En Création")) //Statut en création on supprime l'appel d'offre.
             {
                tblAppelOffre.dateSupprime = DateTime.Now;
             }
             else
             {
-                tblAppelOffre.noStatut = db.tblStatutAppelOffre.Where(s => s.nom == "Annulé").FirstOrDefault().noStatut;
+                tblAppelOffre.noStatut = provider.ReturnNoStatut("Annulé");
             }
 
             //On supprime toutes les soumissions réliées à cet appel d'offre
@@ -409,7 +393,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             {
                 soumi.dateSupprime = DateTime.Now;
             }
-            db.SaveChanges();
+            provider.Save();
             if (tblAppelOffre == null)
             {
                 return HttpNotFound();
@@ -417,13 +401,13 @@ namespace ECJ.Web.Controllers.AppelOffre
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        provider.Dispo();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }

@@ -428,5 +428,66 @@ namespace ECJ.Web.Controllers
         {
             return db.tblCommanditaire.Where(c => c.noCommanditaire == id).FirstOrDefault();
         }
+        public tblAppelOffre returnAppel(int ? id)
+        {
+            return db.tblAppelOffre.Find(id);
+        }
+        internal IEnumerable ToutAgencePublicite()
+        {
+            return db.tblAgencePublicite.Where(a => a.dateSupprime == null);
+        }
+        internal IEnumerable ToutStatutAppel()
+        {
+            return db.tblStatutAppelOffre;
+        }
+
+        internal IEnumerable ToutMedia()
+        {
+            return db.tblMedia;
+        }
+
+        public int ReturnNoStatut(string nomStatut)
+        {
+            return db.tblStatutAppelOffre.Where(s => s.nom == nomStatut).FirstOrDefault().noStatut;
+        }
+
+        public tblStatutAppelOffre ReturnStatAppel(tblAppelOffre appel)
+        {
+            return (from q in db.tblStatutAppelOffre
+                    where q.noStatut == appel.noStatut
+                    select q).FirstOrDefault();
+        }
+
+        public tblEvenement ReturnEvenAppel(tblAppelOffre appel)
+        {
+            return (from q in db.tblEvenement
+                    where q.noEvenement == appel.noEvenement
+                    select q).FirstOrDefault();
+        }
+
+        public tblMedia ReturnMediaAppel(tblAppelOffre appel)
+        {
+            return (from q in db.tblMedia
+                    where q.noMedia == appel.noMedia
+                    select q).FirstOrDefault();
+        }
+
+        public void UpdateAppelOffre(tblAppelOffre appel)
+        {
+            db.Entry(db.tblAppelOffre.Find(appel.noAppelOffre)).CurrentValues.SetValues(appel);
+            db.SaveChanges();
+        }
+        public void AjoutAppelOffre(tblAppelOffre appel)
+        {
+            db.tblAppelOffre.Add(appel);
+        }
+
+
+
+        public List<vueSomAppelOffre> ToutVueAppel()
+        {
+            return db.vueSomAppelOffre.ToList();
+        }
+        
     }
 }

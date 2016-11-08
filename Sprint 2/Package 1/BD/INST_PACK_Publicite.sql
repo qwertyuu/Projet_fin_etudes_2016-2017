@@ -6,13 +6,13 @@ USE PE2_Officiel
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Placerat LLP');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Adipiscing Elit Corporation');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Ipsum Donec Sollicitudin Industries');
-INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Nostra Per Inc.');
+INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Proximity BBDO Paris');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Metus Aliquam Erat Associates');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Ac Corporation');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Nisl Company');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Scelerisque PC');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Imperdiet Ullamcorper Consulting');
-INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Nec Foundation');
+INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Agence H');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Et Risus Quisque LLP');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Auctor Corp.');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Rutrum Eu Ultrices Limited');
@@ -21,18 +21,18 @@ INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Id Incorporated');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Tellus Imperdiet PC');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('At Foundation');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Eu Tellus Industries');
-INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('A Inc.');
+INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Advisa');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Venenatis A PC');
-INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Nibh Foundation');
+INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES(' McCann Paris');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Tortor Corporation');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Ut Sem Nulla Company');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Tincidunt Tempus Risus Industries');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Sed Malesuada Consulting');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Tellus Id Foundation');
-INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Risus LLC');
+INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Vanksen');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Nunc Interdum Limited');
 INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Vitae Sodales Associates');
-INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('Donec PC');
+INSERT INTO S_publicite.tblAgencePublicite([nom]) VALUES('X-Prime Group');
 PRINT 'Fin d''insertion de table tblAgencePublicite'
 
 GO
@@ -47,11 +47,11 @@ INSERT INTO S_publicite.tblMedia(nom,description)VALUES('Radio','la publicité se
 INSERT INTO S_publicite.tblMedia([nom],[description]) VALUES('Blog','velit. Cras lorem lorem, luctus ut,');
 INSERT INTO S_publicite.tblMedia(nom,description)VALUES('Télévision','la publicité sera communiqué au moyen de la télévision');
 INSERT INTO S_publicite.tblMedia(nom,description)VALUES('Journal','la publicité sera communiquer au moyen des journaux');
-INSERT INTO S_publicite.tblMedia(nom)VALUES('Réseaux sociaux');
+INSERT INTO S_publicite.tblMedia(nom,description)VALUES('Réseaux sociaux','La publicité sera diffusée sur les réseaux sociaux comme Facebook, Twitter,...');
 PRINT 'Fin d''insertion de table tblMedia'
 
 GO
-INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[description],[noEvenement],[noStatut],noMedia) VALUES('Promotion sur les billets de spectacle','2016-04-05 17:07:42','2016-01-19 20:23:45','promotion en vedette',10,4,1);
+INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[description],[noEvenement],[noStatut],noMedia) VALUES('Promotion sur les billets de spectacle','2016-04-05 17:07:42','2016-01-19 20:23:45','Cette publicité est faitre pour promouvoir les promotions et les rabais sur les billlets des spectacles.',10,4,1);
 INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[description],[noEvenement],[noStatut],noMedia) VALUES('Concours pour gagner des billets graduits','2016-03-29 21:31:19','2015-12-13 00:05:17','concours en vedette et courer la chnace de gagner des billets graduits',6,2,3);
 INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[description],[noEvenement],[noStatut],noMedia) VALUES('Spectacle en feu','2016-08-29 11:45:41','2017-04-25 16:34:29','Repésente de spectacle de clôture',6,1,4);
 INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[noEvenement],[noStatut],noMedia) VALUES('Humoriste de l''année','2016-07-03 22:21:11','2017-04-19 06:08:04',2,3,5);
@@ -60,8 +60,8 @@ INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[noEvenemen
 INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[description],[noEvenement],[noStatut],noMedia) VALUES('Promotion des places','2016-07-09 14:09:06','2016-11-14 08:19:39','Faire la publicité sur differentes places',1,4,5);
 INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[description],[noEvenement],[noStatut],noMedia) VALUES('Promotion de fin de spectacle','2015-10-23 09:55:54','2017-07-06 02:22:27','Savoir les differentes promotions de la fin du spectacle',7,1,1);
 INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[description],[noEvenement],[noStatut],noMedia) VALUES('Publicité de l''évènement','2016-03-20 21:22:45','2015-12-01 18:52:02','Faire la publicité de l''évènement',4,4,2);
-INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[noEvenement],[noStatut],noMedia) VALUES('Kai Small','2016-04-05 10:01:15','2017-02-25 04:34:45',1,2,4);
-INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[noEvenement],[noStatut],noMedia) VALUES('Kaitlin Cummings','2015-12-12 23:45:29','2017-06-11 21:47:20',8,3,1);
+INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],description,[noEvenement],[noStatut],noMedia) VALUES('Promotion des artistes','2016-04-05 10:01:15','2017-02-25 04:34:45','Cette publicité permet de faire savoir les artistes du spectacle',1,2,4);
+INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],description, [noEvenement],[noStatut],noMedia) VALUES('Pomotions des auberges','2015-12-12 23:45:29','2017-06-11 21:47:20','Cette publicité rend compte des prix et rabais des auberges',8,3,1);
 PRINT 'Fin d''insertion de table tblAppelOffre'
 
 GO
@@ -76,7 +76,6 @@ INSERT INTO S_publicite.tblSoumission(noSoumissionAgence,prix,statut,commentaire
 INSERT INTO S_publicite.tblSoumission(noSoumissionAgence,prix,statut,commentaire, dateSupprime,[noAgencePub],[noAppelOffre])  VALUES(NULL,2.88,null,'Duis sit amet','2016-04-05 17:07:42',2,2);
 INSERT INTO S_publicite.tblSoumission(noSoumissionAgence,prix,statut,commentaire,dateSupprime,[noAgencePub],[noAppelOffre]) VALUES(NULL,2.79,null,'suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum',NULL,3,2);
 PRINT 'Fin d''insertion de table tblSoumission'
-
 GO
 
 

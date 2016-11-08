@@ -29,13 +29,13 @@
     <div class="form-group">
         <label>Date d'envoi</label>
         <div class="well well-sm">
-            @Html.DisplayFor(model => model.dateEnvoi, new { @class = "dp" })
+            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", Model.dateEnvoi)
         </div>
     </div>
     <div class="form-group">
         <label>Date requise</label>
         <div class="well well-sm">
-            @Html.DisplayFor(model => model.dateRequis, new { @class="dp"})
+            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", Model.dateRequis)
         </div>
     </div>
 
@@ -99,12 +99,7 @@
                         }
                         <td>@soumi.commentaire</td>
                         <td>
-                            @if (Model.tblStatutAppelOffre.nom == "Complété" || Model.tblStatutAppelOffre.nom=="Annulé")
-                            {
-                                <a href="/Soumission/Accepter/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Accepter" onclick="return false;" style="cursor:not-allowed"><i class="fa fa-check-circle fa-lg"></i></a>
-                                <a href="/Soumission/Refuser/@soumi.noSoumission" class="btn btn-sm btn-danger" title="Refuser" onclick="return false;" style="cursor:not-allowed"><i class="fa fa-times fa-lg"></i></a>
-                            }
-                            else
+                            @if (Model.tblStatutAppelOffre.nom == "Envoyé" || Model.tblStatutAppelOffre.nom == "En Création")
                             {
                                 <a href="/Soumission/Accepter/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
                                 <a href="/Soumission/Refuser/@soumi.noSoumission" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
