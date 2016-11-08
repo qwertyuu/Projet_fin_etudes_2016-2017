@@ -15,7 +15,7 @@ using System.Web;
 
 namespace ECJ.Web.Controllers
 {
-    [AbpMvcAuthorize(PermissionNames.Pages)]
+    [AbpMvcAuthorize]
     public class EventsController : ECJControllerBase
     {
         private DBProvider db;

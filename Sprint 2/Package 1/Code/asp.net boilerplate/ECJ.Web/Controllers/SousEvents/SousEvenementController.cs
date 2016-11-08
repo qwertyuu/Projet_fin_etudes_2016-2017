@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace ECJ.Web.Controllers
 {
-    [AbpMvcAuthorize(PermissionNames.Pages)]
+    [AbpMvcAuthorize]
     public class SousEvenementsController : ECJControllerBase
     {
         DBProvider db;

@@ -22,8 +22,9 @@ namespace ECJ.Web.Controllers
         //utile pour générer la liste d'utilisateurs pouvant visionner ou non une page
         public void GetPermissions()
         {
+            LayoutController.pagePermission = null;
             AbpMvcAuthorizeAttribute[] MyAttributes = (AbpMvcAuthorizeAttribute[])Attribute.GetCustomAttributes(this.GetType(), typeof(AbpMvcAuthorizeAttribute));
-            if (MyAttributes.Length > 0)
+            if (MyAttributes.Length > 0 && MyAttributes[0].Permissions.Length > 0)
             {
                 LayoutController.pagePermission = MyAttributes[0];
             }
