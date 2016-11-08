@@ -525,6 +525,7 @@
           <Property Name="dateSupprime" Type="datetime" />
           <Property Name="noEvenement" Type="int" />
           <Property Name="noSousEvenement" Type="int" />
+          <Property Name="noUtilisateur" Type="bigint" />
         </EntityType>
         <EntityType Name="tblCommanditaire">
           <Key>
@@ -1335,6 +1336,18 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="NO_UTILISATEUR_CREATEUR">
+          <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1" />
+          <End Role="tblActivite" Type="Self.tblActivite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbpUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblActivite">
+              <PropertyRef Name="noUtilisateur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="NO_UTILISATEUR_DESTINATAIRE">
           <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="1" />
           <End Role="tblMemo" Type="Self.tblMemo" Multiplicity="*" />
@@ -1885,6 +1898,10 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblMedia" EntitySet="tblMedia" />
             <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
           </AssociationSet>
+          <AssociationSet Name="NO_UTILISATEUR_CREATEUR" Association="Self.NO_UTILISATEUR_CREATEUR">
+            <End Role="AbpUsers" EntitySet="AbpUsers" />
+            <End Role="tblActivite" EntitySet="tblActivite" />
+          </AssociationSet>
           <AssociationSet Name="NO_UTILISATEUR_DESTINATAIRE" Association="Self.NO_UTILISATEUR_DESTINATAIRE">
             <End Role="AbpUsers" EntitySet="AbpUsers" />
             <End Role="tblMemo" EntitySet="tblMemo" />
@@ -2235,6 +2252,10 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
             <End Role="tblCalculateur" EntitySet="tblCalculateur" />
           </AssociationSet>
+          <AssociationSet Name="NO_UTILISATEUR_CREATEUR" Association="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR">
+            <End Role="AbpUsers" EntitySet="AbpUsers" />
+            <End Role="tblActivite" EntitySet="tblActivite" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="tblAdresse">
           <Key>
@@ -2431,6 +2452,8 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="noSousEvenement" Type="Int32" />
           <NavigationProperty Name="tblEvenement" Relationship="PE2_OfficielModel.NOEVEN_ACT_FK" FromRole="tblActivite" ToRole="tblEvenement" />
           <NavigationProperty Name="tblSousEvenement" Relationship="PE2_OfficielModel.NOSOUSEVEN_ACT_FK" FromRole="tblActivite" ToRole="tblSousEvenement" />
+          <Property Name="noUtilisateur" Type="Int64" />
+          <NavigationProperty Name="AbpUsers" Relationship="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR" FromRole="tblActivite" ToRole="AbpUsers" />
         </EntityType>
         <EntityType Name="tblCommanditaire">
           <Key>
@@ -3439,6 +3462,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <NavigationProperty Name="AbpUsers4" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" FromRole="AbpUsers1" ToRole="AbpUsers" />
           <NavigationProperty Name="tblMemo" Relationship="PE2_OfficielModel.NO_UTILISATEUR_DESTINATAIRE" FromRole="AbpUsers" ToRole="tblMemo" />
           <NavigationProperty Name="tblMemo1" Relationship="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR" FromRole="AbpUsers" ToRole="tblMemo" />
+          <NavigationProperty Name="tblActivite" Relationship="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR" FromRole="AbpUsers" ToRole="tblActivite" />
         </EntityType>
         <Association Name="FK_dbo_AbpFeatures_dbo_AbpEditions_EditionId">
           <End Type="PE2_OfficielModel.AbpEditions" Role="AbpEditions" Multiplicity="0..1">
@@ -3717,6 +3741,18 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="NO_UTILISATEUR_CREATEUR">
+          <End Type="PE2_OfficielModel.AbpUsers" Role="AbpUsers" Multiplicity="0..1" />
+          <End Type="PE2_OfficielModel.tblActivite" Role="tblActivite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbpUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblActivite">
+              <PropertyRef Name="noUtilisateur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3883,6 +3919,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySetMapping Name="tblActivite">
             <EntityTypeMapping TypeName="PE2_OfficielModel.tblActivite">
               <MappingFragment StoreEntitySet="tblActivite">
+                <ScalarProperty Name="noUtilisateur" ColumnName="noUtilisateur" />
                 <ScalarProperty Name="noSousEvenement" ColumnName="noSousEvenement" />
                 <ScalarProperty Name="noEvenement" ColumnName="noEvenement" />
                 <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />

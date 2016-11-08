@@ -37,6 +37,7 @@ namespace ECJ.Web.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UtilisateurCourrant = (long)AbpSession.UserId;
             return View(elementADetailler);
         }
 

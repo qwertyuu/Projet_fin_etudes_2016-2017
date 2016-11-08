@@ -32,6 +32,7 @@ namespace ECJ.Web.Models
             this.AbpUsers12 = new HashSet<AbpUsers>();
             this.tblMemo = new HashSet<tblMemo>();
             this.tblMemo1 = new HashSet<tblMemo>();
+            this.tblActivite = new HashSet<tblActivite>();
         }
     
         public long Id { get; set; }
@@ -88,5 +89,7 @@ namespace ECJ.Web.Models
         public virtual ICollection<tblMemo> tblMemo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblMemo> tblMemo1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblActivite> tblActivite { get; set; }
     }
 }

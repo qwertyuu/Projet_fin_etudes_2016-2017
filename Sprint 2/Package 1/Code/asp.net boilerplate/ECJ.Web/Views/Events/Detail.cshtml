@@ -3,6 +3,7 @@
 @using System.Web.Script.Serialization
 @using System.Text
 @using System.Runtime.Serialization.Json
+@using Abp.Runtime.Session;
 @{
     ViewBag.Title = "Detail";
 }
@@ -114,10 +115,10 @@
                     </thead>
                     <tbody>
                         @{
-                            IEnumerable<ECJ.Web.Models.tblActivite> activites = Model.tblActivite;
+                            IEnumerable<ECJ.Web.Models.tblActivite> activites = Model.tblActivite.Where(a => a.AbpUsers.Id == ViewBag.UtilisateurCourrant);
                             foreach (var item in Model.tblSousEvenement)
                             {
-                                activites = activites.Concat(item.tblActivite);
+                                activites = activites.Concat(item.tblActivite.Where(a => a.AbpUsers.Id == ViewBag.UtilisateurCourrant));
                             }
                             List<ECJ.Web.Models.Calendrier> cals = new List<ECJ.Web.Models.Calendrier>();
                             Dictionary<string, string> actInfo = new Dictionary<string, string>();

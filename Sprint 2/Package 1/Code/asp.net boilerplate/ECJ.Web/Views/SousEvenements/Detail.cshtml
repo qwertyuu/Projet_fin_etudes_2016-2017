@@ -194,7 +194,7 @@
                             List<ECJ.Web.Models.Calendrier> cals = new List<ECJ.Web.Models.Calendrier>();
                             Dictionary<string, string> actInfo = new Dictionary<string, string>();
 
-                            foreach (var activite in Model.Item1.tblActivite.Where(element => element.dateSupprime == null))
+                            foreach (var activite in Model.Item1.tblActivite.Where(element => element.dateSupprime == null && element.AbpUsers.Id == ViewBag.UtilisateurCourrant))
                             {
                                 var date = String.Format("{0:yyyy-MM-dd}", activite.dateCreation);
                                 var nomAct = activite.tache;// + ": " + ((activite.etat == 1) ? "Réalisé" : "Non réalisé");

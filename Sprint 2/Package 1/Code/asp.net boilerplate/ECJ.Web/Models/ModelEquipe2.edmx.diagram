@@ -117,6 +117,7 @@
         <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblCalculateur" Width="2" PointX="5.25" PointY="35.5" />
         <AssociationConnector Association="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK" />
+        <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
