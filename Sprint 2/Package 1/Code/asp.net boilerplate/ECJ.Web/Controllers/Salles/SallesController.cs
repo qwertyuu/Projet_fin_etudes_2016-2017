@@ -12,6 +12,7 @@ namespace ECJ.Web.Controllers.Salles
         public SallesController()
         {
             db = new DBProvider();
+            GetPermissions();
         }
         public ActionResult Index()
         {

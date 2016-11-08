@@ -5,7 +5,7 @@ var PrixMoyen;
 var billetMax;
 var VIPMax;
 
-this.onload = function () { setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed) };
+this.onload = function () { setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed), remiseAZero() };
 
 function calculTotalBillet() {
     if (nbBillet == "" || nbBillet == "") {
@@ -81,27 +81,39 @@ function calculSouperSpectacle() {
 
 function calculRabaisAge() {
     if (ratioCheck() == true) {
-        var jeune = parseFloat($("#JeunePourcent").val()) / 100;
-        var adulte = parseFloat($("#AdultePourcent").val()) / 100;
-        var aine = parseFloat($("#AinePourcent").val()) / 100;
-
-        var ratioJeune = parseFloat($("#RatioJeune").val()) / 100;
-        var ratioAdulte = parseFloat($("#RatioAdulte").val()) / 100;
-        var ratioAine = parseFloat($("#RatioAine").val()) / 100;
 
         calculMoyenne();
         calculTotalBillet();
 
-        var totBilletJeune = $("#nbBilletJeune").val(Math.round(TotalBillet * ratioJeune)).val();
-        var totBilletAdulte = $("#nbBilletAdulte").val(Math.round(TotalBillet * ratioAdulte)).val();
-        var totBilletAine = $("#nbBilletAine").val(Math.round(TotalBillet * ratioAine)).val();
-
-        var totRabaisJeune = $("#rabaisBilletJeune").val(round_argent(PrixMoyen * jeune)).val();
-        var totRabaisAdulte = $("#rabaisBilletAdulte").val(round_argent(PrixMoyen * adulte)).val();
-        var totRabaisAine = $("#rabaisBilletAine").val(round_argent(PrixMoyen * aine)).val();
+        if ($("#nbBilletJeune").val() == 0 && $("#nbBilletAdulte").val() == 0 && $("#nbBilletAine").val() == 0) {
+            var jeune = 0;
+            var adulte = 0;
+            var aine = 0;
+        }
+        else {
+            var totBilletJeune = $("#nbBilletJeune").val(Math.round(TotalBillet * ratioJeune)).val();
+            var totBilletAdulte = $("#nbBilletAdulte").val(Math.round(TotalBillet * ratioAdulte)).val();
+            var totBilletAine = $("#nbBilletAine").val(Math.round(TotalBillet * ratioAine)).val();
+        }
+        if ($("#RatioJeune").val() == 0 && $("#RatioAdulte").val() == 0 && $("#RatioAine").val() == 0) {
+            var ratioJeune = 0;
+            var ratioAdulte = 0;
+            var ratioAine = 0;
+        }
+        else {
+            var totRabaisJeune = $("#rabaisBilletJeune").val(round_argent(PrixMoyen * jeune)).val();
+            var totRabaisAdulte = $("#rabaisBilletAdulte").val(round_argent(PrixMoyen * adulte)).val();
+            var totRabaisAine = $("#rabaisBilletAine").val(round_argent(PrixMoyen * aine)).val();
+        }
 
         var total;
         total = (totBilletJeune * totRabaisJeune) + (totBilletAdulte * totRabaisAdulte) + (totBilletAine * totRabaisAine);
+
+        alert(total);
+
+        if (total === NaN) {
+            return 0;
+        }
         return total;
     }
     else {
@@ -113,7 +125,7 @@ function calculPrixReduit() {
     var nbBilletGratuit, nbBilletPreVente, TotBilletRabaisCustom1, TotBilletRabaisCustom2, total
 
     calculMoyenne();
-    
+
     if ($("#nbBilletGratuit").val() != "") {
         nbBilletGratuit = parseFloat($("#nbBilletGratuit").val());
         checkNbBilletReduction();
@@ -166,10 +178,10 @@ function Calcultotal() {
 } //Calcule le montant total et l'envoie 
 
 function pourcentCheck() {
-    if ($("#JeunePourcent").val() < -1 ) {
+    if ($("#JeunePourcent").val() < -1) {
         $("#JeunePourcent").val(0);
     }
-    if ($("#AdultePourcent").val() < -1 ) {
+    if ($("#AdultePourcent").val() < -1) {
         $("#AdultePourcent").val(0);
     }
     if ($("#AinePourcent").val() < -1) {
@@ -187,13 +199,18 @@ function pourcentCheck() {
 } //Vérifie que les % des âges sont Positif et moins que 100
 
 function ratioCheck() {
-    if ($("#RatioJeune").val() > -1 && $("#RatioJeune").val() < 101 || $("#RatioAdulte").val() > -1 && $("#RatioAdulte").val() < 101 || $("#RatioAdulte").val() > -1 && $("#RatioAine").val() < 101) {
+    if ($("#RatioJeune").val() > -1 && $("#RatioJeune").val() < 101 || $("#RatioAdulte").val() > -1 && $("#RatioAdulte").val() < 101 || $("#RatioAine").val() > -1 && $("#RatioAine").val() < 101) {
         if (parseInt($("#RatioJeune").val()) + parseInt($("#RatioAdulte").val()) + parseInt($("#RatioAine").val()) == 100) {
             return true
         }
-        else if ($("#RatioAdulte").val() != "" && $("#RatioAine").val() != "")//un check pour s'assurer que les cases ne sont pas vide.. ça évite le spam inutile
+        else if ($("#RatioJeune").val() == 0 && $("#RatioAdulte").val() == 0 && $("#RatioAine").val() == 0) {
+            return true;
+        }// s'ils ont été mis à 0 le code va permettre le calcul quand même, ça évite les blocages lorsque tout à été remis à 0 et que la fenêtre est cachée
+
+        else if ($("#RatioAdulte").val() != "" && $("#RatioAine").val() != "")//un check pour s'assurer que les cases ne sont pas vides.. ça évite le spam inutile
         {
             alert("Veuiller entrer un ratio total de 100");
+            return false;
         }
     }
     else {
@@ -299,20 +316,63 @@ function setForfait(chkSalle, chkAge, chkRed) {
     }
 } //Reçoit les bool a propos des forfaits du sous-event et enlève ceux qui sont a "false"
 
-function checkIntNull(nombre) {
-    if (nombre == null) {
-        return 0;
-    }
-    else {
-        return nombre;
-    }
-}
+function remiseAZero() {
 
-function checkStringNull(txt) {
-    if (txt == null) {
-        return "";
+    if ($("#nbBillet").val() == "") {
+        $("#nbBillet").val(0);
     }
-    else {
-        return txt;
+    if ($("#nbBilletVIP").val() == "") {
+        $("#nbBilletVIP").val(0);
     }
+    if ($("#prixBillet").val() == "") {
+        $("#prixBillet").val(0);
+    }
+    if ($("#prixBilletVIP").val() == "") {
+        $("#prixBilletVIP").val(0);
+    }
+    if ($("#nbBilletSouper").val() == "") {
+        $("#nbBilletSouper").val(0);
+    }
+    if ($("#prixSouper").val() == "") {
+        $("#prixSouper").val(0);
+    }
+    if ($("#JeunePourcent").val() == "") {
+        $("#JeunePourcent").val(0);
+    }
+    if ($("#AdultePourcent").val() == "") {
+        $("#AdultePourcent").val(0);
+    }
+    if ($("#AinePourcent").val() == "") {
+        $("#AinePourcent").val(0);
+    }
+    if ($("#RatioJeune").val() == "") {
+        $("#RatioJeune").val(0);
+    }
+    if ($("#RatioAdulte").val() == "") {
+        $("#RatioAdulte").val(0);
+    }
+    if ($("#RatioAine").val() == "") {
+        $("#RatioAine").val(0);
+    }
+    if ($("#nbBilletGratuit").val() == "") {
+        $("#nbBilletGratuit").val(0);
+    }
+    if ($("#nbBilletPreVente").val() == "") {
+        $("#nbBilletPreVente").val(0);
+    }
+    if ($("#NbBilletRabaisCustom1").val() == "") {
+        $("#NbBilletRabaisCustom1").val(0);
+    }
+    if ($("#NbBilletRabaisCustom2").val() == "") {
+        $("#NbBilletRabaisCustom2").val(0);
+    }
+    if ($("#PourcentRabaisCustom1").val() == "") {
+        $("#PourcentRabaisCustom1").val(0);
+    }
+    if ($("#PourcentRabaisCustom2").val() == "") {
+        $("#PourcentRabaisCustom2").val(0);
+    }
+    $("#rabaisBilletAine").val(0);
+    $("#rabaisBilletAdulte").val(0);
+    $("#rabaisBilletJeune").val(0);
 }

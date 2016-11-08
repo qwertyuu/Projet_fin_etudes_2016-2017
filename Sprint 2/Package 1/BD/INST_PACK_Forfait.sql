@@ -10,7 +10,8 @@ GO
 INSERT INTO S_forfait.tblSalle (nomSalle,prix,billet,billetVIP,photoSalle,dateSupprime,urlGoogleMap)
 VALUES('Salle François Brassard',1000,700,60,'http://i.imgur.com/qcfbNLq.png',null,'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2648.6453269213494!2d-71.24667188474935!3d48.405753937193936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2dd30e450fd3bd83!2zQ8OpZ2VwIGRlIEpvbnF1acOocmU!5e0!3m2!1sfr!2sca!4v1476204181668'),
 ('Salle Polyvalente',300,200,30,'http://i.imgur.com/2VxTEYs.png',null,'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2648.6453269213494!2d-71.24667188474935!3d48.405753937193936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2dd30e450fd3bd83!2zQ8OpZ2VwIGRlIEpvbnF1acOocmU!5e0!3m2!1sfr!2sca!4v1476204181668'),
-('Salle Pierrette Gaudreault',750,500,50,null,'2015/05/03',null);
+('Salle Pierrette Gaudreault',750,500,50,'http://diffusion.saguenay.ca/wp-content/uploads/2016/10/pierrette-gaudreault-plan-de-salle.jpg',null,'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7490.843849969319!2d-71.26963707816424!3d48.41021028620453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8a28e75e909e7336!2sCentre+Culturel+Mont+Jacob!5e0!3m2!1sen!2sca!4v1478536664327')
+('Salle Pierre Alexandre 22%',1500,650,30,null,null,null);
 GO
 PRINT 'INSERTION RÉUSSI'
 

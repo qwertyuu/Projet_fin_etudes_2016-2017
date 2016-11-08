@@ -16,6 +16,7 @@ namespace ECJ.Web.Controllers
         public CalculateurController()
         {
             db = new DBProvider();
+            GetPermissions();
         }
         public ActionResult Index(int? id)
         {
@@ -25,7 +26,7 @@ namespace ECJ.Web.Controllers
             }
             ViewBag.Salle = db.FindSousEvenement((int)id).tblSalle;
 
-            ViewBag.Calcul = db.ReturnCalculateur(db.FindSousEvenement((int)id).noSousEvenement);
+            ViewBag.Calcul = db.ReturnCalculateur((int)id);
 
             ViewBag.Forfait = db.FindSousEvenement((int)id).tblForfait;
 
