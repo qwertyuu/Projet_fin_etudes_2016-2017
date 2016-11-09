@@ -27,19 +27,34 @@
         <div class="form-group">
             <label>Date d'envoi</label>
             <div>
-                @Html.EditorFor(model => model.dateEnvoi, new { htmlAttributes = new { @class = "form-control dp" } })
+                @Html.EditorFor(model => model.dateEnvoi.Date, new { htmlAttributes = new { @class = "form-control dp" } })
                 @Html.ValidationMessageFor(model => model.dateEnvoi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Heure d'envoi</label>
+            <div>
+                <div>
+                    <input type="number" name="heureEnvoi" required min="0" max="24" placeholder="Heure" maxlength="2"  value="@Model.dateEnvoi.Hour"/>  <input type="number" name="minEnvoi" required min="0" max="60" placeholder="Minute" maxlength="2" value="@Model.dateEnvoi.Minute" />  <input type="number" name="secondeEncoi" min="0" max="60" placeholder="Seconde" maxlength="2" value="@Model.dateEnvoi.Second" />
+                </div>
             </div>
         </div>
 
         <div class="form-group">
             <label>Date requise</label>
             <div>
-                @Html.EditorFor(model => model.dateRequis, new { htmlAttributes = new { @class = "form-control dp" } })
+                @Html.EditorFor(model => model.dateRequis.Date, new { htmlAttributes = new { @class = "form-control dp" } })
                 @Html.ValidationMessageFor(model => model.dateRequis, "", new { @class = "text-danger" })
             </div>
         </div>
 
+        <div class="form-group">
+            <label>Heure requise</label>
+            <div>
+                <input type="number" name="heureRequise" required min="0" max="24" placeholder="Heure" maxlength="2"  value="@Model.dateRequis.Hour"/>  <input type="number" name="minRequise" required min="0" max="60" placeholder="Minute" maxlength="2"  value="@Model.dateRequis.Minute"/>  <input type="number" name="secondeRequise" min="0" max="60" placeholder="Seconde" maxlength="2"  value="@Model.dateRequis.Second"/>
+            </div>
+        </div>
         <div class="form-group">
             <label>Media</label>
             <div>

@@ -17,7 +17,7 @@ LEFT JOIN S_publicite.tblAgencePublicite agen
 ON agen.noAgencePub=soumi.noAgencePub
 LEFT JOIN S_evenement.tblEvenement even
 ON even.noEvenement=ao.noEvenement
-WHERE ao.dateSupprime IS NULL
+WHERE ao.dateSupprime IS NULL and soumi.dateSupprime IS NULL
 GO
 PRINT 'Création de la vue reliée a l''affichage du sommaire appel offre'
 

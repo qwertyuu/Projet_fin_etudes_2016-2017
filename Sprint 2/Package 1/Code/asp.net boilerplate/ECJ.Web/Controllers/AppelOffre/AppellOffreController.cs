@@ -70,7 +70,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             settings.DtdProcessing = DtdProcessing.Parse;
             settings.ValidationType = ValidationType.DTD;
             XmlReader reader = XmlReader.Create(fichierXML, settings);
-            schema.Add("//deptinfo420/P2016_Equipe2/Soumission_alle/SoumissionAgence.xsd", reader);
+           // schema.Add("//deptinfo420/P2016_Equipe2/Soumission_alle/SoumissionAgence.xsd", reader);
             XDocument custOrdDoc = XDocument.Load(fichierXML);
             custOrdDoc.Validate(schema, (o, e) =>
                                  {
@@ -91,7 +91,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             Racine.AppendChild(CrerUneSoumissionXml(doc, soumi, appelOffre));
             try
             {
-                string path = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission" + appelOffre.nom + CptSoumi +".xml";
+                string path = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission_" + appelOffre.nom+"_"+soumi.tblAgencePublicite.nom+".xml";
                 doc.Save(path);
                 string filename = "soumission" + appelOffre.nom + CptSoumi + ".xml";
                 validerXML(path, doc);
@@ -142,6 +142,42 @@ namespace ECJ.Web.Controllers.AppelOffre
                         }
                 }                   
                 
+            }
+            catch (UnauthorizedAccessException UAEx)
+            {
+                ViewBag.Autorisation = UAEx.Message;
+            }
+            catch (PathTooLongException PathEx)
+            {
+
+                ViewBag.PathLong = PathEx.Message;
+            }
+            catch (IOException IOEx)
+            {
+                ViewBag.IO = IOEx.Message;
+            }
+        }
+
+        private void DeleteXml(string nameXml)
+        {
+            XmlDocument doc = new XmlDocument();
+            //On prcoure tous les xmls contenus dans le dossier
+            try
+            {
+                var files = from file in Directory.EnumerateFiles("//deptinfo420/P2016_Equipe2/Soumission_alle", "*.xml", SearchOption.AllDirectories)
+                            select new
+                            {
+                                file
+                            };
+                foreach (var f in files)
+                {
+                    doc.Load(f.file);
+                    if (f.file.Equals(nameXml))
+                    {
+                        System.IO.File.Delete(f.file);
+                    }                                      
+                }
+
             }
             catch (UnauthorizedAccessException UAEx)
             {
@@ -257,6 +293,19 @@ namespace ECJ.Web.Controllers.AppelOffre
             return View();
         }
 
+        private DateTime AffecterTemps(DateTime date, string nameHour, string nameMin, string nameSecond)
+        {
+            int hour = Convert.ToInt32(Request.Form.GetValues(nameHour)[0]);
+            int min = Convert.ToInt32(Request.Form.GetValues(nameMin)[0]);
+            int second=Convert.ToInt32(Request.Form.GetValues(nameSecond)[0]);
+            DateTime d = new DateTime(date.Year,date.Month,date.Day,hour,min,second);
+           return d;
+            //string test= Request.Form.GetValues("heureEnvoi")[0];
+            //appel.dateEnvoi.Date.Add(new TimeSpan(Convert.ToInt32(Request.Form.GetValues("heureEnvoi")[0]),0,0));
+            //appel.dateEnvoi.AddSeconds(Convert.ToDouble(Request.Form.GetValues("heureEnvoi")[0]));
+            //appel.dateEnvoi.AddMinutes(Convert.ToDouble(Request.Form.GetValues("minEnvoi")[0]));
+            //appel.dateEnvoi.AddSeconds(Convert.ToDouble(Request.Form.GetValues("secondeEncoi")[0]));
+        }
         // POST: AppellOffre/Create
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -277,11 +326,16 @@ namespace ECJ.Web.Controllers.AppelOffre
                 if(Request.Form.Get("save")== "Save")
                 {
                     tblAppelOffre.noStatut = provider.ReturnNoStatut("En Création");
+                    tblAppelOffre.dateEnvoi = AffecterTemps(tblAppelOffre.dateEnvoi, "heureEnvoi", "minEnvoi", "secondeEnvoi");
+                    tblAppelOffre.dateRequis = AffecterTemps(tblAppelOffre.dateRequis, "heureRequise", "minRequise", "secondeRequise");
                     provider.Save();
+
                     return RedirectToAction("Index");
                 }
                 //si l'Appel d'offre n'est pas en création il tombe à envoyé.
                 tblAppelOffre.noStatut = provider.ReturnNoStatut("Envoyé");
+                tblAppelOffre.dateEnvoi = AffecterTemps(tblAppelOffre.dateEnvoi, "heureEnvoi", "minEnvoi", "secondeEnvoi");
+                tblAppelOffre.dateRequis = AffecterTemps(tblAppelOffre.dateRequis, "heureRequise", "minRequise", "secondeRequise");
                 provider.Save();
 
                 //On créer les soumissions réliées à l'appel d'offre.
@@ -347,6 +401,8 @@ namespace ECJ.Web.Controllers.AppelOffre
                 if (noAgencePub.Length == 0)
                 {
                     tblAppelOffre.noStatut = provider.ReturnNoStatut("En Création");
+                    tblAppelOffre.dateEnvoi = AffecterTemps(tblAppelOffre.dateEnvoi, "heureEnvoi", "minEnvoi", "secondeEnvoi");
+                    tblAppelOffre.dateRequis = AffecterTemps(tblAppelOffre.dateRequis, "heureRequise", "minRequise", "secondeRequise");
                     provider.Save();
                     return RedirectToAction("Index");
 
@@ -354,11 +410,28 @@ namespace ECJ.Web.Controllers.AppelOffre
                 }
                 //si l'Appel d'offre n'est pas en création il tombe à envoyé.
                 tblAppelOffre.noStatut = provider.ReturnNoStatut("Envoyé");
+                tblAppelOffre.dateEnvoi = AffecterTemps(tblAppelOffre.dateEnvoi, "heureEnvoi", "minEnvoi", "secondeEnvoi");
+                tblAppelOffre.dateRequis = AffecterTemps(tblAppelOffre.dateRequis, "heureRequise", "minRequise", "secondeRequise");
                 provider.UpdateAppelOffre(tblAppelOffre);
 
+                //On supprime les soumissions qui ne sont plus ratachées à l'appel d'offre.
+                foreach(int no in noAgencePub)
+                {
+                    foreach (tblSoumission s in provider.RetunSoumission(tblAppelOffre.noAppelOffre))
+                    {
+                        if(s.noAgencePub!=no)
+                        {
+                            s.dateSupprime = DateTime.Now;
+                            string filename = "//deptinfo420/P2016_Equipe2/Soumission_alle\\soumission_" + tblAppelOffre.nom+"_"+s.tblAgencePublicite.nom+".xml";
+                            DeleteXml(filename);
+
+                        }
+                    }
+                }
+  
                 //On créer les soumissions réliées à l'appel d'offre.
                 foreach (int no in noAgencePub)
-                {
+                {                  
                    tblSoumission soumi= CreateSoumission(no, tblAppelOffre.noAppelOffre);
                     CreateSoumissionXml(soumi, tblAppelOffre);
                 }
@@ -400,14 +473,5 @@ namespace ECJ.Web.Controllers.AppelOffre
             }
             return RedirectToAction("Index");
         }
-
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        provider.Dispo();
-        //    }
-        //    base.Dispose(disposing);
-        //}
     }
 }
