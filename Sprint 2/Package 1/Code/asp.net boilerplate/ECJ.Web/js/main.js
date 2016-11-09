@@ -62,7 +62,7 @@
         }, type: "numeric"
     });
 
-    $("table:not(.ui-datepicker-calendar)").tablesorter();
+    $("table:not(.ui-datepicker-calendar, .noTS)").tablesorter();
 
 
 })(jQuery);
