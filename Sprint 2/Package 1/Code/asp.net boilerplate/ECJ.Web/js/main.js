@@ -65,9 +65,6 @@
     $("table:not(.ui-datepicker-calendar)").tablesorter();
 
 
-
-
-
 })(jQuery);
 
 function Sanitariser(f) {

@@ -30,6 +30,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         //--Gestion de la création du xml d'une soumision.-----
         public XmlNode CrerUneSoumissionXml(XmlDocument doc, tblSoumission soumi, tblAppelOffre appelOffre)
         {
+            double prix = 0.00;
             XmlNode xmlnoSoumi = doc.CreateNode(XmlNodeType.Element, "NoSoumission", "");
             xmlnoSoumi.InnerText = soumi.noSoumission.ToString();
             XmlNode xmlNom = doc.CreateNode(XmlNodeType.Element, "Nom", "");
@@ -37,13 +38,19 @@ namespace ECJ.Web.Controllers.AppelOffre
             XmlNode xmlNoSoumiAgence = doc.CreateNode(XmlNodeType.Element, "noSoumissionAgence", "");
             xmlNom.InnerText = soumi.noSoumissionAgence;
             XmlNode xmlPrix = doc.CreateNode(XmlNodeType.Element, "Prix", "");
-            xmlPrix.InnerText = soumi.prix.ToString();
+            if(soumi.prix.ToString()=="")
+            {
+                xmlPrix.InnerText = prix.ToString();
+            }
+            else
+                xmlPrix.InnerText = prix.ToString();
+
             XmlNode xmlnoAgencePub = doc.CreateNode(XmlNodeType.Element, "noAgencePub", "");
             xmlnoAgencePub.InnerText = soumi.noAgencePub.ToString();
             XmlNode xmlnoAppelOffre = doc.CreateNode(XmlNodeType.Element, "noAppelOffre", "");
             xmlnoAppelOffre.InnerText = soumi.noAppelOffre.ToString();
-            XmlNode xmlStatut = doc.CreateNode(XmlNodeType.Element, "Statut", "");     
-             xmlStatut.InnerText = soumi.statut.ToString();
+            XmlNode xmlStatut = doc.CreateNode(XmlNodeType.Element, "Statut", "");   
+            xmlStatut.InnerText = soumi.statut.ToString();
             XmlNode xmlCommentaire = doc.CreateNode(XmlNodeType.Element, "Commentaire", "");
             xmlCommentaire.InnerText = soumi.commentaire;
             XmlNode xmlSoumission = doc.CreateNode(XmlNodeType.Element, "Soumission", "");
@@ -62,23 +69,40 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
-        public void validerXML(String fichierXML, XmlDocument doc)
+        //Valider le xml de la soumision.
+        public void validerXML(String pathXml, XmlDocument doc, string pathXsd)
         {
+            try
+            {
+                doc.Load(pathXml);
+                doc.Schemas.Add(null, pathXsd);
+            }
+            catch (IOException IOEx)
+            {
+                ViewBag.IO = IOEx.Message;
+            }
 
-            XmlSchemaSet schema = new XmlSchemaSet();
-            XmlReaderSettings settings = new XmlReaderSettings();
-            settings.DtdProcessing = DtdProcessing.Parse;
-            settings.ValidationType = ValidationType.DTD;
-            XmlReader reader = XmlReader.Create(fichierXML, settings);
-           // schema.Add("//deptinfo420/P2016_Equipe2/Soumission_alle/SoumissionAgence.xsd", reader);
-            XDocument custOrdDoc = XDocument.Load(fichierXML);
-            custOrdDoc.Validate(schema, (o, e) =>
-                                 {
-                                     StreamWriter fileLog = new StreamWriter("//deptinfo420/P2016_Equipe2/logErreur.txt", true);
-                                     fileLog.WriteLine(e.ToString());
-                                     doc.Save(fileLog);
-                                     fileLog.Close();
-                                 });
+
+            try
+            {
+                doc.Validate(null);
+            }
+            catch (XmlSchemaValidationException e)
+            {
+                try
+                {
+                    StreamWriter fileLog = new StreamWriter("//deptinfo420/P2016_Equipe2/logErreur.txt", true);
+                    fileLog.WriteLine(e.ToString());
+                    doc.Save(fileLog);
+                    fileLog.Close();
+                }
+                catch (IOException IOEx)
+                {
+                    ViewBag.IO = IOEx.Message;
+                }
+
+            }
+
         }
 
 
@@ -91,10 +115,11 @@ namespace ECJ.Web.Controllers.AppelOffre
             Racine.AppendChild(CrerUneSoumissionXml(doc, soumi, appelOffre));
             try
             {
-                string path = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission_" + appelOffre.nom+"_"+soumi.tblAgencePublicite.nom+".xml";
-                doc.Save(path);
-                string filename = "soumission" + appelOffre.nom + CptSoumi + ".xml";
-                validerXML(path, doc);
+                string pathXml = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission_" + appelOffre.nom+"_"+soumi.tblAgencePublicite.nom+".xml";
+                doc.Save(pathXml);
+                string pathXsd = "//deptinfo420/P2016_Equipe2/Soumission_alle/SoumissionAgence.xsd";
+                validerXML(pathXml, doc, pathXsd);
+  
 
             }
             catch (UnauthorizedAccessException UAEx)
@@ -171,11 +196,19 @@ namespace ECJ.Web.Controllers.AppelOffre
                             };
                 foreach (var f in files)
                 {
-                    doc.Load(f.file);
-                    if (f.file.Equals(nameXml))
+                    try
                     {
-                        System.IO.File.Delete(f.file);
-                    }                                      
+                        doc.Load(f.file);
+                        if (f.file.Equals(nameXml))
+                        {
+                            System.IO.File.Delete(f.file);
+                        }
+                    }
+                    catch (IOException IOEx)
+                    {
+                        ViewBag.IO = IOEx.Message;
+                    }
+                                      
                 }
 
             }
