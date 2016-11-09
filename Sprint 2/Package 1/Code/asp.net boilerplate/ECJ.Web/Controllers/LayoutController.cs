@@ -8,6 +8,7 @@ using ECJ.Sessions;
 using ECJ.Web.Models.Layout;
 using System.Linq;
 using Abp.Web.Mvc.Authorization;
+using System;
 
 namespace ECJ.Web.Controllers
 {
@@ -18,7 +19,7 @@ namespace ECJ.Web.Controllers
         private readonly ISessionAppService _sessionAppService;
         private readonly IMultiTenancyConfig _multiTenancyConfig;
         DBProvider provider;
-
+        public static Exception erreur;
         public static AbpMvcAuthorizeAttribute pagePermission;
 
         public LayoutController(
@@ -38,12 +39,18 @@ namespace ECJ.Web.Controllers
         public PartialViewResult TopMenu(string activeMenu = "")
         {
             var model = new TopMenuViewModel
-                        {
-                            MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", AbpSession.ToUserIdentifier())),
-                            ActiveMenuItemName = activeMenu
-                        };
+            {
+                MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", AbpSession.ToUserIdentifier())),
+                ActiveMenuItemName = activeMenu
+            };
 
             return PartialView("_TopMenu", model);
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult Erreur()
+        {
+            return PartialView("_Erreur", erreur);
         }
 
         [ChildActionOnly]

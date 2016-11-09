@@ -196,3 +196,6 @@ tooltip{
     font-size:10px;
     content:' ▲';
 }
+#erreur{
+    color:#000;
+}

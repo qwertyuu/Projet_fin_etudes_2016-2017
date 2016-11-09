@@ -60,7 +60,6 @@ namespace ECJ.Web.Controllers
                 (e.description ?? "").ToUpper().Contains(recherche) || 
                 e.nom.ToUpper().Contains(recherche)).ToList();
             }
-            ViewBag.PeutAjouterEvenement = PermissionChecker.IsGrantedAsync("Pages").Result;
             return View(tblEvenement);
         }
         public ActionResult Ajout()

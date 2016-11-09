@@ -751,6 +751,7 @@
     <Content Include="Views\Activite\Modifier.cshtml" />
     <Content Include="Views\Salles\Index.cshtml" />
     <Content Include="Views\Salles\Details.cshtml" />
+    <Content Include="Views\Layout\_Erreur.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

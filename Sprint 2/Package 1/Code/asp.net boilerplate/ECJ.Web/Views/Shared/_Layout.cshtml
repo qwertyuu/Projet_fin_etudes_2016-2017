@@ -39,9 +39,10 @@
 
 </head>
 <body>
-    @Html.Partial("_TopBar")
+        @Html.Partial("_TopBar")
 
     <div class="container body-container">
+        @Html.Action("Erreur", "Layout")
         @RenderBody()
     </div>
 
