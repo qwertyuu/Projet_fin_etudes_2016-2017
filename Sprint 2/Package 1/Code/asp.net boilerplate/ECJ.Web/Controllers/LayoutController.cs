@@ -50,7 +50,9 @@ namespace ECJ.Web.Controllers
         [ChildActionOnly]
         public PartialViewResult Erreur()
         {
-            return PartialView("_Erreur", erreur);
+            var vue = PartialView("_Erreur", erreur);
+            erreur = null;
+            return vue;
         }
 
         [ChildActionOnly]
