@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Ajout";
+}
+<h2>Créer un utilisateur</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <div class="form-group">
+        <label>Nom d'utilisateur</label>
+        <input class="form-control" type="text" name="UserName" required>
+    </div>
+    <div class="form-group">
+        <label>Prénom</label>
+        <input class="form-control" type="text" name="Name" required>
+    </div>
+    <div class="form-group">
+        <label>Nom de famille</label>
+        <input class="form-control" type="text" name="Surname" required>
+    </div>
+    <div class="form-group">
+        <label>Adresse courriel</label>
+        <input class="form-control courriel" type="text" name="EmailAddress" required>
+    </div>
+    <div class="form-group">
+        <label>Mot de passe</label>
+        <input class="form-control" type="password" name="PasswordChange" required>
+    </div>
+    <div class="form-group">
+        <label>Activé <input type="checkbox" name="IsActive" checked></label>
+    </div>
+    <div class="form-group pull-right">
+        <button class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Ajouter</span></button>
+        <a href="/Users" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
+}

@@ -28,17 +28,64 @@ namespace ECJ.Web.Controllers
             db.SaveChanges();
         }
 
-        internal void CreerMemo(int expediteur, int destinataire, string message, string lien)
+        internal AbpUsers ReturnUtilisateur(int id)
         {
-            db.tblMemo.Add(new tblMemo()
+            try
             {
-                expediteur = expediteur,
-                destinataire = destinataire,
-                info = message,
-                lien = lien,
-                dateEnvoi = DateTime.Now
-            });
-            db.SaveChanges();
+                return db.AbpUsers.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new AbpUsers();
+        }
+
+        public List<tblCommanditaire> CommanditaireList()
+        {
+            try
+            {
+                return db.tblCommanditaire.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblCommanditaire>();
+        }
+
+        public tblCommanditaire returnCommanditaire(int id)
+        {
+            try
+            {
+                return db.tblCommanditaire.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblCommanditaire();
+        }
+        public void CreerMemo(int expediteur, int destinataire, string message, string lien)
+        {
+            try
+            {
+                db.tblMemo.Add(new tblMemo()
+                {
+                    expediteur = expediteur,
+                    destinataire = destinataire,
+                    info = message,
+                    lien = lien,
+                    dateEnvoi = DateTime.Now
+                });
+                db.SaveChanges();
+
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+
+            }
         }
 
         internal tblEvenement ReturnEvenement(int id)

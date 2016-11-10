@@ -751,6 +751,10 @@
     <Content Include="Views\Salles\Index.cshtml" />
     <Content Include="Views\Commanditaire\DetailsDon.cshtml" />
     <Content Include="Views\Salles\Details.cshtml" />
+    <Content Include="Views\Layout\_Erreur.cshtml" />
+    <Content Include="Views\Users\Detail.cshtml" />
+    <Content Include="Views\Users\Modifier.cshtml" />
+    <Content Include="Views\Users\Ajout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Ajout";
+}
+@model ECJ.Web.Models.AbpUsers
+<h2>Modifier cet utilisateur</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <input type="hidden" name="Id" value="@Model.Id">
+    <input type="hidden" name="Password" value="@Model.Password">
+    <div class="form-group">
+        <label>Nom d'utilisateur</label>
+        <input class="form-control" type="text" name="UserName" value="@Model.UserName" required>
+    </div>
+    <div class="form-group">
+        <label>Prénom</label>
+        <input class="form-control" type="text" name="Name" value="@Model.Name" required>
+    </div>
+    <div class="form-group">
+        <label>Nom de famille</label>
+        <input class="form-control" type="text" name="Surname" value="@Model.Surname" required>
+    </div>
+    <div class="form-group">
+        <label>Adresse courriel</label>
+        <input class="form-control courriel" type="text" name="EmailAddress" value="@Model.EmailAddress" required>
+    </div>
+    <div class="form-group">
+        <label>Modifier le mot de passe (laisser vide laisser comme tel)</label>
+        <input class="form-control" type="password" name="PasswordChange">
+    </div>
+    <div class="form-group">
+        @{
+            var actif = Model.IsActive ? "checked" : "";
+        }
+        <label>Activé <input type="checkbox" name="IsActive" @actif></label>
+
+    </div>
+    <div class="form-group pull-right">
+        <button type="submit" class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
+        <a href="/Users" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
+}

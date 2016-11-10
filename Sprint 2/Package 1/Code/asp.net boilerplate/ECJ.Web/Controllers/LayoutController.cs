@@ -8,6 +8,7 @@ using ECJ.Sessions;
 using ECJ.Web.Models.Layout;
 using System.Linq;
 using Abp.Web.Mvc.Authorization;
+using System;
 
 namespace ECJ.Web.Controllers
 {
@@ -20,6 +21,7 @@ namespace ECJ.Web.Controllers
         DBProvider provider;
 
         public static string pagePermission;
+        internal static Exception erreur;
 
         public LayoutController(
             IUserNavigationManager userNavigationManager, 

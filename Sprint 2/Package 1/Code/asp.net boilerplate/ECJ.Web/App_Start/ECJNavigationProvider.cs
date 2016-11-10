@@ -75,6 +75,14 @@ namespace ECJ.Web
                         icon: "fa fa-bed",
                         requiresAuthentication: true
                         )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        "Users",
+                        L("Users"),
+                        url: "Users",
+                        icon: "fa fa-users",
+                        requiresAuthentication: true
+                        )
                 );
         }
 

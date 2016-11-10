@@ -13,23 +13,27 @@
     <div class="row">
 
         <div class="col-md-12">
-            <form class="page-header">
+@using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "page-header" }))
+{
                 <div class="input-group">
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="recherche" value="@ViewBag.recherche">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Rechercher</button>
+                        <button class="btn btn-primary">Rechercher</button>
+                    </span>
+                    <span class="input-group-btn">
+                        <a href="/Users/" class="btn btn-default">Vider</a>
                     </span>
                 </div>
-            </form>
-
-            <button data-toggle="modal" data-target="#UserCreateModal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> @L("CreateNewUser")</button>
+}
+            <a href="/Users/Ajout" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un nouvel utilisateur</a>
             <table class="table">
                 <thead>
                     <tr>
                         <th>@L("UserName")</th>
-                        <th>@L("FullName")</th>
+                        <th>Nom complet</th>
                         <th>@L("EmailAddress")</th>
-                        <th>@L("IsActive")</th>
+                        <th>Activé</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,43 +43,16 @@
                             <td>@user.UserName</td>
                             <td>@user.FullName</td>
                             <td>@user.EmailAddress</td>
-                            <td>@L(user.IsActive ? "Yes" : "No")</td>
+                            <td>@(user.IsActive ? "Oui" : "Non")</td>
+                            <td>
+                                <a href="/Users/Detail/@user.Id" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="/Users/Modifier/@user.Id" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="/Users/Supprimer/@user.Id" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            </td>
                         </tr>
                     }
                 </tbody>
             </table>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="UserCreateModal" tabindex="-1" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form name="userCreateForm" role="form" novalidate class="form-validation">
-                <div class="modal-header">
-                    <h4 class="modal-title">
-                        <span>Créer un nouveau mémo</span>
-                    </h4>
-                </div>
-                <div class="modal-body">
-
-
-                    <div class="form-group">
-                        <label>Destinataire</label>
-                        <input type="text" name="Name" class="form-control" required maxlength="@ECJ.Users.User.MaxNameLength">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="EmailAddress" class="form-control" rows="10" cols="5" required></textarea>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">@L("Cancel")</button>
-                </div>
-            </form>
         </div>
     </div>
 </div>
