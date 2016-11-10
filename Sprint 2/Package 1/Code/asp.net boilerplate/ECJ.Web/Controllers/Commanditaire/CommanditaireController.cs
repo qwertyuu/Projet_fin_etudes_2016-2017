@@ -54,11 +54,9 @@ namespace ECJ.Web.Controllers.Commanditaire
 
         public FileContentResult GetFile(int id)
         {
-            var comm = provider.returnCommanditaire(id);
-            var imagedata = comm.logo;
+            var imagedata = provider.returnCommanditaire(id).logo;
             var contentType = DBProvider.GetContentType(imagedata);
             return new FileContentResult(imagedata, string.Format("image/{0}", contentType.ToString().ToLower()));
-
         }
 
         // GET: tblCommanditaires/Details/5
@@ -112,7 +110,7 @@ namespace ECJ.Web.Controllers.Commanditaire
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var elementAModifier = provider.returnCommanditaire(Convert.ToInt32(id));
+            var elementAModifier = provider.returnCommanditaire((int)id);
             if (elementAModifier == null)
             {
                 return HttpNotFound();
@@ -125,8 +123,6 @@ namespace ECJ.Web.Controllers.Commanditaire
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire)
         {
-            var modif = false;
-
             if (ModelState.IsValid)
             {
                 if (Request.Form["SupprimerAffiche"] != null)
@@ -143,18 +139,9 @@ namespace ECJ.Web.Controllers.Commanditaire
                 }
                 else
                 {
-                    tblCommanditaire.logo = provider.ReturnCommLogo(tblCommanditaire).logo;
-                    modif = true;
+                    tblCommanditaire.logo = provider.returnCommanditaire(tblCommanditaire.noCommanditaire).logo;
                 }
-                if (modif)
-                {
-                    provider.EnregistrerCommanditaire(tblCommanditaire);
-                }
-                else
-                {
-                    provider.ModifCommanditaire(tblCommanditaire);
-                }
-                provider.Save();
+                provider.UpdateCommanditaire(tblCommanditaire);
 
                 return RedirectToAction("Index");
             }

@@ -307,6 +307,19 @@ namespace ECJ.Web.Controllers
             }
         }
 
+        public void UpdateCommanditaire(tblCommanditaire tblCommanditaire)
+        {
+            try
+            {
+                db.Entry(db.tblCommanditaire.Find(tblCommanditaire.noCommanditaire)).CurrentValues.SetValues(tblCommanditaire);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
         public void UpdateEvenement(tblEvenement tblEvenement)
         {
             try

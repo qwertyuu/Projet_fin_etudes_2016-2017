@@ -25,15 +25,14 @@
     if (Model.logo != null)
     {
         <div class="form-group">
-            <label>Supprimer l'affiche?</label>
+            <label>Supprimer le logo?</label>
             <input type="checkbox" name="SupprimerAffiche" value="1" />
         </div>
 
         <div class="form-group">
-            <label>Modifier l'affiche (laisser vide pour garder l'ancienne)</label>
+            <label>Modifier le logo (laisser vide pour garder l'ancien)</label>
             <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
         </div>
-        <img width="200" src="@Url.Action("GetFile","commanditaire", new { id = Model.noCommanditaire})" alt="Logo" />
     }
     else
     {
