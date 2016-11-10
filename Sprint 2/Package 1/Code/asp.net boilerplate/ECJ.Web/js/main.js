@@ -50,6 +50,17 @@
         }
         return true;
     });
+    $.tablesorter.addParser({
+        id: "memoLu",
+        is: function (s, u, v) {
+            if (v.classList[0]) {
+                return $.parseJSON(v.classList[0]).sorter == "memoLu";
+            }
+            return false;
+        }, format: function (s, u, v) {
+            return $(v).data("sort-value");
+        }, type: "numeric"
+    });
 
     $.tablesorter.addParser({
         id: "monetaryValue",

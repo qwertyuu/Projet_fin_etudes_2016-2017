@@ -21,13 +21,14 @@
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-<table class="table sommaireMemo table-striped table-hover">
+<table class="table sommaireMemo table-striped table-hover tablesorter">
     <thead>
         <tr>
             <th>Expéditeur</th>
             <th>Informations</th>
             <th>Envoyé le</th>
             <th>Lien</th>
+            <th>État</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -36,15 +37,20 @@
         @foreach (ECJ.Web.Models.tblMemo m in ViewBag.memos)
         {
             var Etat = "warning";
+            var EtatTexte = "Non lu";
+            var EtatSort = "0";
             if (m.statut)
             {
                 Etat = "";
+                EtatTexte = "Lu";
+                EtatSort = "1";
             }
             <tr class="@Etat" data-id="@m.noMemo">
                 <td>@m.AbpUsers1.UserName</td>
                 <td>@m.info</td>
                 <td>@String.Format("{0:yyyy/MM/dd HH:mm:ss}", m.dateEnvoi)</td>
-                <td> <a href="@m.lien">Accéder à la page liée au mémo</a></td>
+                <td><a href="@m.lien">Accéder à la page liée au mémo</a></td>
+                <td class='{"sorter":"memoLu"} etatCell' data-sort-value="@EtatSort">@EtatTexte</td>
                 <td>
                     <button name="memo_suppr" value="@m.noMemo" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
                 </td>

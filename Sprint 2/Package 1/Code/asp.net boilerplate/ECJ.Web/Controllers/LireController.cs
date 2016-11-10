@@ -17,7 +17,7 @@ namespace ECJ.Web.Controllers
             if (MemoALire != null)
             {
                 db.LireMemo(int.Parse(MemoALire));
-                return Content("Done :)", "text/plain");
+                return Json("Done :)", JsonRequestBehavior.AllowGet);
             }
             return new HttpStatusCodeResult(500);
         }

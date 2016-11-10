@@ -187,14 +187,13 @@ img{
 tooltip{
     clear:both;
 }
-.headerSortUp::after{
-    font-size:10px;
-    content:' ▼';
+.tablesorter-headerAsc{
+    text-decoration: overline;
 }
 
-.headerSortDown::after{
-    font-size:10px;
-    content:' ▲';
+.tablesorter-headerDesc{
+    
+    text-decoration: underline;
 }
 #erreur{
     color:#000;
