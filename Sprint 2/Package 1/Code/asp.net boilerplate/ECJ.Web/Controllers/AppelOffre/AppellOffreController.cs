@@ -72,7 +72,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         }
 
         //Valider le xml de la soumision.
-        public void validerXML(String pathXml, XmlDocument doc, string pathXsd)
+        public bool validerXML(String pathXml, XmlDocument doc, string pathXsd)
         {
             try
             {
@@ -88,6 +88,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             try
             {
                 doc.Validate(null);
+                return true;
             }
             catch (XmlSchemaValidationException e)
             {
@@ -97,10 +98,12 @@ namespace ECJ.Web.Controllers.AppelOffre
                     fileLog.WriteLine(e.ToString());
                     doc.Save(fileLog);
                     fileLog.Close();
+                    return false;
                 }
                 catch (IOException IOEx)
                 {
                     ViewBag.IO = IOEx.Message;
+                    return false;
                 }
 
             }
@@ -117,6 +120,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             Racine.AppendChild(CrerUneSoumissionXml(doc, soumi, appelOffre));
             try
             {
+                
                 string pathXml = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission_" + appelOffre.nom+"_"+soumi.tblAgencePublicite.nom+".xml";
                 doc.Save(pathXml);
                 string pathXsd = "//deptinfo420/P2016_Equipe2/Soumission_alle/SoumissionAgence.xsd";
@@ -143,6 +147,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         {
             
             XmlDocument doc = new XmlDocument();
+            string pathXsd = "//deptinfo420/P2016_Equipe2/Soumission_alle/SoumissionAgence.xsd";
             //On prcoure tous les xmls contenus dans le dossier
             try
             {
@@ -156,7 +161,9 @@ namespace ECJ.Web.Controllers.AppelOffre
                     doc.Load(f.file);
                     XmlNode racine = doc.FirstChild; 
                     XmlNode soumission = racine.SelectSingleNode("Soumission");
-                        tblSoumission soumi = provider.ReturnUneSoumi(Convert.ToInt32(soumission["NoSoumission"].InnerText));
+                    tblSoumission soumi = provider.ReturnUneSoumi(Convert.ToInt32(soumission["NoSoumission"].InnerText));
+                    if (!validerXML(f.file, doc, pathXsd))
+                        return;
                         if (soumi != null)
                         {
                             soumi.noSoumissionAgence = soumission["noSoumissionAgence"].InnerText;
@@ -255,7 +262,6 @@ namespace ECJ.Web.Controllers.AppelOffre
         // GET: AppellOffre
         public ActionResult Index(string SearchString)
         {
-            //var  = db.tblAppelOffre.Include(t => t.tblEvenement).Include(t => t.tblStatutAppelOffre);
 
             var appelOfrre = from q in db.vueSomAppelOffre
                              select q;
