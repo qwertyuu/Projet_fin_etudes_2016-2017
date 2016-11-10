@@ -13,7 +13,7 @@ using ECJ.Authorization;
 
 namespace ECJ.Web.Controllers.Don
 {
-    [AbpMvcAuthorize(PermissionNames.Pages)]
+    [AbpMvcAuthorize]
     public class DonController : ECJControllerBase
     {
         DBProvider provider;

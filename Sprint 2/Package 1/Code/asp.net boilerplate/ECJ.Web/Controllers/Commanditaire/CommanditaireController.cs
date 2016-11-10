@@ -14,7 +14,7 @@ using System.Drawing;
 
 namespace ECJ.Web.Controllers.Commanditaire
 {
-    [AbpMvcAuthorize(PermissionNames.Pages)]
+    [AbpMvcAuthorize]
     public class CommanditaireController : ECJControllerBase
     {
         DBProvider provider;

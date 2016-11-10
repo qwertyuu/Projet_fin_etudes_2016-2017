@@ -6,9 +6,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlTypes;
+using Abp.Web.Mvc.Authorization;
 
 namespace ECJ.Web.Controllers.AppelOffre
 {
+    [AbpMvcAuthorize]
     public class SoumissionController : Controller
     {
         // GET: Soumission

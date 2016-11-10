@@ -5,11 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net;
 using ECJ.Web.Models;
-
-
+using Abp.Web.Mvc.Authorization;
 
 namespace ECJ.Web.Controllers
 {
+    [AbpMvcAuthorize]
     public class CalculateurController : ECJControllerBase
     {
         DBProvider db;

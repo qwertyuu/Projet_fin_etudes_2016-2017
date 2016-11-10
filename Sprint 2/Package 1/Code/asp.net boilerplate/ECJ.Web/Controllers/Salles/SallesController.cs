@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ECJ.Web.Controllers.Salles
 {
+    [AbpMvcAuthorize]
     public class SallesController : ECJControllerBase
     {
         DBProvider db;

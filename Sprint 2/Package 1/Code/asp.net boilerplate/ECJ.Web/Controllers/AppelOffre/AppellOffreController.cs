@@ -11,9 +11,11 @@ using System.Xml.Schema;
 using System.Data.SqlClient;
 using System.IO;
 using System.Xml.Linq;
+using Abp.Web.Mvc.Authorization;
 
 namespace ECJ.Web.Controllers.AppelOffre
 {
+    [AbpMvcAuthorize]
     public class AppellOffreController : ECJControllerBase
     {
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
