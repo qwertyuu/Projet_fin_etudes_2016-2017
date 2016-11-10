@@ -180,6 +180,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             catch (IOException IOEx)
             {
                 ViewBag.IO = IOEx.Message;
+                LayoutController.erreur = IOEx;
             }
         }
 
@@ -333,11 +334,6 @@ namespace ECJ.Web.Controllers.AppelOffre
             int second=Convert.ToInt32(Request.Form.GetValues(nameSecond)[0]);
             DateTime d = new DateTime(date.Year,date.Month,date.Day,hour,min,second);
            return d;
-            //string test= Request.Form.GetValues("heureEnvoi")[0];
-            //appel.dateEnvoi.Date.Add(new TimeSpan(Convert.ToInt32(Request.Form.GetValues("heureEnvoi")[0]),0,0));
-            //appel.dateEnvoi.AddSeconds(Convert.ToDouble(Request.Form.GetValues("heureEnvoi")[0]));
-            //appel.dateEnvoi.AddMinutes(Convert.ToDouble(Request.Form.GetValues("minEnvoi")[0]));
-            //appel.dateEnvoi.AddSeconds(Convert.ToDouble(Request.Form.GetValues("secondeEncoi")[0]));
         }
         // POST: AppellOffre/Create
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
@@ -362,7 +358,6 @@ namespace ECJ.Web.Controllers.AppelOffre
                     tblAppelOffre.dateEnvoi = AffecterTemps(tblAppelOffre.dateEnvoi, "heureEnvoi", "minEnvoi", "secondeEnvoi");
                     tblAppelOffre.dateRequis = AffecterTemps(tblAppelOffre.dateRequis, "heureRequise", "minRequise", "secondeRequise");
                     provider.Save();
-
                     return RedirectToAction("Index");
                 }
                 //si l'Appel d'offre n'est pas en création il tombe à envoyé.
@@ -372,9 +367,6 @@ namespace ECJ.Web.Controllers.AppelOffre
                 provider.Save();
 
                 //On créer les soumissions réliées à l'appel d'offre.
-
-                //On ouvre la connection
-                //provider.ConnectionServer(conn);
                 foreach (int no in noAgencePub)
                 {
                     tblSoumission souimi= CreateSoumission(no,tblAppelOffre.noAppelOffre);
@@ -431,15 +423,13 @@ namespace ECJ.Web.Controllers.AppelOffre
                 var evenement = provider.ReturnEvenAppel(tblAppelOffre);
                 var media = provider.ReturnMediaAppel(tblAppelOffre);
 
-                if (noAgencePub.Length == 0)
+                if (Request.Form.Get("save") == "Save")
                 {
                     tblAppelOffre.noStatut = provider.ReturnNoStatut("En Création");
                     tblAppelOffre.dateEnvoi = AffecterTemps(tblAppelOffre.dateEnvoi, "heureEnvoi", "minEnvoi", "secondeEnvoi");
                     tblAppelOffre.dateRequis = AffecterTemps(tblAppelOffre.dateRequis, "heureRequise", "minRequise", "secondeRequise");
                     provider.Save();
                     return RedirectToAction("Index");
-
-
                 }
                 //si l'Appel d'offre n'est pas en création il tombe à envoyé.
                 tblAppelOffre.noStatut = provider.ReturnNoStatut("Envoyé");

@@ -351,28 +351,6 @@ function validerChamps(f) {
     return true;
 }
 
-function IsAgenceSelect(form){
-
-    var agence = $(form).find("#agencePub");
-    var correct = false;
-    var submit = $(form).find(".valid");
-
-    if (submit.value == "Save") {
-        if (agence.selectedIndex != -1) {
-            alert("Vous ne pouvez pas sélectionner une agence de publicié si vous voulez juste créer l'appel d'offre.");
-            return false;
-        }
-    }
-    else
-    {
-        if (agence.selectedIndex == -1) {
-            alert("Vous devez sélectionner au moins une agence de publicité avant de soumettre l'appel d'offre.")
-            return true;
-        }
-    }
-}
-
-
 
 (function (factory) {
     if (typeof define === "function" && define.amd) {

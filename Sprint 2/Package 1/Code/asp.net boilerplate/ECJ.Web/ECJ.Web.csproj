@@ -456,7 +456,7 @@
       <DependentUpon>Login.css</DependentUpon>
     </Content>
     <Content Include="Views\Account\Register.js" />
-    <Content Include="Views\AppellOffre\Index.js" />
+    <Content Include="Views\AppellOffre\Create.js" />
     <Content Include="Views\Calculateur\index.css" />
     <Content Include="Views\Calculateur\Index.js" />
     <Content Include="Views\CMemo\Index.js" />

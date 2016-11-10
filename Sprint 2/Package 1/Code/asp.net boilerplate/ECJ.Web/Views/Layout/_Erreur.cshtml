@@ -1,10 +1,15 @@
 ﻿@model Exception
 @if (Model != null)
 {
+    string message = "Une erreur s'est produite dans la base de données";
+    if (Model.GetType() == typeof(IOException))
+    {
+        message = "Erreur de serveur. Veuillez vous connectez au serveur de fichiers pour pouvoir ecrire les les soumissions des XML";
+    }
     <div class="alert alert-dismissible alert-danger">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <h4>Erreur</h4>
-        <div class="">Une erreur s'est produite dans la base de données.<button type="button" class="btn btn-default pull-right" data-toggle="collapse" data-target="#erreur">Cliquez pour les détails de l'erreur</button></div>
+        <div class=""> @message.<button type="button" class="btn btn-default pull-right" data-toggle="collapse" data-target="#erreur">Cliquez pour les détails de l'erreur</button></div>
         <div>Vous pouvez vérifier l'erreur en cliquant sur le bouton à droite.</div>
 
         <br />
@@ -14,9 +19,11 @@
                 do
                 {
                     <div>@e.Message</div>
-                        e = e.InnerException;
-                    } while (e != null);
+                    e = e.InnerException;
+                } while (e != null);
                 }
         </div>
     </div>
                 }
+
+
