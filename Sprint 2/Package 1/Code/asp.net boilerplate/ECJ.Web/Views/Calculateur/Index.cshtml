@@ -20,13 +20,13 @@
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="nbBillet">Billets</label>
-                                <input type="number" max="@ViewBag.Salle.billet" class="form-control" id="nbBillet" onblur="calculBillet()" value="@ViewBag.Calcul.billet">
+                                <input type="number" min=0 max="@ViewBag.Salle.billet" class="form-control" id="nbBillet"  value="@ViewBag.Calcul.billet">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="prixBillet">Prix</label>
-                                <input type="number" max="@ViewBag.Salle.billetVIP" class="form-control" id="prixBillet" onblur="calculBillet()" value="@ViewBag.Calcul.prixBillet">
+                                <input type="number" min=0 max="@ViewBag.Salle.billetVIP" class="form-control" id="prixBillet"  value="@ViewBag.Calcul.prixBillet">
                             </div>
                         </th>
                         <th>
@@ -40,13 +40,13 @@
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="nbBilletVIP">Billets V.I.P</label>
-                                <input type="number" class="form-control" id="nbBilletVIP" onblur="calculBilletVIP()" value="@ViewBag.Calcul.billetVIP">
+                                <input type="number" min=0 class="form-control" id="nbBilletVIP"  value="@ViewBag.Calcul.billetVIP">
                             </div>
                         </th>
                         <th>
                             <div class="form-group">
                                 <label class="control-label" for="prixBilletVIP">Prix</label>
-                                <input type="number" class="form-control" id="prixBilletVIP" onblur="calculBilletVIP()" value="@ViewBag.Calcul.prixBilletVIP">
+                                <input type="number" min=0 class="form-control" id="prixBilletVIP"  value="@ViewBag.Calcul.prixBilletVIP">
                             </div>
                         </th>
                         <th>
@@ -84,53 +84,51 @@
 </div>
 
 <form class="form-horizontal">
-    <div class="row" id="SouperPlaces">
-        <div class="col-md-6" id="souper">
-            Souper Spectacle
-            <table class="table">
-                <tbody>
+    <div class="col-md-6" id="souper">
+        Souper Spectacle
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>
+                        <div class="form-group">
+                            <label class="control-label" for="nbBilletSouper">Nombre de places</label>
+                            <input type="number" min=0 class="form-control" id="nbBilletSouper" value="@ViewBag.Calcul.souperSpectacle">
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-group">
+                            <label class="control-label" for="prixSouper">Prix</label>
+                            <input type="number" min=0 class="form-control" id="prixSouper" value="@ViewBag.Calcul.prixSouper">
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-group">
+                            <label class="control-label" for="totalSouper">Total</label>
+                            <input class="form-control" id="totalSouper" type="text" disabled="">
+                        </div>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6" id="forfaits">
+        <table class="table" >
+            <thead >
+                <tr>
+                    <th>
+                        Forfaits inclus
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var f in ViewBag.Forfait)
+                {
                     <tr>
-                        <th>
-                            <div class="form-group">
-                                <label class="control-label" for="nbBilletSouper">Nombre de places</label>
-                                <input type="number" class="form-control" id="nbBilletSouper" onblur="calculSouperSpectacle()" value="@ViewBag.Calcul.souperSpectacle">
-                            </div>
-                        </th>
-                        <th>
-                            <div class="form-group">
-                                <label class="control-label" for="prixSouper">Prix</label>
-                                <input type="number" class="form-control" id="prixSouper" onblur="calculSouperSpectacle()" value="@ViewBag.Calcul.prixSouper">
-                            </div>
-                        </th>
-                        <th>
-                            <div class="form-group">
-                                <label class="control-label" for="totalSouper">Total</label>
-                                <input class="form-control" id="totalSouper" type="text" disabled="">
-                            </div>
-                        </th>
+                        <td>@f.nom</td>
                     </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-6" id="forfaits">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            Forfaits inclus
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var f in ViewBag.Forfait)
-                    {
-                        <tr>
-                            <td>@f.nom</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
+                }
+            </tbody>
+        </table>
     </div>
 </form>
 
@@ -142,13 +140,13 @@
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="JeunePourcent">Jeunes % Rabais</label>
-                        <input type="number" class="form-control" id="JeunePourcent" onblur="pourcentCheck()" value="@ViewBag.Calcul.jeunePourcent">
+                        <input type="number" min=0 class="form-control" id="JeunePourcent" value="@ViewBag.Calcul.jeunePourcent">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="RatioJeune">Ratio %</label>
-                        <input type="number" class="form-control" id="RatioJeune" onblur="calculRabaisAge()" value="@ViewBag.Calcul.jeuneRatio">
+                        <input type="number" min=0 class="form-control" id="RatioJeune" value="@ViewBag.Calcul.jeuneRatio">
                     </div>
                 </th>
                 <th>
@@ -168,13 +166,13 @@
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="AdultePourcent">Adultes % Rabais</label>
-                        <input type="number" class="form-control" id="AdultePourcent" onblur="pourcentCheck()" value="@ViewBag.Calcul.adultePourcent">
+                        <input type="number" min=0 class="form-control" id="AdultePourcent"  value="@ViewBag.Calcul.adultePourcent">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="RatioAdulte">Ratio %</label>
-                        <input type="number" class="form-control" id="RatioAdulte" onblur="calculRabaisAge()" value="@ViewBag.Calcul.adulteRatio">
+                        <input type="number" min=0 class="form-control" id="RatioAdulte" value="@ViewBag.Calcul.adulteRatio">
                     </div>
                 </th>
                 <th>
@@ -194,13 +192,13 @@
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="AinePourcent">Ainés % Rabais</label>
-                        <input type="number" class="form-control" id="AinePourcent" onblur="pourcentCheck()" value="@ViewBag.Calcul.ainePourcent">
+                        <input type="number" min=0 class="form-control" id="AinePourcent" value="@ViewBag.Calcul.ainePourcent">
                     </div>
                 </th>
                 <th>
                     <div class="form-group">
                         <label class="control-label" for="RatioAine">Ratio %</label>
-                        <input type="number" class="form-control" id="RatioAine" onblur="calculRabaisAge()" value="@ViewBag.Calcul.aineRatio">
+                        <input type="number" min=0 class="form-control" id="RatioAine" value="@ViewBag.Calcul.aineRatio">
                     </div>
                 </th>
                 <th>
@@ -224,7 +222,7 @@
     <div class="row">
         <div class="col-md-6" id="reduction">
             Billet a prix réduits.
-            <table class="table">
+            <table class="tablenoTS">
                 <tbody>
                     <tr>
                         <th>
@@ -248,7 +246,7 @@
                             <label>Promotionnel</label>
                         </th>
                         <th>
-                            <input type="number" class="form-control" id="nbBilletGratuit" value="@ViewBag.Calcul.promo">
+                            <input type="number" min=0 class="form-control" id="nbBilletGratuit" value="@ViewBag.Calcul.promo">
                         </th>
                         <th>
                             <input class="form-control" id="disabledInput" type="text" disabled="" value="100%">
@@ -259,7 +257,7 @@
                             <label>Prévente</label>
                         </th>
                         <th>
-                            <input type="number" class="form-control" id="nbBilletPreVente" value="@ViewBag.Calcul.prevente">
+                            <input type="number" min=0 class="form-control" id="nbBilletPreVente" value="@ViewBag.Calcul.prevente">
                         </th>
                         <th>
                             <input class="form-control" id="disabledInput" type="text" disabled="" value="25%">
@@ -270,10 +268,10 @@
                             <input type="text" class="form-control" id="NomRabaisCustom1" value="@ViewBag.Calcul.customNom1">
                         </th>
                         <th>
-                            <input type="number" class="form-control" id="NbBilletRabaisCustom1" value="@ViewBag.Calcul.customBillet1">
+                            <input type="number" min=0 class="form-control" id="NbBilletRabaisCustom1" value="@ViewBag.Calcul.customBillet1">
                         </th>
                         <th>
-                            <input type="number" class="form-control" id="PourcentRabaisCustom1" value="@ViewBag.Calcul.customPrix1">
+                            <input type="number" min=0 class="form-control" id="PourcentRabaisCustom1" value="@ViewBag.Calcul.customPrix1">
                         </th>
                     </tr>
                     <tr>
@@ -281,10 +279,10 @@
                             <input type="text" class="form-control" id="NomRabaisCustom2" value="@ViewBag.Calcul.customNom2">
                         </th>
                         <th>
-                            <input type="number" class="form-control" id="NbBilletRabaisCustom2" value="@ViewBag.Calcul.customBillet2">
+                            <input type="number" min=0 class="form-control" id="NbBilletRabaisCustom2" value="@ViewBag.Calcul.customBillet2">
                         </th>
                         <th>
-                            <input type="number" class="form-control" id="PourcentRabaisCustom2" value="@ViewBag.Calcul.customPrix2">
+                            <input type="number" min=0 class="form-control" id="PourcentRabaisCustom2" value="@ViewBag.Calcul.customPrix2">
                         </th>
                     </tr>
                 </tbody>
@@ -337,12 +335,12 @@
         if (f.noForfait == 1)
         {
              @:chkAge = true;
-                    }
+                            }
         if (f.noForfait == 2) {
              @:chkSalle = true;
-                    }
+                            }
         if (f.noForfait == 3) {
             @:chkRed =true;
-                        }
+                                }
     }
 </script>

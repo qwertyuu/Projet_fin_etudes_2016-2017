@@ -1,6 +1,8 @@
 var nbBillet;
 var nbBilletVIP;
-var TotalBillet;
+var TotalBillets;
+var prixBillets;
+var prixBilletVIP;
 var PrixMoyen;
 var billetMax;
 var VIPMax;
@@ -8,7 +10,7 @@ var VIPMax;
 this.onload = function () { setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed), LoadingDesDonnes() };
 
 function calculTotalBillet() {
-    if (nbBillet == "" || nbBillet == "") {
+    if (nbBillet == "0" || nbBilletVIP == "0") {
         alert("Vous devez entrer un nombre de billet avant de continuer")
     }
     else {
@@ -17,7 +19,7 @@ function calculTotalBillet() {
 } //Met a jour le nombre de billet entré et le retourne // Vérifie aussi qu'il y a un nombre entré
 
 function calculMoyenne() {
-    PrixMoyen = parseInt($("#totalBillet").val()) + parseInt($("#totalBilletVIP").val());
+    PrixMoyen = prixBillets + prixBilletVIP;
     PrixMoyen = PrixMoyen / calculTotalBillet();
 } //Calcule la moyenne des billets pour le calcul des âges
 
@@ -30,8 +32,8 @@ function calculBillet() {
         prixBillet = $("#prixBillet").val();
 
         var total = nbBillet * prixBillet;
-
-        $("#totalBillet").val(round_argent(total));
+        prixBillets = total;
+        $("#totalBillet").val(round_argent(total)+"$");
 
         return total;
     }
@@ -49,8 +51,8 @@ function calculBilletVIP() {
         prixBilletVIP = $("#prixBilletVIP").val();
 
         var total = nbBilletVIP * prixBilletVIP;
-
-        $("#totalBilletVIP").val(round_argent(total));
+        prixBilletVIP = total;
+        $("#totalBilletVIP").val(round_argent(total) + "$");
 
         return total;
     }
@@ -70,7 +72,7 @@ function calculSouperSpectacle() {
     if ($("#nbBilletSouper").val() < TotalBillet && TotalBillet != "") {
         totalSouper = parseInt($("#nbBilletSouper").val()) * parseInt($("#prixSouper").val());
 
-        $("#totalSouper").val(round_argent(totalSouper));
+        $("#totalSouper").val(round_argent(totalSouper)+"$");
         return totalSouper;
     }
     else {
@@ -90,6 +92,8 @@ function calculRabaisAge() {
         var ratioAdulte = parseFloat($("#RatioAdulte").val()) / 100;
         var ratioAine = parseFloat($("#RatioAine").val()) / 100;
 
+        calculBillet();
+        calculBilletVIP();
         calculMoyenne();
         calculTotalBillet();
 
@@ -132,7 +136,7 @@ function calculPrixReduit() {
         nbBilletPreVente = 0;
     }
 
-    if (checkRabaisCustom1 == true) {
+    if (checkRabaisCustom1() == true) {
         TotBilletRabaisCustom1 = parseFloat($("#NbBilletRabaisCustom1").val());
         TotBilletRabaisCustom1 = (TotBilletRabaisCustom1 * (PourcentRabaisCustom1 / 100));
         checkNbBilletReduction();
@@ -141,7 +145,7 @@ function calculPrixReduit() {
         TotBilletRabaisCustom1 = 0;
     }
 
-    if (checkRabaisCustom2 == true) {
+    if (checkRabaisCustom2() == true) {
         TotBilletRabaisCustom2 = parseFloat($("#NbBilletRabaisCustom2").val());
         TotBilletRabaisCustom2 = (TotBilletRabaisCustom2 * (PourcentRabaisCustom2 / 100));
         checkNbBilletReduction();
@@ -160,16 +164,18 @@ function calculPrixReduit() {
     else {
         return 0;
     }
-    
+
 }  //Calcule la section des prix réduits
 
 function Calcultotal() {
 
     var total
 
+    checkPositif();
+
     total = calculBillet() + calculBilletVIP() + calculSouperSpectacle() - calculRabaisAge() - calculPrixReduit();
 
-    $("#TotFinal").text(round_argent(total));
+    $("#TotFinal").text(round_argent(total) + "$");
 
     $("#TotFinal").focus(); // ne fonctionne pas
 } //Calcule le montant total et l'envoie 
@@ -196,20 +202,20 @@ function pourcentCheck() {
 } //Vérifie que les % des âges sont Positif et moins que 100
 
 function ratioCheck() {
-    if ($("#RatioJeune").val() == "0" && $("#RatioAdulte").val() == "0" && $("#RatioAine").val() == "0") {
+    if ($("#RatioJeune").val() == "0" && $("#RatioAdulte").val() == "0" && $("#RatioAine").val() == "0" && chkAge == true) {
         return false;
     }
     else if ($("#RatioJeune").val() > 0 && $("#RatioJeune").val() < 101 || $("#RatioAdulte").val() > 0 && $("#RatioAdulte").val() < 101 || $("#RatioAine").val() > 0 && $("#RatioAine").val() < 101) {
         if (parseInt($("#RatioJeune").val()) + parseInt($("#RatioAdulte").val()) + parseInt($("#RatioAine").val()) == 100) {
             return true
         }
-        else if ($("#RatioAdulte").val() != "" && $("#RatioAine").val() != "")//un check pour s'assurer que les cases ne sont pas vides.. ça évite le spam inutile
+        else if ($("#RatioAdulte").val() != "" && $("#RatioAine").val() != "" && chkAge == true)//un check pour s'assurer que les cases ne sont pas vides.. ça évite le spam inutile
         {
             alert("Veuiller entrer un ratio total de 100");
             return false;
         }
     }
-    else {
+    else if (chkAge == true) {
         alert("Veuiller entrer un ratio entre 0 et 100 seulement");
         return false
     }
@@ -222,6 +228,7 @@ function checkRabaisCustom1() {
         }
         else {
             alert("Veuiller entrer un pourcentage de rabais valide.")
+            return false;
         }
     }
     return false;
@@ -238,18 +245,6 @@ function checkRabaisCustom2() {
     }
     return false;
 }// vérifie si le rabais custom #2 est rempli et ensuite vérifie le %
-
-function positifBilletCheck() {
-    if ($("#nbBillet").val() <= -1) {
-        alert("Veuiller entrer un nombre de billet valide.");
-
-        $("#nbBillet").val(0);
-    }
-    if (($("#nbBilletVIP").val() <= -1)) {
-        $("#nbBilletVIP").val(0);
-    }
-    return true;
-} //Vérifie que le nombres de billets et billets VIP entrés soient positifs et retourne un bool
 
 function checkNbBilletReduction() {
     if (parseInt($("#nbBilletGratuit").val()) > TotalBillet) {
@@ -368,7 +363,6 @@ function LoadingDesDonnes() {
     if ($("#PourcentRabaisCustom2").val() == "") {
         $("#PourcentRabaisCustom2").val(0);
     }
-    Calcultotal();
 }//load les données et met 0 ou "" aux champs sans donnés
 
 function remiseAZero() {
@@ -399,8 +393,66 @@ function remiseAZero() {
     $("#rabaisBilletJeune").val(0);
     $("#nbBilletJeune").val(0);
     $("#nbBilletAdulte").val(0);
-    $("#nbBilletAine").val(0); 
+    $("#nbBilletAine").val(0);
     $("#NomRabaisCustom1").val("");
     $("#NomRabaisCustom2").val("");
     $("#TotFinal").val(0);
 }//Met tout a 0 ou "" partout
+
+function checkPositif() {
+
+    if ($("#nbBillet").val() < 0) {
+        $("#nbBillet").val(0);
+    }
+    if ($("#nbBilletVIP").val() < 0) {
+        $("#nbBilletVIP").val(0);
+    }
+    if ($("#prixBillet").val() < 0) {
+        $("#prixBillet").val(0);
+    }
+    if ($("#prixBilletVIP").val() < 0) {
+        $("#prixBilletVIP").val(0);
+    }
+    if ($("#nbBilletSouper").val() < 0) {
+        $("#nbBilletSouper").val(0);
+    }
+    if ($("#prixSouper").val() < 0) {
+        $("#prixSouper").val(0);
+    }
+    if ($("#JeunePourcent").val() < 0) {
+        $("#JeunePourcent").val(0);
+    }
+    if ($("#AdultePourcent").val() < 0) {
+        $("#AdultePourcent").val(0);
+    }
+    if ($("#AinePourcent").val() < 0) {
+        $("#AinePourcent").val(0);
+    }
+    if ($("#RatioJeune").val() < 0) {
+        $("#RatioJeune").val(0);
+    }
+    if ($("#RatioAdulte").val() < 0) {
+        $("#RatioAdulte").val(0);
+    }
+    if ($("#RatioAine").val() < 0) {
+        $("#RatioAine").val(0);
+    }
+    if ($("#nbBilletGratuit").val() < 0) {
+        $("#nbBilletGratuit").val(0);
+    }
+    if ($("#nbBilletPreVente").val() < 0) {
+        $("#nbBilletPreVente").val(0);
+    }
+    if ($("#NbBilletRabaisCustom1").val() < 0) {
+        $("#NbBilletRabaisCustom1").val(0);
+    }
+    if ($("#NbBilletRabaisCustom2").val() < 0) {
+        $("#NbBilletRabaisCustom2").val(0);
+    }
+    if ($("#PourcentRabaisCustom1").val() < 0) {
+        $("#PourcentRabaisCustom1").val(0);
+    }
+    if ($("#PourcentRabaisCustom2").val() < 0) {
+        $("#PourcentRabaisCustom2").val(0);
+    }
+}// Regarde toute les valeures et si elles sont négaive les remets à 0

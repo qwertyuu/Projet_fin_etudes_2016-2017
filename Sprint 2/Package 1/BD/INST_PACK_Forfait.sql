@@ -122,7 +122,7 @@ VALUES(null,null,null,null,null,null,null,null,null,null,null,null,null,null,nul
 (null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
 (null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
 (null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5),
+(5,5,5,5,5,5,5,5,5,50,30,20,5,5,5,5,5,5,'Rabais rue','Rabais internet'),
 (null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
 (null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
 (null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
