@@ -421,7 +421,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         {
             if (ModelState.IsValid)
             {
-                var statut = provider.ReturnStatAppel(tblAppelOffre);
+                //var statut = provider.ReturnStatAppel(tblAppelOffre);
                 var evenement = provider.ReturnEvenAppel(tblAppelOffre);
                 var media = provider.ReturnMediaAppel(tblAppelOffre);
 
@@ -484,6 +484,9 @@ namespace ECJ.Web.Controllers.AppelOffre
             else
             {
                 tblAppelOffre.noStatut = provider.ReturnNoStatut("Annulé");
+                provider.Save();
+                return RedirectToAction("Index");
+
             }
 
             //On supprime toutes les soumissions réliées à cet appel d'offre
