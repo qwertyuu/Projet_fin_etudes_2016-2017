@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Créer un sous-événement</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <input type="hidden" name="noEvenement" value="@ViewBag.noEvenement" />
+    <div class="form-group">
+        <label>Nom</label>
+        <input class="form-control" type="text" name="nom" maxlength="50" required>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" rows="5" id="description" name="description"></textarea>
+    </div>
+    <div class="form-group pull-right">
+        <button class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Ajouter</span></button>
+        <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
+}

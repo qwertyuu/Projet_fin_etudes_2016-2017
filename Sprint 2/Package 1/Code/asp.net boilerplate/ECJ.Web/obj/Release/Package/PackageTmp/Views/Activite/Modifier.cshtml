@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Ajout";
+}
+@model ECJ.Web.Models.tblActivite
+
+<h2>Activite</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="form-horizontal">
+        <input type="hidden" name="noActivite" value="@Model.noActivite">
+        <div class="form-group">
+            <label>Nom du responsable</label>
+            <input class="form-control" type="text" name="nomResponsable" value="@Model.nomResponsable" required>
+        </div>
+        <div class="form-group">
+            <label>Réalisé</label>
+            @if (Model.etat == 1)
+            {
+                <input type="checkbox" value="1" name="etat" checked><br>
+            }
+            else
+            {
+                <input type="checkbox" value="1" name="etat"><br>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Date de Création</label>
+            <input class="form-control dp" type="text" name="dateCreation" value="@String.Format("{0:yyyy/MM/dd}", Model.dateCreation)" required>
+        </div>
+
+        <div class="form-group">
+            <label>Tâches</label>
+            <input class="form-control" type="text" name="tache" value="@Model.tache" required>
+        </div>
+
+        <div class="form-group">
+            <label>Details</label>
+            <input class="form-control" type="text" name="detail" value="@Model.detail">
+        </div>
+
+        <div class="form-group pull-right">
+            <button type="submit" class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
+            <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Annuler</a>
+        </div>
+    </div>
+}

@@ -1,0 +1,1981 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PE2_OfficielModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AbpAuditLogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="256" />
+    <Property Name="MethodName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Parameters" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ExecutionTime" Type="datetime" Nullable="false" />
+    <Property Name="ExecutionDuration" Type="int" Nullable="false" />
+    <Property Name="ClientIpAddress" Type="nvarchar" MaxLength="64" />
+    <Property Name="ClientName" Type="nvarchar" MaxLength="128" />
+    <Property Name="BrowserInfo" Type="nvarchar" MaxLength="256" />
+    <Property Name="Exception" Type="nvarchar" MaxLength="2000" />
+    <Property Name="ImpersonatorUserId" Type="bigint" />
+    <Property Name="ImpersonatorTenantId" Type="int" />
+    <Property Name="CustomData" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="AbpBackgroundJobs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobType" Type="nvarchar" MaxLength="512" Nullable="false" />
+    <Property Name="JobArgs" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TryCount" Type="smallint" Nullable="false" />
+    <Property Name="NextTryTime" Type="datetime" Nullable="false" />
+    <Property Name="LastTryTime" Type="datetime" />
+    <Property Name="IsAbandoned" Type="bit" Nullable="false" />
+    <Property Name="Priority" Type="tinyint" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpEditions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeleterUserId" Type="bigint" />
+    <Property Name="DeletionTime" Type="datetime" />
+    <Property Name="LastModificationTime" Type="datetime" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpFeatures">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" MaxLength="2000" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="EditionId" Type="int" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AbpLanguages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="Icon" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeleterUserId" Type="bigint" />
+    <Property Name="DeletionTime" Type="datetime" />
+    <Property Name="LastModificationTime" Type="datetime" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpLanguageTexts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="LanguageName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Source" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Key" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastModificationTime" Type="datetime" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpNotifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NotificationName" Type="nvarchar" MaxLength="96" Nullable="false" />
+    <Property Name="Data" Type="nvarchar(max)" />
+    <Property Name="DataTypeName" Type="nvarchar" MaxLength="512" />
+    <Property Name="EntityTypeName" Type="nvarchar" MaxLength="250" />
+    <Property Name="EntityTypeAssemblyQualifiedName" Type="nvarchar" MaxLength="512" />
+    <Property Name="EntityId" Type="nvarchar" MaxLength="96" />
+    <Property Name="Severity" Type="tinyint" Nullable="false" />
+    <Property Name="UserIds" Type="nvarchar(max)" />
+    <Property Name="ExcludedUserIds" Type="nvarchar(max)" />
+    <Property Name="TenantIds" Type="nvarchar(max)" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpNotificationSubscriptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="NotificationName" Type="nvarchar" MaxLength="96" />
+    <Property Name="EntityTypeName" Type="nvarchar" MaxLength="250" />
+    <Property Name="EntityTypeAssemblyQualifiedName" Type="nvarchar" MaxLength="512" />
+    <Property Name="EntityId" Type="nvarchar" MaxLength="96" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpOrganizationUnits">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="ParentId" Type="bigint" />
+    <Property Name="Code" Type="nvarchar" MaxLength="95" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeleterUserId" Type="bigint" />
+    <Property Name="DeletionTime" Type="datetime" />
+    <Property Name="LastModificationTime" Type="datetime" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpPermissions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="IsGranted" Type="bit" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+  </EntityType>
+  <EntityType Name="AbpRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="IsStatic" Type="bit" Nullable="false" />
+    <Property Name="IsDefault" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeleterUserId" Type="bigint" />
+    <Property Name="DeletionTime" Type="datetime" />
+    <Property Name="LastModificationTime" Type="datetime" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" MaxLength="2000" />
+    <Property Name="LastModificationTime" Type="datetime" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpTenantNotifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="NotificationName" Type="nvarchar" MaxLength="96" Nullable="false" />
+    <Property Name="Data" Type="nvarchar(max)" />
+    <Property Name="DataTypeName" Type="nvarchar" MaxLength="512" />
+    <Property Name="EntityTypeName" Type="nvarchar" MaxLength="250" />
+    <Property Name="EntityTypeAssemblyQualifiedName" Type="nvarchar" MaxLength="512" />
+    <Property Name="EntityId" Type="nvarchar" MaxLength="96" />
+    <Property Name="Severity" Type="tinyint" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpTenants">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenancyName" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeleterUserId" Type="bigint" />
+    <Property Name="DeletionTime" Type="datetime" />
+    <Property Name="LastModificationTime" Type="datetime" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="EditionId" Type="int" />
+    <Property Name="ConnectionString" Type="nvarchar" MaxLength="1024" />
+  </EntityType>
+  <EntityType Name="AbpUserAccounts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="UserLinkId" Type="bigint" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+    <Property Name="EmailAddress" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeleterUserId" Type="bigint" />
+    <Property Name="DeletionTime" Type="datetime" />
+    <Property Name="LastModificationTime" Type="datetime" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="LastLoginTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AbpUserLoginAttempts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="TenancyName" Type="nvarchar" MaxLength="64" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="UserNameOrEmailAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="ClientIpAddress" Type="nvarchar" MaxLength="64" />
+    <Property Name="ClientName" Type="nvarchar" MaxLength="128" />
+    <Property Name="BrowserInfo" Type="nvarchar" MaxLength="256" />
+    <Property Name="Result" Type="tinyint" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AbpUserLogins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+  </EntityType>
+  <EntityType Name="AbpUserNotifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="TenantNotificationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="State" Type="int" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+  </EntityType>
+  <EntityType Name="AbpUserOrganizationUnits">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="OrganizationUnitId" Type="bigint" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpUserRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="TenantId" Type="int" />
+  </EntityType>
+  <EntityType Name="AbpUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenantId" Type="int" />
+    <Property Name="AuthenticationSource" Type="nvarchar" MaxLength="64" />
+    <Property Name="Name" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="IsEmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="EmailConfirmationCode" Type="nvarchar" MaxLength="128" />
+    <Property Name="PasswordResetCode" Type="nvarchar" MaxLength="328" />
+    <Property Name="LastLoginTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeleterUserId" Type="bigint" />
+    <Property Name="DeletionTime" Type="datetime" />
+    <Property Name="LastModificationTime" Type="datetime" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tblAdresse">
+    <Key>
+      <PropertyRef Name="noAdresse" />
+    </Key>
+    <Property Name="noAdresse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adresse" Type="text" Nullable="false" />
+    <Property Name="ville" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="codepostal" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="province" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="pays" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="telBureau" Type="char" MaxLength="10" />
+    <Property Name="telCellulaire" Type="char" MaxLength="10" />
+    <Property Name="extension" Type="varchar" MaxLength="5" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblAgence">
+    <Key>
+      <PropertyRef Name="noAgence" />
+    </Key>
+    <Property Name="noAgence" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="courriel" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dateSupprime" Type="datetime" />
+    <Property Name="noAdresse" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblArtiste">
+    <Key>
+      <PropertyRef Name="noArtiste" />
+    </Key>
+    <Property Name="noArtiste" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="commentaire" Type="text" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCatArtisteArt">
+    <Key>
+      <PropertyRef Name="noCategorie" />
+      <PropertyRef Name="noArtiste" />
+    </Key>
+    <Property Name="noCategorie" Type="int" Nullable="false" />
+    <Property Name="noArtiste" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblCategorieArtiste">
+    <Key>
+      <PropertyRef Name="noCategorie" />
+    </Key>
+    <Property Name="noCategorie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblContrat">
+    <Key>
+      <PropertyRef Name="noContrat" />
+    </Key>
+    <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="lieu" Type="varchar" MaxLength="50" />
+    <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="commentaire" Type="text" />
+    <Property Name="dateSupprime" Type="datetime" />
+    <Property Name="noStatut" Type="int" Nullable="false" />
+    <Property Name="noAgence" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblContratArtiste">
+    <Key>
+      <PropertyRef Name="noArtiste" />
+      <PropertyRef Name="noContrat" />
+    </Key>
+    <Property Name="noArtiste" Type="int" Nullable="false" />
+    <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblDiffuseur">
+    <Key>
+      <PropertyRef Name="noDiffuseur" />
+    </Key>
+    <Property Name="noDiffuseur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="courriel" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dateSupprime" Type="datetime" />
+    <Property Name="noAdresse" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEngagement">
+    <Key>
+      <PropertyRef Name="noEngagement" />
+    </Key>
+    <Property Name="noEngagement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="duree" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="lieu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="date" />
+    <Property Name="heure" Type="time" Precision="7" />
+    <Property Name="nature" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="commentaire" Type="text" />
+    <Property Name="description" Type="text" />
+    <Property Name="descriptionCourte" Type="varchar" MaxLength="255" />
+    <Property Name="noSousEvenement" Type="int" />
+    <Property Name="dateSupprime" Type="datetime" />
+    <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblExigence">
+    <Key>
+      <PropertyRef Name="noExigence" />
+    </Key>
+    <Property Name="noExigence" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="date" Type="date" />
+    <Property Name="montant" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="description" Type="text" />
+    <Property Name="commentaire" Type="text" />
+    <Property Name="descriptionCourte" Type="varchar" MaxLength="255" />
+    <Property Name="dateSupprime" Type="datetime" />
+    <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="noStatut" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblFichierOfficiel">
+    <Key>
+      <PropertyRef Name="noArtiste" />
+      <PropertyRef Name="noContrat" />
+      <PropertyRef Name="noFichier" />
+    </Key>
+    <Property Name="noArtiste" Type="int" Nullable="false" />
+    <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="noFichier" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblFichierPersonnel">
+    <Key>
+      <PropertyRef Name="noFichier" />
+    </Key>
+    <Property Name="noFichier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="text" Nullable="false" />
+    <Property Name="chemin" Type="text" Nullable="false" />
+    <Property Name="commentaire" Type="text" />
+    <Property Name="dateSupprime" Type="datetime" />
+    <Property Name="noArtiste" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblRespoContrat">
+    <Key>
+      <PropertyRef Name="noResponsable" />
+      <PropertyRef Name="noContrat" />
+    </Key>
+    <Property Name="noResponsable" Type="int" Nullable="false" />
+    <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblResponsable">
+    <Key>
+      <PropertyRef Name="noResponsable" />
+    </Key>
+    <Property Name="noResponsable" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="prenom" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="courriel" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="signataire" Type="varchar" MaxLength="70" />
+    <Property Name="dateSignature" Type="date" />
+    <Property Name="telBureau" Type="char" MaxLength="10" />
+    <Property Name="telCellulaire" Type="char" MaxLength="10" />
+    <Property Name="extension" Type="varchar" MaxLength="5" />
+    <Property Name="idem" Type="bit" Nullable="false" />
+    <Property Name="dateSupprime" Type="datetime" />
+    <Property Name="noDiffuseur" Type="int" />
+    <Property Name="noAgence" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="tblStatut">
+    <Key>
+      <PropertyRef Name="noStatut" />
+    </Key>
+    <Property Name="noStatut" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomStatut" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="couleur" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblActivite">
+    <Key>
+      <PropertyRef Name="noActivite" />
+    </Key>
+    <Property Name="noActivite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomResponsable" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="etat" Type="tinyint" Nullable="false" />
+    <Property Name="dateCreation" Type="date" Nullable="false" />
+    <Property Name="tache" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="detail" Type="text" />
+    <Property Name="dateSupprime" Type="datetime" />
+    <Property Name="noEvenement" Type="int" />
+    <Property Name="noSousEvenement" Type="int" />
+    <Property Name="noUtilisateur" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tblCommanditaire">
+    <Key>
+      <PropertyRef Name="noCommanditaire" />
+    </Key>
+    <Property Name="noCommanditaire" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomCommanditaire" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nomContact" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="logo" Type="varbinary(max)" />
+    <Property Name="url" Type="text" />
+    <Property Name="textePresentation" Type="text" Nullable="false" />
+    <Property Name="courrielContact" Type="varchar" MaxLength="255" />
+    <Property Name="numTel" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="extension" Type="varchar" MaxLength="5" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblDon">
+    <Key>
+      <PropertyRef Name="noDon" />
+    </Key>
+    <Property Name="noDon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="noCommanditaire" Type="int" />
+    <Property Name="noSousEvenement" Type="int" />
+    <Property Name="montant" Type="decimal" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="dateDon" Type="date" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblEvenement">
+    <Key>
+      <PropertyRef Name="noEvenement" />
+    </Key>
+    <Property Name="noEvenement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="dateDebut" Type="date" Nullable="false" />
+    <Property Name="datefin" Type="date" Nullable="false" />
+    <Property Name="affiche" Type="varbinary(max)" />
+    <Property Name="url" Type="text" />
+    <Property Name="description" Type="text" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblSousEvenement">
+    <Key>
+      <PropertyRef Name="noSousEvenement" />
+    </Key>
+    <Property Name="noSousEvenement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="noEvenement" Type="int" Nullable="false" />
+    <Property Name="noSalle" Type="int" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCalculateur">
+    <Key>
+      <PropertyRef Name="noSousEvenement" />
+    </Key>
+    <Property Name="noSousEvenement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="billet" Type="int" />
+    <Property Name="billetVIP" Type="int" />
+    <Property Name="prixBillet" Type="int" />
+    <Property Name="prixBilletVIP" Type="int" />
+    <Property Name="souperSpectacle" Type="int" />
+    <Property Name="prixSouper" Type="int" />
+    <Property Name="jeunePourcent" Type="int" />
+    <Property Name="adultePourcent" Type="int" />
+    <Property Name="ainePourcent" Type="int" />
+    <Property Name="jeuneRatio" Type="int" />
+    <Property Name="adulteRatio" Type="int" />
+    <Property Name="aineRatio" Type="int" />
+    <Property Name="promo" Type="int" />
+    <Property Name="prevente" Type="int" />
+    <Property Name="customBillet1" Type="int" />
+    <Property Name="customBillet2" Type="int" />
+    <Property Name="customPrix1" Type="int" />
+    <Property Name="customPrix2" Type="int" />
+    <Property Name="customNom1" Type="varchar" MaxLength="50" />
+    <Property Name="customNom2" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblForfait">
+    <Key>
+      <PropertyRef Name="noForfait" />
+    </Key>
+    <Property Name="noForfait" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblForfaitSousEvenement">
+    <Key>
+      <PropertyRef Name="noForfait" />
+      <PropertyRef Name="noSousEvenement" />
+    </Key>
+    <Property Name="noForfait" Type="int" Nullable="false" />
+    <Property Name="noSousEvenement" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSalle">
+    <Key>
+      <PropertyRef Name="noSalle" />
+    </Key>
+    <Property Name="noSalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomSalle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="prix" Type="decimal" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="billet" Type="int" Nullable="false" />
+    <Property Name="billetVIP" Type="int" Nullable="false" />
+    <Property Name="photoSalle" Type="varchar" MaxLength="500" />
+    <Property Name="dateSupprime" Type="datetime" />
+    <Property Name="urlGoogleMap" Type="text" />
+  </EntityType>
+  <EntityType Name="tblService">
+    <Key>
+      <PropertyRef Name="noService" />
+    </Key>
+    <Property Name="noService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomService" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblServiceOffert">
+    <Key>
+      <PropertyRef Name="noService" />
+      <PropertyRef Name="noSalle" />
+    </Key>
+    <Property Name="noService" Type="int" Nullable="false" />
+    <Property Name="noSalle" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblServiceRequis">
+    <Key>
+      <PropertyRef Name="noService" />
+      <PropertyRef Name="noSousEvenement" />
+    </Key>
+    <Property Name="noService" Type="int" Nullable="false" />
+    <Property Name="noSousEvenement" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblMemo">
+    <Key>
+      <PropertyRef Name="noMemo" />
+    </Key>
+    <Property Name="noMemo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="info" Type="text" Nullable="false" />
+    <Property Name="statut" Type="bit" Nullable="false" />
+    <Property Name="lien" Type="varchar(max)" Nullable="false" />
+    <Property Name="dateEnvoi" Type="datetime" Nullable="false" />
+    <Property Name="dateSupprime" Type="datetime" />
+    <Property Name="expediteur" Type="bigint" Nullable="false" />
+    <Property Name="destinataire" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblAgencePublicite">
+    <Key>
+      <PropertyRef Name="noAgencePub" />
+    </Key>
+    <Property Name="noAgencePub" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblAppelOffre">
+    <Key>
+      <PropertyRef Name="noAppelOffre" />
+    </Key>
+    <Property Name="noAppelOffre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateRequis" Type="datetime" Nullable="false" />
+    <Property Name="dateEnvoi" Type="datetime" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="dateSupprime" Type="datetime" />
+    <Property Name="noEvenement" Type="int" Nullable="false" />
+    <Property Name="noStatut" Type="int" Nullable="false" />
+    <Property Name="noMedia" Type="int" Nullable="false" />
+    <Property Name="tag" Type="text" />
+  </EntityType>
+  <EntityType Name="tblMedia">
+    <Key>
+      <PropertyRef Name="noMedia" />
+    </Key>
+    <Property Name="noMedia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="20" />
+    <Property Name="description" Type="text" />
+  </EntityType>
+  <EntityType Name="tblSoumission">
+    <Key>
+      <PropertyRef Name="noSoumission" />
+    </Key>
+    <Property Name="noSoumission" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="noSoumissionAgence" Type="varchar" MaxLength="15" />
+    <Property Name="prix" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="statut" Type="tinyint" />
+    <Property Name="commentaire" Type="text" />
+    <Property Name="noAgencePub" Type="int" Nullable="false" />
+    <Property Name="noAppelOffre" Type="int" Nullable="false" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblStatutAppelOffre">
+    <Key>
+      <PropertyRef Name="noStatut" />
+    </Key>
+    <Property Name="noStatut" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="couleur" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="description" Type="text" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomAgence' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vueSomAgence">
+    <Key>
+      <PropertyRef Name="noAgence" />
+      <PropertyRef Name="nom" />
+    </Key>
+    <Property Name="noAgence" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ville" Type="varchar" MaxLength="30" />
+    <Property Name="telBureau" Type="char" MaxLength="10" />
+    <Property Name="telCellulaire" Type="char" MaxLength="10" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomArtiste' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vueSomArtiste">
+    <Key>
+      <PropertyRef Name="noArtiste" />
+      <PropertyRef Name="nomAriste" />
+    </Key>
+    <Property Name="noArtiste" Type="int" Nullable="false" />
+    <Property Name="nomAriste" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nomCat" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomCatArtiste' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vueSomCatArtiste">
+    <Key>
+      <PropertyRef Name="noCategorie" />
+      <PropertyRef Name="nom" />
+    </Key>
+    <Property Name="noCategorie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="description" Type="text" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomContrat' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vueSomContrat">
+    <Key>
+      <PropertyRef Name="noContrat" />
+    </Key>
+    <Property Name="noContrat" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" />
+    <Property Name="nomStatut" Type="varchar" MaxLength="20" />
+    <Property Name="lieu" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomEngagement' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vueSomEngagement">
+    <Key>
+      <PropertyRef Name="noEngagement" />
+      <PropertyRef Name="nature" />
+      <PropertyRef Name="duree" />
+      <PropertyRef Name="lieu" />
+    </Key>
+    <Property Name="noEngagement" Type="int" Nullable="false" />
+    <Property Name="nature" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="date" />
+    <Property Name="heure" Type="time" Precision="7" />
+    <Property Name="duree" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="lieu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="noContrat" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomExigence' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vueSomExigence">
+    <Key>
+      <PropertyRef Name="noExigence" />
+      <PropertyRef Name="nom" />
+      <PropertyRef Name="noStatut" />
+    </Key>
+    <Property Name="noExigence" Type="int" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="date" Type="date" />
+    <Property Name="montant" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="descriptionCourte" Type="varchar" MaxLength="255" />
+    <Property Name="noStatut" Type="int" Nullable="false" />
+    <Property Name="noContrat" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_Contrat.vueSomStatut' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vueSomStatut">
+    <Key>
+      <PropertyRef Name="noStatut" />
+      <PropertyRef Name="NomStatut" />
+      <PropertyRef Name="couleur" />
+    </Key>
+    <Property Name="noStatut" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomStatut" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="couleur" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="dateSupprime" Type="datetime" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_evenement.vueSomCommanditaire' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vueSomCommanditaire">
+    <Key>
+      <PropertyRef Name="nomCommanditaire" />
+      <PropertyRef Name="nomContact" />
+      <PropertyRef Name="numTel" />
+      <PropertyRef Name="noCommanditaire" />
+    </Key>
+    <Property Name="nomCommanditaire" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nomContact" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="textPres" Type="varchar(max)" />
+    <Property Name="courrielContact" Type="varchar" MaxLength="255" />
+    <Property Name="numTel" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="extension" Type="varchar" MaxLength="5" />
+    <Property Name="montantTotalDon" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="noCommanditaire" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_evenement.vueSomEvenement' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vueSomEvenement">
+    <Key>
+      <PropertyRef Name="nom" />
+      <PropertyRef Name="dateDebut" />
+      <PropertyRef Name="dateFin" />
+      <PropertyRef Name="noEvenement" />
+    </Key>
+    <Property Name="nom" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="dateDebut" Type="date" Nullable="false" />
+    <Property Name="dateFin" Type="date" Nullable="false" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="noEvenement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomAppelOffre' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vueSomAppelOffre">
+    <Key>
+      <PropertyRef Name="noAppelOffre" />
+      <PropertyRef Name="nomAppelOffre" />
+      <PropertyRef Name="dateRequis" />
+      <PropertyRef Name="dateEnvoi" />
+      <PropertyRef Name="noStatut" />
+    </Key>
+    <Property Name="noAppelOffre" Type="int" Nullable="false" />
+    <Property Name="nomAppelOffre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateRequis" Type="datetime" Nullable="false" />
+    <Property Name="dateEnvoi" Type="datetime" Nullable="false" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="dateSupprime" Type="datetime" />
+    <Property Name="nomEvent" Type="varchar" MaxLength="100" />
+    <Property Name="noStatut" Type="int" Nullable="false" />
+    <Property Name="nomStatut" Type="varchar" MaxLength="20" />
+    <Property Name="couleur" Type="char" MaxLength="6" />
+    <Property Name="nomAgence" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vueSomSoumission">
+    <Key>
+      <PropertyRef Name="noSoumission" />
+    </Key>
+    <Property Name="prix" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="nomAppelOffre" Type="varchar" MaxLength="50" />
+    <Property Name="commentaire" Type="text" />
+    <Property Name="noSoumission" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="AGE_ADR_FK">
+    <End Role="tblAdresse" Type="Self.tblAdresse" Multiplicity="1" />
+    <End Role="tblAgence" Type="Self.tblAgence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAdresse">
+        <PropertyRef Name="noAdresse" />
+      </Principal>
+      <Dependent Role="tblAgence">
+        <PropertyRef Name="noAdresse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AGENCE_PUB_FK">
+    <End Role="tblAgencePublicite" Type="Self.tblAgencePublicite" Multiplicity="1" />
+    <End Role="tblSoumission" Type="Self.tblSoumission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgencePublicite">
+        <PropertyRef Name="noAgencePub" />
+      </Principal>
+      <Dependent Role="tblSoumission">
+        <PropertyRef Name="noAgencePub" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="APPEL_OFFRE_FK">
+    <End Role="tblAppelOffre" Type="Self.tblAppelOffre" Multiplicity="1" />
+    <End Role="tblSoumission" Type="Self.tblSoumission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAppelOffre">
+        <PropertyRef Name="noAppelOffre" />
+      </Principal>
+      <Dependent Role="tblSoumission">
+        <PropertyRef Name="noAppelOffre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CATART_ART_FK">
+    <End Role="tblArtiste" Type="Self.tblArtiste" Multiplicity="1" />
+    <End Role="tblCatArtisteArt" Type="Self.tblCatArtisteArt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblArtiste">
+        <PropertyRef Name="noArtiste" />
+      </Principal>
+      <Dependent Role="tblCatArtisteArt">
+        <PropertyRef Name="noArtiste" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CATART_CATART_FK">
+    <End Role="tblCategorieArtiste" Type="Self.tblCategorieArtiste" Multiplicity="1" />
+    <End Role="tblCatArtisteArt" Type="Self.tblCatArtisteArt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCategorieArtiste">
+        <PropertyRef Name="noCategorie" />
+      </Principal>
+      <Dependent Role="tblCatArtisteArt">
+        <PropertyRef Name="noCategorie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CON_AGE_FK">
+    <End Role="tblAgence" Type="Self.tblAgence" Multiplicity="1" />
+    <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgence">
+        <PropertyRef Name="noAgence" />
+      </Principal>
+      <Dependent Role="tblContrat">
+        <PropertyRef Name="noAgence" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CON_STA_FK">
+    <End Role="tblStatut" Type="Self.tblStatut" Multiplicity="1" />
+    <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStatut">
+        <PropertyRef Name="noStatut" />
+      </Principal>
+      <Dependent Role="tblContrat">
+        <PropertyRef Name="noStatut" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CONART_ART_FK">
+    <End Role="tblArtiste" Type="Self.tblArtiste" Multiplicity="1" />
+    <End Role="tblContratArtiste" Type="Self.tblContratArtiste" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblArtiste">
+        <PropertyRef Name="noArtiste" />
+      </Principal>
+      <Dependent Role="tblContratArtiste">
+        <PropertyRef Name="noArtiste" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CONART_CON_FK">
+    <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+    <End Role="tblContratArtiste" Type="Self.tblContratArtiste" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblContrat">
+        <PropertyRef Name="noContrat" />
+      </Principal>
+      <Dependent Role="tblContratArtiste">
+        <PropertyRef Name="noContrat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DIF_ADR_FK">
+    <End Role="tblAdresse" Type="Self.tblAdresse" Multiplicity="1" />
+    <End Role="tblDiffuseur" Type="Self.tblDiffuseur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAdresse">
+        <PropertyRef Name="noAdresse" />
+      </Principal>
+      <Dependent Role="tblDiffuseur">
+        <PropertyRef Name="noAdresse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ENG_CON_FK">
+    <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+    <End Role="tblEngagement" Type="Self.tblEngagement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblContrat">
+        <PropertyRef Name="noContrat" />
+      </Principal>
+      <Dependent Role="tblEngagement">
+        <PropertyRef Name="noContrat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EVENEMENT_APPEL_FK">
+    <End Role="tblEvenement" Type="Self.tblEvenement" Multiplicity="1" />
+    <End Role="tblAppelOffre" Type="Self.tblAppelOffre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEvenement">
+        <PropertyRef Name="noEvenement" />
+      </Principal>
+      <Dependent Role="tblAppelOffre">
+        <PropertyRef Name="noEvenement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EXI_CON_FK">
+    <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+    <End Role="tblExigence" Type="Self.tblExigence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblContrat">
+        <PropertyRef Name="noContrat" />
+      </Principal>
+      <Dependent Role="tblExigence">
+        <PropertyRef Name="noContrat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EXI_STA_FK">
+    <End Role="tblStatut" Type="Self.tblStatut" Multiplicity="1" />
+    <End Role="tblExigence" Type="Self.tblExigence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStatut">
+        <PropertyRef Name="noStatut" />
+      </Principal>
+      <Dependent Role="tblExigence">
+        <PropertyRef Name="noStatut" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FIC_ART_FK">
+    <End Role="tblArtiste" Type="Self.tblArtiste" Multiplicity="1" />
+    <End Role="tblFichierPersonnel" Type="Self.tblFichierPersonnel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblArtiste">
+        <PropertyRef Name="noArtiste" />
+      </Principal>
+      <Dependent Role="tblFichierPersonnel">
+        <PropertyRef Name="noArtiste" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FICOFF_ART_FK">
+    <End Role="tblArtiste" Type="Self.tblArtiste" Multiplicity="1" />
+    <End Role="tblFichierOfficiel" Type="Self.tblFichierOfficiel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblArtiste">
+        <PropertyRef Name="noArtiste" />
+      </Principal>
+      <Dependent Role="tblFichierOfficiel">
+        <PropertyRef Name="noArtiste" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FICOFF_CON_FK">
+    <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+    <End Role="tblFichierOfficiel" Type="Self.tblFichierOfficiel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblContrat">
+        <PropertyRef Name="noContrat" />
+      </Principal>
+      <Dependent Role="tblFichierOfficiel">
+        <PropertyRef Name="noContrat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FICOFF_FICPER_FK">
+    <End Role="tblFichierPersonnel" Type="Self.tblFichierPersonnel" Multiplicity="1" />
+    <End Role="tblFichierOfficiel" Type="Self.tblFichierOfficiel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFichierPersonnel">
+        <PropertyRef Name="noFichier" />
+      </Principal>
+      <Dependent Role="tblFichierOfficiel">
+        <PropertyRef Name="noFichier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpFeatures_dbo_AbpEditions_EditionId">
+    <End Role="AbpEditions" Type="Self.AbpEditions" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AbpFeatures" Type="Self.AbpFeatures" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpEditions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpFeatures">
+        <PropertyRef Name="EditionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpOrganizationUnits_dbo_AbpOrganizationUnits_ParentId">
+    <End Role="AbpOrganizationUnits" Type="Self.AbpOrganizationUnits" Multiplicity="0..1" />
+    <End Role="AbpOrganizationUnits1" Type="Self.AbpOrganizationUnits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpOrganizationUnits">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpOrganizationUnits1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpPermissions_dbo_AbpRoles_RoleId">
+    <End Role="AbpRoles" Type="Self.AbpRoles" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AbpPermissions" Type="Self.AbpPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpPermissions">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpPermissions_dbo_AbpUsers_UserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AbpPermissions" Type="Self.AbpPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpPermissions">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpRoles" Type="Self.AbpRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpRoles">
+        <PropertyRef Name="CreatorUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpRoles" Type="Self.AbpRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpRoles">
+        <PropertyRef Name="DeleterUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpRoles_dbo_AbpUsers_LastModifierUserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpRoles" Type="Self.AbpRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpRoles">
+        <PropertyRef Name="LastModifierUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpSettings_dbo_AbpUsers_UserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpSettings" Type="Self.AbpSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpSettings">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpTenants_dbo_AbpEditions_EditionId">
+    <End Role="AbpEditions" Type="Self.AbpEditions" Multiplicity="0..1" />
+    <End Role="AbpTenants" Type="Self.AbpTenants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpEditions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpTenants">
+        <PropertyRef Name="EditionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpTenants_dbo_AbpUsers_CreatorUserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpTenants" Type="Self.AbpTenants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpTenants">
+        <PropertyRef Name="CreatorUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpTenants_dbo_AbpUsers_DeleterUserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpTenants" Type="Self.AbpTenants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpTenants">
+        <PropertyRef Name="DeleterUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpTenants_dbo_AbpUsers_LastModifierUserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpTenants" Type="Self.AbpTenants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpTenants">
+        <PropertyRef Name="LastModifierUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpUserLogins_dbo_AbpUsers_UserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AbpUserLogins" Type="Self.AbpUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpUserRoles_dbo_AbpUsers_UserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AbpUserRoles" Type="Self.AbpUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpUsers1" Type="Self.AbpUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUsers1">
+        <PropertyRef Name="CreatorUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpUsers1" Type="Self.AbpUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUsers1">
+        <PropertyRef Name="DeleterUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpUsers1" Type="Self.AbpUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUsers1">
+        <PropertyRef Name="LastModifierUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FORF_SOUSEVENFORF_NOFOR_FK">
+    <End Role="tblForfait" Type="Self.tblForfait" Multiplicity="1" />
+    <End Role="tblForfaitSousEvenement" Type="Self.tblForfaitSousEvenement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblForfait">
+        <PropertyRef Name="noForfait" />
+      </Principal>
+      <Dependent Role="tblForfaitSousEvenement">
+        <PropertyRef Name="noForfait" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MED_APPEL_FK">
+    <End Role="tblMedia" Type="Self.tblMedia" Multiplicity="1" />
+    <End Role="tblAppelOffre" Type="Self.tblAppelOffre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMedia">
+        <PropertyRef Name="noMedia" />
+      </Principal>
+      <Dependent Role="tblAppelOffre">
+        <PropertyRef Name="noMedia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NO_UTILISATEUR_CREATEUR">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="0..1" />
+    <End Role="tblActivite" Type="Self.tblActivite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblActivite">
+        <PropertyRef Name="noUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NO_UTILISATEUR_DESTINATAIRE">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="1" />
+    <End Role="tblMemo" Type="Self.tblMemo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblMemo">
+        <PropertyRef Name="destinataire" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NO_UTILISATEUR_EXPEDITEUR">
+    <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="1" />
+    <End Role="tblMemo" Type="Self.tblMemo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblMemo">
+        <PropertyRef Name="expediteur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NOCOMM_DON_FK">
+    <End Role="tblCommanditaire" Type="Self.tblCommanditaire" Multiplicity="0..1" />
+    <End Role="tblDon" Type="Self.tblDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCommanditaire">
+        <PropertyRef Name="noCommanditaire" />
+      </Principal>
+      <Dependent Role="tblDon">
+        <PropertyRef Name="noCommanditaire" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NOEVEN_ACT_FK">
+    <End Role="tblEvenement" Type="Self.tblEvenement" Multiplicity="0..1" />
+    <End Role="tblActivite" Type="Self.tblActivite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEvenement">
+        <PropertyRef Name="noEvenement" />
+      </Principal>
+      <Dependent Role="tblActivite">
+        <PropertyRef Name="noEvenement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NOEVEN_SOUSEVEN_FK">
+    <End Role="tblEvenement" Type="Self.tblEvenement" Multiplicity="1" />
+    <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEvenement">
+        <PropertyRef Name="noEvenement" />
+      </Principal>
+      <Dependent Role="tblSousEvenement">
+        <PropertyRef Name="noEvenement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NOSALLE">
+    <End Role="tblSalle" Type="Self.tblSalle" Multiplicity="0..1" />
+    <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSalle">
+        <PropertyRef Name="noSalle" />
+      </Principal>
+      <Dependent Role="tblSousEvenement">
+        <PropertyRef Name="noSalle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NOSOUSEVEN_ACT_FK">
+    <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="0..1" />
+    <End Role="tblActivite" Type="Self.tblActivite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSousEvenement">
+        <PropertyRef Name="noSousEvenement" />
+      </Principal>
+      <Dependent Role="tblActivite">
+        <PropertyRef Name="noSousEvenement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NOSOUSEVEN_DON_FK">
+    <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="0..1" />
+    <End Role="tblDon" Type="Self.tblDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSousEvenement">
+        <PropertyRef Name="noSousEvenement" />
+      </Principal>
+      <Dependent Role="tblDon">
+        <PropertyRef Name="noSousEvenement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NOSOUSEVENEMENT_ENGAGEMENT">
+    <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="0..1" />
+    <End Role="tblEngagement" Type="Self.tblEngagement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSousEvenement">
+        <PropertyRef Name="noSousEvenement" />
+      </Principal>
+      <Dependent Role="tblEngagement">
+        <PropertyRef Name="noSousEvenement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RES_AGE_FK">
+    <End Role="tblAgence" Type="Self.tblAgence" Multiplicity="0..1" />
+    <End Role="tblResponsable" Type="Self.tblResponsable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgence">
+        <PropertyRef Name="noAgence" />
+      </Principal>
+      <Dependent Role="tblResponsable">
+        <PropertyRef Name="noAgence" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RES_DIF_FK">
+    <End Role="tblDiffuseur" Type="Self.tblDiffuseur" Multiplicity="0..1" />
+    <End Role="tblResponsable" Type="Self.tblResponsable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDiffuseur">
+        <PropertyRef Name="noDiffuseur" />
+      </Principal>
+      <Dependent Role="tblResponsable">
+        <PropertyRef Name="noDiffuseur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RESCON_CON_FK">
+    <End Role="tblContrat" Type="Self.tblContrat" Multiplicity="1" />
+    <End Role="tblRespoContrat" Type="Self.tblRespoContrat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblContrat">
+        <PropertyRef Name="noContrat" />
+      </Principal>
+      <Dependent Role="tblRespoContrat">
+        <PropertyRef Name="noContrat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RESCONT_RES_FK">
+    <End Role="tblResponsable" Type="Self.tblResponsable" Multiplicity="1" />
+    <End Role="tblRespoContrat" Type="Self.tblRespoContrat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblResponsable">
+        <PropertyRef Name="noResponsable" />
+      </Principal>
+      <Dependent Role="tblRespoContrat">
+        <PropertyRef Name="noResponsable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SAL_SEROFF_NOSAL_FK">
+    <End Role="tblSalle" Type="Self.tblSalle" Multiplicity="1" />
+    <End Role="tblServiceOffert" Type="Self.tblServiceOffert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSalle">
+        <PropertyRef Name="noSalle" />
+      </Principal>
+      <Dependent Role="tblServiceOffert">
+        <PropertyRef Name="noSalle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SERV_SEROFF_NOSERV_FK">
+    <End Role="tblService" Type="Self.tblService" Multiplicity="1" />
+    <End Role="tblServiceOffert" Type="Self.tblServiceOffert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblService">
+        <PropertyRef Name="noService" />
+      </Principal>
+      <Dependent Role="tblServiceOffert">
+        <PropertyRef Name="noService" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SERV_SERVREQ_NOSERV_FK">
+    <End Role="tblService" Type="Self.tblService" Multiplicity="1" />
+    <End Role="tblServiceRequis" Type="Self.tblServiceRequis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblService">
+        <PropertyRef Name="noService" />
+      </Principal>
+      <Dependent Role="tblServiceRequis">
+        <PropertyRef Name="noService" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SOUSEVEN_CALC_NOSEVENL_FK">
+    <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="1" />
+    <End Role="tblCalculateur" Type="Self.tblCalculateur" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblSousEvenement">
+        <PropertyRef Name="noSousEvenement" />
+      </Principal>
+      <Dependent Role="tblCalculateur">
+        <PropertyRef Name="noSousEvenement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SOUSEVEN_SEROFF_NOSEVENL_FK">
+    <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="1" />
+    <End Role="tblServiceRequis" Type="Self.tblServiceRequis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSousEvenement">
+        <PropertyRef Name="noSousEvenement" />
+      </Principal>
+      <Dependent Role="tblServiceRequis">
+        <PropertyRef Name="noSousEvenement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SOUSEVEN_SOUSEVENFORF_NOSOUSEVEN_FK">
+    <End Role="tblSousEvenement" Type="Self.tblSousEvenement" Multiplicity="1" />
+    <End Role="tblForfaitSousEvenement" Type="Self.tblForfaitSousEvenement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSousEvenement">
+        <PropertyRef Name="noSousEvenement" />
+      </Principal>
+      <Dependent Role="tblForfaitSousEvenement">
+        <PropertyRef Name="noSousEvenement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="STATUT_APPEL_FK">
+    <End Role="tblStatutAppelOffre" Type="Self.tblStatutAppelOffre" Multiplicity="1" />
+    <End Role="tblAppelOffre" Type="Self.tblAppelOffre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStatutAppelOffre">
+        <PropertyRef Name="noStatut" />
+      </Principal>
+      <Dependent Role="tblAppelOffre">
+        <PropertyRef Name="noStatut" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PE2_OfficielModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpAuditLogs" EntityType="Self.AbpAuditLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpBackgroundJobs" EntityType="Self.AbpBackgroundJobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpEditions" EntityType="Self.AbpEditions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpFeatures" EntityType="Self.AbpFeatures" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpLanguages" EntityType="Self.AbpLanguages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpLanguageTexts" EntityType="Self.AbpLanguageTexts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpNotifications" EntityType="Self.AbpNotifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpNotificationSubscriptions" EntityType="Self.AbpNotificationSubscriptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpOrganizationUnits" EntityType="Self.AbpOrganizationUnits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpPermissions" EntityType="Self.AbpPermissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpRoles" EntityType="Self.AbpRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpSettings" EntityType="Self.AbpSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpTenantNotifications" EntityType="Self.AbpTenantNotifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpTenants" EntityType="Self.AbpTenants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpUserAccounts" EntityType="Self.AbpUserAccounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpUserLoginAttempts" EntityType="Self.AbpUserLoginAttempts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpUserLogins" EntityType="Self.AbpUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpUserNotifications" EntityType="Self.AbpUserNotifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpUserOrganizationUnits" EntityType="Self.AbpUserOrganizationUnits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpUserRoles" EntityType="Self.AbpUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AbpUsers" EntityType="Self.AbpUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAdresse" EntityType="Self.tblAdresse" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblAgence" EntityType="Self.tblAgence" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblArtiste" EntityType="Self.tblArtiste" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblCatArtisteArt" EntityType="Self.tblCatArtisteArt" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblCategorieArtiste" EntityType="Self.tblCategorieArtiste" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblContrat" EntityType="Self.tblContrat" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblContratArtiste" EntityType="Self.tblContratArtiste" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblDiffuseur" EntityType="Self.tblDiffuseur" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblEngagement" EntityType="Self.tblEngagement" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblExigence" EntityType="Self.tblExigence" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblFichierOfficiel" EntityType="Self.tblFichierOfficiel" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblFichierPersonnel" EntityType="Self.tblFichierPersonnel" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblRespoContrat" EntityType="Self.tblRespoContrat" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblResponsable" EntityType="Self.tblResponsable" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblStatut" EntityType="Self.tblStatut" Schema="S_Contrat" store:Type="Tables" />
+    <EntitySet Name="tblActivite" EntityType="Self.tblActivite" Schema="S_evenement" store:Type="Tables" />
+    <EntitySet Name="tblCommanditaire" EntityType="Self.tblCommanditaire" Schema="S_evenement" store:Type="Tables" />
+    <EntitySet Name="tblDon" EntityType="Self.tblDon" Schema="S_evenement" store:Type="Tables" />
+    <EntitySet Name="tblEvenement" EntityType="Self.tblEvenement" Schema="S_evenement" store:Type="Tables" />
+    <EntitySet Name="tblSousEvenement" EntityType="Self.tblSousEvenement" Schema="S_evenement" store:Type="Tables" />
+    <EntitySet Name="tblCalculateur" EntityType="Self.tblCalculateur" Schema="S_forfait" store:Type="Tables" />
+    <EntitySet Name="tblForfait" EntityType="Self.tblForfait" Schema="S_forfait" store:Type="Tables" />
+    <EntitySet Name="tblForfaitSousEvenement" EntityType="Self.tblForfaitSousEvenement" Schema="S_forfait" store:Type="Tables" />
+    <EntitySet Name="tblSalle" EntityType="Self.tblSalle" Schema="S_forfait" store:Type="Tables" />
+    <EntitySet Name="tblService" EntityType="Self.tblService" Schema="S_forfait" store:Type="Tables" />
+    <EntitySet Name="tblServiceOffert" EntityType="Self.tblServiceOffert" Schema="S_forfait" store:Type="Tables" />
+    <EntitySet Name="tblServiceRequis" EntityType="Self.tblServiceRequis" Schema="S_forfait" store:Type="Tables" />
+    <EntitySet Name="tblMemo" EntityType="Self.tblMemo" Schema="S_personnel" store:Type="Tables" />
+    <EntitySet Name="tblAgencePublicite" EntityType="Self.tblAgencePublicite" Schema="S_publicite" store:Type="Tables" />
+    <EntitySet Name="tblAppelOffre" EntityType="Self.tblAppelOffre" Schema="S_publicite" store:Type="Tables" />
+    <EntitySet Name="tblMedia" EntityType="Self.tblMedia" Schema="S_publicite" store:Type="Tables" />
+    <EntitySet Name="tblSoumission" EntityType="Self.tblSoumission" Schema="S_publicite" store:Type="Tables" />
+    <EntitySet Name="tblStatutAppelOffre" EntityType="Self.tblStatutAppelOffre" Schema="S_publicite" store:Type="Tables" />
+    <EntitySet Name="vueSomAgence" EntityType="Self.vueSomAgence" store:Type="Views" store:Schema="S_Contrat">
+      <DefiningQuery>SELECT 
+    [vueSomAgence].[noAgence] AS [noAgence], 
+    [vueSomAgence].[nom] AS [nom], 
+    [vueSomAgence].[ville] AS [ville], 
+    [vueSomAgence].[telBureau] AS [telBureau], 
+    [vueSomAgence].[telCellulaire] AS [telCellulaire]
+    FROM [S_Contrat].[vueSomAgence] AS [vueSomAgence]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vueSomArtiste" EntityType="Self.vueSomArtiste" store:Type="Views" store:Schema="S_Contrat">
+      <DefiningQuery>SELECT 
+    [vueSomArtiste].[noArtiste] AS [noArtiste], 
+    [vueSomArtiste].[nomAriste] AS [nomAriste], 
+    [vueSomArtiste].[nomCat] AS [nomCat]
+    FROM [S_Contrat].[vueSomArtiste] AS [vueSomArtiste]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vueSomCatArtiste" EntityType="Self.vueSomCatArtiste" store:Type="Views" store:Schema="S_Contrat">
+      <DefiningQuery>SELECT 
+    [vueSomCatArtiste].[noCategorie] AS [noCategorie], 
+    [vueSomCatArtiste].[nom] AS [nom], 
+    [vueSomCatArtiste].[description] AS [description]
+    FROM [S_Contrat].[vueSomCatArtiste] AS [vueSomCatArtiste]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vueSomContrat" EntityType="Self.vueSomContrat" store:Type="Views" store:Schema="S_Contrat">
+      <DefiningQuery>SELECT 
+    [vueSomContrat].[noContrat] AS [noContrat], 
+    [vueSomContrat].[nom] AS [nom], 
+    [vueSomContrat].[nomStatut] AS [nomStatut], 
+    [vueSomContrat].[lieu] AS [lieu]
+    FROM [S_Contrat].[vueSomContrat] AS [vueSomContrat]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vueSomEngagement" EntityType="Self.vueSomEngagement" store:Type="Views" store:Schema="S_Contrat">
+      <DefiningQuery>SELECT 
+    [vueSomEngagement].[noEngagement] AS [noEngagement], 
+    [vueSomEngagement].[nature] AS [nature], 
+    [vueSomEngagement].[date] AS [date], 
+    [vueSomEngagement].[heure] AS [heure], 
+    [vueSomEngagement].[duree] AS [duree], 
+    [vueSomEngagement].[lieu] AS [lieu], 
+    [vueSomEngagement].[noContrat] AS [noContrat]
+    FROM [S_Contrat].[vueSomEngagement] AS [vueSomEngagement]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vueSomExigence" EntityType="Self.vueSomExigence" store:Type="Views" store:Schema="S_Contrat">
+      <DefiningQuery>SELECT 
+    [vueSomExigence].[noExigence] AS [noExigence], 
+    [vueSomExigence].[nom] AS [nom], 
+    [vueSomExigence].[date] AS [date], 
+    [vueSomExigence].[montant] AS [montant], 
+    [vueSomExigence].[descriptionCourte] AS [descriptionCourte], 
+    [vueSomExigence].[noStatut] AS [noStatut], 
+    [vueSomExigence].[noContrat] AS [noContrat]
+    FROM [S_Contrat].[vueSomExigence] AS [vueSomExigence]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vueSomStatut" EntityType="Self.vueSomStatut" store:Type="Views" store:Schema="S_Contrat">
+      <DefiningQuery>SELECT 
+    [vueSomStatut].[noStatut] AS [noStatut], 
+    [vueSomStatut].[NomStatut] AS [NomStatut], 
+    [vueSomStatut].[description] AS [description], 
+    [vueSomStatut].[couleur] AS [couleur], 
+    [vueSomStatut].[dateSupprime] AS [dateSupprime]
+    FROM [S_Contrat].[vueSomStatut] AS [vueSomStatut]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vueSomCommanditaire" EntityType="Self.vueSomCommanditaire" store:Type="Views" store:Schema="S_evenement">
+      <DefiningQuery>SELECT 
+    [vueSomCommanditaire].[nomCommanditaire] AS [nomCommanditaire], 
+    [vueSomCommanditaire].[nomContact] AS [nomContact], 
+    [vueSomCommanditaire].[textPres] AS [textPres], 
+    [vueSomCommanditaire].[courrielContact] AS [courrielContact], 
+    [vueSomCommanditaire].[numTel] AS [numTel], 
+    [vueSomCommanditaire].[extension] AS [extension], 
+    [vueSomCommanditaire].[montantTotalDon] AS [montantTotalDon], 
+    [vueSomCommanditaire].[noCommanditaire] AS [noCommanditaire]
+    FROM [S_evenement].[vueSomCommanditaire] AS [vueSomCommanditaire]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vueSomEvenement" EntityType="Self.vueSomEvenement" store:Type="Views" store:Schema="S_evenement">
+      <DefiningQuery>SELECT 
+    [vueSomEvenement].[nom] AS [nom], 
+    [vueSomEvenement].[dateDebut] AS [dateDebut], 
+    [vueSomEvenement].[dateFin] AS [dateFin], 
+    [vueSomEvenement].[description] AS [description], 
+    [vueSomEvenement].[noEvenement] AS [noEvenement]
+    FROM [S_evenement].[vueSomEvenement] AS [vueSomEvenement]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vueSomAppelOffre" EntityType="Self.vueSomAppelOffre" store:Type="Views" store:Schema="S_publicite">
+      <DefiningQuery>SELECT 
+    [vueSomAppelOffre].[noAppelOffre] AS [noAppelOffre], 
+    [vueSomAppelOffre].[nomAppelOffre] AS [nomAppelOffre], 
+    [vueSomAppelOffre].[dateRequis] AS [dateRequis], 
+    [vueSomAppelOffre].[dateEnvoi] AS [dateEnvoi], 
+    [vueSomAppelOffre].[description] AS [description], 
+    [vueSomAppelOffre].[dateSupprime] AS [dateSupprime], 
+    [vueSomAppelOffre].[nomEvent] AS [nomEvent], 
+    [vueSomAppelOffre].[noStatut] AS [noStatut], 
+    [vueSomAppelOffre].[nomStatut] AS [nomStatut], 
+    [vueSomAppelOffre].[couleur] AS [couleur], 
+    [vueSomAppelOffre].[nomAgence] AS [nomAgence]
+    FROM [S_publicite].[vueSomAppelOffre] AS [vueSomAppelOffre]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vueSomSoumission" EntityType="Self.vueSomSoumission" store:Type="Views" store:Schema="S_publicite">
+      <DefiningQuery>SELECT 
+    [vueSomSoumission].[prix] AS [prix], 
+    [vueSomSoumission].[nomAppelOffre] AS [nomAppelOffre], 
+    [vueSomSoumission].[commentaire] AS [commentaire], 
+    [vueSomSoumission].[noSoumission] AS [noSoumission]
+    FROM [S_publicite].[vueSomSoumission] AS [vueSomSoumission]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="AGE_ADR_FK" Association="Self.AGE_ADR_FK">
+      <End Role="tblAdresse" EntitySet="tblAdresse" />
+      <End Role="tblAgence" EntitySet="tblAgence" />
+    </AssociationSet>
+    <AssociationSet Name="AGENCE_PUB_FK" Association="Self.AGENCE_PUB_FK">
+      <End Role="tblAgencePublicite" EntitySet="tblAgencePublicite" />
+      <End Role="tblSoumission" EntitySet="tblSoumission" />
+    </AssociationSet>
+    <AssociationSet Name="APPEL_OFFRE_FK" Association="Self.APPEL_OFFRE_FK">
+      <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
+      <End Role="tblSoumission" EntitySet="tblSoumission" />
+    </AssociationSet>
+    <AssociationSet Name="CATART_ART_FK" Association="Self.CATART_ART_FK">
+      <End Role="tblArtiste" EntitySet="tblArtiste" />
+      <End Role="tblCatArtisteArt" EntitySet="tblCatArtisteArt" />
+    </AssociationSet>
+    <AssociationSet Name="CATART_CATART_FK" Association="Self.CATART_CATART_FK">
+      <End Role="tblCategorieArtiste" EntitySet="tblCategorieArtiste" />
+      <End Role="tblCatArtisteArt" EntitySet="tblCatArtisteArt" />
+    </AssociationSet>
+    <AssociationSet Name="CON_AGE_FK" Association="Self.CON_AGE_FK">
+      <End Role="tblAgence" EntitySet="tblAgence" />
+      <End Role="tblContrat" EntitySet="tblContrat" />
+    </AssociationSet>
+    <AssociationSet Name="CON_STA_FK" Association="Self.CON_STA_FK">
+      <End Role="tblStatut" EntitySet="tblStatut" />
+      <End Role="tblContrat" EntitySet="tblContrat" />
+    </AssociationSet>
+    <AssociationSet Name="CONART_ART_FK" Association="Self.CONART_ART_FK">
+      <End Role="tblArtiste" EntitySet="tblArtiste" />
+      <End Role="tblContratArtiste" EntitySet="tblContratArtiste" />
+    </AssociationSet>
+    <AssociationSet Name="CONART_CON_FK" Association="Self.CONART_CON_FK">
+      <End Role="tblContrat" EntitySet="tblContrat" />
+      <End Role="tblContratArtiste" EntitySet="tblContratArtiste" />
+    </AssociationSet>
+    <AssociationSet Name="DIF_ADR_FK" Association="Self.DIF_ADR_FK">
+      <End Role="tblAdresse" EntitySet="tblAdresse" />
+      <End Role="tblDiffuseur" EntitySet="tblDiffuseur" />
+    </AssociationSet>
+    <AssociationSet Name="ENG_CON_FK" Association="Self.ENG_CON_FK">
+      <End Role="tblContrat" EntitySet="tblContrat" />
+      <End Role="tblEngagement" EntitySet="tblEngagement" />
+    </AssociationSet>
+    <AssociationSet Name="EVENEMENT_APPEL_FK" Association="Self.EVENEMENT_APPEL_FK">
+      <End Role="tblEvenement" EntitySet="tblEvenement" />
+      <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
+    </AssociationSet>
+    <AssociationSet Name="EXI_CON_FK" Association="Self.EXI_CON_FK">
+      <End Role="tblContrat" EntitySet="tblContrat" />
+      <End Role="tblExigence" EntitySet="tblExigence" />
+    </AssociationSet>
+    <AssociationSet Name="EXI_STA_FK" Association="Self.EXI_STA_FK">
+      <End Role="tblStatut" EntitySet="tblStatut" />
+      <End Role="tblExigence" EntitySet="tblExigence" />
+    </AssociationSet>
+    <AssociationSet Name="FIC_ART_FK" Association="Self.FIC_ART_FK">
+      <End Role="tblArtiste" EntitySet="tblArtiste" />
+      <End Role="tblFichierPersonnel" EntitySet="tblFichierPersonnel" />
+    </AssociationSet>
+    <AssociationSet Name="FICOFF_ART_FK" Association="Self.FICOFF_ART_FK">
+      <End Role="tblArtiste" EntitySet="tblArtiste" />
+      <End Role="tblFichierOfficiel" EntitySet="tblFichierOfficiel" />
+    </AssociationSet>
+    <AssociationSet Name="FICOFF_CON_FK" Association="Self.FICOFF_CON_FK">
+      <End Role="tblContrat" EntitySet="tblContrat" />
+      <End Role="tblFichierOfficiel" EntitySet="tblFichierOfficiel" />
+    </AssociationSet>
+    <AssociationSet Name="FICOFF_FICPER_FK" Association="Self.FICOFF_FICPER_FK">
+      <End Role="tblFichierPersonnel" EntitySet="tblFichierPersonnel" />
+      <End Role="tblFichierOfficiel" EntitySet="tblFichierOfficiel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpFeatures_dbo_AbpEditions_EditionId" Association="Self.FK_dbo_AbpFeatures_dbo_AbpEditions_EditionId">
+      <End Role="AbpEditions" EntitySet="AbpEditions" />
+      <End Role="AbpFeatures" EntitySet="AbpFeatures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpOrganizationUnits_dbo_AbpOrganizationUnits_ParentId" Association="Self.FK_dbo_AbpOrganizationUnits_dbo_AbpOrganizationUnits_ParentId">
+      <End Role="AbpOrganizationUnits" EntitySet="AbpOrganizationUnits" />
+      <End Role="AbpOrganizationUnits1" EntitySet="AbpOrganizationUnits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpPermissions_dbo_AbpRoles_RoleId" Association="Self.FK_dbo_AbpPermissions_dbo_AbpRoles_RoleId">
+      <End Role="AbpRoles" EntitySet="AbpRoles" />
+      <End Role="AbpPermissions" EntitySet="AbpPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" Association="Self.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpPermissions" EntitySet="AbpPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" Association="Self.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpRoles" EntitySet="AbpRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" Association="Self.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpRoles" EntitySet="AbpRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpRoles_dbo_AbpUsers_LastModifierUserId" Association="Self.FK_dbo_AbpRoles_dbo_AbpUsers_LastModifierUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpRoles" EntitySet="AbpRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpSettings_dbo_AbpUsers_UserId" Association="Self.FK_dbo_AbpSettings_dbo_AbpUsers_UserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpSettings" EntitySet="AbpSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpTenants_dbo_AbpEditions_EditionId" Association="Self.FK_dbo_AbpTenants_dbo_AbpEditions_EditionId">
+      <End Role="AbpEditions" EntitySet="AbpEditions" />
+      <End Role="AbpTenants" EntitySet="AbpTenants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpTenants_dbo_AbpUsers_CreatorUserId" Association="Self.FK_dbo_AbpTenants_dbo_AbpUsers_CreatorUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpTenants" EntitySet="AbpTenants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpTenants_dbo_AbpUsers_DeleterUserId" Association="Self.FK_dbo_AbpTenants_dbo_AbpUsers_DeleterUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpTenants" EntitySet="AbpTenants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpTenants_dbo_AbpUsers_LastModifierUserId" Association="Self.FK_dbo_AbpTenants_dbo_AbpUsers_LastModifierUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpTenants" EntitySet="AbpTenants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpUserLogins_dbo_AbpUsers_UserId" Association="Self.FK_dbo_AbpUserLogins_dbo_AbpUsers_UserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpUserLogins" EntitySet="AbpUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpUserRoles_dbo_AbpUsers_UserId" Association="Self.FK_dbo_AbpUserRoles_dbo_AbpUsers_UserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpUserRoles" EntitySet="AbpUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId" Association="Self.FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpUsers1" EntitySet="AbpUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId" Association="Self.FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpUsers1" EntitySet="AbpUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" Association="Self.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpUsers1" EntitySet="AbpUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FORF_SOUSEVENFORF_NOFOR_FK" Association="Self.FORF_SOUSEVENFORF_NOFOR_FK">
+      <End Role="tblForfait" EntitySet="tblForfait" />
+      <End Role="tblForfaitSousEvenement" EntitySet="tblForfaitSousEvenement" />
+    </AssociationSet>
+    <AssociationSet Name="MED_APPEL_FK" Association="Self.MED_APPEL_FK">
+      <End Role="tblMedia" EntitySet="tblMedia" />
+      <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
+    </AssociationSet>
+    <AssociationSet Name="NO_UTILISATEUR_CREATEUR" Association="Self.NO_UTILISATEUR_CREATEUR">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="tblActivite" EntitySet="tblActivite" />
+    </AssociationSet>
+    <AssociationSet Name="NO_UTILISATEUR_DESTINATAIRE" Association="Self.NO_UTILISATEUR_DESTINATAIRE">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="tblMemo" EntitySet="tblMemo" />
+    </AssociationSet>
+    <AssociationSet Name="NO_UTILISATEUR_EXPEDITEUR" Association="Self.NO_UTILISATEUR_EXPEDITEUR">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="tblMemo" EntitySet="tblMemo" />
+    </AssociationSet>
+    <AssociationSet Name="NOCOMM_DON_FK" Association="Self.NOCOMM_DON_FK">
+      <End Role="tblCommanditaire" EntitySet="tblCommanditaire" />
+      <End Role="tblDon" EntitySet="tblDon" />
+    </AssociationSet>
+    <AssociationSet Name="NOEVEN_ACT_FK" Association="Self.NOEVEN_ACT_FK">
+      <End Role="tblEvenement" EntitySet="tblEvenement" />
+      <End Role="tblActivite" EntitySet="tblActivite" />
+    </AssociationSet>
+    <AssociationSet Name="NOEVEN_SOUSEVEN_FK" Association="Self.NOEVEN_SOUSEVEN_FK">
+      <End Role="tblEvenement" EntitySet="tblEvenement" />
+      <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+    </AssociationSet>
+    <AssociationSet Name="NOSALLE" Association="Self.NOSALLE">
+      <End Role="tblSalle" EntitySet="tblSalle" />
+      <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+    </AssociationSet>
+    <AssociationSet Name="NOSOUSEVEN_ACT_FK" Association="Self.NOSOUSEVEN_ACT_FK">
+      <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+      <End Role="tblActivite" EntitySet="tblActivite" />
+    </AssociationSet>
+    <AssociationSet Name="NOSOUSEVEN_DON_FK" Association="Self.NOSOUSEVEN_DON_FK">
+      <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+      <End Role="tblDon" EntitySet="tblDon" />
+    </AssociationSet>
+    <AssociationSet Name="NOSOUSEVENEMENT_ENGAGEMENT" Association="Self.NOSOUSEVENEMENT_ENGAGEMENT">
+      <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+      <End Role="tblEngagement" EntitySet="tblEngagement" />
+    </AssociationSet>
+    <AssociationSet Name="RES_AGE_FK" Association="Self.RES_AGE_FK">
+      <End Role="tblAgence" EntitySet="tblAgence" />
+      <End Role="tblResponsable" EntitySet="tblResponsable" />
+    </AssociationSet>
+    <AssociationSet Name="RES_DIF_FK" Association="Self.RES_DIF_FK">
+      <End Role="tblDiffuseur" EntitySet="tblDiffuseur" />
+      <End Role="tblResponsable" EntitySet="tblResponsable" />
+    </AssociationSet>
+    <AssociationSet Name="RESCON_CON_FK" Association="Self.RESCON_CON_FK">
+      <End Role="tblContrat" EntitySet="tblContrat" />
+      <End Role="tblRespoContrat" EntitySet="tblRespoContrat" />
+    </AssociationSet>
+    <AssociationSet Name="RESCONT_RES_FK" Association="Self.RESCONT_RES_FK">
+      <End Role="tblResponsable" EntitySet="tblResponsable" />
+      <End Role="tblRespoContrat" EntitySet="tblRespoContrat" />
+    </AssociationSet>
+    <AssociationSet Name="SAL_SEROFF_NOSAL_FK" Association="Self.SAL_SEROFF_NOSAL_FK">
+      <End Role="tblSalle" EntitySet="tblSalle" />
+      <End Role="tblServiceOffert" EntitySet="tblServiceOffert" />
+    </AssociationSet>
+    <AssociationSet Name="SERV_SEROFF_NOSERV_FK" Association="Self.SERV_SEROFF_NOSERV_FK">
+      <End Role="tblService" EntitySet="tblService" />
+      <End Role="tblServiceOffert" EntitySet="tblServiceOffert" />
+    </AssociationSet>
+    <AssociationSet Name="SERV_SERVREQ_NOSERV_FK" Association="Self.SERV_SERVREQ_NOSERV_FK">
+      <End Role="tblService" EntitySet="tblService" />
+      <End Role="tblServiceRequis" EntitySet="tblServiceRequis" />
+    </AssociationSet>
+    <AssociationSet Name="SOUSEVEN_CALC_NOSEVENL_FK" Association="Self.SOUSEVEN_CALC_NOSEVENL_FK">
+      <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+      <End Role="tblCalculateur" EntitySet="tblCalculateur" />
+    </AssociationSet>
+    <AssociationSet Name="SOUSEVEN_SEROFF_NOSEVENL_FK" Association="Self.SOUSEVEN_SEROFF_NOSEVENL_FK">
+      <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+      <End Role="tblServiceRequis" EntitySet="tblServiceRequis" />
+    </AssociationSet>
+    <AssociationSet Name="SOUSEVEN_SOUSEVENFORF_NOSOUSEVEN_FK" Association="Self.SOUSEVEN_SOUSEVENFORF_NOSOUSEVEN_FK">
+      <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+      <End Role="tblForfaitSousEvenement" EntitySet="tblForfaitSousEvenement" />
+    </AssociationSet>
+    <AssociationSet Name="STATUT_APPEL_FK" Association="Self.STATUT_APPEL_FK">
+      <End Role="tblStatutAppelOffre" EntitySet="tblStatutAppelOffre" />
+      <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

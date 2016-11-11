@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Ajout";
+}
+@model ECJ.Web.Models.tblSousEvenement
+<h2>Modifier ce sous-événement</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <input type="hidden" name="noEvenement" value="@Model.noEvenement" />
+    <input type="hidden" name="noSalle" value="@Model.noSalle" />
+    <input type="hidden" name="noSousEvenement" value="@Model.noSousEvenement">
+    <div class="form-group">
+        <label>Nom</label>
+        <input class="form-control" type="text" name="nom" value="@Model.nom" required>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" rows="5" id="textArea" name="description">@Model.description</textarea>
+    </div>
+    <div class="form-group pull-right">
+        <button type="submit" class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
+        <a href="@Request.QueryString["return"]" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
+}

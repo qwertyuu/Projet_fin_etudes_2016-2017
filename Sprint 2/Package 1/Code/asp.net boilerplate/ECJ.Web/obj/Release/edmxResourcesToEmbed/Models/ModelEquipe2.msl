@@ -1,0 +1,897 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PE2_OfficielModelStoreContainer" CdmEntityContainer="PE2_OfficielEntities">
+    <EntitySetMapping Name="tblAdresse">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblAdresse">
+        <MappingFragment StoreEntitySet="tblAdresse">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="telCellulaire" ColumnName="telCellulaire" />
+          <ScalarProperty Name="telBureau" ColumnName="telBureau" />
+          <ScalarProperty Name="pays" ColumnName="pays" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="codepostal" ColumnName="codepostal" />
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="noAdresse" ColumnName="noAdresse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgence">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblAgence">
+        <MappingFragment StoreEntitySet="tblAgence">
+          <ScalarProperty Name="noAdresse" ColumnName="noAdresse" />
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="courriel" ColumnName="courriel" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noAgence" ColumnName="noAgence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblArtiste">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblArtiste">
+        <MappingFragment StoreEntitySet="tblArtiste">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noArtiste" ColumnName="noArtiste" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCategorieArtiste">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblCategorieArtiste">
+        <MappingFragment StoreEntitySet="tblCategorieArtiste">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noCategorie" ColumnName="noCategorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblContrat">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblContrat">
+        <MappingFragment StoreEntitySet="tblContrat">
+          <ScalarProperty Name="noAgence" ColumnName="noAgence" />
+          <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="lieu" ColumnName="lieu" />
+          <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDiffuseur">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblDiffuseur">
+        <MappingFragment StoreEntitySet="tblDiffuseur">
+          <ScalarProperty Name="noAdresse" ColumnName="noAdresse" />
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="courriel" ColumnName="courriel" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noDiffuseur" ColumnName="noDiffuseur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEngagement">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblEngagement">
+        <MappingFragment StoreEntitySet="tblEngagement">
+          <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="noSousEvenement" ColumnName="noSousEvenement" />
+          <ScalarProperty Name="descriptionCourte" ColumnName="descriptionCourte" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+          <ScalarProperty Name="nature" ColumnName="nature" />
+          <ScalarProperty Name="heure" ColumnName="heure" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="lieu" ColumnName="lieu" />
+          <ScalarProperty Name="duree" ColumnName="duree" />
+          <ScalarProperty Name="noEngagement" ColumnName="noEngagement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblExigence">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblExigence">
+        <MappingFragment StoreEntitySet="tblExigence">
+          <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+          <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="descriptionCourte" ColumnName="descriptionCourte" />
+          <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="montant" ColumnName="montant" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noExigence" ColumnName="noExigence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFichierOfficiel">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblFichierOfficiel">
+        <MappingFragment StoreEntitySet="tblFichierOfficiel">
+          <ScalarProperty Name="noFichier" ColumnName="noFichier" />
+          <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+          <ScalarProperty Name="noArtiste" ColumnName="noArtiste" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFichierPersonnel">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblFichierPersonnel">
+        <MappingFragment StoreEntitySet="tblFichierPersonnel">
+          <ScalarProperty Name="noArtiste" ColumnName="noArtiste" />
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+          <ScalarProperty Name="chemin" ColumnName="chemin" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="noFichier" ColumnName="noFichier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblResponsable">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblResponsable">
+        <MappingFragment StoreEntitySet="tblResponsable">
+          <ScalarProperty Name="noAgence" ColumnName="noAgence" />
+          <ScalarProperty Name="noDiffuseur" ColumnName="noDiffuseur" />
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="idem" ColumnName="idem" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="telCellulaire" ColumnName="telCellulaire" />
+          <ScalarProperty Name="telBureau" ColumnName="telBureau" />
+          <ScalarProperty Name="dateSignature" ColumnName="dateSignature" />
+          <ScalarProperty Name="signataire" ColumnName="signataire" />
+          <ScalarProperty Name="courriel" ColumnName="courriel" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noResponsable" ColumnName="noResponsable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStatut">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblStatut">
+        <MappingFragment StoreEntitySet="tblStatut">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="couleur" ColumnName="couleur" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nomStatut" ColumnName="nomStatut" />
+          <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblActivite">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblActivite">
+        <MappingFragment StoreEntitySet="tblActivite">
+          <ScalarProperty Name="noUtilisateur" ColumnName="noUtilisateur" />
+          <ScalarProperty Name="noSousEvenement" ColumnName="noSousEvenement" />
+          <ScalarProperty Name="noEvenement" ColumnName="noEvenement" />
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="tache" ColumnName="tache" />
+          <ScalarProperty Name="dateCreation" ColumnName="dateCreation" />
+          <ScalarProperty Name="etat" ColumnName="etat" />
+          <ScalarProperty Name="nomResponsable" ColumnName="nomResponsable" />
+          <ScalarProperty Name="noActivite" ColumnName="noActivite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCommanditaire">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblCommanditaire">
+        <MappingFragment StoreEntitySet="tblCommanditaire">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="numTel" ColumnName="numTel" />
+          <ScalarProperty Name="courrielContact" ColumnName="courrielContact" />
+          <ScalarProperty Name="textePresentation" ColumnName="textePresentation" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="nomContact" ColumnName="nomContact" />
+          <ScalarProperty Name="nomCommanditaire" ColumnName="nomCommanditaire" />
+          <ScalarProperty Name="noCommanditaire" ColumnName="noCommanditaire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDon">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblDon">
+        <MappingFragment StoreEntitySet="tblDon">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="dateDon" ColumnName="dateDon" />
+          <ScalarProperty Name="montant" ColumnName="montant" />
+          <ScalarProperty Name="noSousEvenement" ColumnName="noSousEvenement" />
+          <ScalarProperty Name="noCommanditaire" ColumnName="noCommanditaire" />
+          <ScalarProperty Name="noDon" ColumnName="noDon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEvenement">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblEvenement">
+        <MappingFragment StoreEntitySet="tblEvenement">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="affiche" ColumnName="affiche" />
+          <ScalarProperty Name="datefin" ColumnName="datefin" />
+          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noEvenement" ColumnName="noEvenement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSousEvenement">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblSousEvenement">
+        <MappingFragment StoreEntitySet="tblSousEvenement">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="noSalle" ColumnName="noSalle" />
+          <ScalarProperty Name="noEvenement" ColumnName="noEvenement" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noSousEvenement" ColumnName="noSousEvenement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblForfait">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblForfait">
+        <MappingFragment StoreEntitySet="tblForfait">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noForfait" ColumnName="noForfait" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSalle">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblSalle">
+        <MappingFragment StoreEntitySet="tblSalle">
+          <ScalarProperty Name="urlGoogleMap" ColumnName="urlGoogleMap" />
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="photoSalle" ColumnName="photoSalle" />
+          <ScalarProperty Name="billetVIP" ColumnName="billetVIP" />
+          <ScalarProperty Name="billet" ColumnName="billet" />
+          <ScalarProperty Name="prix" ColumnName="prix" />
+          <ScalarProperty Name="nomSalle" ColumnName="nomSalle" />
+          <ScalarProperty Name="noSalle" ColumnName="noSalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblService">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblService">
+        <MappingFragment StoreEntitySet="tblService">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="nomService" ColumnName="nomService" />
+          <ScalarProperty Name="noService" ColumnName="noService" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMemo">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblMemo">
+        <MappingFragment StoreEntitySet="tblMemo">
+          <ScalarProperty Name="destinataire" ColumnName="destinataire" />
+          <ScalarProperty Name="expediteur" ColumnName="expediteur" />
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="dateEnvoi" ColumnName="dateEnvoi" />
+          <ScalarProperty Name="lien" ColumnName="lien" />
+          <ScalarProperty Name="statut" ColumnName="statut" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="noMemo" ColumnName="noMemo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgencePublicite">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblAgencePublicite">
+        <MappingFragment StoreEntitySet="tblAgencePublicite">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noAgencePub" ColumnName="noAgencePub" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAppelOffre">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblAppelOffre">
+        <MappingFragment StoreEntitySet="tblAppelOffre">
+          <ScalarProperty Name="tag" ColumnName="tag" />
+          <ScalarProperty Name="noMedia" ColumnName="noMedia" />
+          <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+          <ScalarProperty Name="noEvenement" ColumnName="noEvenement" />
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="dateEnvoi" ColumnName="dateEnvoi" />
+          <ScalarProperty Name="dateRequis" ColumnName="dateRequis" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noAppelOffre" ColumnName="noAppelOffre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMedia">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblMedia">
+        <MappingFragment StoreEntitySet="tblMedia">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noMedia" ColumnName="noMedia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSoumission">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblSoumission">
+        <MappingFragment StoreEntitySet="tblSoumission">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="noAppelOffre" ColumnName="noAppelOffre" />
+          <ScalarProperty Name="noAgencePub" ColumnName="noAgencePub" />
+          <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+          <ScalarProperty Name="statut" ColumnName="statut" />
+          <ScalarProperty Name="prix" ColumnName="prix" />
+          <ScalarProperty Name="noSoumissionAgence" ColumnName="noSoumissionAgence" />
+          <ScalarProperty Name="noSoumission" ColumnName="noSoumission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStatutAppelOffre">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblStatutAppelOffre">
+        <MappingFragment StoreEntitySet="tblStatutAppelOffre">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="couleur" ColumnName="couleur" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vueSomAgence">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomAgence">
+        <MappingFragment StoreEntitySet="vueSomAgence">
+          <ScalarProperty Name="telCellulaire" ColumnName="telCellulaire" />
+          <ScalarProperty Name="telBureau" ColumnName="telBureau" />
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noAgence" ColumnName="noAgence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vueSomArtiste">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomArtiste">
+        <MappingFragment StoreEntitySet="vueSomArtiste">
+          <ScalarProperty Name="nomCat" ColumnName="nomCat" />
+          <ScalarProperty Name="nomAriste" ColumnName="nomAriste" />
+          <ScalarProperty Name="noArtiste" ColumnName="noArtiste" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vueSomCatArtiste">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomCatArtiste">
+        <MappingFragment StoreEntitySet="vueSomCatArtiste">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noCategorie" ColumnName="noCategorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vueSomContrat">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomContrat">
+        <MappingFragment StoreEntitySet="vueSomContrat">
+          <ScalarProperty Name="lieu" ColumnName="lieu" />
+          <ScalarProperty Name="nomStatut" ColumnName="nomStatut" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vueSomEngagement">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomEngagement">
+        <MappingFragment StoreEntitySet="vueSomEngagement">
+          <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+          <ScalarProperty Name="lieu" ColumnName="lieu" />
+          <ScalarProperty Name="duree" ColumnName="duree" />
+          <ScalarProperty Name="heure" ColumnName="heure" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="nature" ColumnName="nature" />
+          <ScalarProperty Name="noEngagement" ColumnName="noEngagement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vueSomExigence">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomExigence">
+        <MappingFragment StoreEntitySet="vueSomExigence">
+          <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+          <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+          <ScalarProperty Name="descriptionCourte" ColumnName="descriptionCourte" />
+          <ScalarProperty Name="montant" ColumnName="montant" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="noExigence" ColumnName="noExigence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vueSomStatut">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomStatut">
+        <MappingFragment StoreEntitySet="vueSomStatut">
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="couleur" ColumnName="couleur" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="NomStatut" ColumnName="NomStatut" />
+          <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vueSomCommanditaire">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomCommanditaire">
+        <MappingFragment StoreEntitySet="vueSomCommanditaire">
+          <ScalarProperty Name="noCommanditaire" ColumnName="noCommanditaire" />
+          <ScalarProperty Name="montantTotalDon" ColumnName="montantTotalDon" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="numTel" ColumnName="numTel" />
+          <ScalarProperty Name="courrielContact" ColumnName="courrielContact" />
+          <ScalarProperty Name="textPres" ColumnName="textPres" />
+          <ScalarProperty Name="nomContact" ColumnName="nomContact" />
+          <ScalarProperty Name="nomCommanditaire" ColumnName="nomCommanditaire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vueSomEvenement">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomEvenement">
+        <MappingFragment StoreEntitySet="vueSomEvenement">
+          <ScalarProperty Name="noEvenement" ColumnName="noEvenement" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="dateFin" ColumnName="dateFin" />
+          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vueSomAppelOffre">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomAppelOffre">
+        <MappingFragment StoreEntitySet="vueSomAppelOffre">
+          <ScalarProperty Name="nomAgence" ColumnName="nomAgence" />
+          <ScalarProperty Name="couleur" ColumnName="couleur" />
+          <ScalarProperty Name="nomStatut" ColumnName="nomStatut" />
+          <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+          <ScalarProperty Name="nomEvent" ColumnName="nomEvent" />
+          <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="dateEnvoi" ColumnName="dateEnvoi" />
+          <ScalarProperty Name="dateRequis" ColumnName="dateRequis" />
+          <ScalarProperty Name="nomAppelOffre" ColumnName="nomAppelOffre" />
+          <ScalarProperty Name="noAppelOffre" ColumnName="noAppelOffre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vueSomSoumission">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomSoumission">
+        <MappingFragment StoreEntitySet="vueSomSoumission">
+          <ScalarProperty Name="noSoumission" ColumnName="noSoumission" />
+          <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+          <ScalarProperty Name="nomAppelOffre" ColumnName="nomAppelOffre" />
+          <ScalarProperty Name="prix" ColumnName="prix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tblCatArtisteArt" TypeName="PE2_OfficielModel.tblCatArtisteArt" StoreEntitySet="tblCatArtisteArt">
+      <EndProperty Name="tblCategorieArtiste">
+        <ScalarProperty Name="noCategorie" ColumnName="noCategorie" />
+      </EndProperty>
+      <EndProperty Name="tblArtiste">
+        <ScalarProperty Name="noArtiste" ColumnName="noArtiste" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tblContratArtiste" TypeName="PE2_OfficielModel.tblContratArtiste" StoreEntitySet="tblContratArtiste">
+      <EndProperty Name="tblContrat">
+        <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+      </EndProperty>
+      <EndProperty Name="tblArtiste">
+        <ScalarProperty Name="noArtiste" ColumnName="noArtiste" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tblRespoContrat" TypeName="PE2_OfficielModel.tblRespoContrat" StoreEntitySet="tblRespoContrat">
+      <EndProperty Name="tblResponsable">
+        <ScalarProperty Name="noResponsable" ColumnName="noResponsable" />
+      </EndProperty>
+      <EndProperty Name="tblContrat">
+        <ScalarProperty Name="noContrat" ColumnName="noContrat" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tblForfaitSousEvenement" TypeName="PE2_OfficielModel.tblForfaitSousEvenement" StoreEntitySet="tblForfaitSousEvenement">
+      <EndProperty Name="tblSousEvenement">
+        <ScalarProperty Name="noSousEvenement" ColumnName="noSousEvenement" />
+      </EndProperty>
+      <EndProperty Name="tblForfait">
+        <ScalarProperty Name="noForfait" ColumnName="noForfait" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tblServiceOffert" TypeName="PE2_OfficielModel.tblServiceOffert" StoreEntitySet="tblServiceOffert">
+      <EndProperty Name="tblService">
+        <ScalarProperty Name="noService" ColumnName="noService" />
+      </EndProperty>
+      <EndProperty Name="tblSalle">
+        <ScalarProperty Name="noSalle" ColumnName="noSalle" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tblServiceRequis" TypeName="PE2_OfficielModel.tblServiceRequis" StoreEntitySet="tblServiceRequis">
+      <EndProperty Name="tblSousEvenement">
+        <ScalarProperty Name="noSousEvenement" ColumnName="noSousEvenement" />
+      </EndProperty>
+      <EndProperty Name="tblService">
+        <ScalarProperty Name="noService" ColumnName="noService" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpAuditLogs">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpAuditLogs">
+        <MappingFragment StoreEntitySet="AbpAuditLogs">
+          <ScalarProperty Name="CustomData" ColumnName="CustomData" />
+          <ScalarProperty Name="ImpersonatorTenantId" ColumnName="ImpersonatorTenantId" />
+          <ScalarProperty Name="ImpersonatorUserId" ColumnName="ImpersonatorUserId" />
+          <ScalarProperty Name="Exception" ColumnName="Exception" />
+          <ScalarProperty Name="BrowserInfo" ColumnName="BrowserInfo" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="ClientIpAddress" ColumnName="ClientIpAddress" />
+          <ScalarProperty Name="ExecutionDuration" ColumnName="ExecutionDuration" />
+          <ScalarProperty Name="ExecutionTime" ColumnName="ExecutionTime" />
+          <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+          <ScalarProperty Name="MethodName" ColumnName="MethodName" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpBackgroundJobs">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpBackgroundJobs">
+        <MappingFragment StoreEntitySet="AbpBackgroundJobs">
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="IsAbandoned" ColumnName="IsAbandoned" />
+          <ScalarProperty Name="LastTryTime" ColumnName="LastTryTime" />
+          <ScalarProperty Name="NextTryTime" ColumnName="NextTryTime" />
+          <ScalarProperty Name="TryCount" ColumnName="TryCount" />
+          <ScalarProperty Name="JobArgs" ColumnName="JobArgs" />
+          <ScalarProperty Name="JobType" ColumnName="JobType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpEditions">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpEditions">
+        <MappingFragment StoreEntitySet="AbpEditions">
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="LastModificationTime" ColumnName="LastModificationTime" />
+          <ScalarProperty Name="DeletionTime" ColumnName="DeletionTime" />
+          <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpFeatures">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpFeatures">
+        <MappingFragment StoreEntitySet="AbpFeatures">
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="EditionId" ColumnName="EditionId" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpLanguages">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpLanguages">
+        <MappingFragment StoreEntitySet="AbpLanguages">
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="LastModificationTime" ColumnName="LastModificationTime" />
+          <ScalarProperty Name="DeletionTime" ColumnName="DeletionTime" />
+          <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpLanguageTexts">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpLanguageTexts">
+        <MappingFragment StoreEntitySet="AbpLanguageTexts">
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="LastModificationTime" ColumnName="LastModificationTime" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpNotifications">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpNotifications">
+        <MappingFragment StoreEntitySet="AbpNotifications">
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="TenantIds" ColumnName="TenantIds" />
+          <ScalarProperty Name="ExcludedUserIds" ColumnName="ExcludedUserIds" />
+          <ScalarProperty Name="UserIds" ColumnName="UserIds" />
+          <ScalarProperty Name="Severity" ColumnName="Severity" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="EntityTypeAssemblyQualifiedName" ColumnName="EntityTypeAssemblyQualifiedName" />
+          <ScalarProperty Name="EntityTypeName" ColumnName="EntityTypeName" />
+          <ScalarProperty Name="DataTypeName" ColumnName="DataTypeName" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="NotificationName" ColumnName="NotificationName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpNotificationSubscriptions">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpNotificationSubscriptions">
+        <MappingFragment StoreEntitySet="AbpNotificationSubscriptions">
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="EntityTypeAssemblyQualifiedName" ColumnName="EntityTypeAssemblyQualifiedName" />
+          <ScalarProperty Name="EntityTypeName" ColumnName="EntityTypeName" />
+          <ScalarProperty Name="NotificationName" ColumnName="NotificationName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpOrganizationUnits">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpOrganizationUnits">
+        <MappingFragment StoreEntitySet="AbpOrganizationUnits">
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="LastModificationTime" ColumnName="LastModificationTime" />
+          <ScalarProperty Name="DeletionTime" ColumnName="DeletionTime" />
+          <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpPermissions">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpPermissions">
+        <MappingFragment StoreEntitySet="AbpPermissions">
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="IsGranted" ColumnName="IsGranted" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpRoles">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpRoles">
+        <MappingFragment StoreEntitySet="AbpRoles">
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="LastModificationTime" ColumnName="LastModificationTime" />
+          <ScalarProperty Name="DeletionTime" ColumnName="DeletionTime" />
+          <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="IsStatic" ColumnName="IsStatic" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpSettings">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpSettings">
+        <MappingFragment StoreEntitySet="AbpSettings">
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="LastModificationTime" ColumnName="LastModificationTime" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpTenantNotifications">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpTenantNotifications">
+        <MappingFragment StoreEntitySet="AbpTenantNotifications">
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="Severity" ColumnName="Severity" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="EntityTypeAssemblyQualifiedName" ColumnName="EntityTypeAssemblyQualifiedName" />
+          <ScalarProperty Name="EntityTypeName" ColumnName="EntityTypeName" />
+          <ScalarProperty Name="DataTypeName" ColumnName="DataTypeName" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="NotificationName" ColumnName="NotificationName" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpTenants">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpTenants">
+        <MappingFragment StoreEntitySet="AbpTenants">
+          <ScalarProperty Name="ConnectionString" ColumnName="ConnectionString" />
+          <ScalarProperty Name="EditionId" ColumnName="EditionId" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="LastModificationTime" ColumnName="LastModificationTime" />
+          <ScalarProperty Name="DeletionTime" ColumnName="DeletionTime" />
+          <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TenancyName" ColumnName="TenancyName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUserAccounts">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpUserAccounts">
+        <MappingFragment StoreEntitySet="AbpUserAccounts">
+          <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="LastModificationTime" ColumnName="LastModificationTime" />
+          <ScalarProperty Name="DeletionTime" ColumnName="DeletionTime" />
+          <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserLinkId" ColumnName="UserLinkId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUserLoginAttempts">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpUserLoginAttempts">
+        <MappingFragment StoreEntitySet="AbpUserLoginAttempts">
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="BrowserInfo" ColumnName="BrowserInfo" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="ClientIpAddress" ColumnName="ClientIpAddress" />
+          <ScalarProperty Name="UserNameOrEmailAddress" ColumnName="UserNameOrEmailAddress" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TenancyName" ColumnName="TenancyName" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUserLogins">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpUserLogins">
+        <MappingFragment StoreEntitySet="AbpUserLogins">
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUserNotifications">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpUserNotifications">
+        <MappingFragment StoreEntitySet="AbpUserNotifications">
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="TenantNotificationId" ColumnName="TenantNotificationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUserOrganizationUnits">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpUserOrganizationUnits">
+        <MappingFragment StoreEntitySet="AbpUserOrganizationUnits">
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="OrganizationUnitId" ColumnName="OrganizationUnitId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUserRoles">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpUserRoles">
+        <MappingFragment StoreEntitySet="AbpUserRoles">
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUsers">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.AbpUsers">
+        <MappingFragment StoreEntitySet="AbpUsers">
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="LastModificationTime" ColumnName="LastModificationTime" />
+          <ScalarProperty Name="DeletionTime" ColumnName="DeletionTime" />
+          <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+          <ScalarProperty Name="PasswordResetCode" ColumnName="PasswordResetCode" />
+          <ScalarProperty Name="EmailConfirmationCode" ColumnName="EmailConfirmationCode" />
+          <ScalarProperty Name="IsEmailConfirmed" ColumnName="IsEmailConfirmed" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AuthenticationSource" ColumnName="AuthenticationSource" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCalculateur">
+      <EntityTypeMapping TypeName="PE2_OfficielModel.tblCalculateur">
+        <MappingFragment StoreEntitySet="tblCalculateur">
+          <ScalarProperty Name="customNom2" ColumnName="customNom2" />
+          <ScalarProperty Name="customNom1" ColumnName="customNom1" />
+          <ScalarProperty Name="customPrix2" ColumnName="customPrix2" />
+          <ScalarProperty Name="customPrix1" ColumnName="customPrix1" />
+          <ScalarProperty Name="customBillet2" ColumnName="customBillet2" />
+          <ScalarProperty Name="customBillet1" ColumnName="customBillet1" />
+          <ScalarProperty Name="prevente" ColumnName="prevente" />
+          <ScalarProperty Name="promo" ColumnName="promo" />
+          <ScalarProperty Name="aineRatio" ColumnName="aineRatio" />
+          <ScalarProperty Name="adulteRatio" ColumnName="adulteRatio" />
+          <ScalarProperty Name="jeuneRatio" ColumnName="jeuneRatio" />
+          <ScalarProperty Name="ainePourcent" ColumnName="ainePourcent" />
+          <ScalarProperty Name="adultePourcent" ColumnName="adultePourcent" />
+          <ScalarProperty Name="jeunePourcent" ColumnName="jeunePourcent" />
+          <ScalarProperty Name="prixSouper" ColumnName="prixSouper" />
+          <ScalarProperty Name="souperSpectacle" ColumnName="souperSpectacle" />
+          <ScalarProperty Name="prixBilletVIP" ColumnName="prixBilletVIP" />
+          <ScalarProperty Name="prixBillet" ColumnName="prixBillet" />
+          <ScalarProperty Name="billetVIP" ColumnName="billetVIP" />
+          <ScalarProperty Name="billet" ColumnName="billet" />
+          <ScalarProperty Name="noSousEvenement" ColumnName="noSousEvenement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

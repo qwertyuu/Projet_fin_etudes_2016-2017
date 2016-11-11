@@ -1,0 +1,115 @@
+﻿
+@model List<ECJ.Web.Models.vueSomAppelOffre>
+@{ 
+    ViewBag.ActiveMenu = "AppellOffre";
+}
+<h1>Appels d'offre</h1>
+<div class="row">
+    <div class="col-md-12">
+       
+              @using (Html.BeginForm("Index", "AppellOffre", FormMethod.Get, new { @class = "page-header" }))
+              {
+                <p>
+
+                    <div class="input-group">
+                        @Html.Editor("SearchString", new { htmlAttributes = new { @class = "form-control" } })
+
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary " type="submit">Rechercher</button>
+                        </span>
+                        <span class="input-group-btn">
+                            <a href="/AppellOffre/" class="btn btn-default">Vider</a>
+                        </span>
+
+                    </div>
+
+                </p>
+
+              }           
+        <br />
+                    
+        <a href="/AppellOffre/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i> Ajouter</a>
+
+        <div id="légendeStatut" class="pull-left">
+            <ul id="legend">
+                <li><div class="colorStatutHalf" style="background-color:#F90202"> </div> En création</li>
+                <li><div class="colorStatutHalf" style="background-color:#022BF9"> </div> Envoyé</li>
+                <li><div class="colorStatutHalf" style="background-color:#DBF902"> </div> Complété</li>
+                <li><div class="colorStatutHalf" style="background-color:#0281F9"> </div> Annulé</li>
+            </ul>
+        </div>
+        <table class="table" align="center">
+            <thead>
+                <tr>
+                    <th>
+                      Nom
+                    </th>
+                    <th>
+                        Date requise
+                    </th>
+                    <th>
+                        Date d'envoi
+                    </th>
+                    <th>
+                        Événement
+                    </th>
+                    <th>
+                        Statut
+                    </th>
+                    <th>
+                        Agence de publicité
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    var @color = "#" + item.couleur;
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nomAppelOffre)
+                        </td>
+                        <td>
+                            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", item.dateRequis)
+                        </td>
+                        <td>
+                            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", item.dateEnvoi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nomEvent)
+                        </td>
+                        <td>
+                            <div  class="colorStatut" style="background-color:@color">  </div>
+                        </td>
+                        <td> 
+                            @Html.DisplayFor(modelItem => item.nomAgence)                                  
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.description)
+                        </td>
+                        <td>
+                            <a href="/AppellOffre/Details/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                            @if (item.noStatut == 1 || item.noStatut==2)
+                            {
+                                <a href="/AppellOffre/Edit/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="/AppellOffre/Delete/@item.noAppelOffre" class="btn btn-sm btn-danger" title="SupprimerAppel"><i class="fa fa-trash fa-lg"></i></a>
+                            }
+
+                        
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+ </div>
+</div>
+<br />
+<br />
+<button class="btn btn-default pull-right " data-dismiss="modal" onclick="javascript:window.location.reload()">Mettre à jour les soumissions</button> 
+

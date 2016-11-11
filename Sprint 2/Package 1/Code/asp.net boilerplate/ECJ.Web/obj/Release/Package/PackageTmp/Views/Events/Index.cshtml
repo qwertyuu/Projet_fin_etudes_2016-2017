@@ -1,0 +1,54 @@
+﻿@using Abp.Authorization.Users
+@using Abp.Web.Mvc.Extensions
+@model IEnumerable<ECJ.Web.Models.vueSomEvenement>
+@{
+    ViewBag.Title = "Events";
+    ViewBag.ActiveMenu = "Events";
+}
+<div>
+    <h1>Événements</h1>
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm(null, null, FormMethod.Get, new { @class="page-header" }))
+            {
+                <div class="input-group">
+                    <input class="form-control" type="text" name="recherche" value="@ViewBag.recherche">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary">Rechercher</button>
+                    </span>
+                    <span class="input-group-btn">
+                        <a href="/Events/" class="btn btn-default">Vider</a>
+                    </span>
+                </div>
+            }
+            <a href="/Events/Ajout" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un événement</a>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Débute le</th>
+                        <th>Fini le</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var e in Model)
+                    {
+                        <tr>
+                            <td>@e.nom</td>
+                            <td>@String.Format("{0:yyyy/MM/dd}", e.dateDebut)</td>
+                            <td>@String.Format("{0:yyyy/MM/dd}", e.dateFin)</td>
+                            <td>@e.description</td>
+                            <td>
+                                <a href="/Events/Detail/@e.noEvenement" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="/Events/Modifier/@e.noEvenement" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="/Events/Supprimer/@e.noEvenement" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            </td>
+                        </tr>
+                        }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
