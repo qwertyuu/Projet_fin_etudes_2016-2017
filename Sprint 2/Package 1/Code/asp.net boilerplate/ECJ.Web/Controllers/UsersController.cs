@@ -10,24 +10,19 @@ namespace ECJ.Web.Controllers
     [AbpMvcAuthorize(PermissionNames.Pages_Users)]
     public class UsersController : ECJControllerBase
     {
-        private readonly IUserAppService _userAppService;
         DBProvider db;
 
         public UsersController()
         {
-        }
 
-        public UsersController(IUserAppService userAppService)
-        {
-            _userAppService = userAppService;
             db = new DBProvider();
             GetPermissions();
         }
 
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            var output = await _userAppService.GetUsers();
-            return View(output);
+            var model = new Abp.Application.Services.Dto.ListResultOutput<ECJ.Web.Models.AbpUsers>(db.ToutUtilisateurs());
+            return View(model);
         }
 
         public ActionResult Detail(int? id)

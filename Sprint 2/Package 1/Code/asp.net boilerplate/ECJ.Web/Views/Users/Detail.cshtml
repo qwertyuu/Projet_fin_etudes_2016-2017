@@ -17,7 +17,7 @@
 <div class="form-validation">
 
     <div class="form-group">
-        <label>Nomd'utilisateur</label>
+        <label>Nom d'utilisateur</label>
         <div class="well well-sm">
             @Model.UserName
         </div>
@@ -32,6 +32,30 @@
         <label>Est activé</label>
         <div class="well well-sm">
             @(Model.IsActive ? "Oui" : "Non")
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Rôle</label>
+        <div class="well well-sm">
+            @{ 
+                Dictionary<int, string> nomRoles = new Dictionary<int, string>()
+                {
+                    {2, "Administrateur"},
+                    {3, "Agent" },
+                    {4, "Agent senior" },
+                    {5, "Représentant" }
+                };
+
+
+                if(Model.AbpUserRoles.Count == 0)
+                {
+                    <span>Employé</span>
+                }
+                else
+                {
+                    @nomRoles[Model.AbpUserRoles.ToList()[0].RoleId];
+                }
+            }
         </div>
     </div>
     <a href="~/Users/" class="btn btn-default pull-right" data-dismiss="modal">Retour à la liste d'utilisateurs</a>

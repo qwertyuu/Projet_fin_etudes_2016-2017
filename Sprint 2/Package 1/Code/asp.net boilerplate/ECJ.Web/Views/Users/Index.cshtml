@@ -1,6 +1,6 @@
 ﻿@using Abp.Authorization.Users
 @using Abp.Web.Mvc.Extensions
-@model Abp.Application.Services.Dto.ListResultOutput<ECJ.Users.Dto.UserListDto>
+@model Abp.Application.Services.Dto.ListResultOutput<ECJ.Web.Models.AbpUsers>
 @{
     ViewBag.ActiveMenu = "Users"; //The menu item will be active for this page.
 }
@@ -30,19 +30,42 @@
                 <thead>
                     <tr>
                         <th>@L("UserName")</th>
-                        <th>Nom complet</th>
+                        <th>Prénom</th>
+                        <th>Nom de famille</th>
                         <th>@L("EmailAddress")</th>
+                        <th>Rôle</th>
                         <th>Activé</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @{ 
+                        Dictionary<int, string> nomRoles = new Dictionary<int, string>()
+                {
+                    {2, "Administrateur"},
+                    {3, "Agent" },
+                    {4, "Agent senior" },
+                    {5, "Représentant" }
+                        };
+                    }
                     @foreach (var user in Model.Items)
-                    {
+                        {
+
                         <tr>
                             <td>@user.UserName</td>
-                            <td>@user.FullName</td>
+                            <td>@user.Name</td>
+                            <td>@user.Surname</td>
                             <td>@user.EmailAddress</td>
+                            <td>                
+                            @if (user.AbpUserRoles.Count == 0)
+                            {
+                                <span>Employé</span>
+                            }
+                            else
+                            {
+                                @nomRoles[user.AbpUserRoles.ToList()[0].RoleId];
+                            }
+                            </td>
                             <td>@(user.IsActive ? "Oui" : "Non")</td>
                             <td>
                                 <a href="/Users/Detail/@user.Id" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
