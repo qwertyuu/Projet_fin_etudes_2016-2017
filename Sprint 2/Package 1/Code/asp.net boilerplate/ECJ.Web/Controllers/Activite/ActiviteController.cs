@@ -25,11 +25,12 @@ namespace ECJ.Web.Controllers.Activite
 
         public ActionResult Ajout()
         {
+            ViewBag.UtilisateurCourrant = (long)AbpSession.UserId;
             return View();
         }
 
         [HttpPost]
-        public ActionResult Ajout([Bind(Include = "nomResponsable,etat,tache,detail,dateCreation,noEvenement,noSousEvenement")] tblActivite tblActivite)
+        public ActionResult Ajout([Bind(Include = "nomResponsable,etat,tache,detail,dateCreation,noEvenement,noSousEvenement,noUtilisateur")] tblActivite tblActivite)
         {
             var idEvent = Request.QueryString["evenement_id"];
             var idSousEvent = Request.QueryString["sousevenement_id"];
@@ -101,14 +102,14 @@ namespace ECJ.Web.Controllers.Activite
             {
                 return HttpNotFound();
             }
-
+            ViewBag.UtilisateurCourrant = (long)AbpSession.UserId;
             return View(elementAModifier);
         }
 
         // POST: tblActivites/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Modifier([Bind(Include = "noActivite,nomResponsable,etat,dateCreation,tache,detail,dateSupprime,noEvenement,noSousEvenement")] tblActivite tblActivite)
+        public ActionResult Modifier([Bind(Include = "noActivite,nomResponsable,etat,dateCreation,tache,detail,dateSupprime,noEvenement,noSousEvenement,noUtilisateur")] tblActivite tblActivite)
         {
             var retour = Request.QueryString["return"];
 

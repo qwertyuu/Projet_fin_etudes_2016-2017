@@ -9,6 +9,8 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
+    <input type="hidden" name="noUtilisateur" value="@ViewBag.UtilisateurCourrant">
+
     <div class="form-group">
         <label>Nom du responsable</label>
         <input class="form-control" type="text" name="nomResponsable" required>

@@ -115,7 +115,7 @@
                     </thead>
                     <tbody>
                         @{
-                            IEnumerable<ECJ.Web.Models.tblActivite> activites = Model.tblActivite.Where(a => a.AbpUsers.Id == ViewBag.UtilisateurCourrant);
+                            IEnumerable<ECJ.Web.Models.tblActivite> activites = Model.tblActivite.Where(a => a.noUtilisateur == ViewBag.UtilisateurCourrant);
                             foreach (var item in Model.tblSousEvenement)
                             {
                                 activites = activites.Concat(item.tblActivite.Where(a => a.AbpUsers.Id == ViewBag.UtilisateurCourrant));
