@@ -17,5 +17,11 @@ namespace ECJ.Web.Controllers
             ViewBag.memos = db.MemosUtilisateur((long)AbpSession.UserId);
             return View();
         }
+
+        public ActionResult Reset()
+        {
+            db.ResetDB();
+            return RedirectToAction("Index");
+        }
 	}
 }

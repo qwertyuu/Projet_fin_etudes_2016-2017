@@ -18,25 +18,28 @@ namespace ECJ.Web.Controllers
         private static PE2_OfficielEntities db;
         public DBProvider()
         {
-            if (db == null)
-            {
-                try
-                {
-                    db = new PE2_OfficielEntities();
-                }
-                catch (Exception e)
-                {
-                    LayoutController.erreur = e;
-                }
-            }
+            ResetDB();
         }
 
-        public void LireMemo(int v)
+        internal void LireMemo(int v)
         {
             try
             {
                 db.tblMemo.Find(v).statut = true;
                 db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+        internal void ResetDB()
+        {
+            try
+            {
+                db = null;
+                db = new PE2_OfficielEntities();
             }
             catch (Exception e)
             {
