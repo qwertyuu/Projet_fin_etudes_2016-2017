@@ -163,10 +163,10 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>10/11/2016 15:52:49</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>11/14/2016 14:35:05</publishTime>
+      <publishTime>11/14/2016 17:03:01</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>11/14/2016 14:35:05</publishTime>
+      <publishTime>11/14/2016 17:03:01</publishTime>
     </File>
     <File Include="bin/AutoMapper.dll">
       <publishTime>10/11/2016 15:52:49</publishTime>
@@ -199,10 +199,10 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>11/14/2016 09:23:06</publishTime>
     </File>
     <File Include="bin/ECJ.Web.dll">
-      <publishTime>11/14/2016 14:34:59</publishTime>
+      <publishTime>11/14/2016 16:42:46</publishTime>
     </File>
     <File Include="bin/ECJ.Web.pdb">
-      <publishTime>11/14/2016 14:34:59</publishTime>
+      <publishTime>11/14/2016 16:42:46</publishTime>
     </File>
     <File Include="bin/ECJ.WebApi.dll">
       <publishTime>11/14/2016 09:23:04</publishTime>
@@ -534,6 +534,15 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
     <File Include="images/abp-logo.png">
       <publishTime>10/11/2016 15:52:48</publishTime>
     </File>
+    <File Include="images/fond_footer.png">
+      <publishTime>10/11/2016 15:52:48</publishTime>
+    </File>
+    <File Include="images/logo_Home.png">
+      <publishTime>10/11/2016 15:52:48</publishTime>
+    </File>
+    <File Include="images/logo_Home1.png">
+      <publishTime>10/11/2016 15:52:48</publishTime>
+    </File>
     <File Include="js/main.js">
       <publishTime>11/14/2016 09:20:11</publishTime>
     </File>
@@ -547,7 +556,7 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>10/11/2016 15:52:48</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>11/14/2016 14:35:02</publishTime>
+      <publishTime>11/14/2016 17:02:58</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>10/11/2016 15:52:48</publishTime>
@@ -661,7 +670,7 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>10/11/2016 15:52:48</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:46:08</publishTime>
     </File>
     <File Include="Views/Account/Login.css">
       <publishTime>10/11/2016 15:52:48</publishTime>
@@ -688,31 +697,31 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>10/11/2016 15:52:48</publishTime>
     </File>
     <File Include="Views/Activite/Ajout.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 15:53:23</publishTime>
     </File>
     <File Include="Views/Activite/Detail.cshtml">
       <publishTime>11/14/2016 09:20:11</publishTime>
     </File>
     <File Include="Views/Activite/Modifier.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 15:53:23</publishTime>
     </File>
     <File Include="Views/AppellOffre/Create.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:39:26</publishTime>
     </File>
     <File Include="Views/AppellOffre/Create.js">
       <publishTime>11/14/2016 09:20:11</publishTime>
     </File>
     <File Include="Views/AppellOffre/Delete.cshtml">
-      <publishTime>10/31/2016 10:33:46</publishTime>
+      <publishTime>11/14/2016 16:39:26</publishTime>
     </File>
     <File Include="Views/AppellOffre/Details.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:39:26</publishTime>
     </File>
     <File Include="Views/AppellOffre/Edit.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:39:26</publishTime>
     </File>
     <File Include="Views/AppellOffre/Index.cshtml">
-      <publishTime>11/14/2016 09:20:55</publishTime>
+      <publishTime>11/14/2016 16:39:26</publishTime>
     </File>
     <File Include="Views/Calculateur/Index.cshtml">
       <publishTime>11/14/2016 09:20:55</publishTime>
@@ -727,46 +736,46 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>10/11/2016 15:52:48</publishTime>
     </File>
     <File Include="Views/Commanditaire/Create.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:40:30</publishTime>
     </File>
     <File Include="Views/Commanditaire/Details.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:40:58</publishTime>
     </File>
     <File Include="Views/Commanditaire/Edit.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:40:30</publishTime>
     </File>
     <File Include="Views/Commanditaire/Index.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:40:58</publishTime>
     </File>
     <File Include="Views/don/Create.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 15:53:23</publishTime>
     </File>
     <File Include="Views/Events/Ajout.cshtml">
-      <publishTime>11/14/2016 11:02:53</publishTime>
+      <publishTime>11/14/2016 16:21:10</publishTime>
     </File>
     <File Include="Views/Events/Ajout.js">
-      <publishTime>11/14/2016 11:08:17</publishTime>
+      <publishTime>11/14/2016 15:53:24</publishTime>
     </File>
     <File Include="Views/Events/Detail.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:29:07</publishTime>
     </File>
     <File Include="Views/Events/Detail.js">
       <publishTime>11/03/2016 11:50:23</publishTime>
     </File>
     <File Include="Views/Events/Index.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:21:10</publishTime>
     </File>
     <File Include="Views/Events/Modifier.cshtml">
-      <publishTime>11/03/2016 11:52:27</publishTime>
+      <publishTime>11/14/2016 16:21:10</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 17:02:55</publishTime>
     </File>
     <File Include="Views/Home/Index.js">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:47:21</publishTime>
     </File>
     <File Include="Views/Layout/_Erreur.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 15:53:23</publishTime>
     </File>
     <File Include="Views/Layout/_LanguageSelection.cshtml">
       <publishTime>10/11/2016 15:52:48</publishTime>
@@ -778,10 +787,10 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>10/11/2016 15:52:48</publishTime>
     </File>
     <File Include="Views/Salles/Details.cshtml">
-      <publishTime>11/03/2016 11:06:08</publishTime>
+      <publishTime>11/14/2016 15:53:23</publishTime>
     </File>
     <File Include="Views/Salles/Index.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 15:53:23</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>10/11/2016 15:52:48</publishTime>
@@ -790,7 +799,7 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>11/14/2016 09:20:11</publishTime>
     </File>
     <File Include="Views/Shared/_Footer.js">
-      <publishTime>11/03/2016 11:06:09</publishTime>
+      <publishTime>11/14/2016 17:02:45</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>11/14/2016 09:20:11</publishTime>
@@ -799,13 +808,13 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>10/31/2016 10:33:46</publishTime>
     </File>
     <File Include="Views/Soumission/Detail.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:39:26</publishTime>
     </File>
     <File Include="Views/SousEvenements/Ajout.cshtml">
-      <publishTime>11/14/2016 09:59:26</publishTime>
+      <publishTime>11/14/2016 15:53:24</publishTime>
     </File>
     <File Include="Views/SousEvenements/Detail.cshtml">
-      <publishTime>11/14/2016 09:20:11</publishTime>
+      <publishTime>11/14/2016 16:23:56</publishTime>
     </File>
     <File Include="Views/SousEvenements/Detail.js">
       <publishTime>11/01/2016 12:00:49</publishTime>
@@ -832,7 +841,7 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>10/11/2016 15:52:48</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/14/2016 14:34:59</publishTime>
+      <publishTime>11/14/2016 16:21:46</publishTime>
     </File>
   </ItemGroup>
 </Project>

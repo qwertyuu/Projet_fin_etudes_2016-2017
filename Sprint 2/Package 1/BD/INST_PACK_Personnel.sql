@@ -1,17 +1,17 @@
 ﻿ USE PE2_Officiel
 
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, '/Events', 0, '20160504 14:30:00','J''ai une petite question Admin à propos des evenements');
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, '/', 0, '20160505 10:30:00','Il manque des détails dans le 2ieme contrat');
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, '/Events/Detail/1', 0, '20160506 14:30:00','Admin, peux-tu regarder si j''ai bien entré les sous-evenements?');
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, '/', 1, '20160509 10:30:00','Comment tu vas Admin? :)');
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, '/', 1, '20160510 14:30:00','Ca marche?');
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, '/', 1, '20160511 13:30:00','Salut Admin!!!!');
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 4, '/Events', 0, '20160517 14:30:00','Clique sur le bouton de crayon à droite pour modifier un événement!');
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 4, '/', 0, '20160518 13:30:00','Peux-tu demander à monique où elle a pris sa barre de chocolat?');
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 4, '/Events/Detail/1', 0, '20160519 10:30:00','J''ai fait des modifications');
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 4, '/', 1, '20160520 14:30:00','Peux-tu arrêter de m''envoyer des messages s''il te plait');
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 4, '/', 1, '20160521 13:30:00','Salut.');
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 4, '/', 1, '20160522 10:30:00','10-4 reçu');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, 'Events', 0, '20160504 14:30:00','J''ai une petite question Admin à propos des evenements');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, '', 0, '20160505 10:30:00','Il manque des détails dans le 2ieme contrat');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, 'Events/Detail/1', 0, '20160506 14:30:00','Admin, peux-tu regarder si j''ai bien entré les sous-evenements?');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, '', 1, '20160509 10:30:00','Comment tu vas Admin? :)');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, '', 1, '20160510 14:30:00','Ca marche?');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, '', 1, '20160511 13:30:00','Salut Admin!!!!');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 4, 'Events', 0, '20160517 14:30:00','Clique sur le bouton de crayon à droite pour modifier un événement!');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 4, '', 0, '20160518 13:30:00','Peux-tu demander à monique où elle a pris sa barre de chocolat?');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 4, 'Events/Detail/1', 0, '20160519 10:30:00','J''ai fait des modifications');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 4, '', 1, '20160520 14:30:00','Peux-tu arrêter de m''envoyer des messages s''il te plait');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 4, '', 1, '20160521 13:30:00','Salut.');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 4, '', 1, '20160522 10:30:00','10-4 reçu');
 GO
  PRINT 'Insérer mémos réussi'
 

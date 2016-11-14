@@ -5,7 +5,7 @@
             $.ajax({
                 method: "POST",
                 data: { id: moi.data("id") },
-                url: "/Lire",
+                url: abp.appPath + "Lire",
                 success: function () {
                     var sorting = $(".sommaireMemo").get(0).config.sortList;
                     moi.removeClass("warning");

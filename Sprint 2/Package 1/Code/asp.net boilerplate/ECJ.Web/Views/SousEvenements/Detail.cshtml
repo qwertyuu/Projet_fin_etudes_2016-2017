@@ -171,7 +171,7 @@
     </div>
 
     <label>Activités</label>
-    <a href="/Activite/Ajout/?sousevenement_id=@Model.Item1.noSousEvenement&return=@Request.RawUrl" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
+    <a href="~/Activite/Ajout/?sousevenement_id=@Model.Item1.noSousEvenement&return=@Request.RawUrl" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
     <ul class="nav nav-tabs">
         <li class="active"><a href="#liste" data-toggle="tab" aria-expanded="true">Liste</a></li>
         <li class=""><a href="#calendrier" data-toggle="tab" aria-expanded="false">Calendrier</a></li>
@@ -221,9 +221,9 @@
                                         {
                                             <a href="~/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-success" title="Changer pour réalisé"><i class="fa fa-check-square fa-lg"></i></a>
                                         }
-                                        <a href="/Activite/Detail/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                                        <a href="/Activite/Modifier/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                                        <a href="/Activite/Supprimer/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                                        <a href="~/Activite/Detail/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                        <a href="~/Activite/Modifier/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                        <a href="~/Activite/Supprimer/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
 
                                     </td>
                                 </tr>
