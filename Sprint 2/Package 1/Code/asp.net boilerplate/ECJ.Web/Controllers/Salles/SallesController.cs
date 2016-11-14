@@ -25,6 +25,14 @@ namespace ECJ.Web.Controllers.Salles
         public ActionResult Details(int id)
         {
             ViewBag.Salle = db.ReturnSalle(id);
+            ViewBag.Service = db.ReturnSalle(id).tblService;
+
+            var serviceAAjouter = Request.Form["service"];
+            //ajouter le service requis
+            if (serviceAAjouter != null)
+            {
+                db.InsertServiceOffert((int)id, int.Parse(serviceAAjouter));
+            }
 
             return View();
         }

@@ -1018,6 +1018,29 @@ namespace ECJ.Web.Controllers
             }
             return new List<vueSomAppelOffre>();
         }
-
+        public void InsertServiceOffert(int id, int serviceAAjouter)
+        {
+            try
+            {
+                db.tblSalle.Find(id).tblService.Add(db.tblService.Find(serviceAAjouter));
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+        public void SupprimerServiceOffert(int id, int serviceASupprimer)
+        {
+            try
+            {
+                db.tblSalle.Find(id).tblService.Remove(db.tblService.Find(serviceASupprimer));
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
     }
 }

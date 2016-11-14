@@ -46,5 +46,25 @@
             <iframe src="@ViewBag.Salle.urlGoogleMap" width="500" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
     </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Services disponibles actuellement</th>
+                <th class="col-md-2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var s in ViewBag.Service)
+            {
+                <tr>
+                    <td>@s.nomService</td>
+                    <td>
+                        <button name="service_suppr" value="@s.noService" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
 </body>
 </html>
