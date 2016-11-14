@@ -1,6 +1,10 @@
-﻿
+﻿@using Abp.Web.Mvc.Extensions
 @{
     ViewBag.Title = "Ajout";
+}
+@section scripts
+{
+    @Html.IncludeScript("~/Views/Events/Ajout.js")
 }
 <h2>Créer un événement</h2>
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))

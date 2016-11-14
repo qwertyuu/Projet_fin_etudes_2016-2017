@@ -19,7 +19,7 @@
         <textarea class="form-control" rows="5" id="description" name="description"></textarea>
     </div>
     <div class="form-group pull-right">
-        <button class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Ajouter</span></button>
-        <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Annuler</a>
+        <button class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Ajouter</span></button>
+        <a href="@Request.QueryString["return"]" class="btn btn-default">Annuler</a>
     </div>
 }

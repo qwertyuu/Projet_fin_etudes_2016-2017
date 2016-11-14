@@ -394,6 +394,7 @@
       <DependentUpon>ModelEquipe2.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\Cegep.pubxml" />
+    <None Include="Properties\PublishProfiles\DWDWdw.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Models\ModelEquipe2.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -455,6 +456,7 @@
     <Content Include="Views\Calculateur\index.css" />
     <Content Include="Views\Calculateur\Index.js" />
     <Content Include="Views\CMemo\Index.js" />
+    <Content Include="Views\Events\Ajout.js" />
     <Content Include="Views\Events\Detail.js" />
     <Content Include="Views\Home\Index.js" />
     <Content Include="Views\Shared\_Footer.js" />

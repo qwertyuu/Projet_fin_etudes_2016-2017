@@ -736,7 +736,7 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                db.Entry(db.tblEvenement.Find(tblSousEvenement.noSousEvenement)).CurrentValues.SetValues(tblSousEvenement);
+                db.Entry(db.tblSousEvenement.Find(tblSousEvenement.noSousEvenement)).CurrentValues.SetValues(tblSousEvenement);
                 db.SaveChanges();
             }
             catch (Exception e)

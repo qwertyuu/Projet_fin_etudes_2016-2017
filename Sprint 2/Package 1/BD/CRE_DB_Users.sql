@@ -5,6 +5,7 @@ SET NOCOUNT ON
 
 PRINT 'CREATE USERS'
 
+SET DATEFORMAT ymd
 :r CTE_AbpUsers.sql
 :r INST_AbpUsers.sql
 :r INST_PACK_Personnel.sql
