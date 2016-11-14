@@ -31,6 +31,11 @@ namespace ECJ.Web.Controllers.Commanditaire
         {
             var recherche = Request.QueryString["recherche"];
             var Commanditaire = provider.CommanditaireList();
+            var don = provider.DonList();
+            var d = new List<tblDon>();
+            var list = new List<tblCommanditaire>();
+            var montant = 0;
+            var tblDon = new tblDon();
 
             if (recherche != null)
             {
@@ -47,6 +52,50 @@ namespace ECJ.Web.Controllers.Commanditaire
                 a.courrielContact.ToString().ToUpper().Contains(recherche) ||
                 a.nomContact.ToString().ToUpper().Contains(recherche) ||
                 a.numTel.ToString().ToUpper().Contains(recherche)).ToList();
+                
+                foreach (var D in don)
+                {
+                    if (D.dateSupprime == null)
+                    {
+                        montant = Convert.ToInt32(D.montant);
+                        bool trouve = false;
+                        foreach (var Do in don)
+                        {
+                            if (D.noDon != Do.noDon && D.noCommanditaire == Do.noCommanditaire && Do.dateSupprime == null && D.noDon < Do.noDon)
+                            {
+                                trouve = true;
+                                montant += (int)Do.montant;
+                            }
+                        }
+
+                        if(trouve)
+                        {
+                            tblDon = D;
+                            tblDon.montant = montant;
+                            d.Add(D);
+                        }
+                    }
+
+                    montant = 0;
+                }
+                don.Clear();
+                list.Clear();
+
+                d = d.Where(a => a.montant.ToString().ToUpper().Contains(recherche) && a.dateSupprime == null).ToList();
+                foreach(var D in d)
+                {
+                    list.Add(provider.returnCommanditaire((int)D.noCommanditaire));
+                }
+                
+                foreach(var Comm in list)
+                {
+                    Commanditaire.Add(Comm);
+                }
+            }
+
+            foreach(var comm in Commanditaire)
+            {
+                
             }
 
             return View(Commanditaire);

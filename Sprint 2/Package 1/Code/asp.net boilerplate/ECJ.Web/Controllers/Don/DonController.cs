@@ -95,5 +95,14 @@ namespace ECJ.Web.Controllers.Don
 
             return RedirectToAction("../Commanditaire/Index");
         }
+
+        public ActionResult Supprimer(int? id)
+        {
+            if (id != null)
+            {
+                provider.supprimerDon((int)id);
+            }
+            return RedirectToAction("../Commanditaire/Index");
+        }
     }
 }

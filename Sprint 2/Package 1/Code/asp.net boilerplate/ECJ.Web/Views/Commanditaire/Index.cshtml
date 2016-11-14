@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Index";
     ViewBag.ActiveMenu = "Commanditaires";
-    decimal test = 0;
+    decimal montantDon = 0;
     decimal donCumul = 0;
 }
 
@@ -67,47 +67,49 @@
 
                                 @foreach (var don in item.tblDon)
                                 {
-                                    if (don.noCommanditaire == item.noCommanditaire)
+                                    if (don.noCommanditaire == item.noCommanditaire && don.dateSupprime == null)
                                     {
                                         donCumul += don.montant;
                                     }
                                 }
+
                                 <p>@donCumul$</p>
                             </td>
                             <td>
 
                                 @{foreach (var Don in item.tblDon)
                                     {
-                                        if (Don.noCommanditaire == item.noCommanditaire)
-                                        {
-                                            test += Don.montant;
-                                        }
+                                            if (Don.noCommanditaire == item.noCommanditaire)
+                                            {
+                                                montantDon += Don.montant;
+                                            }
+
                                     }
 
-                                    if (test >= 1500)
+                                    if (montantDon >= 1500)
                                     {
                                         <p>Or</p>
-                                        test = 0;
+                                        montantDon = 0;
                                     }
-                                    else if (test >= 1000)
+                                    else if (montantDon >= 1000)
                                     {
                                         <p>Argent</p>
-                                        test = 0;
+                                        montantDon = 0;
                                     }
-                                    else if (test >= 500)
+                                    else if (montantDon >= 500)
                                     {
                                         <p>Bronze</p>
-                                        test = 0;
+                                        montantDon = 0;
                                     }
-                                    else if (test > 0)
+                                    else if (montantDon > 0)
                                     {
                                         <p>Ami</p>
-                                        test = 0;
+                                        montantDon = 0;
                                     }
                                     else
                                     {
                                         <p>Aucun rang</p>
-                                        test = 0;
+                                        montantDon = 0;
                                     }
 
                                 }

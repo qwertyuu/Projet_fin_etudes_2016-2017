@@ -57,6 +57,19 @@ namespace ECJ.Web.Controllers
             return new List<tblCommanditaire>();
         }
 
+        public List<tblDon> DonList()
+        {
+            try
+            {
+                return db.tblDon.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblDon>();
+        }
+
         public tblCommanditaire returnCommanditaire(int id)
         {
             try
@@ -69,6 +82,20 @@ namespace ECJ.Web.Controllers
             }
             return new tblCommanditaire();
         }
+
+        public tblCommanditaire returnDon(int id)
+        {
+            try
+            {
+                return db.tblCommanditaire.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblCommanditaire();
+        }
+
         public void CreerMemo(int expediteur, int destinataire, string message, string lien)
         {
             try
@@ -378,6 +405,19 @@ namespace ECJ.Web.Controllers
             try
             {
                 db.tblEvenement.Find(id).dateSupprime = DateTime.Now;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+        public void supprimerDon(int id)
+        {
+            try
+            {
+                db.tblDon.Find(id).dateSupprime = DateTime.Now;
                 db.SaveChanges();
             }
             catch (Exception e)
