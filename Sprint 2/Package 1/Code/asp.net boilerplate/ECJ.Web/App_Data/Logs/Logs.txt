@@ -2654,3 +2654,825 @@ DEBUG 2016-11-13 21:46:26,103 [40   ] Abp.Web.SignalR.Hubs.AbpCommonHub        -
 DEBUG 2016-11-13 21:46:41,525 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 38e37e38-91d4-4ee8-8062-68e727bd84ab
 DEBUG 2016-11-13 21:46:42,530 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"39136689-82c3-4447-b875-c60c0e8c3609","IpAddress":"::1","TenantId":1,"UserId":5,"ConnectTime":"2016-11-13T21:46:42.5293372-05:00","Properties":{}}
 DEBUG 2016-11-13 21:46:42,534 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 39136689-82c3-4447-b875-c60c0e8c3609
+DEBUG 2016-11-14 10:38:36,893 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-11-14 10:38:37,239 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-11-14 10:38:37,244 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,246 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,247 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,247 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,247 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,247 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,247 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,248 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,248 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,248 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,248 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,249 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,249 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,249 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,250 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:37,254 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-11-14 10:38:38,210 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:38:38,211 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:38:38,211 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:38:38,211 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:38:38,756 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:38:39,517 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-11-14 10:38:39,523 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-11-14 10:38:39,525 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-11-14 10:38:39,527 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-11-14 10:38:39,528 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-11-14 10:38:39,694 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-11-14 10:38:39,898 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-11-14 10:38:39,899 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-11-14 10:38:39,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-11-14 10:38:39,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-11-14 10:38:39,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-11-14 10:38:39,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-11-14 10:38:39,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-11-14 10:38:39,903 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-11-14 10:38:42,620 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-11-14 10:38:42,621 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-11-14 10:38:42,622 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-11-14 10:38:42,624 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+WARN  2016-11-14 10:38:51,861 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+WARN  2016-11-14 10:38:51,861 [9    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+WARN  2016-11-14 10:38:53,837 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:38:54,657 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"bbcd48aa-f523-40a4-be9f-98d7998fccc4","IpAddress":"::1","TenantId":1,"UserId":5,"ConnectTime":"2016-11-14T10:38:54.6490067-05:00","Properties":{}}
+DEBUG 2016-11-14 10:38:54,684 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: bbcd48aa-f523-40a4-be9f-98d7998fccc4
+WARN  2016-11-14 10:38:57,439 [8    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+WARN  2016-11-14 10:38:57,693 [9    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:38:58,106 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"919c551f-ddf3-4da5-b6e0-d34033bff2f9","IpAddress":"::1","TenantId":1,"UserId":null,"ConnectTime":"2016-11-14T10:38:58.106566-05:00","Properties":{}}
+DEBUG 2016-11-14 10:38:58,117 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 919c551f-ddf3-4da5-b6e0-d34033bff2f9
+WARN  2016-11-14 10:39:14,360 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+WARN  2016-11-14 10:39:14,989 [13   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:39:15,434 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"0cbafe77-d4c3-417e-8dd5-c04a48af6e23","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:39:15.4340653-05:00","Properties":{}}
+DEBUG 2016-11-14 10:39:15,441 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 0cbafe77-d4c3-417e-8dd5-c04a48af6e23
+WARN  2016-11-14 10:39:18,206 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:39:18,239 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 0cbafe77-d4c3-417e-8dd5-c04a48af6e23
+WARN  2016-11-14 10:39:18,421 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:39:18,779 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5cfe3bb8-8fec-44e2-9fad-591fdc25cb40","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:39:18.7792028-05:00","Properties":{}}
+DEBUG 2016-11-14 10:39:18,784 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5cfe3bb8-8fec-44e2-9fad-591fdc25cb40
+WARN  2016-11-14 10:39:20,999 [9    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:39:21,033 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5cfe3bb8-8fec-44e2-9fad-591fdc25cb40
+WARN  2016-11-14 10:39:21,181 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:39:21,537 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"d32a382b-13ca-4801-ac0e-6d76ee9e60b3","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:39:21.5372691-05:00","Properties":{}}
+DEBUG 2016-11-14 10:39:21,542 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: d32a382b-13ca-4801-ac0e-6d76ee9e60b3
+DEBUG 2016-11-14 10:39:34,559 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: bbcd48aa-f523-40a4-be9f-98d7998fccc4
+DEBUG 2016-11-14 10:39:44,562 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 919c551f-ddf3-4da5-b6e0-d34033bff2f9
+WARN  2016-11-14 10:39:44,596 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - System.NullReferenceException: La référence d'objet n'est pas définie à une instance d'un objet.
+   à Abp.RealTime.OnlineClientManagerExtensions.<>c__DisplayClass2_0.<GetAllByUserId>b__0(IOnlineClient c) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 34
+   à System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   à System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   à System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   à System.Collections.Immutable.ImmutableExtensions.FallbackWrapper`1.get_Count()
+   à System.Collections.Immutable.ImmutableList`1.FillFromEmpty(IEnumerable`1 items)
+   à System.Collections.Immutable.ImmutableList`1.AddRange(IEnumerable`1 items)
+   à System.Collections.Immutable.ImmutableList.ToImmutableList[TSource](IEnumerable`1 source)
+   à Abp.RealTime.OnlineClientManagerExtensions.GetAllByUserId(IOnlineClientManager onlineClientManager, IUserIdentifier user) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 33
+   à Abp.RealTime.OnlineClientManagerExtensions.IsOnline(IOnlineClientManager onlineClientManager, UserIdentifier user) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 20
+   à Abp.RealTime.OnlineClientManager.Remove(String connectionId) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManager.cs:ligne 64
+   à Abp.Web.SignalR.Hubs.AbpCommonHub.<OnDisconnected>d__13.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.SignalR\Web\SignalR\Hubs\AbpCommonHub.cs:ligne 80
+System.NullReferenceException: La référence d'objet n'est pas définie à une instance d'un objet.
+   à Abp.RealTime.OnlineClientManagerExtensions.<>c__DisplayClass2_0.<GetAllByUserId>b__0(IOnlineClient c) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 34
+   à System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   à System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   à System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   à System.Collections.Immutable.ImmutableExtensions.FallbackWrapper`1.get_Count()
+   à System.Collections.Immutable.ImmutableList`1.FillFromEmpty(IEnumerable`1 items)
+   à System.Collections.Immutable.ImmutableList`1.AddRange(IEnumerable`1 items)
+   à System.Collections.Immutable.ImmutableList.ToImmutableList[TSource](IEnumerable`1 source)
+   à Abp.RealTime.OnlineClientManagerExtensions.GetAllByUserId(IOnlineClientManager onlineClientManager, IUserIdentifier user) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 33
+   à Abp.RealTime.OnlineClientManagerExtensions.IsOnline(IOnlineClientManager onlineClientManager, UserIdentifier user) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManagerExtensions.cs:ligne 20
+   à Abp.RealTime.OnlineClientManager.Remove(String connectionId) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\RealTime\OnlineClientManager.cs:ligne 64
+   à Abp.Web.SignalR.Hubs.AbpCommonHub.<OnDisconnected>d__13.MoveNext() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.SignalR\Web\SignalR\Hubs\AbpCommonHub.cs:ligne 80
+WARN  2016-11-14 10:40:31,434 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:40:31,462 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: d32a382b-13ca-4801-ac0e-6d76ee9e60b3
+WARN  2016-11-14 10:40:31,692 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:40:32,174 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ddb73e73-597a-467b-b25f-76695ae07aad","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:40:32.1738243-05:00","Properties":{}}
+DEBUG 2016-11-14 10:40:32,185 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ddb73e73-597a-467b-b25f-76695ae07aad
+DEBUG 2016-11-14 10:43:12,763 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:12,888 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-11-14 10:43:13,138 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:43:13,138 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:43:13,138 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:43:13,138 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:43:16,100 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:43:16,872 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-11-14 10:43:16,877 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-11-14 10:43:16,879 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-11-14 10:43:16,881 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-11-14 10:43:16,882 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-11-14 10:43:17,102 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-11-14 10:43:17,357 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-11-14 10:43:17,357 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-11-14 10:43:17,363 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-11-14 10:43:17,363 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-11-14 10:43:17,363 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-11-14 10:43:17,363 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-11-14 10:43:17,363 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-11-14 10:43:17,364 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-11-14 10:43:20,382 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-11-14 10:43:20,383 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-11-14 10:43:20,384 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-11-14 10:43:20,385 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+WARN  2016-11-14 10:44:20,710 [8    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+WARN  2016-11-14 10:44:20,710 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+WARN  2016-11-14 10:44:21,859 [8    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:44:22,148 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ed9ec236-0781-441c-a940-3ad03054f3d7","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:44:22.1406947-05:00","Properties":{}}
+DEBUG 2016-11-14 10:44:22,188 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ed9ec236-0781-441c-a940-3ad03054f3d7
+WARN  2016-11-14 10:47:04,799 [8    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:47:04,836 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ed9ec236-0781-441c-a940-3ad03054f3d7
+WARN  2016-11-14 10:47:05,151 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:47:05,654 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"c2dc8d82-8edc-41f4-8645-e186fa9332d6","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:47:05.6538705-05:00","Properties":{}}
+DEBUG 2016-11-14 10:47:05,659 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: c2dc8d82-8edc-41f4-8645-e186fa9332d6
+WARN  2016-11-14 10:48:11,187 [8    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:48:11,218 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: c2dc8d82-8edc-41f4-8645-e186fa9332d6
+WARN  2016-11-14 10:48:11,538 [16   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:48:12,043 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e52371a3-ec77-46a3-b789-47ed7bdbe21b","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:48:12.0432386-05:00","Properties":{}}
+DEBUG 2016-11-14 10:48:12,049 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e52371a3-ec77-46a3-b789-47ed7bdbe21b
+WARN  2016-11-14 10:48:15,528 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:48:15,555 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e52371a3-ec77-46a3-b789-47ed7bdbe21b
+WARN  2016-11-14 10:48:15,744 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:48:16,119 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ecc32fe8-6f92-4cf6-ab68-937d36e45746","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:48:16.1188141-05:00","Properties":{}}
+DEBUG 2016-11-14 10:48:16,127 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ecc32fe8-6f92-4cf6-ab68-937d36e45746
+WARN  2016-11-14 10:48:18,050 [9    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:48:18,075 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ecc32fe8-6f92-4cf6-ab68-937d36e45746
+WARN  2016-11-14 10:48:18,212 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:48:18,636 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"547347bc-70b5-4107-9917-d1741b0869a8","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:48:18.6356142-05:00","Properties":{}}
+DEBUG 2016-11-14 10:48:18,641 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 547347bc-70b5-4107-9917-d1741b0869a8
+WARN  2016-11-14 10:48:19,739 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:48:19,765 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 547347bc-70b5-4107-9917-d1741b0869a8
+WARN  2016-11-14 10:48:19,952 [16   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:48:20,318 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"bfb23631-3871-4cc9-ab4d-7c3875aa1637","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:48:20.3188092-05:00","Properties":{}}
+DEBUG 2016-11-14 10:48:20,322 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: bfb23631-3871-4cc9-ab4d-7c3875aa1637
+DEBUG 2016-11-14 10:48:22,182 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: bfb23631-3871-4cc9-ab4d-7c3875aa1637
+DEBUG 2016-11-14 10:48:22,658 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"57cfffd7-be65-480d-ac7f-0f189d60032b","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:48:22.6583344-05:00","Properties":{}}
+DEBUG 2016-11-14 10:48:22,682 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 57cfffd7-be65-480d-ac7f-0f189d60032b
+WARN  2016-11-14 10:48:24,225 [10   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:48:24,256 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 57cfffd7-be65-480d-ac7f-0f189d60032b
+WARN  2016-11-14 10:48:24,436 [15   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:48:24,779 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"68b52346-4076-4abd-a541-ea194f546e7c","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:48:24.7793039-05:00","Properties":{}}
+DEBUG 2016-11-14 10:48:24,782 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 68b52346-4076-4abd-a541-ea194f546e7c
+WARN  2016-11-14 10:48:50,453 [13   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:48:50,485 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 68b52346-4076-4abd-a541-ea194f546e7c
+WARN  2016-11-14 10:48:50,717 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:48:51,122 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ac365227-a8b2-4ea2-afca-eb1f46b22eed","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:48:51.1225809-05:00","Properties":{}}
+DEBUG 2016-11-14 10:48:51,126 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ac365227-a8b2-4ea2-afca-eb1f46b22eed
+WARN  2016-11-14 10:49:15,689 [8    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:49:15,721 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ac365227-a8b2-4ea2-afca-eb1f46b22eed
+WARN  2016-11-14 10:49:15,975 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:49:16,578 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"fbe8c4da-bfa3-4c56-879c-8842768af853","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:49:16.5789989-05:00","Properties":{}}
+DEBUG 2016-11-14 10:49:16,584 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: fbe8c4da-bfa3-4c56-879c-8842768af853
+WARN  2016-11-14 10:49:19,294 [13   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:49:19,330 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: fbe8c4da-bfa3-4c56-879c-8842768af853
+WARN  2016-11-14 10:49:19,500 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:49:19,838 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"0b6242db-a2fe-49d3-a67e-87cc00c3559d","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:49:19.8372882-05:00","Properties":{}}
+DEBUG 2016-11-14 10:49:19,844 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 0b6242db-a2fe-49d3-a67e-87cc00c3559d
+WARN  2016-11-14 10:49:56,941 [8    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:49:56,968 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 0b6242db-a2fe-49d3-a67e-87cc00c3559d
+WARN  2016-11-14 10:49:57,204 [13   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:49:57,683 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"95ce8ecb-0aa2-4367-b077-7b3f441dd456","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:49:57.6838117-05:00","Properties":{}}
+DEBUG 2016-11-14 10:49:57,692 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 95ce8ecb-0aa2-4367-b077-7b3f441dd456
+WARN  2016-11-14 10:50:40,199 [8    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:50:40,235 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 95ce8ecb-0aa2-4367-b077-7b3f441dd456
+WARN  2016-11-14 10:50:40,498 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:50:41,009 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"bf9d91e9-b9c3-4aa8-afed-2a8b970bc3cb","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:50:41.0091564-05:00","Properties":{}}
+DEBUG 2016-11-14 10:50:41,013 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: bf9d91e9-b9c3-4aa8-afed-2a8b970bc3cb
+WARN  2016-11-14 10:51:54,540 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:51:54,573 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: bf9d91e9-b9c3-4aa8-afed-2a8b970bc3cb
+WARN  2016-11-14 10:51:54,707 [13   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:51:55,609 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f265c447-b261-4248-9de4-e0b4c38800b9","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:51:55.6088323-05:00","Properties":{}}
+DEBUG 2016-11-14 10:51:55,630 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f265c447-b261-4248-9de4-e0b4c38800b9
+WARN  2016-11-14 10:51:57,315 [9    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:51:57,346 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f265c447-b261-4248-9de4-e0b4c38800b9
+WARN  2016-11-14 10:51:57,599 [13   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:51:58,149 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"a498db23-55b9-4a10-bf42-a2832a793595","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:51:58.1492598-05:00","Properties":{}}
+DEBUG 2016-11-14 10:51:58,156 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: a498db23-55b9-4a10-bf42-a2832a793595
+WARN  2016-11-14 10:51:59,543 [8    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:51:59,577 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: a498db23-55b9-4a10-bf42-a2832a793595
+WARN  2016-11-14 10:51:59,940 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:52:00,729 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"894a96d4-e52e-4733-bfd8-217372cf4007","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:52:00.7291851-05:00","Properties":{}}
+DEBUG 2016-11-14 10:52:00,735 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 894a96d4-e52e-4733-bfd8-217372cf4007
+WARN  2016-11-14 10:52:37,890 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:52:37,920 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 894a96d4-e52e-4733-bfd8-217372cf4007
+WARN  2016-11-14 10:52:38,202 [16   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:52:38,693 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f09151df-dddd-4691-adf1-26105797f5a0","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:52:38.6929878-05:00","Properties":{}}
+DEBUG 2016-11-14 10:52:38,698 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f09151df-dddd-4691-adf1-26105797f5a0
+WARN  2016-11-14 10:52:47,302 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:52:47,328 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f09151df-dddd-4691-adf1-26105797f5a0
+WARN  2016-11-14 10:52:47,451 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:52:47,873 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"c2956f0b-983f-44ab-970f-95c5dd382d26","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:52:47.8734428-05:00","Properties":{}}
+DEBUG 2016-11-14 10:52:47,876 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: c2956f0b-983f-44ab-970f-95c5dd382d26
+WARN  2016-11-14 10:54:39,627 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:54:39,660 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: c2956f0b-983f-44ab-970f-95c5dd382d26
+WARN  2016-11-14 10:54:39,934 [15   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:54:40,422 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8a3153f2-50e0-492a-806b-df59587bace6","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:54:40.4224476-05:00","Properties":{}}
+DEBUG 2016-11-14 10:54:40,426 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8a3153f2-50e0-492a-806b-df59587bace6
+WARN  2016-11-14 10:55:41,889 [8    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:55:41,923 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8a3153f2-50e0-492a-806b-df59587bace6
+WARN  2016-11-14 10:55:42,100 [15   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:55:42,873 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"9b0d908a-85f0-487a-acfa-6474ad003a2e","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:55:42.8735549-05:00","Properties":{}}
+DEBUG 2016-11-14 10:55:42,882 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 9b0d908a-85f0-487a-acfa-6474ad003a2e
+DEBUG 2016-11-14 10:55:43,417 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 9b0d908a-85f0-487a-acfa-6474ad003a2e
+DEBUG 2016-11-14 10:55:44,002 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"a8cb1be5-6bdb-434e-8ebb-6f12b36a8da5","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:55:44.0013576-05:00","Properties":{}}
+DEBUG 2016-11-14 10:55:44,005 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: a8cb1be5-6bdb-434e-8ebb-6f12b36a8da5
+DEBUG 2016-11-14 10:55:44,229 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: a8cb1be5-6bdb-434e-8ebb-6f12b36a8da5
+DEBUG 2016-11-14 10:55:44,618 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"441a8897-cea9-4339-9cea-af0abb789e6a","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:55:44.6171755-05:00","Properties":{}}
+DEBUG 2016-11-14 10:55:44,621 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 441a8897-cea9-4339-9cea-af0abb789e6a
+WARN  2016-11-14 10:56:23,105 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:56:23,133 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 441a8897-cea9-4339-9cea-af0abb789e6a
+WARN  2016-11-14 10:56:23,598 [13   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:56:24,233 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e3f593d7-ae0a-4431-9207-bd6366f1e189","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:56:24.2339538-05:00","Properties":{}}
+DEBUG 2016-11-14 10:56:24,237 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e3f593d7-ae0a-4431-9207-bd6366f1e189
+DEBUG 2016-11-14 10:56:38,817 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-11-14 10:56:39,154 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-11-14 10:56:39,162 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,168 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,170 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,171 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,171 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,173 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,173 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,174 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,174 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,176 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,176 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,178 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,178 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,179 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,180 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:39,186 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-11-14 10:56:39,664 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:56:39,664 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:56:39,664 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:56:39,664 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:56:40,088 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:56:40,804 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-11-14 10:56:40,810 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-11-14 10:56:40,811 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-11-14 10:56:40,812 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-11-14 10:56:40,813 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-11-14 10:56:40,986 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-11-14 10:56:41,164 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-11-14 10:56:41,164 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-11-14 10:56:41,168 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-11-14 10:56:41,168 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-11-14 10:56:41,168 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-11-14 10:56:41,168 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-11-14 10:56:41,168 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-11-14 10:56:41,168 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-11-14 10:56:44,011 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-11-14 10:56:44,013 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-11-14 10:56:44,014 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-11-14 10:56:44,015 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-11-14 10:56:46,487 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"e3f593d7-ae0a-4431-9207-bd6366f1e189","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:56:46.4204304-05:00","Properties":{}}
+WARN  2016-11-14 10:56:51,806 [8    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+WARN  2016-11-14 10:56:52,757 [11   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:56:52,986 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"2b2b5f2b-a775-4d5e-befe-76d2af0fb533","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:56:52.9851619-05:00","Properties":{}}
+DEBUG 2016-11-14 10:56:53,008 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 2b2b5f2b-a775-4d5e-befe-76d2af0fb533
+DEBUG 2016-11-14 10:57:13,643 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-11-14 10:57:13,773 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-11-14 10:57:13,779 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,780 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,781 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,781 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,781 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,781 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,782 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,782 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,782 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,782 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,782 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,783 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,783 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,783 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,783 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:13,785 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-11-14 10:57:15,426 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:57:15,427 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:57:15,427 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:57:15,427 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 10:57:15,798 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 10:57:16,553 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-11-14 10:57:16,559 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-11-14 10:57:16,560 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-11-14 10:57:16,563 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-11-14 10:57:16,564 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-11-14 10:57:16,734 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-11-14 10:57:17,043 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-11-14 10:57:17,043 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-11-14 10:57:17,049 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-11-14 10:57:17,049 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-11-14 10:57:17,049 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-11-14 10:57:17,049 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-11-14 10:57:17,049 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-11-14 10:57:17,050 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-11-14 10:57:19,886 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-11-14 10:57:19,888 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-11-14 10:57:19,888 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-11-14 10:57:19,889 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-11-14 10:57:22,239 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"2b2b5f2b-a775-4d5e-befe-76d2af0fb533","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:57:22.1801353-05:00","Properties":{}}
+DEBUG 2016-11-14 10:57:22,239 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"e3f593d7-ae0a-4431-9207-bd6366f1e189","IpAddress":"127.0.0.1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:57:22.1801353-05:00","Properties":{}}
+WARN  2016-11-14 10:57:27,100 [8    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:57:27,252 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 2b2b5f2b-a775-4d5e-befe-76d2af0fb533
+WARN  2016-11-14 10:57:28,220 [10   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:57:28,447 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"d55bc086-6e17-45eb-9ac3-1bc5ce2a41ed","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:57:28.4464102-05:00","Properties":{}}
+DEBUG 2016-11-14 10:57:28,502 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: d55bc086-6e17-45eb-9ac3-1bc5ce2a41ed
+WARN  2016-11-14 10:57:29,910 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:57:29,950 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: d55bc086-6e17-45eb-9ac3-1bc5ce2a41ed
+WARN  2016-11-14 10:57:30,143 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:57:30,866 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"a614851f-6a6c-4780-8aeb-6f101f6e38e4","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:57:30.866758-05:00","Properties":{}}
+DEBUG 2016-11-14 10:57:30,871 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: a614851f-6a6c-4780-8aeb-6f101f6e38e4
+DEBUG 2016-11-14 10:57:35,398 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: a614851f-6a6c-4780-8aeb-6f101f6e38e4
+DEBUG 2016-11-14 10:57:35,875 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"02bca02c-6e1b-479a-9492-5d931a049423","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:57:35.8743247-05:00","Properties":{}}
+DEBUG 2016-11-14 10:57:35,883 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 02bca02c-6e1b-479a-9492-5d931a049423
+DEBUG 2016-11-14 10:57:36,292 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 02bca02c-6e1b-479a-9492-5d931a049423
+DEBUG 2016-11-14 10:57:37,915 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"4b6256fe-a233-47ea-9712-1963375f110a","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:57:37.9146231-05:00","Properties":{}}
+DEBUG 2016-11-14 10:57:37,924 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 4b6256fe-a233-47ea-9712-1963375f110a
+WARN  2016-11-14 10:57:40,205 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:57:40,241 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e3f593d7-ae0a-4431-9207-bd6366f1e189
+WARN  2016-11-14 10:57:40,489 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:57:40,811 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8725e014-255f-46fc-9ee0-95416d0387a8","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:57:40.8106409-05:00","Properties":{}}
+DEBUG 2016-11-14 10:57:40,814 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8725e014-255f-46fc-9ee0-95416d0387a8
+WARN  2016-11-14 10:57:55,193 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:57:55,228 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8725e014-255f-46fc-9ee0-95416d0387a8
+WARN  2016-11-14 10:57:55,434 [16   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:57:55,924 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"aa265267-186a-426e-8855-1fbcfa23a924","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:57:55.9240965-05:00","Properties":{}}
+DEBUG 2016-11-14 10:57:55,931 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: aa265267-186a-426e-8855-1fbcfa23a924
+WARN  2016-11-14 10:58:24,178 [10   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:58:24,207 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: aa265267-186a-426e-8855-1fbcfa23a924
+WARN  2016-11-14 10:58:24,338 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:58:24,890 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"42b0aa47-4b5d-4ac1-a647-3c8f58e4fb71","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:58:24.8908544-05:00","Properties":{}}
+DEBUG 2016-11-14 10:58:24,897 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 42b0aa47-4b5d-4ac1-a647-3c8f58e4fb71
+WARN  2016-11-14 10:58:29,740 [9    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:58:29,768 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 42b0aa47-4b5d-4ac1-a647-3c8f58e4fb71
+WARN  2016-11-14 10:58:29,925 [13   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:58:30,429 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"06c02d51-7e9f-465d-80f4-b6c93ad72cf3","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:58:30.4294352-05:00","Properties":{}}
+DEBUG 2016-11-14 10:58:30,433 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 06c02d51-7e9f-465d-80f4-b6c93ad72cf3
+WARN  2016-11-14 10:58:33,389 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:58:33,419 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 06c02d51-7e9f-465d-80f4-b6c93ad72cf3
+WARN  2016-11-14 10:58:33,597 [15   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:58:34,003 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"fcb9b7a4-7b86-4afd-a48e-da8d39f49ded","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:58:34.0031984-05:00","Properties":{}}
+DEBUG 2016-11-14 10:58:34,009 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: fcb9b7a4-7b86-4afd-a48e-da8d39f49ded
+WARN  2016-11-14 10:58:41,354 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:58:41,390 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: fcb9b7a4-7b86-4afd-a48e-da8d39f49ded
+WARN  2016-11-14 10:58:41,576 [20   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:58:41,947 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"c030817f-c52c-44fc-8109-bb305489ce89","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:58:41.9474807-05:00","Properties":{}}
+DEBUG 2016-11-14 10:58:41,950 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: c030817f-c52c-44fc-8109-bb305489ce89
+WARN  2016-11-14 10:58:48,322 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:58:48,349 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: c030817f-c52c-44fc-8109-bb305489ce89
+WARN  2016-11-14 10:58:48,504 [15   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:58:48,854 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5f3db624-08d3-4381-bbe0-d6643dd94bd4","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:58:48.8544676-05:00","Properties":{}}
+DEBUG 2016-11-14 10:58:48,858 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5f3db624-08d3-4381-bbe0-d6643dd94bd4
+WARN  2016-11-14 10:59:03,305 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:59:03,341 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5f3db624-08d3-4381-bbe0-d6643dd94bd4
+WARN  2016-11-14 10:59:03,469 [25   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 10:59:03,900 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"c8cae7ed-31d9-47d7-aeee-2a9bdcfeca3f","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T10:59:03.9000874-05:00","Properties":{}}
+DEBUG 2016-11-14 10:59:03,903 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: c8cae7ed-31d9-47d7-aeee-2a9bdcfeca3f
+WARN  2016-11-14 11:00:54,137 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:00:54,166 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: c8cae7ed-31d9-47d7-aeee-2a9bdcfeca3f
+WARN  2016-11-14 11:00:54,449 [27   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:00:54,880 [27   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8043a2bb-49a6-4285-8d2f-2903b9be490f","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:00:54.8793677-05:00","Properties":{}}
+DEBUG 2016-11-14 11:00:54,885 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8043a2bb-49a6-4285-8d2f-2903b9be490f
+WARN  2016-11-14 11:01:45,664 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:01:45,695 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8043a2bb-49a6-4285-8d2f-2903b9be490f
+WARN  2016-11-14 11:01:45,960 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:01:46,445 [27   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"c4fcadeb-3e58-45b2-8e29-d32637bfe3c7","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:01:46.4457943-05:00","Properties":{}}
+DEBUG 2016-11-14 11:01:46,450 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: c4fcadeb-3e58-45b2-8e29-d32637bfe3c7
+WARN  2016-11-14 11:01:52,462 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:01:52,489 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: c4fcadeb-3e58-45b2-8e29-d32637bfe3c7
+WARN  2016-11-14 11:01:52,672 [31   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:01:53,220 [32   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"594c52a3-a018-4a9b-9972-e29b0f74c0d8","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:01:53.2197006-05:00","Properties":{}}
+DEBUG 2016-11-14 11:01:53,243 [35   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 594c52a3-a018-4a9b-9972-e29b0f74c0d8
+WARN  2016-11-14 11:02:20,792 [35   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:02:20,823 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 594c52a3-a018-4a9b-9972-e29b0f74c0d8
+WARN  2016-11-14 11:02:21,101 [34   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:02:21,558 [30   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"24e95cff-c2b0-4262-a3d1-44c121b02db4","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:02:21.5587616-05:00","Properties":{}}
+DEBUG 2016-11-14 11:02:21,563 [35   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 24e95cff-c2b0-4262-a3d1-44c121b02db4
+WARN  2016-11-14 11:02:25,436 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:02:25,478 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 24e95cff-c2b0-4262-a3d1-44c121b02db4
+WARN  2016-11-14 11:02:25,638 [28   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:02:25,982 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ad2d877b-adfa-459c-a20f-326563597e60","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:02:25.9812775-05:00","Properties":{}}
+DEBUG 2016-11-14 11:02:25,985 [27   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ad2d877b-adfa-459c-a20f-326563597e60
+WARN  2016-11-14 11:02:50,015 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:02:50,041 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ad2d877b-adfa-459c-a20f-326563597e60
+WARN  2016-11-14 11:02:50,300 [27   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:02:50,868 [27   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b54e38c7-f2f1-448b-b09c-5092121b6f20","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:02:50.8673569-05:00","Properties":{}}
+DEBUG 2016-11-14 11:02:50,873 [36   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b54e38c7-f2f1-448b-b09c-5092121b6f20
+WARN  2016-11-14 11:02:53,530 [27   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:02:53,557 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b54e38c7-f2f1-448b-b09c-5092121b6f20
+WARN  2016-11-14 11:02:53,735 [28   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:02:54,131 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"4435971e-7c7c-4063-8940-d3f1fea61367","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:02:54.1305269-05:00","Properties":{}}
+DEBUG 2016-11-14 11:02:54,140 [34   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 4435971e-7c7c-4063-8940-d3f1fea61367
+WARN  2016-11-14 11:02:57,184 [36   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:02:57,220 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 4435971e-7c7c-4063-8940-d3f1fea61367
+WARN  2016-11-14 11:02:57,375 [35   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:02:57,792 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"db982c23-3d34-4a38-9206-f509356be464","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:02:57.7929822-05:00","Properties":{}}
+DEBUG 2016-11-14 11:02:57,795 [37   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: db982c23-3d34-4a38-9206-f509356be464
+WARN  2016-11-14 11:03:09,335 [34   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:03:09,362 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: db982c23-3d34-4a38-9206-f509356be464
+WARN  2016-11-14 11:03:09,523 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:03:09,864 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"0414126b-93f7-4fe8-875b-f62a618c4505","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:03:09.8648904-05:00","Properties":{}}
+DEBUG 2016-11-14 11:03:09,874 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 0414126b-93f7-4fe8-875b-f62a618c4505
+WARN  2016-11-14 11:04:04,817 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:04:04,849 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 0414126b-93f7-4fe8-875b-f62a618c4505
+WARN  2016-11-14 11:04:05,170 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:04:05,931 [34   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b46d4f33-2c5b-46d1-9ac5-c7d37541822b","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:04:05.9310111-05:00","Properties":{}}
+DEBUG 2016-11-14 11:04:06,107 [36   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b46d4f33-2c5b-46d1-9ac5-c7d37541822b
+WARN  2016-11-14 11:04:14,147 [34   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:04:14,172 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b46d4f33-2c5b-46d1-9ac5-c7d37541822b
+WARN  2016-11-14 11:04:14,344 [30   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:04:14,733 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"71e98827-5819-499c-8d21-04b311644200","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:04:14.7321197-05:00","Properties":{}}
+DEBUG 2016-11-14 11:04:14,737 [30   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 71e98827-5819-499c-8d21-04b311644200
+WARN  2016-11-14 11:04:36,382 [28   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:04:36,416 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 71e98827-5819-499c-8d21-04b311644200
+WARN  2016-11-14 11:04:36,767 [27   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:04:37,249 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"a9b6ec92-2e14-4489-85a8-210bbfe0666a","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:04:37.2493268-05:00","Properties":{}}
+DEBUG 2016-11-14 11:04:37,262 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: a9b6ec92-2e14-4489-85a8-210bbfe0666a
+WARN  2016-11-14 11:04:39,881 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:04:39,908 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: a9b6ec92-2e14-4489-85a8-210bbfe0666a
+WARN  2016-11-14 11:04:40,039 [27   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:04:40,400 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"3915b857-ba1c-4aaa-a530-01181b5f9e76","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:04:40.4007916-05:00","Properties":{}}
+DEBUG 2016-11-14 11:04:40,406 [36   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 3915b857-ba1c-4aaa-a530-01181b5f9e76
+WARN  2016-11-14 11:05:38,999 [27   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+WARN  2016-11-14 11:05:39,343 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:05:40,095 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8a003e8f-6947-4c0e-8173-2abd7893e0a2","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:05:40.0948358-05:00","Properties":{}}
+DEBUG 2016-11-14 11:05:40,123 [34   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8a003e8f-6947-4c0e-8173-2abd7893e0a2
+WARN  2016-11-14 11:06:34,719 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:06:34,773 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 3915b857-ba1c-4aaa-a530-01181b5f9e76
+WARN  2016-11-14 11:06:34,961 [32   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:06:35,767 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"9277700a-1c20-4f11-b29c-c96dde50895a","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:06:35.7671931-05:00","Properties":{}}
+DEBUG 2016-11-14 11:06:35,770 [32   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 9277700a-1c20-4f11-b29c-c96dde50895a
+WARN  2016-11-14 11:06:41,618 [32   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:06:41,649 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 9277700a-1c20-4f11-b29c-c96dde50895a
+WARN  2016-11-14 11:06:41,830 [35   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:06:42,214 [27   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"facbb84a-765b-4c84-9481-46d7b9ff1e62","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:06:42.2146667-05:00","Properties":{}}
+DEBUG 2016-11-14 11:06:42,218 [27   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: facbb84a-765b-4c84-9481-46d7b9ff1e62
+WARN  2016-11-14 11:06:55,795 [7    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:06:55,822 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: facbb84a-765b-4c84-9481-46d7b9ff1e62
+WARN  2016-11-14 11:06:56,000 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:06:56,385 [35   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b74c29b9-3186-4754-b6d5-eff67dd93b35","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:06:56.3845829-05:00","Properties":{}}
+DEBUG 2016-11-14 11:06:56,390 [32   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b74c29b9-3186-4754-b6d5-eff67dd93b35
+WARN  2016-11-14 11:07:04,447 [33   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:07:04,509 [27   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b74c29b9-3186-4754-b6d5-eff67dd93b35
+WARN  2016-11-14 11:07:04,771 [20   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:07:05,146 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8f7c2a3c-deb4-474c-aaff-9ad1a11516d9","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:07:05.1468249-05:00","Properties":{}}
+DEBUG 2016-11-14 11:07:05,184 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8f7c2a3c-deb4-474c-aaff-9ad1a11516d9
+DEBUG 2016-11-14 11:07:26,862 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-11-14 11:07:28,719 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-11-14 11:07:28,726 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,730 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,730 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,730 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,730 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,730 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,731 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,731 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,731 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,731 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,732 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,732 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,732 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,732 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,732 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:28,734 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-11-14 11:07:29,096 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 11:07:29,096 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 11:07:29,096 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 11:07:29,096 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 11:07:29,493 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:30,212 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-11-14 11:07:30,218 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-11-14 11:07:30,219 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-11-14 11:07:30,221 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-11-14 11:07:30,222 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-11-14 11:07:30,380 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-11-14 11:07:30,577 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-11-14 11:07:30,577 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-11-14 11:07:30,582 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-11-14 11:07:30,582 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-11-14 11:07:30,582 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-11-14 11:07:30,582 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-11-14 11:07:30,582 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-11-14 11:07:30,582 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-11-14 11:07:33,421 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-11-14 11:07:33,422 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-11-14 11:07:33,423 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-11-14 11:07:33,424 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-11-14 11:07:48,556 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-11-14 11:07:48,854 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-11-14 11:07:48,859 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,861 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,861 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,861 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,862 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,862 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,862 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,862 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,862 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,863 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,863 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,863 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,863 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,863 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,863 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:48,865 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-11-14 11:07:49,241 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 11:07:49,242 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 11:07:49,242 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 11:07:49,242 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 11:07:49,820 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:07:50,603 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-11-14 11:07:50,609 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-11-14 11:07:50,610 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-11-14 11:07:50,612 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-11-14 11:07:50,613 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-11-14 11:07:50,783 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-11-14 11:07:50,962 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-11-14 11:07:50,962 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-11-14 11:07:50,966 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-11-14 11:07:50,967 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-11-14 11:07:50,967 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-11-14 11:07:50,967 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-11-14 11:07:50,967 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-11-14 11:07:50,967 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-11-14 11:07:53,864 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-11-14 11:07:53,866 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-11-14 11:07:53,867 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-11-14 11:07:53,868 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-11-14 11:08:39,356 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-11-14 11:08:39,370 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2016-11-14 11:08:39,376 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Web.ECJWebModule, ECJ.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,379 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJDataModule, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,379 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,379 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,380 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.12.0.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,380 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,380 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJCoreModule, ECJ.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,380 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.ECJApplicationModule, ECJ.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,381 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,381 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: ECJ.Api.ECJWebApiModule, ECJ.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,381 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,381 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,381 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,381 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,381 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.12.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:39,385 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2016-11-14 11:08:39,544 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 11:08:39,544 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 11:08:39,544 [1    ] o.Configuration.LanguageManagementConfig - Converted ECJ (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 11:08:39,544 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-11-14 11:08:39,903 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: ECJ.EntityFramework.ECJDbContext, ECJ.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-11-14 11:08:41,455 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-11-14 11:08:41,464 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-11-14 11:08:41,466 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-11-14 11:08:41,468 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ECJ
+DEBUG 2016-11-14 11:08:41,469 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-11-14 11:08:41,668 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-11-14 11:08:41,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes defines auto mapping attributes
+DEBUG 2016-11-14 11:08:41,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-11-14 11:08:41,945 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-11-14 11:08:41,945 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-11-14 11:08:41,946 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.CreateUserInput
+DEBUG 2016-11-14 11:08:41,946 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.Users.Dto.UserListDto
+DEBUG 2016-11-14 11:08:41,946 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2016-11-14 11:08:41,946 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - ECJ.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-11-14 11:08:45,067 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-11-14 11:08:45,067 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-11-14 11:08:45,068 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-11-14 11:08:45,069 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'ECJ.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-11-14 11:08:46,020 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"bea0b386-a9d6-48df-867c-41744ee9176d","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:08:45.9975411-05:00","Properties":{}}
+DEBUG 2016-11-14 11:08:46,020 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"9a721533-7c61-47c9-a0cc-f93f38afc034","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:08:45.9975411-05:00","Properties":{}}
+DEBUG 2016-11-14 11:08:46,020 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"591efa4a-e467-44d6-b47b-8bb727ac9238","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:08:45.9975411-05:00","Properties":{}}
+DEBUG 2016-11-14 11:09:55,611 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is reconnected: {"ConnectionId":"591efa4a-e467-44d6-b47b-8bb727ac9238","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:08:45.9975411-05:00","Properties":{}}
+DEBUG 2016-11-14 11:09:55,611 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is reconnected: {"ConnectionId":"bea0b386-a9d6-48df-867c-41744ee9176d","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:08:45.9975411-05:00","Properties":{}}
+DEBUG 2016-11-14 11:09:55,629 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is reconnected: {"ConnectionId":"9a721533-7c61-47c9-a0cc-f93f38afc034","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:08:45.9975411-05:00","Properties":{}}
+WARN  2016-11-14 11:10:10,839 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:10:11,011 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 9a721533-7c61-47c9-a0cc-f93f38afc034
+WARN  2016-11-14 11:10:11,985 [9    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:10:12,186 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1222ebae-f116-45c0-ba31-ec3ea2dbf95c","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:10:12.1861715-05:00","Properties":{}}
+DEBUG 2016-11-14 11:10:12,212 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1222ebae-f116-45c0-ba31-ec3ea2dbf95c
+WARN  2016-11-14 11:10:53,281 [21   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:10:53,325 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1222ebae-f116-45c0-ba31-ec3ea2dbf95c
+WARN  2016-11-14 11:10:53,530 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:10:54,137 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"50760803-43cb-4eae-941a-582ff15384fe","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:10:54.137378-05:00","Properties":{}}
+DEBUG 2016-11-14 11:10:54,155 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 50760803-43cb-4eae-941a-582ff15384fe
+WARN  2016-11-14 11:10:55,962 [20   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:10:56,011 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 50760803-43cb-4eae-941a-582ff15384fe
+WARN  2016-11-14 11:10:56,222 [26   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:10:56,587 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1de898f0-46e5-4936-9d82-b1e46b49e3cc","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:10:56.587755-05:00","Properties":{}}
+DEBUG 2016-11-14 11:10:56,590 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1de898f0-46e5-4936-9d82-b1e46b49e3cc
+WARN  2016-11-14 11:11:00,640 [21   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:00,697 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1de898f0-46e5-4936-9d82-b1e46b49e3cc
+WARN  2016-11-14 11:11:00,884 [23   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:01,373 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"211dcaba-043e-46e7-9ee1-ac9fceb76d7e","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:11:01.3728957-05:00","Properties":{}}
+DEBUG 2016-11-14 11:11:01,378 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 211dcaba-043e-46e7-9ee1-ac9fceb76d7e
+WARN  2016-11-14 11:11:10,936 [26   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:10,963 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 211dcaba-043e-46e7-9ee1-ac9fceb76d7e
+WARN  2016-11-14 11:11:11,204 [25   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:11,698 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"3970f540-26f9-45ce-b8ad-31c2a33d0f0e","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:11:11.697036-05:00","Properties":{}}
+DEBUG 2016-11-14 11:11:11,702 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 3970f540-26f9-45ce-b8ad-31c2a33d0f0e
+WARN  2016-11-14 11:11:17,314 [19   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:17,343 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 3970f540-26f9-45ce-b8ad-31c2a33d0f0e
+WARN  2016-11-14 11:11:17,477 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:17,885 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"667c3c63-20ce-4819-b1d9-026bb5cf6206","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:11:17.8853771-05:00","Properties":{}}
+DEBUG 2016-11-14 11:11:17,889 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 667c3c63-20ce-4819-b1d9-026bb5cf6206
+WARN  2016-11-14 11:11:30,487 [20   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:30,514 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 667c3c63-20ce-4819-b1d9-026bb5cf6206
+WARN  2016-11-14 11:11:30,714 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:31,089 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"62ed1a59-6e09-4065-9c92-10917761e6d5","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:11:31.088929-05:00","Properties":{}}
+DEBUG 2016-11-14 11:11:31,092 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 62ed1a59-6e09-4065-9c92-10917761e6d5
+WARN  2016-11-14 11:11:36,571 [25   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:36,600 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 62ed1a59-6e09-4065-9c92-10917761e6d5
+WARN  2016-11-14 11:11:36,775 [25   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:37,506 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"a719bc88-b53d-4a9e-b6c5-894e58142c9e","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:11:37.5066055-05:00","Properties":{}}
+DEBUG 2016-11-14 11:11:37,510 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: a719bc88-b53d-4a9e-b6c5-894e58142c9e
+WARN  2016-11-14 11:11:38,976 [20   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:39,003 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: a719bc88-b53d-4a9e-b6c5-894e58142c9e
+WARN  2016-11-14 11:11:39,185 [26   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:39,578 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1e434088-ad5b-42e7-890f-51a28ab59094","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:11:39.578871-05:00","Properties":{}}
+DEBUG 2016-11-14 11:11:39,583 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1e434088-ad5b-42e7-890f-51a28ab59094
+WARN  2016-11-14 11:11:47,155 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:47,187 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1e434088-ad5b-42e7-890f-51a28ab59094
+WARN  2016-11-14 11:11:47,392 [25   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:11:47,767 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"4ddaf0c0-2e37-4075-afc4-fd4ef8a4b667","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:11:47.7673565-05:00","Properties":{}}
+DEBUG 2016-11-14 11:11:47,771 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 4ddaf0c0-2e37-4075-afc4-fd4ef8a4b667
+WARN  2016-11-14 11:12:27,304 [26   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:12:27,331 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 4ddaf0c0-2e37-4075-afc4-fd4ef8a4b667
+WARN  2016-11-14 11:12:27,455 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:12:28,000 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"a0aab1b9-e742-45c1-a31c-1390a60df301","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:12:27.9992784-05:00","Properties":{}}
+DEBUG 2016-11-14 11:12:28,004 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: a0aab1b9-e742-45c1-a31c-1390a60df301
+DEBUG 2016-11-14 11:12:29,377 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: a0aab1b9-e742-45c1-a31c-1390a60df301
+DEBUG 2016-11-14 11:12:29,858 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"516da1e2-44bb-4325-ab66-0e7e02fa6837","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:12:29.8582751-05:00","Properties":{}}
+DEBUG 2016-11-14 11:12:29,861 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 516da1e2-44bb-4325-ab66-0e7e02fa6837
+DEBUG 2016-11-14 11:12:30,063 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 516da1e2-44bb-4325-ab66-0e7e02fa6837
+DEBUG 2016-11-14 11:12:30,542 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"eccd3e8a-d650-450c-be0b-1a26f7195992","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:12:30.542605-05:00","Properties":{}}
+DEBUG 2016-11-14 11:12:30,546 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: eccd3e8a-d650-450c-be0b-1a26f7195992
+DEBUG 2016-11-14 11:12:30,953 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: eccd3e8a-d650-450c-be0b-1a26f7195992
+DEBUG 2016-11-14 11:12:31,627 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e99918d8-1d95-4c8a-bd28-86ba333dcaec","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:12:31.6278967-05:00","Properties":{}}
+DEBUG 2016-11-14 11:12:31,631 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e99918d8-1d95-4c8a-bd28-86ba333dcaec
+DEBUG 2016-11-14 11:12:33,627 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e99918d8-1d95-4c8a-bd28-86ba333dcaec
+DEBUG 2016-11-14 11:12:34,120 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"cf3f0db9-a8b9-4516-a470-5ce13251f5c4","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:12:34.1203694-05:00","Properties":{}}
+DEBUG 2016-11-14 11:12:34,123 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: cf3f0db9-a8b9-4516-a470-5ce13251f5c4
+WARN  2016-11-14 11:12:34,715 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:12:34,752 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: cf3f0db9-a8b9-4516-a470-5ce13251f5c4
+WARN  2016-11-14 11:12:34,877 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:12:35,147 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"68a3647e-1c83-404c-950f-436a57f97289","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:12:35.1469327-05:00","Properties":{}}
+DEBUG 2016-11-14 11:12:35,158 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 68a3647e-1c83-404c-950f-436a57f97289
+DEBUG 2016-11-14 11:12:35,472 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 68a3647e-1c83-404c-950f-436a57f97289
+DEBUG 2016-11-14 11:12:35,964 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e5f159b1-2eb0-4bd4-8f49-29663160288c","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:12:35.9640171-05:00","Properties":{}}
+DEBUG 2016-11-14 11:12:35,967 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e5f159b1-2eb0-4bd4-8f49-29663160288c
+DEBUG 2016-11-14 11:12:38,343 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e5f159b1-2eb0-4bd4-8f49-29663160288c
+DEBUG 2016-11-14 11:12:38,751 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"fa7b44c3-6508-4403-b8db-45572b354171","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:12:38.7510823-05:00","Properties":{}}
+DEBUG 2016-11-14 11:12:38,780 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: fa7b44c3-6508-4403-b8db-45572b354171
+DEBUG 2016-11-14 11:12:39,397 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: fa7b44c3-6508-4403-b8db-45572b354171
+DEBUG 2016-11-14 11:12:39,915 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"63ccac07-5367-4de4-a9ad-d4ba7eb8cd57","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:12:39.9158492-05:00","Properties":{}}
+DEBUG 2016-11-14 11:12:39,918 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 63ccac07-5367-4de4-a9ad-d4ba7eb8cd57
+WARN  2016-11-14 11:12:40,748 [21   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:12:40,774 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 63ccac07-5367-4de4-a9ad-d4ba7eb8cd57
+WARN  2016-11-14 11:12:40,911 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:12:41,158 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"fe2cb607-84d5-4243-ba53-78ea2991ed04","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:12:41.1572698-05:00","Properties":{}}
+DEBUG 2016-11-14 11:12:41,164 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: fe2cb607-84d5-4243-ba53-78ea2991ed04
+DEBUG 2016-11-14 11:12:42,981 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: fe2cb607-84d5-4243-ba53-78ea2991ed04
+DEBUG 2016-11-14 11:12:43,435 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8208177e-9a9e-4223-a73b-80a3499c1dc9","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:12:43.4359965-05:00","Properties":{}}
+DEBUG 2016-11-14 11:12:43,455 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8208177e-9a9e-4223-a73b-80a3499c1dc9
+DEBUG 2016-11-14 11:12:45,818 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8208177e-9a9e-4223-a73b-80a3499c1dc9
+DEBUG 2016-11-14 11:12:46,231 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"a8b7b2cd-0d03-4db6-9cef-4888bd46a69a","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:12:46.2318979-05:00","Properties":{}}
+DEBUG 2016-11-14 11:12:46,244 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: a8b7b2cd-0d03-4db6-9cef-4888bd46a69a
+WARN  2016-11-14 11:13:03,202 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:13:03,236 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: a8b7b2cd-0d03-4db6-9cef-4888bd46a69a
+WARN  2016-11-14 11:13:03,489 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:13:03,886 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b32ebe20-428a-440b-a485-40404222615b","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:13:03.8865263-05:00","Properties":{}}
+DEBUG 2016-11-14 11:13:03,888 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b32ebe20-428a-440b-a485-40404222615b
+WARN  2016-11-14 11:13:12,047 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:13:12,097 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b32ebe20-428a-440b-a485-40404222615b
+WARN  2016-11-14 11:13:12,269 [22   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:13:12,716 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"147969eb-337c-43e9-a705-39a455f5471c","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:13:12.7154254-05:00","Properties":{}}
+DEBUG 2016-11-14 11:13:12,724 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 147969eb-337c-43e9-a705-39a455f5471c
+DEBUG 2016-11-14 11:13:13,875 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 147969eb-337c-43e9-a705-39a455f5471c
+DEBUG 2016-11-14 11:13:14,382 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ef76ef20-c431-4bdb-a41e-d80e7efda6f9","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:13:14.3821287-05:00","Properties":{}}
+DEBUG 2016-11-14 11:13:14,385 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ef76ef20-c431-4bdb-a41e-d80e7efda6f9
+WARN  2016-11-14 11:13:15,822 [21   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:13:15,849 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ef76ef20-c431-4bdb-a41e-d80e7efda6f9
+WARN  2016-11-14 11:13:16,021 [26   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:13:16,372 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"77b9e6a3-ac29-4d46-b897-c3703367ad25","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:13:16.3726766-05:00","Properties":{}}
+DEBUG 2016-11-14 11:13:16,376 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 77b9e6a3-ac29-4d46-b897-c3703367ad25
+WARN  2016-11-14 11:13:18,980 [19   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:13:19,007 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 77b9e6a3-ac29-4d46-b897-c3703367ad25
+WARN  2016-11-14 11:13:19,166 [26   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:13:19,596 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"4a3308d4-e478-4952-a833-92f0933e0359","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:13:19.5964231-05:00","Properties":{}}
+DEBUG 2016-11-14 11:13:19,603 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 4a3308d4-e478-4952-a833-92f0933e0359
+WARN  2016-11-14 11:13:25,966 [19   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:13:25,991 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 4a3308d4-e478-4952-a833-92f0933e0359
+WARN  2016-11-14 11:13:26,140 [26   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:13:26,506 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"60a2a5c8-c28e-445a-a101-391421fa9e0f","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:13:26.5065317-05:00","Properties":{}}
+DEBUG 2016-11-14 11:13:26,509 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 60a2a5c8-c28e-445a-a101-391421fa9e0f
+WARN  2016-11-14 11:13:34,799 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:13:34,837 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 60a2a5c8-c28e-445a-a101-391421fa9e0f
+WARN  2016-11-14 11:13:35,040 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:13:35,419 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1ee25cea-b035-4e59-b003-21009d6acbe6","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:13:35.4185138-05:00","Properties":{}}
+DEBUG 2016-11-14 11:13:35,422 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1ee25cea-b035-4e59-b003-21009d6acbe6
+WARN  2016-11-14 11:15:14,359 [20   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:15:14,392 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1ee25cea-b035-4e59-b003-21009d6acbe6
+WARN  2016-11-14 11:15:14,681 [20   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:15:15,437 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"80043384-9f3e-4ac9-9a2e-f5e750b73185","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:15:15.4376576-05:00","Properties":{}}
+DEBUG 2016-11-14 11:15:15,443 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 80043384-9f3e-4ac9-9a2e-f5e750b73185
+DEBUG 2016-11-14 11:15:34,093 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 80043384-9f3e-4ac9-9a2e-f5e750b73185
+DEBUG 2016-11-14 11:15:34,824 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8b3f75fb-b017-4405-9b5b-f37df482da96","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:15:34.8241957-05:00","Properties":{}}
+DEBUG 2016-11-14 11:15:34,847 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8b3f75fb-b017-4405-9b5b-f37df482da96
+WARN  2016-11-14 11:15:36,337 [24   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:15:36,365 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8b3f75fb-b017-4405-9b5b-f37df482da96
+WARN  2016-11-14 11:15:36,537 [21   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:15:36,870 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"22bf64b4-04a0-47dc-af31-d40c597d80d6","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:15:36.8705429-05:00","Properties":{}}
+DEBUG 2016-11-14 11:15:36,874 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 22bf64b4-04a0-47dc-af31-d40c597d80d6
+DEBUG 2016-11-14 11:15:40,913 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 22bf64b4-04a0-47dc-af31-d40c597d80d6
+DEBUG 2016-11-14 11:15:41,556 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"3ef42770-95e1-48a2-b5df-8409128fb2af","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:15:41.5563753-05:00","Properties":{}}
+DEBUG 2016-11-14 11:15:41,559 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 3ef42770-95e1-48a2-b5df-8409128fb2af
+WARN  2016-11-14 11:15:43,688 [26   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:15:43,726 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 3ef42770-95e1-48a2-b5df-8409128fb2af
+WARN  2016-11-14 11:15:43,914 [26   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:15:44,268 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"212470b6-306a-42a3-9931-68698e88354f","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:15:44.268086-05:00","Properties":{}}
+DEBUG 2016-11-14 11:15:44,286 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 212470b6-306a-42a3-9931-68698e88354f
+WARN  2016-11-14 11:15:49,653 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:15:49,697 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 212470b6-306a-42a3-9931-68698e88354f
+WARN  2016-11-14 11:15:49,875 [25   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:15:50,255 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"c61e3d52-51e8-480e-a35d-a84e1c020a14","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:15:50.2557448-05:00","Properties":{}}
+DEBUG 2016-11-14 11:15:50,259 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: c61e3d52-51e8-480e-a35d-a84e1c020a14
+WARN  2016-11-14 11:15:53,755 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:15:53,781 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: c61e3d52-51e8-480e-a35d-a84e1c020a14
+WARN  2016-11-14 11:15:53,947 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:15:54,328 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ee0404a8-d3e4-46d4-8ef3-93db87d1f534","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:15:54.328375-05:00","Properties":{}}
+DEBUG 2016-11-14 11:15:54,350 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ee0404a8-d3e4-46d4-8ef3-93db87d1f534
+WARN  2016-11-14 11:16:08,071 [23   ] ECJ.Web.Controllers.Don.DonController    - Method arguments are not valid! See ValidationErrors for details.
+Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   à Abp.Runtime.Validation.Interception.MethodInvocationValidator.Validate() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Runtime\Validation\Interception\MethodInvocationValidator.cs:ligne 89
+   à Abp.Web.Mvc.Validation.AbpMvcValidationFilter.OnActionExecuting(ActionExecutingContext filterContext) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Mvc\Web\Mvc\Validation\AbpMvcValidationFilter.cs:ligne 35
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__31(AsyncCallback asyncCallback, Object asyncState)
+   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallBeginDelegate(AsyncCallback callback, Object callbackState)
+   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   à System.Web.Mvc.Async.AsyncResultWrapper.Begin[TResult](AsyncCallback callback, Object state, BeginInvokeDelegate beginDelegate, EndInvokeDelegate`1 endDelegate, Object tag, Int32 timeout)
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters, AsyncCallback callback, Object state)
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+WARN  2016-11-14 11:16:08,074 [23   ] ECJ.Web.Controllers.Don.DonController    - There are 1 validation errors:
+WARN  2016-11-14 11:16:08,074 [23   ] ECJ.Web.Controllers.Don.DonController    - The value '1313131313333333' is not valid for dateDon. (dateDon)
+DEBUG 2016-11-14 11:16:08,120 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ee0404a8-d3e4-46d4-8ef3-93db87d1f534
+DEBUG 2016-11-14 11:16:10,830 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b5f30a7b-ec5d-4337-a3d1-51b612549ff7","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:16:10.8301087-05:00","Properties":{}}
+DEBUG 2016-11-14 11:16:10,834 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b5f30a7b-ec5d-4337-a3d1-51b612549ff7
+WARN  2016-11-14 11:16:38,553 [14   ] ECJ.Web.Controllers.Don.DonController    - Method arguments are not valid! See ValidationErrors for details.
+Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   à Abp.Runtime.Validation.Interception.MethodInvocationValidator.Validate() dans D:\Halil\GitHub\aspnetboilerplate\src\Abp\Runtime\Validation\Interception\MethodInvocationValidator.cs:ligne 89
+   à Abp.Web.Mvc.Validation.AbpMvcValidationFilter.OnActionExecuting(ActionExecutingContext filterContext) dans D:\Halil\GitHub\aspnetboilerplate\src\Abp.Web.Mvc\Web\Mvc\Validation\AbpMvcValidationFilter.cs:ligne 35
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__31(AsyncCallback asyncCallback, Object asyncState)
+   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallBeginDelegate(AsyncCallback callback, Object callbackState)
+   à System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   à System.Web.Mvc.Async.AsyncResultWrapper.Begin[TResult](AsyncCallback callback, Object state, BeginInvokeDelegate beginDelegate, EndInvokeDelegate`1 endDelegate, Object tag, Int32 timeout)
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters, AsyncCallback callback, Object state)
+   à System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+WARN  2016-11-14 11:16:38,553 [14   ] ECJ.Web.Controllers.Don.DonController    - There are 1 validation errors:
+WARN  2016-11-14 11:16:38,554 [14   ] ECJ.Web.Controllers.Don.DonController    - The value '1313131313333333' is not valid for dateDon. (dateDon)
+DEBUG 2016-11-14 11:16:38,581 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b5f30a7b-ec5d-4337-a3d1-51b612549ff7
+DEBUG 2016-11-14 11:16:41,709 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e4711b3c-0120-44ec-819d-312ddbeea467","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:16:41.709521-05:00","Properties":{}}
+DEBUG 2016-11-14 11:16:41,734 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e4711b3c-0120-44ec-819d-312ddbeea467
+WARN  2016-11-14 11:16:49,633 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:16:49,660 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e4711b3c-0120-44ec-819d-312ddbeea467
+WARN  2016-11-14 11:16:49,806 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:16:50,451 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ab8aa8f2-d25a-48b9-a6b0-bb518dac0674","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:16:50.4500557-05:00","Properties":{}}
+DEBUG 2016-11-14 11:16:50,455 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ab8aa8f2-d25a-48b9-a6b0-bb518dac0674
+WARN  2016-11-14 11:16:55,081 [19   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:16:55,107 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ab8aa8f2-d25a-48b9-a6b0-bb518dac0674
+WARN  2016-11-14 11:16:55,291 [25   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:16:55,624 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b1915d25-df36-4a26-91c1-912c0fa892fb","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:16:55.6242337-05:00","Properties":{}}
+DEBUG 2016-11-14 11:16:55,629 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b1915d25-df36-4a26-91c1-912c0fa892fb
+WARN  2016-11-14 11:16:58,231 [20   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:16:58,261 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b1915d25-df36-4a26-91c1-912c0fa892fb
+WARN  2016-11-14 11:16:58,427 [24   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:16:58,875 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"393ee37a-eb90-4be4-90b1-e68a2d6a2d62","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:16:58.8756231-05:00","Properties":{}}
+DEBUG 2016-11-14 11:16:58,879 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 393ee37a-eb90-4be4-90b1-e68a2d6a2d62
+WARN  2016-11-14 11:17:01,706 [6    ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:17:01,734 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 393ee37a-eb90-4be4-90b1-e68a2d6a2d62
+WARN  2016-11-14 11:17:01,900 [14   ] Abp.Logging.LogHelper                    - Can not find 'Footer' in localization source 'ECJ'!
+DEBUG 2016-11-14 11:17:02,278 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"894e76f2-87eb-4bf3-b03e-2d373a4c84ab","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-11-14T11:17:02.2776913-05:00","Properties":{}}
+DEBUG 2016-11-14 11:17:02,286 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 894e76f2-87eb-4bf3-b03e-2d373a4c84ab
