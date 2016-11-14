@@ -31,7 +31,8 @@ namespace ECJ.Web.Controllers.Commanditaire
         {
             var recherche = Request.QueryString["recherche"];
             var Commanditaire = provider.CommanditaireList();
-            var don = provider.DonList();
+            var don = provider.DonList()
+
             var d = new List<tblDon>();
             var list = new List<tblCommanditaire>();
             var montant = 0;
@@ -61,7 +62,7 @@ namespace ECJ.Web.Controllers.Commanditaire
                         bool trouve = false;
                         foreach (var Do in don)
                         {
-                            if (D.noDon != Do.noDon && D.noCommanditaire == Do.noCommanditaire && Do.dateSupprime == null && D.noDon < Do.noDon)
+                            if (D.noDon != Do.noDon && D.noCommanditaire == Do.noCommanditaire && Do.dateSupprime == null && D.noDon > Do.noDon)
                             {
                                 trouve = true;
                                 montant += (int)Do.montant;
