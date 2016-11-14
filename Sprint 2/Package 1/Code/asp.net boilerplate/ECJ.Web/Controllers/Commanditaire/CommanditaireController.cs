@@ -31,12 +31,7 @@ namespace ECJ.Web.Controllers.Commanditaire
         {
             var recherche = Request.QueryString["recherche"];
             var Commanditaire = provider.CommanditaireList();
-            var don = provider.DonList()
-
-            var d = new List<tblDon>();
-            var list = new List<tblCommanditaire>();
-            var montant = 0;
-            var tblDon = new tblDon();
+            var don = provider.DonList();
 
             if (recherche != null)
             {
@@ -51,54 +46,52 @@ namespace ECJ.Web.Controllers.Commanditaire
                 Commanditaire = Commanditaire.Where(
                 a => a.nomCommanditaire.ToString().ToUpper().Contains(recherche) ||
                 a.courrielContact.ToString().ToUpper().Contains(recherche) ||
-                a.nomContact.ToString().ToUpper().Contains(recherche) ||
-                a.numTel.ToString().ToUpper().Contains(recherche)).ToList();
+                a.nomContact.ToString().ToUpper().Contains(recherche)).ToList();
                 
-                foreach (var D in don)
+                List<tblDon> listDon = new List<tblDon>();
+                tblDon tbldon;
+
+                for (int i = 0; i < don.Count; i++)
                 {
-                    if (D.dateSupprime == null)
+                    tbldon = new tblDon();
+                    if (listDon.Count == 0 && don[i].dateSupprime == null)
                     {
-                        montant = Convert.ToInt32(D.montant);
-                        bool trouve = false;
-                        foreach (var Do in don)
+                        tbldon.montant = (int)don[i].montant;
+                        tbldon.noCommanditaire = don[i].noCommanditaire;
+                        listDon.Add(tbldon);
+                    }
+                    else
+                    {
+                        if(don[i].dateSupprime == null)
                         {
-                            if (D.noDon != Do.noDon && D.noCommanditaire == Do.noCommanditaire && Do.dateSupprime == null && D.noDon > Do.noDon)
+                            bool trouve = false;
+                            foreach(var j in listDon)
                             {
-                                trouve = true;
-                                montant += (int)Do.montant;
+                                if (j.noCommanditaire == don[i].noCommanditaire)
+                                {
+                                    trouve = true;
+                                    j.montant += don[i].montant;
+                                }
+                         
+                            }
+                            if(trouve == false)
+                            {
+                                tbldon.montant = (int)don[i].montant;
+                                tbldon.noCommanditaire = don[i].noCommanditaire;
+                                listDon.Add(tbldon);
                             }
                         }
 
-                        if(trouve)
-                        {
-                            tblDon = D;
-                            tblDon.montant = montant;
-                            d.Add(D);
-                        }
                     }
-
-                    montant = 0;
                 }
-                don.Clear();
-                list.Clear();
 
-                d = d.Where(a => a.montant.ToString().ToUpper().Contains(recherche) && a.dateSupprime == null).ToList();
-                foreach(var D in d)
+                listDon = listDon.Where(a => a.montant.ToString().ToUpper().Contains(recherche)).ToList();
+
+                foreach (var i in listDon)
                 {
-                    list.Add(provider.returnCommanditaire((int)D.noCommanditaire));
-                }
-                
-                foreach(var Comm in list)
-                {
-                    Commanditaire.Add(Comm);
+                    Commanditaire.Add(provider.returnCommanditaire((int)i.noCommanditaire));
                 }
             }
-
-            foreach(var comm in Commanditaire)
-            {
-                
-            }
-
             return View(Commanditaire);
         }
 

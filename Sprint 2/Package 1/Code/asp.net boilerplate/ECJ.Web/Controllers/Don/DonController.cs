@@ -69,7 +69,7 @@ namespace ECJ.Web.Controllers.Don
 
             provider.AjouterDon(tblDon);
 
-            // CREATION DE MAIL NON-FONCTIONNEL
+            /* CREATION DE MAIL NON-FONCTIONNEL
             string to = tblDon.tblCommanditaire.courrielContact.ToString();
             //string to = Courriel.ToString();
             string from = "papepa10@hotmail.com";
@@ -90,7 +90,7 @@ namespace ECJ.Web.Controllers.Don
                 Console.WriteLine("Exception caught in CreateMessage(): {0}",
                             ex.ToString());
             }
-
+            */
             return RedirectToAction("../Commanditaire/Index");
         }
 
