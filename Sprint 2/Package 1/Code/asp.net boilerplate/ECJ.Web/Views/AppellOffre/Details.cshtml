@@ -29,27 +29,27 @@
     <div class="form-group">
         <label>Date d'envoi</label>
         <div class="well well-sm">
-            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", Model.dateEnvoi.Date)
+            @String.Format("{0:yyyy/MM/dd}", Model.dateEnvoi.Date)
         </div>
     </div>
 
     <div class="form-group">
         <label>Heure d'envoi</label>
         <div class="well well-sm">
-            @Model.dateEnvoi.Hour:@Model.dateEnvoi.Minute:@Model.dateEnvoi.Second
+            @Model.dateEnvoi.Hour : @Model.dateEnvoi.Minute : @Model.dateEnvoi.Second
         </div>
     </div>
 
     <div class="form-group">
         <label>Date requise</label>
         <div class="well well-sm">
-            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", Model.dateRequis.Date)
+            @String.Format("{0:yyyy/MM/dd}", Model.dateRequis.Date)
         </div>
     </div>
     <div class="form-group">
         <label>Heure d'envoi</label>
         <div class="well well-sm">
-            @Model.dateRequis.Hour:@Model.dateRequis.Minute:@Model.dateRequis.Second
+            @Model.dateRequis.Hour : @Model.dateRequis.Minute : @Model.dateRequis.Second
         </div>
     </div>
 
@@ -127,7 +127,7 @@
         </table>
     </div>
     <br />
-    <a href="~/AppellOffre/Index" class="btn btn-default pull-right " data-dismiss="modal">Retour</a>
+    <a href="/AppellOffre/Index" class="btn btn-default pull-right " data-dismiss="modal">Retour au sommaire</a>
 
 </form>
 

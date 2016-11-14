@@ -110,20 +110,36 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
-
+        private DirectoryInfo CreateDirectory(string path)
+        {
+            if (Directory.Exists(path))
+            {
+                return null;
+            }
+            else
+            {
+                DirectoryInfo dr = Directory.CreateDirectory(path);
+                return dr;
+            }
+        }
         private void CreateSoumissionXml(tblSoumission soumi,tblAppelOffre appelOffre)
         {
             CptSoumi++;
             XmlDocument doc = new XmlDocument();
             XmlNode Racine = doc.CreateNode(XmlNodeType.Element, "SoumissionAgence", "http://tempuri.org/SoumissionAgence.xsd");
+            string pathAlle = "//deptinfo420/P2016_Equipe2/Soumission_alle";
+            string pathXml = "";
             doc.AppendChild(Racine);
             Racine.AppendChild(CrerUneSoumissionXml(doc, soumi, appelOffre));
             try
             {
-                
-                string pathXml = "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission_" + appelOffre.nom+"_"+soumi.tblAgencePublicite.nom+".xml";
+                if(CreateDirectory(pathAlle)!=null)
+                {
+                   pathXml = CreateDirectory(pathAlle).FullName + "/soumission_" + appelOffre.nom + "_" + soumi.tblAgencePublicite.nom + ".xml";
+                }
+                pathXml= "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission_" + appelOffre.nom + "_" + soumi.tblAgencePublicite.nom + ".xml";
                 doc.Save(pathXml);
-                string pathXsd = "//deptinfo420/P2016_Equipe2/Soumission_alle/SoumissionAgence.xsd";
+                string pathXsd = pathAlle+"/SoumissionAgence.xsd";
                 validerXML(pathXml, doc, pathXsd);
   
 
@@ -147,11 +163,13 @@ namespace ECJ.Web.Controllers.AppelOffre
         {
             
             XmlDocument doc = new XmlDocument();
-            string pathXsd = "//deptinfo420/P2016_Equipe2/Soumission_alle/SoumissionAgence.xsd";
+            string pathXsd = "//deptinfo420/P2016_Equipe2/SoumissionAgence.xsd";
+            string pathRetour = "//deptinfo420/P2016_Equipe2/Soumission_retour";
             //On prcoure tous les xmls contenus dans le dossier
             try
             {
-                var files = from file in Directory.EnumerateFiles("//deptinfo420/P2016_Equipe2/Soumission_retour", "*.xml", SearchOption.AllDirectories)
+                
+                var files = from file in Directory.EnumerateFiles(CreateDirectory(pathRetour).FullName, "*.xml", SearchOption.AllDirectories)
                             select new
                             {
                                 file
@@ -196,10 +214,11 @@ namespace ECJ.Web.Controllers.AppelOffre
         private void DeleteXml(string nameXml)
         {
             XmlDocument doc = new XmlDocument();
+            string pathAlle = "//deptinfo420/P2016_Equipe2/Soumission_alle";
             //On prcoure tous les xmls contenus dans le dossier
             try
             {
-                var files = from file in Directory.EnumerateFiles("//deptinfo420/P2016_Equipe2/Soumission_alle", "*.xml", SearchOption.AllDirectories)
+                var files = from file in Directory.EnumerateFiles(CreateDirectory(pathAlle?? "//deptinfo420/P2016_Equipe2/Soumission_alle").FullName+"/Soumission_alle", "*.xml", SearchOption.AllDirectories)
                             select new
                             {
                                 file
@@ -337,9 +356,13 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         private DateTime AffecterTemps(DateTime date, string nameHour, string nameMin, string nameSecond)
         {
+            int second = 0;
             int hour = Convert.ToInt32(Request.Form.GetValues(nameHour)[0]);
             int min = Convert.ToInt32(Request.Form.GetValues(nameMin)[0]);
-            int second=Convert.ToInt32(Request.Form.GetValues(nameSecond)[0]);
+            if(Request.Form.GetValues(nameSecond)[0]!="")
+            {
+                second = Convert.ToInt32(Request.Form.GetValues(nameSecond)[0]);
+            }
             DateTime d = new DateTime(date.Year,date.Month,date.Day,hour,min,second);
            return d;
         }
@@ -394,16 +417,12 @@ namespace ECJ.Web.Controllers.AppelOffre
         // GET: AppellOffre/Edit/5
         public ActionResult Edit(int? id)
         {
-            int no = 0;
             List<tblAgencePublicite> listAgencePub = provider.ReturnAgence(id);
-            int[] noAgence = new int[listAgencePub.Count];
-            foreach (var agence in listAgencePub)
-            {
-                noAgence[no] = agence.noAgencePub;
-                no++;
-            }
+            ViewBag.AllAgence = provider.ToutAgencePublicite();
+            ViewBag.AgenceParAppel = provider.ReturnAgence(id);
+            int[] noAgence = listAgencePub.Select(a => a.noAgencePub).ToArray();
             if (id == null)
-            {
+            { 
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             tblAppelOffre tblAppelOffre = provider.returnAppel(id);
@@ -414,7 +433,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             ViewBag.noEvenement = new SelectList(provider.ToutEvenement(), "noEvenement", "nom", tblAppelOffre.noEvenement);
             ViewBag.noStatut = new SelectList(provider.ToutStatutAppel(), "noStatut", "nom", tblAppelOffre.noStatut);
             ViewBag.noMedia = new SelectList(provider.ToutMedia(), "noMedia", "nom", tblAppelOffre.noMedia);
-            ViewBag.noAgencePub = new MultiSelectList(provider.ToutAgencePublicite(), "noAgencePub", "nom", noAgence);
+            ViewBag.noAgencePub = new MultiSelectList(provider.ToutAgencePublicite(), "noAgencePub", "nom", listAgencePub.Select(a => a.noAgencePub));
             return View(tblAppelOffre);
         }
 

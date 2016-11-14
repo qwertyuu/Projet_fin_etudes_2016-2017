@@ -33,7 +33,7 @@
         <div class="form-group">
             <label>Date d'envoi</label>
             <div>
-                @Html.EditorFor(model => model.dateEnvoi, new { htmlAttributes = new { @class = "form-control dp", required = "required" } })
+                @Html.TextBoxFor(model => model.dateEnvoi,new { @class = "form-control dp", required = "required", @Value =Model.dateEnvoi.ToString("yyyy/MM/dd") })
                 @Html.ValidationMessageFor(model => model.dateEnvoi, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -41,13 +41,13 @@
         <label>Heure d'envoi</label>
         <div class="form-group">
             <div class="col-md-4">
-                <input type="number" name="heureEnvoi" required min="0" max="24" placeholder="Heure" maxlength="2" class="form-control"  value="@Model.dateRequis.Hour" />
+                <input type="number" name="heureEnvoi" required min="0" max="24" placeholder="Heure" maxlength="2" class="form-control"  value="@Model.dateEnvoi.Hour" />
             </div>
             <div class="col-md-4">
-                <input type="number" name="minEnvoi" required min="0" max="60" placeholder="Minute" maxlength="2" class="form-control"  value="@Model.dateRequis.Minute" />
+                <input type="number" name="minEnvoi" required min="0" max="60" placeholder="Minute" maxlength="2" class="form-control"  value="@Model.dateEnvoi.Minute" />
             </div>
             <div class="col-md-4">
-                <input type="number" name="secondeEnvoi" min="0" max="60" placeholder="Seconde" maxlength="2" class="form-control" value="@Model.dateRequis.Second"/>
+                <input type="number" name="secondeEnvoi" min="0" max="60" placeholder="Seconde" maxlength="2" class="form-control" value="@Model.dateEnvoi.Second"/>
 
             </div>
         </div><br /><br />
@@ -55,7 +55,7 @@
         <div class="form-group">
             <label>Date requise</label>
             <div>
-                @Html.EditorFor(model => model.dateRequis, new { htmlAttributes = new { @class = "form-control dp", required = "required" } })
+                @Html.TextBoxFor(model => model.dateRequis,new { @class = "form-control dp", required = "required", @Value = Model.dateRequis.ToString("yyyy/MM/dd") })
                 @Html.ValidationMessageFor(model => model.dateRequis, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -66,10 +66,10 @@
                 <input type="number" name="heureRequise" required min="0" max="24" placeholder="Heure" maxlength="2" class="form-control"  value="@Model.dateRequis.Hour"/>
             </div>
             <div class="col-md-4">
-                <input type="number" name="minRequise" required min="0" max="60" placeholder="Minute" maxlength="2" class="form-control" value="@Model.dateRequis.Minute" />
+                <input type="number" name="minRequise" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control" value="@Model.dateRequis.Minute" />
             </div>
             <div class="col-md-4">
-                <input type="number" name="secondeRequise" min="0" max="60" placeholder="Seconde" maxlength="2" class="form-control" value="@Model.dateRequis.Second"/>
+                <input type="number" name="secondeRequise" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control" value="@Model.dateRequis.Second"/>
             </div>
         </div><br /><br />
         <div class="form-group">
@@ -82,7 +82,22 @@
             <div class="form-group">
                 <label>Agence de publicité</label>
                 <div>
-                    @Html.ListBox("noAgencePub", (MultiSelectList)ViewBag.noAgencePub, new { @class = "form-control", @id = "agencePub" })
+                    <select multiple class="form-control">
+                  @foreach (var item in ViewBag.AllAgence)
+                  {
+                      foreach (var AO in ViewBag.AgenceParAppel)
+                      {
+                          if (item.noAgencePub == AO.noAgencePub)
+                          {
+                            <option selected>@AO.nom</option>
+                              break;
+                          }
+                         <option>@AO.nom</option>
+                      }
+
+
+                  }
+                  </select>
                 </div>
             </div>
 
