@@ -69,17 +69,23 @@ namespace ECJ.Web.Controllers.Don
 
             provider.AjouterDon(tblDon);
 
-            /* CREATION DE MAIL NON-FONCTIONNEL
+            // CREATION DE MAIL NON-FONCTIONNEL
             string to = tblDon.tblCommanditaire.courrielContact.ToString();
             //string to = Courriel.ToString();
-            string from = "papepa10@hotmail.com";
+            string from = "PagPi1433443@etu.cegepjonquiere.ca";
             MailMessage message = new MailMessage(from, to);
-            message.Subject = "Don à Évènement Cegep Jonquière";
-            message.Body = @"Bonjours, /n Merci de votre don de : " + tblDon.montant + ". /n De la part de l'équipe d'ECJ";
-            SmtpClient client = new SmtpClient("eas.outlook.com", 443);
+            SmtpClient client = new SmtpClient("smtp.office365.com");
+            client.Port = 587;
             client.EnableSsl = true;
-            client.Credentials = new System.Net.NetworkCredential("PagPi1433443@etu.cegepjonquiere.ca", "PAPageau04");
-            client.UseDefaultCredentials = true;
+            client.UseDefaultCredentials = false;
+            NetworkCredential cred = new System.Net.NetworkCredential(from, "PAPageau04");
+            client.Credentials = cred;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+            message.Subject = "Merci de votre Commandite";
+            message.Body = "Merci pour votre don de " + tblDon.montant + " $ effectué le " + tblDon.dateDon + ".";
+
+            client.Send(message);
 
             try
             {
@@ -90,7 +96,7 @@ namespace ECJ.Web.Controllers.Don
                 Console.WriteLine("Exception caught in CreateMessage(): {0}",
                             ex.ToString());
             }
-            */
+
             return RedirectToAction("../Commanditaire/Index");
         }
 
