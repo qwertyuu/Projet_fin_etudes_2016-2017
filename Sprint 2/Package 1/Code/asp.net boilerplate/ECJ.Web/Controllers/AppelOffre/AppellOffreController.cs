@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Xml.Linq;
 using Abp.Web.Mvc.Authorization;
+using System.Globalization;
 
 namespace ECJ.Web.Controllers.AppelOffre
 {
@@ -202,7 +203,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                         if (soumi != null)
                         {
                             soumi.noSoumissionAgence = soumission["noSoumissionAgence"].InnerText;
-                            soumi.prix = Convert.ToDecimal(soumission["Prix"].InnerText);
+                            soumi.prix = Convert.ToDecimal(soumission["Prix"].InnerText,CultureInfo.InvariantCulture);
                             //soumi.noAgencePub = Convert.ToInt32(soumission["noAgencePub"].InnerText);
                             //soumi.noAppelOffre = Convert.ToInt32(soumission["noAppelOffre"].InnerText);
                             //soumi.statut = Convert.ToByte(soumission["Statut"].InnerText);
@@ -389,14 +390,32 @@ namespace ECJ.Web.Controllers.AppelOffre
             DateTime d = new DateTime(date.Year,date.Month,date.Day,hour,min,second);
            return d;
         }
+
+        private void deleteSoumission(string[] NoAgence,tblAppelOffre appel)
+        {
+            foreach (string no in NoAgence)
+            {
+                foreach (tblSoumission s in provider.RetunSoumission(appel.noAppelOffre))
+                {
+                    if (s.noAgencePub != int.Parse(no))
+                    {
+                        s.dateSupprime = DateTime.Now;
+                        string filename = "//deptinfo420/P2016_Equipe2/Soumission_alle\\soumission_" + appel.nom + "_" + s.tblAgencePublicite.nom + ".xml";
+                        DeleteXml(filename);
+
+                    }
+                }
+            }
+        }
         // POST: AppellOffre/Create
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre, int[] noAgencePub)
+        public ActionResult Create([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre)
         {
             List<int> idSelect = new List<int>();
+            string[] NoAgence = Request.Form.GetValues("noAgencePub");
             ViewBag.noAgencePub = new MultiSelectList(provider.ToutAgencePublicite(), "noAgencePub", "nom",idSelect);
             
             if (ModelState.IsValid)
@@ -421,9 +440,9 @@ namespace ECJ.Web.Controllers.AppelOffre
                 provider.Save();
 
                 //On créer les soumissions réliées à l'appel d'offre.
-                foreach (int no in noAgencePub)
+                foreach (string no in NoAgence)
                 {
-                    tblSoumission souimi= CreateSoumission(no,tblAppelOffre.noAppelOffre);
+                    tblSoumission souimi= CreateSoumission(int.Parse(no),tblAppelOffre.noAppelOffre);
                     CreateSoumissionXml(souimi, tblAppelOffre);
                 }
                // conn.Close(); //On ferme la connection.
@@ -465,16 +484,26 @@ namespace ECJ.Web.Controllers.AppelOffre
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre, int[] noAgencePub)
+        public ActionResult Edit([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre)
         {
+            string[] NoAgence = Request.Form.GetValues("noAgencePub"); 
             if (ModelState.IsValid)
             {
-                //var statut = provider.ReturnStatAppel(tblAppelOffre);
+                var statut = provider.ReturnStatAppel(tblAppelOffre);
                 var evenement = provider.ReturnEvenAppel(tblAppelOffre);
                 var media = provider.ReturnMediaAppel(tblAppelOffre);
 
                 if (Request.Form.Get("save") == "Save")
                 {
+                    if(provider.RetunSoumission(tblAppelOffre.noAppelOffre).Count!=0)
+                    {
+                        foreach (tblSoumission s in provider.RetunSoumission(tblAppelOffre.noAppelOffre))
+                        {
+                            s.dateSupprime = DateTime.Now;
+                            string filename = "//deptinfo420/P2016_Equipe2/Soumission_alle\\soumission_" + tblAppelOffre.nom + "_" + s.tblAgencePublicite.nom + ".xml";
+                            DeleteXml(filename);
+                        }
+                    }
                     tblAppelOffre.noStatut = provider.ReturnNoStatut("En Création");
                     tblAppelOffre.dateEnvoi = AffecterTemps(tblAppelOffre.dateEnvoi, "heureEnvoi", "minEnvoi", "secondeEnvoi");
                     tblAppelOffre.dateRequis = AffecterTemps(tblAppelOffre.dateRequis, "heureRequise", "minRequise", "secondeRequise");
@@ -488,24 +517,11 @@ namespace ECJ.Web.Controllers.AppelOffre
                 provider.UpdateAppelOffre(tblAppelOffre);
 
                 //On supprime les soumissions qui ne sont plus ratachées à l'appel d'offre.
-                foreach(int no in noAgencePub)
-                {
-                    foreach (tblSoumission s in provider.RetunSoumission(tblAppelOffre.noAppelOffre))
-                    {
-                        if(s.noAgencePub!=no)
-                        {
-                            s.dateSupprime = DateTime.Now;
-                            string filename = "//deptinfo420/P2016_Equipe2/Soumission_alle\\soumission_" + tblAppelOffre.nom+"_"+s.tblAgencePublicite.nom+".xml";
-                            DeleteXml(filename);
-
-                        }
-                    }
-                }
-  
+                deleteSoumission(NoAgence,tblAppelOffre); 
                 //On créer les soumissions réliées à l'appel d'offre.
-                foreach (int no in noAgencePub)
+                foreach (string no in NoAgence)
                 {                  
-                   tblSoumission soumi= CreateSoumission(no, tblAppelOffre.noAppelOffre);
+                   tblSoumission soumi= CreateSoumission(int.Parse(no), tblAppelOffre.noAppelOffre);
                     CreateSoumissionXml(soumi, tblAppelOffre);
                 }
                 return RedirectToAction("Index");

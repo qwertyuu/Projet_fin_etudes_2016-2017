@@ -41,7 +41,6 @@
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomStatut" Width="1.5" PointX="13.75" PointY="2.5" />
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomCommanditaire" Width="1.5" PointX="13.75" PointY="5.5" />
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomEvenement" Width="1.5" PointX="13.75" PointY="9.5" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAppelOffre" Width="1.5" PointX="7.75" PointY="16.5" />
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomSoumission" Width="1.5" PointX="14.75" PointY="12.5" />
         <AssociationConnector Association="PE2_OfficielModel.AGE_ADR_FK" />
         <AssociationConnector Association="PE2_OfficielModel.DIF_ADR_FK" />
@@ -119,6 +118,7 @@
         <AssociationConnector Association="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK" />
         <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR" />
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomSalle" Width="1.5" PointX="7.375" PointY="20.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAppelOffre" Width="1.5" PointX="7.375" PointY="16.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
