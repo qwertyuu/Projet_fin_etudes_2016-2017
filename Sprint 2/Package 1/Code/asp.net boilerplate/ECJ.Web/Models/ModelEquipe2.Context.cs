@@ -60,6 +60,7 @@ namespace ECJ.Web.Models
         public virtual DbSet<vueSomStatut> vueSomStatut { get; set; }
         public virtual DbSet<vueSomCommanditaire> vueSomCommanditaire { get; set; }
         public virtual DbSet<vueSomEvenement> vueSomEvenement { get; set; }
+        public virtual DbSet<vueSomAppelOffre> vueSomAppelOffre { get; set; }
         public virtual DbSet<vueSomSoumission> vueSomSoumission { get; set; }
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<AbpAuditLogs> AbpAuditLogs { get; set; }
@@ -85,5 +86,5 @@ namespace ECJ.Web.Models
         public virtual DbSet<AbpUsers> AbpUsers { get; set; }
         public virtual DbSet<tblCalculateur> tblCalculateur { get; set; }
         public virtual DbSet<vueSomSalle> vueSomSalle { get; set; }
-        public virtual DbSet<vueSomAppelOffre> vueSomAppelOffre { get; set; }    }
+    }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="PE2_OfficielModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="PE2_OfficielModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -1663,121 +1663,145 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySet Name="tblSoumission" EntityType="Self.tblSoumission" Schema="S_publicite" store:Type="Tables" />
           <EntitySet Name="tblStatutAppelOffre" EntityType="Self.tblStatutAppelOffre" Schema="S_publicite" store:Type="Tables" />
           <EntitySet Name="vueSomAgence" EntityType="Self.vueSomAgence" store:Type="Views" store:Schema="S_Contrat">
-            <DefiningQuery>SELECT 
-    [vueSomAgence].[noAgence] AS [noAgence], 
-    [vueSomAgence].[nom] AS [nom], 
-    [vueSomAgence].[ville] AS [ville], 
-    [vueSomAgence].[telBureau] AS [telBureau], 
-    [vueSomAgence].[telCellulaire] AS [telCellulaire]
-    FROM [S_Contrat].[vueSomAgence] AS [vueSomAgence]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [vueSomAgence].[noAgence] AS [noAgence],
+              [vueSomAgence].[nom] AS [nom],
+              [vueSomAgence].[ville] AS [ville],
+              [vueSomAgence].[telBureau] AS [telBureau],
+              [vueSomAgence].[telCellulaire] AS [telCellulaire]
+              FROM [S_Contrat].[vueSomAgence] AS [vueSomAgence]
+            </DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomArtiste" EntityType="Self.vueSomArtiste" store:Type="Views" store:Schema="S_Contrat">
-            <DefiningQuery>SELECT 
-    [vueSomArtiste].[noArtiste] AS [noArtiste], 
-    [vueSomArtiste].[nomAriste] AS [nomAriste], 
-    [vueSomArtiste].[nomCat] AS [nomCat]
-    FROM [S_Contrat].[vueSomArtiste] AS [vueSomArtiste]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [vueSomArtiste].[noArtiste] AS [noArtiste],
+              [vueSomArtiste].[nomAriste] AS [nomAriste],
+              [vueSomArtiste].[nomCat] AS [nomCat]
+              FROM [S_Contrat].[vueSomArtiste] AS [vueSomArtiste]
+            </DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomCatArtiste" EntityType="Self.vueSomCatArtiste" store:Type="Views" store:Schema="S_Contrat">
-            <DefiningQuery>SELECT 
-    [vueSomCatArtiste].[noCategorie] AS [noCategorie], 
-    [vueSomCatArtiste].[nom] AS [nom], 
-    [vueSomCatArtiste].[description] AS [description]
-    FROM [S_Contrat].[vueSomCatArtiste] AS [vueSomCatArtiste]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [vueSomCatArtiste].[noCategorie] AS [noCategorie],
+              [vueSomCatArtiste].[nom] AS [nom],
+              [vueSomCatArtiste].[description] AS [description]
+              FROM [S_Contrat].[vueSomCatArtiste] AS [vueSomCatArtiste]
+            </DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomContrat" EntityType="Self.vueSomContrat" store:Type="Views" store:Schema="S_Contrat">
-            <DefiningQuery>SELECT 
-    [vueSomContrat].[noContrat] AS [noContrat], 
-    [vueSomContrat].[nom] AS [nom], 
-    [vueSomContrat].[nomStatut] AS [nomStatut], 
-    [vueSomContrat].[lieu] AS [lieu]
-    FROM [S_Contrat].[vueSomContrat] AS [vueSomContrat]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [vueSomContrat].[noContrat] AS [noContrat],
+              [vueSomContrat].[nom] AS [nom],
+              [vueSomContrat].[nomStatut] AS [nomStatut],
+              [vueSomContrat].[lieu] AS [lieu]
+              FROM [S_Contrat].[vueSomContrat] AS [vueSomContrat]
+            </DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomEngagement" EntityType="Self.vueSomEngagement" store:Type="Views" store:Schema="S_Contrat">
-            <DefiningQuery>SELECT 
-    [vueSomEngagement].[noEngagement] AS [noEngagement], 
-    [vueSomEngagement].[nature] AS [nature], 
-    [vueSomEngagement].[date] AS [date], 
-    [vueSomEngagement].[heure] AS [heure], 
-    [vueSomEngagement].[duree] AS [duree], 
-    [vueSomEngagement].[lieu] AS [lieu], 
-    [vueSomEngagement].[noContrat] AS [noContrat]
-    FROM [S_Contrat].[vueSomEngagement] AS [vueSomEngagement]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [vueSomEngagement].[noEngagement] AS [noEngagement],
+              [vueSomEngagement].[nature] AS [nature],
+              [vueSomEngagement].[date] AS [date],
+              [vueSomEngagement].[heure] AS [heure],
+              [vueSomEngagement].[duree] AS [duree],
+              [vueSomEngagement].[lieu] AS [lieu],
+              [vueSomEngagement].[noContrat] AS [noContrat]
+              FROM [S_Contrat].[vueSomEngagement] AS [vueSomEngagement]
+            </DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomExigence" EntityType="Self.vueSomExigence" store:Type="Views" store:Schema="S_Contrat">
-            <DefiningQuery>SELECT 
-    [vueSomExigence].[noExigence] AS [noExigence], 
-    [vueSomExigence].[nom] AS [nom], 
-    [vueSomExigence].[date] AS [date], 
-    [vueSomExigence].[montant] AS [montant], 
-    [vueSomExigence].[descriptionCourte] AS [descriptionCourte], 
-    [vueSomExigence].[noStatut] AS [noStatut], 
-    [vueSomExigence].[noContrat] AS [noContrat]
-    FROM [S_Contrat].[vueSomExigence] AS [vueSomExigence]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [vueSomExigence].[noExigence] AS [noExigence],
+              [vueSomExigence].[nom] AS [nom],
+              [vueSomExigence].[date] AS [date],
+              [vueSomExigence].[montant] AS [montant],
+              [vueSomExigence].[descriptionCourte] AS [descriptionCourte],
+              [vueSomExigence].[noStatut] AS [noStatut],
+              [vueSomExigence].[noContrat] AS [noContrat]
+              FROM [S_Contrat].[vueSomExigence] AS [vueSomExigence]
+            </DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomStatut" EntityType="Self.vueSomStatut" store:Type="Views" store:Schema="S_Contrat">
-            <DefiningQuery>SELECT 
-    [vueSomStatut].[noStatut] AS [noStatut], 
-    [vueSomStatut].[NomStatut] AS [NomStatut], 
-    [vueSomStatut].[description] AS [description], 
-    [vueSomStatut].[couleur] AS [couleur], 
-    [vueSomStatut].[dateSupprime] AS [dateSupprime]
-    FROM [S_Contrat].[vueSomStatut] AS [vueSomStatut]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [vueSomStatut].[noStatut] AS [noStatut],
+              [vueSomStatut].[NomStatut] AS [NomStatut],
+              [vueSomStatut].[description] AS [description],
+              [vueSomStatut].[couleur] AS [couleur],
+              [vueSomStatut].[dateSupprime] AS [dateSupprime]
+              FROM [S_Contrat].[vueSomStatut] AS [vueSomStatut]
+            </DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomCommanditaire" EntityType="Self.vueSomCommanditaire" store:Type="Views" store:Schema="S_evenement">
-            <DefiningQuery>SELECT 
-    [vueSomCommanditaire].[nomCommanditaire] AS [nomCommanditaire], 
-    [vueSomCommanditaire].[nomContact] AS [nomContact], 
-    [vueSomCommanditaire].[textPres] AS [textPres], 
-    [vueSomCommanditaire].[courrielContact] AS [courrielContact], 
-    [vueSomCommanditaire].[numTel] AS [numTel], 
-    [vueSomCommanditaire].[extension] AS [extension], 
-    [vueSomCommanditaire].[montantTotalDon] AS [montantTotalDon], 
-    [vueSomCommanditaire].[noCommanditaire] AS [noCommanditaire]
-    FROM [S_evenement].[vueSomCommanditaire] AS [vueSomCommanditaire]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [vueSomCommanditaire].[nomCommanditaire] AS [nomCommanditaire],
+              [vueSomCommanditaire].[nomContact] AS [nomContact],
+              [vueSomCommanditaire].[textPres] AS [textPres],
+              [vueSomCommanditaire].[courrielContact] AS [courrielContact],
+              [vueSomCommanditaire].[numTel] AS [numTel],
+              [vueSomCommanditaire].[extension] AS [extension],
+              [vueSomCommanditaire].[montantTotalDon] AS [montantTotalDon],
+              [vueSomCommanditaire].[noCommanditaire] AS [noCommanditaire]
+              FROM [S_evenement].[vueSomCommanditaire] AS [vueSomCommanditaire]
+            </DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomEvenement" EntityType="Self.vueSomEvenement" store:Type="Views" store:Schema="S_evenement">
-            <DefiningQuery>SELECT 
-    [vueSomEvenement].[nom] AS [nom], 
-    [vueSomEvenement].[dateDebut] AS [dateDebut], 
-    [vueSomEvenement].[dateFin] AS [dateFin], 
-    [vueSomEvenement].[description] AS [description], 
-    [vueSomEvenement].[noEvenement] AS [noEvenement]
-    FROM [S_evenement].[vueSomEvenement] AS [vueSomEvenement]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [vueSomEvenement].[nom] AS [nom],
+              [vueSomEvenement].[dateDebut] AS [dateDebut],
+              [vueSomEvenement].[dateFin] AS [dateFin],
+              [vueSomEvenement].[description] AS [description],
+              [vueSomEvenement].[noEvenement] AS [noEvenement]
+              FROM [S_evenement].[vueSomEvenement] AS [vueSomEvenement]
+            </DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomSalle" EntityType="Self.vueSomSalle" store:Type="Views" store:Schema="S_forfait">
-            <DefiningQuery>SELECT 
-    [vueSomSalle].[noSalle] AS [noSalle], 
-    [vueSomSalle].[nomSalle] AS [nomSalle], 
-    [vueSomSalle].[prix] AS [prix], 
-    [vueSomSalle].[billet] AS [billet], 
-    [vueSomSalle].[billetVIP] AS [billetVIP], 
-    [vueSomSalle].[photoSalle] AS [photoSalle], 
-    [vueSomSalle].[urlGoogleMap] AS [urlGoogleMap]
-    FROM [S_forfait].[vueSomSalle] AS [vueSomSalle]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [vueSomSalle].[noSalle] AS [noSalle],
+              [vueSomSalle].[nomSalle] AS [nomSalle],
+              [vueSomSalle].[prix] AS [prix],
+              [vueSomSalle].[billet] AS [billet],
+              [vueSomSalle].[billetVIP] AS [billetVIP],
+              [vueSomSalle].[photoSalle] AS [photoSalle],
+              [vueSomSalle].[urlGoogleMap] AS [urlGoogleMap]
+              FROM [S_forfait].[vueSomSalle] AS [vueSomSalle]
+            </DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomAppelOffre" EntityType="Self.vueSomAppelOffre" store:Type="Views" store:Schema="S_publicite">
-            <DefiningQuery>SELECT 
-    [vueSomAppelOffre].[noAppelOffre] AS [noAppelOffre], 
-    [vueSomAppelOffre].[nomAppelOffre] AS [nomAppelOffre], 
-    [vueSomAppelOffre].[dateRequis] AS [dateRequis], 
-    [vueSomAppelOffre].[dateEnvoi] AS [dateEnvoi], 
-    [vueSomAppelOffre].[description] AS [description], 
-    [vueSomAppelOffre].[dateSupprime] AS [dateSupprime], 
-    [vueSomAppelOffre].[nomEvent] AS [nomEvent], 
-    [vueSomAppelOffre].[noStatut] AS [noStatut], 
-    [vueSomAppelOffre].[nomStatut] AS [nomStatut], 
-    [vueSomAppelOffre].[couleur] AS [couleur], 
-    [vueSomAppelOffre].[nomAgence] AS [nomAgence]
-    FROM [S_publicite].[vueSomAppelOffre] AS [vueSomAppelOffre]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [vueSomAppelOffre].[noAppelOffre] AS [noAppelOffre],
+              [vueSomAppelOffre].[nomAppelOffre] AS [nomAppelOffre],
+              [vueSomAppelOffre].[dateRequis] AS [dateRequis],
+              [vueSomAppelOffre].[dateEnvoi] AS [dateEnvoi],
+              [vueSomAppelOffre].[description] AS [description],
+              [vueSomAppelOffre].[dateSupprime] AS [dateSupprime],
+              [vueSomAppelOffre].[nomEvent] AS [nomEvent],
+              [vueSomAppelOffre].[noStatut] AS [noStatut],
+              [vueSomAppelOffre].[nomStatut] AS [nomStatut],
+              [vueSomAppelOffre].[couleur] AS [couleur],
+              [vueSomAppelOffre].[nomAgence] AS [nomAgence]
+              FROM [S_publicite].[vueSomAppelOffre] AS [vueSomAppelOffre]
+            </DefiningQuery>
           </EntitySet>
           <EntitySet Name="vueSomSoumission" EntityType="Self.vueSomSoumission" store:Type="Views" store:Schema="S_publicite">
-            <DefiningQuery>SELECT 
-    [vueSomSoumission].[prix] AS [prix], 
-    [vueSomSoumission].[nomAppelOffre] AS [nomAppelOffre], 
-    [vueSomSoumission].[commentaire] AS [commentaire], 
-    [vueSomSoumission].[noSoumission] AS [noSoumission]
-    FROM [S_publicite].[vueSomSoumission] AS [vueSomSoumission]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [vueSomSoumission].[prix] AS [prix],
+              [vueSomSoumission].[nomAppelOffre] AS [nomAppelOffre],
+              [vueSomSoumission].[commentaire] AS [commentaire],
+              [vueSomSoumission].[noSoumission] AS [noSoumission]
+              FROM [S_publicite].[vueSomSoumission] AS [vueSomSoumission]
+            </DefiningQuery>
           </EntitySet>
           <AssociationSet Name="AGE_ADR_FK" Association="Self.AGE_ADR_FK">
             <End Role="tblAdresse" EntitySet="tblAdresse" />
@@ -2012,7 +2036,8 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PE2_OfficielModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -2052,6 +2077,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySet Name="vueSomStatut" EntityType="PE2_OfficielModel.vueSomStatut" />
           <EntitySet Name="vueSomCommanditaire" EntityType="PE2_OfficielModel.vueSomCommanditaire" />
           <EntitySet Name="vueSomEvenement" EntityType="PE2_OfficielModel.vueSomEvenement" />
+          <EntitySet Name="vueSomAppelOffre" EntityType="PE2_OfficielModel.vueSomAppelOffre" />
           <EntitySet Name="vueSomSoumission" EntityType="PE2_OfficielModel.vueSomSoumission" />
           <AssociationSet Name="AGE_ADR_FK" Association="PE2_OfficielModel.AGE_ADR_FK">
             <End Role="tblAdresse" EntitySet="tblAdresse" />
@@ -2285,7 +2311,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblActivite" EntitySet="tblActivite" />
           </AssociationSet>
           <EntitySet Name="vueSomSalle" EntityType="PE2_OfficielModel.vueSomSalle" />
-          <EntitySet Name="vueSomAppelOffre" EntityType="PE2_OfficielModel.vueSomAppelOffre" />
         </EntityContainer>
         <EntityType Name="tblAdresse">
           <Key>
@@ -2767,6 +2792,26 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="dateFin" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="noEvenement" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="vueSomAppelOffre">
+          <Key>
+            <PropertyRef Name="noAppelOffre" />
+            <PropertyRef Name="nomAppelOffre" />
+            <PropertyRef Name="dateRequis" />
+            <PropertyRef Name="dateEnvoi" />
+            <PropertyRef Name="noStatut" />
+          </Key>
+          <Property Name="noAppelOffre" Type="Int32" Nullable="false" />
+          <Property Name="nomAppelOffre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dateRequis" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateEnvoi" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <Property Name="nomEvent" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="noStatut" Type="Int32" Nullable="false" />
+          <Property Name="nomStatut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="couleur" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="nomAgence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vueSomSoumission">
           <Key>
@@ -3778,27 +3823,8 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="billetVIP" Type="Int32" Nullable="false" />
           <Property Name="photoSalle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="urlGoogleMap" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        <EntityType Name="vueSomAppelOffre">
-          <Key>
-            <PropertyRef Name="noAppelOffre" />
-            <PropertyRef Name="nomAppelOffre" />
-            <PropertyRef Name="dateRequis" />
-            <PropertyRef Name="dateEnvoi" />
-            <PropertyRef Name="noStatut" />
-          </Key>
-          <Property Name="noAppelOffre" Type="Int32" Nullable="false" />
-          <Property Name="nomAppelOffre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="dateRequis" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="dateEnvoi" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
-          <Property Name="nomEvent" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="noStatut" Type="Int32" Nullable="false" />
-          <Property Name="nomStatut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="couleur" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
-          <Property Name="nomAgence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        </Schema>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -4234,6 +4260,23 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
                 <ScalarProperty Name="dateFin" ColumnName="dateFin" />
                 <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
                 <ScalarProperty Name="nom" ColumnName="nom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vueSomAppelOffre">
+            <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomAppelOffre">
+              <MappingFragment StoreEntitySet="vueSomAppelOffre">
+                <ScalarProperty Name="nomAgence" ColumnName="nomAgence" />
+                <ScalarProperty Name="couleur" ColumnName="couleur" />
+                <ScalarProperty Name="nomStatut" ColumnName="nomStatut" />
+                <ScalarProperty Name="noStatut" ColumnName="noStatut" />
+                <ScalarProperty Name="nomEvent" ColumnName="nomEvent" />
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="dateEnvoi" ColumnName="dateEnvoi" />
+                <ScalarProperty Name="dateRequis" ColumnName="dateRequis" />
+                <ScalarProperty Name="nomAppelOffre" ColumnName="nomAppelOffre" />
+                <ScalarProperty Name="noAppelOffre" ColumnName="noAppelOffre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4689,20 +4732,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
                 <ScalarProperty Name="prix" ColumnName="prix" />
                 <ScalarProperty Name="nomSalle" ColumnName="nomSalle" />
                 <ScalarProperty Name="noSalle" ColumnName="noSalle" />
-          <EntitySetMapping Name="vueSomAppelOffre">
-            <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomAppelOffre">
-              <MappingFragment StoreEntitySet="vueSomAppelOffre">
-                <ScalarProperty Name="nomAgence" ColumnName="nomAgence" />
-                <ScalarProperty Name="couleur" ColumnName="couleur" />
-                <ScalarProperty Name="nomStatut" ColumnName="nomStatut" />
-                <ScalarProperty Name="noStatut" ColumnName="noStatut" />
-                <ScalarProperty Name="nomEvent" ColumnName="nomEvent" />
-                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="dateEnvoi" ColumnName="dateEnvoi" />
-                <ScalarProperty Name="dateRequis" ColumnName="dateRequis" />
-                <ScalarProperty Name="nomAppelOffre" ColumnName="nomAppelOffre" />
-                <ScalarProperty Name="noAppelOffre" ColumnName="noAppelOffre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
