@@ -69,9 +69,10 @@ namespace ECJ.Web.Controllers.Don
 
             provider.AjouterDon(tblDon);
 
+            tblCommanditaire tblCommanditaire = provider.returnCommanditaire((int)tblDon.noCommanditaire);
+
             // CREATION DE MAIL NON-FONCTIONNEL
-            string to = tblDon.tblCommanditaire.courrielContact.ToString();
-            //string to = Courriel.ToString();
+            string to = tblCommanditaire.courrielContact.ToString();
             string from = "PagPi1433443@etu.cegepjonquiere.ca";
             MailMessage message = new MailMessage(from, to);
             SmtpClient client = new SmtpClient("smtp.office365.com");
@@ -84,8 +85,6 @@ namespace ECJ.Web.Controllers.Don
 
             message.Subject = "Merci de votre Commandite";
             message.Body = "Merci pour votre don de " + tblDon.montant + " $ effectué le " + tblDon.dateDon + ".";
-
-            client.Send(message);
 
             try
             {
