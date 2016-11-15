@@ -18,7 +18,7 @@ namespace ECJ.Web.Controllers.Salles
         }
         public ActionResult Index()
         {
-            ViewBag.Salle = db.ToutSalle();
+            ViewBag.Salle = db.ToutVueSalle();
 
             return View();
         }
@@ -26,14 +26,31 @@ namespace ECJ.Web.Controllers.Salles
         {
             ViewBag.Salle = db.ReturnSalle(id);
             ViewBag.Service = db.ReturnSalle(id).tblService;
+            ViewBag.ServiceAjoutable =  db.ToutService().Except(db.ReturnSalle(id).tblService).ToList();
+
+            ViewBag.SousEvent = db.ToutSousEvenement();
 
             var serviceAAjouter = Request.Form["service"];
-            //ajouter le service requis
+            //ajouter le service offert
             if (serviceAAjouter != null)
             {
                 db.InsertServiceOffert((int)id, int.Parse(serviceAAjouter));
             }
-
+            //supprimer un service offert
+            var serviceASupprimer = Request.Form["service_suppr"] ?? Request.Form["service_delete_salle"];
+            if (serviceASupprimer != null)
+            {
+                db.SupprimerServiceOffert((int)id, int.Parse(serviceASupprimer));
+            }
+            var serviceDeleteSalle = Request.Form["service_delete_salle"];
+            if (serviceDeleteSalle != null)
+            {
+                var SousEvenementAvecService = db.ToutSousEvenement().Where(SsE => SsE.tblService.Contains(db.ReturnService(int.Parse(serviceDeleteSalle)))).ToList();
+                foreach (var ss in SousEvenementAvecService)
+                {
+                    db.DelierSalle(ss.noSousEvenement);
+                }
+            }
             return View();
         }
     }

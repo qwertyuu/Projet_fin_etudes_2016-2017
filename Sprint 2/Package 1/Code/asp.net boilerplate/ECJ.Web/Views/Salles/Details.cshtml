@@ -1,70 +1,175 @@
-﻿
+﻿@using ECJ.Web.Models
+
 @{
     ViewBag.Title = "DetailSalles";
 }
 
-<!DOCTYPE html>
+<div class="form-group">
+    <label>Nom</label>
+    <div class="well well-sm">
+        @ViewBag.Salle.nomSalle
+    </div>
+</div>
+<div class="form-group">
+    <label>Prix</label>
+    <div class="well well-sm">
+        @ViewBag.Salle.prix$
+    </div>
+</div>
+<div class="form-group">
+    <label>Billets standard</label>
+    <div class="well well-sm">
+        @ViewBag.Salle.billet
+    </div>
+</div>
+<div class="form-group">
+    <label>Billets VIP</label>
+    <div class="well well-sm">
+        @ViewBag.Salle.billetVIP
+    </div>
+</div>
+<div class="form-group">
+    <label>Plan de la salle</label>
+    <div class="well well-sm">
+        <img src="@ViewBag.Salle.photoSalle" />
+    </div>
+</div>
+<div class="form-group">
+    <label>Carte</label>
+    <div class="well well-sm">
+        <iframe src="@ViewBag.Salle.urlGoogleMap" width="500" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</div>
 
-<html>
-<head>
-    <title>Details</title>
-</head>
-<body>
-    <div class="form-group">
-        <label>Nom</label>
-        <div class="well well-sm">
-            @ViewBag.Salle.nomSalle
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Prix</label>
-        <div class="well well-sm">
-            @ViewBag.Salle.prix$
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Billets standard</label>
-        <div class="well well-sm">
-            @ViewBag.Salle.billet
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Billets VIP</label>
-        <div class="well well-sm">
-            @ViewBag.Salle.billetVIP
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Plan de la salle</label>
-        <div class="well well-sm">
-            <img src="@ViewBag.Salle.photoSalle"/>
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Carte</label>
-        <div class="well well-sm">
-            <iframe src="@ViewBag.Salle.urlGoogleMap" width="500" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-    </div>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>Services disponibles actuellement</th>
-                <th class="col-md-2">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var s in ViewBag.Service)
+<label>Services offert</label>
+<button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Nom du service</th>
+            <th class="col-md-2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            foreach (var s in ViewBag.Service)
             {
                 <tr>
                     <td>@s.nomService</td>
                     <td>
-                        <button name="service_suppr" value="@s.noService" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                        <button data-target="#ServiceDeleteModal" name="service_suppr" value="@s.noService" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
                     </td>
                 </tr>
             }
-        </tbody>
-    </table>
-    <button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
-</body>
-</html>
+        }
+    </tbody>
+</table>
+
+@*Modal pour le choix d'un service requis*@
+<div class="modal fade" id="ServiceDeleteModal" tabindex="-1" role="dialog" aria-labelledby="ServiceAjoutModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span>Choisir un service</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nom du service</th>
+                                <th>Sélection</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*
+                                Si il y a une salle, changer le name
+                            *@
+                            @foreach (var s in ViewBag.Service)
+                            {
+                                var SsEvents = ((List<tblSousEvenement>)ViewBag.SousEvent).Where(SsE => SsE.tblService.Contains(s)).ToList();
+                                var name = "service";
+                                var classe = "btn-primary";
+                                var txt = "";
+                                if (SsEvents.Count != 0)
+                                {
+                                    name = "service_delete_salle";
+                                    classe = "btn-default";
+                                    foreach (var sse in SsEvents)
+                                    {
+                                        txt = txt + "/n" + sse.nom;
+                                    }
+                                }
+                                <tr>
+                                    <td>@s.nomService</td>
+                                    <td><button name="@name" value="@s.noService" class="btn @classe btn-sm"><i class="fa fa-check-square"></i></button></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@*Modal pour le choix d'un service requis*@
+<div class="modal fade" id="ServiceAjoutModal" tabindex="-1" role="dialog" aria-labelledby="ServiceAjoutModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span>Choisir un service</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nom du service</th>
+                                <th>Sélection</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*
+                                Si il y a une salle, changer le name
+                            *@
+
+                            @foreach (var s in ViewBag.ServiceAjoutable)
+                            {
+                                {
+                                    var name = "service";
+                                    var classe = "btn-primary";
+                                    <tr>
+                                        <td>@s.nomService</td>
+                                        <td><button name="@name" value="@s.noService" class="btn @classe btn-sm"><i class="fa fa-check-square"></i></button></td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

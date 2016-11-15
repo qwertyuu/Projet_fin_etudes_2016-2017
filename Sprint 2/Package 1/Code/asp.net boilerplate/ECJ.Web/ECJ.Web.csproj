@@ -699,6 +699,9 @@
     <Compile Include="Models\vueSomExigence.cs">
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\vueSomSalle.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\vueSomSoumission.cs">
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>

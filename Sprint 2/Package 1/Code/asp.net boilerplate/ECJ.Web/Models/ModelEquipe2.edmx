@@ -850,6 +850,24 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_evenement.vueSomEvenement' n'a 
           <Property Name="noEvenement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'PE2_Officiel.S_forfait.vueSomSalle' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="vueSomSalle">
+          <Key>
+            <PropertyRef Name="noSalle" />
+            <PropertyRef Name="nomSalle" />
+            <PropertyRef Name="prix" />
+            <PropertyRef Name="billet" />
+            <PropertyRef Name="billetVIP" />
+          </Key>
+          <Property Name="noSalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomSalle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="prix" Type="decimal" Precision="19" Scale="2" Nullable="false" />
+          <Property Name="billet" Type="int" Nullable="false" />
+          <Property Name="billetVIP" Type="int" Nullable="false" />
+          <Property Name="photoSalle" Type="varchar" MaxLength="500" />
+          <Property Name="urlGoogleMap" Type="text" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
 avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomAppelOffre' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vueSomAppelOffre">
           <Key>
@@ -1727,6 +1745,17 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
     [vueSomEvenement].[noEvenement] AS [noEvenement]
     FROM [S_evenement].[vueSomEvenement] AS [vueSomEvenement]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vueSomSalle" EntityType="Self.vueSomSalle" store:Type="Views" store:Schema="S_forfait">
+            <DefiningQuery>SELECT 
+    [vueSomSalle].[noSalle] AS [noSalle], 
+    [vueSomSalle].[nomSalle] AS [nomSalle], 
+    [vueSomSalle].[prix] AS [prix], 
+    [vueSomSalle].[billet] AS [billet], 
+    [vueSomSalle].[billetVIP] AS [billetVIP], 
+    [vueSomSalle].[photoSalle] AS [photoSalle], 
+    [vueSomSalle].[urlGoogleMap] AS [urlGoogleMap]
+    FROM [S_forfait].[vueSomSalle] AS [vueSomSalle]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vueSomAppelOffre" EntityType="Self.vueSomAppelOffre" store:Type="Views" store:Schema="S_publicite">
             <DefiningQuery>SELECT 
     [vueSomAppelOffre].[noAppelOffre] AS [noAppelOffre], 
@@ -2256,6 +2285,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="AbpUsers" EntitySet="AbpUsers" />
             <End Role="tblActivite" EntitySet="tblActivite" />
           </AssociationSet>
+          <EntitySet Name="vueSomSalle" EntityType="PE2_OfficielModel.vueSomSalle" />
         </EntityContainer>
         <EntityType Name="tblAdresse">
           <Key>
@@ -3753,6 +3783,22 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="vueSomSalle">
+          <Key>
+            <PropertyRef Name="noSalle" />
+            <PropertyRef Name="nomSalle" />
+            <PropertyRef Name="prix" />
+            <PropertyRef Name="billet" />
+            <PropertyRef Name="billetVIP" />
+          </Key>
+          <Property Name="noSalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomSalle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="prix" Type="Decimal" Nullable="false" Precision="19" Scale="2" />
+          <Property Name="billet" Type="Int32" Nullable="false" />
+          <Property Name="billetVIP" Type="Int32" Nullable="false" />
+          <Property Name="photoSalle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="urlGoogleMap" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4648,6 +4694,19 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
                 <ScalarProperty Name="billetVIP" ColumnName="billetVIP" />
                 <ScalarProperty Name="billet" ColumnName="billet" />
                 <ScalarProperty Name="noSousEvenement" ColumnName="noSousEvenement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vueSomSalle">
+            <EntityTypeMapping TypeName="PE2_OfficielModel.vueSomSalle">
+              <MappingFragment StoreEntitySet="vueSomSalle">
+                <ScalarProperty Name="urlGoogleMap" ColumnName="urlGoogleMap" />
+                <ScalarProperty Name="photoSalle" ColumnName="photoSalle" />
+                <ScalarProperty Name="billetVIP" ColumnName="billetVIP" />
+                <ScalarProperty Name="billet" ColumnName="billet" />
+                <ScalarProperty Name="prix" ColumnName="prix" />
+                <ScalarProperty Name="nomSalle" ColumnName="nomSalle" />
+                <ScalarProperty Name="noSalle" ColumnName="noSalle" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

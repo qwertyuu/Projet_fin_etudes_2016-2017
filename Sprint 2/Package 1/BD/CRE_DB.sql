@@ -18,6 +18,7 @@ SET DATEFORMAT ymd;
 :r INST_PACK_Publicite.sql
 :r VUE_PACK_Publicite.sql
 :r VUE_PACK_Evenement.sql
+:r VUE_PACK_Forfait.sql
 
 SET NOCOUNT OFF
 

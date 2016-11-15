@@ -1061,6 +1061,18 @@ namespace ECJ.Web.Controllers
             }
             return new List<vueSomAppelOffre>();
         }
+        public List<vueSomSalle> ToutVueSalle()
+        {
+            try
+            {
+                return db.vueSomSalle.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<vueSomSalle>();
+        }
         public void InsertServiceOffert(int id, int serviceAAjouter)
         {
             try
@@ -1091,7 +1103,7 @@ namespace ECJ.Web.Controllers
             try
             {
                 return (from q in db.tblAgencePublicite
-                        where q.noAgencePub==soumi.noAgencePub
+                        where q.noAgencePub == soumi.noAgencePub
                         select q).FirstOrDefault();
             }
             catch (Exception e)
@@ -1099,7 +1111,20 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
             return new tblAgencePublicite();
+
         }
-       
+        public tblService ReturnService(int id)
+        {
+            try
+            {
+                return db.tblService.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+
+            return new tblService();
+        }
     }
 }
