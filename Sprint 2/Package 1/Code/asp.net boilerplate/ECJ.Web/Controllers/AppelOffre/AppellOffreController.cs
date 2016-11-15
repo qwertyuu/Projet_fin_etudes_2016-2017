@@ -38,14 +38,14 @@ namespace ECJ.Web.Controllers.AppelOffre
             XmlNode xmlNom = doc.CreateNode(XmlNodeType.Element, "Nom", "");
             xmlNom.InnerText = appelOffre.nom;
             XmlNode xmlNoSoumiAgence = doc.CreateNode(XmlNodeType.Element, "noSoumissionAgence", "");
-            xmlNom.InnerText = soumi.noSoumissionAgence;
+            xmlNoSoumiAgence.InnerText = soumi.noSoumissionAgence;
             XmlNode xmlPrix = doc.CreateNode(XmlNodeType.Element, "Prix", "");
             if(soumi.prix.ToString()=="")
             {
                 xmlPrix.InnerText = prix.ToString();
             }
             else
-                xmlPrix.InnerText = prix.ToString();
+                xmlPrix.InnerText = soumi.prix.ToString();
 
             XmlNode xmlnoAgencePub = doc.CreateNode(XmlNodeType.Element, "noAgencePub", "");
             xmlnoAgencePub.InnerText = soumi.noAgencePub.ToString();
@@ -112,34 +112,44 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         private DirectoryInfo CreateDirectory(string path)
         {
-            if (Directory.Exists(path))
+            DirectoryInfo dr = null;
+            try
             {
-                return null;
+                if (!Directory.Exists(path))
+                {
+                     dr = Directory.CreateDirectory(path);
+
+                }
+              
             }
-            else
+            catch (IOException IOEx)
             {
-                DirectoryInfo dr = Directory.CreateDirectory(path);
-                return dr;
+                ViewBag.IO = IOEx.Message;
+                
             }
+
+            return dr;
         }
         private void CreateSoumissionXml(tblSoumission soumi,tblAppelOffre appelOffre)
         {
             CptSoumi++;
+            DirectoryInfo dr = null;
             XmlDocument doc = new XmlDocument();
             XmlNode Racine = doc.CreateNode(XmlNodeType.Element, "SoumissionAgence", "http://tempuri.org/SoumissionAgence.xsd");
             string pathAlle = "//deptinfo420/P2016_Equipe2/Soumission_alle";
             string pathXml = "";
+            dr = CreateDirectory(pathAlle);
             doc.AppendChild(Racine);
             Racine.AppendChild(CrerUneSoumissionXml(doc, soumi, appelOffre));
             try
             {
-                if(CreateDirectory(pathAlle)!=null)
+                if(dr!=null)
                 {
-                   pathXml = CreateDirectory(pathAlle).FullName + "/soumission_" + appelOffre.nom + "_" + soumi.tblAgencePublicite.nom + ".xml";
+                    pathAlle =dr.FullName;
                 }
-                pathXml= "//deptinfo420/P2016_Equipe2/Soumission_alle/soumission_" + appelOffre.nom + "_" + soumi.tblAgencePublicite.nom + ".xml";
+                pathXml = pathAlle+"/soumission_" + appelOffre.nom + "_" +provider.ReturnAgenceParSoumi(soumi).nom + ".xml";
                 doc.Save(pathXml);
-                string pathXsd = pathAlle+"/SoumissionAgence.xsd";
+                string pathXsd = "//deptinfo420/P2016_Equipe2/Models/SoumissionAgence.xsd";
                 validerXML(pathXml, doc, pathXsd);
   
 
@@ -163,18 +173,25 @@ namespace ECJ.Web.Controllers.AppelOffre
         {
             
             XmlDocument doc = new XmlDocument();
-            string pathXsd = "//deptinfo420/P2016_Equipe2/SoumissionAgence.xsd";
+            DirectoryInfo dr = null;
+            string pathXsd = "//deptinfo420/P2016_Equipe2/Models/SoumissionAgence.xsd";
             string pathRetour = "//deptinfo420/P2016_Equipe2/Soumission_retour";
+            dr = CreateDirectory(pathRetour);
             //On prcoure tous les xmls contenus dans le dossier
             try
             {
-                
-                var files = from file in Directory.EnumerateFiles(CreateDirectory(pathRetour).FullName, "*.xml", SearchOption.AllDirectories)
+
+                if (dr != null)
+                {
+                    pathRetour = dr.FullName;
+                }
+                var files = from file in Directory.EnumerateFiles(pathRetour, "*.xml", SearchOption.AllDirectories)
                             select new
                             {
                                 file
                             };
-               foreach(var f in files)
+
+                foreach (var f in files)
                 {
                     doc.Load(f.file);
                     XmlNode racine = doc.FirstChild; 
@@ -214,11 +231,17 @@ namespace ECJ.Web.Controllers.AppelOffre
         private void DeleteXml(string nameXml)
         {
             XmlDocument doc = new XmlDocument();
+            DirectoryInfo dr = null;
             string pathAlle = "//deptinfo420/P2016_Equipe2/Soumission_alle";
+            dr = CreateDirectory(pathAlle);
             //On prcoure tous les xmls contenus dans le dossier
             try
             {
-                var files = from file in Directory.EnumerateFiles(CreateDirectory(pathAlle?? "//deptinfo420/P2016_Equipe2/Soumission_alle").FullName+"/Soumission_alle", "*.xml", SearchOption.AllDirectories)
+                if (dr != null)
+                {
+                    pathAlle =dr.FullName;
+                }
+                var files = from file in Directory.EnumerateFiles(pathAlle, "*.xml", SearchOption.AllDirectories)
                             select new
                             {
                                 file

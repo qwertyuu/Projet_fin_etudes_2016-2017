@@ -1085,5 +1085,21 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
         }
+
+        public tblAgencePublicite ReturnAgenceParSoumi(tblSoumission soumi)
+        {
+            try
+            {
+                return (from q in db.tblAgencePublicite
+                        where q.noAgencePub==soumi.noAgencePub
+                        select q).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblAgencePublicite();
+        }
+       
     }
 }
