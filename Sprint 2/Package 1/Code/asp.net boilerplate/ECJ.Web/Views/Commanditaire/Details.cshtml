@@ -1,9 +1,15 @@
 ﻿@model ECJ.Web.Models.tblCommanditaire
 
 @{
-    ViewBag.Title = "Details";
-}
+        ViewBag.Title = "Details";
 
+} 
+@functions{
+    public string FormatTelephone(string tel)
+    {
+        return string.Format("({0}) {1}-{2}", tel.Substring(0, 3), tel.Substring(3, 3), tel.Substring(6, 4));
+    }
+}
 <h2>Commanditaires</h2>
 
 <div>
@@ -67,7 +73,7 @@
     <div class="form-group">
         <label>Numéro de téléphone</label>
         <div class="well well-sm">
-            @Model.numTel
+            @(FormatTelephone(Model.numTel))
         </div>
     </div>
 
@@ -77,14 +83,17 @@
             @Model.extension
         </div>
     </div>
+    <label>Dons effectués</label>
+    <a href="~/Don/Create/@Model.noCommanditaire" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Faire un don</a>
 
     <div class="form-group">
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>Nom du sous-évènement</th>
+                    <th>Nom du sous-événement</th>
                     <th>Montant</th>
-                    <th>date</th>
+                    <th>Date</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -94,7 +103,7 @@
                     {
                         <tr>
                             <td>@don.tblSousEvenement.nom</td>
-                            <td>@don.montant</td>
+                            <td class="{sorter:'monetaryValue'}">@don.montant$</td>
                             <td>@String.Format("{0:yyyy/MM/dd}", don.dateDon)</td>
                             <td><a href="~/Don/Supprimer/@don.noDon" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a></td>
                         </tr>

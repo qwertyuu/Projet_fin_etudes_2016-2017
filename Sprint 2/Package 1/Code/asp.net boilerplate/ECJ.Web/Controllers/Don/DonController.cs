@@ -25,12 +25,14 @@ namespace ECJ.Web.Controllers.Don
             GetPermissions();
         }
 
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             List<tblCommanditaire> comm = new List<tblCommanditaire>();
             List<tblSousEvenement> sousEvent = new List<tblSousEvenement>();
-
-            var id = Request.QueryString["id"];
 
             foreach (var c in provider.CommanditaireList())
             {
@@ -48,7 +50,7 @@ namespace ECJ.Web.Controllers.Don
                 }
             }
 
-            ViewBag.nomCommanditaire = provider.nomCommanditaire(Convert.ToInt32(id)).nomCommanditaire;
+            ViewBag.nomCommanditaire = provider.ReturnCommanditaire((int)id).nomCommanditaire;
             ViewBag.noSousEvenement = new SelectList(sousEvent, "noSousEvenement", "nom");
 
             return View();

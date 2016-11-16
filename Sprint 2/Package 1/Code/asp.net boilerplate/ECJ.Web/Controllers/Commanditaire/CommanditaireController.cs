@@ -109,7 +109,7 @@ namespace ECJ.Web.Controllers.Commanditaire
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblCommanditaire tblCommanditaire = provider.returnCommanditaire(Convert.ToInt32(id));
+            tblCommanditaire tblCommanditaire = provider.returnCommanditaire((int)id);
             if (tblCommanditaire == null)
             {
                 return HttpNotFound();

@@ -81,7 +81,7 @@ namespace ECJ.Web.Controllers
         {
             var model = new LanguageSelectionViewModel
                         {
-                            CurrentLanguage = _localizationManager.CurrentLanguage,
+                            CurrentLanguage = new LanguageInfo("fr", "Français", isDefault:true),
                             Languages = _localizationManager.GetAllLanguages()
                         };
 

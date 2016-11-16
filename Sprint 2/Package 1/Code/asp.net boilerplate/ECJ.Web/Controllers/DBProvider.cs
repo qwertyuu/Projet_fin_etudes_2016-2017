@@ -903,7 +903,7 @@ namespace ECJ.Web.Controllers
             return new tblCalculateur();
         }
 
-        public tblCommanditaire nomCommanditaire(int id)
+        public tblCommanditaire ReturnCommanditaire(int id)
         {
             try
             {
