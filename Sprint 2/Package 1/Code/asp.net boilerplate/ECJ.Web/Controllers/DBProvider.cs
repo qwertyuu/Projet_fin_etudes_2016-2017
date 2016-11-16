@@ -88,6 +88,19 @@ namespace ECJ.Web.Controllers
             }
         }
 
+        internal void InsertUser(AbpUsers abpUser)
+        {
+            try
+            {
+                db.AbpUsers.Add(abpUser);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
         internal tblEvenement ReturnEvenement(int id)
         {
             return db.tblEvenement.Find(id);
@@ -155,6 +168,36 @@ namespace ECJ.Web.Controllers
             return null;
         }
 
+        internal void UpdateRole(AbpUsers abpUser, int role)
+        {
+            try
+            {
+                var u = db.AbpUsers.Find(abpUser.Id);
+                if (!u.AbpUserRoles.Any(UR => UR.RoleId == role))
+                {
+                    u.AbpUserRoles = new List<AbpUserRoles>() { new AbpUserRoles() { UserId = abpUser.Id, RoleId = role, CreationTime = DateTime.Now, TenantId = 1 } };
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+        internal void UpdateUser(AbpUsers abpUser)
+        {
+            try
+            {
+                db.Entry(db.AbpUsers.Find(abpUser.Id)).CurrentValues.SetValues(abpUser);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
         internal void InsertEvenement(tblEvenement tblEvenement)
         {
             db.tblEvenement.Add(tblEvenement);
@@ -218,7 +261,7 @@ namespace ECJ.Web.Controllers
 
         internal List<ECJ.Web.Models.AbpUsers> ToutUtilisateurs()
         {
-            return db.AbpUsers.Where(u => u.Id != 1).ToList();
+            return db.AbpUsers.Where(u => u.Id != 1 && !u.IsDeleted).ToList();
         }
 
         internal void SupprimerEvenement(int id)
