@@ -51,79 +51,34 @@
         </tr>
     </thead>
     <tbody>
-        @using (Html.BeginForm())
+        @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
             {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
             foreach (var s in ViewBag.Service)
             {
+                var SsEvents = ((List<tblSousEvenement>)ViewBag.SousEvent).Where(SsE => SsE.tblService.Contains(s)).ToList();
+                var name = "service_suppr";
+                var classe = "btn-primary";
+                var txt = "";
+
+                if (SsEvents.Count != 0)
+                {
+                    name = "service_delete_salle";
+                    classe = "btn-default";
+                    foreach (var sse in SsEvents)
+                    {
+                        txt = txt + "/n " + sse.nom;
+                    }
+                }
                 <tr>
                     <td>@s.nomService</td>
-                    <td>
-                        <button data-target="#ServiceDeleteModal" name="service_suppr" value="@s.noService" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
-                    </td>
+                    <td><button  name=@name value="@s.noService" class="btn @classe btn-sm" title="SupprimerSalle"><i class="fa fa-trash fa-lg"></i></button> </td>
                 </tr>
             }
         }
     </tbody>
 </table>
-
-@*Modal pour le choix d'un service requis*@
-<div class="modal fade" id="ServiceDeleteModal" tabindex="-1" role="dialog" aria-labelledby="ServiceAjoutModalLabel" data-backdrop="static">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
-            {
-                @Html.AntiForgeryToken()
-                @Html.ValidationSummary(true)
-                <div class="modal-header">
-                    <h4 class="modal-title">
-                        <span>Choisir un service</span>
-                    </h4>
-                </div>
-                <div class="modal-body">
-
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Nom du service</th>
-                                <th>Sélection</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @*
-                                Si il y a une salle, changer le name
-                            *@
-                            @foreach (var s in ViewBag.Service)
-                            {
-                                var SsEvents = ((List<tblSousEvenement>)ViewBag.SousEvent).Where(SsE => SsE.tblService.Contains(s)).ToList();
-                                var name = "service";
-                                var classe = "btn-primary";
-                                var txt = "";
-                                if (SsEvents.Count != 0)
-                                {
-                                    name = "service_delete_salle";
-                                    classe = "btn-default";
-                                    foreach (var sse in SsEvents)
-                                    {
-                                        txt = txt + "/n" + sse.nom;
-                                    }
-                                }
-                                <tr>
-                                    <td>@s.nomService</td>
-                                    <td><button name="@name" value="@s.noService" class="btn @classe btn-sm"><i class="fa fa-check-square"></i></button></td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                </div>
-            }
-        </div>
-    </div>
-</div>
 
 @*Modal pour le choix d'un service requis*@
 <div class="modal fade" id="ServiceAjoutModal" tabindex="-1" role="dialog" aria-labelledby="ServiceAjoutModalLabel" data-backdrop="static">

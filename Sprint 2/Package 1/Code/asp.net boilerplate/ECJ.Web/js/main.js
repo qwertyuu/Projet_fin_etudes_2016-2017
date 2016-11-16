@@ -399,3 +399,9 @@ function validerChamps(f) {
     return datepicker.regional.fr;
 
 }));
+
+$("[title=\"SupprimerSalle\"]").click(function (e) {
+    if (!confirm("Ce service est requis pour un ou plusieurs sous-évènement.Si vous supprimez ce service les sous-évènements qui en ont besoin vont avoir leurs salles déliées")) {
+        e.preventDefault();
+    }
+});
