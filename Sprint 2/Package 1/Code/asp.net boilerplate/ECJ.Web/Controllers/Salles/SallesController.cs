@@ -24,12 +24,6 @@ namespace ECJ.Web.Controllers.Salles
         }
         public ActionResult Details(int id)
         {
-            ViewBag.Salle = db.ReturnSalle(id);
-            ViewBag.Service = db.ReturnSalle(id).tblService;
-            ViewBag.ServiceAjoutable =  db.ToutService().Except(db.ReturnSalle(id).tblService).ToList();
-
-            ViewBag.SousEvent = db.ToutSousEvenement();
-
             var serviceAAjouter = Request.Form["service"];
             //ajouter le service offert
             if (serviceAAjouter != null)
@@ -51,6 +45,11 @@ namespace ECJ.Web.Controllers.Salles
                     db.DelierSalle(ss.noSousEvenement);
                 }
             }
+
+            ViewBag.Salle = db.ReturnSalle(id);
+            ViewBag.Service = db.ReturnSalle(id).tblService;
+            ViewBag.ServiceAjoutable = db.ToutService().Except(db.ReturnSalle(id).tblService).ToList();
+            ViewBag.SousEvent = db.ToutSousEvenement();
             return View();
         }
     }
