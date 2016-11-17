@@ -50,20 +50,27 @@ PRINT 'INSERTION RÉUSSI'
 PRINT 'INSERTION DE LA tblServiceOffert'
 GO
 INSERT INTO S_forfait.tblServiceOffert(noService,noSalle)
-VALUES(3,1),
+VALUES
+(3,1),
 (4,1),
 (5,1),
 (1,2),
 (2,2),
 (3,2),
-(5,2);
+(5,2),
+(1,3),
+(2,3),
+(3,3),
+(4,3),
+(5,3);
 
 GO
 PRINT 'INSERTION RÉUSSI'
 PRINT 'INSERTION DE LA tblServiceRequis'
 GO
 INSERT INTO S_forfait.tblServiceRequis(noService,noSousEvenement)
-VALUES(1,1),
+VALUES
+(1,1),
 (1,2),
 (1,3),
 (2,3),
@@ -88,17 +95,50 @@ VALUES(1,1),
 (1,13),
 (2,13),
 (3,13),
-(5,13);
+(5,13),
+(1,14),
+(2,14),
+(3,15),
+(5,16),
+(1,17),
+(2,18),
+(3,19),
+(1,20),
+(2,20),
+(3,20),
+(4,20),
+(5,20),
+(5,21),
+(4,22),
+(2,23),
+(1,24),
+(2,24),
+(3,24),
+(3,26),
+(1,27),
+(2,27),
+(3,29),
+(1,31),
+(3,31);
 GO
 PRINT 'INSERTION RÉUSSI'
 PRINT 'INSERTION DE LA tblForfaitSousEvenement'
 GO
 
 INSERT INTO S_forfait.tblForfaitSousEvenement (noForfait,noSousEvenement)
-VALUES(4,1),
-(4,2),
+VALUES
+(1,1),
+(4,1),
+(4,4),
 (4,3),
-(2,10),
+(2,3),
+(1,3),
+(2,4),
+(4,5),
+(2,5),
+(4,6),
+(2,6),
+(1,8),
 (3,11),
 (1,12),
 (2,12),
@@ -107,18 +147,48 @@ VALUES(4,1),
 (1,13),
 (2,13),
 (3,13),
-(1, 1),
-(1, 3),
-(2, 1),
-(2, 2),
-(4,13);
-
+(4,13),
+(1,14),
+(2,14),
+(3,16),
+(4,16),
+(1,17),
+(2,18),
+(3,18),
+(4,18),
+(1,19),
+(2,19),
+(3,19),
+(4,19),
+(1,20),
+(2,20),
+(3,20),
+(4,20),
+(1,22),
+(1,23),
+(2,23),
+(1,24),
+(2,24),
+(4,24),
+(3,24),
+(4,27),
+(1,28),
+(4,28),
+(1,29),
+(3,29),
+(4,29),
+(3,30),
+(3,31),
+(4,32),
+(1,32);
 GO
 PRINT 'INSERTION RÉUSSI'
 PRINT 'INSERTION DE LA tblCalculateur'
+--Ces données vont être plus complètes lorsque que la sauvegarde du calculateur sera fonctionnelle.
 GO
 INSERT INTO S_forfait.tblCalculateur (billet,billetVIP,prixBillet,prixBilletVIP,souperSpectacle,prixSouper,jeunePourcent,adultePourcent,ainePourcent,jeuneRatio,adulteRatio,aineRatio,promo,prevente,customBillet1,customBillet2,customPrix1,customPrix2,customNom1,customNom2)
-VALUES(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+VALUES
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
 (null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
 (null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
 (null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
