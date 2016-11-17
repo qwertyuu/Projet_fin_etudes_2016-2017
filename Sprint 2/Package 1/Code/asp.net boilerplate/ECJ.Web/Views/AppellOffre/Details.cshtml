@@ -90,7 +90,7 @@
             </thead>
             <tbody>
 
-                @foreach (var soumi in Model.tblSoumission)
+                @foreach (var soumi in Model.tblSoumission.Where(s=> s.dateSupprime==null))
                 {
 
                     <tr>
@@ -115,10 +115,10 @@
                         <td>
                             @if (Model.tblStatutAppelOffre.nom == "Envoyé" || Model.tblStatutAppelOffre.nom == "En Création")
                             {
-                                <a href="/Soumission/Accepter/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
-                                <a href="/Soumission/Refuser/@soumi.noSoumission" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
+                                <a href="~/Soumission/Accepter/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
+                                <a href="~/Soumission/Refuser/@soumi.noSoumission" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
                             }
-                            <a href="/Soumission/Detail/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                            <a href="~/Soumission/Detail/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
                         </td>
                     </tr>
                 }
@@ -127,7 +127,7 @@
         </table>
     </div>
     <br />
-    <a href="/AppellOffre/Index" class="btn btn-default pull-right " data-dismiss="modal">Retour au sommaire</a>
+    <a href="~/AppellOffre/Index" class="btn btn-default pull-right " data-dismiss="modal">Retour au sommaire</a>
 
 </form>
 

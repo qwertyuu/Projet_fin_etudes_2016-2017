@@ -72,6 +72,23 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
+        private void CreateXsd(string pathXSD,XmlDocument doc)
+        {
+            string ContentXSD= "<?xml version=\"1.0\" encoding=\"utf-8\"?>< xs:schema xmlns:xs = \"http://www.w3.org/2001/XMLSchema\"> < xs:element name = \"Soumission\" >< xs:complexType >< xs:sequence >< xs:element name = \"NoSoumission\" type = \"xs:int\" />< xs:element name = \"noSoumissionAgence\" type = \"xs:string\" />< xs:element name = \"Nom\" type = \"xs:string\" />< xs:element name = \"Prix\" type = \"xs:decimal\" />< xs:element name = \"noAgencePub\" type = \"xs:int\" />< xs:element name = \"noAppelOffre\" type = \"xs:int\" />< xs:element name = \"Statut\" type = \"xs:string\" />< xs:element name = \"Commentaire\" type = \"xs:string\" /></ xs:sequence ></ xs:complexType > </ xs:element ></ xs:schema >";
+            try
+            {
+                StreamWriter xsd = new StreamWriter(pathXSD);
+                xsd.WriteLine(ContentXSD);
+                doc.Save(xsd);
+                xsd.Close();
+            }
+            catch (IOException IOEx)
+            {
+                ViewBag.IO = IOEx.Message;
+            }
+
+
+        }
         //Valider le xml de la soumision.
         public bool validerXML(String pathXml, XmlDocument doc, string pathXsd)
         {
@@ -96,7 +113,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                 try
                 {
                     //doc.Load("//deptinfo420/P2016_Equipe2/App_Data/logErreur.txt");
-                    StreamWriter fileLog = new StreamWriter("//deptinfo420/P2016_Equipe2/App_Data/logErreur.txt", true);
+                    StreamWriter fileLog = new StreamWriter("E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/logErreur.txt", true);
                     fileLog.WriteLine(e.ToString());
                     doc.Save(fileLog);
                     fileLog.Close();
@@ -135,20 +152,20 @@ namespace ECJ.Web.Controllers.AppelOffre
         private void CreateSoumissionXml(tblSoumission soumi,tblAppelOffre appelOffre)
         {
             CptSoumi++;
-            //DirectoryInfo dr = null;
+            DirectoryInfo dr = null;
             XmlDocument doc = new XmlDocument();
             XmlNode Racine = doc.CreateNode(XmlNodeType.Element, "SoumissionAgence", "http://tempuri.org/SoumissionAgence.xsd");
-            string pathAlle = "//deptinfo420/P2016_Equipe2/App_Data/Soumission_alle";
+            string pathAlle = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle";
             string pathXml = "";
-            //dr = CreateDirectory(pathAlle);
+            dr = CreateDirectory(pathAlle);
             doc.AppendChild(Racine);
             Racine.AppendChild(CrerUneSoumissionXml(doc, soumi, appelOffre));
             try
             {
-                //if(dr!=null)
-                //{
-                //    pathAlle =dr.FullName;
-                //}
+                if (dr != null)
+                {
+                    pathAlle = dr.FullName;
+                }
                 pathXml = pathAlle+"/soumission_" + appelOffre.nom + "_" +provider.ReturnAgenceParSoumi(soumi).nom + ".xml";
                 doc.Save(pathXml);
                 string pathXsd = "//deptinfo420/P2016_Equipe2/App_Data/SoumissionAgence.xsd";
@@ -175,18 +192,19 @@ namespace ECJ.Web.Controllers.AppelOffre
         {
             
             XmlDocument doc = new XmlDocument();
-            //DirectoryInfo dr = null;
-            string pathXsd = "//deptinfo420/P2016_Equipe2/App_Data/SoumissionAgence.xsd";
-            string pathRetour = "//deptinfo420/P2016_Equipe2/App_Data/Soumission_retour";
-            //dr = CreateDirectory(pathRetour);
+            DirectoryInfo dr = null;
+            string pathXsd = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/SoumissionAgence.xsd";
+            string pathRetour = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_retour";
+            dr = CreateDirectory(pathRetour);
+            CreateXsd(pathXsd, doc);
             //On prcoure tous les xmls contenus dans le dossier
             try
             {
 
-                //if (dr != null)
-                //{
-                //    pathRetour = dr.FullName;
-                //}
+                if (dr != null)
+                {
+                    pathRetour = dr.FullName;
+                }
                 var files = from file in Directory.EnumerateFiles(pathRetour, "*.xml", SearchOption.AllDirectories)
                             select new
                             {
@@ -233,16 +251,16 @@ namespace ECJ.Web.Controllers.AppelOffre
         private void DeleteXml(string nameXml)
         {
             XmlDocument doc = new XmlDocument();
-            //DirectoryInfo dr = null;
-            string pathAlle = "//deptinfo420/P2016_Equipe2/App_Data/Soumission_alle";
-            //dr = CreateDirectory(pathAlle);
+            DirectoryInfo dr = null;
+            string pathAlle = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle";
+            dr = CreateDirectory(pathAlle);
             //On prcoure tous les xmls contenus dans le dossier
             try
             {
-                //if (dr != null)
-                //{
-                //    pathAlle =dr.FullName;
-                //}
+                if (dr != null)
+                {
+                    pathAlle = dr.FullName;
+                }
                 var files = from file in Directory.EnumerateFiles(pathAlle, "*.xml", SearchOption.AllDirectories)
                             select new
                             {
@@ -402,7 +420,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                     if (s.noAgencePub != int.Parse(no))
                     {
                         s.dateSupprime = DateTime.Now;
-                        string filename = "//deptinfo420/P2016_Equipe2/App_Data/Soumission_alle\\soumission_" + appel.nom + "_" + s.tblAgencePublicite.nom + ".xml";
+                        string filename = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle\\soumission_" + appel.nom + "_" + s.tblAgencePublicite.nom + ".xml";
                         DeleteXml(filename);
 
                     }
@@ -502,7 +520,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                         foreach (tblSoumission s in provider.RetunSoumission(tblAppelOffre.noAppelOffre))
                         {
                             s.dateSupprime = DateTime.Now;
-                            string filename = "//deptinfo420/P2016_Equipe2/Soumission_alle\\soumission_" + tblAppelOffre.nom + "_" + s.tblAgencePublicite.nom + ".xml";
+                            string filename = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle\\soumission_" + tblAppelOffre.nom + "_" + s.tblAgencePublicite.nom + ".xml";
                             DeleteXml(filename);
                         }
                     }
@@ -559,6 +577,8 @@ namespace ECJ.Web.Controllers.AppelOffre
             foreach (tblSoumission soumi in provider.RetunSoumission(tblAppelOffre.noAppelOffre))
             {
                 soumi.dateSupprime = DateTime.Now;
+                string filename = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle\\soumission_" + tblAppelOffre.nom + "_" + soumi.tblAgencePublicite.nom + ".xml";
+                DeleteXml(filename);
             }
             provider.Save();
             if (tblAppelOffre == null)

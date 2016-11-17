@@ -34,7 +34,10 @@
     <div class="form-group">
         <label>Prix</label>
         <div class="well well-sm">
-            @Html.DisplayFor(model => model.prix) $
+            @if (Model.prix!=null)
+            {
+                @Html.DisplayFor(model => model.prix)<span> $</span>
+            }
         </div>
     </div>
     <div class="form-group">
@@ -67,6 +70,6 @@
     </div>
     <br />    
     <br />
-    <a href="/AppellOffre/Details/@Model.noAppelOffre" class="btn btn-default pull-right " data-dismiss="modal">Retour à l'appel d'offre parent</a>
+    <a href="~/AppellOffre/Details/@Model.noAppelOffre" class="btn btn-default pull-right " data-dismiss="modal">Retour à l'appel d'offre parent</a>
 
 </form>
