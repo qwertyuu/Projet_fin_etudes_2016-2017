@@ -1132,5 +1132,20 @@ namespace ECJ.Web.Controllers
 
             return new tblService();
         }
+
+        public List<vueSomAppelOffre> ToutSomAppelOffre()
+        {
+            try
+            {
+                return db.vueSomAppelOffre.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<vueSomAppelOffre>();
+        }
     }
+
+
 }

@@ -95,7 +95,8 @@ namespace ECJ.Web.Controllers.AppelOffre
             {
                 try
                 {
-                    StreamWriter fileLog = new StreamWriter("//deptinfo420/P2016_Equipe2/logErreur.txt", true);
+                    //doc.Load("//deptinfo420/P2016_Equipe2/App_Data/logErreur.txt");
+                    StreamWriter fileLog = new StreamWriter("//deptinfo420/P2016_Equipe2/App_Data/logErreur.txt", true);
                     fileLog.WriteLine(e.ToString());
                     doc.Save(fileLog);
                     fileLog.Close();
@@ -134,23 +135,23 @@ namespace ECJ.Web.Controllers.AppelOffre
         private void CreateSoumissionXml(tblSoumission soumi,tblAppelOffre appelOffre)
         {
             CptSoumi++;
-            DirectoryInfo dr = null;
+            //DirectoryInfo dr = null;
             XmlDocument doc = new XmlDocument();
             XmlNode Racine = doc.CreateNode(XmlNodeType.Element, "SoumissionAgence", "http://tempuri.org/SoumissionAgence.xsd");
-            string pathAlle = "//deptinfo420/P2016_Equipe2/Soumission_alle";
+            string pathAlle = "//deptinfo420/P2016_Equipe2/App_Data/Soumission_alle";
             string pathXml = "";
-            dr = CreateDirectory(pathAlle);
+            //dr = CreateDirectory(pathAlle);
             doc.AppendChild(Racine);
             Racine.AppendChild(CrerUneSoumissionXml(doc, soumi, appelOffre));
             try
             {
-                if(dr!=null)
-                {
-                    pathAlle =dr.FullName;
-                }
+                //if(dr!=null)
+                //{
+                //    pathAlle =dr.FullName;
+                //}
                 pathXml = pathAlle+"/soumission_" + appelOffre.nom + "_" +provider.ReturnAgenceParSoumi(soumi).nom + ".xml";
                 doc.Save(pathXml);
-                string pathXsd = "//deptinfo420/P2016_Equipe2/Models/SoumissionAgence.xsd";
+                string pathXsd = "//deptinfo420/P2016_Equipe2/App_Data/SoumissionAgence.xsd";
                 validerXML(pathXml, doc, pathXsd);
   
 
@@ -174,18 +175,18 @@ namespace ECJ.Web.Controllers.AppelOffre
         {
             
             XmlDocument doc = new XmlDocument();
-            DirectoryInfo dr = null;
-            string pathXsd = "//deptinfo420/P2016_Equipe2/Models/SoumissionAgence.xsd";
-            string pathRetour = "//deptinfo420/P2016_Equipe2/Soumission_retour";
-            dr = CreateDirectory(pathRetour);
+            //DirectoryInfo dr = null;
+            string pathXsd = "//deptinfo420/P2016_Equipe2/App_Data/SoumissionAgence.xsd";
+            string pathRetour = "//deptinfo420/P2016_Equipe2/App_Data/Soumission_retour";
+            //dr = CreateDirectory(pathRetour);
             //On prcoure tous les xmls contenus dans le dossier
             try
             {
 
-                if (dr != null)
-                {
-                    pathRetour = dr.FullName;
-                }
+                //if (dr != null)
+                //{
+                //    pathRetour = dr.FullName;
+                //}
                 var files = from file in Directory.EnumerateFiles(pathRetour, "*.xml", SearchOption.AllDirectories)
                             select new
                             {
@@ -232,16 +233,16 @@ namespace ECJ.Web.Controllers.AppelOffre
         private void DeleteXml(string nameXml)
         {
             XmlDocument doc = new XmlDocument();
-            DirectoryInfo dr = null;
-            string pathAlle = "//deptinfo420/P2016_Equipe2/Soumission_alle";
-            dr = CreateDirectory(pathAlle);
+            //DirectoryInfo dr = null;
+            string pathAlle = "//deptinfo420/P2016_Equipe2/App_Data/Soumission_alle";
+            //dr = CreateDirectory(pathAlle);
             //On prcoure tous les xmls contenus dans le dossier
             try
             {
-                if (dr != null)
-                {
-                    pathAlle =dr.FullName;
-                }
+                //if (dr != null)
+                //{
+                //    pathAlle =dr.FullName;
+                //}
                 var files = from file in Directory.EnumerateFiles(pathAlle, "*.xml", SearchOption.AllDirectories)
                             select new
                             {
@@ -306,8 +307,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         public ActionResult Index(string SearchString)
         {
 
-            var appelOfrre = from q in db.vueSomAppelOffre
-                             select q;
+            var appelOfrre = provider.ToutSomAppelOffre();
             if (!String.IsNullOrEmpty(SearchString))
             {
                 SearchString = SearchString.Trim().ToUpper();
@@ -319,8 +319,10 @@ namespace ECJ.Web.Controllers.AppelOffre
                         a => (a.nomAppelOffre ?? "").ToString().ToUpper().Contains(SearchString) ||
                         (a.nomStatut ?? "").ToString().ToUpper().Contains(SearchString) || 
                         (a.nomEvent ?? "").ToString().ToUpper().Contains(SearchString) || 
-                        (a.nomAgence ?? "").ToString().ToUpper().Contains(SearchString) ||                       
-                        (a.description ?? "").ToString().ToUpper().Contains(SearchString));
+                        (a.nomAgence ?? "").ToString().ToUpper().Contains(SearchString) ||
+                        String.Format("{0:yyyy/MM/dd HH:mm:ss}", a.dateEnvoi).Contains(SearchString) ||
+                        String.Format("{0:yyyy/MM/dd HH:mm:ss}", a.dateRequis).Contains(SearchString) ||
+                        (a.description ?? "").ToString().ToUpper().Contains(SearchString)).ToList();
                 }
 
             }
@@ -333,7 +335,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                              nomEvent = a.Key.nomEvent,
                              noStatut = a.Key.noStatut,
                              description = a.Key.description,
-                             nomAgence = string.Join(",\n", db.vueSomAppelOffre.Where(j => j.noAppelOffre == a.Key.noAppelOffre).Select(i => i.nomAgence)),
+                             nomAgence = string.Join(",\n", provider.RetunSoumission(null).Where(s1 => a.Key.noAppelOffre == s1.noAppelOffre).Select(s => s.tblAgencePublicite.nom)),
                              dateRequis = a.Key.dateRequis,
                              dateEnvoi = a.Key.dateEnvoi,
                              couleur = a.Key.couleur
@@ -400,7 +402,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                     if (s.noAgencePub != int.Parse(no))
                     {
                         s.dateSupprime = DateTime.Now;
-                        string filename = "//deptinfo420/P2016_Equipe2/Soumission_alle\\soumission_" + appel.nom + "_" + s.tblAgencePublicite.nom + ".xml";
+                        string filename = "//deptinfo420/P2016_Equipe2/App_Data/Soumission_alle\\soumission_" + appel.nom + "_" + s.tblAgencePublicite.nom + ".xml";
                         DeleteXml(filename);
 
                     }

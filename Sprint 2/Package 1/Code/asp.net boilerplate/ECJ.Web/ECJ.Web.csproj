@@ -396,6 +396,9 @@
     <Content Include="Models\ModelEquipe2.edmx.diagram">
       <DependentUpon>ModelEquipe2.edmx</DependentUpon>
     </Content>
+    <None Include="Content\SoumissionAgence.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\Cegep.pubxml" />
     <None Include="Properties\PublishProfiles\DWDWdw.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
@@ -788,6 +791,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Soumission_alle\" />
+    <Folder Include="Content\Soumission_retour\" />
     <Folder Include="Views\Lire\" />
   </ItemGroup>
   <ItemGroup>
