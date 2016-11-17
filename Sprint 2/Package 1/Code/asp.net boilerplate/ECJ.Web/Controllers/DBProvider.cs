@@ -561,7 +561,9 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                db.tblSousEvenement.Find(id).tblForfait.Remove(db.tblForfait.Find(forfaitASupprimer));
+                var sousEvenement = db.tblSousEvenement.Find(id);
+                sousEvenement.tblForfait.Remove(db.tblForfait.Find(forfaitASupprimer));
+                db.Entry(sousEvenement).State = EntityState.Modified;
                 db.SaveChanges();
             }
             catch (Exception e)
@@ -625,7 +627,9 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                db.tblSousEvenement.Find(id).tblSalle = null;
+                var sousEvenement = db.tblSousEvenement.Find(id);
+                sousEvenement.noSalle = null;
+                db.Entry(sousEvenement).State = EntityState.Modified;
                 db.SaveChanges();
             }
             catch (Exception e)
@@ -677,7 +681,9 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                db.tblSousEvenement.Find(id).tblEngagement.Remove(db.tblEngagement.Find(engagement_id));
+                var sousEvenement = db.tblSousEvenement.Find(id);
+                sousEvenement.tblEngagement.Remove(db.tblEngagement.Find(engagement_id));
+                db.Entry(sousEvenement).State = EntityState.Modified;
                 db.SaveChanges();
             }
             catch (Exception e)
