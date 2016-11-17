@@ -23,11 +23,17 @@ using ECJ.Web.Models.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using System.Web.Routing;
+using BotDetect.Web.Mvc;
+using System.Data;
+using ECJ.Web.Models;
 
 namespace ECJ.Web.Controllers
 {
     public class AccountController : ECJControllerBase
     {
+        DBProvider provider = new DBProvider();
+        private PE2_OfficielEntities db = new PE2_OfficielEntities();
         private readonly TenantManager _tenantManager;
         private readonly UserManager _userManager;
         private readonly RoleManager _roleManager;
@@ -54,6 +60,43 @@ namespace ECJ.Web.Controllers
             _roleManager = roleManager;
             _unitOfWorkManager = unitOfWorkManager;
             _multiTenancyConfig = multiTenancyConfig;
+        }
+
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            // BotDetect requests must not be routed
+            routes.IgnoreRoute("{*botdetect}", new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [CaptchaValidation("CaptchaCode", "ExampleCaptcha", "Incorrect CAPTCHA code!")]
+        public ActionResult Captcha()
+        {
+
+
+            if (!ModelState.IsValid)
+            {
+                // TODO: Captcha validation failed, show error message
+            }
+            else
+            {
+                // TODO: Captcha validation passed, proceed with protected action
+            }
+            return View();
+        }
+
+        public ActionResult Captcha(int?id)
+        {
+            return View();
+        }
+
+        public ActionResult CreateSetting()
+        {
+            ViewBag.noSousEvenement = new SelectList(db.tblSousEvenement, "noSousEvenement", "nom");
+            return View();
         }
 
         #region Login / Logout
