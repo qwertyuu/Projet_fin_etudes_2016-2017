@@ -396,7 +396,7 @@
     <Content Include="Models\ModelEquipe2.edmx.diagram">
       <DependentUpon>ModelEquipe2.edmx</DependentUpon>
     </Content>
-    <None Include="Content\SoumissionAgence.xsd">
+    <None Include="App_Start\SoumissionAgence.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\Cegep.pubxml" />
@@ -791,8 +791,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Soumission_alle\" />
-    <Folder Include="Content\Soumission_retour\" />
     <Folder Include="Views\Lire\" />
   </ItemGroup>
   <ItemGroup>

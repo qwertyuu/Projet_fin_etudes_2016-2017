@@ -34,7 +34,7 @@
     <div class="form-group">
         <label>Prix</label>
         <div class="well well-sm">
-            @if (Model.prix!=null)
+            @if (Model.prix!=null || Model.prix.ToString()=="0.00")
             {
                 @Html.DisplayFor(model => model.prix)<span> $</span>
             }

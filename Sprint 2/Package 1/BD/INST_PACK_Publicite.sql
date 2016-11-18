@@ -63,7 +63,7 @@ INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[descriptio
 INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[description],[noEvenement],[noStatut],noMedia) VALUES('Promotion de fin de spectacle','2015-10-23 09:55:54','2017-07-06 02:22:27','Savoir les differentes promotions de la fin du spectacle',7,1,1);
 INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],[description],[noEvenement],[noStatut],noMedia) VALUES('Publicité de l''évènement','2016-03-20 21:22:45','2015-12-01 18:52:02','Faire la publicité de l''évènement',4,2,2);
 INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],description,[noEvenement],[noStatut],noMedia) VALUES('Promotion des artistes','2016-04-05 10:01:15','2017-02-25 04:34:45','Cette publicité permet de faire savoir les artistes du spectacle',1,3,4);
-INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],description, [noEvenement],[noStatut],noMedia) VALUES('Pomotions des auberges','2015-12-12 23:45:29','2017-06-11 21:47:20','Cette publicité rend compte des prix et rabais des auberges',8,1,1);
+INSERT INTO S_publicite.tblAppelOffre([nom],[dateEnvoi],[dateRequis],description, [noEvenement],[noStatut],noMedia) VALUES('Pomotions des auberges','2015-12-12 23:45:29','2017-06-11 21:47:20','Cette publicité rend compte des prix et rabais des auberges',8,2,1);
 PRINT 'Fin d''insertion de table tblAppelOffre'
 
 GO
