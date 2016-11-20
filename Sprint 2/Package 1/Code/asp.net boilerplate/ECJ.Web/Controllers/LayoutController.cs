@@ -59,6 +59,10 @@ namespace ECJ.Web.Controllers
         [ChildActionOnly]
         public PartialViewResult Erreur()
         {
+            if (erreurs == null)
+            {
+                erreurs = new List<Exception>();
+            }
             Exception[] erreurs_model = new Exception[erreurs.Count];
             erreurs.CopyTo(erreurs_model);
             var vue = PartialView("_Erreur", erreurs_model.ToList());
