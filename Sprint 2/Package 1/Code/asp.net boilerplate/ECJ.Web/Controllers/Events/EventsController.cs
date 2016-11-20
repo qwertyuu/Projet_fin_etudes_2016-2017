@@ -58,7 +58,11 @@ namespace ECJ.Web.Controllers
                 String.Format("{0:yyyy/MM/dd}", e.dateDebut).Contains(recherche) ||
                 String.Format("{0:yyyy/MM/dd}", e.dateFin).Contains(recherche) ||
                 (e.description ?? "").ToUpper().Contains(recherche) || 
-                e.nom.ToUpper().Contains(recherche)).ToList();
+                e.nom.ToUpper().Contains(recherche)||
+                (DateTime.Now > e.dateFin ? "TERMINÉ" :
+                (DateTime.Now > e.dateDebut ? "EN COURS" : "PRÉPARATION")
+                ).Contains(recherche)
+                ).ToList();
             }
             return View(tblEvenement);
         }

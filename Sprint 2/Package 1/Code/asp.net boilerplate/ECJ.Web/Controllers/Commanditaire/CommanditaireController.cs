@@ -46,51 +46,9 @@ namespace ECJ.Web.Controllers.Commanditaire
                 Commanditaire = Commanditaire.Where(
                 a => a.nomCommanditaire.ToString().ToUpper().Contains(recherche) ||
                 a.courrielContact.ToString().ToUpper().Contains(recherche) ||
-                a.nomContact.ToString().ToUpper().Contains(recherche)).ToList();
+                a.nomContact.ToString().ToUpper().Contains(recherche) ||
+                (a.tblDon.Sum(d => d.montant).ToString() + "$").Contains(recherche.Replace('.', ','))).ToList();
                 
-                List<tblDon> listDon = new List<tblDon>();
-                tblDon tbldon;
-
-                for (int i = 0; i < don.Count; i++)
-                {
-                    tbldon = new tblDon();
-                    if (listDon.Count == 0 && don[i].dateSupprime == null)
-                    {
-                        tbldon.montant = (int)don[i].montant;
-                        tbldon.noCommanditaire = don[i].noCommanditaire;
-                        listDon.Add(tbldon);
-                    }
-                    else
-                    {
-                        if(don[i].dateSupprime == null)
-                        {
-                            bool trouve = false;
-                            foreach(var j in listDon)
-                            {
-                                if (j.noCommanditaire == don[i].noCommanditaire)
-                                {
-                                    trouve = true;
-                                    j.montant += don[i].montant;
-                                }
-                         
-                            }
-                            if(trouve == false)
-                            {
-                                tbldon.montant = (int)don[i].montant;
-                                tbldon.noCommanditaire = don[i].noCommanditaire;
-                                listDon.Add(tbldon);
-                            }
-                        }
-
-                    }
-                }
-
-                listDon = listDon.Where(a => a.montant.ToString().ToUpper().Contains(recherche)).ToList();
-
-                foreach (var i in listDon)
-                {
-                    Commanditaire.Add(provider.returnCommanditaire((int)i.noCommanditaire));
-                }
             }
             return View(Commanditaire);
         }

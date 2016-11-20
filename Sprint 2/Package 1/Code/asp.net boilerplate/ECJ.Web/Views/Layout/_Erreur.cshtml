@@ -4,7 +4,7 @@
     string message = "Une erreur s'est produite dans la base de données";
     if (Model.GetType() == typeof(IOException))
     {
-        message = "Serveur de fichier introuvable. Veuillez vous connectez au serveur de fichiers pour pouvoir ecrire les soumissions en format XML";
+        message = "Serveur de fichier introuvable. Veuillez vous connecter au serveur de fichiers pour pouvoir écrire les soumissions au format XML";
     }
     <div class="alert alert-dismissible alert-danger">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -21,9 +21,9 @@
                     <div>@e.Message</div>
                     e = e.InnerException;
                 } while (e != null);
-                }
+            }
         </div>
     </div>
-                }
+}
 
 

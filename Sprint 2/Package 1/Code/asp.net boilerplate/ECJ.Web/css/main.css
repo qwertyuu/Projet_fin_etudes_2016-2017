@@ -188,14 +188,37 @@ img{
 tooltip{
     clear:both;
 }
-.tablesorter-headerAsc{
-    text-decoration: overline;
+.tablesorter-headerAsc :after{
+    /*text-decoration: overline;*/
+    content:' ⮭';
 }
 
-.tablesorter-headerDesc{
-    
-    text-decoration: underline;
+.tablesorter-headerDesc :after{
+    content:' ⮯';
+    /*text-decoration: underline;*/
 }
 #erreur{
     color:#000;
+}
+th {
+    white-space: nowrap;
+}
+.navbar-inverse, .btn-primary{
+    background-color:#003E7E;
+}
+.btn-danger, .alert-danger{
+    background-color:#BB0039;
+}
+.tablesorter-header:not(.sorter-false):hover{
+    color:#6B6B6B;
+}
+#legend div{
+    vertical-align: middle;
+    margin-left:10px;
+}
+#legend div:first-child{
+    margin-left:0px;
+}
+#legendeStatut{
+    margin-bottom:35px;
 }

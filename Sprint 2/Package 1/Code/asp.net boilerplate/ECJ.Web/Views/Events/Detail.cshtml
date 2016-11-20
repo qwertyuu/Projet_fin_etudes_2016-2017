@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label>Lien hypertexte</label>
+        <label>Site web</label>
         <div class="well well-sm">
             @if (Model.url != null)
             {
@@ -62,31 +62,38 @@
             }
             else
             {
-                <img src="~/Events/GetFile/@Model.noEvenement" alt="Affiche" />
+                <img src="~/Events/GetFile/@Model.noEvenement" alt="Impossible de charger l'affiche" />
             }
         </div>
     </div>
     <label>Sous-Événements</label>
+@if (DateTime.Now <= Model.datefin)
+{
     <a href="~/sousEvenements/Ajout?evenement_id=@Model.noEvenement&return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un sous-événement</a>
+
+}
     <div class="form-group">
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>Nom</th>
+                    <th data-sorter="text">Nom</th>
                     <th>Description</th>
-                    <th class="col-md-2">Action</th>
+                    <th data-sorter="false">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var sE in Model.tblSousEvenement.Where(element => element.dateSupprime == null))
                 {
                     <tr>
-                        <td>@sE.nom</td>
+                        <td ><span>@sE.nom</span></td>
                         <td>@sE.description</td>
                         <td>
                             <a href="~/sousEvenements/Detail/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+@if (DateTime.Now <= Model.datefin)
+{
                             <a href="~/sousEvenements/Modifier/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
                             <a href="~/sousEvenements/Supprimer/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+}
                         </td>
                     </tr>
                 }
@@ -102,15 +109,15 @@
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane active fade in" id="liste">
             <div class="form-group">
-                <table class="table table-striped table-hover">
+                <table class="table table-striped table-hover" data-sortlist="[[3,1]]">
                     <thead>
                         <tr>
                             <th>Responsable</th>
                             <th>Tâche</th>
                             <th>Détails</th>
                             <th>Date</th>
-                            <th>Sous-Événement</th>
-                            <th class="col-md-2">Action</th>
+                            <th data-sorter="text">Sous-Événement</th>
+                            <th data-sorter="false">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -142,7 +149,7 @@
                                     @{
                                         if (activite.tblSousEvenement == null)
                                         {
-                                            <td></td>
+                                            <td data-text="."></td>
                                         }
                                         else
                                         {

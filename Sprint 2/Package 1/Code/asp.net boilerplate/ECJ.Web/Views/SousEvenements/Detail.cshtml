@@ -35,7 +35,10 @@
         </div>
     </div>
     <label>Services requis</label>
+@if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+{
     <button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
+}
     <div class="form-group">
         @using (Html.BeginForm())
         {
@@ -45,7 +48,7 @@
             <thead>
                 <tr>
                     <th>Nom</th>
-                    <th class="col-md-2">Action</th>
+                    <th data-sorter="false">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,7 +57,10 @@
                     <tr>
                         <td>@s.nomService</td>
                         <td>
+                        @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+                        {
                             <button name="service_suppr" value="@s.noService" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                        }
                         </td>
                     </tr>
                 }
@@ -65,8 +71,11 @@
     <label>Salle</label>
     @if (Model.Item1.noSalle == null || Model.Item1.tblSalle.dateSupprime != null)
     {
+        if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+        {
         <button data-target="#SalleAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Choisir une salle</button>
-    }
+            }
+        }
     <div class="form-group">
 @using (Html.BeginForm())
 {
@@ -79,7 +88,7 @@
                     <th>Prix</th>
                     <th>Billets standard</th>
                     <th>Billets VIP</th>
-                    <th class="col-md-2">Action</th>
+                    <th data-sorter="false">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -91,7 +100,10 @@
                         <td>@Model.Item1.tblSalle.billet</td>
                         <td>@Model.Item1.tblSalle.billetVIP</td>
                         <td>
+                            @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+                            {
                             <button name="salle_suppr" value="@Model.Item1.noSalle" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                            }
                         </td>
                     </tr>
                 }
@@ -101,7 +113,10 @@
     </div>
 
     <label>Forfaits</label>
+@if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+{
     <button data-target="#ForfaitAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un forfait</button>
+}
     <div class="form-group">
 @using (Html.BeginForm())
 {
@@ -112,7 +127,7 @@
                 <tr>
                     <th>Nom</th>
                     <th>Description</th>
-                    <th class="col-md-2">Action</th>
+                    <th data-sorter="false">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -122,7 +137,10 @@
                         <td>@f.nom</td>
                         <td>@f.description</td>
                         <td>
+                            @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+                            {
                             <button name="forfait_suppr" value="@f.noForfait" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                            }
                         </td>
                     </tr>
                 }
@@ -132,7 +150,10 @@
     </div>
 
     <label>Engagements</label>
+    @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+    {
     <button data-target="#EngagementAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un engagement</button>
+    }
     <div class="form-group">
 @using (Html.BeginForm())
 {
@@ -147,7 +168,7 @@
                     <th>Date</th>
                     <th>Heure</th>
                     <th>Description</th>
-                    <th class="col-md-2">Action</th>
+                    <th data-sorter="false">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -161,7 +182,10 @@
                         <td>@e.heure</td>
                         <td>@e.descriptionCourte</td>
                         <td>
+                        @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+                        {
                             <button name="engagement_suppr" value="@e.noEngagement" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                        }
                         </td>
                     </tr>
                 }
@@ -179,14 +203,14 @@
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane active fade in" id="liste">
             <div class="form-group">
-                <table class="table table-striped table-hover">
+                <table class="table table-striped table-hover tablesorter" data-sortlist="[[3,1]]">
                     <thead>
                         <tr>
                             <th>Responsable</th>
                             <th>Tâche</th>
                             <th>Détails</th>
                             <th>Date</th>
-                            <th class="col-md-2">Action</th>
+                            <th data-sorter="false">Action</th>
                         </tr>
                     </thead>
                     <tbody>

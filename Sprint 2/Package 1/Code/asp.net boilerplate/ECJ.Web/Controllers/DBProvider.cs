@@ -51,7 +51,7 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                return db.tblCommanditaire.ToList();
+                return db.tblCommanditaire.Where(c => c.dateSupprime == null).ToList();
             }
             catch (Exception e)
             {
