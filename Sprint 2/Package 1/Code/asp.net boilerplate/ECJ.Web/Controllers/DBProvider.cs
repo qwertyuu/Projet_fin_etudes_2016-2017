@@ -144,20 +144,6 @@ namespace ECJ.Web.Controllers
             }
             return new tblEvenement();
         }
-
-        public List<tblSousEvenement> returnSousEvenement()
-        {
-            try
-            {
-                return db.tblSousEvenement.ToList();
-            }
-            catch (Exception e)
-            {
-                LayoutController.erreur = e;
-            }
-            return new List<tblSousEvenement>();
-        }
-
         public List<vueSomEvenement> ToutSomEvenement()
         {
             try
@@ -458,7 +444,7 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                return db.tblSousEvenement.Where(se => se.dateSupprime == null).ToList();
+                return db.tblSousEvenement.Where(se => se.dateSupprime == null && se.tblEvenement.dateSupprime == null).ToList();
             }
             catch (Exception e)
             {
@@ -1052,21 +1038,6 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
         }
-
-
-
-        public List<vueSomAppelOffre> ToutVueAppel()
-        {
-            try
-            {
-                return db.vueSomAppelOffre.ToList();
-            }
-            catch (Exception e)
-            {
-                LayoutController.erreur = e;
-            }
-            return new List<vueSomAppelOffre>();
-        }
         public List<vueSomSalle> ToutVueSalle()
         {
             try
@@ -1137,7 +1108,7 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                return db.vueSomAppelOffre.ToList();
+                return db.vueSomAppelOffre.AsNoTracking().ToList();
             }
             catch (Exception e)
             {

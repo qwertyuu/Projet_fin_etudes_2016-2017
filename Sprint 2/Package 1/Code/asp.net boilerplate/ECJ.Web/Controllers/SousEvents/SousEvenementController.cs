@@ -19,6 +19,7 @@ namespace ECJ.Web.Controllers
         public SousEvenementsController()
         {
             db = new DBProvider();
+            GetPermissions();
         }
         public ActionResult Detail(int? id)
         {

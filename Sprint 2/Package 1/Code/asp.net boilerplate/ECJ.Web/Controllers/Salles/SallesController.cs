@@ -18,9 +18,25 @@ namespace ECJ.Web.Controllers.Salles
         }
         public ActionResult Index()
         {
-            ViewBag.Salle = db.ToutVueSalle();
+            var Salles = db.ToutVueSalle();
+            var recherche = Request.QueryString["recherche"];
+            if (recherche != null)
+            {
+                if (recherche.Trim() == "")
+                {
+                    return RedirectToAction("Index");
+                }
+                ViewBag.recherche = recherche;
+                recherche = recherche.Trim().ToUpper();
+                Salles = Salles.Where(s => 
+                s.nomSalle.ToUpper().Contains(recherche) ||
+                (s.prix.ToString() + "$").ToUpper().Contains(recherche.Replace('.', ','))||
+                s.billet.ToString().ToUpper().Contains(recherche) ||
+                s.billetVIP.ToString().ToUpper().Contains(recherche)).ToList();
+            }
 
-            return View();
+            ViewBag.Salle = Salles;
+                return View();
         }
         public ActionResult Details(int id)
         {
@@ -45,11 +61,11 @@ namespace ECJ.Web.Controllers.Salles
                     db.DelierSalle(ss.noSousEvenement);
                 }
             }
-
-            ViewBag.Salle = db.ReturnSalle(id);
-            ViewBag.Service = db.ReturnSalle(id).tblService;
-            ViewBag.ServiceAjoutable = db.ToutService().Except(db.ReturnSalle(id).tblService).ToList();
-            ViewBag.SousEvent = db.ToutSousEvenement();
+            var salle = db.ReturnSalle(id);
+            ViewBag.Salle = salle;
+            ViewBag.Service = salle.tblService;
+            ViewBag.ServiceAjoutable = db.ToutService().Except(salle.tblService).ToList();
+            ViewBag.SousEvent = salle.tblSousEvenement.Where(sse => sse.dateSupprime == null && sse.tblEvenement.dateSupprime == null && sse.tblEvenement.datefin >= DateTime.Now).ToList();
             return View();
         }
     }

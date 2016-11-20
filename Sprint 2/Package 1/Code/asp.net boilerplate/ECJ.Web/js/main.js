@@ -27,13 +27,13 @@
         $.blockUI.defaults.baseZ = 2000;
     }
 
-    $("[title=\"Supprimer\"]").click(function (e) {
+    $("[title=\"Supprimer\"], [name=\"service_suppr\"]").click(function (e) {
         if (!confirm("Êtes-vous sur de vouloir supprimer cet élément?")) {
             e.preventDefault();
         }
     });
 
-    $("[title=\"SupprimerAppel\"]").click(function (e) {
+    $("[title=\"Supprimer l'appel d'offre\"]").click(function (e) {
         if (!confirm("Si vous supprimez cet appel d'offre il sera suprimé definitivement ou son statut tombera à Annulé en fonction de son statut présent.\nÊtes-vous sur de vouloir le faire?")) {
             e.preventDefault();
         }
@@ -400,8 +400,3 @@ function validerChamps(f) {
 
 }));
 
-$("[title=\"SupprimerSalle\"]").click(function (e) {
-    if (!confirm("Ce service est requis pour un ou plusieurs sous-évènement.Si vous supprimez ce service les sous-évènements qui en ont besoin vont avoir leurs salles déliées")) {
-        e.preventDefault();
-    }
-});

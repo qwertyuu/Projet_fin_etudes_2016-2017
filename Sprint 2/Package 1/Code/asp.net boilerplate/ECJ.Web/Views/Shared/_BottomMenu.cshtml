@@ -32,7 +32,7 @@
                     <input type="hidden" name="expediteur" id="expediteur" value="@ViewBag.uId" />
                     <div class="form-group">
                         <label>Message</label>
-                        <textarea name="message" id="message" class="form-control" rows="10" cols="5" required></textarea>
+                        <textarea name="message" id="message" class="form-control" rows="10" cols="5" maxlength="2147483647" required></textarea>
                     </div>
                     <div class="form-group">
                         <div id="messageSucces" class="alert alert-success" style="display:none;">
@@ -64,14 +64,17 @@
             <div class="footer-left">
                 <div>
                     <h3>Cégep de Jonquière</h3>
-                    <p class="footer-company-name">Cégep de Jonquière &copy; 2016</p>
+                    <p class="footer-company-name">Cégep de Jonquière &copy; 2015-2016</p>
 
                 </div>
                 <br />
                 @foreach (var i in Model.Items)
                 {
                         <button data-toggle="modal" data-target="#MemoCreateModal" class="btn btn-primary"><i class="@i.Icon"></i> @i.DisplayName</button>
+                        <br />
+                        <br />
                 }
+                <p class="footer-company-name">Programmé par Raphaël Côté, Simon Girard, Kevin Kuété-Moffo et Pierre-Alexandre Pageau</p>
             </div>
             <div class="footer-center">
                 <div>

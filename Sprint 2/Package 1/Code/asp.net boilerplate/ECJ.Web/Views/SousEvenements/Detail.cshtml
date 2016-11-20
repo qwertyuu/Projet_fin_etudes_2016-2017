@@ -11,10 +11,13 @@
 }
 @if (Model.Item1.noSalle != null)
 {
-    <a href="~/Calculateur/index/@Model.Item1.noSousEvenement?return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-calculator"></i> Ouvrir le calculateur</a>
+    if (Model.Item1.tblEvenement.datefin > DateTime.Now)
+    {
+        <a href="~/Calculateur/index/@Model.Item1.noSousEvenement?return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-calculator"></i> Ouvrir le calculateur</a>
+    }
 }
 
-<h2>Détail d'un sous-événement</h2>
+<h2>Détail du sous-événement</h2>
 
 @section scripts
 {
@@ -31,7 +34,7 @@
     <div class="form-group">
         <label>Description</label>
         <div class="well well-lg">
-            @Model.Item1.description
+            @(string.IsNullOrWhiteSpace(Model.Item1.description) ? "Aucune description fournie" : Model.Item1.description)
         </div>
     </div>
     <label>Services requis</label>
@@ -167,7 +170,7 @@
                     <th>Lieu</th>
                     <th>Date</th>
                     <th>Heure</th>
-                    <th>Description</th>
+                    <th data-sorter="text">Description</th>
                     <th data-sorter="false">Action</th>
                 </tr>
             </thead>
@@ -206,10 +209,11 @@
                 <table class="table table-striped table-hover tablesorter" data-sortlist="[[3,1]]">
                     <thead>
                         <tr>
-                            <th>Responsable</th>
-                            <th>Tâche</th>
-                            <th>Détails</th>
+                            <th data-sorter="text">Responsable</th>
+                            <th data-sorter="text">Tâche</th>
+                            <th data-sorter="text">Détails</th>
                             <th>Date</th>
+                            <th>État</th>
                             <th data-sorter="false">Action</th>
                         </tr>
                     </thead>
@@ -232,9 +236,12 @@
                                 }
                                 <tr>
                                     <td>@activite.nomResponsable</td>
-                                    <td>@activite.tache</td>
-                                    <td>@activite.detail</td>
+                                    <td data-text="@(string.IsNullOrEmpty(activite.tache) ? "." : activite.tache)">@activite.tache</td>
+                                    <td data-text="@(string.IsNullOrEmpty(activite.detail) ? "." : activite.detail)">@activite.detail</td>
                                     <td>@String.Format("{0:yyyy/MM/dd}", activite.dateCreation)</td>
+                                    <td data-text="@activite.etat">
+                                        @(activite.etat == 1 ? "Réalisé" : "Non réalisé")
+                                    </td>
                                     <td>
                                         @if (activite.etat == 1)
                                         {

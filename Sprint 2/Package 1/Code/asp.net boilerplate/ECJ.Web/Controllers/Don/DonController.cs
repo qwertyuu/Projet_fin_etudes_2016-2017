@@ -33,7 +33,7 @@ namespace ECJ.Web.Controllers.Don
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             List<tblCommanditaire> comm = new List<tblCommanditaire>();
-            List<tblSousEvenement> sousEvent = new List<tblSousEvenement>();
+            List<tblSousEvenement> sousEvent = provider.ToutSousEvenement().Where(se => se.tblEvenement.datefin > DateTime.Now).ToList();
 
             foreach (var c in provider.CommanditaireList())
             {
@@ -42,18 +42,19 @@ namespace ECJ.Web.Controllers.Don
                     comm.Add(c);
                 }
             }
-
-            foreach (var sE in provider.returnSousEvenement())
-            {
-                if (sE.dateSupprime == null)
-                {
-                    sousEvent.Add(sE);
-                }
-            }
             var commandite = provider.ReturnCommanditaire((int)id);
             ViewBag.noCommanditaire = commandite.noCommanditaire;
             ViewBag.nomCommanditaire = commandite.nomCommanditaire;
-            ViewBag.noSousEvenement = new SelectList(sousEvent, "noSousEvenement", "nom");
+            List<SelectListItem> sousEvenements = new List<SelectListItem>();
+            foreach (var item in sousEvent)
+            {
+                sousEvenements.Add(new SelectListItem()
+                {
+                    Text = item.nom + " / " + item.tblEvenement.nom,
+                    Value = item.noSousEvenement.ToString(),
+                });
+            }
+            ViewBag.noSousEvenement = new SelectList(sousEvenements, "Value", "Text");
 
             return View();
         }
@@ -106,7 +107,8 @@ namespace ECJ.Web.Controllers.Don
             {
                 provider.supprimerDon((int)id);
             }
-            return RedirectToAction("../Commanditaire/Index");
+            var retour = Request.QueryString["return"] ?? "~/Commanditaire";
+            return Redirect(retour);
         }
     }
 }

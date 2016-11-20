@@ -6,8 +6,8 @@
 }
 
 <h1>Commanditaire</h1>
-<div class="row">
-    <div class="col-md-12">
+<div>
+    <div>
         @using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "page-header" }))
         {
             <div class="input-group">
@@ -49,7 +49,11 @@
                 {
                     if (item.dateSupprime == null)
                     {
-                        var sommeDon = item.tblDon.Sum(d => d.montant);
+                        var sommeDon = item.tblDon.Where(d => 
+                        d.dateSupprime == null && 
+                        d.tblSousEvenement.dateSupprime == null && 
+                        d.tblSousEvenement.tblEvenement.dateSupprime == null
+                        ).Sum(d => d.montant);
                         <tr>
                             <td>
                                 @Html.DisplayFor(modelItem => item.nomCommanditaire)

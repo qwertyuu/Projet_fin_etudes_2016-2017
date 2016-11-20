@@ -27,6 +27,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         public AppellOffreController()
         {
             provider = new DBProvider();
+            GetPermissions();
         }
 
 
@@ -128,7 +129,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             {
                 try
                 {
-                    StreamWriter fileLog = new StreamWriter("E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/logErreur.txt", true);
+                    StreamWriter fileLog = new StreamWriter("E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\logErreur.txt", true);
                     fileLog.WriteLine(e.ToString());
                     doc.Save(fileLog);
                     fileLog.Close();
@@ -170,7 +171,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             DirectoryInfo dr = null;
             XmlDocument doc = new XmlDocument();
             XmlNode Racine = doc.CreateNode(XmlNodeType.Element, "SoumissionAgence", "http://tempuri.org/SoumissionAgence.xsd");
-            string pathAlle = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle";
+            string pathAlle = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\Soumission_alle";
             string pathXml = "";
             dr = CreateDirectory(pathAlle);
             doc.AppendChild(Racine);
@@ -181,7 +182,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                 {
                     pathAlle = dr.FullName;
                 }
-                pathXml = pathAlle+"/soumission_" + appelOffre.nom + "_" +provider.ReturnAgenceParSoumi(soumi).nom + ".xml";
+                pathXml = pathAlle+"/soumission_" + CleanFileName(appelOffre.nom) + "_" + CleanFileName(provider.ReturnAgenceParSoumi(soumi).nom) + ".xml";
                 doc.Save(pathXml);
                 string pathXsd = "//deptinfo420/P2016_Equipe2/App_Data/SoumissionAgence.xsd";
                 validerXML(pathXml, doc, pathXsd);
@@ -202,14 +203,18 @@ namespace ECJ.Web.Controllers.AppelOffre
                 ViewBag.IO = IOEx.Message;
             }
         }
+        private static string CleanFileName(string fileName)
+        {
+            return Path.GetInvalidFileNameChars().Aggregate(fileName, (current, c) => current.Replace(c.ToString(), string.Empty));
+        }
 
         private void RetournerSoumissionXml()
         {
             
             XmlDocument doc = new XmlDocument();
             DirectoryInfo dr = null;
-            string pathXsd = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/SoumissionAgence.xsd";
-            string pathRetour = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_retour";
+            string pathXsd = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\SoumissionAgence.xsd";
+            string pathRetour = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\Soumission_retour";
             dr = CreateDirectory(pathRetour);
             CreateXsd(pathXsd, doc);
             //On prcoure tous les xmls contenus dans le dossier
@@ -267,7 +272,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         {
             XmlDocument doc = new XmlDocument();
             DirectoryInfo dr = null;
-            string pathAlle = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle";
+            string pathAlle = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\Soumission_alle";
             dr = CreateDirectory(pathAlle);
             //On prcoure tous les xmls contenus dans le dossier
             try
@@ -406,7 +411,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         public ActionResult Create()
         {
 
-            ViewBag.noEvenement = new SelectList(provider.ToutEvenement(), "noEvenement", "nom");
+            ViewBag.noEvenement = new SelectList(provider.ToutEvenement().Where(e => e.datefin >= DateTime.Now), "noEvenement", "nom");
             ViewBag.noStatut = new SelectList(provider.ToutStatutAppel(), "noStatut", "nom");
             ViewBag.noMedia = new SelectList(provider.ToutMedia(), "noMedia", "nom");
             ViewBag.noAgencePub = new MultiSelectList(provider.ToutAgencePublicite(), "noAgencePub", "nom");

@@ -10,7 +10,7 @@
         return string.Format("({0}) {1}-{2}", tel.Substring(0, 3), tel.Substring(3, 3), tel.Substring(6, 4));
     }
 }
-<h2>Commanditaires</h2>
+<h2>Commanditaire</h2>
 
 <div>
 
@@ -73,21 +73,14 @@
     <div class="form-group">
         <label>Numéro de téléphone</label>
         <div class="well well-sm">
-            @(FormatTelephone(Model.numTel))
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label>Extension</label>
-        <div class="well well-sm">
-            @Model.extension
+            @(FormatTelephone(Model.numTel)) @(string.IsNullOrWhiteSpace(Model.extension) ? "" : "Poste: " + Model.extension)
         </div>
     </div>
     <label>Dons effectués</label>
     <a href="~/Don/Create/@Model.noCommanditaire?return=@Request.RawUrl" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Faire un don</a>
 
     <div class="form-group">
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover" data-sortlist="[[2,1]]">
             <thead>
                 <tr>
                     <th>Sous-événement commandité</th>
@@ -102,10 +95,19 @@
                     if (don.noCommanditaire == Model.noCommanditaire)
                     {
                         <tr>
-                            <td>@don.tblSousEvenement.nom</td>
+                            <td>@don.tblSousEvenement.nom @{
+                                if(don.tblSousEvenement.dateSupprime != null)
+                                {
+                                    <span>(Sous-événement supprimé - ne compte pas)</span>
+                                }
+                                else if (don.tblSousEvenement.tblEvenement.dateSupprime != null)
+                                {
+                                    <span>(Événement parent supprimé - ne compte pas)</span>
+                                }
+                            }</td>
                             <td class="{sorter:'monetaryValue'}">@don.montant$</td>
                             <td>@String.Format("{0:yyyy/MM/dd}", don.dateDon)</td>
-                            <td><a href="~/Don/Supprimer/@don.noDon" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a></td>
+                            <td><a href="~/Don/Supprimer/@don.noDon?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a></td>
                         </tr>
                     }
                 }
@@ -114,6 +116,4 @@
     </div>
 
 </div>
-<div class="form-group pull-right">
-    <a href="~/Commanditaire" class="btn btn-default" data-dismiss="modal">Annuler</a>
-</div>
+<a href="~/Commanditaire" class="btn btn-default pull-right" data-dismiss="modal"> Retour aux commanditaires</a>

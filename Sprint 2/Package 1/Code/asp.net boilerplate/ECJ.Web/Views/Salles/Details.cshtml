@@ -1,12 +1,16 @@
 ﻿@using ECJ.Web.Models
-
+@using Abp.Web.Mvc.Extensions
 @{
     ViewBag.Title = "DetailSalles";
+}
+@section scripts
+{
+    @Html.IncludeScript("~/Views/Salles/Details.js")
 }
 
 <div class="form-group">
     <label>Nom</label>
-    <div class="well well-sm">
+    <div class="well well-sm" id="nomSalle">
         @ViewBag.Salle.nomSalle
     </div>
 </div>
@@ -52,33 +56,33 @@
     </thead>
     <tbody>
         @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
-            {
+        {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
+            string txt = "";
             foreach (var s in ViewBag.Service)
             {
                 var SsEvents = ((List<tblSousEvenement>)ViewBag.SousEvent).Where(SsE => SsE.tblService.Contains(s)).ToList();
                 var name = "service_suppr";
-                var classe = "btn-primary";
-                var txt = "";
 
                 if (SsEvents.Count != 0)
                 {
                     name = "service_delete_salle";
-                    classe = "btn-default";
                     foreach (var sse in SsEvents)
                     {
-                        txt = txt + "/n " + sse.nom;
+                        txt += sse.nom + ", ";
                     }
+                    txt = txt.Substring(0, txt.Length - 2);
                 }
                 <tr>
                     <td>@s.nomService</td>
-                    <td><button  name=@name value="@s.noService" class="btn @classe btn-sm" title="SupprimerSalle"><i class="fa fa-trash fa-lg"></i></button> </td>
+                    <td><button data-evenements="@txt" name=@name value="@s.noService" class="btn btn-danger btn-sm" title="Supprimer le service offert"><i class="fa fa-trash fa-lg"></i></button> </td>
                 </tr>
             }
         }
     </tbody>
 </table>
+<a href="~/Salles/" class="btn btn-default pull-right" data-dismiss="modal">Retour à la liste des salles</a>
 
 @*Modal pour le choix d'un service requis*@
 <div class="modal fade" id="ServiceAjoutModal" tabindex="-1" role="dialog" aria-labelledby="ServiceAjoutModalLabel" data-backdrop="static">
@@ -103,18 +107,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @*
-                                Si il y a une salle, changer le name
-                            *@
 
                             @foreach (var s in ViewBag.ServiceAjoutable)
                             {
                                 {
-                                    var name = "service";
-                                    var classe = "btn-primary";
                                     <tr>
                                         <td>@s.nomService</td>
-                                        <td><button name="@name" value="@s.noService" class="btn @classe btn-sm"><i class="fa fa-check-square"></i></button></td>
+                                        <td><button name="service" value="@s.noService" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button></td>
                                     </tr>
                                 }
                             }

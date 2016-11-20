@@ -40,6 +40,11 @@
                 $("#destinataire").val([]);
             }
         });
+        $("#MemoCreateModal").on('hidden.bs.modal', function () {
+            $("#filtreUsers,#message").val("");
+            $("#filtreUsers").trigger("input");
+            $("#destinataire").val($("#destinataire option:first").val());
+        });
     }
 );
 

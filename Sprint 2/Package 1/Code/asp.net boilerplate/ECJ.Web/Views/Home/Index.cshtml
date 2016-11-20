@@ -9,11 +9,9 @@
 {
     @Html.IncludeScript("~/Views/Home/Index.js")
 }
-<h1>@L("WellcomeMessage")</h1>
-
 <div class="jumbotron">
-    <h1>ECJ</h1>
-    <p class="lead">ECJ, qui veut dire Événement du Cégep de Jonquière, est une entreprise qui crée, gère et applique des événement au Cégep de Jonquière.</p>
+    <h1>Bienvenue sur ECJ!</h1>
+    <p class="lead">ECJ, qui veut dire Événement du Cégep de Jonquière, est un système qui crée, gère et applique des événement au Cégep de Jonquière.</p>
 </div>
 
 <h3>Mémos</h3>
@@ -60,26 +58,35 @@
 </table>
 }
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <h2>Événements</h2>
         <p>
-            Ici contient tous les informations par rapports aux événements. Il est possible de voir chaque événement, ainsi que leurs dates et l'heure de ces derniers.
+            Ici contient toutes les informations par rapport aux événements. Il est possible de voir chaque événement, ainsi que leurs dates et l'heure de ces derniers.
         </p>
-        <p><a class="btn btn-primary" href="~/Events/Index">Voir les Événements &raquo;</a></p>
+        <p><a class="btn btn-primary pull-right" href="~/Events">Voir les événements &raquo;</a></p>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
         <h2>Publicités</h2>
         <p>
-            Ici contient tous les informations par rapports aux publicités. Il est possible de voir l'affiche, le média ainsi que la date de la sortie.
+            Ici contient toutes les informations par rapport aux publicités. Il est possible de voir l'affiche, le média ainsi que la date de la sortie.
         </p>
-        <p><a class="btn btn-primary" href="~/AppellOffre/Index">Voir les publicitées &raquo;</a></p>
+        <p><a class="btn btn-primary pull-right" href="~/AppellOffre">Voir les publicités &raquo;</a></p>
     </div>
 
 
-    <div class="col-md-4">
+
+
+</div>
+<div class="row">
+    <div class="col-md-6">
         <h2>Commanditaires</h2>
-        <p>Ici contient tous les informations par rapport aux commanditaires. Il est possible de voir les commanditaires, leurs dons ainsi que leurs logo.</p>
-        <p><a class="btn btn-primary" href="~/Commanditaire/Index">Voir les commanditaires &raquo;</a></p>
+        <p>Ici contient toutes les informations par rapport aux commanditaires. Il est possible de voir les commanditaires, leurs dons ainsi que leurs logo.</p>
+        <p><a class="btn btn-primary pull-right" href="~/Commanditaire">Voir les commanditaires &raquo;</a></p>
+    </div>
+    <div class="col-md-6">
+        <h2>Salles</h2>
+        <p>Ici contient toutes les informations par rapport aux salles disponibles. Il est possible de voir les salles, le plan des sièges et de la scène, l'endroit où elle se situe et ses services offerts.</p>
+        <p><a class="btn btn-primary pull-right" href="~/Salles">Voir les salles &raquo;</a></p>
     </div>
 </div>

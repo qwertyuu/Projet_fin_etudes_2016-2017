@@ -9,6 +9,7 @@ using ECJ.Web.Models.Layout;
 using System.Linq;
 using Abp.Web.Mvc.Authorization;
 using System;
+using System.Collections.Generic;
 
 namespace ECJ.Web.Controllers
 {
@@ -19,7 +20,15 @@ namespace ECJ.Web.Controllers
         private readonly ISessionAppService _sessionAppService;
         private readonly IMultiTenancyConfig _multiTenancyConfig;
         DBProvider provider;
-        public static Exception erreur;
+        private static List<Exception> erreurs;
+        public static Exception erreur { set {
+
+                if (erreurs == null)
+                {
+                    erreurs = new List<Exception>();
+                }
+                erreurs.Add(value);
+            } }
         public static AbpMvcAuthorizeAttribute pagePermission;
 
         public LayoutController(
@@ -50,8 +59,10 @@ namespace ECJ.Web.Controllers
         [ChildActionOnly]
         public PartialViewResult Erreur()
         {
-            var vue = PartialView("_Erreur", erreur);
-            erreur = null;
+            Exception[] erreurs_model = new Exception[erreurs.Count];
+            erreurs.CopyTo(erreurs_model);
+            var vue = PartialView("_Erreur", erreurs_model.ToList());
+            erreurs.Clear();
             return vue;
         }
 

@@ -17,8 +17,8 @@
         </div>
 
         <div class="form-group">
-            <label>Sous-événement</label>
-            @Html.DropDownList("noSousEvenement", null, htmlAttributes: new { @class = "form-control" })
+            <label>Sous-événement / Événement</label>
+            @Html.DropDownList("noSousEvenement", (SelectList)ViewBag.noSousEvenement, htmlAttributes: new { @class = "form-control" })
         </div>
 
         <div class="form-group">
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group pull-right">
-            <button class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Ajouter</span></button>
-            <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Retour à un détail d'événement</a>
+            <button class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Commanditer</span></button>
+            <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Annuler</a>
         </div>
 }
