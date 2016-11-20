@@ -9,14 +9,14 @@ var VIPMax;
 var totalFinal;
 var coutTotal;
 
-this.onload = function () { setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed), LoadingDesDonnes(), setCout(), recetteTotale(coutTotal) };
+this.onload = function () { setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed), LoadingDesDonnes(), setCout(coutTot), recetteTotale(coutTotal) };
 
 function calculTotalBillet() {
-    if (nbBillet == "0" || nbBilletVIP == "0") {
-        alert("Vous devez entrer un nombre de billet avant de continuer")
+    if (nbBillet != "0") {
+        return TotalBillet = parseInt(nbBillet) + parseInt(nbBilletVIP);
     }
     else {
-        return TotalBillet = parseInt(nbBillet) + parseInt(nbBilletVIP);
+        alert("Vous devez entrer un nombre de billet avant de continuer")
     }
 } //Met a jour le nombre de billet entré et le retourne // Vérifie aussi qu'il y a un nombre entré
 
@@ -29,38 +29,28 @@ function calculBillet() {
 
     var prixBillet;
 
-    if (billetMaxCheck() == true) {
-        nbBillet = $("#nbBillet").val();
-        prixBillet = $("#prixBillet").val();
+    nbBillet = $("#nbBillet").val();
+    prixBillet = $("#prixBillet").val();
 
-        var total = nbBillet * prixBillet;
-        prixBillets = total;
-        $("#totalBillet").val(round_argent(total) + "$");
+    var total = nbBillet * prixBillet;
+    prixBillets = total;
+    $("#totalBillet").val(round_argent(total) + "$");
 
-        return total;
-    }
-    else {
-        return 0;
-    }
+    return total;
 } //Calcule le prix des billets normaux
 
 function calculBilletVIP() {
 
     var prixBilletVIP;
 
-    if (billetMaxCheck() == true) {
-        nbBilletVIP = $("#nbBilletVIP").val();
-        prixBilletVIP = $("#prixBilletVIP").val();
+    nbBilletVIP = $("#nbBilletVIP").val();
+    prixBilletVIP = $("#prixBilletVIP").val();
 
-        var total = nbBilletVIP * prixBilletVIP;
-        prixBilletsVIP = total;
-        $("#totalBilletVIP").val(round_argent(total) + "$");
+    var total = nbBilletVIP * prixBilletVIP;
+    prixBilletsVIP = total;
+    $("#totalBilletVIP").val(round_argent(total) + "$");
 
-        return total;
-    }
-    else {
-        return 0;
-    }
+    return total;
 } //Calcule le prix des billets VIP
 
 function calculSouperSpectacle() {
@@ -71,11 +61,16 @@ function calculSouperSpectacle() {
     if ($("#nbBilletSouper").val() == "") {
         return 0;
     }
-    if ($("#nbBilletSouper").val() < TotalBillet && TotalBillet != "") {
+    if ($("#nbBilletSouper").val() <= TotalBillet && TotalBillet != "") {
         totalSouper = parseInt($("#nbBilletSouper").val()) * parseInt($("#prixSouper").val());
 
         $("#totalSouper").val(round_argent(totalSouper) + "$");
         return totalSouper;
+    }
+
+    if ($("#nbBilletSouper").val() <= TotalBillet) {
+        $("#nbBilletSouper").val(TotalBillet);
+        return TotalBillet;
     }
     else {
         $("#nbBilletSouper").val(0);
@@ -173,14 +168,16 @@ function Calcultotal() {
 
     do {
         checkPositif();
+        billetMaxCheck();
+        billetVIPMaxCheck();
     }
-    while (checkPositif() == false) {
-        total = calculBillet() + calculBilletVIP() + calculSouperSpectacle() - calculRabaisAge() - calculPrixReduit();
+    while (checkPositif() == false && billetMaxCheck() == false && billetVIPMaxCheck() == false)
 
-        $("#TotFinal").text(round_argent(total) + "$");
+    total = calculBillet() + calculBilletVIP() + calculSouperSpectacle() - calculRabaisAge() - calculPrixReduit();
 
-        totalFinal = total;
-    }
+    $("#TotFinal").text(round_argent(total) + "$");
+
+    totalFinal = total;
     recetteTotale(totalFinal);
 } //Calcule le montant total et l'envoie 
 
@@ -258,14 +255,24 @@ function checkNbBilletReduction() {
 
 function billetMaxCheck() {
 
-    if (parseInt($("#nbBillet").val()) >= billetMax) {
+    if ($("#nbBillet").val() >= billetMax) {
         $("#nbBillet").val(billetMax);
+        return false;
     }
     if ($("#nbBilletVIP").val() >= VIPMax) {
         $("#nbBilletVIP").val(VIPMax);
+        return false;
     }
     return true;
 }//Vérifie que les nombres de billets et billets VIP entrés soient inférieur ou égaux au nombre de places dans la salle.
+
+function billetVIPMaxCheck() {
+    if ($("#nbBilletVIP").val() >= VIPMax) {
+        $("#nbBilletVIP").val(VIPMax);
+        return false;
+    }
+    return true;
+}//Vérifie que les nombres de billets VIP entrés soient inférieur ou égaux au nombre de places dans la salle.
 
 function round_argent(value) {
     var decimals = 2
@@ -464,6 +471,6 @@ function recetteTotale(coutTotal) {
     $("#Recettes").text(round_argent(totalFinal - coutTotal) + "$");
 }
 
-function setCout() {
-    coutTot = coutTotal;
+function setCout(coutTot) {
+    coutTotal = coutTot;
 }
