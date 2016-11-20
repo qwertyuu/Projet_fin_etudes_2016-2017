@@ -190,12 +190,14 @@ tooltip{
 }
 .tablesorter-headerAsc :after{
     /*text-decoration: overline;*/
-    content:' ⮭';
+    font-size:10px;
+    content:' ▲';
 }
 
 .tablesorter-headerDesc :after{
-    content:' ⮯';
     /*text-decoration: underline;*/
+    font-size:10px;
+    content:' ▼';
 }
 .erreur{
     color:#000;

@@ -8,26 +8,30 @@ var billetMax;
 var VIPMax;
 var totalFinal;
 var coutTotal;
+var TotalBillet;
 
-this.onload = function () { setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed), LoadingDesDonnes(), setCout(coutTot), recetteTotale(coutTotal) };
+this.onload = function () { setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed), LoadingDesDonnes(), setCout(coutTot), recetteTotale() };
 
 function calculTotalBillet() {
     if (nbBillet != "0") {
-        return TotalBillet = parseInt(nbBillet) + parseInt(nbBilletVIP);
+        TotalBillet = parseInt(nbBillet) + parseInt(nbBilletVIP);
+        return true;
     }
     else {
         alert("Vous devez entrer un nombre de billet avant de continuer")
+        return false;
     }
 } //Met a jour le nombre de billet entré et le retourne // Vérifie aussi qu'il y a un nombre entré
 
 function calculMoyenne() {
     PrixMoyen = prixBillets + prixBilletsVIP;
-    PrixMoyen = PrixMoyen / calculTotalBillet();
+    PrixMoyen = PrixMoyen / TotalBillet;
 } //Calcule la moyenne des billets pour le calcul des âges
 
 function calculBillet() {
 
     var prixBillet;
+    if (calculTotalBillet() != false) {
 
     nbBillet = $("#nbBillet").val();
     prixBillet = $("#prixBillet").val();
@@ -37,6 +41,10 @@ function calculBillet() {
     $("#totalBillet").val(round_argent(total) + "$");
 
     return total;
+    }
+    else {
+        return 0;
+    }
 } //Calcule le prix des billets normaux
 
 function calculBilletVIP() {
@@ -55,7 +63,6 @@ function calculBilletVIP() {
 
 function calculSouperSpectacle() {
 
-    var TotalBillet = calculTotalBillet();
     var totalSouper = 0;
 
     if ($("#nbBilletSouper").val() == "") {
@@ -95,7 +102,6 @@ function calculRabaisAge() {
         calculBillet();
         calculBilletVIP();
         calculMoyenne();
-        calculTotalBillet();
 
         var totBilletJeune = $("#nbBilletJeune").val(Math.round(TotalBillet * ratioJeune)).val();
         var totBilletAdulte = $("#nbBilletAdulte").val(Math.round(TotalBillet * ratioAdulte)).val();
@@ -472,5 +478,5 @@ function recetteTotale(coutTotal) {
 }
 
 function setCout(coutTot) {
-    coutTotal = coutTot;
+    coutTotal = parseInt(coutTot);
 }
