@@ -93,7 +93,8 @@
                 <label>Agence de publicité</label>
                 <div>
                     @Html.ListBox("noAgencePub", (MultiSelectList)ViewBag.noAgencePub, new { @class = "form-control", @id = "agencePub", @size="15"})
-                    @*<select multiple class="form-control" required>
+
+                    <select multiple class="form-control" required>
                   @foreach (var item in ViewBag.AllAgence)
                   {
                       foreach (var AO in ViewBag.AgenceParAppel)
@@ -105,10 +106,8 @@
                           }
                          <option>@AO.nom</option>
                       }
-
-
                   }
-                  </select>*@
+                  </select>
                 </div>
             </div>
 

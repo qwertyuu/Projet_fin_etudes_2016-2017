@@ -19,7 +19,6 @@ namespace ECJ.Web.Controllers.AppelOffre
     [AbpMvcAuthorize]
     public class AppellOffreController : ECJControllerBase
     {
-        private PE2_OfficielEntities db = new PE2_OfficielEntities();
         private DBProvider provider;
         int CptSoumi = 0;
         DataSet ds = new DataSet();
@@ -102,6 +101,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             catch (IOException IOEx)
             {
                 ViewBag.IO = IOEx.Message;
+                LayoutController.erreur = IOEx;
             }
 
 
@@ -117,6 +117,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             catch (IOException IOEx)
             {
                 ViewBag.IO = IOEx.Message;
+                LayoutController.erreur = IOEx;
             }
 
 
@@ -138,6 +139,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                 catch (IOException IOEx)
                 {
                     ViewBag.IO = IOEx.Message;
+                    LayoutController.erreur = IOEx;
                     return false;
                 }
 
@@ -160,7 +162,8 @@ namespace ECJ.Web.Controllers.AppelOffre
             catch (IOException IOEx)
             {
                 ViewBag.IO = IOEx.Message;
-                
+                LayoutController.erreur = IOEx;
+
             }
 
             return dr;
@@ -201,6 +204,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             catch (IOException IOEx)
             {
                 ViewBag.IO = IOEx.Message;
+                LayoutController.erreur = IOEx;
             }
         }
         private static string CleanFileName(string fileName)
@@ -299,8 +303,9 @@ namespace ECJ.Web.Controllers.AppelOffre
                     catch (IOException IOEx)
                     {
                         ViewBag.IO = IOEx.Message;
+                        LayoutController.erreur = IOEx;
                     }
-                                      
+
                 }
 
             }
@@ -316,6 +321,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             catch (IOException IOEx)
             {
                 ViewBag.IO = IOEx.Message;
+                LayoutController.erreur = IOEx;
             }
         }
 
@@ -433,15 +439,22 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         private void deleteSoumission(string[] NoAgence,tblAppelOffre appel)
         {
+            List<tblSoumission> listSoumi = provider.RetunSoumission(appel.noAppelOffre);
             foreach (string no in NoAgence)
             {
-                foreach (tblSoumission s in provider.RetunSoumission(appel.noAppelOffre))
+                foreach (tblSoumission s in listSoumi)
                 {
                     if (s.noAgencePub != int.Parse(no))
                     {
                         s.dateSupprime = DateTime.Now;
                         string filename = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle\\soumission_" + appel.nom + "_" + s.tblAgencePublicite.nom + ".xml";
                         DeleteXml(filename);
+                    }
+                    else
+                    {
+                        s.dateSupprime = null;
+                        CreateSoumissionXml(s, appel);
+                       
                     }
                 }
             }
