@@ -357,7 +357,7 @@
 <script>
     var maxBillet = @ViewBag.Salle.billet;
     var maxVIP = @ViewBag.Salle.billetVIP;
-    var coutTot = @(ViewBag.Salle.prix.ToString().Replace(",", ".")); //Ligne qui plante tout le JS
+    var coutTot = @(ViewBag.Salle.prix.ToString().Replace(",", "."));
     var chkSalle = false, chkAge = false, chkRed = false;
 
     @foreach(var f in ViewBag.Forfait)

@@ -13,7 +13,7 @@ var TotalBillet;
 this.onload = function () { setCout(coutTot), setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed), LoadingDesDonnes(), recetteTotale() };
 
 function calculTotalBillet() {
-    if (nbBillet != "0") {
+    if (nbBillet != "0" || nbBillet != null) {
         TotalBillet = parseInt(nbBillet) + parseInt(nbBilletVIP);
         return true;
     }
@@ -391,7 +391,8 @@ function remiseAZero() {
     $("#nbBilletAine").val(0);
     $("#NomRabaisCustom1").val("");
     $("#NomRabaisCustom2").val("");
-    $("#TotFinal").val(0);
+    $("#Recettes").text(0 - coutTotal + "$");
+    $("#TotFinal").text(0,00+"$");
 }//Met tout a 0 ou "" partout
 
 function checkPositif() {
@@ -474,7 +475,12 @@ function checkPositif() {
 }// Regarde toute les valeures et si elles sont négaive les remets à 0
 
 function recetteTotale() {
-    $("#Recettes").text(round_argent(totalFinal - coutTotal) + "$");
+    if (totalFinal != null) {
+        $("#Recettes").text(round_argent(totalFinal - coutTotal) + "$");
+    }
+    else {
+        $("#Recettes").text(round_argent(0 - coutTotal) + "$");
+    }
 }
 
 function setCout(couttot) {
