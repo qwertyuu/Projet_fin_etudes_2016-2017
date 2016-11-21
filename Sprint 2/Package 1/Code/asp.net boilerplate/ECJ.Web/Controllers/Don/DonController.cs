@@ -90,7 +90,7 @@ namespace ECJ.Web.Controllers.Don
 
                 try
                 {
-                    //client.Send(message);
+                    client.Send(message);
                 }
                 catch (Exception ex)
                 {
