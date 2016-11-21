@@ -163,10 +163,10 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>10/12/2016 11:18:42</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>11/20/2016 20:03:51</publishTime>
+      <publishTime>11/20/2016 20:24:02</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>11/20/2016 20:03:51</publishTime>
+      <publishTime>11/20/2016 20:24:02</publishTime>
     </File>
     <File Include="bin/AutoMapper.dll">
       <publishTime>10/12/2016 11:18:42</publishTime>
@@ -556,7 +556,7 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>11/10/2016 21:56:57</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>11/20/2016 20:03:48</publishTime>
+      <publishTime>11/20/2016 20:23:58</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>10/12/2016 11:18:40</publishTime>
@@ -709,7 +709,7 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>11/20/2016 19:14:51</publishTime>
     </File>
     <File Include="Views/AppellOffre/Create.js">
-      <publishTime>11/20/2016 19:55:05</publishTime>
+      <publishTime>11/20/2016 20:17:31</publishTime>
     </File>
     <File Include="Views/AppellOffre/Delete.cshtml">
       <publishTime>11/14/2016 18:15:27</publishTime>
@@ -718,7 +718,7 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, consultez la p
       <publishTime>11/20/2016 19:55:05</publishTime>
     </File>
     <File Include="Views/AppellOffre/Edit.cshtml">
-      <publishTime>11/20/2016 19:55:05</publishTime>
+      <publishTime>11/20/2016 20:17:31</publishTime>
     </File>
     <File Include="Views/AppellOffre/Index.cshtml">
       <publishTime>11/20/2016 16:02:00</publishTime>

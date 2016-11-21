@@ -450,12 +450,6 @@ namespace ECJ.Web.Controllers.AppelOffre
                         string filename = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle\\soumission_" + appel.nom + "_" + s.tblAgencePublicite.nom + ".xml";
                         DeleteXml(filename);
                     }
-                    else
-                    {
-                        s.dateSupprime = null;
-                        CreateSoumissionXml(s, appel);
-                       
-                    }
                 }
             }
         }
