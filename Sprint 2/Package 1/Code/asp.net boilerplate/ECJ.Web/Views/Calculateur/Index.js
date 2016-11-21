@@ -10,7 +10,7 @@ var totalFinal;
 var coutTotal;
 var TotalBillet;
 
-this.onload = function () { setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed), LoadingDesDonnes(), setCout(coutTot), recetteTotale() };
+this.onload = function () { setCout(coutTot), setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed), LoadingDesDonnes(), recetteTotale() };
 
 function calculTotalBillet() {
     if (nbBillet != "0") {
@@ -473,10 +473,10 @@ function checkPositif() {
     }
 }// Regarde toute les valeures et si elles sont négaive les remets à 0
 
-function recetteTotale(coutTotal) {
+function recetteTotale() {
     $("#Recettes").text(round_argent(totalFinal - coutTotal) + "$");
 }
 
-function setCout(coutTot) {
-    coutTotal = parseInt(coutTot);
+function setCout(couttot) {
+    coutTotal = parseInt(couttot);
 }
