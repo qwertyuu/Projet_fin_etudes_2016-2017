@@ -47,7 +47,6 @@ namespace ECJ.Web.Models
         public virtual DbSet<tblService> tblService { get; set; }
         public virtual DbSet<tblMemo> tblMemo { get; set; }
         public virtual DbSet<tblAgencePublicite> tblAgencePublicite { get; set; }
-        public virtual DbSet<tblAppelOffre> tblAppelOffre { get; set; }
         public virtual DbSet<tblMedia> tblMedia { get; set; }
         public virtual DbSet<tblSoumission> tblSoumission { get; set; }
         public virtual DbSet<tblStatutAppelOffre> tblStatutAppelOffre { get; set; }
@@ -85,5 +84,7 @@ namespace ECJ.Web.Models
         public virtual DbSet<AbpUserRoles> AbpUserRoles { get; set; }
         public virtual DbSet<AbpUsers> AbpUsers { get; set; }
         public virtual DbSet<tblCalculateur> tblCalculateur { get; set; }
+        public virtual DbSet<vueSomSalle> vueSomSalle { get; set; }
+        public virtual DbSet<tblAppelOffre> tblAppelOffre { get; set; }
     }
 }

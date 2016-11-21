@@ -7,19 +7,54 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ECJ.Web.Models;
+using System.Net.Mail;
+using Abp.Web.Mvc.Authorization;
+using ECJ.Authorization;
+using System.Globalization;
 
 namespace ECJ.Web.Controllers.Don
 {
-    public class DonController : Controller
+    [AbpMvcAuthorize]
+    public class DonController : ECJControllerBase
     {
-        private PE2_OfficielEntities db = new PE2_OfficielEntities();
         DBProvider provider;
         // GET: Don
 
-        public ActionResult Create()
+        public DonController()
         {
-            ViewBag.noCommanditaire = new SelectList(db.tblCommanditaire, "noCommanditaire", "nomCommanditaire");
-            ViewBag.noSousEvenement = new SelectList(db.tblSousEvenement, "noSousEvenement", "nom");
+            provider = new DBProvider();
+            GetPermissions();
+        }
+
+        public ActionResult Create(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            List<tblCommanditaire> comm = new List<tblCommanditaire>();
+            List<tblSousEvenement> sousEvent = provider.ToutSousEvenement().Where(se => se.tblEvenement.datefin > DateTime.Now).ToList();
+
+            foreach (var c in provider.CommanditaireList())
+            {
+                if (c.dateSupprime == null)
+                {
+                    comm.Add(c);
+                }
+            }
+            var commandite = provider.returnCommanditaire((int)id);
+            ViewBag.noCommanditaire = commandite.noCommanditaire;
+            ViewBag.nomCommanditaire = commandite.nomCommanditaire;
+            List<SelectListItem> sousEvenements = new List<SelectListItem>();
+            foreach (var item in sousEvent)
+            {
+                sousEvenements.Add(new SelectListItem()
+                {
+                    Text = item.nom + " / " + item.tblEvenement.nom,
+                    Value = item.noSousEvenement.ToString(),
+                });
+            }
+            ViewBag.noSousEvenement = new SelectList(sousEvenements, "Value", "Text");
 
             return View();
         }
@@ -27,20 +62,53 @@ namespace ECJ.Web.Controllers.Don
         // POST: tblDons/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "noDon,noCommanditaire,noSousEvenement,montant,dateDon,dateSupprime")] tblDon tblDon)
+        public ActionResult Create([Bind(Include = "noDon,noCommanditaire,noSousEvenement,dateDon,dateSupprime")] tblDon tblDon, string montant)
         {
+
             if (ModelState.IsValid)
             {
-                db.tblDon.Add(tblDon);
-                db.SaveChanges();
-                return RedirectToAction("../Commanditaire/Index");
-            }
-            
-            provider.CreateEmail(db.tblCommanditaire.Find(tblDon.noCommanditaire).courrielContact, tblDon.montant);
+                tblDon.montant = Convert.ToDecimal(montant, CultureInfo.InvariantCulture);
 
-            ViewBag.noCommanditaire = new SelectList(db.tblCommanditaire, "noCommanditaire", "nomCommanditaire", tblDon.noCommanditaire);
-            ViewBag.noSousEvenement = new SelectList(db.tblSousEvenement, "noSousEvenement", "nom", tblDon.noSousEvenement);
-            return View(tblDon);
+                provider.AjouterDon(tblDon);
+
+                tblCommanditaire tblCommanditaire = provider.returnCommanditaire((int)tblDon.noCommanditaire);
+
+                // CREATION DE MAIL NON-FONCTIONNEL
+                string to = tblCommanditaire.courrielContact.ToString();
+                string from = "PagPi1433443@etu.cegepjonquiere.ca";
+                MailMessage message = new MailMessage(from, to);
+                SmtpClient client = new SmtpClient("smtp.office365.com");
+                client.Port = 587;
+                client.EnableSsl = true;
+                client.UseDefaultCredentials = false;
+                NetworkCredential cred = new System.Net.NetworkCredential(from, "PAPageau04");
+                client.Credentials = cred;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                message.Subject = "Merci de votre Commandite";
+                message.Body = "Merci pour votre don de " + tblDon.montant + " $ effectué le " + tblDon.dateDon + ".";
+
+                try
+                {
+                    client.Send(message);
+                }
+                catch (Exception ex)
+                {
+                    LayoutController.erreur = ex;
+                }
+            }
+            var retour = Request.QueryString["return"] ?? "~/Commanditaire";
+            return Redirect(retour);
+        }
+
+        public ActionResult Supprimer(int? id)
+        {
+            if (id != null)
+            {
+                provider.supprimerDon((int)id);
+            }
+            var retour = Request.QueryString["return"] ?? "~/Commanditaire";
+            return Redirect(retour);
         }
     }
 }

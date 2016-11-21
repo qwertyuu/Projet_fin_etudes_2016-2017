@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Abp.Web.Mvc.Authorization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,6 +7,7 @@ using System.Web.Mvc;
 
 namespace ECJ.Web.Controllers
 {
+    [AbpMvcAuthorize]
     public class LireController : Controller
     {
         DBProvider db = new DBProvider();
@@ -15,7 +17,7 @@ namespace ECJ.Web.Controllers
             if (MemoALire != null)
             {
                 db.LireMemo(int.Parse(MemoALire));
-                return Content("Done :)", "text/plain");
+                return Json("Done :)", JsonRequestBehavior.AllowGet);
             }
             return new HttpStatusCodeResult(500);
         }

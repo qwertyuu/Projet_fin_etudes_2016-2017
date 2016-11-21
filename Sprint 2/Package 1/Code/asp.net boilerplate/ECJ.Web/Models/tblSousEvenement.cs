@@ -43,6 +43,5 @@ namespace ECJ.Web.Models
         public virtual ICollection<tblForfait> tblForfait { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblService> tblService { get; set; }
-        public virtual tblCalculateur tblCalculateur { get; set; }
     }
 }

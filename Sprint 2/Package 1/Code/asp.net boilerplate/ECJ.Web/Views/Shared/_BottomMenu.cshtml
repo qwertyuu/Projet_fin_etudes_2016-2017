@@ -32,7 +32,7 @@
                     <input type="hidden" name="expediteur" id="expediteur" value="@ViewBag.uId" />
                     <div class="form-group">
                         <label>Message</label>
-                        <textarea name="message" id="message" class="form-control" rows="10" cols="5" required></textarea>
+                        <textarea name="message" id="message" class="form-control" rows="10" cols="5" maxlength="2147483647" required></textarea>
                     </div>
                     <div class="form-group">
                         <div id="messageSucces" class="alert alert-success" style="display:none;">
@@ -62,12 +62,19 @@
     <footer>
         <div class="container">
             <div class="footer-left">
+                <div>
+                    <h3>Cégep de Jonquière</h3>
+                    <p class="footer-company-name">Cégep de Jonquière &copy; 2015-2016</p>
+
+                </div>
+                <br />
                 @foreach (var i in Model.Items)
                 {
-                    <button data-toggle="modal" data-target="#MemoCreateModal" class="btn btn-primary"><i class="@i.Icon"></i> @i.DisplayName</button>
+                        <button data-toggle="modal" data-target="#MemoCreateModal" class="btn btn-primary"><i class="@i.Icon"></i> @i.DisplayName</button>
+                        <br />
+                        <br />
                 }
-                <h3>Cégep de Jonquière<span></span></h3>
-                <p class="footer-company-name">Cégep de Jonquière &copy; 2016</p>
+                <p class="footer-company-name">Programmé par Raphaël Côté, Simon Girard, Kevin Kuété-Moffo et Pierre-Alexandre Pageau</p>
             </div>
             <div class="footer-center">
                 <div>
@@ -80,18 +87,17 @@
                 </div>
                 <div>
                     <i class="fa fa-envelope"></i>
-                    <p><a href="mailto:support@company.com">cegepjonquiere@company.com</a></p>
+                    <p><a href="http://www.cegepjonquiere.ca/directions-et-services.html" target="_blank">Joindre le Cégep</a></p>
                 </div>
             </div>
             <div class="footer-right">
                 <p class="footer-company-about">
-                    <span>About the company</span>
-                    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+                    <span>À propos</span>
+                    Le Cégep de Jonquière offre 27 programmes de formation, dont ceux en ATM, dans un milieu qui bouge sans arrêt.
                 </p>
                 <div class="footer-icons">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/cegepjonq" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com/cegepjonquiere" target="_blank"><i class="fa fa-twitter"></i></a>
                 </div>
             </div>
         </div>

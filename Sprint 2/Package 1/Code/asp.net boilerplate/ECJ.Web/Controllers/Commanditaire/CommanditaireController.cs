@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using Abp.Web.Mvc.Authorization;
+using ECJ.Authorization;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -12,15 +14,24 @@ using System.Drawing;
 
 namespace ECJ.Web.Controllers.Commanditaire
 {
+    [AbpMvcAuthorize]
     public class CommanditaireController : ECJControllerBase
     {
-        private PE2_OfficielEntities db = new PE2_OfficielEntities();
+        DBProvider provider;
+
+
+        public CommanditaireController()
+        {
+            provider = new DBProvider();
+            GetPermissions();
+        }
 
         // GET: Commanditaire
         public ActionResult Index()
         {
             var recherche = Request.QueryString["recherche"];
-            var Commanditaire = db.tblCommanditaire.ToList();
+            var Commanditaire = provider.CommanditaireList();
+            var don = provider.DonList();
 
             if (recherche != null)
             {
@@ -36,19 +47,17 @@ namespace ECJ.Web.Controllers.Commanditaire
                 a => a.nomCommanditaire.ToString().ToUpper().Contains(recherche) ||
                 a.courrielContact.ToString().ToUpper().Contains(recherche) ||
                 a.nomContact.ToString().ToUpper().Contains(recherche) ||
-                a.numTel.ToString().ToUpper().Contains(recherche)).ToList();
+                (a.tblDon.Where(d => d.dateSupprime == null).Sum(d => d.montant).ToString() + "$").Contains(recherche.Replace('.', ','))).ToList();
+                
             }
-
             return View(Commanditaire);
         }
 
         public FileContentResult GetFile(int id)
         {
-            var comm = db.tblCommanditaire.Find(id);
-            var imagedata = comm.logo;
+            var imagedata = provider.returnCommanditaire(id).logo;
             var contentType = DBProvider.GetContentType(imagedata);
-            return new FileContentResult(imagedata,string.Format("image/{0}", contentType.ToString().ToLower()));
-
+            return new FileContentResult(imagedata, string.Format("image/{0}", contentType.ToString().ToLower()));
         }
 
         // GET: tblCommanditaires/Details/5
@@ -58,7 +67,7 @@ namespace ECJ.Web.Controllers.Commanditaire
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblCommanditaire tblCommanditaire = db.tblCommanditaire.Find(id);
+            tblCommanditaire tblCommanditaire = provider.returnCommanditaire((int)id);
             if (tblCommanditaire == null)
             {
                 return HttpNotFound();
@@ -69,15 +78,10 @@ namespace ECJ.Web.Controllers.Commanditaire
         // GET: tblCommanditaires/Create
         public ActionResult Create()
         {
-            ViewBag.noCommanditaire = new SelectList(db.tblCommanditaire, "noCommanditaire", "nomCommanditaire");
-            ViewBag.noSousEvenement = new SelectList(db.tblSousEvenement, "noSousEvenement", "nom");
-
             return View();
         }
 
         // POST: tblCommanditaires/Create
-        // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
-        // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire)
@@ -93,8 +97,7 @@ namespace ECJ.Web.Controllers.Commanditaire
                     }
                 }
 
-                db.tblCommanditaire.Add(tblCommanditaire);
-                db.SaveChanges();
+                provider.AjouterCommanditaire(tblCommanditaire);
                 return RedirectToAction("Index");
             }
 
@@ -108,7 +111,7 @@ namespace ECJ.Web.Controllers.Commanditaire
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var elementAModifier = db.tblCommanditaire.Find((int)id);
+            var elementAModifier = provider.returnCommanditaire((int)id);
             if (elementAModifier == null)
             {
                 return HttpNotFound();
@@ -121,8 +124,6 @@ namespace ECJ.Web.Controllers.Commanditaire
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire)
         {
-            var modif = false;
-
             if (ModelState.IsValid)
             {
                 if (Request.Form["SupprimerAffiche"] != null)
@@ -139,18 +140,9 @@ namespace ECJ.Web.Controllers.Commanditaire
                 }
                 else
                 {
-                    tblCommanditaire.logo = db.tblCommanditaire.Find(tblCommanditaire.noCommanditaire).logo;
-                    modif = true;
+                    tblCommanditaire.logo = provider.returnCommanditaire(tblCommanditaire.noCommanditaire).logo;
                 }
-                if (modif)
-                {
-                    db.Entry(db.tblCommanditaire.Find(tblCommanditaire.noCommanditaire)).CurrentValues.SetValues(tblCommanditaire);
-                }
-                else
-                {
-                    db.Entry(tblCommanditaire).State = EntityState.Modified;
-                }
-                db.SaveChanges();
+                provider.UpdateCommanditaire(tblCommanditaire);
 
                 return RedirectToAction("Index");
             }
@@ -162,20 +154,11 @@ namespace ECJ.Web.Controllers.Commanditaire
         {
             if (id != null)
             {
-                var elementAModifier = db.tblCommanditaire.Find((int)id);
+                var elementAModifier = provider.returnCommanditaire(Convert.ToInt32(id));
                 elementAModifier.dateSupprime = DateTime.Now;
-                db.SaveChanges();
+                provider.Save();
             }
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
 
         public ActionResult DetailsDon(int? id)
@@ -184,24 +167,14 @@ namespace ECJ.Web.Controllers.Commanditaire
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            tblCommanditaire tblCommanditaire = provider.returnCommanditaire(Convert.ToInt32(id));
 
-            List<tblDon> don = new List<Models.tblDon>();
-            var tblDon = db.tblDon.ToList();
-
-            foreach (var d in tblDon)
-            {
-                if (d.noCommanditaire == id)
-                {
-                    don.Add(d);
-                }
-            }
-
-            if (tblDon == null)
+            if (tblCommanditaire == null)
             {
                 return HttpNotFound();
             }
 
-            return View(don);
+            return View(tblCommanditaire);
         }
     }
 }

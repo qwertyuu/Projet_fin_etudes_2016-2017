@@ -1,31 +1,31 @@
-﻿@model ECJ.Web.Models.tblActivite
-
-@{
+﻿@{
     ViewBag.Title = "Ajout";
 }
 
-<h2>Activite</h2>
+<h2>Ajouter une activité</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
+    <input type="hidden" name="noUtilisateur" value="@ViewBag.UtilisateurCourrant">
+
     <div class="form-group">
         <label>Nom du responsable</label>
-        <input class="form-control" type="text" name="nomResponsable" required>
+        <input class="form-control" type="text" name="nomResponsable" maxlength="50" required>
     </div>
     <div class="form-group">
-        <label>Etat : Choisir entre 0 et 1 (0 etant réalisé, 1 etant non-réalisé)</label>
-        <input class="form-control" type="number" name="etat" required>
+        <label>Réalisé </label>
+        <input type="checkbox" value="1" name="etat"><br>
     </div>
     <div class="form-group">
-        <label>Date de création</label>
+        <label>Date</label>
         <input class="form-control dp" type="text" name="dateCreation" required>
     </div>
     <div class="form-group">
-        <label>Tâches</label>
-        <input class="form-control" type="text" name="tache" required>
+        <label>Tâche</label>
+        <input class="form-control" type="text" name="tache" maxlength="50" required>
     </div>
     <div class="form-group">
         <label>Détails</label>
@@ -33,13 +33,7 @@
     </div>
 
     <div class="form-group pull-right">
-        <button class="btn btn-primary blue" ><i class="fa fa-save"></i> <span>Ajouter</span></button>
-        <button class="btn btn-default pull-right" data-dismiss="modal" onclick="goBack()">Retour à un détails d'événement</button>
+        <button class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Ajouter</span></button>
+        <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Annuler</a>
     </div>
 }
-
-<script>
-function goBack() {
-    window.history.back();
-}
-</script>

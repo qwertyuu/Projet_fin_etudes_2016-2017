@@ -1,12 +1,17 @@
-﻿
+﻿@using Abp.Web.Mvc.Extensions
 @model ECJ.Web.Models.tblAppelOffre
-<h2>Appel d'offre</h2>
+@section scripts
+{
+    @Html.IncludeScript("~/Views/AppellOffre/Create.js")
+}
+<h2>Créer un appel d'offre</h2>
 @using (Html.BeginForm())
 {
-    <form name="createPub" role="form" novalidate class="form-validation">
+    <form name="createPub" role="form" novalidate class="form-validation" >
 
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <div class="form-group">
             <label>Événement</label>
             <div>
@@ -18,28 +23,62 @@
         <div class="form-group">
             <label>Nom</label>
             <div>
-                @Html.EditorFor(model => model.nom, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.nom, new { @class = "form-control", required = "required", @maxlength="50" })
                 @Html.ValidationMessageFor(model => model.nom, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            <label>Date d'envoi</label>
-            <div>
-                @Html.EditorFor(model => model.dateEnvoi, new {  htmlAttributes = new { @class = "form-control dp"} })
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <label>Date d'envoi</label>
+            </div>
+            <div class="col-md-6">
+                <label>Heure d'envoi</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.dateEnvoi, new { htmlAttributes = new { @class = "form-control dp date1", required = "required" } })
                 @Html.ValidationMessageFor(model => model.dateEnvoi, "", new { @class = "text-danger" })
             </div>
+                <div class="col-md-2">
+                    <input type="number" name="heureEnvoi" required min="0" max="23" placeholder="Heure" maxlength="2" class="form-control heure heure1" />
+                </div>
+                <div class="col-md-2">
+                    <input type="number" name="minEnvoi" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control minute heure1" />
+                </div>
+                <div class="col-md-2">
+                    <input type="number" name="secondeEnvoi" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control seconde heure1" />
+                </div>
         </div>
-
-        <div class="form-group">
-            <label>Date requise</label>
-            <div>
-                @Html.EditorFor(model => model.dateRequis, new { htmlAttributes = new { @class = "form-control dp"} })
-                @Html.ValidationMessageFor(model => model.dateRequis, "", new { @class = "text-danger" })
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <label>Date requise</label>
+            </div>
+            <div class="col-md-6">
+                <label>Heure requise</label>
             </div>
         </div>
+        <div class="form-group row">
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.dateRequis, new { htmlAttributes = new { @class = "form-control dp date2", required = "required"} })
+                @Html.ValidationMessageFor(model => model.dateRequis, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                <input type="number" name="heureRequise" required min="0" max="23" placeholder="Heure" maxlength="2" class="form-control heure heure2" />
+            </div>
+            <div class="col-md-2">
+                <input type="number" name="minRequise" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control minute heure2" />
+            </div>
+            <div class="col-md-2">
+                <input type="number" name="secondeRequise" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control seconde heure2" />
+            </div>
+        </div>
+        <hr />
         <div class="form-group">
-            Media
+           <label>Media</label> 
             <div>
                 @Html.DropDownList("noMedia", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.noMedia, "", new { @class = "text-danger" })
@@ -50,7 +89,7 @@
         <div class="form-group">
             <label>Agences de publicité</label>
             <div>
-                @Html.ListBox("noAgencePub", (MultiSelectList)ViewBag.noAgencePub, new {@class= "form-control" })
+                @Html.ListBox("noAgencePub", (MultiSelectList)ViewBag.noAgencePub, new {@class= "form-control", @id="agencePub", @size="15"})
             </div>
         </div>
 
@@ -64,9 +103,9 @@
 
         <br /><br /><br />
         <div class="pull-right">
-            <button class="btn btn-primary blue" value="Save" name="save"><i class="fa fa-save"> </i> Créer</button>
-            <button  class="btn btn-primary blue" value="Soumettre" name="save"><i class="fa fa-paper-plane"> </i> Soumettre</button>
-            <a href="/AppellOffre/Index" class="btn btn-default" data-dismiss="modal">Annuler</a>
+            <button class="btn btn-primary blue valid" value="Save" name="save" onclick="return IsAgenceSelect(this) == false"><i class="fa fa-save"> </i> Créer</button>
+            <button class="btn btn-primary blue valid" value="Soumettre" name="save" onclick="return IsAgenceSelect(this) == true"><i class="fa fa-paper-plane"> </i> Soumettre</button>
+            <a href="~/AppellOffre/Index" class="btn btn-default" data-dismiss="modal">Annuler</a>
         </div>
     </form>
 

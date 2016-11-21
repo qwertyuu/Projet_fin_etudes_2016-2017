@@ -120,24 +120,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Localization\Source\ECJ-zh-CN.xml" />
-    <EmbeddedResource Include="Localization\Source\ECJ-tr.xml" />
-    <EmbeddedResource Include="Localization\Source\ECJ.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Localization\Source\ECJ-pt-BR.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Localization\Source\ECJ-es.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Localization\Source\ECJ-fr.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Localization\Source\ECJ-it.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Localization\Source\ECJ-ja.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

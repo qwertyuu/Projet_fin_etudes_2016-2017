@@ -65,7 +65,7 @@ CREATE TABLE S_forfait.tblForfaitSousEvenement (
 PRINT 'Fin de création de la table tblForfaitSousEvenement'
 GO
 CREATE TABLE S_forfait.tblCalculateur(
-noSousEvenement INT NOT NULL
+noSousEvenement INT NOT NULL IDENTITY(1,1)
 ,billet INT NULL
 ,billetVIP INT NULL
 ,prixBillet INT NULL
@@ -84,8 +84,8 @@ noSousEvenement INT NOT NULL
 ,customBillet2 INT NULL
 ,customPrix1 INT NULL
 ,customPrix2 INT NULL
-,customNom1 varchar(50)
-,customNom2 varchar(50)
+,customNom1 varchar(50) NULL
+,customNom2 varchar(50) NULL
 );
 
 PRINT 'Fin de création des table du package Forfait'

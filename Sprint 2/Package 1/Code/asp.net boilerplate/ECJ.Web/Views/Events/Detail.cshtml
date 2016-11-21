@@ -4,6 +4,7 @@
 @using System.Text
 @using System.Runtime.Serialization.Json
 @using ECJ.Authorization;
+@using Abp.Runtime.Session;
 @{
     ViewBag.Title = "Detail";
 }
@@ -12,7 +13,7 @@
     @Html.IncludeScript("~/Views/Events/Detail.js")
 }
 @model ECJ.Web.Models.tblEvenement
-<h2>Détail d'un événement</h2>
+<h2>Détail de l'événement</h2>
 
 <form name="createPub" role="form" novalidate class="form-validation">
 
@@ -35,7 +36,24 @@
         </div>
     </div>
     <div class="form-group">
-        <label>Lien hypertexte</label>
+        <label>État</label>
+            @{
+                if (DateTime.Now > Model.datefin)
+                {
+                    <div class="well well-sm">Terminé</div>
+                }
+                else if (DateTime.Now > Model.dateDebut)
+                {
+                    <div class="well well-sm">En cours</div>
+                }
+                else
+                {
+                    <div class="well well-sm">Préparation</div>
+                }
+            }
+    </div>
+    <div class="form-group">
+        <label>Site web</label>
         <div class="well well-sm">
             @if (Model.url != null)
             {
@@ -62,36 +80,42 @@
             }
             else
             {
-                <img src="~/Events/GetFile/@Model.noEvenement" alt="Affiche" />
+                <img src="~/Events/GetFile/@Model.noEvenement" alt="Impossible de charger l'affiche" />
             }
         </div>
     </div>
     <label>Sous-Événements</label>
 @if (IsGranted(PermissionNames.GererSousEvenement))
 {
-    <a href="/sousEvenements/Ajout?evenement_id=@Model.noEvenement&return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un sous-événement</a>
+	if (DateTime.Now <= Model.datefin)
+	{
+	    <a href="~/sousEvenements/Ajout?evenement_id=@Model.noEvenement&return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un sous-événement</a>
+	}
 }
     <div class="form-group">
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>Nom</th>
+                    <th data-sorter="text">Nom</th>
                     <th>Description</th>
-                    <th class="col-md-2">Action</th>
+                    <th data-sorter="false">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var sE in Model.tblSousEvenement.Where(element => element.dateSupprime == null))
                 {
                     <tr>
-                        <td>@sE.nom</td>
+                        <td ><span>@sE.nom</span></td>
                         <td>@sE.description</td>
                         <td>
-                            <a href="/sousEvenements/Detail/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                            <a href="~/sousEvenements/Detail/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
 @if (IsGranted(PermissionNames.GererSousEvenement))
 {
-                            <a href="/sousEvenements/Modifier/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                            <a href="/sousEvenements/Supprimer/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+	if (DateTime.Now <= Model.datefin)
+	{
+	                            <a href="~/sousEvenements/Modifier/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+	                            <a href="~/sousEvenements/Supprimer/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+	}
 }
                         </td>
                     </tr>
@@ -102,7 +126,7 @@
     <label>Activités</label>
 @if (IsGranted(PermissionNames.GererSousEvenement))
 {
-    <a href="/Activite/Ajout/?evenement_id=@Model.noEvenement&return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
+    <a href="~/Activite/Ajout/?evenement_id=@Model.noEvenement&return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
 }
     <ul class="nav nav-tabs">
         <li class="active"><a href="#liste" data-toggle="tab" aria-expanded="true">Liste</a></li>
@@ -111,23 +135,24 @@
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane active fade in" id="liste">
             <div class="form-group">
-                <table class="table table-striped table-hover">
+                <table class="table table-striped table-hover" data-sortlist="[[3,1]]">
                     <thead>
                         <tr>
-                            <th>Responsable</th>
-                            <th>Tâche</th>
-                            <th>Détails</th>
+                            <th data-sorter="text">Responsable</th>
+                            <th data-sorter="text">Tâche</th>
+                            <th data-sorter="text">Détails</th>
                             <th>Date</th>
-                            <th>Sous-Événement</th>
-                            <th class="col-md-2">Action</th>
+                            <th data-sorter="text">Sous-Événement</th>
+                            <th>État</th>
+                            <th data-sorter="false">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @{
-                            IEnumerable<ECJ.Web.Models.tblActivite> activites = Model.tblActivite;
-                            foreach (var item in Model.tblSousEvenement)
+                            IEnumerable<ECJ.Web.Models.tblActivite> activites = Model.tblActivite.Where(a => a.noUtilisateur == ViewBag.UtilisateurCourrant);
+                            foreach (var item in Model.tblSousEvenement.Where(sse => sse.dateSupprime == null))
                             {
-                                activites = activites.Concat(item.tblActivite);
+                                activites = activites.Concat(item.tblActivite.Where(a => a.AbpUsers.Id == ViewBag.UtilisateurCourrant));
                             }
                             List<ECJ.Web.Models.Calendrier> cals = new List<ECJ.Web.Models.Calendrier>();
                             Dictionary<string, string> actInfo = new Dictionary<string, string>();
@@ -145,36 +170,35 @@
                                 }
                                 <tr>
                                     <td>@activite.nomResponsable</td>
-                                    <td>@activite.tache</td>
-                                    <td>@activite.detail</td>
+                                    <td data-text="@(string.IsNullOrEmpty(activite.tache) ? "." : activite.tache)">@activite.tache</td>
+                                    <td data-text="@(string.IsNullOrEmpty(activite.detail) ? "." : activite.detail)">@activite.detail</td>
                                     <td>@String.Format("{0:yyyy/MM/dd}", activite.dateCreation)</td>
                                     @{
                                         if (activite.tblSousEvenement == null)
                                         {
-                                            <td></td>
+                                            <td data-text="."></td>
                                         }
                                         else
                                         {
                                             <td>@activite.tblSousEvenement.nom</td>
                                         }
                                     }
+                                    <td data-text="@activite.etat">
+                                        @(activite.etat == 1 ? "Réalisé" : "Non réalisé")
+                                    </td>
                                     <td>
-@if (IsGranted(PermissionNames.GererSousEvenement))
-{
                                         if (activite.etat == 1)
                                         {
-                                            <a href="/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-warning" title="Changer pour non-réalisé"><i class="fa fa-times-circle fa-lg"></i></a>
+                                            <a href="~/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-warning" title="Changer pour non-réalisé"><i class="fa fa-times-circle fa-lg"></i></a>
 
                                         }
                                         else
                                         {
-                                            <a href="/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-success" title="Changer pour réalisé"><i class="fa fa-check-square fa-lg"></i></a>
+                                            <a href="~/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-success" title="Changer pour réalisé"><i class="fa fa-check-square fa-lg"></i></a>
                                         }
-}
-                                        <a href="/Activite/Detail/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-
-                                            <a href="/Activite/Modifier/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                                            <a href="/Activite/Supprimer/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                                        <a href="~/Activite/Detail/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                        <a href="~/Activite/Modifier/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                        <a href="~/Activite/Supprimer/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
 
                                     </td>
                                 </tr>

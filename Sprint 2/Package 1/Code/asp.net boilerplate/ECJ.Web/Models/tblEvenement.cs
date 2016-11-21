@@ -18,8 +18,8 @@ namespace ECJ.Web.Models
         public tblEvenement()
         {
             this.tblActivite = new HashSet<tblActivite>();
-            this.tblAppelOffre = new HashSet<tblAppelOffre>();
             this.tblSousEvenement = new HashSet<tblSousEvenement>();
+            this.tblAppelOffre = new HashSet<tblAppelOffre>();
         }
     
         public int noEvenement { get; set; }
@@ -34,8 +34,8 @@ namespace ECJ.Web.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblActivite> tblActivite { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblAppelOffre> tblAppelOffre { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblSousEvenement> tblSousEvenement { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblAppelOffre> tblAppelOffre { get; set; }
     }
 }

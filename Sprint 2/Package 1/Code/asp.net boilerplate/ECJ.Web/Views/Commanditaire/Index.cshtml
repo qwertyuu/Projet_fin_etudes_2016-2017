@@ -3,12 +3,11 @@
 @{
     ViewBag.Title = "Index";
     ViewBag.ActiveMenu = "Commanditaires";
-    decimal test = 0;
-    decimal donCumul = 0;
 }
+
 <h1>Commanditaire</h1>
-<div class="row">
-    <div class="col-md-12">
+<div>
+    <div>
         @using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "page-header" }))
         {
             <div class="input-group">
@@ -16,17 +15,20 @@
                 <span class="input-group-btn">
                     <button class="btn btn-primary">Rechercher</button>
                 </span>
+                <span class="input-group-btn">
+                    <a href="~/Commanditaire/" class="btn btn-default">Vider</a>
+                </span>
             </div>
         }
-        <a href="/Commanditaire/Create" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un commanditaire</a>
-        <table class="table" align="center">
+        <a href="~/Commanditaire/Create" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un commanditaire</a>
+        <table class="table" align="center" data-sortlist="[[3,1]]">
             <thead>
                 <tr>
                     <th>
                         Nom du commanditaire
                     </th>
                     <th>
-                        nom du contact
+                        Nom du contact
                     </th>
                     <th>
                         Courriel
@@ -37,88 +39,70 @@
                     <th>
                         Rang
                     </th>
-                    <th>
+                    <th data-sorter="false">
                         Action
                     </th>
                 </tr>
             </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.dateSupprime == null)
+                    {
+                        var sommeDon = item.tblDon.Where(d => 
+                        d.dateSupprime == null).Sum(d => d.montant);
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nomCommanditaire)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nomContact)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.courrielContact)
+                            </td>
+                            <td class="{sorter:'monetaryValue'}">
 
-            @foreach (var item in Model)
-                        {
-                            donCumul = 0;
-                            if (item.dateSupprime == null)
+
+                                <p>@sommeDon$</p>
+                        </td>
+
+                        @{
+
+                            if (sommeDon >= 1500)
                             {
+                                <td data-text="4">Or</td>
+                            }
+                            else if (sommeDon >= 1000)
+                            {
+                                <td data-text="3">Argent</td>
+                            }
+                            else if (sommeDon >= 500)
+                            {
+                                <td data-text="2">Bronze</td>
+                            }
+                            else if (sommeDon > 0)
+                            {
+                                <td data-text="1">Ami</td>
+                            }
+                            else
+                            {
+                                <td data-text="0">Aucun rang</td>
+                            }
 
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.nomCommanditaire)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.nomContact)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.courrielContact)
-                        </td>
-                        <td>
-
-                            @foreach (var don in item.tblDon)
-                                        {
-                                    if (don.noCommanditaire == item.noCommanditaire)
-                                    {
-                                        donCumul += don.montant;
-                                    }
-                                }
-                            <p>@donCumul$</p>
-                        </td>
-                        <td>
-            
-                            @{foreach (var Don in item.tblDon)
-                                    {
-                                        if (Don.noCommanditaire == item.noCommanditaire)
-                                        {
-                                            test += Don.montant;
-                                        }
-                                    }
-
-                                    if (test >= 1500)
-                                    {
-                                    <p>Or</p>
-                                    test = 0;
-                                    }
-                                    else if (test >= 1000)
-                                    {
-                                    <p>Argent</p>
-                                    test = 0;
-                                    }
-                                    else if (test >= 500)
-                                    {
-                                    <p>Bronze</p>
-                                    test = 0;
-                                    }
-                                    else if (test > 0)
-                                    {
-                                    <p>Ami</p>
-                                    test = 0;
-                                    }
-                                    else
-                                    {
-                                    <p>Aucun rang</p>
-                                    test = 0;
-                                    }
-
-                                }
-                        </td>
+                        }
 
                         <td>
-                            <a href="/Commanditaire/Details/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                            <a href="/Commanditaire/Edit/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                            <a href="/Don/Create/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Ajouter"><i class="fa fa-money fa-lg"></i></a>
-                            <a href="/Commanditaire/Supprimer/@item.noCommanditaire" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            <a href="~/Commanditaire/Details/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                            <a href="~/Commanditaire/Edit/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                            <a href="~/Don/Create/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Ajouter"><i class="fa fa-money fa-lg"></i></a>
+                            <a href="~/Commanditaire/Supprimer/@item.noCommanditaire" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
 
                         </td>
                     </tr>
-                                    }
-            }
+                                }
+                            }
+            </tbody>
         </table>
     </div>
 </div>

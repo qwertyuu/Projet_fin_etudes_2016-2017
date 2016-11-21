@@ -6,7 +6,12 @@ namespace ECJ.Web.Controllers
     [AbpMvcAuthorize]
     public class HomeController : ECJControllerBase
     {
-        DBProvider db = new DBProvider();
+        DBProvider db;
+        public HomeController()
+        {
+            db = new DBProvider();
+            GetPermissions();
+        }
         public ActionResult Index()
         {
             var memoASupprimer = Request.Form["memo_suppr"];
@@ -16,6 +21,12 @@ namespace ECJ.Web.Controllers
             }
             ViewBag.memos = db.MemosUtilisateur((long)AbpSession.UserId);
             return View();
+        }
+
+        public ActionResult Reset()
+        {
+            db.ResetDB();
+            return RedirectToAction("Index");
         }
 	}
 }

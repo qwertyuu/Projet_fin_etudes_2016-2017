@@ -1,7 +1,9 @@
-﻿@model List<ECJ.Web.Models.vueSomAppelOffre>
+﻿
+@model List<ECJ.Web.Models.vueSomAppelOffre>
 @{ 
     ViewBag.ActiveMenu = "AppellOffre";
 }
+<h1>Appels d'offre</h1>
 <div class="row">
     <div class="col-md-12">
        
@@ -15,30 +17,44 @@
                         <span class="input-group-btn">
                             <button class="btn btn-primary " type="submit">Rechercher</button>
                         </span>
+                        <span class="input-group-btn">
+                            <a href="~/AppellOffre/" class="btn btn-default">Vider</a>
+                        </span>
+
                     </div>
 
                 </p>
 
-              }           
-
+              }      
+        <div id="legendeStatut" class="pull-left">
+            <fieldset>
+                <legend>Légende du statut</legend>
+            </fieldset>
+            <div id="legend">
+                <div class="colorStatutHalf" style="background-color:#F90202"> </div> En création
+                <div class="colorStatutHalf" style="background-color:#022BF9"> </div> Envoyé
+                <div class="colorStatutHalf" style="background-color:#DBF902"> </div> Complété
+                <div class="colorStatutHalf" style="background-color:#0281F9"> </div> Annulé
+            </div>
+        </div>   
         <br />
         @if (ViewBag.PeutCreerAppelOffre)
         {
-            <a href="/AppellOffre/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i>Ajouter</a>
+        	<a href="~/AppellOffre/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i> Ajouter un appel d'offre</a>
         }
-        <table class="table" align="center">
+        <table class="table" align="center" data-sortlist="[[4,0]]">
             <thead>
                 <tr>
                     <th>
-                      Nom de l'appel d'offre
-                    </th>
-                    <th>
-                        Date requise
+                      Nom
                     </th>
                     <th>
                         Date d'envoi
                     </th>
                     <th>
+                        Date requise
+                    </th>
+                    <th data-sorter="text">
                         Événement
                     </th>
                     <th>
@@ -50,7 +66,7 @@
                     <th>
                         Description
                     </th>
-                    <th>Action</th>
+                    <th data-sorter="false">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -63,45 +79,40 @@
                             @Html.DisplayFor(modelItem => item.nomAppelOffre)
                         </td>
                         <td>
-                            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", item.dateRequis)
+                            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", item.dateEnvoi)
                         </td>
                         <td>
-                            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", item.dateEnvoi)
+                            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", item.dateRequis)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.nomEvent)
                         </td>
-                        <td>
-                            <div id="colorStatut" style="background-color:@color">  </div>
+                        <td data-text="@item.noStatut">
+                            <div class="colorStatut" style="background-color:@color">  </div>
                         </td>
-                        <td> 
+                        <td data-text="@(string.IsNullOrWhiteSpace(item.nomAgence) ? "." : item.nomAgence)"> 
                             @Html.DisplayFor(modelItem => item.nomAgence)                                  
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.description)
                         </td>
                         <td>
-                            <a href="/AppellOffre/Details/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                            @if (item.noStatut==3 || item.noStatut==4)
+                            <a href="~/AppellOffre/Details/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                            @if (item.noStatut == 1 || item.noStatut==2)
                             {
-                                <a href="/AppellOffre/Edit/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Modifier" id="AppelComplete" onclick="return false;" style="cursor:not-allowed"><i class="fa fa-pencil fa-lg"></i></a>
-                                <a href="/AppellOffre/Delete/@item.noAppelOffre" class="btn btn-sm btn-danger" title="SupprimerAppel" onclick="return false;" style="cursor:not-allowed"><i class="fa fa-trash fa-lg"></i></a>
-
-                            }
-                            else
-                            {
-                                <a href="/AppellOffre/Edit/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                                <a href="/AppellOffre/Delete/@item.noAppelOffre" class="btn btn-sm btn-danger" title="SupprimerAppel"><i class="fa fa-trash fa-lg"></i></a>
-
-                            }
+                                <a href="~/AppellOffre/Edit/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="~/AppellOffre/Delete/@item.noAppelOffre" class="btn btn-sm btn-danger" title="Supprimer l'appel d'offre"><i class="fa fa-trash fa-lg"></i></a>
+                            }                       
                         </td>
                     </tr>
                 }
 
             </tbody>
         </table>
+
  </div>
 </div>
 <br />
 <br />
-<button class="btn btn-default pull-right " data-dismiss="modal" onclick="javascript:window.location.reload()">Mettre à jour les soumisions</button> 
+<button class="btn btn-default pull-right " data-dismiss="modal" onclick="javascript:window.location.reload()">Mettre à jour les soumissions</button> 
+

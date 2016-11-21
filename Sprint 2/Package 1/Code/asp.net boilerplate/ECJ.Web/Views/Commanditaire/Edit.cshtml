@@ -25,15 +25,14 @@
     if (Model.logo != null)
     {
         <div class="form-group">
-            <label>Supprimer l'affiche?</label>
+            <label>Supprimer le logo?</label>
             <input type="checkbox" name="SupprimerAffiche" value="1" />
         </div>
 
         <div class="form-group">
-            <label>Modifier l'affiche (laisser vide pour garder l'ancienne)</label>
+            <label>Modifier le logo (laisser vide pour garder l'ancien)</label>
             <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
         </div>
-                    <img width="200" src="@Url.Action("GetFile","commanditaire", new { id = Model.noCommanditaire})" alt="Logo" />
     }
     else
     {
@@ -45,31 +44,31 @@
 
     <div class="form-group">
         <label>Lien hypertexte</label>
-        <input class="form-control" type="text" name="url" value="@Model.url">
+        <input class="form-control url" type="text" name="url" value="@Model.url">
     </div>
 
     <div class="form-group">
         <label>Texte de présentation :</label>
-        <textarea class="form-control" rows="5" id="textArea" name="textePresentation" >@Model.textePresentation</textarea>
+        <textarea class="form-control" rows="5" id="textArea" name="textePresentation">@Model.textePresentation</textarea>
     </div>
 
     <div class="form-group">
         <label>Email</label>
-        <input class="form-control" type="email" name="courrielContact" value="@Model.courrielContact" required>
+        <input class="form-control courriel" type="email" name="courrielContact" value="@Model.courrielContact" required>
     </div>
 
     <div class="form-group">
         <label>Numero de téléphone</label>
-        <input class="form-control" type="text" name="numTel" value="@Model.numTel" required>
+        <input class="form-control tel" type="text" name="numTel" value="@Model.numTel" required>
     </div>
 
     <div class="form-group">
-        <label>Extension</label>
-        <input class="form-control" type="number" name="extension" value="@Model.extension">
+        <label>Poste</label>
+        <input class="form-control poste positif" type="number" name="extension" value="@Model.extension">
     </div>
 
     <div class="form-group pull-right">
-        <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
-        <a href="/Commanditaire" class="btn btn-default" data-dismiss="modal">Annuler</a>
+        <button type="submit" class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
+        <a href="~/Commanditaire" class="btn btn-default" data-dismiss="modal">Annuler</a>
     </div>
 }

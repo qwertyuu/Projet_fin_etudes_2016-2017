@@ -3,6 +3,7 @@
     ViewBag.Title = "Details";
 }
 
+<h2>Détail de l'activité</h2>
 <form name="createPub" role="form" novalidate class="form-validation">
 
     <div class="form-group">
@@ -13,16 +14,27 @@
     </div>
 
     <div class="form-group">
-        <label>Etat (0 = réalisé, 1 = non-réalisé)</label>
+        <label>Réalisé</label>
         <div class="well well-sm">
-            @Model.etat
+            @if(Model.etat == 1)
+            {
+                <div>
+                    Oui
+                </div>
+            }
+            else
+            {
+                <div>
+                    Non
+                </div>
+            }
         </div>
     </div>
 
     <div class="form-group">
         <label>Date de création</label>
         <div class="well well-sm">
-            @Model.dateCreation
+            @String.Format("{0:yyyy/MM/dd}", Model.dateCreation)
         </div>
     </div>
 
@@ -40,11 +52,7 @@
         </div>
     </div>
 
-    <button class="btn btn-default pull-right" data-dismiss="modal" onclick="goBack()">Retour à un détails d'événement</button>
+    <div class="form-group pull-right">
+        <a href="@Request.QueryString["return"]" class="btn btn-default" data-dismiss="modal">Retour</a>
+    </div>
 </form>
-
-<script>
-function goBack() {
-    window.history.back();
-}
-</script>

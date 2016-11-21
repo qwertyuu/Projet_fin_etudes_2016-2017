@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 using System.Web;
 using System.Collections;
 using System.Net.Mail;
+using System.Data;
+using System.Data.Entity;
 
 namespace ECJ.Web.Controllers
 {
@@ -16,42 +18,59 @@ namespace ECJ.Web.Controllers
         private static PE2_OfficielEntities db;
         public DBProvider()
         {
-            if (db == null)
-            {
-                db = new PE2_OfficielEntities();
-            }
+            ResetDB();
         }
 
         internal void LireMemo(int v)
         {
-            db.tblMemo.Find(v).statut = true;
-            db.SaveChanges();
-        }
-
-        internal AbpUsers ReturnUtilisateur(int id)
-        {
             try
             {
-                return db.AbpUsers.Find(id);
+                db.tblMemo.Find(v).statut = true;
+                db.SaveChanges();
             }
             catch (Exception e)
             {
                 LayoutController.erreur = e;
             }
-            return new AbpUsers();
+        }
+
+        internal void ResetDB()
+        {
+            try
+            {
+                db = null;
+                db = new PE2_OfficielEntities();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
         public List<tblCommanditaire> CommanditaireList()
         {
             try
             {
-                return db.tblCommanditaire.ToList();
+                return db.tblCommanditaire.Where(c => c.dateSupprime == null).ToList();
             }
             catch (Exception e)
             {
                 LayoutController.erreur = e;
             }
             return new List<tblCommanditaire>();
+        }
+
+        public List<tblDon> DonList()
+        {
+            try
+            {
+                return db.tblDon.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblDon>();
         }
 
         public tblCommanditaire returnCommanditaire(int id)
@@ -66,6 +85,20 @@ namespace ECJ.Web.Controllers
             }
             return new tblCommanditaire();
         }
+
+        public tblCommanditaire returnDon(int id)
+        {
+            try
+            {
+                return db.tblCommanditaire.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblCommanditaire();
+        }
+
         public void CreerMemo(int expediteur, int destinataire, string message, string lien)
         {
             try
@@ -79,15 +112,75 @@ namespace ECJ.Web.Controllers
                     dateEnvoi = DateTime.Now
                 });
                 db.SaveChanges();
-
             }
             catch (Exception e)
             {
                 LayoutController.erreur = e;
-
             }
         }
 
+        public void AjouterDon(tblDon tblDon)
+        {
+            try
+            {
+                db.tblDon.Add(tblDon);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+        public tblEvenement ReturnEvenement(int id)
+        {
+            try
+            {
+                return db.tblEvenement.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblEvenement();
+        }
+        public List<vueSomEvenement> ToutSomEvenement()
+        {
+            try
+            {
+                return db.vueSomEvenement.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<vueSomEvenement>();
+        }
+
+        public void SupprimerMemo(int v)
+        {
+            try
+            {
+                db.tblMemo.Find(v).dateSupprime = DateTime.Now;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+        internal AbpUsers ReturnUtilisateur(int id)
+        {
+            try
+            {
+                return db.AbpUsers.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new AbpUsers();
+        }
         internal void InsertUser(AbpUsers abpUser)
         {
             try
@@ -100,27 +193,72 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
         }
-
-        internal tblEvenement ReturnEvenement(int id)
+        
+        public List<tblMemo> MemosUtilisateur(long userId)
         {
-            return db.tblEvenement.Find(id);
+            try
+            {
+                return db.tblMemo.Where(m => m.destinataire == userId && m.dateSupprime == null).ToList();
+
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblMemo>();
         }
 
-        internal List<vueSomEvenement> ToutSomEvenement()
+        public void AjouterCommanditaire(tblCommanditaire comm)
         {
-            return db.vueSomEvenement.AsNoTracking().ToList();
+            try
+            {
+                db.tblCommanditaire.Add(comm);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
-        internal void SupprimerMemo(int v)
+        public tblCommanditaire ReturnCommLogo(tblCommanditaire comm)
         {
-            db.tblMemo.Find(v).dateSupprime = DateTime.Now;
-            db.SaveChanges();
+            try
+            {
+                return db.tblCommanditaire.Find(comm.noCommanditaire);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblCommanditaire();
         }
 
-        internal List<tblMemo> MemosUtilisateur(long userId)
+        public void EnregistrerCommanditaire(tblCommanditaire comm)
         {
-            return db.tblMemo.Where(m => m.destinataire == userId && m.dateSupprime == null).ToList();
+            try
+            {
+                db.Entry(db.tblCommanditaire.Find(comm.noCommanditaire)).CurrentValues.SetValues(comm);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
+
+        public void ModifCommanditaire(tblCommanditaire comm)
+        {
+            try
+            {
+                db.Entry(comm).State = EntityState.Modified;
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+
 
         #region décodeur de type d'image depuis byte[]
         private static Dictionary<byte[], ImageFormat> imageFormatDecoders = new Dictionary<byte[], ImageFormat>()
@@ -132,9 +270,17 @@ namespace ECJ.Web.Controllers
             { new byte[]{ 0xff, 0xd8 }, ImageFormat.Jpeg }
         };
         #endregion
-        internal tblActivite ReturnActivite(int id)
+        public tblActivite ReturnActivite(int id)
         {
-            return db.tblActivite.Find(id);
+            try
+            {
+                return db.tblActivite.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblActivite();
         }
 
         public static ImageFormat GetContentType(byte[] imageBytes)
@@ -198,82 +344,155 @@ namespace ECJ.Web.Controllers
             }
         }
 
-        internal void InsertEvenement(tblEvenement tblEvenement)
+        public void InsertEvenement(tblEvenement tblEvenement)
         {
-            db.tblEvenement.Add(tblEvenement);
-            db.SaveChanges();
-        }
-
-        internal void ToggleEtatActivite(int id)
-        {
-            var a = db.tblActivite.Find(id);
-            if (a.etat == 0)
-            {
-                a.etat = 1;
-            }
-            else
-            {
-                a.etat = 0;
-            }
-            db.SaveChanges();
-        }
-
-        internal void CreateEmail(string Courriel, decimal montant)
-        {
-            string to = "jane@contoso.com";
-            string from = "ben@contoso.com";
-            MailMessage message = new MailMessage(from, to);
-            message.Subject = "Don à ECJ";
-            message.Body = @"Merci de votre don de : " + montant + ".";
-            SmtpClient client = new SmtpClient(Courriel);
-            // Credentials are necessary if the server requires the client 
-            // to authenticate before it will send e-mail on the client's behalf.
-            client.UseDefaultCredentials = true;
-
             try
             {
-                client.Send(message);
+                db.tblEvenement.Add(tblEvenement);
+                db.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine("Exception caught in CreateMessage(): {0}",
-                            ex.ToString());
+                LayoutController.erreur = e;
             }
         }
 
-        internal void UpdateEvenement(tblEvenement tblEvenement)
+        public void ToggleEtatActivite(int id)
         {
-            db.Entry(db.tblEvenement.Find(tblEvenement.noEvenement)).CurrentValues.SetValues(tblEvenement);
-            db.SaveChanges();
+            try
+            {
+                var a = db.tblActivite.Find(id);
+                if (a.etat == 0)
+                {
+                    a.etat = 1;
+                }
+                else
+                {
+                    a.etat = 0;
+                }
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
-        internal void SupprimerActivite(int id)
+        public void UpdateCommanditaire(tblCommanditaire tblCommanditaire)
         {
-            var a = db.tblActivite.Find(id);
-            a.dateSupprime = DateTime.Now;
-            db.SaveChanges();
+            try
+            {
+                db.Entry(db.tblCommanditaire.Find(tblCommanditaire.noCommanditaire)).CurrentValues.SetValues(tblCommanditaire);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
-        internal AbpRoles SelectRole(int roleId)
+        public void UpdateEvenement(tblEvenement tblEvenement)
         {
-            return db.AbpRoles.Find(roleId);
+            try
+            {
+                db.Entry(db.tblEvenement.Find(tblEvenement.noEvenement)).CurrentValues.SetValues(tblEvenement);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
-        internal List<ECJ.Web.Models.AbpUsers> ToutUtilisateurs()
+        public void SupprimerActivite(int id)
         {
-            return db.AbpUsers.Where(u => u.Id != 1 && !u.IsDeleted).ToList();
+            try
+            {
+                var a = db.tblActivite.Find(id);
+                a.dateSupprime = DateTime.Now;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
-        internal void SupprimerEvenement(int id)
+        public AbpRoles SelectRole(int roleId)
         {
-            db.tblEvenement.Find(id).dateSupprime = DateTime.Now;
-            db.SaveChanges();
+            try
+            {
+                return db.AbpRoles.Find(roleId);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new AbpRoles();
         }
 
-        internal void UpdateActivite(tblActivite tblActivite)
+        public List<ECJ.Web.Models.AbpUsers> ToutUtilisateurs()
         {
-            db.Entry(db.tblActivite.Find(tblActivite.noActivite)).CurrentValues.SetValues(tblActivite);
-            db.SaveChanges();
+            try
+            {
+                return db.AbpUsers.Where(u => u.Id != 1).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<AbpUsers>();
+        }
+
+        public void SupprimerEvenement(int id)
+        {
+            try
+            {
+                var aSupprimer = db.tblEvenement.Find(id);
+                aSupprimer.dateSupprime = DateTime.Now;
+                foreach (var appelOffre in aSupprimer.tblAppelOffre.Where(ao => ao.dateSupprime == null))
+                {
+                    appelOffre.noStatut = 4;
+                    db.Entry(appelOffre).State = EntityState.Modified;
+                    foreach (var soumission in appelOffre.tblSoumission.Where(s => s.dateSupprime == null))
+                    {
+                        soumission.statut = null;
+                        db.Entry(soumission).State = EntityState.Modified;
+                    }
+                }
+                db.Entry(aSupprimer).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+        public void supprimerDon(int id)
+        {
+            try
+            {
+                db.tblDon.Find(id).dateSupprime = DateTime.Now;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+        public void UpdateActivite(tblActivite tblActivite)
+        {
+            try
+            {
+                db.Entry(db.tblActivite.Find(tblActivite.noActivite)).CurrentValues.SetValues(tblActivite);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
         private static bool StartsWith(byte[] thisBytes, byte[] thatBytes)
@@ -288,14 +507,30 @@ namespace ECJ.Web.Controllers
             return true;
         }
 
-        internal IEnumerable ToutSousEvenement()
+        public List<tblSousEvenement> ToutSousEvenement()
         {
-            return db.tblSousEvenement.Where(se => se.dateSupprime == null);
+            try
+            {
+                return db.tblSousEvenement.Where(se => se.dateSupprime == null && se.tblEvenement.dateSupprime == null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblSousEvenement>();
         }
 
-        internal IEnumerable ToutEvenement()
+        public List<tblEvenement> ToutEvenement()
         {
-            return db.tblEvenement.Where(e => e.dateSupprime == null);
+            try
+            {
+                return db.tblEvenement.Where(e => e.dateSupprime == null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblEvenement>();
         }
 
 
@@ -304,192 +539,665 @@ namespace ECJ.Web.Controllers
         {
             if (id != null)
             {
-               return (from soumi in db.tblSoumission
-                        join ao in db.tblAppelOffre
-                        on soumi.noAppelOffre equals ao.noAppelOffre
-                        where ao.noAppelOffre == id
-                        where soumi.dateSupprime == null
-                        where ao.dateSupprime == null
-                        select soumi).ToList();
+                try
+                {
+                    return (from soumi in db.tblSoumission
+                            join ao in db.tblAppelOffre
+                            on soumi.noAppelOffre equals ao.noAppelOffre
+                            where ao.noAppelOffre == id
+                            where soumi.dateSupprime == null
+                            where ao.dateSupprime == null
+                            select soumi).ToList();
+                }
+                catch (Exception e)
+                {
+                    LayoutController.erreur = e;
+                }
             }
             else
             {
-                return (from soumi in db.tblSoumission
-                        where soumi.dateSupprime == null
-                        select soumi).ToList();
+                try
+                {
+                    return (from soumi in db.tblSoumission
+                            where soumi.dateSupprime == null
+                            select soumi).ToList();
+                }
+                catch (Exception e)
+                {
+                    LayoutController.erreur = e;
+                }
 
             }
-
+            return new List<tblSoumission>();
         }
 
-        internal void InsertServiceRequis(int id, int serviceAAjouter)
+        public void InsertServiceRequis(int id, int serviceAAjouter)
         {
-            db.tblSousEvenement.Find(id).tblService.Add(db.tblService.Find(serviceAAjouter));
-            db.SaveChanges();
+            try
+            {
+                db.tblSousEvenement.Find(id).tblService.Add(db.tblService.Find(serviceAAjouter));
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
-        internal void SupprimerServiceRequis(int id, int serviceASupprimer)
+        public void SupprimerServiceRequis(int id, int serviceASupprimer)
         {
-            db.tblSousEvenement.Find(id).tblService.Remove(db.tblService.Find(serviceASupprimer));
-            db.SaveChanges();
+            try
+            {
+                db.tblSousEvenement.Find(id).tblService.Remove(db.tblService.Find(serviceASupprimer));
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
-        internal void LierForfait(int id, int forfaitALier)
+        public void LierForfait(int id, int forfaitALier)
         {
-            db.tblSousEvenement.Find(id).tblForfait.Add(db.tblForfait.Find(forfaitALier));
-            db.SaveChanges();
+            try
+            {
+                db.tblSousEvenement.Find(id).tblForfait.Add(db.tblForfait.Find(forfaitALier));
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
-        internal void DelierForfait(int id, int forfaitASupprimer)
+        public void DelierForfait(int id, int forfaitASupprimer)
         {
-            db.tblSousEvenement.Find(id).tblForfait.Remove(db.tblForfait.Find(forfaitASupprimer));
-            db.SaveChanges();
+            try
+            {
+                var sousEvenement = db.tblSousEvenement.Find(id);
+                sousEvenement.tblForfait.Remove(db.tblForfait.Find(forfaitASupprimer));
+                db.Entry(sousEvenement).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
-        internal List<tblService> ToutService()
+        public List<tblService> ToutService()
         {
-            return db.tblService.Where(s => s.dateSupprime == null).ToList();
+            try
+            {
+                return db.tblService.Where(s => s.dateSupprime == null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblService>();
         }
 
-        internal void LierSalle(int id, int salle_id)
+        public void LierSalle(int id, int salle_id)
         {
-            db.tblSousEvenement.Find(id).tblSalle = db.tblSalle.Find(salle_id);
-            db.SaveChanges();
+            try
+            {
+                db.tblSousEvenement.Find(id).tblSalle = db.tblSalle.Find(salle_id);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
-        internal List<tblForfait> ToutForfait()
+        public List<tblForfait> ToutForfait()
         {
-            return db.tblForfait.Where(f => f.dateSupprime == null).ToList();
+            try
+            {
+                return db.tblForfait.Where(f => f.dateSupprime == null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblForfait>();
         }
-        internal List<tblForfait> ToutForfaitLieeEvent(int id)
+        public List<tblForfait> ToutForfaitLieeEvent(int id)
         {
-            return db.tblForfait.Where(f => f.dateSupprime == null).ToList();
-        }
-
-        internal void DelierSalle(int id)
-        {
-            db.tblSousEvenement.Find(id).tblSalle = null;
-            db.SaveChanges();
-        }
-
-        internal List<tblEngagement> ToutEngagement()
-        {
-            return db.tblEngagement.Where(e => e.dateSupprime == null).ToList();
-        }
-
-        internal void LierEngagement(int id, int engagement_id)
-        {
-            db.tblSousEvenement.Find(id).tblEngagement.Add(db.tblEngagement.Find(engagement_id));
-            db.SaveChanges();
-        }
-
-        internal List<tblSalle> ToutSalle()
-        {
-            return db.tblSalle.Where(s => s.dateSupprime == null).ToList();
+            try
+            {
+                return db.tblForfait.Where(f => f.dateSupprime == null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblForfait>();
         }
 
-        internal void DelierEngagement(int id, int engagement_id)
+        public void DelierSalle(int id)
         {
-            db.tblSousEvenement.Find(id).tblEngagement.Remove(db.tblEngagement.Find(engagement_id));
-            db.SaveChanges();
+            try
+            {
+                var sousEvenement = db.tblSousEvenement.Find(id);
+                sousEvenement.noSalle = null;
+                db.Entry(sousEvenement).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+        public List<tblEngagement> ToutEngagement()
+        {
+            try
+            {
+                return db.tblEngagement.Where(e => e.dateSupprime == null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblEngagement>();
+        }
+
+        public void LierEngagement(int id, int engagement_id)
+        {
+            try
+            {
+                db.tblSousEvenement.Find(id).tblEngagement.Add(db.tblEngagement.Find(engagement_id));
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+        internal void SupprimerSoumission(tblSoumission s)
+        {
+            try
+            {
+                s.dateSupprime = DateTime.Now;
+                db.Entry(s).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+        public List<tblSalle> ToutSalle()
+        {
+            try
+            {
+                return db.tblSalle.Where(s => s.dateSupprime == null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblSalle>();
+        }
+
+        public void DelierEngagement(int id, int engagement_id)
+        {
+            try
+            {
+                var sousEvenement = db.tblSousEvenement.Find(id);
+                sousEvenement.tblEngagement.Remove(db.tblEngagement.Find(engagement_id));
+                db.Entry(sousEvenement).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
         public List<tblAgencePublicite> ReturnAgence(int? id)
         {
             if (id != null)
             {
-               return  (from ag in db.tblAgencePublicite
-                       join soumi in db.tblSoumission 
-                       on ag.noAgencePub equals soumi.noAgencePub
-                       where soumi.noAppelOffre == id
-                       where soumi.dateSupprime == null
-                       where ag.dateSupprime == null
-                       select ag).ToList();
+                try
+                {
+                    return (from ag in db.tblAgencePublicite
+                            join soumi in db.tblSoumission
+                            on ag.noAgencePub equals soumi.noAgencePub
+                            where soumi.noAppelOffre == id
+                            where soumi.dateSupprime == null
+                            where ag.dateSupprime == null
+                            select ag).ToList();
+                }
+                catch (Exception e)
+                {
+                    LayoutController.erreur = e;
+                }
 
             }
             else
             {
-               return (from ag in db.tblAgencePublicite
-                       where ag.dateSupprime == null
-                                       select ag).ToList();
+                try
+                {
+                    return (from ag in db.tblAgencePublicite
+                            where ag.dateSupprime == null
+                            select ag).ToList();
+                }
+                catch (Exception e)
+                {
+                    LayoutController.erreur = e;
+                }
             }
-
+            return new List<tblAgencePublicite>();
         }
 
-        internal void SupprimerSousEvenement(int id)
+        public void SupprimerSousEvenement(int id)
         {
-            db.tblSousEvenement.Find(id).dateSupprime = DateTime.Now;
-            db.SaveChanges();
+            try
+            {
+                db.tblSousEvenement.Find(id).dateSupprime = DateTime.Now;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
-        internal void UpdateSousEvenement(tblSousEvenement tblSousEvenement)
+        public void UpdateSousEvenement(tblSousEvenement tblSousEvenement)
         {
-            db.Entry(db.tblEvenement.Find(tblSousEvenement.noSousEvenement)).CurrentValues.SetValues(tblSousEvenement);
-            db.SaveChanges();
+            try
+            {
+                db.Entry(db.tblSousEvenement.Find(tblSousEvenement.noSousEvenement)).CurrentValues.SetValues(tblSousEvenement);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
         public void InsertSoumission(tblSoumission soumi)
         {
-            db.tblSoumission.Add(soumi);
-            db.SaveChanges();
+            try
+            {
+                db.tblSoumission.Add(soumi);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
         public void InsertActivite(tblActivite _acti)
         {
-            db.tblActivite.Add(_acti);
-            db.SaveChanges();
+            try
+            {
+                db.tblActivite.Add(_acti);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
         public void InsertSousEvenement(tblSousEvenement _sousEvenement)
         {
-            db.tblSousEvenement.Add(_sousEvenement);
-            db.SaveChanges();
+            try
+            {
+                db.tblSousEvenement.Add(_sousEvenement);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
         public tblSousEvenement FindSousEvenement(int id)
         {
-            return db.tblSousEvenement.Find(id);
+            try
+            {
+                return db.tblSousEvenement.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblSousEvenement();
         }
 
         public void Save()
         {
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
         public tblSoumission SleclectSoumi(int noApp, int noAgence)
         {
-            return db.tblSoumission.Where(s => s.noAgencePub == noAgence && s.noAppelOffre == noApp).FirstOrDefault();
+            try
+            {
+                return db.tblSoumission.Where(s => s.noAgencePub == noAgence && s.noAppelOffre == noApp).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblSoumission();
         }
         public void ConnectionServer(SqlConnection conn)
         {
-            conn.ConnectionString = "Data Source=10.10.8.42;Initial Catalog=PE2_Officiel;Integrated Security=False;User ID=P2016_Equipe2;Password=Rasipike2";
-            conn.Open();
+            try
+            {
+                conn.ConnectionString = "Data Source=10.10.8.42;Initial Catalog=PE2_Officiel;Integrated Security=False;User ID=P2016_Equipe2;Password=Rasipike2";
+                conn.Open();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
         }
 
-        public tblAppelOffre SelectAppelParSoumi(int ? idSoumi)
+        public tblAppelOffre SelectAppelParSoumi(int? idSoumi)
         {
-            return (from a in db.tblAppelOffre
-                   join s in db.tblSoumission
-                   on a.noAppelOffre equals s.noAppelOffre
-                   where s.noSoumission == idSoumi
-                   select a).FirstOrDefault();
+            try
+            {
+                return (from a in db.tblAppelOffre
+                        join s in db.tblSoumission
+                        on a.noAppelOffre equals s.noAppelOffre
+                        where s.noSoumission == idSoumi
+                        select a).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblAppelOffre();
         }
 
         public tblStatutAppelOffre ReturnStatut(string nom)
         {
-            return db.tblStatutAppelOffre.Where(s => s.nom == nom).FirstOrDefault();
+            try
+            {
+                return db.tblStatutAppelOffre.Where(s => s.nom == nom).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblStatutAppelOffre();
         }
 
-        public tblSoumission ReturnUneSoumi(int ?id )
+        public tblSoumission ReturnUneSoumi(int? id)
         {
-            return db.tblSoumission.Find(id);
+            try
+            {
+                return db.tblSoumission.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblSoumission();
         }
         public tblSalle ReturnSalle(int id)
         {
-            return db.tblSalle.Where(s => s.noSalle == id).FirstOrDefault();
+            try
+            {
+                return db.tblSalle.Where(s => s.noSalle == id).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblSalle();
         }
         public tblCalculateur ReturnCalculateur(int id)
         {
-            return db.tblCalculateur.Where(s => s.noSousEvenement == id).FirstOrDefault();
+            try
+            {
+                return db.tblCalculateur.Where(s => s.noSousEvenement == id).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblCalculateur();
+        }
+        public tblAppelOffre returnAppel(int? id)
+        {
+            try
+            {
+                return db.tblAppelOffre.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblAppelOffre();
+        }
+        public List<tblAgencePublicite> ToutAgencePublicite()
+        {
+            try
+            {
+                return db.tblAgencePublicite.Where(a => a.dateSupprime == null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblAgencePublicite>();
+        }
+        public List<tblStatutAppelOffre> ToutStatutAppel()
+        {
+            try
+            {
+                return db.tblStatutAppelOffre.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblStatutAppelOffre>();
+        }
+
+        public List<tblMedia> ToutMedia()
+        {
+            try
+            {
+                return db.tblMedia.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblMedia>();
+        }
+
+        public int ReturnNoStatut(string nomStatut)
+        {
+            try
+            {
+                return db.tblStatutAppelOffre.Where(s => s.nom == nomStatut).FirstOrDefault().noStatut;
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return -1;
+        }
+
+        public tblStatutAppelOffre ReturnStatAppel(tblAppelOffre appel)
+        {
+            try
+            {
+                return (from q in db.tblStatutAppelOffre
+                        where q.noStatut == appel.noStatut
+                        select q).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblStatutAppelOffre();
+        }
+
+        public tblEvenement ReturnEvenAppel(tblAppelOffre appel)
+        {
+            try
+            {
+                return (from q in db.tblEvenement
+                        where q.noEvenement == appel.noEvenement
+                        select q).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblEvenement();
+        }
+
+        public tblMedia ReturnMediaAppel(tblAppelOffre appel)
+        {
+            try
+            {
+                return (from q in db.tblMedia
+                        where q.noMedia == appel.noMedia
+                        select q).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblMedia();
+        }
+
+        public void UpdateAppelOffre(tblAppelOffre appel)
+        {
+            try
+            {
+                db.Entry(db.tblAppelOffre.Find(appel.noAppelOffre)).CurrentValues.SetValues(appel);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+        public void UpdateSoumission(tblSoumission soumi)
+        {
+            try
+            {
+                db.Entry(db.tblSoumission.Find(soumi.noSoumission)).CurrentValues.SetValues(soumi);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+        public void AjoutAppelOffre(tblAppelOffre appel)
+        {
+            try
+            {
+                db.tblAppelOffre.Add(appel);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+        public List<vueSomSalle> ToutVueSalle()
+        {
+            try
+            {
+                return db.vueSomSalle.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<vueSomSalle>();
+        }
+        public void InsertServiceOffert(int id, int serviceAAjouter)
+        {
+            try
+            {
+                db.tblSalle.Find(id).tblService.Add(db.tblService.Find(serviceAAjouter));
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+        public void SupprimerServiceOffert(int id, int serviceASupprimer)
+        {
+            try
+            {
+                db.tblSalle.Find(id).tblService.Remove(db.tblService.Find(serviceASupprimer));
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+        public tblAgencePublicite ReturnAgenceParSoumi(tblSoumission soumi)
+        {
+            try
+            {
+                return (from q in db.tblAgencePublicite
+                        where q.noAgencePub == soumi.noAgencePub
+                        select q).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblAgencePublicite();
+
+        }
+        public tblService ReturnService(int id)
+        {
+            try
+            {
+                return db.tblService.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+
+            return new tblService();
+        }
+
+        public List<vueSomAppelOffre> ToutSomAppelOffre()
+        {
+            try
+            {
+                return db.vueSomAppelOffre.AsNoTracking().ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<vueSomAppelOffre>();
         }
     }
+
+
 }

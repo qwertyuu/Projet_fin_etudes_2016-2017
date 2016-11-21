@@ -27,24 +27,18 @@
         $.blockUI.defaults.baseZ = 2000;
     }
 
-    $("[title=\"Supprimer\"]").click(function (e) {
+    $("[title=\"Supprimer\"], [name=\"service_suppr\"]").click(function (e) {
         if (!confirm("Êtes-vous sur de vouloir supprimer cet élément?")) {
             e.preventDefault();
         }
     });
 
-    $("[title=\"SupprimerAppel\"]").click(function (e) {
+    $("[title=\"Supprimer l'appel d'offre\"]").click(function (e) {
         if (!confirm("Si vous supprimez cet appel d'offre il sera suprimé definitivement ou son statut tombera à Annulé en fonction de son statut présent.\nÊtes-vous sur de vouloir le faire?")) {
             e.preventDefault();
         }
     });
-
     $(".dp").datepicker({ dateFormat: 'yy/mm/dd' });
-
-    //désactiver le lien 
-    $("#AppelComplete").click(function (event) {
-        return false;
-    });
 
     //validation des champs
     $(".valid").closest("form").submit(function (e) {
@@ -56,8 +50,30 @@
         }
         return true;
     });
+    $.tablesorter.addParser({
+        id: "memoLu",
+        is: function (s, u, v) {
+            if (v.classList[0]) {
+                return $.parseJSON(v.classList[0]).sorter == "memoLu";
+            }
+            return false;
+        }, format: function (s, u, v) {
+            return $(v).data("sort-value");
+        }, type: "numeric"
+    });
 
+    $.tablesorter.addParser({
+        id: "monetaryValue",
+        is: function (s) {
+            var sp = s.replace(/,/, '.');
+            var test = (/([£$€] ?\d+\.?\d*|\d+\.?\d* ?)/.test(sp)); //check currency with symbol
+            return test;
+        }, format: function (s) {
+            return $.tablesorter.formatFloat(s.replace(new RegExp(/[^\d\.]/g), ""));
+        }, type: "numeric"
+    });
 
+    $("table:not(.ui-datepicker-calendar, .noTS)").tablesorter();
 
 
 })(jQuery);
@@ -268,6 +284,26 @@ function validerURL(form) {
     return true;
 }
 
+function validerMontant(form) {
+    var montants = $(form).find("input.montant");
+    var valide = true;
+    montants.each(function () {
+        var montant = $(this).val().trim()
+        if (!montant) {
+            return true;
+        }
+        if (!/^[-+]?[0-9]*\.?[0-9]+$/i.test(montant)) {
+            valide = false;
+            alert("Le montant entrée n'est pas valide");
+            return;
+        }
+    });
+    if (!valide) {
+        return false;
+    }
+    return true;
+}
+
 function validerIntPositif(form) {
     var entiers = $(form).find("input.positif");
     var valide = true;
@@ -301,6 +337,45 @@ function validerSelect(form) {
         }
     });
     if (!valide) {
+        return false;
+    }
+    return true;
+}
+
+function validerDateHeure(form) {
+    var date1 = $(form).find(".date1");
+    if (!date1.length) {
+        return true;
+    }
+    date1 = date1.val();
+    var datePlusPetite = new Date(date1);
+    var heure1 = $(form).find(".heure1");
+    if (heure1.length) {
+        var h = heure1.filter(".heure").val();
+        var m = heure1.filter(".minute").val();
+        var s = heure1.filter(".seconde").val();
+
+        datePlusPetite.setHours(h,m,s,0);
+    }
+
+    var date2 = $(form).find(".date2");
+    if (!date2.length) {
+        console.log("Il y a une date1 mais pas de date2??");
+        return true;
+    }
+    date2 = date2.val();
+    var datePlusGrande = new Date(date2);
+    var heure2 = $(form).find(".heure2");
+    if (heure2.length) {
+        var h = heure2.filter(".heure").val();
+        var m = heure2.filter(".minute").val();
+        var s = heure2.filter(".seconde").val();
+
+        datePlusGrande.setHours(h, m, s, 0);
+    }
+    var valide = datePlusPetite <= datePlusGrande;
+    if (!valide) {
+        alert("La première date doit être antérieure à la deuxième");
         return false;
     }
     return true;
@@ -343,9 +418,14 @@ function validerChamps(f) {
     if (!validerSelect(f)) {
         return false;
     }
+    if (!validerMontant(f)) {
+        return false;
+    }
+    if (!validerDateHeure(f)) {
+        return false;
+    }
     return true;
 }
-
 
 
 (function (factory) {
@@ -384,3 +464,4 @@ function validerChamps(f) {
     return datepicker.regional.fr;
 
 }));
+

@@ -19,6 +19,7 @@ namespace ECJ.Web.Controllers
         public SousEvenementsController()
         {
             db = new DBProvider();
+            GetPermissions();
         }
         public ActionResult Detail(int? id)
         {
@@ -106,7 +107,7 @@ namespace ECJ.Web.Controllers
             var forfait = db.ToutForfait().Except(SousEvenementCourrant.tblForfait).ToList();
             var engagement = db.ToutEngagement().Except(SousEvenementCourrant.tblEngagement).ToList();
             ViewBag.listTuple = new Tuple<tblSousEvenement, List<tblService>, List<tblSalle>, List<tblForfait>, List<tblEngagement>>(SousEvenementCourrant, service, salle, forfait, engagement);
-            //Service, Salle, Forfait, Engagement
+            ViewBag.UtilisateurCourrant = (long)AbpSession.UserId;
             return View();
         }
 

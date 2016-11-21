@@ -5,17 +5,18 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net;
 using ECJ.Web.Models;
-
-
+using Abp.Web.Mvc.Authorization;
 
 namespace ECJ.Web.Controllers
 {
+    [AbpMvcAuthorize]
     public class CalculateurController : ECJControllerBase
     {
         DBProvider db;
         public CalculateurController()
         {
             db = new DBProvider();
+            GetPermissions();
         }
         public ActionResult Index(int? id)
         {
@@ -25,9 +26,9 @@ namespace ECJ.Web.Controllers
             }
             ViewBag.Salle = db.FindSousEvenement((int)id).tblSalle;
 
-            ViewBag.Forfait = db.FindSousEvenement((int)id).tblForfait;
+            ViewBag.Calcul = db.ReturnCalculateur((int)id) ?? new tblCalculateur();
 
-            ViewBag.Calcul = db.ReturnCalculateur((int)id);
+            ViewBag.Forfait = db.FindSousEvenement((int)id).tblForfait.Where(f => f.dateSupprime == null);
 
             return View();
         }

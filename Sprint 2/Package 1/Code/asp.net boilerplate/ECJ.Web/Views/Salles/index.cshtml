@@ -3,45 +3,43 @@
     ViewBag.Title = "IndexSalles";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>Salles</title>
-</head>
-<body>
-
-    <div class="modal-header">
-        <h4 class="modal-title">
-            <span>Liste des salles.</span>
-        </h4>
-    </div>
-    <div class="modal-body">
-        <table class="table table-striped table-hover">
-            <thead>
+<h1>Salles</h1>
+<div>
+    @using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "page-header" }))
+    {
+        <div class="input-group">
+            <input class="form-control" type="text" name="recherche" value="@ViewBag.recherche">
+            <span class="input-group-btn">
+                <button class="btn btn-primary">Rechercher</button>
+            </span>
+            <span class="input-group-btn">
+                <a href="~/Salles/" class="btn btn-default">Vider</a>
+            </span>
+        </div>
+    }
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Billets standard</th>
+                <th>Billets VIP</th>
+                <th data-sorter="false">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var s in ViewBag.Salle)
+            {
                 <tr>
-                    <th>Nom</th>
-                    <th>Prix</th>
-                    <th>Billets standard</th>
-                    <th>Billets VIP</th>
-                    <th>Details</th>
+                    <td>@s.nomSalle</td>
+                    <td class="{sorter:'monetaryValue'}">@s.prix$</td>
+                    <td>@s.billet</td>
+                    <td>@s.billetVIP</td>
+                    <td>
+                        <a href="~/Salles/Details/@s.noSalle" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var s in ViewBag.Salle)
-                {
-                    <tr>
-                        <td>@s.nomSalle</td>
-                        <td>@s.prix$</td>
-                        <td>@s.billet</td>
-                        <td>@s.billetVIP</td>
-                        <td>
-                            <a href="/Salles/Details/@s.noSalle" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+            }
+        </tbody>
+    </table>
+</div> 

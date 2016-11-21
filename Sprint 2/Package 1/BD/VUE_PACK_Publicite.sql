@@ -11,10 +11,10 @@ SELECT  ao.[noAppelOffre], ao.[nom] as nomAppelOffre ,ao.[dateRequis],ao.[dateEn
 FROM S_publicite.tblAppelOffre AS ao  
 LEFT JOIN S_publicite.tblStatutAppelOffre AS sta
 ON ao.noStatut=sta.noStatut
-LEFT JOIN S_publicite.tblSoumission soumi
-ON soumi.noAppelOffre=ao.noAppelOffre
+LEFT JOIN (SELECT noAgencePub,noAppelOffre FROM S_publicite.tblSoumission soumi WHERE soumi.dateSupprime IS NULL) AS soumi_ssr
+ON soumi_ssr.noAppelOffre=ao.noAppelOffre
 LEFT JOIN S_publicite.tblAgencePublicite agen
-ON agen.noAgencePub=soumi.noAgencePub
+ON agen.noAgencePub=soumi_ssr.noAgencePub
 LEFT JOIN S_evenement.tblEvenement even
 ON even.noEvenement=ao.noEvenement
 WHERE ao.dateSupprime IS NULL

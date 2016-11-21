@@ -1,0 +1,29 @@
+﻿@model List<Exception>
+@foreach (var erreur in Model)
+{
+    string message = "Une erreur s'est produite dans la base de données";
+    if (erreur.GetType() == typeof(IOException))
+    {
+        message = "Serveur de fichier introuvable. Veuillez vous connecter au serveur de fichiers pour pouvoir écrire les soumissions au format XML";
+    }
+    <div class="alert alert-dismissible alert-danger" id="popupErreur">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4>Erreur</h4>
+        <div class=""> @message.<button type="button" class="btn btn-default pull-right" data-toggle="collapse" data-target="#erreur@(erreur.GetHashCode())">Voir les détails</button></div>
+        <div>Vous pouvez vérifier l'erreur en cliquant sur le bouton à droite.</div>
+        <div id="erreur@(erreur.GetHashCode())" class="collapse erreur">
+            <div class="well">
+                @{
+                    Exception e = erreur;
+                    do
+                    {
+                        <div>@e.Message</div>
+                        e = e.InnerException;
+                    } while (e != null);
+                }
+            </div>
+        </div>
+    </div>
+}
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SoumissionAgence" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="Soumission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="NoSoumission" type="xs:int" />
+        <xs:element name="noSoumissionAgence" type="xs:string" />
+        <xs:element name="Nom" type="xs:string" />
+        <xs:element name="Prix" type="xs:decimal" />
+        <xs:element name="noAgencePub" type="xs:int" />
+        <xs:element name="noAppelOffre" type="xs:int" />
+        <xs:element name="Statut" type="xs:string" />
+        <xs:element name="Commentaire" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

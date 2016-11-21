@@ -1,0 +1,57 @@
+﻿@model ECJ.Web.Models.tblActivite
+@{
+    ViewBag.Title = "Details";
+}
+
+<form name="createPub" role="form" novalidate class="form-validation">
+
+    <div class="form-group">
+        <label>Nom du responsable</label>
+        <div class="well well-sm">
+            @Model.nomResponsable
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Statut</label>
+        <div class="well well-sm">
+            @if(Model.etat == 1)
+            {
+                <div>
+                    Réalisé
+                </div>
+            }
+            else
+            {
+                <div>
+                    Non-Réalisé
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Date de création</label>
+        <div class="well well-sm">
+            @String.Format("{0:yyyy/MM/dd}", Model.dateCreation)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Tâches</label>
+        <div class="well well-sm">
+            @Model.tache
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Description</label>
+        <div class="well well-lg">
+            @Model.detail
+        </div>
+    </div>
+
+    <div class="form-group pull-right">
+        <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
+</form>

@@ -5,13 +5,20 @@
 
 USE master
 
-GO
+
+alter
+
+ 
+
+database PE2_Officiel set single_user with rollback immediate;
+
 
 DROP database PE2_Officiel
 PRINT 'Suppression de la base de données Officiel'
 GO
 
-CREATE DATABASE PE2_Officiel
+CREATE DATABASE PE2_Officiel;
+
 PRINT 'Création de la base de données Officiel'
 
 GO

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Abp.Web.Mvc.Authorization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,6 +7,8 @@ using System.Web.Mvc;
 
 namespace ECJ.Web.Controllers
 {
+
+    [AbpMvcAuthorize]
     public class CMemoController : Controller
     {
         DBProvider db = new DBProvider();

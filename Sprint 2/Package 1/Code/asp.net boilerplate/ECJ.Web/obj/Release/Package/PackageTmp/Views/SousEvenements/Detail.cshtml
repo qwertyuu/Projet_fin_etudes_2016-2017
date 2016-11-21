@@ -1,0 +1,452 @@
+﻿@using Abp.Web.Mvc.Extensions
+@using System.Text
+@using ECJ.Web.Models
+@using System.Runtime.Serialization.Json
+@{
+    ViewBag.Title = "Detail";
+    @*Service, Salle, Forfait, Engagement*@
+
+    //bug avec le model par défaut lorsqu'on utilise un tuple avec 5 éléments...
+    Tuple<tblSousEvenement, List<tblService>, List<tblSalle>, List<tblForfait>, List<tblEngagement>> Model = ViewBag.listTuple;
+}
+@if (Model.Item1.noSalle != null)
+{
+    <a href="~/Calculateur/index/@Model.Item1.noSousEvenement?return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-calculator"></i> Ouvrir le calculateur</a>
+}
+
+<h2>Détail d'un sous-événement</h2>
+
+@section scripts
+{
+    @Html.IncludeScript("~/Views/SousEvenements/Detail.js")
+}
+<div name="createPub" role="form" novalidate class="form-validation">
+    
+    <div class="form-group">
+        <label>Nom</label>
+        <div class="well well-sm">
+            @Model.Item1.nom
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <div class="well well-lg">
+            @Model.Item1.description
+        </div>
+    </div>
+    <label>Services requis</label>
+    <button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
+    <div class="form-group">
+        @using (Html.BeginForm())
+        {
+         @Html.AntiForgeryToken()
+         @Html.ValidationSummary(true)
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in Model.Item1.tblService)
+                {
+                    <tr>
+                        <td>@s.nomService</td>
+                        <td>
+                            <button name="service_suppr" value="@s.noService" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        }
+    </div>
+    <label>Salle</label>
+    @if (Model.Item1.noSalle == null || Model.Item1.tblSalle.dateSupprime != null)
+    {
+        <button data-target="#SalleAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Choisir une salle</button>
+    }
+    <div class="form-group">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+        <table class="table table-striped table-hover noTS">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prix</th>
+                    <th>Billets standard</th>
+                    <th>Billets VIP</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Item1.noSalle != null && Model.Item1.tblSalle.dateSupprime == null)
+                {
+                    <tr>
+                        <td>@Model.Item1.tblSalle.nomSalle</td>
+                        <td>@Model.Item1.tblSalle.prix$</td>
+                        <td>@Model.Item1.tblSalle.billet</td>
+                        <td>@Model.Item1.tblSalle.billetVIP</td>
+                        <td>
+                            <button name="salle_suppr" value="@Model.Item1.noSalle" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+}
+    </div>
+
+    <label>Forfaits</label>
+    <button data-target="#ForfaitAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un forfait</button>
+    <div class="form-group">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var f in Model.Item1.tblForfait.Where(element => element.dateSupprime == null))
+                {
+                    <tr>
+                        <td>@f.nom</td>
+                        <td>@f.description</td>
+                        <td>
+                            <button name="forfait_suppr" value="@f.noForfait" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+}
+    </div>
+
+    <label>Engagements</label>
+    <button data-target="#EngagementAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un engagement</button>
+    <div class="form-group">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nature</th>
+                    <th>Durée</th>
+                    <th>Lieu</th>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Description</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var e in Model.Item1.tblEngagement.Where(element => element.dateSupprime == null))
+                {
+                    <tr>
+                        <td>@e.nature</td>
+                        <td>@e.duree</td>
+                        <td>@e.lieu</td>
+                        <td>@String.Format("{0:yyyy/MM/dd}", e.date)</td>
+                        <td>@e.heure</td>
+                        <td>@e.descriptionCourte</td>
+                        <td>
+                            <button name="engagement_suppr" value="@e.noEngagement" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+}
+    </div>
+
+    <label>Activités</label>
+    <a href="/Activite/Ajout/?sousevenement_id=@Model.Item1.noSousEvenement&return=@Request.RawUrl" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#liste" data-toggle="tab" aria-expanded="true">Liste</a></li>
+        <li class=""><a href="#calendrier" data-toggle="tab" aria-expanded="false">Calendrier</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane active fade in" id="liste">
+            <div class="form-group">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Responsable</th>
+                            <th>Tâche</th>
+                            <th>Détails</th>
+                            <th>Date</th>
+                            <th class="col-md-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            List<ECJ.Web.Models.Calendrier> cals = new List<ECJ.Web.Models.Calendrier>();
+                            Dictionary<string, string> actInfo = new Dictionary<string, string>();
+
+                            foreach (var activite in Model.Item1.tblActivite.Where(element => element.dateSupprime == null && element.AbpUsers.Id == ViewBag.UtilisateurCourrant))
+                            {
+                                var date = String.Format("{0:yyyy-MM-dd}", activite.dateCreation);
+                                var nomAct = activite.tache;// + ": " + ((activite.etat == 1) ? "Réalisé" : "Non réalisé");
+                                if (actInfo.ContainsKey(date))
+                                {
+                                    actInfo[date] += ",<br>" + nomAct;
+                                }
+                                else
+                                {
+                                    actInfo[date] = nomAct;
+                                }
+                                <tr>
+                                    <td>@activite.nomResponsable</td>
+                                    <td>@activite.tache</td>
+                                    <td>@activite.detail</td>
+                                    <td>@String.Format("{0:yyyy/MM/dd}", activite.dateCreation)</td>
+                                    <td>
+                                        @if (activite.etat == 1)
+                                        {
+                                            <a href="~/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-warning" title="Changer pour non-réalisé"><i class="fa fa-times-circle fa-lg"></i></a>
+
+                                        }
+                                        else
+                                        {
+                                            <a href="~/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-success" title="Changer pour réalisé"><i class="fa fa-check-square fa-lg"></i></a>
+                                        }
+                                        <a href="/Activite/Detail/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                        <a href="/Activite/Modifier/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                        <a href="/Activite/Supprimer/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+
+                                    </td>
+                                </tr>
+                                        }
+
+                                        foreach (var d in actInfo)
+                                        {
+                                            cals.Add(new ECJ.Web.Models.Calendrier() { date = d.Key, badge = true, title = d.Value });
+                                        }
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane fade in clearfix" id="calendrier">
+            <div id="calendrier-inner" class="col-md-4 col-md-offset-4">
+
+            </div>
+        </div>
+    </div>
+    <a href="@Request.QueryString["return"]" class="btn btn-default pull-right" data-dismiss="modal">Retour à l'événement parent</a>
+</div>
+@{
+    if (cals.Count > 0)
+    {
+        string dateCal = "[]";
+        using (MemoryStream ms = new MemoryStream())
+        {
+
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(ECJ.Web.Models.Calendrier[]));
+            ser.WriteObject(ms, cals.ToArray());
+            dateCal = Encoding.UTF8.GetString(ms.ToArray());
+        }
+        <script>var dates_calendrier = @(new HtmlString(dateCal));</script>
+    }
+    else
+    {
+        <script>var dates_calendrier = [];</script>
+    }
+}
+@*Modal pour le choix d'un service requis*@
+<div class="modal fade" id="ServiceAjoutModal" tabindex="-1" role="dialog" aria-labelledby="ServiceAjoutModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span>Choisir un service</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nom du service</th>
+                                <th>Sélection</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @* 
+                            Si il y a une salle, changer le name
+                            *@
+
+                            @foreach (var s in Model.Item2)
+                            {
+                                var name = "service";
+                                var classe = "btn-primary";
+                                if (Model.Item1.tblSalle != null && !ViewBag.ServicesOfferts.Contains(s))
+                                {
+                                    name = "service_delete_salle";
+                                    classe = "btn-default";
+                                }
+                                <tr>
+                                    <td>@s.nomService</td>
+                                    <td><button name="@name" value="@s.noService" class="btn @classe btn-sm"><i class="fa fa-check-square"></i></button></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@*Modal pour le choix d'un forfait*@
+<div class="modal fade" id="ForfaitAjoutModal" tabindex="-1" role="dialog" aria-labelledby="ForfaitAjoutModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span>Choisir un forfait</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nom du forfait</th>
+                                <th>Sélection</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var f in Model.Item4)
+                            {
+                                <tr>
+                                    <td>@f.nom</td>
+                                    <td><button name="forfait" value="@f.noForfait" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@*Modal pour le choix d'un engagement*@
+<div class="modal fade" id="EngagementAjoutModal" tabindex="-1" role="dialog" aria-labelledby="ForfaitAjoutModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span>Choisir un engagement</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nature</th>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Sélection</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var e in Model.Item5)
+                            {
+                                <tr>
+                                    <td>@e.nature</td>
+                                    <td>@String.Format("{0:yyyy/MM/dd}", e.date)</td>
+                                    <td>@e.descriptionCourte</td>
+                                    <td><button name="engagement" value="@e.noEngagement" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@*Modal pour le choix d'une salle*@
+<div class="modal fade" id="SalleAjoutModal" tabindex="-1" role="dialog" aria-labelledby="SalleAjoutModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            @using (Html.BeginForm(new { @return = Request.QueryString["return"] }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span>Choisir une salle</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Prix</th>
+                                <th>Billets standard</th>
+                                <th>Billets VIP</th>
+                                <th>Sélection</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var s in Model.Item3)
+                            {
+                                <tr>
+                                    <td>@s.nomSalle</td>
+                                    <td>@s.prix$</td>
+                                    <td>@s.billet</td>
+                                    <td>@s.billetVIP</td>
+                                    <td>
+                                        <button name="salle" value="@s.noSalle" class="btn btn-primary btn-sm"><i class="fa fa-check-square"></i></button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

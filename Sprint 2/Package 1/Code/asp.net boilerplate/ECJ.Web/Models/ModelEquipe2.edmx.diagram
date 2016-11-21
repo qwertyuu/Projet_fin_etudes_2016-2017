@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f47d525341244e979010ae93f0e64e7e" Name="Diagram1" ZoomLevel="101">
+      <Diagram DiagramId="f47d525341244e979010ae93f0e64e7e" Name="Diagram1" ZoomLevel="75">
         <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffreAgence" Width="1.5" PointX="5.25" PointY="4.875" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblAdresse" Width="1.5" PointX="1.5" PointY="28.75" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblAgence" Width="1.5" PointX="0.75" PointY="24.125" />
@@ -28,7 +28,6 @@
         <EntityTypeShape EntityType="PE2_OfficielModel.tblService" Width="1.5" PointX="0.75" PointY="5.75" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblMemo" Width="1.5" PointX="7.75" PointY="2.5" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblAgencePublicite" Width="1.5" PointX="9" PointY="6.125" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffre" Width="1.5" PointX="6" PointY="9.125" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblMedia" Width="1.5" PointX="3.75" PointY="17.5" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblSoumission" Width="1.5" PointX="11.25" PointY="9.5" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblStatutAppelOffre" Width="1.5" PointX="3.75" PointY="0.75" />
@@ -41,7 +40,6 @@
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomStatut" Width="1.5" PointX="13.75" PointY="2.5" />
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomCommanditaire" Width="1.5" PointX="13.75" PointY="5.5" />
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomEvenement" Width="1.5" PointX="13.75" PointY="9.5" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAppelOffre" Width="1.5" PointX="7.75" PointY="16.5" />
         <EntityTypeShape EntityType="PE2_OfficielModel.vueSomSoumission" Width="1.5" PointX="14.75" PointY="12.5" />
         <AssociationConnector Association="PE2_OfficielModel.AGE_ADR_FK" />
         <AssociationConnector Association="PE2_OfficielModel.DIF_ADR_FK" />
@@ -61,13 +59,9 @@
         <AssociationConnector Association="PE2_OfficielModel.NOSOUSEVEN_ACT_FK" />
         <AssociationConnector Association="PE2_OfficielModel.NOCOMM_DON_FK" />
         <AssociationConnector Association="PE2_OfficielModel.NOSOUSEVEN_DON_FK" />
-        <AssociationConnector Association="PE2_OfficielModel.EVENEMENT_APPEL_FK" />
         <AssociationConnector Association="PE2_OfficielModel.NOEVEN_SOUSEVEN_FK" />
         <AssociationConnector Association="PE2_OfficielModel.NOSALLE" />
         <AssociationConnector Association="PE2_OfficielModel.AGENCE_PUB_FK" />
-        <AssociationConnector Association="PE2_OfficielModel.APPEL_OFFRE_FK" />
-        <AssociationConnector Association="PE2_OfficielModel.MED_APPEL_FK" />
-        <AssociationConnector Association="PE2_OfficielModel.STATUT_APPEL_FK" />
         <AssociationConnector Association="PE2_OfficielModel.tblCatArtisteArt" />
         <AssociationConnector Association="PE2_OfficielModel.tblContratArtiste" />
         <AssociationConnector Association="PE2_OfficielModel.tblRespoContrat" />
@@ -117,6 +111,14 @@
         <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblCalculateur" Width="2" PointX="5.25" PointY="35.5" />
         <AssociationConnector Association="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK" />
+        <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomSalle" Width="1.5" PointX="7.375" PointY="20.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAppelOffre" Width="1.5" PointX="7.375" PointY="16.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffre" Width="1.5" PointX="6" PointY="9.25" />
+        <AssociationConnector Association="PE2_OfficielModel.EVENEMENT_APPEL_FK" />
+        <AssociationConnector Association="PE2_OfficielModel.APPEL_OFFRE_FK" />
+        <AssociationConnector Association="PE2_OfficielModel.MED_APPEL_FK" />
+        <AssociationConnector Association="PE2_OfficielModel.STATUT_APPEL_FK" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

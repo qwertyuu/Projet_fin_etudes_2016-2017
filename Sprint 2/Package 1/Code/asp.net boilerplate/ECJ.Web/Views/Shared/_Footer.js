@@ -2,10 +2,14 @@
     function () {
         $("#envoyerMemo").click(function (e) {
             if ($("#destinataire").val() != null) {
+                var lienAEnvoyer = $("#lien").val().replace(abp.appPath, "");
+                if (lienAEnvoyer.charAt(0) == "/") {
+                    lienAEnvoyer = lienAEnvoyer.substring(1);
+                }
                 $.ajax({
                     type: "POST",
-                    url: '/CMemo/Send/',
-                    data: { expediteur: $("#expediteur").val(), destinataire: $("#destinataire").val(), message: $("#message").val(), lien: $("#lien").val() },
+                    url: abp.appPath + 'CMemo/Send/',
+                    data: { expediteur: $("#expediteur").val(), destinataire: $("#destinataire").val(), message: $("#message").val(), lien: lienAEnvoyer },
                     success: function (data) {
                         console.log(data);
                         afficherSucces();
@@ -35,6 +39,11 @@
             else {
                 $("#destinataire").val([]);
             }
+        });
+        $("#MemoCreateModal").on('hidden.bs.modal', function () {
+            $("#filtreUsers,#message").val("");
+            $("#filtreUsers").trigger("input");
+            $("#destinataire").val($("#destinataire option:first").val());
         });
     }
 );

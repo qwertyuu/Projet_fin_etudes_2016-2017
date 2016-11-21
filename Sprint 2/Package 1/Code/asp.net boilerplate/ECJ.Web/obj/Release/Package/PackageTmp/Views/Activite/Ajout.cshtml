@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Ajout";
+}
+
+<h2>Activite</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        <label>Nom du responsable</label>
+        <input class="form-control" type="text" name="nomResponsable" required>
+    </div>
+    <div class="form-group">
+        <label>Réalisé </label>
+        <input type="checkbox" value="1" name="etat"><br>
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input class="form-control dp" type="text" name="dateCreation" required>
+    </div>
+    <div class="form-group">
+        <label>Tâche</label>
+        <input class="form-control" type="text" name="tache" required>
+    </div>
+    <div class="form-group">
+        <label>Détails</label>
+        <textarea class="form-control" rows="5" id="detail" name="detail"></textarea>
+    </div>
+
+    <div class="form-group pull-right">
+        <button class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Ajouter</span></button>
+        <a onclick="window.history.back()" class="btn btn-default" data-dismiss="modal">Retour à un détail d'événement</a>
+    </div>
+}

@@ -10,7 +10,8 @@ GO
 INSERT INTO S_forfait.tblSalle (nomSalle,prix,billet,billetVIP,photoSalle,dateSupprime,urlGoogleMap)
 VALUES('Salle François Brassard',1000,700,60,'http://i.imgur.com/qcfbNLq.png',null,'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2648.6453269213494!2d-71.24667188474935!3d48.405753937193936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2dd30e450fd3bd83!2zQ8OpZ2VwIGRlIEpvbnF1acOocmU!5e0!3m2!1sfr!2sca!4v1476204181668'),
 ('Salle Polyvalente',300,200,30,'http://i.imgur.com/2VxTEYs.png',null,'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2648.6453269213494!2d-71.24667188474935!3d48.405753937193936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2dd30e450fd3bd83!2zQ8OpZ2VwIGRlIEpvbnF1acOocmU!5e0!3m2!1sfr!2sca!4v1476204181668'),
-('Salle Pierrette Gaudreault',750,500,50,null,'2015/05/03',null);
+('Salle Pierrette Gaudreault',750,500,50,'http://diffusion.saguenay.ca/wp-content/uploads/2016/10/pierrette-gaudreault-plan-de-salle.jpg',null,'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7490.843849969319!2d-71.26963707816424!3d48.41021028620453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8a28e75e909e7336!2sCentre+Culturel+Mont+Jacob!5e0!3m2!1sen!2sca!4v1478536664327'),
+('Salle Pierre Alexandre 22%',1500,650,30,null,2015/10/31,null);
 GO
 PRINT 'INSERTION RÉUSSI'
 
@@ -49,22 +50,30 @@ PRINT 'INSERTION RÉUSSI'
 PRINT 'INSERTION DE LA tblServiceOffert'
 GO
 INSERT INTO S_forfait.tblServiceOffert(noService,noSalle)
-VALUES(3,1),
+VALUES
+(3,1),
 (4,1),
 (5,1),
 (1,2),
 (2,2),
 (3,2),
-(5,2);
+(5,2),
+(1,3),
+(2,3),
+(3,3),
+(4,3),
+(5,3);
 
 GO
 PRINT 'INSERTION RÉUSSI'
 PRINT 'INSERTION DE LA tblServiceRequis'
 GO
 INSERT INTO S_forfait.tblServiceRequis(noService,noSousEvenement)
-VALUES(1,1),
+VALUES
+(1,1),
 (1,2),
 (1,3),
+(2,3),
 (2,4),
 (2,5),
 (2,6),
@@ -86,17 +95,50 @@ VALUES(1,1),
 (1,13),
 (2,13),
 (3,13),
-(5,13);
+(5,13),
+(1,14),
+(2,14),
+(3,15),
+(5,16),
+(1,17),
+(2,18),
+(3,19),
+(1,20),
+(2,20),
+(3,20),
+(4,20),
+(5,20),
+(5,21),
+(4,22),
+(2,23),
+(1,24),
+(2,24),
+(3,24),
+(3,26),
+(1,27),
+(2,27),
+(3,29),
+(1,31),
+(3,31);
 GO
 PRINT 'INSERTION RÉUSSI'
 PRINT 'INSERTION DE LA tblForfaitSousEvenement'
 GO
 
 INSERT INTO S_forfait.tblForfaitSousEvenement (noForfait,noSousEvenement)
-VALUES(4,1),
-(4,2),
+VALUES
+(1,1),
+(4,1),
+(4,4),
 (4,3),
-(2,10),
+(2,3),
+(1,3),
+(2,4),
+(4,5),
+(2,5),
+(4,6),
+(2,6),
+(1,8),
 (3,11),
 (1,12),
 (2,12),
@@ -105,7 +147,62 @@ VALUES(4,1),
 (1,13),
 (2,13),
 (3,13),
-(4,13);
+(4,13),
+(1,14),
+(2,14),
+(3,16),
+(4,16),
+(1,17),
+(2,18),
+(3,18),
+(4,18),
+(1,19),
+(2,19),
+(3,19),
+(4,19),
+(1,20),
+(2,20),
+(3,20),
+(4,20),
+(1,22),
+(1,23),
+(2,23),
+(1,24),
+(2,24),
+(4,24),
+(3,24),
+(4,27),
+(1,28),
+(4,28),
+(1,29),
+(3,29),
+(4,29),
+(3,30),
+(3,31),
+(4,32),
+(1,32);
+GO
+PRINT 'INSERTION RÉUSSI'
+PRINT 'INSERTION DE LA tblCalculateur'
+--Ces données vont être plus complètes lorsque que la sauvegarde du calculateur sera fonctionnelle.
+GO
+INSERT INTO S_forfait.tblCalculateur (billet,billetVIP,prixBillet,prixBilletVIP,souperSpectacle,prixSouper,jeunePourcent,adultePourcent,ainePourcent,jeuneRatio,adulteRatio,aineRatio,promo,prevente,customBillet1,customBillet2,customPrix1,customPrix2,customNom1,customNom2)
+VALUES
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(5,5,5,5,5,5,5,5,5,50,30,20,5,5,5,5,5,5,'Rabais rue','Rabais internet'),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
 
 GO
 PRINT 'INSERTION RÉUSSI'

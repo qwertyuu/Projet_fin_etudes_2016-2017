@@ -1,0 +1,205 @@
+﻿@using Abp.Authorization.Users
+@using Abp.Web.Mvc.Extensions
+@using System.Web.Script.Serialization
+@using System.Text
+@using System.Runtime.Serialization.Json
+@using Abp.Runtime.Session;
+@{
+    ViewBag.Title = "Detail";
+}
+@section scripts
+{
+    @Html.IncludeScript("~/Views/Events/Detail.js")
+}
+@model ECJ.Web.Models.tblEvenement
+<h2>Détail d'un événement</h2>
+
+<form name="createPub" role="form" novalidate class="form-validation">
+
+    <div class="form-group">
+        <label>Nom</label>
+        <div class="well well-sm">
+            @Model.nom
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Date de début</label>
+        <div class="well well-sm">
+            @String.Format("{0:yyyy/MM/dd}", Model.dateDebut)
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Date de fin</label>
+        <div class="well well-sm">
+            @String.Format("{0:yyyy/MM/dd}", Model.datefin)
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Lien hypertexte</label>
+        <div class="well well-sm">
+            @if (Model.url != null)
+            {
+                <a href="@Model.url" target="_blank"><i class="fa fa-globe fa-3x"></i><i class="fa fa-external-link"></i></a>
+            }
+            else
+            {
+                <span>Aucun lien n'a été fourni</span>
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <div class="well well-lg">
+            @Model.description
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Affiche</label>
+        <div class="well well-sm">
+            @if (Model.affiche == null)
+            {
+                <span>Aucune affiche</span>
+            }
+            else
+            {
+                <img src="~/Events/GetFile/@Model.noEvenement" alt="Affiche" />
+            }
+        </div>
+    </div>
+    <label>Sous-Événements</label>
+    <a href="/sousEvenements/Ajout?evenement_id=@Model.noEvenement&return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un sous-événement</a>
+    <div class="form-group">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th class="col-md-2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sE in Model.tblSousEvenement.Where(element => element.dateSupprime == null))
+                {
+                    <tr>
+                        <td>@sE.nom</td>
+                        <td>@sE.description</td>
+                        <td>
+                            <a href="/sousEvenements/Detail/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                            <a href="/sousEvenements/Modifier/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                            <a href="/sousEvenements/Supprimer/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <label>Activités</label>
+    <a href="/Activite/Ajout/?evenement_id=@Model.noEvenement&return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#liste" data-toggle="tab" aria-expanded="true">Liste</a></li>
+        <li class=""><a href="#calendrier" data-toggle="tab" aria-expanded="false">Calendrier</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane active fade in" id="liste">
+            <div class="form-group">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Responsable</th>
+                            <th>Tâche</th>
+                            <th>Détails</th>
+                            <th>Date</th>
+                            <th>Sous-Événement</th>
+                            <th class="col-md-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            IEnumerable<ECJ.Web.Models.tblActivite> activites = Model.tblActivite.Where(a => a.AbpUsers.Id == ViewBag.UtilisateurCourrant);
+                            foreach (var item in Model.tblSousEvenement)
+                            {
+                                activites = activites.Concat(item.tblActivite.Where(a => a.AbpUsers.Id == ViewBag.UtilisateurCourrant));
+                            }
+                            List<ECJ.Web.Models.Calendrier> cals = new List<ECJ.Web.Models.Calendrier>();
+                            Dictionary<string, string> actInfo = new Dictionary<string, string>();
+                            foreach (var activite in activites.Where(element => element.dateSupprime == null))
+                            {
+                                var date = String.Format("{0:yyyy-MM-dd}", activite.dateCreation);
+                                var nomAct = activite.tache;// + ": " + ((activite.etat == 1) ? "Réalisé" : "Non réalisé");
+                                if (actInfo.ContainsKey(date))
+                                {
+                                    actInfo[date] += ",<br>" + nomAct;
+                                }
+                                else
+                                {
+                                    actInfo[date] = nomAct;
+                                }
+                                <tr>
+                                    <td>@activite.nomResponsable</td>
+                                    <td>@activite.tache</td>
+                                    <td>@activite.detail</td>
+                                    <td>@String.Format("{0:yyyy/MM/dd}", activite.dateCreation)</td>
+                                    @{
+                                        if (activite.tblSousEvenement == null)
+                                        {
+                                            <td></td>
+                                        }
+                                        else
+                                        {
+                                            <td>@activite.tblSousEvenement.nom</td>
+                                        }
+                                    }
+                                    <td>
+                                        @if (activite.etat == 1)
+                                        {
+                                            <a href="/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-warning" title="Changer pour non-réalisé"><i class="fa fa-times-circle fa-lg"></i></a>
+
+                                        }
+                                        else
+                                        {
+                                            <a href="/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-success" title="Changer pour réalisé"><i class="fa fa-check-square fa-lg"></i></a>
+                                        }
+                                        <a href="/Activite/Detail/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                        <a href="/Activite/Modifier/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                        <a href="/Activite/Supprimer/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+
+                                    </td>
+                                </tr>
+                                            }
+                                            foreach (var d in actInfo)
+                                            {
+                                                cals.Add(new ECJ.Web.Models.Calendrier() { date = d.Key, badge = true, title = d.Value });
+                                            }
+                                        }
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+        <div class="tab-pane fade in clearfix" id="calendrier">
+            <div id="calendrier-inner" class="col-md-4 col-md-offset-4">
+
+            </div>
+        </div>
+    </div>
+    <a href="~/Events/" class="btn btn-default pull-right" data-dismiss="modal">Retour à la liste d'événements</a>
+</form>
+@{
+    if (cals.Count > 0)
+    {
+        string dateCal = "[]";
+        using (MemoryStream ms = new MemoryStream())
+        {
+            
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(ECJ.Web.Models.Calendrier[]));
+            ser.WriteObject(ms, cals.ToArray());
+            dateCal = Encoding.UTF8.GetString(ms.ToArray());
+        }
+        <script>var dates_calendrier = @(new HtmlString(dateCal));</script>
+    }
+    else
+    {
+        <script>var dates_calendrier = [];</script>
+    }
+}

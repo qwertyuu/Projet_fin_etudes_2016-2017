@@ -9,11 +9,9 @@
 {
     @Html.IncludeScript("~/Views/Home/Index.js")
 }
-<h1>@L("WellcomeMessage")</h1>
-
 <div class="jumbotron">
-    <h1>ECJ</h1>
-    <p class="lead">ECJ, qui veut dire Événements du Cégep de Jonquière, est une entreprise qui crée, gère et applique des événement au Cégep de Jonquière.</p>
+    <h1>Bienvenue sur ECJ!</h1>
+    <p class="lead">ECJ, qui veut dire Événement du Cégep de Jonquière, est un système qui crée, gère et applique des événement au Cégep de Jonquière.</p>
 </div>
 
 <h3>Mémos</h3>
@@ -21,14 +19,15 @@
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-<table class="table sommaireMemo table-striped table-hover">
+<table class="table sommaireMemo table-striped table-hover tablesorter">
     <thead>
         <tr>
             <th>Expéditeur</th>
             <th>Informations</th>
             <th>Envoyé le</th>
             <th>Lien</th>
-            <th>Action</th>
+            <th>État</th>
+            <th data-sorter="false">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -36,15 +35,20 @@
         @foreach (ECJ.Web.Models.tblMemo m in ViewBag.memos)
         {
             var Etat = "warning";
+            var EtatTexte = "Non lu";
+            var EtatSort = "0";
             if (m.statut)
             {
                 Etat = "";
+                EtatTexte = "Lu";
+                EtatSort = "1";
             }
             <tr class="@Etat" data-id="@m.noMemo">
                 <td>@m.AbpUsers1.UserName</td>
                 <td>@m.info</td>
                 <td>@String.Format("{0:yyyy/MM/dd HH:mm:ss}", m.dateEnvoi)</td>
-                <td> <a href="@m.lien">Accéder à la page liée au mémo</a></td>
+                <td><a href="@m.lien">Accéder à la page liée au mémo</a></td>
+                <td class='{"sorter":"memoLu"} etatCell' data-sort-value="@EtatSort">@EtatTexte</td>
                 <td>
                     <button name="memo_suppr" value="@m.noMemo" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
                 </td>
@@ -54,26 +58,35 @@
 </table>
 }
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <h2>Événements</h2>
         <p>
-            Ici contient tous les informations par rapports aux événements. Il est possible de voir chaque événement, ainsi que leurs dates et l'heure de ces derniers.
+            Ici contient toutes les informations par rapport aux événements. Il est possible de voir chaque événement, ainsi que leurs dates et l'heure de ces derniers.
         </p>
-        <p><a class="btn btn-primary" href="/Events/Index">Voir les Événements &raquo;</a></p>
+        <p><a class="btn btn-primary pull-right" href="~/Events">Voir les événements &raquo;</a></p>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
         <h2>Publicités</h2>
         <p>
-            Ici contient tous les informations par rapports aux publicités. Il est possible de voir l'affiche, le média ainsi que la date de la sortie.
+            Ici contient toutes les informations par rapport aux publicités. Il est possible de voir l'affiche, le média ainsi que la date de la sortie.
         </p>
-        <p><a class="btn btn-primary" href="/AppellOffre/Index">Voir les publicitées &raquo;</a></p>
+        <p><a class="btn btn-primary pull-right" href="~/AppellOffre">Voir les publicités &raquo;</a></p>
     </div>
 
 
-    <div class="col-md-4">
+
+
+</div>
+<div class="row">
+    <div class="col-md-6">
         <h2>Commanditaires</h2>
-        <p>Ici contient tous les informations par rapport aux commanditaires. Il est possible de voir les commanditaires, leurs dons ainsi que leurs logo.</p>
-        <p><a class="btn btn-primary" href="/Commanditaire/Index">Voir les commanditaires &raquo;</a></p>
+        <p>Ici contient toutes les informations par rapport aux commanditaires. Il est possible de voir les commanditaires, leurs dons ainsi que leurs logo.</p>
+        <p><a class="btn btn-primary pull-right" href="~/Commanditaire">Voir les commanditaires &raquo;</a></p>
+    </div>
+    <div class="col-md-6">
+        <h2>Salles</h2>
+        <p>Ici contient toutes les informations par rapport aux salles disponibles. Il est possible de voir les salles, le plan des sièges et de la scène, l'endroit où elle se situe et ses services offerts.</p>
+        <p><a class="btn btn-primary pull-right" href="~/Salles">Voir les salles &raquo;</a></p>
     </div>
 </div>

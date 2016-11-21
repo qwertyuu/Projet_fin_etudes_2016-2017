@@ -4,7 +4,7 @@
 SET NOCOUNT ON
 
 PRINT 'CREATING DATABASE'
-
+SET DATEFORMAT ymd;
 :r CRE_PACK_Evenement.sql
 :r CRE_PACK_Forfait.sql
 :r CRE_PACK_Personnel.sql
@@ -18,6 +18,7 @@ PRINT 'CREATING DATABASE'
 :r INST_PACK_Publicite.sql
 :r VUE_PACK_Publicite.sql
 :r VUE_PACK_Evenement.sql
+:r VUE_PACK_Forfait.sql
 
 SET NOCOUNT OFF
 

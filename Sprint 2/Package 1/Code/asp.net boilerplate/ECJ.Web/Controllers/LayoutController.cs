@@ -9,6 +9,7 @@ using ECJ.Web.Models.Layout;
 using System.Linq;
 using Abp.Web.Mvc.Authorization;
 using System;
+using System.Collections.Generic;
 
 namespace ECJ.Web.Controllers
 {
@@ -19,9 +20,16 @@ namespace ECJ.Web.Controllers
         private readonly ISessionAppService _sessionAppService;
         private readonly IMultiTenancyConfig _multiTenancyConfig;
         DBProvider provider;
-
         public static string pagePermission;
-        internal static Exception erreur;
+        private static List<Exception> erreurs;
+        public static Exception erreur { set {
+
+                if (erreurs == null)
+                {
+                    erreurs = new List<Exception>();
+                }
+                erreurs.Add(value);
+            } }
 
         public LayoutController(
             IUserNavigationManager userNavigationManager, 
@@ -40,12 +48,26 @@ namespace ECJ.Web.Controllers
         public PartialViewResult TopMenu(string activeMenu = "")
         {
             var model = new TopMenuViewModel
-                        {
-                            MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", AbpSession.ToUserIdentifier())),
-                            ActiveMenuItemName = activeMenu
-                        };
+            {
+                MainMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync("MainMenu", AbpSession.ToUserIdentifier())),
+                ActiveMenuItemName = activeMenu
+            };
 
             return PartialView("_TopMenu", model);
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult Erreur()
+        {
+            if (erreurs == null)
+            {
+                erreurs = new List<Exception>();
+            }
+            Exception[] erreurs_model = new Exception[erreurs.Count];
+            erreurs.CopyTo(erreurs_model);
+            var vue = PartialView("_Erreur", erreurs_model.ToList());
+            erreurs.Clear();
+            return vue;
         }
 
         [ChildActionOnly]
@@ -74,7 +96,7 @@ namespace ECJ.Web.Controllers
         {
             var model = new LanguageSelectionViewModel
                         {
-                            CurrentLanguage = _localizationManager.CurrentLanguage,
+                            CurrentLanguage = new LanguageInfo("fr", "Français", isDefault:true),
                             Languages = _localizationManager.GetAllLanguages()
                         };
 

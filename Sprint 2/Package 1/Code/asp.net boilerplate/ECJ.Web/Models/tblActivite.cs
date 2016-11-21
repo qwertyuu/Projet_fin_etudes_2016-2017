@@ -23,8 +23,10 @@ namespace ECJ.Web.Models
         public Nullable<System.DateTime> dateSupprime { get; set; }
         public Nullable<int> noEvenement { get; set; }
         public Nullable<int> noSousEvenement { get; set; }
+        public Nullable<long> noUtilisateur { get; set; }
     
         public virtual tblEvenement tblEvenement { get; set; }
         public virtual tblSousEvenement tblSousEvenement { get; set; }
+        public virtual AbpUsers AbpUsers { get; set; }
     }
 }
