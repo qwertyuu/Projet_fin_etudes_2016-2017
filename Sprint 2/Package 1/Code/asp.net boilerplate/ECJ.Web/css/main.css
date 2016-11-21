@@ -214,6 +214,10 @@ table:not(#infoSalle) th {
 .btn-danger, .alert-danger{
     background-color:#BB0039;
 }
+.text-danger{
+    color:#BB0039;
+}
+
 .btn-warning, tr.warning td{
     background-color:#DB6415 !important;
 }

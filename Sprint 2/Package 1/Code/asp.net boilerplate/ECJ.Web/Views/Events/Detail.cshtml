@@ -141,7 +141,7 @@
                     <tbody>
                         @{
                             IEnumerable<ECJ.Web.Models.tblActivite> activites = Model.tblActivite.Where(a => a.noUtilisateur == ViewBag.UtilisateurCourrant);
-                            foreach (var item in Model.tblSousEvenement)
+                            foreach (var item in Model.tblSousEvenement.Where(sse => sse.dateSupprime == null))
                             {
                                 activites = activites.Concat(item.tblActivite.Where(a => a.AbpUsers.Id == ViewBag.UtilisateurCourrant));
                             }

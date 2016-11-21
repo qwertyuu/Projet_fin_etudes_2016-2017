@@ -510,14 +510,12 @@ namespace ECJ.Web.Controllers.AppelOffre
         // GET: AppellOffre/Edit/5
         public ActionResult Edit(int? id)
         {
-            List<tblAgencePublicite> listAgencePub = provider.ReturnAgence(id);
-            ViewBag.AllAgence = provider.ToutAgencePublicite();
-            ViewBag.AgenceParAppel = provider.ReturnAgence(id);
-            int[] noAgence = listAgencePub.Select(a => a.noAgencePub).ToArray();
             if (id == null)
             { 
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            ViewBag.AllAgence = provider.ToutAgencePublicite();
+            ViewBag.AgenceParAppel = provider.ReturnAgence(id);
             tblAppelOffre tblAppelOffre = provider.returnAppel(id);
             if (tblAppelOffre == null)
             {
@@ -526,7 +524,6 @@ namespace ECJ.Web.Controllers.AppelOffre
             ViewBag.noEvenement = new SelectList(provider.ToutEvenement(), "noEvenement", "nom", tblAppelOffre.noEvenement);
             ViewBag.noStatut = new SelectList(provider.ToutStatutAppel(), "noStatut", "nom", tblAppelOffre.noStatut);
             ViewBag.noMedia = new SelectList(provider.ToutMedia(), "noMedia", "nom", tblAppelOffre.noMedia);
-            ViewBag.noAgencePub = new MultiSelectList(provider.ToutAgencePublicite(), "noAgencePub", "nom", listAgencePub.Select(a => a.noAgencePub));
             return View(tblAppelOffre);
         }
 

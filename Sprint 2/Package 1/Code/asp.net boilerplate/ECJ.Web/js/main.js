@@ -373,7 +373,12 @@ function validerDateHeure(form) {
 
         datePlusGrande.setHours(h, m, s, 0);
     }
-    return datePlusPetite <= datePlusGrande;
+    var valide = datePlusPetite <= datePlusGrande;
+    if (!valide) {
+        alert("La première date doit être antérieure à la deuxième");
+        return false;
+    }
+    return true;
 }
 
 function validerChamps(f) {

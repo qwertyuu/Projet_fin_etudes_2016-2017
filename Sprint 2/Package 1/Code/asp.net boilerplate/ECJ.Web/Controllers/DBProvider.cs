@@ -393,7 +393,19 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                db.tblEvenement.Find(id).dateSupprime = DateTime.Now;
+                var aSupprimer = db.tblEvenement.Find(id);
+                aSupprimer.dateSupprime = DateTime.Now;
+                foreach (var appelOffre in aSupprimer.tblAppelOffre.Where(ao => ao.dateSupprime == null))
+                {
+                    appelOffre.noStatut = 4;
+                    db.Entry(appelOffre).State = EntityState.Modified;
+                    foreach (var soumission in appelOffre.tblSoumission.Where(s => s.dateSupprime == null))
+                    {
+                        soumission.statut = null;
+                        db.Entry(soumission).State = EntityState.Modified;
+                    }
+                }
+                db.Entry(aSupprimer).State = EntityState.Modified;
                 db.SaveChanges();
             }
             catch (Exception e)

@@ -92,22 +92,19 @@
             <div class="form-group">
                 <label>Agence de publicité</label>
                 <div>
-                    @Html.ListBox("noAgencePub", (MultiSelectList)ViewBag.noAgencePub, new { @class = "form-control", @id = "agencePub", @size="15"})
-
-                    @*<select multiple class="form-control" required>
-                  @foreach (var item in ViewBag.AllAgence)
-                  {
-                      foreach (var AO in ViewBag.AgenceParAppel)
-                      {
-                          if (item.noAgencePub == AO.noAgencePub)
-                          {
-                            <option selected>@AO.nom</option>
-                              break;
-                          }
-                         <option>@AO.nom</option>
-                      }
-                  }
-                  </select>*@
+                    <select id="agencePub" class="form-control" multiple="multiple" name="noAgencePub" size="15">
+                        @foreach(var agence in ViewBag.AllAgence)
+                        {
+                            if (ViewBag.AgenceParAppel.Contains(agence))
+                            {
+                                <option selected value="@agence.noAgencePub">@agence.nom</option>
+                            }
+                            else
+                            {
+                                <option value="@agence.noAgencePub">@agence.nom</option>
+                            }
+                        }
+                    </select>
                 </div>
             </div>
 

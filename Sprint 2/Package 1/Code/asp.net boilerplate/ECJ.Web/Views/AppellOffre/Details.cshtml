@@ -25,113 +25,114 @@
             @Html.DisplayFor(model => model.tblMedia.nom)
         </div>
     </div>
-
-    <div class="form-group">
-        <label>Date d'envoi</label>
-        <div class="well well-sm">
-            @String.Format("{0:yyyy/MM/dd}", Model.dateEnvoi.Date)
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label>Date d'envoi</label>
+            <div class="well well-sm">
+                @String.Format("{0:yyyy/MM/dd}", Model.dateEnvoi.Date)
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Heure d'envoi</label>
+            <div class="well well-sm">
+                @(String.Format("{0:HH:mm:ss}", Model.dateEnvoi))
+            </div>
         </div>
     </div>
 
-    <div class="form-group">
-        <label>Heure d'envoi</label>
-        <div class="well well-sm">
-            @(String.Format("{0:H:mm:ss}", Model.dateEnvoi))
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label>Date requise</label>
+            <div class="well well-sm">
+                @String.Format("{0:yyyy/MM/dd}", Model.dateRequis.Date)
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Heure requise</label>
+            <div class="well well-sm">
+                @(String.Format("{0:HH:mm:ss}", Model.dateRequis))
+            </div>
         </div>
     </div>
+        <div class="form-group">
+            <label>Statut</label>
+            <div class="well well-sm">
+                @Html.DisplayFor(model => model.tblStatutAppelOffre.nom)
+            </div>
+        </div>
 
-    <div class="form-group">
-        <label>Date requise</label>
-        <div class="well well-sm">
-            @String.Format("{0:yyyy/MM/dd}", Model.dateRequis.Date)
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Heure requise</label>
-        <div class="well well-sm">
-            @(String.Format("{0:H:mm:ss}", Model.dateRequis))
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label>Statut</label>
-        <div class="well well-sm">
-            @Html.DisplayFor(model => model.tblStatutAppelOffre.nom)
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label>Agence de publicité</label>
-        <div class="well well-sm">
-        @if (ViewBag.agencePub.Count == 0)
-        {
-            <span>Aucune agence</span>
-        }
-          @foreach(var agenPub in ViewBag.agencePub)
-          {
-              <div>@agenPub.nom</div>
-          }
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label>Description</label>
-        <div class="well well-sm">
-            @(string.IsNullOrWhiteSpace(Model.description) ? "Aucune description" : Model.description)
-        </div>
-    </div>
-    <br />
-    <label>Soumissions</label>
-    <div class="form-group">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Statut</th>
-                    <th>Commentaire</th>
-                    <th data-sorter="false">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                @foreach (var soumi in Model.tblSoumission.Where(s=> s.dateSupprime==null))
+        <div class="form-group">
+            <label>Agence de publicité</label>
+            <div class="well well-sm">
+                @if (ViewBag.agencePub.Count == 0)
                 {
+                    <span>Aucune agence</span>
+                }
+                @foreach (var agenPub in ViewBag.agencePub)
+                {
+                    <div>@agenPub.nom</div>
+                }
+            </div>
+        </div>
 
+        <div class="form-group">
+            <label>Description</label>
+            <div class="well well-sm">
+                @(string.IsNullOrWhiteSpace(Model.description) ? "Aucune description" : Model.description)
+            </div>
+        </div>
+        <br />
+        <label>Soumissions</label>
+        <div class="form-group">
+            <table class="table table-striped table-hover">
+                <thead>
                     <tr>
-                        <td>@Model.nom</td>
-                        @if (soumi.statut==1)
-                        {
-                            <td>Acceptée</td>
-                        }
-                        else
-                        {
-                            if (soumi.statut == 0)
+                        <th>Nom</th>
+                        <th>Statut</th>
+                        <th>Commentaire</th>
+                        <th data-sorter="false">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var soumi in Model.tblSoumission.Where(s => s.dateSupprime == null))
+                    {
+
+                        <tr>
+                            <td>@Model.nom</td>
+                            @if (soumi.statut == 1)
                             {
-                                <td>Refusée</td>
+                                <td>Acceptée</td>
                             }
                             else
                             {
-                                <td></td>
-                            }
+                                if (soumi.statut == 0)
+                                {
+                                    <td>Refusée</td>
+                                }
+                                else
+                                {
+                                    <td></td>
+                                }
 
-                        }
-                        <td>@soumi.commentaire</td>
-                        <td>
-                            @if (Model.tblStatutAppelOffre.nom == "Envoyé" || Model.tblStatutAppelOffre.nom == "En Création")
-                            {
-                                <a href="~/Soumission/Accepter/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
-                                <a href="~/Soumission/Refuser/@soumi.noSoumission" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
                             }
-                            <a href="~/Soumission/Detail/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                        </td>
-                    </tr>
-                }
+                            <td>@soumi.commentaire</td>
+                            <td>
+                                @if (Model.tblStatutAppelOffre.nom == "Envoyé" || Model.tblStatutAppelOffre.nom == "En Création")
+                                {
+                                    <a href="~/Soumission/Accepter/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
+                                    <a href="~/Soumission/Refuser/@soumi.noSoumission" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
+                                }
+                                <a href="~/Soumission/Detail/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                            </td>
+                        </tr>
+                    }
 
-            </tbody>
-        </table>
-    </div>
-    <br />
-    <a href="~/AppellOffre/Index" class="btn btn-default pull-right " data-dismiss="modal">Retour aux appels d'offre</a>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <a href="~/AppellOffre/Index" class="btn btn-default pull-right " data-dismiss="modal">Retour aux appels d'offre</a>
 
 </form>
 
