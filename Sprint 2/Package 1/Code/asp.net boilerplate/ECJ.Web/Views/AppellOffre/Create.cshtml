@@ -39,21 +39,18 @@
         </div>
         <div class="form-group row">
             <div class="col-md-6">
-                @Html.EditorFor(model => model.dateEnvoi, new { htmlAttributes = new { @class = "form-control dp", required = "required" } })
+                @Html.EditorFor(model => model.dateEnvoi, new { htmlAttributes = new { @class = "form-control dp date1", required = "required" } })
                 @Html.ValidationMessageFor(model => model.dateEnvoi, "", new { @class = "text-danger" })
             </div>
-
-            <div class="col-md-2">
-                <input type="number" name="heureEnvoi" required min="0" max="23" placeholder="Heure" maxlength="2" class="form-control " />
-            </div>
-            <div class="col-md-2">
-                <input type="number" name="minEnvoi" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control " />
-            </div>
-            <div class="col-md-2">
-                <input type="number" name="secondeEnvoi" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control" />
-
-            </div>
-
+                <div class="col-md-2">
+                    <input type="number" name="heureEnvoi" required min="0" max="23" placeholder="Heure" maxlength="2" class="form-control heure heure1" />
+                </div>
+                <div class="col-md-2">
+                    <input type="number" name="minEnvoi" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control minute heure1" />
+                </div>
+                <div class="col-md-2">
+                    <input type="number" name="secondeEnvoi" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control seconde heure1" />
+                </div>
         </div>
         <hr />
         <div class="row">
@@ -66,19 +63,17 @@
         </div>
         <div class="form-group row">
             <div class="col-md-6">
-                @Html.EditorFor(model => model.dateRequis, new { htmlAttributes = new { @class = "form-control dp", required = "required" } })
+                @Html.EditorFor(model => model.dateRequis, new { htmlAttributes = new { @class = "form-control dp date2", required = "required"} })
                 @Html.ValidationMessageFor(model => model.dateRequis, "", new { @class = "text-danger" })
             </div>
-
-
             <div class="col-md-2">
-                <input type="number" name="heureRequise" required min="0" max="23" placeholder="Heure" maxlength="2" class="form-control" />
+                <input type="number" name="heureRequise" required min="0" max="23" placeholder="Heure" maxlength="2" class="form-control heure heure2" />
             </div>
             <div class="col-md-2">
-                <input type="number" name="minRequise" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control" />
+                <input type="number" name="minRequise" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control minute heure2" />
             </div>
             <div class="col-md-2">
-                <input type="number" name="secondeRequise" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control" />
+                <input type="number" name="secondeRequise" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control seconde heure2" />
             </div>
         </div>
         <hr />

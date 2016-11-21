@@ -41,18 +41,18 @@
         <div class="row">
             <div class="col-md-6 form-group">
                 <div>
-                    @Html.TextBoxFor(model => model.dateEnvoi, new { @class = "form-control dp", required = "required", @Value = Model.dateEnvoi.ToString("yyyy/MM/dd") })
+                    @Html.TextBoxFor(model => model.dateEnvoi, new { @class = "form-control dp date1", required = "required", @Value = Model.dateEnvoi.ToString("yyyy/MM/dd") })
                     @Html.ValidationMessageFor(model => model.dateEnvoi, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="col-md-2">
-                <input type="number" name="heureEnvoi" required min="0" max="24" placeholder="Heure" maxlength="2" class="form-control" value="@Model.dateEnvoi.Hour" />
+                <input type="number" name="heureEnvoi" required min="0" max="24" placeholder="Heure" maxlength="2" class="form-control heure heure1" value="@Model.dateEnvoi.Hour" />
             </div>
             <div class="col-md-2">
-                <input type="number" name="minEnvoi" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control" value="@Model.dateEnvoi.Minute" />
+                <input type="number" name="minEnvoi" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control minute heure1" value="@Model.dateEnvoi.Minute" />
             </div>
             <div class="col-md-2">
-                <input type="number" name="secondeEnvoi" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control" value="@Model.dateEnvoi.Second" />
+                <input type="number" name="secondeEnvoi" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control seconde heure1" value="@Model.dateEnvoi.Second" />
             </div>
         </div>
         <hr />
@@ -66,18 +66,18 @@
         </div>
         <div class="form-group row">
             <div class="col-md-6">
-                @Html.TextBoxFor(model => model.dateRequis, new { @class = "form-control dp", required = "required", @Value = Model.dateRequis.ToString("yyyy/MM/dd") })
+                @Html.TextBoxFor(model => model.dateRequis, new { @class = "form-control dp date2", required = "required", @Value = Model.dateRequis.ToString("yyyy/MM/dd") })
                 @Html.ValidationMessageFor(model => model.dateRequis, "", new { @class = "text-danger" })
             </div>
 
             <div class="col-md-2">
-                <input type="number" name="heureRequise" required min="0" max="24" placeholder="Heure" maxlength="2" class="form-control" value="@Model.dateRequis.Hour" />
+                <input type="number" name="heureRequise" required min="0" max="24" placeholder="Heure" maxlength="2" class="form-control heure heure2" value="@Model.dateRequis.Hour" />
             </div>
             <div class="col-md-2">
-                <input type="number" name="minRequise" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control" value="@Model.dateRequis.Minute" />
+                <input type="number" name="minRequise" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control minute heure2"  value="@Model.dateRequis.Minute" />
             </div>
             <div class="col-md-2">
-                <input type="number" name="secondeRequise" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control" value="@Model.dateRequis.Second" />
+                <input type="number" name="secondeRequise" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control seconde heure2" value="@Model.dateRequis.Second" />
             </div>
 
         </div>

@@ -8,7 +8,14 @@
     <div class="form-group">
         <label>Événement</label>
         <div class="well well-sm">
-            @Html.DisplayFor(model => model.tblEvenement.nom)
+            @if (Model.tblEvenement.dateSupprime != null)
+            {
+                @Html.DisplayFor(model => model.tblEvenement.nom)<span class="text-danger right">/Cet évènement est supprimé</span>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.tblEvenement.nom)
+            }
         </div>
     </div>
 

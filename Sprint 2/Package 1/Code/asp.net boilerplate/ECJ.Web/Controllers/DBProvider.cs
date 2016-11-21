@@ -1053,6 +1053,19 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
         }
+
+        public void UpdateSoumission(tblSoumission soumi)
+        {
+            try
+            {
+                db.Entry(db.tblSoumission.Find(soumi.noSoumission)).CurrentValues.SetValues(soumi);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
         public void AjoutAppelOffre(tblAppelOffre appel)
         {
             try

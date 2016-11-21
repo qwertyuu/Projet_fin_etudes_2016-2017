@@ -549,12 +549,14 @@ namespace ECJ.Web.Controllers.AppelOffre
                         {
                             s.dateSupprime = DateTime.Now;
                             string filename = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle\\soumission_" + tblAppelOffre.nom + "_" + s.tblAgencePublicite.nom + ".xml";
+                            provider.UpdateSoumission(s);
                             DeleteXml(filename);
                         }
                     }
                     tblAppelOffre.noStatut = provider.ReturnNoStatut("En Création");
                     tblAppelOffre.dateEnvoi = AffecterTemps(tblAppelOffre.dateEnvoi, "heureEnvoi", "minEnvoi", "secondeEnvoi");
                     tblAppelOffre.dateRequis = AffecterTemps(tblAppelOffre.dateRequis, "heureRequise", "minRequise", "secondeRequise");
+                    provider.UpdateAppelOffre(tblAppelOffre);
                     provider.Save();
                     return RedirectToAction("Index");
                 }
@@ -572,6 +574,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                    tblSoumission soumi= CreateSoumission(no, tblAppelOffre.noAppelOffre);
                     CreateSoumissionXml(soumi, tblAppelOffre);
                 }
+                provider.Save();
                 return RedirectToAction("Index");
             }
             ViewBag.noEvenement = new SelectList(provider.ToutEvenement(), "noEvenement", "nom", tblAppelOffre.noEvenement);
@@ -596,9 +599,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             else
             {
                 tblAppelOffre.noStatut = provider.ReturnNoStatut("Annulé");
-                provider.Save();
                 return RedirectToAction("Index");
-
             }
 
             //On supprime toutes les soumissions réliées à cet appel d'offre
@@ -608,7 +609,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                 string filename = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle\\soumission_" + tblAppelOffre.nom + "_" + soumi.tblAgencePublicite.nom + ".xml";
                 DeleteXml(filename);
             }
-            provider.Save();
+            provider.UpdateAppelOffre(tblAppelOffre);
             if (tblAppelOffre == null)
             {
                 return HttpNotFound();

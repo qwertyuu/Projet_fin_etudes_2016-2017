@@ -48,10 +48,10 @@
                       Nom
                     </th>
                     <th>
-                        Date requise
+                        Date d'envoi
                     </th>
                     <th>
-                        Date d'envoi
+                        Date requise
                     </th>
                     <th data-sorter="text">
                         Événement
@@ -78,10 +78,10 @@
                             @Html.DisplayFor(modelItem => item.nomAppelOffre)
                         </td>
                         <td>
-                            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", item.dateRequis)
+                            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", item.dateEnvoi)
                         </td>
                         <td>
-                            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", item.dateEnvoi)
+                            @String.Format("{0:yyyy/MM/dd HH:mm:ss}", item.dateRequis)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.nomEvent)
@@ -101,9 +101,7 @@
                             {
                                 <a href="~/AppellOffre/Edit/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
                                 <a href="~/AppellOffre/Delete/@item.noAppelOffre" class="btn btn-sm btn-danger" title="Supprimer l'appel d'offre"><i class="fa fa-trash fa-lg"></i></a>
-                            }
-
-                        
+                            }                       
                         </td>
                     </tr>
                 }
