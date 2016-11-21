@@ -11,7 +11,7 @@
 
     if (btn.value == "Save") {
         if (select) {
-            alert("Vous ne pouvez pas sélectionner une agence de publcité lorsque l'appel d'ofrre est en création.");
+            alert("Vous ne pouvez pas sélectionner une agence de publcité lorsque vous voulez créer l'appel d'ofrre.");
         }
     }
     else {
