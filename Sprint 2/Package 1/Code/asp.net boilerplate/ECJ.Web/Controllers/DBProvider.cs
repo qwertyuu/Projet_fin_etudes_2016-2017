@@ -625,8 +625,11 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                var sousEvenement = db.tblSousEvenement.Find(id);
+                var sousEvenement = FindSousEvenement(id);
+                db.tblSalle.Attach(sousEvenement.tblSalle);
+                db.tblSousEvenement.Attach(sousEvenement);
                 sousEvenement.noSalle = null;
+                sousEvenement.tblSalle = null;
                 db.Entry(sousEvenement).State = EntityState.Modified;
                 db.SaveChanges();
             }

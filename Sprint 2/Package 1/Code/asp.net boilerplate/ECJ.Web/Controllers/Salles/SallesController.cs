@@ -55,7 +55,8 @@ namespace ECJ.Web.Controllers.Salles
             var serviceDeleteSalle = Request.Form["service_delete_salle"];
             if (serviceDeleteSalle != null)
             {
-                var SousEvenementAvecService = db.ToutSousEvenement().Where(SsE => SsE.tblService.Contains(db.ReturnService(int.Parse(serviceDeleteSalle)))).ToList();
+                var SousEvenementAvecService = db.ToutSousEvenement().Where(SsE => SsE.tblService.Contains(db.ReturnService(int.Parse(serviceDeleteSalle))) &&
+                SsE.tblEvenement.dateSupprime == null && SsE.tblEvenement.datefin >= DateTime.Now).ToList();
                 foreach (var ss in SousEvenementAvecService)
                 {
                     db.DelierSalle(ss.noSousEvenement);

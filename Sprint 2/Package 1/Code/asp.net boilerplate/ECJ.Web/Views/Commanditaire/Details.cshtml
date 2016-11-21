@@ -98,11 +98,11 @@
                             <td>@don.tblSousEvenement.nom @{
                                 if(don.tblSousEvenement.dateSupprime != null)
                                 {
-                                    <span>(Sous-événement supprimé - ne compte pas)</span>
+                                    <span>(Sous-événement supprimé)</span>
                                 }
                                 else if (don.tblSousEvenement.tblEvenement.dateSupprime != null)
                                 {
-                                    <span>(Événement parent supprimé - ne compte pas)</span>
+                                    <span>(Événement parent supprimé)</span>
                                 }
                             }</td>
                             <td class="{sorter:'monetaryValue'}">@don.montant$</td>
