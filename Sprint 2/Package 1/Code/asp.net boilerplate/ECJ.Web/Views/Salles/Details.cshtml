@@ -63,11 +63,12 @@
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
-            string txt = "";
+
             foreach (var s in ViewBag.Service)
             {
                 var SsEvents = ((List<tblSousEvenement>)ViewBag.SousEvent).Where(SsE => SsE.tblService.Contains(s)).ToList();
                 var name = "service_suppr";
+                string txt = "";
 
                 if (SsEvents.Count != 0)
                 {
