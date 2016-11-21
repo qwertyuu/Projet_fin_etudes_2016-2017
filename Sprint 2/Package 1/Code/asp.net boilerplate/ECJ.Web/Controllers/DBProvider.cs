@@ -650,6 +650,20 @@ namespace ECJ.Web.Controllers
             }
         }
 
+        internal void SupprimerSoumission(tblSoumission s)
+        {
+            try
+            {
+                s.dateSupprime = DateTime.Now;
+                db.Entry(s).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
         public List<tblSalle> ToutSalle()
         {
             try
