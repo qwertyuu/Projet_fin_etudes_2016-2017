@@ -549,7 +549,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                         foreach (tblSoumission s in provider.RetunSoumission(tblAppelOffre.noAppelOffre))
                         {
                             s.dateSupprime = DateTime.Now;
-                            string filename = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle\\soumission_" + tblAppelOffre.nom + "_" + s.tblAgencePublicite.nom + ".xml";
+                            string filename = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle\\soumission_" + CleanFileName(tblAppelOffre.nom) + "_" + CleanFileName(s.tblAgencePublicite.nom) + ".xml";
                             provider.UpdateSoumission(s);
                             DeleteXml(filename);
                         }
@@ -604,6 +604,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             else
             {
                 tblAppelOffre.noStatut = provider.ReturnNoStatut("Annulé");
+                provider.UpdateAppelOffre(tblAppelOffre);
                 return RedirectToAction("Index");
             }
 
@@ -611,7 +612,8 @@ namespace ECJ.Web.Controllers.AppelOffre
             foreach (tblSoumission soumi in provider.RetunSoumission(tblAppelOffre.noAppelOffre))
             {
                 soumi.dateSupprime = DateTime.Now;
-                string filename = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle\\soumission_" + tblAppelOffre.nom + "_" + soumi.tblAgencePublicite.nom + ".xml";
+                string filename = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle\\soumission_" + CleanFileName(tblAppelOffre.nom) + "_" + CleanFileName(soumi.tblAgencePublicite.nom) + ".xml";
+                provider.UpdateSoumission(soumi);
                 DeleteXml(filename);
             }
             provider.UpdateAppelOffre(tblAppelOffre);
