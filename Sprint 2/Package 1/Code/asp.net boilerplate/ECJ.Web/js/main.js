@@ -342,6 +342,40 @@ function validerSelect(form) {
     return true;
 }
 
+function validerDateHeure(form) {
+    var date1 = $(form).find(".date1");
+    if (!date1.length) {
+        return true;
+    }
+    date1 = date1.val();
+    var datePlusPetite = new Date(date1);
+    var heure1 = $(form).find(".heure1");
+    if (heure1.length) {
+        var h = heure1.filter(".heure").val();
+        var m = heure1.filter(".minute").val();
+        var s = heure1.filter(".seconde").val();
+
+        datePlusPetite.setHours(h,m,s,0);
+    }
+
+    var date2 = $(form).find(".date2");
+    if (!date2.length) {
+        console.log("Il y a une date1 mais pas de date2??");
+        return true;
+    }
+    date2 = date2.val();
+    var datePlusGrande = new Date(date2);
+    var heure2 = $(form).find(".heure2");
+    if (heure2.length) {
+        var h = heure2.filter(".heure").val();
+        var m = heure2.filter(".minute").val();
+        var s = heure2.filter(".seconde").val();
+
+        datePlusGrande.setHours(h, m, s, 0);
+    }
+    return datePlusPetite <= datePlusGrande;
+}
+
 function validerChamps(f) {
     var req = $(f).find("[required]");
     var toReturn = true;
@@ -380,6 +414,9 @@ function validerChamps(f) {
         return false;
     }
     if (!validerMontant(f)) {
+        return false;
+    }
+    if (!validerDateHeure(f)) {
         return false;
     }
     return true;
