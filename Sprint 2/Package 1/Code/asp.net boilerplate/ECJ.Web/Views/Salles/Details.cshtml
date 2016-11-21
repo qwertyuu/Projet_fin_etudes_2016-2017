@@ -46,7 +46,11 @@
 </div>
 
 <label>Services offert</label>
-<button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
+@if (ViewBag.ServiceAjoutable.Count > 0)
+{
+
+    <button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
+}
 <table class="table table-striped table-hover">
     <thead>
         <tr>

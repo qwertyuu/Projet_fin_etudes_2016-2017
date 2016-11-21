@@ -40,7 +40,11 @@
     <label>Services requis</label>
 @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
 {
-    <button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
+
+    if (Model.Item2.Count > 0)
+    {
+        <button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
+    }
 }
     <div class="form-group">
         @using (Html.BeginForm())
@@ -77,8 +81,8 @@
         if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
         {
         <button data-target="#SalleAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Choisir une salle</button>
-            }
         }
+    }
     <div class="form-group">
 @using (Html.BeginForm())
 {
@@ -118,7 +122,11 @@
     <label>Forfaits</label>
 @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
 {
-    <button data-target="#ForfaitAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un forfait</button>
+    if (Model.Item4.Count > 0)
+    {
+        <button data-target="#ForfaitAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un forfait</button>
+
+    }
 }
     <div class="form-group">
 @using (Html.BeginForm())
@@ -155,7 +163,11 @@
     <label>Engagements</label>
     @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
     {
-    <button data-target="#EngagementAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un engagement</button>
+        if (Model.Item5.Count > 0)
+        {
+            <button data-target="#EngagementAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un engagement</button>
+
+        }
     }
     <div class="form-group">
 @using (Html.BeginForm())

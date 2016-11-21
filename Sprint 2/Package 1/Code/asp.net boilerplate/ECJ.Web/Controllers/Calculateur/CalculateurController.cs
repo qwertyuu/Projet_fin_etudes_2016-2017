@@ -28,7 +28,7 @@ namespace ECJ.Web.Controllers
 
             ViewBag.Calcul = db.ReturnCalculateur((int)id) ?? new tblCalculateur();
 
-            ViewBag.Forfait = db.FindSousEvenement((int)id).tblForfait;
+            ViewBag.Forfait = db.FindSousEvenement((int)id).tblForfait.Where(f => f.dateSupprime == null);
 
             return View();
         }
