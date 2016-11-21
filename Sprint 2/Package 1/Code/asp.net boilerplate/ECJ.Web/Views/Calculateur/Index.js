@@ -20,12 +20,12 @@ function calculTotalBillet() {
         alert("Vous devez entrer un nombre de billet avant de continuer")
         return false;
     }
-} //Met a jour le nombre de billet entré et le retourne // Vérifie aussi qu'il y a un nombre entré
+} //Met a jour le nombre de billet entrÃ© et le retourne // VÃ©rifie aussi qu'il y a un nombre entrÃ©
 
 function calculMoyenne() {
     PrixMoyen = prixBillets + prixBilletsVIP;
     PrixMoyen = PrixMoyen / TotalBillet;
-} //Calcule la moyenne des billets pour le calcul des âges
+} //Calcule la moyenne des billets pour le calcul des Ã¢ges
 
 function calculBillet() {
 
@@ -82,7 +82,7 @@ function calculSouperSpectacle() {
         $("#nbBilletSouper").val(0);
         return 0;
     }
-} //Calcule le prix des soupers spectacles après avoir vérifié que les données entrées soient bonnes
+} //Calcule le prix des soupers spectacles aprÃ¨s avoir vÃ©rifiÃ© que les donnÃ©es entrÃ©es soient bonnes
 
 function calculRabaisAge() {
 
@@ -118,7 +118,7 @@ function calculRabaisAge() {
     else {
         return 0;
     }
-}//Calcule les rabais après avoir vérifié les données
+}//Calcule les rabais aprÃ¨s avoir vÃ©rifiÃ© les donnÃ©es
 
 function calculPrixReduit() {
     var TotBilletGratuit, TotBilletPreVente, TotBilletRabaisCustom1, TotBilletRabaisCustom2, total, totalBilletReduit
@@ -166,7 +166,7 @@ function calculPrixReduit() {
     }
 
     if (parseInt(totalBilletReduit) > TotalBillet) {
-        alert("Vous ne pouvez pas entrer une quantitée plus grande de billet à prix réduit que le nombre total de billets. Les Billets réduits ne seront pas calculés.")
+        alert("Vous ne pouvez pas entrer une quantitÃ©e plus grande de billet Ã  prix rÃ©duit que le nombre total de billets. Les Billets rÃ©duits ne seront pas calculÃ©s.")
         return 0;
     }
     else {
@@ -179,7 +179,7 @@ function calculPrixReduit() {
             return 0;
         }
     }
-}  //Calcule la section des prix réduits
+}  //Calcule la section des prix rÃ©duits
 
 function Calcultotal() {
 
@@ -213,7 +213,7 @@ function pourcentCheck() {
     if ($("#AinePourcent").val() > 101) {
         $("#AinePourcent").val(100);
     }
-} //Vérifie que les % des âges sont Positif et moins que 100
+} //VÃ©rifie que les % des Ã¢ges sont Positif et moins que 100
 
 function ratioCheck() {
     if ($("#RatioJeune").val() == "0" && $("#RatioAdulte").val() == "0" && $("#RatioAine").val() == "0" && chkAge == true) {
@@ -223,7 +223,7 @@ function ratioCheck() {
         if (parseInt($("#RatioJeune").val()) + parseInt($("#RatioAdulte").val()) + parseInt($("#RatioAine").val()) == 100) {
             return true
         }
-        else if ($("#RatioAdulte").val() != "" && $("#RatioAine").val() != "" && chkAge == true)//un check pour s'assurer que les cases ne sont pas vides.. ça évite le spam inutile
+        else if ($("#RatioAdulte").val() != "" && $("#RatioAine").val() != "" && chkAge == true)//un check pour s'assurer que les cases ne sont pas vides.. Ã§a Ã©vite le spam inutile
         {
             alert("Veuiller entrer un ratio total de 100");
             return false;
@@ -233,7 +233,7 @@ function ratioCheck() {
         alert("Veuiller entrer un ratio entre 0 et 100 seulement");
         return false
     }
-} //Vérifie que les ratios entrés soient entre 0 et 100 pour ensuite vérifier si additionnés ils égalent 100 ensuite retourne un bool
+} //VÃ©rifie que les ratios entrÃ©s soient entre 0 et 100 pour ensuite vÃ©rifier si additionnÃ©s ils Ã©galent 100 ensuite retourne un bool
 
 function checkRabaisCustom1() {
     if ($("#NomRabaisCustom1").val() != "" && $("#NbBilletRabaisCustom1").val() != "0" && $("#PourcentRabaisCustom1").val() != "0") {
@@ -245,7 +245,7 @@ function checkRabaisCustom1() {
             return false;
         }
     }
-}// vérifie si le rabais custom #1 est rempli et ensuite vérifie le %
+}// vÃ©rifie si le rabais custom #1 est rempli et ensuite vÃ©rifie le %
 
 function checkRabaisCustom2() {
     if ($("#NomRabaisCustom2").val() != "" && $("#NbBilletRabaisCustom2").val() != "0" && $("#PourcentRabaisCustom2").val() != "0") {
@@ -257,7 +257,7 @@ function checkRabaisCustom2() {
             return false;
         }
     }
-}// vérifie si le rabais custom #2 est rempli et ensuite vérifie le %
+}// vÃ©rifie si le rabais custom #2 est rempli et ensuite vÃ©rifie le %
 
 function checkNbBilletReduction() {
     if (parseInt($("#nbBilletGratuit").val()) > TotalBillet) {
@@ -272,7 +272,7 @@ function checkNbBilletReduction() {
     if (parseInt($("#NbBilletRabaisCustom2").val()) > TotalBillet) {
         $("#NbBilletRabaisCustom2").val(TotalBillet);
     }
-}//Vérifie le nombre de billets dans les cases de réduction
+}//VÃ©rifie le nombre de billets dans les cases de rÃ©duction
 
 function billetMaxCheck() {
 
@@ -285,7 +285,7 @@ function billetMaxCheck() {
         return false;
     }
     return true;
-}//Vérifie que les nombres de billets et billets VIP entrés soient inférieur ou égaux au nombre de places dans la salle.
+}//VÃ©rifie que les nombres de billets et billets VIP entrÃ©s soient infÃ©rieur ou Ã©gaux au nombre de places dans la salle.
 
 function billetVIPMaxCheck() {
     if ($("#nbBilletVIP").val() >= VIPMax) {
@@ -293,17 +293,17 @@ function billetVIPMaxCheck() {
         return false;
     }
     return true;
-}//Vérifie que les nombres de billets VIP entrés soient inférieur ou égaux au nombre de places dans la salle.
+}//VÃ©rifie que les nombres de billets VIP entrÃ©s soient infÃ©rieur ou Ã©gaux au nombre de places dans la salle.
 
 function round_argent(value) {
     var decimals = 2
     return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals).toFixed(decimals);
-}//Aroundie les valeurs avec 2 décimale
+}//Aroundie les valeurs avec 2 dÃ©cimale
 
 function setBillet(maxbillet, maxvip) {
     billetMax = parseInt(maxbillet);
     VIPMax = parseInt(maxvip);
-} //Reçoit et set le maximum des billets et billets VIP
+} //ReÃ§oit et set le maximum des billets et billets VIP
 
 function setForfait(chkSalle, chkAge, chkRed) {
 
@@ -316,7 +316,7 @@ function setForfait(chkSalle, chkAge, chkRed) {
     if (chkRed == false) {
         $("#reduction").attr("hidden", "true");
     }
-} //Reçoit les bool a propos des forfaits du sous-event et enlève ceux qui sont a "false"
+} //ReÃ§oit les bool a propos des forfaits du sous-event et enlÃ¨ve ceux qui sont a "false"
 
 function LoadingDesDonnes() {
 
@@ -374,7 +374,7 @@ function LoadingDesDonnes() {
     if ($("#PourcentRabaisCustom2").val() == "") {
         $("#PourcentRabaisCustom2").val(0);
     }
-}//load les données et met 0 ou "" aux champs sans donnés
+}//load les donnÃ©es et met 0 ou "" aux champs sans donnÃ©s
 
 function remiseAZero() {
     $("#nbBillet").val(0);
@@ -487,7 +487,7 @@ function checkPositif() {
     else {
         return true;
     }
-}// Regarde toute les valeures et si elles sont négaive les remets à 0
+}// Regarde toute les valeures et si elles sont nÃ©gaive les remets Ã  0
 
 function revenuTotal() {
     if (totalFinal != null) {
