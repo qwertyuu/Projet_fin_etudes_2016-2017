@@ -29,7 +29,6 @@ namespace ECJ.Web.Models
         public int noEvenement { get; set; }
         public int noStatut { get; set; }
         public int noMedia { get; set; }
-        public string tag { get; set; }
     
         public virtual tblEvenement tblEvenement { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
