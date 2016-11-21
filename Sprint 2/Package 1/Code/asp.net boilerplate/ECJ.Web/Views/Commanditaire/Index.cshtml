@@ -50,10 +50,7 @@
                     if (item.dateSupprime == null)
                     {
                         var sommeDon = item.tblDon.Where(d => 
-                        d.dateSupprime == null && 
-                        d.tblSousEvenement.dateSupprime == null && 
-                        d.tblSousEvenement.tblEvenement.dateSupprime == null
-                        ).Sum(d => d.montant);
+                        d.dateSupprime == null).Sum(d => d.montant);
                         <tr>
                             <td>
                                 @Html.DisplayFor(modelItem => item.nomCommanditaire)

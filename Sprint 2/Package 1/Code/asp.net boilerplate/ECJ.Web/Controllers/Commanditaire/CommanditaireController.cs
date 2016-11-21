@@ -47,7 +47,7 @@ namespace ECJ.Web.Controllers.Commanditaire
                 a => a.nomCommanditaire.ToString().ToUpper().Contains(recherche) ||
                 a.courrielContact.ToString().ToUpper().Contains(recherche) ||
                 a.nomContact.ToString().ToUpper().Contains(recherche) ||
-                (a.tblDon.Sum(d => d.montant).ToString() + "$").Contains(recherche.Replace('.', ','))).ToList();
+                (a.tblDon.Where(d => d.dateSupprime == null).Sum(d => d.montant).ToString() + "$").Contains(recherche.Replace('.', ','))).ToList();
                 
             }
             return View(Commanditaire);

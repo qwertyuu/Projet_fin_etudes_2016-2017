@@ -284,6 +284,26 @@ function validerURL(form) {
     return true;
 }
 
+function validerMontant(form) {
+    var montants = $(form).find("input.montant");
+    var valide = true;
+    montants.each(function () {
+        var montant = $(this).val().trim()
+        if (!montant) {
+            return true;
+        }
+        if (!/^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*\.[0-9]{2}$[0-9].[0-9]/i.test(montant)) {
+            valide = false;
+            alert("Le montant entrée n'est pas valide");
+            return;
+        }
+    });
+    if (!valide) {
+        return false;
+    }
+    return true;
+}
+
 function validerIntPositif(form) {
     var entiers = $(form).find("input.positif");
     var valide = true;
@@ -357,6 +377,9 @@ function validerChamps(f) {
         return false;
     }
     if (!validerSelect(f)) {
+        return false;
+    }
+    if (!validerMontant(f)) {
         return false;
     }
     return true;
