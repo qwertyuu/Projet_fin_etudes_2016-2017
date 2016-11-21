@@ -30,7 +30,6 @@ CREATE TABLE S_publicite.tblAppelOffre (
 	,noEvenement INT NOT NULL
 	,noStatut INT NOT NULL
 	,noMedia INT NOT NULL
-	,tag TEXT 
 	);
 PRINT 'APPEL D''OFFRE RÉUSSI'
 

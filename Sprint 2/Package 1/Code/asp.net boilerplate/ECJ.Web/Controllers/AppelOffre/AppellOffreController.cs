@@ -453,6 +453,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                 {
                     provider.SupprimerSoumission(s);
                     string filename = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2/Soumission_alle\\soumission_" + CleanFileName( appel.nom ) + "_" + CleanFileName( s.tblAgencePublicite.nom ) + ".xml";
+                    provider.UpdateSoumission(s);
                     DeleteXml(filename);
                 }
             }
@@ -534,7 +535,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre)
         {
-            int[] NoAgence = Request.Form.GetValues("noAgencePub").Select(no => int.Parse(no)).ToArray(); 
+
             if (ModelState.IsValid)
             {
                 var statut = provider.ReturnStatAppel(tblAppelOffre);
@@ -557,7 +558,6 @@ namespace ECJ.Web.Controllers.AppelOffre
                     tblAppelOffre.dateEnvoi = AffecterTemps(tblAppelOffre.dateEnvoi, "heureEnvoi", "minEnvoi", "secondeEnvoi");
                     tblAppelOffre.dateRequis = AffecterTemps(tblAppelOffre.dateRequis, "heureRequise", "minRequise", "secondeRequise");
                     provider.UpdateAppelOffre(tblAppelOffre);
-                    provider.Save();
                     return RedirectToAction("Index");
                 }
                 //si l'Appel d'offre n'est pas en création il tombe à envoyé.
@@ -566,14 +566,19 @@ namespace ECJ.Web.Controllers.AppelOffre
                 tblAppelOffre.dateRequis = AffecterTemps(tblAppelOffre.dateRequis, "heureRequise", "minRequise", "secondeRequise");
                 provider.UpdateAppelOffre(tblAppelOffre);
 
-                //On supprime les soumissions qui ne sont plus ratachées à l'appel d'offre.
-                deleteSoumission(NoAgence,tblAppelOffre); 
-                //On créer les soumissions réliées à l'appel d'offre.
-                foreach (int no in NoAgence)
-                {                  
-                   tblSoumission soumi= CreateSoumission(no, tblAppelOffre.noAppelOffre);
-                    CreateSoumissionXml(soumi, tblAppelOffre);
+                if (Request.Form.AllKeys.Contains("noAgencePub"))
+                {
+                    int[] NoAgence = Request.Form.GetValues("noAgencePub").Select(no => int.Parse(no)).ToArray();
+                    //On supprime les soumissions qui ne sont plus ratachées à l'appel d'offre.
+                    deleteSoumission(NoAgence, tblAppelOffre);
+                    //On créer les soumissions réliées à l'appel d'offre.
+                    foreach (int no in NoAgence)
+                    {
+                        tblSoumission soumi = CreateSoumission(no, tblAppelOffre.noAppelOffre);
+                        CreateSoumissionXml(soumi, tblAppelOffre);
+                    }
                 }
+
                 provider.Save();
                 return RedirectToAction("Index");
             }
