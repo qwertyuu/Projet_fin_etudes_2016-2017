@@ -1,6 +1,6 @@
 var nbBillet;
 var nbBilletVIP;
-var TotalBillets;
+var TotalBillet;
 var prixBillets;
 var prixBilletsVIP;
 var PrixMoyen;
@@ -8,13 +8,12 @@ var billetMax;
 var VIPMax;
 var totalFinal;
 var coutTotal;
-var TotalBillet;
 
-this.onload = function () { setCout(coutTot), setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed), LoadingDesDonnes(), recetteTotale() };
+this.onload = function () { setCout(coutTot), setBillet(maxBillet, maxVIP), setForfait(chkSalle, chkAge, chkRed), LoadingDesDonnes(), revenuTotal() };
 
 function calculTotalBillet() {
-    if (nbBillet != "0" || nbBillet != null) {
-        TotalBillet = parseInt(nbBillet) + parseInt(nbBilletVIP);
+    if ($("#nbBillet").val() != 0) {
+        TotalBillet = parseInt($("#nbBillet").val()) + parseInt($("#nbBilletVIP").val());
         return true;
     }
     else {
@@ -31,16 +30,16 @@ function calculMoyenne() {
 function calculBillet() {
 
     var prixBillet;
-    if (calculTotalBillet() != false) {
 
     nbBillet = $("#nbBillet").val();
     prixBillet = $("#prixBillet").val();
 
-    var total = nbBillet * prixBillet;
-    prixBillets = total;
-    $("#totalBillet").val(round_argent(total) + "$");
+    if (calculTotalBillet() == true) {
+        var total = nbBillet * prixBillet;
+        prixBillets = total;
+        $("#totalBillet").val(round_argent(total) + "$");
 
-    return total;
+        return total;
     }
     else {
         return 0;
@@ -122,14 +121,16 @@ function calculRabaisAge() {
 }//Calcule les rabais après avoir vérifié les données
 
 function calculPrixReduit() {
-    var TotBilletGratuit, TotBilletPreVente, TotBilletRabaisCustom1, TotBilletRabaisCustom2, total
+    var TotBilletGratuit, TotBilletPreVente, TotBilletRabaisCustom1, TotBilletRabaisCustom2, total, totalBilletReduit
 
     calculMoyenne();
-    checkNbBilletReduction();
+    // checkNbBilletReduction();
+    totalBilletReduit = 0;
 
     if ($("#nbBilletGratuit").val() != 0) {
         var nbBilletGratuit = parseFloat($("#nbBilletGratuit").val());
         TotBilletGratuit = (nbBilletGratuit * PrixMoyen);
+        totalBilletReduit = totalBilletReduit + nbBilletGratuit;
     }
     else {
         TotBilletGratuit = 0;
@@ -138,6 +139,7 @@ function calculPrixReduit() {
     if ($("#nbBilletPreVente").val() != 0) {
         var nbBilletPreVente = parseFloat($("#nbBilletPreVente").val());
         TotBilletPreVente = ((nbBilletPreVente * PrixMoyen) * 0.25);
+        totalBilletReduit = totalBilletReduit + nbBilletPreVente;
     }
     else {
         TotBilletPreVente = 0;
@@ -146,7 +148,9 @@ function calculPrixReduit() {
     if (checkRabaisCustom1() == true) {
         NbBilletRabaisCustom1 = parseFloat($("#NbBilletRabaisCustom1").val());
         TotBilletRabaisCustom1 = (NbBilletRabaisCustom1 * (parseFloat($("#PourcentRabaisCustom1").val()) / 100));
+        totalBilletReduit = totalBilletReduit + NbBilletRabaisCustom1;
     }
+
     else {
         TotBilletRabaisCustom1 = 0;
     }
@@ -154,17 +158,26 @@ function calculPrixReduit() {
     if (checkRabaisCustom2() == true) {
         var NbBilletRabaisCustom2 = parseFloat($("#NbBilletRabaisCustom2").val());
         TotBilletRabaisCustom2 = (NbBilletRabaisCustom2 * (parseFloat($("#PourcentRabaisCustom2").val()) / 100));
+        totalBilletReduit = totalBilletReduit + NbBilletRabaisCustom2;
     }
+
     else {
         TotBilletRabaisCustom2 = 0;
     }
-    if (nbBilletGratuit != "0" || TotBilletPreVente != "0" || TotBilletRabaisCustom1 != 0 || TotBilletRabaisCustom2 != 0) {
-        total = TotBilletGratuit + TotBilletPreVente + TotBilletRabaisCustom1 + TotBilletRabaisCustom2;
-        round_argent(total);
-        return total;
+
+    if (parseInt(totalBilletReduit) > TotalBillet) {
+        alert("Vous ne pouvez pas entrer une quantitée plus grande de billet à prix réduit que le nombre total de billets. Les Billets réduits ne seront pas calculés.")
+        return 0;
     }
     else {
-        return 0;
+        if (nbBilletGratuit != "0" || TotBilletPreVente != "0" || TotBilletRabaisCustom1 != 0 || TotBilletRabaisCustom2 != 0) {
+            total = TotBilletGratuit + TotBilletPreVente + TotBilletRabaisCustom1 + TotBilletRabaisCustom2;
+            round_argent(total);
+            return total;
+        }
+        else {
+            return 0;
+        }
     }
 }  //Calcule la section des prix réduits
 
@@ -172,19 +185,21 @@ function Calcultotal() {
 
     var total;
 
-    do {
-        checkPositif();
-        billetMaxCheck();
-        billetVIPMaxCheck();
+    if (calculTotalBillet() == true) {
+        do {
+            checkPositif();
+            billetMaxCheck();
+            billetVIPMaxCheck();
+        }
+        while (checkPositif() == false && billetMaxCheck() == false && billetVIPMaxCheck() == false)
+
+        total = calculBillet() + calculBilletVIP() + calculSouperSpectacle() - calculRabaisAge() - calculPrixReduit();
+
+        $("#Recette").text(round_argent(total) + "$");
+
+        totalFinal = total;
+        revenuTotal(totalFinal);
     }
-    while (checkPositif() == false && billetMaxCheck() == false && billetVIPMaxCheck() == false)
-
-    total = calculBillet() + calculBilletVIP() + calculSouperSpectacle() - calculRabaisAge() - calculPrixReduit();
-
-    $("#TotFinal").text(round_argent(total) + "$");
-
-    totalFinal = total;
-    recetteTotale(totalFinal);
 } //Calcule le montant total et l'envoie 
 
 function pourcentCheck() {
@@ -391,8 +406,8 @@ function remiseAZero() {
     $("#nbBilletAine").val(0);
     $("#NomRabaisCustom1").val("");
     $("#NomRabaisCustom2").val("");
-    $("#Recettes").text(0 - coutTotal + "$");
-    $("#TotFinal").text(0,00+"$");
+    $("#Revenu").text(0 - coutTotal + "$");
+    $("#Recette").text(0, 00 + "$");
 }//Met tout a 0 ou "" partout
 
 function checkPositif() {
@@ -474,12 +489,12 @@ function checkPositif() {
     }
 }// Regarde toute les valeures et si elles sont négaive les remets à 0
 
-function recetteTotale() {
+function revenuTotal() {
     if (totalFinal != null) {
-        $("#Recettes").text(round_argent(totalFinal - coutTotal) + "$");
+        $("#Revenu").text(round_argent(totalFinal - coutTotal) + "$");
     }
     else {
-        $("#Recettes").text(round_argent(0 - coutTotal) + "$");
+        $("#Revenu").text(round_argent(0 - coutTotal) + "$");
     }
 }
 
