@@ -12,6 +12,7 @@ namespace ECJ.Web
     /// </summary>
     public class ECJNavigationProvider : NavigationProvider
     {
+       
         public override void SetNavigation(INavigationProviderContext context)
         {
             context.Manager.Menus.Add("Footer", new MenuDefinition(
@@ -81,6 +82,14 @@ namespace ECJ.Web
                         L("Users"),
                         url: "Users",
                         icon: "fa fa-users",
+                        requiresAuthentication: true
+                        )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        "Profil",
+                        L("Profil"),
+                        url: "profil/Edit/1",
+                        icon: "fa fa-address-card",
                         requiresAuthentication: true
                         )
                 );

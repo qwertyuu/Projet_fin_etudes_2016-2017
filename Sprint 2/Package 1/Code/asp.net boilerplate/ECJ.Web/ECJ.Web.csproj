@@ -501,6 +501,7 @@
     <Compile Include="Controllers\Memo\CMemoController.cs" />
     <Compile Include="Controllers\Calculateur\CalculateurController.cs" />
     <Compile Include="Controllers\Commanditaire\CommanditaireController.cs" />
+    <Compile Include="Controllers\ProfilController.cs" />
     <Compile Include="Controllers\Salles\SallesController.cs" />
     <Compile Include="Controllers\SousEvents\SousEvenementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -772,6 +773,7 @@
     <Content Include="Views\Users\Ajout.cshtml" />
     <Content Include="Views\Account\Captcha.cshtml" />
     <Content Include="Views\Account\CreateSetting.cshtml" />
+    <Content Include="Views\Profil\Edit.cshtml" />
     <None Include="Web.Cegep.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
