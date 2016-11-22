@@ -93,7 +93,7 @@ namespace ECJ.Web.Controllers
         {
             string CaptchaText = "TEST";
 
-            Captcha c = new Captcha("22");
+            Captcha c = new Captcha(CaptchaText);
             return View();
         }
 

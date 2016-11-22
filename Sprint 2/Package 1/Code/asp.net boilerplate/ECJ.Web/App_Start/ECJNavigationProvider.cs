@@ -88,7 +88,7 @@ namespace ECJ.Web
                     new MenuItemDefinition(
                         "Profil",
                         L("Profil"),
-                        url: "profil/Edit/1",
+                        url: "profil/Edit/" + getUser(),
                         icon: "fa fa-address-card",
                         requiresAuthentication: true
                         )
@@ -98,6 +98,13 @@ namespace ECJ.Web
         private static ILocalizableString L(string name)
         {
             return new LocalizableString(name, ECJConsts.LocalizationSourceName);
+        }
+
+        private int getUser()
+        {
+
+
+            return 1;
         }
     }
 }
