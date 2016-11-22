@@ -24,9 +24,10 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System.Web.Routing;
-using BotDetect.Web.Mvc;
 using System.Data;
 using ECJ.Web.Models;
+using BotDetect.Web;
+using BotDetect.Web.Mvc;
 
 namespace ECJ.Web.Controllers
 {
@@ -88,8 +89,11 @@ namespace ECJ.Web.Controllers
             return View();
         }
 
-        public ActionResult Captcha(int?id)
+        public ActionResult captcha(int?id)
         {
+            string CaptchaText = "TEST";
+
+            Captcha c = new Captcha("22");
             return View();
         }
 
