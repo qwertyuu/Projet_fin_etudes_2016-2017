@@ -8,6 +8,7 @@ using System.Net;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using Nito.AsyncEx.Synchronous;
 
 namespace ECJ.Web.Controllers
 {
@@ -15,10 +16,10 @@ namespace ECJ.Web.Controllers
     public class UsersController : ECJControllerBase
     {
         DBProvider db;
-
+        private UserStore us;
         public UsersController()
         {
-
+            //us = new UserStore();
             db = new DBProvider();
             GetPermissions();
         }

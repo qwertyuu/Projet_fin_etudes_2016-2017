@@ -1,4 +1,4 @@
---But: CrÃ©ation des vues du package Contrat.
+--But: Création des vues du package Contrat.
 --Date:08-10-2016
 --Par: Simon Girard
 
@@ -10,5 +10,5 @@ SELECT forf.noSalle, forf.nomSalle, forf.prix, forf.billet, forf.billetVIP, forf
 FROM S_forfait.tblSalle AS forf
 WHERE  forf.dateSupprime IS NULL
 GO
-PRINT 'CrÃ©ation de la vue pour sommaire des salles'
+PRINT 'Création de la vue pour sommaire des salles'
 GO
