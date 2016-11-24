@@ -1,11 +1,11 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.Reporting.WebForms;
 
 namespace ECJ.Web.Controllers
 {
@@ -15,21 +15,24 @@ namespace ECJ.Web.Controllers
         // GET: Report
         public ActionResult Index()
         {
-            ReportDocument rd = new ReportDocument();
-            rd.Load(Server.MapPath("/CrystalReport1.rpt"));
-            
-            rd.SetDataSource(db.ToutSousEvenement().Select(sse => new
-            {
-                noSousEvenement = sse.noSousEvenement,
-                nom = sse.nom,
-                description = sse.description,
-                noEvenement = sse.noEvenement
-            }).ToList());
-            //Response.Buffer = false;
-            //Response.ClearContent();
-            //Response.ClearHeaders();
-            Stream s = rd.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
-            //s.Seek(0, SeekOrigin.Begin);
+            var reportQuery = (from r in db.ToutEvenement()
+                               select new
+                               {
+                                   r.nom,
+                                   r.dateDebut,
+                                   r.datefin,
+                                   r.url
+                               }).ToList();
+
+            LocalReport u = new LocalReport();
+            u.ReportPath = "Report2.rdlc";
+            u.DataSources.Clear();
+            ReportDataSource datasource = new ReportDataSource("DataSet1", reportQuery);
+            u.DataSources.Add(datasource);
+
+            //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());
+            //u.SetParameters(new[] { p });
+
             var cd = new System.Net.Mime.ContentDisposition
             {
                 // for example foo.bak
@@ -39,9 +42,19 @@ namespace ECJ.Web.Controllers
                 // the browser to try to show the file inline
                 Inline = true,
             };
+            Warning[] warnings;
+            string[] streamids;
+            string mimeType;
+            string encoding;
+            string filenameExtension;
+
+            byte[] bytes = u.Render(
+                "PDF", null, out mimeType, out encoding, out filenameExtension,
+                out streamids, out warnings);
+            
 
             Response.AppendHeader("Content-Disposition", cd.ToString());
-            return File(s, "application/pdf");
+            return File(bytes, "application/pdf");
         }
 
     }
