@@ -793,6 +793,7 @@
     <Content Include="Views\Account\CreateSetting.cshtml" />
     <Content Include="Views\Profil\Edit.cshtml" />
     <Content Include="Views\Account\Verification.cshtml" />
+    <Content Include="Views\AppellOffre\GetChart.cshtml" />
     <None Include="Web.Cegep.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

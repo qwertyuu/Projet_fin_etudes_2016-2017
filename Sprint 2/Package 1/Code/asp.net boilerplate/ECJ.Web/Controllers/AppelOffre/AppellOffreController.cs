@@ -14,6 +14,7 @@ using System.Xml.Linq;
 using Abp.Web.Mvc.Authorization;
 using System.Globalization;
 using ECJ.Authorization;
+using System.Web.Helpers;
 
 namespace ECJ.Web.Controllers.AppelOffre
 {
@@ -629,5 +630,16 @@ namespace ECJ.Web.Controllers.AppelOffre
             }
             return RedirectToAction("Index");
         }
+        public ActionResult GetChart()
+        {
+            ViewBag.chart = new Chart(600, 400,ChartTheme.Green)
+                .AddTitle("Montant des dons par commanditaires")
+                .AddSeries(
+                    chartType: "column",
+                    xValue: new[] { "Platine Comunication", "Mediative", "Agence Polka", "Zed Productions" },
+                    yValues: new[] { "2000", "1800", "1200", "2100" });
+            return View();
+        }
+
     }
 }
