@@ -15,18 +15,9 @@ namespace ECJ.Web.Controllers
             GetPermissions();
         }
 
-        public ActionResult Edit(int? id)
+        public ActionResult Edit()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            var elementAModifier = provider.ReturnUtilisateur((int)id);
-            if (elementAModifier == null)
-            {
-                return HttpNotFound();
-            }
-            return View(elementAModifier);
+            return View();
         }
     }
 }

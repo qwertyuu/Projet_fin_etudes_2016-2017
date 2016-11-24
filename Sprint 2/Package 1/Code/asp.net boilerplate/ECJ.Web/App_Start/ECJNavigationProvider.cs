@@ -84,14 +84,6 @@ namespace ECJ.Web
                         icon: "fa fa-users",
                         requiresAuthentication: true
                         )
-                ).AddItem(
-                    new MenuItemDefinition(
-                        "Profil",
-                        L("Profil"),
-                        url: "profil/Edit/" + getUser(),
-                        icon: "fa fa-address-card",
-                        requiresAuthentication: true
-                        )
                 );
         }
 
