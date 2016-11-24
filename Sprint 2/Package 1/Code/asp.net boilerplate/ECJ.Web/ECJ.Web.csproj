@@ -784,6 +784,7 @@
     <Content Include="Views\Account\Captcha.cshtml" />
     <Content Include="Views\Account\CreateSetting.cshtml" />
     <Content Include="Views\Profil\Edit.cshtml" />
+    <Content Include="Views\Account\Verification.cshtml" />
     <None Include="Web.Cegep.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -818,6 +819,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Lire\" />
     <Folder Include="Views\Report\" />
+    <Folder Include="Views\Verification\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

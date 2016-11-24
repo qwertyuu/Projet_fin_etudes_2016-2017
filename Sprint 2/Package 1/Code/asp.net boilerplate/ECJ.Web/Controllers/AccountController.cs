@@ -103,6 +103,11 @@ namespace ECJ.Web.Controllers
             return View();
         }
 
+        public ActionResult Verification()
+        {
+            return View();
+        }
+
         #region Login / Logout
 
         public ActionResult Login(string returnUrl = "")

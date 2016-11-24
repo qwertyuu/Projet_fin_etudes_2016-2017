@@ -12,16 +12,29 @@
     @Html.ValidationSummary(true)
 
     <div class="form-group">
-        <label>Question  Secrète </label>
-        @Html.DropDownList("noSousEvenement", null, htmlAttributes: new { @class = "form-control" })
-        <input class="form-control" type="text" name="QS" required>
+        <label>Entrez un mot de passe</label>
+        <input class="form-control" type="password" name="PasswordChange">
+    </div>
+    <div class="form-group">
+        <label>Écrire à nouveau le mot de passe</label>
+        <input class="form-control" type="password" name="PasswordChange">
     </div>
 
     <div class="form-group">
-        <label>Affiche</label>
+        <label>Changer l'image de profil</label>
         <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
     </div>
-    
+
+    <div class="form-group">
+        <label>Question  Secrète </label>
+        <select class="form-control">
+            <option class="form-control" value="QS">Quel est le nom de votre premier animal de compagnie?</option>
+            <option class="form-control" value="QS">Quel est le nom de jeune fille de votre mère?</option>
+            <option class="form-control" value="QS">Quel est l'année de  naissance de votre père?</option>
+        </select>
+        <input class="form-control" type="text" name="QS" required>
+    </div>
+
     <div class="form-group pull-right">
         <button class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Confirmer</span></button>
     </div>
