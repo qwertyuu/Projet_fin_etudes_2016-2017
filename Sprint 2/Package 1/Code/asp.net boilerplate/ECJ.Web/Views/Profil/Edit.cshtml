@@ -1,8 +1,8 @@
 ﻿@{
-    ViewBag.Title = "Ajout";
-}
+        ViewBag.Title = "Ajout";
+    }
 
-@model ECJ.Web.Models.AbpUsers
+    @model ECJ.Web.Models.AbpUsers
 <h2>Modifier mon profil</h2>
 @using (Html.BeginForm())
 {
@@ -20,7 +20,11 @@
 
     <div class="form-group">
         <label>Question  Secrète </label>
-        @*     @Html.DropDownList("QuestionSecrete", null, htmlAttributes: new { @class = "form-control" })*@
+        <select class="form-control">
+            <option  class="form-control" value="QS">Quel est le nom de votre premier animal de compagnie?</option>
+            <option class="form-control" value="QS">Quel est le nom de jeune fille de votre mère?</option>
+            <option class="form-control" value="QS">Quel est l'année de  naissance de votre père?</option>
+        </select>
         <input class="form-control" type="text" name="QS" required>
     </div>
 
