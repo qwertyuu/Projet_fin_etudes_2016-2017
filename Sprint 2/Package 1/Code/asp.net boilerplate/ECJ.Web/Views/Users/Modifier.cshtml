@@ -41,6 +41,18 @@
         <label>Modifier le mot de passe (laisser vide pour ne pas changer le mot de passe)</label>
         <input class="form-control" type="password" name="PasswordChange">
     </div>
+
+    <div class="form-group">
+        <label>Image de profil (laisser vide pour ne pas modifier l'image courrante)</label>
+        <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+    </div>
+    <div class="form-group">
+        <label>Question secrète</label>
+        <select class="form-control">
+            <option>Quelle est la date de naissance de votre père?</option>
+        </select>
+        <input class="form-control" type="text" name="QS" placeholder="Réponse" required>
+    </div>
     <div class="form-group">
         @{
             var actif = Model.IsActive ? "checked" : "";
