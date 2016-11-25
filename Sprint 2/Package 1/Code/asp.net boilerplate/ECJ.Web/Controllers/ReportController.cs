@@ -15,13 +15,13 @@ namespace ECJ.Web.Controllers
         // GET: Report
         public ActionResult Index()
         {
-            var reportQuery = (from r in db.ToutEvenement()
+            var reportQuery = (from k in db.ToutEvenement()
                                select new
                                {
-                                   r.nom,
-                                   r.dateDebut,
-                                   r.datefin,
-                                   r.url
+                                   k.nom,
+                                   k.dateDebut,
+                                   k.datefin,
+                                   k.url
                                }).ToList();
 
             LocalReport u = new LocalReport();
@@ -30,6 +30,14 @@ namespace ECJ.Web.Controllers
             ReportDataSource datasource = new ReportDataSource("DataSet1", reportQuery);
             u.DataSources.Add(datasource);
 
+
+            LocalReport r = new LocalReport();
+            r.ReportPath = "Report1.rdlc";
+            r.DataSources.Clear();
+
+            var d = (db.ToutSousEvenement().Where(sse => sse.noEvenement == int.Parse(r.GetParameters().First(param => param.Name == "noEvenement").Values[0])));
+            ReportDataSource datasource2 = new ReportDataSource("DataSet1", d);
+            r.DataSources.Add(datasource2);
             //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());
             //u.SetParameters(new[] { p });
 
