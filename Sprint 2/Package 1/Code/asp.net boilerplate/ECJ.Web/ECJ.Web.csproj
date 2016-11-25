@@ -405,16 +405,18 @@
     <Content Include="Models\ModelEquipe2.edmx.diagram">
       <DependentUpon>ModelEquipe2.edmx</DependentUpon>
     </Content>
-    <Content Include="App_Start\SoumissionAgence.xsd" />
-    <Content Include="PE2_OfficielDataSet.xsc">
+    <None Include="App_Start\SoumissionAgence.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Rapport\DataSet\PE2_OfficielDataSet.xsc">
       <DependentUpon>PE2_OfficielDataSet.xsd</DependentUpon>
     </Content>
-    <None Include="PE2_OfficielDataSet.xsd">
+    <None Include="Rapport\DataSet\PE2_OfficielDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>PE2_OfficielDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="PE2_OfficielDataSet.xss">
+    <Content Include="Rapport\DataSet\PE2_OfficielDataSet.xss">
       <DependentUpon>PE2_OfficielDataSet.xsd</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\Cegep.pubxml" />
@@ -732,7 +734,7 @@
     <Compile Include="Models\vueSomStatut.cs">
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>
-    <Compile Include="PE2_OfficielDataSet.Designer.cs">
+    <Compile Include="Rapport\DataSet\PE2_OfficielDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PE2_OfficielDataSet.xsd</DependentUpon>
@@ -835,8 +837,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Rapport\RapportAppelOffre.rdlc" />
+    <EmbeddedResource Include="Rapport\Report1.rdlc" />
+    <EmbeddedResource Include="Rapport\Report2.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

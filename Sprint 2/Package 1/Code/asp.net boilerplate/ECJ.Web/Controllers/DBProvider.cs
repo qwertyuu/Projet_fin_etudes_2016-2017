@@ -520,6 +520,21 @@ namespace ECJ.Web.Controllers
             return new List<tblSousEvenement>();
         }
 
+        public List<tblAppelOffre> ToutAppleOffre()
+        {
+            try
+            {
+                return db.tblAppelOffre.Where(a => a.dateSupprime == null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblAppelOffre>();
+        }
+
+
+
         public List<tblEvenement> ToutEvenement()
         {
             try

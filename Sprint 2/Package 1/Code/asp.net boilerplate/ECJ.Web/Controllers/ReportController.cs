@@ -67,6 +67,78 @@ namespace ECJ.Web.Controllers
             ReportDataSource datasource2 = new ReportDataSource("DataSet1", d);
             e.DataSources.Add(datasource2);
         }
+        
+        //Rapport de l'appel d'offre
+        public ActionResult RapportAppelOffre()
+        {
+            var reportQueryAppel = (from a in db.ToutAppleOffre()
+                                    select new
+                                    {
+                                        a.nom,
+                                        a.dateEnvoi,
+                                        a.dateRequis,
+                                        a.description,
+                                        a.noMedia,
+                                        a.noStatut
+                               }).ToList();
+
+            var reportQuerySoumi = (from s in db.RetunSoumission(null)
+                                    select new
+                                    {
+                                        s.prix,
+                                        s.commentaire,
+                                        s.statut,
+                                        s.noAgencePub,
+                                        s.noAppelOffre
+                                    }).ToList();
+
+            var reportQuerySoumiAgen = (from s in db.RetunSoumission(null)
+                                    select new
+                                    {
+                                        s.prix,
+                                        s.statut,
+                                        s.noAgencePub,
+                                    }).ToList();
+
+            LocalReport u = new LocalReport();
+            u.ReportPath = "Rapport/RapportAppelOffre.rdlc";
+            u.DataSources.Clear();
+            ReportDataSource datasourceAppel = new ReportDataSource("DataSetAppelOffre", reportQueryAppel);
+            ReportDataSource datasourceSoumi = new ReportDataSource("DataSetSoumission", reportQuerySoumi);
+            ReportDataSource datasourceAppelSoumi = new ReportDataSource("DataSetSoumission", reportQuerySoumiAgen);
+
+            u.DataSources.Add(datasourceAppel);
+            u.DataSources.Add(datasourceSoumi);
+            u.DataSources.Add(datasourceAppelSoumi);
+
+
+            //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());
+            //u.SetParameters(new[] { p });
+
+            var cd = new System.Net.Mime.ContentDisposition
+            {
+                // for example foo.bak
+                FileName = "Rapport_AppelOffre.pdf",
+
+                // always prompt the user for downloading, set to true if you want 
+                // the browser to try to show the file inline
+                Inline = true,
+            };
+            Warning[] warnings;
+            string[] streamids;
+            string mimeType;
+            string encoding;
+            string filenameExtension;
+
+            byte[] bytes = u.Render(
+                "PDF", null, out mimeType, out encoding, out filenameExtension,
+                out streamids, out warnings);
+
+
+            Response.AppendHeader("Content-Disposition", cd.ToString());
+            return File(bytes, "application/pdf");
+        }
+
     }
     public static class Ext
     {

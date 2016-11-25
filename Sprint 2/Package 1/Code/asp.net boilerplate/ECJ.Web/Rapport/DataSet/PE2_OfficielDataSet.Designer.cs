@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ECJ.Web {
+namespace ECJ.Web.Rapport.DataSet {
     
     
     /// <summary>
@@ -41596,7 +41596,7 @@ namespace ECJ.Web {
         }
     }
 }
-namespace ECJ.Web.PE2_OfficielDataSetTableAdapters {
+namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
     
     
     /// <summary>

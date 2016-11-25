@@ -15,7 +15,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox195">
+                    <Textbox Name="Textbox1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -33,7 +33,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox195</rd:DefaultName>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#9eb6e4</Color>
@@ -54,57 +54,7 @@
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
-            <TablixMember>
-              <Group Name="nom">
-                <GroupExpressions>
-                  <GroupExpression>=Fields!nom.Value</GroupExpression>
-                </GroupExpressions>
-              </Group>
-              <SortExpressions>
-                <SortExpression>
-                  <Value>=Fields!nom.Value</Value>
-                </SortExpression>
-              </SortExpressions>
-              <TablixMembers>
-                <TablixMember>
-                  <Group Name="dateRequis">
-                    <GroupExpressions>
-                      <GroupExpression>=Fields!dateRequis.Value</GroupExpression>
-                    </GroupExpressions>
-                  </Group>
-                  <SortExpressions>
-                    <SortExpression>
-                      <Value>=Fields!dateRequis.Value</Value>
-                    </SortExpression>
-                  </SortExpressions>
-                  <TablixMembers>
-                    <TablixMember>
-                      <Group Name="dateEnvoi">
-                        <GroupExpressions>
-                          <GroupExpression>=Fields!dateEnvoi.Value</GroupExpression>
-                        </GroupExpressions>
-                      </Group>
-                      <SortExpressions>
-                        <SortExpression>
-                          <Value>=Fields!dateEnvoi.Value</Value>
-                        </SortExpression>
-                      </SortExpressions>
-                      <TablixMembers>
-                        <TablixMember />
-                      </TablixMembers>
-                      <Visibility>
-                        <Hidden>true</Hidden>
-                        <ToggleItem>dateRequis</ToggleItem>
-                      </Visibility>
-                    </TablixMember>
-                  </TablixMembers>
-                  <Visibility>
-                    <Hidden>true</Hidden>
-                    <ToggleItem>nom</ToggleItem>
-                  </Visibility>
-                </TablixMember>
-              </TablixMembers>
-            </TablixMember>
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -124,9 +74,6 @@
       <Tablix Name="Tablix2">
         <TablixBody>
           <TablixColumns>
-            <TablixColumn>
-              <Width>2.5cm</Width>
-            </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
             </TablixColumn>
@@ -194,36 +141,6 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox178</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox180">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>no Soumission Agence</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox180</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -394,36 +311,6 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="noSoumissionAgence">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!noSoumissionAgence.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>noSoumissionAgence</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="prix">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -523,7 +410,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -538,9 +424,8 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetSoumission</DataSetName>
         <Top>3.92493cm</Top>
-        <Left>0cm</Left>
         <Height>1.2cm</Height>
-        <Width>15cm</Width>
+        <Width>12.5cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -965,7 +850,6 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetAppelOffre</DataSetName>
         <Top>0.77639cm</Top>
-        <Left>0cm</Left>
         <Height>1.2cm</Height>
         <Width>15cm</Width>
         <ZIndex>2</ZIndex>
@@ -1200,7 +1084,6 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetSoumission</DataSetName>
         <Top>6.37328cm</Top>
-        <Left>0cm</Left>
         <Height>1.2cm</Height>
         <Width>7.5cm</Width>
         <ZIndex>3</ZIndex>
@@ -1534,20 +1417,6 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Image Name="Image1">
-          <Source>Embedded</Source>
-          <Value>ID11</Value>
-          <Sizing>Fit</Sizing>
-          <Top>0.55245cm</Top>
-          <Left>0.44979cm</Left>
-          <Height>1.88172cm</Height>
-          <Width>2.05021cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
         <Textbox Name="ReportName">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -1555,7 +1424,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!nom.Value, "DataSetEvent")</Value>
+                  <Value>Rapport des appels d'offre</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -1563,11 +1432,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ReportName</rd:DefaultName>
-          <Top>0.26141cm</Top>
-          <Left>12.5cm</Left>
+          <Top>0.55245cm</Top>
+          <Left>11.77078cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
-          <ZIndex>1</ZIndex>
+          <Width>4.82833cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1578,6 +1446,21 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>logo_Home1</Value>
+          <Sizing>Fit</Sizing>
+          <Left>0.44979cm</Left>
+          <Height>2.47262cm</Height>
+          <Width>5.58209cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Double</Style>
+              <Width>3pt</Width>
+            </Border>
+          </Style>
+        </Image>
       </ReportItems>
       <Style>
         <Border>
@@ -1639,6 +1522,38 @@
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="ExecutionTime">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!ExecutionTime</Value>
+                  <Style>
+                    <Format>yyyy-MM-dd HH:mm</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>ExecutionTime</rd:DefaultName>
+          <Top>1.66974cm</Top>
+          <Left>26.82557cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1726,94 +1641,6 @@
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>tblAppelOffreTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DataSetEvent">
-      <Query>
-        <DataSourceName>PE2_OfficielDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="noEvenement">
-          <DataField>noEvenement</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="nom">
-          <DataField>nom</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="dateDebut">
-          <DataField>dateDebut</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="datefin">
-          <DataField>datefin</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="affiche">
-          <DataField>affiche</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="url">
-          <DataField>url</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="description">
-          <DataField>description</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="dateSupprime">
-          <DataField>dateSupprime</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>PE2_OfficielDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\PE2_OfficielDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>tblEvenement</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>tblEvenementTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DataSetSousEvent">
-      <Query>
-        <DataSourceName>PE2_OfficielDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="noSousEvenement">
-          <DataField>noSousEvenement</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="nom">
-          <DataField>nom</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="description">
-          <DataField>description</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="noEvenement">
-          <DataField>noEvenement</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="noSalle">
-          <DataField>noSalle</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="dateSupprime">
-          <DataField>dateSupprime</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>PE2_OfficielDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\PE2_OfficielDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>tblSousEvenement</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>tblSousEvenementTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
     <DataSet Name="DataSetSoumission">
