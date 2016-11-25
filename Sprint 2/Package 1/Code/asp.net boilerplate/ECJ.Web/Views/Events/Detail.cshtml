@@ -187,7 +187,7 @@
                                         @(activite.etat == 1 ? "Réalisé" : "Non réalisé")
                                     </td>
                                     <td>
-                                        if (activite.etat == 1)
+                                        @if (activite.etat == 1)
                                         {
                                             <a href="~/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-warning" title="Changer pour non-réalisé"><i class="fa fa-times-circle fa-lg"></i></a>
 

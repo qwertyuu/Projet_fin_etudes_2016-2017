@@ -18,6 +18,7 @@ namespace ECJ.Web.Controllers
             var reportQuery = (from k in db.ToutEvenement()
                                select new
                                {
+                                   k.noEvenement,
                                    k.nom,
                                    k.dateDebut,
                                    k.datefin,
@@ -29,15 +30,10 @@ namespace ECJ.Web.Controllers
             u.DataSources.Clear();
             ReportDataSource datasource = new ReportDataSource("DataSet1", reportQuery);
             u.DataSources.Add(datasource);
+            u.SubreportProcessing += U_SubreportProcessing;
 
 
-            LocalReport r = new LocalReport();
-            r.ReportPath = "Report1.rdlc";
-            r.DataSources.Clear();
 
-            var d = (db.ToutSousEvenement().Where(sse => sse.noEvenement == int.Parse(r.GetParameters().First(param => param.Name == "noEvenement").Values[0])));
-            ReportDataSource datasource2 = new ReportDataSource("DataSet1", d);
-            r.DataSources.Add(datasource2);
             //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());
             //u.SetParameters(new[] { p });
 
@@ -65,6 +61,12 @@ namespace ECJ.Web.Controllers
             return File(bytes, "application/pdf");
         }
 
+        private void U_SubreportProcessing(object sender, SubreportProcessingEventArgs e)
+        {
+            var d = (db.ToutSousEvenement().Where(sse => sse.noEvenement == int.Parse(e.Parameters.First(param => param.Name == "noEvenement").Values[0])));
+            ReportDataSource datasource2 = new ReportDataSource("DataSet1", d);
+            e.DataSources.Add(datasource2);
+        }
     }
     public static class Ext
     {
