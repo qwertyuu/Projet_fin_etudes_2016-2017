@@ -1400,6 +1400,8 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
+        <KeepTogether>true</KeepTogether>
         <DataSetName>DataSetAppelOffre</DataSetName>
         <Top>0.17639cm</Top>
         <Height>1.2cm</Height>

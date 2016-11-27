@@ -379,7 +379,6 @@
                         </Border>
                       </Style>
                     </Subreport>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -414,7 +413,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>14.11703cm</Height>
+    <Height>16.1887cm</Height>
     <Style />
   </Body>
   <Width>23.84177cm</Width>
@@ -551,7 +550,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>="Rapport d'appel d'offre /Kevin Kuété Moffo"</Value>
+                  <Value>="Rapport des commenditaires /Kevin Kuété Moffo"</Value>
                   <Style>
                     <FontFamily>times New Roman</FontFamily>
                   </Style>
