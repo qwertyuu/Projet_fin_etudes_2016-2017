@@ -9,7 +9,7 @@
               <Width>2.83646cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>11.46188cm</Width>
+              <Width>4cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -18,14 +18,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="nom">
+                    <Textbox Name="dateDon">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!nom.Value</Value>
+                              <Value>=Fields!dateDon.Value</Value>
                               <Style>
                                 <FontFamily>Comic Sans MS</FontFamily>
                               </Style>
@@ -36,7 +36,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>nom</rd:DefaultName>
+                      <rd:DefaultName>dateDon</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -55,14 +55,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="description">
+                    <Textbox Name="montant">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!description.Value</Value>
+                              <Value>=Fields!montant.Value</Value>
                               <Style>
                                 <FontFamily>Comic Sans MS</FontFamily>
                               </Style>
@@ -73,7 +73,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>description</rd:DefaultName>
+                      <rd:DefaultName>montant</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -107,9 +107,9 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
+        <DataSetName>DataSetDon</DataSetName>
         <Height>1.16727cm</Height>
-        <Width>14.29834cm</Width>
+        <Width>6.83646cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -120,7 +120,7 @@
     <Height>0.46998in</Height>
     <Style />
   </Body>
-  <Width>5.62927in</Width>
+  <Width>2.69152in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>14.29833cm</PageWidth>
@@ -144,31 +144,31 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DataSetDon">
       <Query>
         <DataSourceName>PE2_OfficielDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="noDon">
+          <DataField>noDon</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="noCommanditaire">
+          <DataField>noCommanditaire</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="noSousEvenement">
           <DataField>noSousEvenement</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="nom">
-          <DataField>nom</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="montant">
+          <DataField>montant</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="description">
-          <DataField>description</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="noEvenement">
-          <DataField>noEvenement</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="noSalle">
-          <DataField>noSalle</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="dateDon">
+          <DataField>dateDon</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="dateSupprime">
           <DataField>dateSupprime</DataField>
@@ -177,11 +177,59 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>PE2_OfficielDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\PE2_OfficielDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>tblSousEvenement</rd:TableName>
+        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\Rapport\DataSet\PE2_OfficielDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>tblDon</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>tblSousEvenementTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>tblDonTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>PE2_OfficielDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="noEvenement">
+          <DataField>noEvenement</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="nom">
+          <DataField>nom</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dateDebut">
+          <DataField>dateDebut</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="datefin">
+          <DataField>datefin</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="affiche">
+          <DataField>affiche</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="url">
+          <DataField>url</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="description">
+          <DataField>description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dateSupprime">
+          <DataField>dateSupprime</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>PE2_OfficielDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\Rapport\DataSet\PE2_OfficielDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>tblEvenement</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>tblEvenementTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

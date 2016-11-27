@@ -26,11 +26,12 @@ namespace ECJ.Web.Controllers
                                }).ToList();
 
             LocalReport u = new LocalReport();
-            u.ReportPath = "Report2.rdlc";
+            u.ReportPath = "Rapport/Report2.rdlc";
             u.DataSources.Clear();
             ReportDataSource datasource = new ReportDataSource("DataSet1", reportQuery);
             u.DataSources.Add(datasource);
             u.SubreportProcessing += U_SubreportProcessing;
+            
 
 
 
@@ -67,7 +68,15 @@ namespace ECJ.Web.Controllers
             ReportDataSource datasource2 = new ReportDataSource("DataSet1", d);
             e.DataSources.Add(datasource2);
         }
-        
+
+        private void U_SubreportComDon(object sender, SubreportProcessingEventArgs e)
+        {
+
+            var don = db.ToutDon().Where(d=>d.noCommanditaire==(int.Parse(e.Parameters.First(param => param.Name == "noEvenement").Values[0])));
+            ReportDataSource datasource2 = new ReportDataSource("DataSetDon", don);
+            e.DataSources.Add(datasource2);
+        }
+
         //Rapport de l'appel d'offre
         public ActionResult RapportAppelOffre()
         {
@@ -79,7 +88,7 @@ namespace ECJ.Web.Controllers
                                         a.dateRequis,
                                         a.description,
                                         a.noMedia,
-                                        a.noStatut
+                                       a.noStatut
                                }).ToList();
 
             var reportQuerySoumi = (from s in db.RetunSoumission(null)
@@ -100,14 +109,15 @@ namespace ECJ.Web.Controllers
                                         s.noAgencePub,
                                     }).ToList();
 
+
             LocalReport u = new LocalReport();
-            u.ReportPath = "Rapport/RapportAppelOffre.rdlc";
+            u.ReportPath = "Rapport/RapportAppel.rdlc";
             u.DataSources.Clear();
             ReportDataSource datasourceAppel = new ReportDataSource("DataSetAppelOffre", reportQueryAppel);
             ReportDataSource datasourceSoumi = new ReportDataSource("DataSetSoumission", reportQuerySoumi);
             ReportDataSource datasourceAppelSoumi = new ReportDataSource("DataSetSoumission", reportQuerySoumiAgen);
-
             u.DataSources.Add(datasourceAppel);
+          // u.SubreportProcessing += U_SubreportSatut;
             u.DataSources.Add(datasourceSoumi);
             u.DataSources.Add(datasourceAppelSoumi);
 
@@ -138,8 +148,67 @@ namespace ECJ.Web.Controllers
             Response.AppendHeader("Content-Disposition", cd.ToString());
             return File(bytes, "application/pdf");
         }
+        //Rapport Commenditaire
+        public ActionResult RapportCommenditaire()
+        {
+
+            var reportQuery = (from k in db.ToutEvenement()
+                               select new
+                               {
+                                   k.noEvenement,
+                                   k.nom,
+                                   k.dateDebut,
+                                   k.datefin,
+                                   k.url
+                               }).ToList();
+
+
+            var reportQueryCom = (from c in db.ToutCommenditaire()
+                               select new
+                               {
+                                   c.noCommanditaire,
+                                   c.textePresentation
+                               }).ToList();
+
+
+            LocalReport u = new LocalReport();
+            u.ReportPath = "Rapport/ReportComendite_Event.rdlc";
+            u.DataSources.Clear();
+            ReportDataSource datasourceComSous = new ReportDataSource("DataSetEvent", reportQuery);
+            ReportDataSource datasourceComDon = new ReportDataSource("DataSetCommenditaire", reportQueryCom);
+            u.DataSources.Add(datasourceComSous);
+            u.DataSources.Add(datasourceComDon);
+            u.SubreportProcessing += U_SubreportComDon;
+            //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());
+            //u.SetParameters(new[] { p });
+
+            var cd = new System.Net.Mime.ContentDisposition
+            {
+                // for example foo.bak
+                FileName = "Rapport_Commenditaire.pdf",
+
+                // always prompt the user for downloading, set to true if you want 
+                // the browser to try to show the file inline
+                Inline = true,
+            };
+            Warning[] warnings;
+            string[] streamids;
+            string mimeType;
+            string encoding;
+            string filenameExtension;
+
+            byte[] bytes = u.Render(
+                "PDF", null, out mimeType, out encoding, out filenameExtension,
+                out streamids, out warnings);
+
+
+            Response.AppendHeader("Content-Disposition", cd.ToString());
+            return File(bytes, "application/pdf");
+        }
 
     }
+
+
     public static class Ext
     {
         public static DataSet ToDataSet<T>(this IList<T> list)

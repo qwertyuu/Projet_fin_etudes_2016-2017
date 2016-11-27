@@ -520,6 +520,19 @@ namespace ECJ.Web.Controllers
             return new List<tblSousEvenement>();
         }
 
+        public List<tblCommanditaire> ToutCommenditaire()
+        {
+            try
+            {
+                return db.tblCommanditaire.Where(c => c.dateSupprime == null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblCommanditaire>();
+        }
+
         public List<tblAppelOffre> ToutAppleOffre()
         {
             try
@@ -531,6 +544,33 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
             return new List<tblAppelOffre>();
+        }
+        public List<tblCommanditaire> CommenEvent(int ? no)
+        {
+            if(no!=null)
+            {
+                try
+                {
+                    return (from c in db.tblCommanditaire
+                            join d in db.tblDon
+                            on c.noCommanditaire equals d.noCommanditaire
+                            join se in db.tblSousEvenement
+                            on d.noSousEvenement equals se.noSousEvenement
+                            where c.dateSupprime == null
+                            where se.dateSupprime == null
+                            where d.dateSupprime == null
+                            where se.tblEvenement.dateSupprime == null
+                            where se.tblEvenement.noEvenement == no
+                            select c).ToList();
+                }
+                catch (Exception e)
+                {
+                    LayoutController.erreur = e;
+                }
+            }
+
+
+            return new List<tblCommanditaire>();
         }
 
 
@@ -546,6 +586,18 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
             return new List<tblEvenement>();
+        }
+        public List<tblDon> ToutDon()
+        {
+            try
+            {
+                //return db.tblDon.Where(d => d.dateSupprime == null && d.tblCommanditaire.dateSupprime==null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblDon>();
         }
 
 

@@ -197,8 +197,7 @@
         <RepeatRowHeaders>true</RepeatRowHeaders>
         <DataSetName>DataSet1</DataSetName>
         <Top>1.68479cm</Top>
-        <Left>0cm</Left>
-        <Height>4.70641cm</Height>
+        <Height>4.7064cm</Height>
         <Width>17.59cm</Width>
         <Style>
           <Border>
@@ -238,7 +237,6 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Left>0cm</Left>
         <Height>1.68479cm</Height>
         <Width>17.59cm</Width>
         <ZIndex>1</ZIndex>
@@ -264,7 +262,7 @@
   <Width>17.59cm</Width>
   <Page>
     <PageFooter>
-      <Height>0.6cm</Height>
+      <Height>0.60001cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -285,6 +283,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0.00001cm</Top>
           <Left>15.09cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
@@ -317,7 +316,6 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Left>0cm</Left>
           <Height>0.6cm</Height>
           <Width>9.69667cm</Width>
           <ZIndex>1</ZIndex>

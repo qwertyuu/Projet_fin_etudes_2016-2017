@@ -18,14 +18,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="nom">
+                    <Textbox Name="nomCommanditaire">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!nom.Value</Value>
+                              <Value>=Fields!nomCommanditaire.Value</Value>
                               <Style>
                                 <FontFamily>Comic Sans MS</FontFamily>
                               </Style>
@@ -36,7 +36,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>nom</rd:DefaultName>
+                      <rd:DefaultName>nomCommanditaire</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -55,14 +55,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="description">
+                    <Textbox Name="textePresentation">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!description.Value</Value>
+                              <Value>=Fields!textePresentation.Value</Value>
                               <Style>
                                 <FontFamily>Comic Sans MS</FontFamily>
                               </Style>
@@ -73,7 +73,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>description</rd:DefaultName>
+                      <rd:DefaultName>textePresentation</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -107,7 +107,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
+        <DataSetName>DataSet3</DataSetName>
         <Height>1.16727cm</Height>
         <Width>14.29834cm</Width>
         <Style>
@@ -144,31 +144,47 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DataSet3">
       <Query>
         <DataSourceName>PE2_OfficielDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="noSousEvenement">
-          <DataField>noSousEvenement</DataField>
+        <Field Name="noCommanditaire">
+          <DataField>noCommanditaire</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="nom">
-          <DataField>nom</DataField>
+        <Field Name="nomCommanditaire">
+          <DataField>nomCommanditaire</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="description">
-          <DataField>description</DataField>
+        <Field Name="nomContact">
+          <DataField>nomContact</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="noEvenement">
-          <DataField>noEvenement</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="logo">
+          <DataField>logo</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
         </Field>
-        <Field Name="noSalle">
-          <DataField>noSalle</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="url">
+          <DataField>url</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="textePresentation">
+          <DataField>textePresentation</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="courrielContact">
+          <DataField>courrielContact</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="numTel">
+          <DataField>numTel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="extension">
+          <DataField>extension</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="dateSupprime">
           <DataField>dateSupprime</DataField>
@@ -177,11 +193,59 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>PE2_OfficielDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\utilisateur.INFO-324-1A-115\Documents\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\PE2_OfficielDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>tblSousEvenement</rd:TableName>
+        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\Rapport\DataSet\PE2_OfficielDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>tblCommanditaire</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>tblSousEvenementTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>tblCommanditaireTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>PE2_OfficielDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="noEvenement">
+          <DataField>noEvenement</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="nom">
+          <DataField>nom</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dateDebut">
+          <DataField>dateDebut</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="datefin">
+          <DataField>datefin</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="affiche">
+          <DataField>affiche</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="url">
+          <DataField>url</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="description">
+          <DataField>description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dateSupprime">
+          <DataField>dateSupprime</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>PE2_OfficielDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\Rapport\DataSet\PE2_OfficielDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>tblEvenement</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>tblEvenementTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
