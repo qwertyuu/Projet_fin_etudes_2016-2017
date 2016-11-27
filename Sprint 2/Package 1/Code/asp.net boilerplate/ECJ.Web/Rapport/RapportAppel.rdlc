@@ -1432,7 +1432,7 @@
                   <Value>Rapport des appels d'offre</Value>
                   <Style>
                     <FontFamily>times New Roman</FontFamily>
-                    <FontSize>14pt</FontSize>
+                    <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -1447,7 +1447,7 @@
                   <Value>Festi-Rire 2018</Value>
                   <Style>
                     <FontFamily>times New Roman</FontFamily>
-                    <FontSize>14pt</FontSize>
+                    <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -1462,7 +1462,7 @@
                   <Value>Spectacle 2018</Value>
                   <Style>
                     <FontFamily>times New Roman</FontFamily>
-                    <FontSize>14pt</FontSize>
+                    <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -1548,7 +1548,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>="Rapport Commenditaire/Kevin Kuété Moffo"</Value>
+                  <Value>="Rapport des appels d'offre / Kevin Kuété Moffo"</Value>
                   <Style>
                     <FontFamily>times New Roman</FontFamily>
                   </Style>
