@@ -840,6 +840,7 @@
     <EmbeddedResource Include="Rapport\Report1.rdlc" />
     <EmbeddedResource Include="Rapport\Report2.rdlc" />
     <EmbeddedResource Include="Rapport\RapportAppel.rdlc" />
+    <EmbeddedResource Include="Rapport\ReportCalculateur.rdlc" />
     <EmbeddedResource Include="Rapport\ReportComendite_Event.rdlc" />
     <EmbeddedResource Include="Rapport\ReportCommenditaire.rdlc" />
     <EmbeddedResource Include="Rapport\ReportDon.rdlc" />
