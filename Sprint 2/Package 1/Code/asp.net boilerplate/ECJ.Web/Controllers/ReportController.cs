@@ -67,20 +67,34 @@ namespace ECJ.Web.Controllers
             var d = (db.ToutSousEvenement().Where(sse => sse.noEvenement == int.Parse(e.Parameters.First(param => param.Name == "noEvenement").Values[0])));
             ReportDataSource datasource2 = new ReportDataSource("DataSet1", d);
             e.DataSources.Add(datasource2);
-        }
-
-        private void U_SubreportComDon(object sender, SubreportProcessingEventArgs e)
-        {
-            var don = (db.ToutDon().Where(d => d.noCommanditaire == int.Parse(e.Parameters.First(param => param.Name == "noCom").Values[0])));
-            ReportDataSource datasource2 = new ReportDataSource("DataSetDon", don);
-            e.DataSources.Add(datasource2);
-        }   
+        } 
 
         private void U_SubreportComEvent(object sender, SubreportProcessingEventArgs e)
         {
-            var com=db.CommenEvent(int.Parse(e.Parameters.First(param => param.Name == "noCom").Values[0]));
-            ReportDataSource datasource2 = new ReportDataSource("DataSetCom", com);
-            e.DataSources.Add(datasource2);
+
+            if(e.ReportPath=="ReportCommenditaire")
+            {
+                var com = db.CommenEvent(int.Parse(e.Parameters.First(param => param.Name == "noEvenement").Values[0])).Select(a => 
+                new
+                {
+                    nomCommanditaire = a.nomCommanditaire,
+                    textePresentation = a.textePresentation
+                }).ToList();
+                ReportDataSource datasource2 = new ReportDataSource("DataSetCom", com);
+                e.DataSources.Add(datasource2);
+            }
+            else
+            {
+                if(e.ReportPath == "ReportDon")
+                {
+                    var don = (db.ToutDon().Where(d => d.noCommanditaire == int.Parse(e.Parameters.First(param => param.Name == "noCom").Values[0]))).Select(a =>
+                    new { dateDon = a.dateDon,
+                    montant = a.montant}).ToList();
+                    ReportDataSource datasource2 = new ReportDataSource("DataSetDon", don);
+                    e.DataSources.Add(datasource2);
+                }
+            }
+
         }
 
         //Rapport de l'appel d'offre
@@ -176,16 +190,22 @@ namespace ECJ.Web.Controllers
                                       c.textePresentation
                                   }).ToList();
 
+            var reportQueryDon = db.ToutDon().Select(d => new
+            {
+                montant = d.montant,
+                noCommanditaire = d.noCommanditaire
+            }).ToList();
 
             LocalReport u = new LocalReport();
             u.ReportPath = "Rapport/ReportComendite_Event.rdlc";
             u.DataSources.Clear();
             ReportDataSource datasourceComSous = new ReportDataSource("DataSetEvent", reportQuery);
             ReportDataSource datasourceComDon = new ReportDataSource("DataSetCommenditaire", reportQueryCom);
+            var dsDons = new ReportDataSource("DataSetDon", reportQueryDon);
             u.DataSources.Add(datasourceComSous);
-            u.SubreportProcessing += U_SubreportComEvent;
             u.DataSources.Add(datasourceComDon);
-            u.SubreportProcessing += U_SubreportComDon;
+            u.DataSources.Add(dsDons);
+            u.SubreportProcessing += U_SubreportComEvent;
             //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());
             //u.SetParameters(new[] { p });
 
