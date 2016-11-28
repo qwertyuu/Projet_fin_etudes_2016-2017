@@ -591,7 +591,7 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                //return db.tblDon.Where(d => d.dateSupprime == null && d.tblCommanditaire.dateSupprime==null).ToList();
+                return db.tblDon.Where(d => d.dateSupprime == null && d.tblCommanditaire.dateSupprime==null).ToList();
             }
             catch (Exception e)
             {

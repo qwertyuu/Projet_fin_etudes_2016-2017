@@ -71,9 +71,15 @@ namespace ECJ.Web.Controllers
 
         private void U_SubreportComDon(object sender, SubreportProcessingEventArgs e)
         {
-
-            var don = db.ToutDon().Where(d => d.noCommanditaire == (int.Parse(e.Parameters.First(param => param.Name == "noEvenement").Values[0])));
+            var don = (db.ToutDon().Where(d => d.noCommanditaire == int.Parse(e.Parameters.First(param => param.Name == "noCom").Values[0])));
             ReportDataSource datasource2 = new ReportDataSource("DataSetDon", don);
+            e.DataSources.Add(datasource2);
+        }   
+
+        private void U_SubreportComEvent(object sender, SubreportProcessingEventArgs e)
+        {
+            var com=db.CommenEvent(int.Parse(e.Parameters.First(param => param.Name == "noCom").Values[0]));
+            ReportDataSource datasource2 = new ReportDataSource("DataSetCom", com);
             e.DataSources.Add(datasource2);
         }
 
@@ -151,7 +157,6 @@ namespace ECJ.Web.Controllers
         //Rapport Commenditaire
         public ActionResult RapportCommenditaire()
         {
-
             var reportQuery = (from k in db.ToutEvenement()
                                select new
                                {
@@ -166,6 +171,7 @@ namespace ECJ.Web.Controllers
             var reportQueryCom = (from c in db.ToutCommenditaire()
                                   select new
                                   {
+                                      c.nomCommanditaire,
                                       c.noCommanditaire,
                                       c.textePresentation
                                   }).ToList();
@@ -177,6 +183,7 @@ namespace ECJ.Web.Controllers
             ReportDataSource datasourceComSous = new ReportDataSource("DataSetEvent", reportQuery);
             ReportDataSource datasourceComDon = new ReportDataSource("DataSetCommenditaire", reportQueryCom);
             u.DataSources.Add(datasourceComSous);
+            u.SubreportProcessing += U_SubreportComEvent;
             u.DataSources.Add(datasourceComDon);
             u.SubreportProcessing += U_SubreportComDon;
             //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());

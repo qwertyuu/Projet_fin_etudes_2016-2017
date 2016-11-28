@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.29167cm</Width>
+              <Width>3.03781cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>14.29833cm</Width>
+              <Width>14.04447cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -69,7 +69,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Commenditaire</Value>
+                              <Value>Commanditaire</Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                               </Style>
@@ -205,7 +205,7 @@
         <DataSetName>DataSetEvent</DataSetName>
         <Top>0.14111cm</Top>
         <Height>4.7064cm</Height>
-        <Width>17.59cm</Width>
+        <Width>17.08227cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -219,7 +219,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Commenditaires</Value>
+                <Value>Commanditaires</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -236,7 +236,7 @@
         <Top>5.12975cm</Top>
         <Left>0.33271cm</Left>
         <Height>0.6cm</Height>
-        <Width>16.17469cm</Width>
+        <Width>15.99968cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border />
@@ -250,10 +250,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>8.62864cm</Width>
+              <Width>8.54114cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.62864cm</Width>
+              <Width>8.54114cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -367,7 +367,7 @@
                 <TablixCell>
                   <CellContents>
                     <Subreport Name="Subreport3">
-                      <ReportName>RaportDon</ReportName>
+                      <ReportName>ReportDon</ReportName>
                       <Parameters>
                         <Parameter Name="noCom">
                           <Value>=Fields!noCommanditaire.Value</Value>
@@ -404,7 +404,7 @@
         <DataSetName>DataSetCommenditaire</DataSetName>
         <Top>5.83558cm</Top>
         <Height>3.58438cm</Height>
-        <Width>17.25728cm</Width>
+        <Width>17.08227cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -413,10 +413,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>16.1887cm</Height>
+    <Height>9.60057cm</Height>
     <Style />
   </Body>
-  <Width>23.84177cm</Width>
+  <Width>17.08227cm</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -430,7 +430,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Rapport des Commenditaires</Value>
+                  <Value>Rapport des Commanditaires</Value>
                   <Style>
                     <FontFamily>times New Roman</FontFamily>
                     <FontSize>14pt</FontSize>
@@ -475,7 +475,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
           <Top>0.29545cm</Top>
-          <Left>5.33271cm</Left>
+          <Left>4.22278cm</Left>
           <Height>1.9491cm</Height>
           <Width>9.5809cm</Width>
           <Style>
@@ -519,7 +519,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
           <Top>0.29545cm</Top>
-          <Left>15.09cm</Left>
+          <Left>13.87424cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>2</ZIndex>
@@ -672,7 +672,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>PE2_OfficielDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\Rapport\DataSet\PE2_OfficielDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\Rapport\DataSet\PE2_OfficielDataSet.xsd</rd:SchemaPath>
         <rd:TableName>tblEvenement</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

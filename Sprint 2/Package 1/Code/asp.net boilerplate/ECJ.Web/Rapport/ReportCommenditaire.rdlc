@@ -27,7 +27,7 @@
                             <TextRun>
                               <Value>=Fields!nomCommanditaire.Value</Value>
                               <Style>
-                                <FontFamily>Comic Sans MS</FontFamily>
+                                <FontFamily>times New Roman</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -64,7 +64,7 @@
                             <TextRun>
                               <Value>=Fields!textePresentation.Value</Value>
                               <Style>
-                                <FontFamily>Comic Sans MS</FontFamily>
+                                <FontFamily>times New Roman</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -107,7 +107,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet3</DataSetName>
+        <DataSetName>DataSetCom</DataSetName>
         <Height>1.16727cm</Height>
         <Width>14.29834cm</Width>
         <Style>
@@ -144,7 +144,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet3">
+    <DataSet Name="DataSetCom">
       <Query>
         <DataSourceName>PE2_OfficielDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -193,7 +193,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>PE2_OfficielDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\Rapport\DataSet\PE2_OfficielDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\Rapport\DataSet\PE2_OfficielDataSet.xsd</rd:SchemaPath>
         <rd:TableName>tblCommanditaire</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

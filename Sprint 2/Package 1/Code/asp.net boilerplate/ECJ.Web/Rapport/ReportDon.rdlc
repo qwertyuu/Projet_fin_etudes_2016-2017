@@ -27,7 +27,7 @@
                             <TextRun>
                               <Value>=Fields!dateDon.Value</Value>
                               <Style>
-                                <FontFamily>Comic Sans MS</FontFamily>
+                                <FontFamily>Times New Roman</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -234,17 +234,9 @@
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="noEvenement">
+    <ReportParameter Name="noCom">
       <DataType>String</DataType>
-      <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>DataSet1</DataSetName>
-          <ValueField>noEvenement</ValueField>
-          <LabelField>noEvenement</LabelField>
-        </DataSetReference>
-      </ValidValues>
     </ReportParameter>
   </ReportParameters>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
