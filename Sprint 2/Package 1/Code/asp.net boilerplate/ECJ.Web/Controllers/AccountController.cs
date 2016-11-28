@@ -70,30 +70,17 @@ namespace ECJ.Web.Controllers
             // BotDetect requests must not be routed
             routes.IgnoreRoute("{*botdetect}", new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
         }
-
-        [HttpPost]
-        [AllowAnonymous]
-        [CaptchaValidation("CaptchaCode", "ExampleCaptcha", "Incorrect CAPTCHA code!")]
-        public ActionResult Captcha()
+        public ActionResult captcha()
         {
-
-
-            if (!ModelState.IsValid)
-            {
-                // TODO: Captcha validation failed, show error message
-            }
-            else
-            {
-                // TODO: Captcha validation passed, proceed with protected action
-            }
             return View();
         }
 
-        public ActionResult captcha(int?id)
+        [HttpPost]
+        public ActionResult captcha(bool captchaValid)
         {
-            string CaptchaText = "TEST";
-
-            Captcha c = new Captcha(CaptchaText);
+            if (ModelState.IsValid)
+            {
+            }
             return View();
         }
 
