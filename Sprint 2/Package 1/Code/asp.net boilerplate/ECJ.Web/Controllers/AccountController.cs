@@ -63,30 +63,13 @@ namespace ECJ.Web.Controllers
             _multiTenancyConfig = multiTenancyConfig;
         }
 
-        public static void RegisterRoutes(RouteCollection routes)
-        {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-            // BotDetect requests must not be routed
-            routes.IgnoreRoute("{*botdetect}", new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
-        }
         public ActionResult captcha()
         {
             return View();
         }
 
-        [HttpPost]
-        public ActionResult captcha(bool captchaValid)
-        {
-            if (ModelState.IsValid)
-            {
-            }
-            return View();
-        }
-
         public ActionResult CreateSetting()
         {
-            ViewBag.noSousEvenement = new SelectList(db.tblSousEvenement, "noSousEvenement", "nom");
             return View();
         }
 
