@@ -193,7 +193,7 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
         }
-        
+
         public List<tblMemo> MemosUtilisateur(long userId)
         {
             try
@@ -545,9 +545,9 @@ namespace ECJ.Web.Controllers
             }
             return new List<tblAppelOffre>();
         }
-        public List<tblCommanditaire> CommenEvent(int ? no)
+        public List<tblCommanditaire> CommenEvent(int? no)
         {
-            if(no!=null)
+            if (no != null)
             {
                 try
                 {
@@ -1033,7 +1033,7 @@ namespace ECJ.Web.Controllers
             }
             return new tblSalle();
         }
-        public tblCalculateur ReturnCalculateur(int id)
+        public tblCalculateur ReturnCalculateur(int? id)
         {
             try
             {
@@ -1267,7 +1267,30 @@ namespace ECJ.Web.Controllers
             }
             return new List<vueSomAppelOffre>();
         }
+        public List<tblCalculateur> ReturnListCalculateur()
+        {
+            try
+            {
+                return db.tblCalculateur.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblCalculateur>();
+        }
+        public List<tblSalle> ReturnListSalle()
+        {
+            try
+            {
+                return db.tblSalle.ToList();
+            }
+
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblSalle>();
+        }
     }
-
-
 }

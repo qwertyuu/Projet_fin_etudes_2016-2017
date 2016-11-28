@@ -205,15 +205,67 @@ namespace ECJ.Web.Controllers
             Response.AppendHeader("Content-Disposition", cd.ToString());
             return File(bytes, "application/pdf");
         }
-        public ActionResult RapportCalculateur(int id)
+        public ActionResult RapportCalculateur()
         {
-            var reportQueryCalculateur = db.ReturnCalculateur(id);
+            var reportQueryCalculateur = (from s in db.ReturnListCalculateur().Where(c => c.noSousEvenement == 5)
+                                    select new
+                                    {
+                                        s.noSousEvenement,
+                                        s.billet,
+                                        s.billetVIP,
+                                        s.prixBillet,
+                                        s.prixBilletVIP,
+                                        s.souperSpectacle,
+                                        s.prixSouper,
+                                        s.jeunePourcent,
+                                        s.adultePourcent,
+                                        s.ainePourcent,
+                                        s.jeuneRatio,
+                                        s.adulteRatio,
+                                        s.aineRatio,
+                                        s.promo,
+                                        s.prevente,
+                                        s.customBillet1,
+                                        s.customBillet2,
+                                        s.customPrix1,
+                                        s.customPrix2,
+                                        s.customNom1,
+                                        s.customNom2,
+                                    }).ToList();
+
+            var reportQuerySSEvent = (from s in db.ToutSousEvenement().Where(sse => sse.noSousEvenement == 5)
+                                      select new
+                                      {
+                                          s.noSousEvenement,
+                                          s.nom,
+                                          s.description,
+                                          s.noEvenement,
+                                          s.noSalle
+                                      }).ToList();
+
+            var reportQuerySalle = (from s in db.ReturnListSalle().Where(a => a.noSalle == 1)
+                                    select new
+                                    {
+                                        s.noSalle,
+                                         s.nomSalle,
+                                         s.prix,
+                                         s.billet,
+                                         s.billetVIP,
+                                         s.photoSalle,
+                                         s.dateSupprime,
+                                         s.urlGoogleMap
+                                    }).ToList();
+
 
             LocalReport u = new LocalReport();
             u.ReportPath = "Rapport/ReportCalculateur.rdlc";
             u.DataSources.Clear();
-            ReportDataSource datasourceCalcul = new ReportDataSource("DataSetSoumission", reportQueryCalculateur);
+            ReportDataSource datasourceCalcul = new ReportDataSource("DataSetCalculateur", reportQueryCalculateur);
+            ReportDataSource datasourceSSEvent = new ReportDataSource("DataSetSousEvent", reportQuerySSEvent);
+            ReportDataSource datasourceSalle = new ReportDataSource("DataSetSalle", reportQuerySalle);
             u.DataSources.Add(datasourceCalcul);
+            u.DataSources.Add(datasourceSSEvent);
+            u.DataSources.Add(datasourceSalle);
 
             //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());
             //u.SetParameters(new[] { p });
@@ -221,7 +273,7 @@ namespace ECJ.Web.Controllers
             var cd = new System.Net.Mime.ContentDisposition
             {
                 // for example foo.bak
-                FileName = "Rapport_AppelOffre.pdf",
+                FileName = "Rapport_Calculateur.pdf",
 
                 // always prompt the user for downloading, set to true if you want 
                 // the browser to try to show the file inline
