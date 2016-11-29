@@ -844,6 +844,7 @@
     <EmbeddedResource Include="Rapport\ReportComendite_Event.rdlc" />
     <EmbeddedResource Include="Rapport\ReportCommenditaire.rdlc" />
     <EmbeddedResource Include="Rapport\ReportDon.rdlc" />
+    <EmbeddedResource Include="Rapport\ReportSecurite.rdlc" />
     <EmbeddedResource Include="Rapport\ReportStatut.rdlc" />
   </ItemGroup>
   <PropertyGroup>
