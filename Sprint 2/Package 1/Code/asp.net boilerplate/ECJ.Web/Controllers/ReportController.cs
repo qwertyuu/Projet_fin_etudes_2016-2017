@@ -98,20 +98,23 @@ namespace ECJ.Web.Controllers
         }
 
         //Rapport de l'appel d'offre
-        public ActionResult RapportAppelOffre()
+        public ActionResult RapportAppelOffre(int? Id)
         {
+
             var reportQueryAppel = (from a in db.ToutAppleOffre()
                                     select new
                                     {
+                                        a.noAppelOffre,
                                         a.nom,
                                         a.dateEnvoi,
                                         a.dateRequis,
                                         a.description,
                                         a.noMedia,
-                                        a.noStatut
-                                    }).ToList();
+                                        a.noStatut,
+                                        a.noEvenement
+                                    }).Where(ap => ap.noAppelOffre == Id);
 
-            var reportQuerySoumi = (from s in db.RetunSoumission(null)
+            var reportQuerySoumi = (from s in db.RetunSoumission(Id)
                                     select new
                                     {
                                         s.prix,
@@ -121,7 +124,7 @@ namespace ECJ.Web.Controllers
                                         s.noAppelOffre
                                     }).ToList();
 
-            var reportQuerySoumiAgen = (from s in db.RetunSoumission(null)
+            var reportQuerySoumiAgen = (from s in reportQuerySoumi
                                         select new
                                         {
                                             s.prix,
@@ -149,6 +152,20 @@ namespace ECJ.Web.Controllers
                                     ag.nom,
                                 }).ToList();
 
+            var reportEvent = (from e in db.ToutEvenement()
+                                select new
+                                {
+                                    e.noEvenement,
+                                    e.nom,
+                                    SousEvent=e.tblSousEvenement.Select(se => se.nom).FirstOrDefault(),
+                                    noAppelOffre = e.tblAppelOffre.Select(a => a.noAppelOffre).FirstOrDefault()
+                                }).Where(ev=>ev.noAppelOffre==Id).ToList();
+
+            var reportSousEvent= (from se in reportEvent
+                                select new
+                                {
+                                 nom= se.SousEvent
+                                }).ToList();
 
             LocalReport u = new LocalReport();
             u.ReportPath = "Rapport/RapportAppel.rdlc";
@@ -159,6 +176,9 @@ namespace ECJ.Web.Controllers
             ReportDataSource datasourceMedia = new ReportDataSource("DataSetMedia", reportQueryAppel);
             var dataSourceStatut= new ReportDataSource("DataSetStatut", reportStatut);
             var dataSourceAgence = new ReportDataSource("DataSetAgence", reportAgence);
+            var dataSourceEvent = new ReportDataSource("DataSetEvent", reportEvent);
+            var dataSourceSousEvent = new ReportDataSource("DataSetSousEvent", reportSousEvent);
+
             u.DataSources.Add(datasourceAppel);
             // u.SubreportProcessing += U_SubreportSatut;
             u.DataSources.Add(datasourceSoumi);
@@ -166,6 +186,10 @@ namespace ECJ.Web.Controllers
             u.DataSources.Add(datasourceMedia);
             u.DataSources.Add(dataSourceStatut);
             u.DataSources.Add(dataSourceAgence);
+            u.DataSources.Add(dataSourceEvent);
+            u.DataSources.Add(dataSourceSousEvent);
+
+
 
 
             //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());

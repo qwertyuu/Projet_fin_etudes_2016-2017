@@ -4,15 +4,16 @@
     ViewBag.Title = "ViewCalculateur";
 }
 <h2>Calculateur</h2>
+<a href="~/Report/RapportCalculateur" target="_blank" class="btn btn-primary pull-right" title="Générer le rapport"><i class="fa fa-file-pdf-o"></i> Générer Rapport</a><br />
+<br /><br />
 
 @section scripts
 {
     @Html.IncludeScript("~/Views/Calculateur/Index.js")
     @Html.IncludeStyle("~/Views/Calculateur/Index.css") @*Il reste a enlever le curseur par dessus les champs readonly*@
 }
-<div>
-    <a href="~/Report/RapportCalculateur" class="btn btn-primary pull-right" title="Générer le rapport"><i class="fa fa-file-pdf-o"></i> Générer Rapport</a><br />
-</div><br /><br />
+
+
 <div class="row">
     <form class="form-horizontal">
         <div class="col-md-6" id="calculateur">
