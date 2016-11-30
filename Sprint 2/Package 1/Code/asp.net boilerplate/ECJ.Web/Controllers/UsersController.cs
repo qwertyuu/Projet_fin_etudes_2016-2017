@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using Nito.AsyncEx.Synchronous;
+using System.Web.Security;
 
 namespace ECJ.Web.Controllers
 {
@@ -17,9 +18,12 @@ namespace ECJ.Web.Controllers
     {
         DBProvider db;
         private UserStore us;
-        public UsersController()
+        private readonly UserManager _userManager;
+        public UsersController(UserManager userManager)
         {
             //us = new UserStore();
+
+            _userManager = userManager;
             db = new DBProvider();
             GetPermissions();
         }
@@ -78,7 +82,9 @@ namespace ECJ.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var elementAModifier = db.ReturnUtilisateur((int)id);
+            var tache = _userManager.GetUserByIdAsync((long)1);
+            
+            var elementAModifier = tache.Result;
             if (elementAModifier == null)
             {
                 return HttpNotFound();
@@ -123,18 +129,29 @@ namespace ECJ.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Modifier([Bind(Include = "Id,UserName,Name,Surname,EmailAddress,IsActive")] ECJ.Web.Models.AbpUsers AbpUser, int Role)
+        public ActionResult Modifier([Bind(Include = "Id,UserName,Name,Surname,EmailAddress,IsActive")] ECJ.Users.User AbpUser, int Role)
         {
             if (ModelState.IsValid)
             {
                 string PasswordChange = Request.Form["PasswordChange"];
-                if(!string.IsNullOrWhiteSpace(PasswordChange))
+                var ancienUser = db.ReturnUtilisateur(AbpUser.Id);
+                if (!string.IsNullOrWhiteSpace(PasswordChange))
                 {
                     AbpUser.Password = new PasswordHasher().HashPassword(PasswordChange);
                 }
-                db.UpdateUser(AbpUser);
-                db.UpdateRole(AbpUser, Role);
-
+                else
+                {
+                    AbpUser.Password = ancienUser.Password;
+                }
+                AbpUser.TenantId = 1;
+                AbpUser.CreationTime = ancienUser.CreationTime;
+                //AbpUser.AbpPermissions = ancienUser.AbpPermissions;
+                AbpUser.Roles = new List<Abp.Authorization.Users.UserRole>() { new Abp.Authorization.Users.UserRole(null, AbpUser.Id, Role) };
+                _userManager.UpdateAsync(AbpUser);
+                //db.UpdateUser(AbpUser);
+                //db.UpdateRole(AbpUser, Role);
+                _userManager.UpdateAsync(AbpUser);
+                Session.Clear();
 
             }
             return RedirectToAction("Index");

@@ -169,7 +169,7 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
         }
-        internal AbpUsers ReturnUtilisateur(int id)
+        internal AbpUsers ReturnUtilisateur(long id)
         {
             try
             {
@@ -319,11 +319,25 @@ namespace ECJ.Web.Controllers
             try
             {
                 var u = db.AbpUsers.Find(abpUser.Id);
-                if (!u.AbpUserRoles.Any(UR => UR.RoleId == role))
+
+                if (!u.AbpUserRoles.Any(UR => UR.RoleId == role) && role != 0)
                 {
-                    u.AbpUserRoles = new List<AbpUserRoles>() { new AbpUserRoles() { UserId = abpUser.Id, RoleId = role, CreationTime = DateTime.Now, TenantId = 1 } };
-                    db.SaveChanges();
+                    for (int i = 0; i < u.AbpUserRoles.Count; i++)
+                    {
+                        db.Entry(u.AbpUserRoles.ElementAt(i)).State = EntityState.Deleted;
+                    }
+                    u.AbpUserRoles.Clear();
+                    u.AbpUserRoles.Add(new AbpUserRoles() { UserId = abpUser.Id, RoleId = role, CreationTime = DateTime.Now, TenantId = 1 });
                 }
+                else if(role == 0)
+                {
+                    for (int i = 0; i < u.AbpUserRoles.Count; i++)
+                    {
+                        db.Entry(u.AbpUserRoles.ElementAt(i)).State = EntityState.Deleted;
+                    }
+                    u.AbpUserRoles.Clear();
+                }
+                db.SaveChanges();
             }
             catch (Exception e)
             {
