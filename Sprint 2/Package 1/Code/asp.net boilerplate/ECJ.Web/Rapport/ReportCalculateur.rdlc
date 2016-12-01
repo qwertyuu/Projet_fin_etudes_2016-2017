@@ -9,13 +9,13 @@
               <Width>3.82292cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.16146cm</Width>
+              <Width>4.5129cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.60583cm</Width>
+              <Width>3.36996cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.00271cm</Width>
+              <Width>5.35313cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -429,10 +429,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>1.71098cm</Top>
-        <Left>0.04611cm</Left>
+        <Top>2.32834cm</Top>
+        <Left>0.12547cm</Left>
         <Height>1.64124cm</Height>
-        <Width>12.59292cm</Width>
+        <Width>17.05891cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -443,13 +443,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.78444cm</Width>
+              <Width>5.96533cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.78177cm</Width>
+              <Width>4.96266cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.95002cm</Width>
+              <Width>6.13091cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -667,9 +667,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetSalle</DataSetName>
         <Top>0.58208cm</Top>
-        <Left>0.04611cm</Left>
+        <Left>0.03926cm</Left>
         <Height>1.05834cm</Height>
-        <Width>13.51623cm</Width>
+        <Width>17.05891cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -709,12 +709,17 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
+                  <ChartItemInLegend>
+                    <LegendText>% de Jeunes</LegendText>
+                  </ChartItemInLegend>
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Shape</Type>
@@ -749,6 +754,9 @@
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
+                  <ChartItemInLegend>
+                    <LegendText>% d'adultes</LegendText>
+                  </ChartItemInLegend>
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Shape</Type>
@@ -783,6 +791,9 @@
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
+                  <ChartItemInLegend>
+                    <LegendText>% d'ainés</LegendText>
+                  </ChartItemInLegend>
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Shape</Type>
@@ -1011,10 +1022,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>4.28329cm</Top>
-        <Left>0.0794cm</Left>
-        <Height>3.73cm</Height>
-        <Width>7.68521cm</Width>
+        <Top>4.90065cm</Top>
+        <Left>0.07938cm</Left>
+        <Height>5.30482cm</Height>
+        <Width>8.98272cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -1029,15 +1040,15 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.79576cm</Width>
+              <Width>3.87389cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.55764cm</Width>
+              <Width>3.63577cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.80698cm</Height>
+              <Height>1.21803cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1102,7 +1113,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.35501cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1143,8 +1154,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!jeunePourcent.Value</Value>
-                              <Style />
+                              <Value>=(Fields!jeunePourcent.Value)/100</Value>
+                              <Style>
+                                <Format>0%</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1167,7 +1180,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.35501cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1208,8 +1221,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!adultePourcent.Value</Value>
-                              <Style />
+                              <Value>=(Fields!adultePourcent.Value)/100</Value>
+                              <Style>
+                                <Format>0%</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1232,7 +1247,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.62177cm</Height>
+              <Height>1.37678cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1273,8 +1288,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ainePourcent.Value</Value>
-                              <Style />
+                              <Value>=(Fields!ainePourcent.Value)/100</Value>
+                              <Style>
+                                <Format>0%</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1320,10 +1337,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>4.28329cm</Top>
-        <Left>8.20894cm</Left>
-        <Height>2.62875cm</Height>
-        <Width>5.3534cm</Width>
+        <Top>4.90065cm</Top>
+        <Left>9.67472cm</Left>
+        <Height>5.30482cm</Height>
+        <Width>7.50966cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -1349,10 +1366,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox47</rd:DefaultName>
-        <Top>3.54218cm</Top>
-        <Left>0.0794cm</Left>
+        <Top>4.15954cm</Top>
+        <Left>0.15876cm</Left>
         <Height>0.6cm</Height>
-        <Width>6.33394cm</Width>
+        <Width>6.9954cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -1382,8 +1399,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox48</rd:DefaultName>
-        <Top>8.22936cm</Top>
-        <Left>0.07938cm</Left>
+        <Top>10.38186cm</Top>
+        <Left>0.07936cm</Left>
         <Height>0.6cm</Height>
         <Width>3.0096cm</Width>
         <ZIndex>5</ZIndex>
@@ -1401,13 +1418,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.855cm</Width>
+              <Width>5.21171cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.855cm</Width>
+              <Width>6.11226cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.855cm</Width>
+              <Width>5.86042cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1772,8 +1789,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!customPrix1.Value</Value>
-                              <Style />
+                              <Value>=(Fields!customPrix1.Value)/100</Value>
+                              <Style>
+                                <Format>0%</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1867,8 +1886,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!customPrix2.Value</Value>
-                              <Style />
+                              <Value>=(Fields!customPrix2.Value)/100</Value>
+                              <Style>
+                                <Format>0%</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1916,10 +1937,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>8.82936cm</Top>
-        <Left>0.00002cm</Left>
+        <Top>10.98186cm</Top>
         <Height>3.12291cm</Height>
-        <Width>14.565cm</Width>
+        <Width>17.18438cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -1931,13 +1951,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.83736cm</Width>
+              <Width>5.11328cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.83736cm</Width>
+              <Width>6.09602cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.83736cm</Width>
+              <Width>5.8957cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -2109,7 +2129,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!prixSouper.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0.00'$';(0.00'$')</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2125,6 +2147,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -2151,10 +2174,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>12.97532cm</Top>
-        <Left>0.00002cm</Left>
+        <Top>15.12782cm</Top>
         <Height>1.32292cm</Height>
-        <Width>14.51208cm</Width>
+        <Width>17.105cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -2175,7 +2197,7 @@
               <Width>4.82854cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.54cm</Width>
+              <Width>2.61938cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -2191,7 +2213,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nom de la catégorie</Value>
+                              <Value>Nom de la catjégorie</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2372,37 +2394,13 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="billet1">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>billet1</rd:DefaultName>
+                    <Line Name="Line4">
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
                       </Style>
-                    </Textbox>
+                    </Line>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -2507,37 +2505,13 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="billet4">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>billet1</rd:DefaultName>
+                    <Line Name="Line5">
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
                       </Style>
-                    </Textbox>
+                    </Line>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -2609,6 +2583,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Line Name="Line1">
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+<<<<<<< 4b2578d6c296e846f6cb3e542c2f96d00c484f86
+                    </Textbox>
+=======
+                    </Line>
+>>>>>>> 87a65a9e352cc0a2bd9472cecf689390210b6389
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox82">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -2626,41 +2615,6 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox82</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="billet5">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>billet1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2745,37 +2699,13 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox85">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox85</rd:DefaultName>
+                    <Line Name="Line2">
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
                       </Style>
-                    </Textbox>
+                    </Line>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -2918,37 +2848,13 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="billet7">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>billet1</rd:DefaultName>
+                    <Line Name="Line6">
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
                       </Style>
-                    </Textbox>
+                    </Line>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -3021,34 +2927,13 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox25">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox25</rd:DefaultName>
+                    <Line Name="Line3">
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
-                    </Textbox>
+                    </Line>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -3290,10 +3175,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>15.20665cm</Top>
-        <Left>0.0794cm</Left>
+        <Top>20.3466cm</Top>
+        <Left>0.12547cm</Left>
         <Height>4.78126cm</Height>
-        <Width>17.02562cm</Width>
+        <Width>17.105cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -3319,7 +3204,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox76</rd:DefaultName>
-        <Top>14.43936cm</Top>
+        <Top>19.57931cm</Top>
+        <Left>0.04607cm</Left>
         <Height>0.5909cm</Height>
         <Width>6.82393cm</Width>
         <ZIndex>9</ZIndex>
@@ -3351,8 +3237,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox77</rd:DefaultName>
-        <Top>12.28741cm</Top>
-        <Left>0.00002cm</Left>
+        <Top>14.43991cm</Top>
         <Height>0.61736cm</Height>
         <Width>4.67179cm</Width>
         <ZIndex>10</ZIndex>
@@ -3381,8 +3266,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>20.7993cm</Top>
-        <Left>1.78806cm</Left>
+        <Top>25.93925cm</Top>
+        <Left>1.83413cm</Left>
         <Height>0.6cm</Height>
         <Width>2.88375cm</Width>
         <ZIndex>11</ZIndex>
@@ -3411,8 +3296,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>20.7993cm</Top>
-        <Left>4.81292cm</Left>
+        <Top>25.93925cm</Top>
+        <Left>4.85899cm</Left>
         <Height>0.6cm</Height>
         <Width>4.74602cm</Width>
         <ZIndex>12</ZIndex>
@@ -3457,9 +3342,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox28</rd:DefaultName>
         <Top>0.03528cm</Top>
-        <Left>0.13232cm</Left>
+        <Left>0.12547cm</Left>
         <Height>0.47625cm</Height>
-        <Width>6.33394cm</Width>
+        <Width>7.02869cm</Width>
         <ZIndex>13</ZIndex>
         <ToolTip>=First(Fields!nomSalle.Value, "DataSetSalle")</ToolTip>
         <Style>
@@ -3472,11 +3357,48 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox19">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Nombre de billets produits</Value>
+                <Style>
+                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>0.68625in</Top>
+        <Left>0.08208in</Left>
+        <Height>0.23042in</Height>
+        <Width>2.73451in</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>8.8526in</Height>
+    <Height>12.39427in</Height>
     <Style />
   </Body>
+<<<<<<< 4b2578d6c296e846f6cb3e542c2f96d00c484f86
   <Width>6.79676in</Width>
+=======
+  <Width>6.78365in</Width>
+>>>>>>> 87a65a9e352cc0a2bd9472cecf689390210b6389
   <Page>
     <PageHeader>
       <Height>1.01042in</Height>
@@ -3488,7 +3410,7 @@
           <Value>logo_Home</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.47625cm</Top>
-          <Left>0.17841cm</Left>
+          <Left>0.30386cm</Left>
           <Height>1.68452cm</Height>
           <Width>3.74896cm</Width>
           <Style>
@@ -3550,9 +3472,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
           <Top>0.07937cm</Top>
-          <Left>4.10376cm</Left>
+          <Left>4.22921cm</Left>
           <Height>2.28424cm</Height>
-          <Width>8.34474cm</Width>
+          <Width>10.36015cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border />
@@ -3561,6 +3483,7 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+<<<<<<< 4b2578d6c296e846f6cb3e542c2f96d00c484f86
         <Textbox Name="Textbox6">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -3591,6 +3514,8 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+=======
+>>>>>>> 87a65a9e352cc0a2bd9472cecf689390210b6389
       </ReportItems>
       <Style>
         <Border>
@@ -3599,7 +3524,11 @@
       </Style>
     </PageHeader>
     <PageFooter>
+<<<<<<< 4b2578d6c296e846f6cb3e542c2f96d00c484f86
       <Height>1.47917in</Height>
+=======
+      <Height>0.80209in</Height>
+>>>>>>> 87a65a9e352cc0a2bd9472cecf689390210b6389
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -3622,7 +3551,12 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
+<<<<<<< 4b2578d6c296e846f6cb3e542c2f96d00c484f86
           <Left>0.70378cm</Left>
+=======
+          <Top>0cm</Top>
+          <Left>0.82923cm</Left>
+>>>>>>> 87a65a9e352cc0a2bd9472cecf689390210b6389
           <Height>0.52062cm</Height>
           <Width>9.69667cm</Width>
           <Style>
@@ -3650,11 +3584,48 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
+<<<<<<< 4b2578d6c296e846f6cb3e542c2f96d00c484f86
           <Top>0.07056cm</Top>
           <Left>12.58961cm</Left>
           <Height>0.82904cm</Height>
           <Width>2.5cm</Width>
+=======
+          <Top>0.08792cm</Top>
+          <Left>13.61518cm</Left>
+          <Height>0.52062cm</Height>
+          <Width>3.61529cm</Width>
+>>>>>>> 87a65a9e352cc0a2bd9472cecf689390210b6389
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="" &amp; Globals!PageNumber &amp; " / " &amp; Globals!TotalPages</Value>
+                  <Style>
+                    <FontFamily>times New Roman</FontFamily>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0.74965cm</Top>
+          <Left>15.81526cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.07125cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border />
             <PaddingLeft>2pt</PaddingLeft>

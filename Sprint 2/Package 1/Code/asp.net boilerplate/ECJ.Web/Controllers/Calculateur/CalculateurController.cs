@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Net;
 using ECJ.Web.Models;
 using Abp.Web.Mvc.Authorization;
+using ECJ.Authorization;
 
 namespace ECJ.Web.Controllers
 {
@@ -31,6 +32,21 @@ namespace ECJ.Web.Controllers
             ViewBag.Forfait = db.FindSousEvenement((int)id).tblForfait.Where(f => f.dateSupprime == null);
 
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AbpMvcAuthorize(PermissionNames.GererSousEvenement)]
+        public ActionResult Index([Bind(Include = "nbBillet,prixBillet,nbBilletVIP,prixBilletVIP,nbBilletSouper,prixSouper,JeunePourcent,RatioJeune,AdultePourcent,RatioAdulte,AinePourcent,RatioAine,nbBilletGratuit,nbBilletPreVente,NomRabaisCustom1,NbBilletRabaisCustom1,PourcentRabaisCustom1,NomRabaisCustom2,NbBilletRabaisCustom2,PourcentRabaisCustom2")] tblCalculateur tblCalculateur)
+        {
+            if (ModelState.IsValid)
+            {
+                db.UpdateCalculateur(tblCalculateur);
+
+                return RedirectToAction("Index");
+            }
+            LayoutController.pagePermission = PermissionNames.GererSousEvenement;
+            return View(tblCalculateur);
         }
     }
 }

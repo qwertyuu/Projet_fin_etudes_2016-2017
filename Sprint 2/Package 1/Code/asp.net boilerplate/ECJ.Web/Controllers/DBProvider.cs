@@ -1306,5 +1306,18 @@ namespace ECJ.Web.Controllers
             }
             return new List<tblSalle>();
         }
+        public void UpdateCalculateur(tblCalculateur tblCalculateur)
+        {
+            try
+            {
+                db.Entry(db.tblEvenement.Find(tblCalculateur.noSousEvenement)).CurrentValues.SetValues(tblCalculateur);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
     }
+
 }
