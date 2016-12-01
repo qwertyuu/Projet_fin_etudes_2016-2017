@@ -6,3 +6,16 @@ CONSTRAINT NO_UTILISATEUR_DESTINATAIRE FOREIGN KEY(destinataire) REFERENCES dbo.
 
 ALTER TABLE S_evenement.tblActivite ADD
 CONSTRAINT NO_UTILISATEUR_CREATEUR FOREIGN KEY(noUtilisateur) REFERENCES dbo.AbpUsers(Id)
+
+GO
+
+CREATE TABLE tblQuestionSecrete
+(
+	idQuestion INT NOT NULL IDENTITY(1,1),
+	Question varchar(100)
+)
+
+GO
+
+ALTER TABLE dbo.AbpUsers
+ADD idQuestion INT
