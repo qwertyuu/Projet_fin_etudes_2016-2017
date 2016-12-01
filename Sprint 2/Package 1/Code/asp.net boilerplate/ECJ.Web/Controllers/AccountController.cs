@@ -70,6 +70,35 @@ namespace ECJ.Web.Controllers
 
         public ActionResult CreateSetting()
         {
+            ViewBag.Question = provider.ToutQuestion();
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateSetting([Bind(Include = "IdQuestion,Reponse")] AbpUsers Users,string PasswordChange, string PasswordChange2)
+        {
+            AbpUsers abp = provider.ReturnUtilisateur(3);
+            if (PasswordChange == PasswordChange2)
+            {
+                abp.Password = PasswordChange;
+            }
+
+            if (Request.Files["pic"].ContentLength > 0)
+            {
+                var pic = Request.Files["pic"];
+                using (var reader = new System.IO.BinaryReader(pic.InputStream))
+                {
+                    Users.ImageProfil = reader.ReadBytes(pic.ContentLength);
+                }
+            }
+            else
+            {
+                abp.ImageProfil = Users.ImageProfil;
+            }
+            abp.Reponse = Users.Reponse;
+            provider.UpdateUser(abp);
+
             return View();
         }
 

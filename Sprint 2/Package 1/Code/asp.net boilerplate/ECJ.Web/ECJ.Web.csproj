@@ -677,6 +677,9 @@
     <Compile Include="Models\tblMemo.cs">
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tblQuestionSecrete.cs">
+      <DependentUpon>ModelEquipe2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tblResponsable.cs">
       <DependentUpon>ModelEquipe2.tt</DependentUpon>
     </Compile>

@@ -445,6 +445,19 @@ namespace ECJ.Web.Controllers
             return new AbpRoles();
         }
 
+        public List<tblQuestionSecrete> ToutQuestion()
+        {
+            try
+            {
+                return db.tblQuestionSecrete.ToList();
+            }
+            catch(Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblQuestionSecrete>();
+        }
+
         public List<ECJ.Web.Models.AbpUsers> ToutUtilisateurs()
         {
             try
