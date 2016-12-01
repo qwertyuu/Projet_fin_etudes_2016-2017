@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.Reporting.WebForms;
+using System.Data.Entity.SqlServer;
 
 namespace ECJ.Web.Controllers
 {
@@ -372,8 +373,9 @@ namespace ECJ.Web.Controllers
         }
 
         //Rapport de sécurité
-        public ActionResult RapportSecurite()
+        public ActionResult RapportAcces()
         {
+            /*
             var reportSecurite = (from us in db.ToutUtilisateurs()
                                select new
                                {
@@ -418,7 +420,57 @@ namespace ECJ.Web.Controllers
 
             Response.AppendHeader("Content-Disposition", cd.ToString());
             return File(bytes, "application/pdf");
+            */
+            var requete_logs = db.ToutLogs().AsQueryable();
+            var date_debut = Request.Form["filtre_debut"];
+            if (!string.IsNullOrWhiteSpace(date_debut))
+            {
+                DateTime date_debut_dt = DateTime.Parse(date_debut);
+                requete_logs = requete_logs.Where(l => l.ExecutionTime >= date_debut_dt);
+            }
+            var date_fin = Request.Form["filtre_fin"];
+            if (!string.IsNullOrWhiteSpace(date_fin))
+            {
+                DateTime date_fin_dt = DateTime.Parse(date_fin);
+                requete_logs = requete_logs.Where(l => l.ExecutionTime <= date_fin_dt);
+            }
+
+            var filtre_periode = Request.Form["filtre_periode"];
+            if (filtre_periode != "tous")
+            {
+                
+                switch (filtre_periode)
+                {
+                    case "mois":
+                        var groupByMois = requete_logs.GroupBy(l => l.ExecutionTime.Month).Select(l => new GroupByPeriode() { Date = l.Key, NombreAcces = l.Count(), MaxDate = l.Max(l1 => l1.ExecutionTime.Month) });
+                        break;
+                    case "semaine":
+                        var groupBySemaine = (from c in requete_logs
+                                        group c by new { SqlFunctions.DatePart("wk", c.ExecutionTime), 2 } into g
+                                        let MaxDate = g.Max(c => SqlFunctions.DatePart("wk", c.ExecutionTime))
+                                        let Count = g.Count()
+                                        orderby MaxDate
+                                        select new GroupByPeriode() { Date = g.Key.Value, MaxDate = MaxDate.Value, NombreAcces = Count }).AsQueryable();
+                        break;
+                    case "jour":
+                        var groupByJour = requete_logs.GroupBy(l => l.ExecutionTime.Month).Select(l => new GroupByPeriode() { Date = l.Key, NombreAcces = l.Count(), MaxDate = l.Max(l1 => l1.ExecutionTime.Month) });
+                        break;
+                }
+            }
+
+            foreach (string item in Request.Form)
+            {
+                Response.Write(item + ":" + (Request.Form[item]) + "<br>");
+            }
+            return new EmptyResult();
         }
+    }
+
+    public class GroupByPeriode
+    {
+        public int Date { get; set; }
+        public int MaxDate { get; set; }
+        public int NombreAcces { get; set; }
     }
 
     public static class Ext

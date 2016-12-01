@@ -652,6 +652,19 @@ namespace ECJ.Web.Controllers
             return new List<tblSoumission>();
         }
 
+        internal List<ECJ.Web.Models.AbpAuditLogs> ToutLogs()
+        {
+            try
+            {
+                return db.AbpAuditLogs.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<AbpAuditLogs>();
+        }
+
         public void InsertServiceRequis(int id, int serviceAAjouter)
         {
             try
