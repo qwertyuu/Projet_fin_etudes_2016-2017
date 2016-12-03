@@ -757,6 +757,33 @@ namespace ECJ.Web.Controllers
             }
             return new List<tblForfait>();
         }
+
+        internal List<AbpUserRoles> ToutRoleUtilisateur()
+        {
+            try
+            {
+                return db.AbpUserRoles.Where(ur => ur.UserId != 1).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<AbpUserRoles>();
+        }
+
+        internal List<AbpRoles> ToutRoles()
+        {
+            try
+            {
+                return db.AbpRoles.Where(r => r.Id != 1).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<AbpRoles>();
+        }
+
         public List<tblForfait> ToutForfaitLieeEvent(int id)
         {
             try
@@ -786,6 +813,22 @@ namespace ECJ.Web.Controllers
             {
                 LayoutController.erreur = e;
             }
+        }
+
+        internal string GetRoleUtilisateur(AbpUsers abpUsers)
+        {
+            try
+            {
+                if(abpUsers.AbpUserRoles.Count > 0)
+                {
+                    return SelectRole(abpUsers.AbpUserRoles.ToList()[0].RoleId).Name;
+                }
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return "Employe";
         }
 
         public List<tblEngagement> ToutEngagement()

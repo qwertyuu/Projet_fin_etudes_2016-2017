@@ -375,29 +375,47 @@ namespace ECJ.Web.Controllers
         //Rapport de sécurité
         public ActionResult RapportAcces()
         {
-            /*
-            var reportSecurite = (from us in db.ToutUtilisateurs()
-                               select new
-                               {
-                                   us.UserName,
-                                   us.Name,
-                                   us.Surname,
-                                   us.EmailAddress,
-                                   us.Password,
-                                   us.LastModificationTime,
-                                   us.LastModifierUserId,
-                                   us.CreationTime,
-                                   us.CreatorUserId
-                               }).ToList();
+            LocalReport rapport_acces = new LocalReport();
+            rapport_acces.SubreportProcessing += Rapport_acces_SubreportProcessing;
+            rapport_acces.ReportPath = "Rapport/RapportAcces.rdlc";
+            var requete_logs = db.ToutLogs().Where(l => l.UserId != null).AsQueryable();
+            var date_debut = Request.Form["filtre_debut"];
+            if (!string.IsNullOrWhiteSpace(date_debut))
+            {
+                DateTime date_debut_dt = DateTime.Parse(date_debut);
+                rapport_acces.SetParameters(new ReportParameter("date_debut", date_debut_dt.ToString("yyyy-MM-dd")));
+                requete_logs = requete_logs.Where(l => l.ExecutionTime >= date_debut_dt);
+            }
+            var date_fin = Request.Form["filtre_fin"];
+            if (!string.IsNullOrWhiteSpace(date_fin))
+            {
+                DateTime date_fin_dt = DateTime.Parse(date_fin);
+                rapport_acces.SetParameters(new ReportParameter("date_fin", date_fin_dt.ToString("yyyy-MM-dd")));
+                requete_logs = requete_logs.Where(l => l.ExecutionTime <= date_fin_dt);
+            }
 
-            LocalReport u = new LocalReport();
-            u.ReportPath = "Rapport/ReportSecurite.rdlc";
-            u.DataSources.Clear();
-            ReportDataSource datasourceSecurite = new ReportDataSource("DataSetUser", reportSecurite);
-            u.DataSources.Add(datasourceSecurite);
-            //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());
-            //u.SetParameters(new[] { p });
+            var filtre_periode = Request.Form["filtre_periode"];
 
+            var filtre_profil = Request.Form["filtre_profil"];
+            if (filtre_profil != "tous")
+            {
+                requete_logs = requete_logs.Where(r => db.GetRoleUtilisateur(db.ReturnUtilisateur(r.UserId.Value)) == filtre_profil);
+            }
+            var groupByProfil = GroupByProfil(requete_logs);
+
+            var filtre_utilisateur = Request.Form["filtre_utilisateur"];
+            if (filtre_utilisateur != "tous")
+            {
+                requete_logs = requete_logs.Where(r => r.UserId.Value.ToString() == filtre_utilisateur);
+            }
+            rapport_acces.SetParameters(new ReportParameter("periode", filtre_periode));
+            rapport_acces.SetParameters(new ReportParameter("profil_nom", filtre_profil));
+            rapport_acces.SetParameters(new ReportParameter("role_id", "1"));
+            rapport_acces.DataSources.Clear();
+            rapport_acces.DataSources.Add(new ReportDataSource("Users", db.ToutUtilisateurs()));
+            rapport_acces.DataSources.Add(new ReportDataSource("Logs", requete_logs));
+            rapport_acces.DataSources.Add(new ReportDataSource("UserRoles", db.ToutRoleUtilisateur()));
+            rapport_acces.DataSources.Add(new ReportDataSource("Roles", db.ToutRoles()));
             var cd = new System.Net.Mime.ContentDisposition
             {
                 // for example foo.bak
@@ -407,69 +425,38 @@ namespace ECJ.Web.Controllers
                 // the browser to try to show the file inline
                 Inline = true,
             };
-            Warning[] warnings;
-            string[] streamids;
-            string mimeType;
-            string encoding;
-            string filenameExtension;
 
-            byte[] bytes = u.Render(
-                "PDF", null, out mimeType, out encoding, out filenameExtension,
-                out streamids, out warnings);
+            byte[] bytes = rapport_acces.Render("PDF");
 
 
             Response.AppendHeader("Content-Disposition", cd.ToString());
             return File(bytes, "application/pdf");
-            */
-            var requete_logs = db.ToutLogs().AsQueryable();
-            var date_debut = Request.Form["filtre_debut"];
-            if (!string.IsNullOrWhiteSpace(date_debut))
-            {
-                DateTime date_debut_dt = DateTime.Parse(date_debut);
-                requete_logs = requete_logs.Where(l => l.ExecutionTime >= date_debut_dt);
-            }
-            var date_fin = Request.Form["filtre_fin"];
-            if (!string.IsNullOrWhiteSpace(date_fin))
-            {
-                DateTime date_fin_dt = DateTime.Parse(date_fin);
-                requete_logs = requete_logs.Where(l => l.ExecutionTime <= date_fin_dt);
-            }
+        }
 
-            var filtre_periode = Request.Form["filtre_periode"];
-            if (filtre_periode != "tous")
-            {
-                
-                switch (filtre_periode)
-                {
-                    case "mois":
-                        var groupByMois = requete_logs.GroupBy(l => l.ExecutionTime.Month).Select(l => new GroupByPeriode() { Date = l.Key, NombreAcces = l.Count(), MaxDate = l.Max(l1 => l1.ExecutionTime.Month) });
-                        break;
-                    case "semaine":
-                        var groupBySemaine = (from c in requete_logs
-                                        group c by new { SqlFunctions.DatePart("wk", c.ExecutionTime), 2 } into g
-                                        let MaxDate = g.Max(c => SqlFunctions.DatePart("wk", c.ExecutionTime))
-                                        let Count = g.Count()
-                                        orderby MaxDate
-                                        select new GroupByPeriode() { Date = g.Key.Value, MaxDate = MaxDate.Value, NombreAcces = Count }).AsQueryable();
-                        break;
-                    case "jour":
-                        var groupByJour = requete_logs.GroupBy(l => l.ExecutionTime.Month).Select(l => new GroupByPeriode() { Date = l.Key, NombreAcces = l.Count(), MaxDate = l.Max(l1 => l1.ExecutionTime.Month) });
-                        break;
-                }
-            }
+        private void Rapport_acces_SubreportProcessing(object sender, SubreportProcessingEventArgs e)
+        {
+            e.DataSources.Add(new ReportDataSource("Roles", db.ToutRoles()));
+        }
 
-            foreach (string item in Request.Form)
-            {
-                Response.Write(item + ":" + (Request.Form[item]) + "<br>");
-            }
-            return new EmptyResult();
+        public static int GetISOWeek(DateTime day)
+        {
+            return System.Globalization.CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(day, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+        }
+
+        public IQueryable<string> GroupByProfil(IQueryable<ECJ.Web.Models.AbpAuditLogs> requete_logs)
+        {
+            return (from r in requete_logs
+                    group r by db.GetRoleUtilisateur(db.ReturnUtilisateur((long)r.UserId))
+                    into g
+                    select g.Key
+                );
         }
     }
 
     public class GroupByPeriode
     {
-        public int Date { get; set; }
-        public int MaxDate { get; set; }
+        public long MinDate { get; set; }
+        public long MaxDate { get; set; }
         public int NombreAcces { get; set; }
     }
 
