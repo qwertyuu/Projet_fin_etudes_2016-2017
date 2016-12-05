@@ -67,7 +67,55 @@ namespace ECJ.Web.Controllers
             var d = (db.ToutSousEvenement().Where(sse => sse.noEvenement == int.Parse(e.Parameters.First(param => param.Name == "noEvenement").Values[0])));
             ReportDataSource datasource2 = new ReportDataSource("DataSet1", d);
             e.DataSources.Add(datasource2);
-        } 
+        }
+        private void U_SubreportAppelOffre(object sender, SubreportProcessingEventArgs e)
+        {
+         
+                if (e.ReportPath == "ReportSoumission")
+                {
+
+                var soumi = (db.RetunSoumission(null).Where(s => s.noSoumission == int.Parse(e.Parameters.First(param => param.Name == "noSoumi").Values[0]))).Select(ss =>
+                                      new {
+                                          ss.noAppelOffre,
+                                          ss.noAgencePub,
+                                          ss.noSoumission,
+                                          ss.prix,
+                                          ss.statut,
+                                          ss.commentaire,
+                                          ss.noSoumissionAgence
+                                      }).ToList();
+
+                var reportQueryAppel = (from a in db.ToutAppleOffre()
+                                        select new
+                                        {
+                                            a.noAppelOffre,
+                                            a.nom,
+                                            a.dateEnvoi,
+                                            a.dateRequis,
+                                            a.description,
+                                            a.noMedia,
+                                            a.noStatut,
+                                            a.noEvenement
+                                        }).ToList();
+
+                var reportAgence = (from ag in db.ToutAgencePublicite()
+                                    select new
+                                    {
+                                        ag.noAgencePub,
+                                        ag.nom,
+                                    }).ToList();
+
+                    ReportDataSource datasource2 = new ReportDataSource("DataSetSoumission", soumi);
+                    var dataSourceAgence = new ReportDataSource("DataSetAgence", reportAgence);
+                     ReportDataSource datasourceAppel = new ReportDataSource("DataSetAppelOffre", reportQueryAppel);
+                    e.DataSources.Add(dataSourceAgence);
+                    e.DataSources.Add(datasource2);
+                    e.DataSources.Add(datasourceAppel);
+
+
+            }
+
+        }
 
         private void U_SubreportComEvent(object sender, SubreportProcessingEventArgs e)
         {
@@ -82,6 +130,7 @@ namespace ECJ.Web.Controllers
                 }).ToList();
                 ReportDataSource datasource2 = new ReportDataSource("DataSetCom", com);
                 e.DataSources.Add(datasource2);
+
             }
             else
             {
@@ -100,7 +149,6 @@ namespace ECJ.Web.Controllers
         //Rapport de l'appel d'offre
         public ActionResult RapportAppelOffre(int? Id)
         {
-
             var reportQueryAppel = (from a in db.ToutAppleOffre()
                                     select new
                                     {
@@ -111,7 +159,8 @@ namespace ECJ.Web.Controllers
                                         a.description,
                                         a.noMedia,
                                         a.noStatut,
-                                        a.noEvenement
+                                        a.noEvenement,
+                                        a.tblEvenement                                       
                                     }).Where(ap => ap.noAppelOffre == Id);
 
             var reportQuerySoumi = (from s in db.RetunSoumission(Id)
@@ -121,73 +170,42 @@ namespace ECJ.Web.Controllers
                                         s.commentaire,
                                         s.statut,
                                         s.noAgencePub,
-                                        s.noAppelOffre
+                                        s.noAppelOffre,
+                                        s.noSoumission,
+                                        s.noSoumissionAgence
                                     }).ToList();
+            var reportMedia = db.ToutMedia().Where(me => me.noMedia == reportQueryAppel.First().noMedia);
 
-            var reportQuerySoumiAgen = (from s in reportQuerySoumi
-                                        select new
-                                        {
-                                            s.prix,
-                                            s.statut,
-                                            s.noAgencePub,
-                                        }).ToList();
-            var reportMedia = (from m in db.ToutMedia()
-                                        select new
-                                        {
-                                          m.noMedia,
-                                          m.nom,
-                                          m.description
-                                        }).ToList();
-            var reportStatut = (from s in db.ToutStatutAppel()
-                               select new
-                               {
-                                   s.noStatut,
-                                   s.nom,
-                                   s.description
-                               }).ToList();
+            var reportStatut = db.ToutStatutAppel().Where(s => s.noStatut == reportQueryAppel.First().noStatut);
+
             var reportAgence = (from ag in db.ToutAgencePublicite()
                                 select new
                                 {
                                     ag.noAgencePub,
                                     ag.nom,
-                                }).ToList();
+                                    noAppelOffre = ag.tblSoumission.Select(s => s.noAppelOffre).FirstOrDefault()
+                                }).Where(age=>age.noAppelOffre==Id).ToList();
 
-            var reportEvent = (from e in db.ToutEvenement()
-                                select new
-                                {
-                                    e.noEvenement,
-                                    e.nom,
-                                    SousEvent=e.tblSousEvenement.Select(se => se.nom).FirstOrDefault(),
-                                    noAppelOffre = e.tblAppelOffre.Select(a => a.noAppelOffre).FirstOrDefault()
-                                }).Where(ev=>ev.noAppelOffre==Id).ToList();
-
-            var reportSousEvent= (from se in reportEvent
-                                select new
-                                {
-                                 nom= se.SousEvent
-                                }).ToList();
+            var reportEvent = db.ToutEvenement().Where(e => e.noEvenement == reportQueryAppel.First().noEvenement);
 
             LocalReport u = new LocalReport();
             u.ReportPath = "Rapport/RapportAppel.rdlc";
             u.DataSources.Clear();
             ReportDataSource datasourceAppel = new ReportDataSource("DataSetAppelOffre", reportQueryAppel);
             ReportDataSource datasourceSoumi = new ReportDataSource("DataSetSoumission", reportQuerySoumi);
-            ReportDataSource datasourceAppelSoumi = new ReportDataSource("DataSetSoumission", reportQuerySoumiAgen);
-            ReportDataSource datasourceMedia = new ReportDataSource("DataSetMedia", reportQueryAppel);
+            ReportDataSource datasourceMedia = new ReportDataSource("DataSetMedia", reportMedia);
             var dataSourceStatut= new ReportDataSource("DataSetStatut", reportStatut);
             var dataSourceAgence = new ReportDataSource("DataSetAgence", reportAgence);
             var dataSourceEvent = new ReportDataSource("DataSetEvent", reportEvent);
-            var dataSourceSousEvent = new ReportDataSource("DataSetSousEvent", reportSousEvent);
 
             u.DataSources.Add(datasourceAppel);
-            // u.SubreportProcessing += U_SubreportSatut;
+            u.SubreportProcessing += U_SubreportAppelOffre;
+            u.DataSources.Add(datasourceSoumi);        
             u.DataSources.Add(datasourceSoumi);
-            u.DataSources.Add(datasourceAppelSoumi);
             u.DataSources.Add(datasourceMedia);
             u.DataSources.Add(dataSourceStatut);
             u.DataSources.Add(dataSourceAgence);
             u.DataSources.Add(dataSourceEvent);
-            u.DataSources.Add(dataSourceSousEvent);
 
 
 
