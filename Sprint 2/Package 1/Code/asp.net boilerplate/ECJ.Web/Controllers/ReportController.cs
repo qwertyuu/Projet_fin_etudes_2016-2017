@@ -10,7 +10,7 @@ using System.Data.Entity.SqlServer;
 
 namespace ECJ.Web.Controllers
 {
-    public class ReportController : Controller
+    public class ReportController : ECJControllerBase
     {
         DBProvider db = new DBProvider();
         // GET: Report
@@ -379,14 +379,14 @@ namespace ECJ.Web.Controllers
             rapport_acces.SubreportProcessing += Rapport_acces_SubreportProcessing;
             rapport_acces.ReportPath = "Rapport/RapportAcces.rdlc";
             var requete_logs = db.ToutLogs().Where(l => l.UserId != null).AsQueryable();
-            var date_debut = Request.Form["filtre_debut"];
+            var date_debut = Request.QueryString["filtre_debut"];
             if (!string.IsNullOrWhiteSpace(date_debut))
             {
                 DateTime date_debut_dt = DateTime.Parse(date_debut);
                 rapport_acces.SetParameters(new ReportParameter("date_debut", date_debut_dt.ToString("yyyy-MM-dd")));
                 requete_logs = requete_logs.Where(l => l.ExecutionTime >= date_debut_dt);
             }
-            var date_fin = Request.Form["filtre_fin"];
+            var date_fin = Request.QueryString["filtre_fin"];
             if (!string.IsNullOrWhiteSpace(date_fin))
             {
                 DateTime date_fin_dt = DateTime.Parse(date_fin);
@@ -394,26 +394,30 @@ namespace ECJ.Web.Controllers
                 requete_logs = requete_logs.Where(l => l.ExecutionTime <= date_fin_dt);
             }
 
-            var filtre_periode = Request.Form["filtre_periode"];
+            var filtre_periode = Request.QueryString["filtre_periode"];
 
-            var filtre_profil = Request.Form["filtre_profil"];
+            var filtre_profil = Request.QueryString["filtre_profil"];
             if (filtre_profil != "tous")
             {
                 requete_logs = requete_logs.Where(r => db.GetRoleUtilisateur(db.ReturnUtilisateur(r.UserId.Value)) == filtre_profil);
             }
             var groupByProfil = GroupByProfil(requete_logs);
 
-            var filtre_utilisateur = Request.Form["filtre_utilisateur"];
+            var filtre_utilisateur = Request.QueryString["filtre_utilisateur"];
             if (filtre_utilisateur != "tous")
             {
                 requete_logs = requete_logs.Where(r => r.UserId.Value.ToString() == filtre_utilisateur);
             }
+            var total_jour = requete_logs.GroupBy(r => r.ExecutionTime.ToShortDateString());
             rapport_acces.SetParameters(new ReportParameter("periode", filtre_periode));
             rapport_acces.SetParameters(new ReportParameter("profil_nom", filtre_profil));
             rapport_acces.SetParameters(new ReportParameter("role_id", "1"));
+            rapport_acces.SetParameters(new ReportParameter("total_jours", total_jour.Count().ToString()));
+            rapport_acces.SetParameters(new ReportParameter("auteur", db.ReturnUtilisateur(AbpSession.UserId.Value).UserName));
             rapport_acces.DataSources.Clear();
             rapport_acces.DataSources.Add(new ReportDataSource("Users", db.ToutUtilisateurs()));
             rapport_acces.DataSources.Add(new ReportDataSource("Logs", requete_logs));
+            rapport_acces.DataSources.Add(new ReportDataSource("ToutLogs", db.ToutLogs().Where(l => l.UserId != null)));
             rapport_acces.DataSources.Add(new ReportDataSource("UserRoles", db.ToutRoleUtilisateur()));
             rapport_acces.DataSources.Add(new ReportDataSource("Roles", db.ToutRoles()));
             var cd = new System.Net.Mime.ContentDisposition
