@@ -68,6 +68,31 @@ namespace ECJ.Web.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult captcha(int? id)
+        {
+            // Get recaptcha value
+            var r = Request.Params["g-recaptcha-response"];
+            // ... validate null or empty value if you want
+            // then
+            // make a request to recaptcha api
+            using (var wc = new System.Net.WebClient())
+            {
+                var validateString = string.Format(
+                    "https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}",
+                   "6LeEOA0UAAAAANqjZJSMBlNxd5XCRHK7nUfe-AZ6",    // secret recaptcha key
+                   r); // recaptcha value
+                       // Get result of recaptcha
+                var recaptcha_result = wc.DownloadString(validateString);
+                // Just check if request make by user or bot
+                if (recaptcha_result.ToLower().Contains("false"))
+                {
+                    return View();
+                }
+            }
+            return View("CreateSetting");
+        }
         public ActionResult CreateSetting()
         {
             ViewBag.Question = provider.ToutQuestion();
