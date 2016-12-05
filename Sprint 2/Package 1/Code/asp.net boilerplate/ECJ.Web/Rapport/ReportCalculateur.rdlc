@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.82292cm</Width>
+              <Width>5.73106cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.16146cm</Width>
+              <Width>3.95931cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.60583cm</Width>
+              <Width>3.66862cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.00271cm</Width>
+              <Width>3.64952cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -432,7 +432,7 @@
         <Top>1.71098cm</Top>
         <Left>0.04611cm</Left>
         <Height>1.64124cm</Height>
-        <Width>12.59292cm</Width>
+        <Width>17.00851cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -443,13 +443,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.78444cm</Width>
+              <Width>5.73106cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.78177cm</Width>
+              <Width>4.97239cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.95002cm</Width>
+              <Width>6.35546cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -465,7 +465,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombre de places régulière</Value>
+                              <Value>Nombre de places régulières</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -669,7 +669,7 @@
         <Top>0.58208cm</Top>
         <Left>0.04611cm</Left>
         <Height>1.05834cm</Height>
-        <Width>13.51623cm</Width>
+        <Width>17.05891cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -709,12 +709,17 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
+                  <ChartItemInLegend>
+                    <LegendText>% de jeunes</LegendText>
+                  </ChartItemInLegend>
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Shape</Type>
@@ -743,12 +748,17 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
+                  <ChartItemInLegend>
+                    <LegendText>% d'adultes</LegendText>
+                  </ChartItemInLegend>
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Shape</Type>
@@ -777,12 +787,17 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
+                  <ChartItemInLegend>
+                    <LegendText>% d'ainés</LegendText>
+                  </ChartItemInLegend>
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Shape</Type>
@@ -1029,10 +1044,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.79576cm</Width>
+              <Width>4.23956cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.55764cm</Width>
+              <Width>4.60612cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1102,7 +1117,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.04979cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1167,7 +1182,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.86458cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1232,7 +1247,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.62177cm</Height>
+              <Height>1.00864cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1322,8 +1337,8 @@
         <DataSetName>DataSetCalculateur</DataSetName>
         <Top>4.28329cm</Top>
         <Left>8.20894cm</Left>
-        <Height>2.62875cm</Height>
-        <Width>5.3534cm</Width>
+        <Height>3.72999cm</Height>
+        <Width>8.84568cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -1401,13 +1416,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.855cm</Width>
+              <Width>5.20147cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.855cm</Width>
+              <Width>5.19896cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.855cm</Width>
+              <Width>6.65417cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1638,21 +1653,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ainePourcent1">
+                    <Textbox Name="prevente">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ainePourcent.Value</Value>
+                              <Value>=Fields!prevente.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ainePourcent1</rd:DefaultName>
+                      <rd:DefaultName>prevente</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1919,7 +1934,7 @@
         <Top>8.82936cm</Top>
         <Left>0.00002cm</Left>
         <Height>3.12291cm</Height>
-        <Width>14.565cm</Width>
+        <Width>17.0546cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -1931,13 +1946,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.83736cm</Width>
+              <Width>4.90792cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.83736cm</Width>
+              <Width>5.54291cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.83736cm</Width>
+              <Width>6.65417cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -2154,7 +2169,7 @@
         <Top>12.97532cm</Top>
         <Left>0.00002cm</Left>
         <Height>1.32292cm</Height>
-        <Width>14.51208cm</Width>
+        <Width>17.105cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -2372,37 +2387,15 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="billet1">
-                      <CanGrow>true</CanGrow>
+                    <Rectangle Name="Rectangle1">
                       <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>billet1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
+                        <BackgroundColor>DimGray</BackgroundColor>
                       </Style>
-                    </Textbox>
+                    </Rectangle>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -2420,7 +2413,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -2507,37 +2502,15 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="billet4">
-                      <CanGrow>true</CanGrow>
+                    <Rectangle Name="Rectangle2">
                       <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>billet1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
+                        <BackgroundColor>DimGray</BackgroundColor>
                       </Style>
-                    </Textbox>
+                    </Rectangle>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -2555,7 +2528,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox14</rd:DefaultName>
@@ -2579,283 +2554,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox81">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Tranches d'âge</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox81</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox82">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=(((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")+Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur"))\(Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur")))*(Sum(Fields!jeunePourcent.Value, "DataSetCalculateur")/100))+(((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")+Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur"))\(Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur")))*(Sum(Fields!adultePourcent.Value, "DataSetCalculateur")/100))+(((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")+Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur"))\(Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur")))*(Sum(Fields!ainePourcent.Value, "DataSetCalculateur")/100))</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox82</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="billet5">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>billet1</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox83">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=(((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * (Sum(Fields!jeunePourcent.Value, "DataSetCalculateur") / 100))</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox82</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox84">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Réductions</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox84</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox85">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox85</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="billet6">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>billet1</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="billet8">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>billet1</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox87">
+                    <Textbox Name="Textbox88">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -2879,74 +2578,6 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox88">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Sum(Fields!prixSouper.Value, "DataSetCalculateur")*Sum(Fields!souperSpectacle.Value, "DataSetCalculateur")</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox88</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="billet7">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style>
-                                <Format>0.00'$';(0.00'$')</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>billet1</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -2984,6 +2615,290 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Rectangle3">
+                      <KeepTogether>true</KeepTogether>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>DimGray</BackgroundColor>
+                      </Style>
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox90">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!prixSouper.Value, "DataSetCalculateur") * Sum(Fields!souperSpectacle.Value, "DataSetCalculateur")</Value>
+                              <Style>
+                                <Format>0.00'$';(0.00'$')</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox88</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox82">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Tranches d'âge</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox81</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Rectangle4">
+                      <KeepTogether>true</KeepTogether>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>DimGray</BackgroundColor>
+                      </Style>
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox83">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * (Sum(Fields!jeunePourcent.Value, "DataSetCalculateur") / 100)) + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * (Sum(Fields!adultePourcent.Value, "DataSetCalculateur") / 100)) + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * (Sum(Fields!ainePourcent.Value, "DataSetCalculateur") / 100))</Value>
+                              <Style>
+                                <Format>0.00'$';(0.00'$')</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox82</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox84">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * (Sum(Fields!jeunePourcent.Value, "DataSetCalculateur") / 100))</Value>
+                              <Style>
+                                <Format>0.00'$';(0.00'$')</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox82</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox94">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Réductions</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox84</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Rectangle5">
+                      <KeepTogether>true</KeepTogether>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>DimGray</BackgroundColor>
+                      </Style>
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="billet6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(Sum(Fields!promo.Value, "DataSetCalculateur") * ((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) + (Sum(Fields!prevente.Value, "DataSetCalculateur") * ((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * 0.25) + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * Sum(Fields!customBillet1.Value, "DataSetCalculateur") * Sum(Fields!customPrix1.Value, "DataSetCalculateur") / 100 + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * Sum(Fields!customBillet2.Value, "DataSetCalculateur") * Sum(Fields!customPrix2.Value, "DataSetCalculateur") / 100</Value>
+                              <Style>
+                                <Format>0.00'$';(0.00'$')</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>billet1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="billet7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(Sum(Fields!promo.Value, "DataSetCalculateur") * ((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) + (Sum(Fields!prevente.Value, "DataSetCalculateur") * ((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * 0.25) + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * Sum(Fields!customBillet1.Value, "DataSetCalculateur") * Sum(Fields!customPrix1.Value, "DataSetCalculateur") / 100 + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * Sum(Fields!customBillet2.Value, "DataSetCalculateur") * Sum(Fields!customPrix2.Value, "DataSetCalculateur") / 100</Value>
+                              <Style>
+                                <Format>0.00'$';(0.00'$')</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>billet1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -2991,7 +2906,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox23">
+                    <Textbox Name="Textbox44">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -3021,34 +2936,15 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox25">
-                      <CanGrow>true</CanGrow>
+                    <Rectangle Name="Rectangle6">
                       <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>0</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox25</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>DimGray</BackgroundColor>
                       </Style>
-                    </Textbox>
+                    </Rectangle>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -3095,7 +2991,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=-First(Fields!prix.Value, "DataSetSalle")</Value>
+                              <Value>=- First(Fields!prix.Value, "DataSetSalle")</Value>
                               <Style>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
@@ -3226,7 +3122,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox31">
+                    <Textbox Name="Textbox33">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -3290,8 +3186,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>15.20665cm</Top>
-        <Left>0.0794cm</Left>
+        <Top>19.08804cm</Top>
+        <Left>0.13232cm</Left>
         <Height>4.78126cm</Height>
         <Width>17.02562cm</Width>
         <ZIndex>8</ZIndex>
@@ -3319,7 +3215,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox76</rd:DefaultName>
-        <Top>14.43936cm</Top>
+        <Top>18.32075cm</Top>
+        <Left>0.05292cm</Left>
         <Height>0.5909cm</Height>
         <Width>6.82393cm</Width>
         <ZIndex>9</ZIndex>
@@ -3381,8 +3278,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>20.7993cm</Top>
-        <Left>1.78806cm</Left>
+        <Top>24.68069cm</Top>
+        <Left>1.84098cm</Left>
         <Height>0.6cm</Height>
         <Width>2.88375cm</Width>
         <ZIndex>11</ZIndex>
@@ -3411,8 +3308,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>20.7993cm</Top>
-        <Left>4.81292cm</Left>
+        <Top>24.68069cm</Top>
+        <Left>4.86584cm</Left>
         <Height>0.6cm</Height>
         <Width>4.74602cm</Width>
         <ZIndex>12</ZIndex>
@@ -3473,7 +3370,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>8.8526in</Height>
+    <Height>10.02968in</Height>
     <Style />
   </Body>
   <Width>6.79676in</Width>
@@ -3561,36 +3458,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox6">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>= Globals!PageNumber</Value>
-                  <Style>
-                    <FontFamily>times New Roman</FontFamily>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.07937cm</Top>
-          <Left>12.58961cm</Left>
-          <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border />
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -3599,7 +3466,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.47917in</Height>
+      <Height>0.8125in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -3651,11 +3518,41 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.07056cm</Top>
-          <Left>12.58961cm</Left>
+          <Top>0.03528cm</Top>
+          <Left>12.74836cm</Left>
           <Height>0.82904cm</Height>
-          <Width>2.5cm</Width>
+          <Width>4.30626cm</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border />
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>= Globals!PageNumber</Value>
+                  <Style>
+                    <FontFamily>times New Roman</FontFamily>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>1.04071cm</Top>
+          <Left>14.55462cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border />
             <PaddingLeft>2pt</PaddingLeft>

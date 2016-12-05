@@ -1310,7 +1310,7 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                db.Entry(db.tblEvenement.Find(tblCalculateur.noSousEvenement)).CurrentValues.SetValues(tblCalculateur);
+                db.Entry(db.tblCalculateur.Find(tblCalculateur.noSousEvenement)).CurrentValues.SetValues(tblCalculateur);
                 db.SaveChanges();
             }
             catch (Exception e)
@@ -1318,6 +1318,17 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
         }
+        public tblSousEvenement ReturnSousEvent(int id)
+        {
+            try
+            {
+                return db.tblSousEvenement.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblSousEvenement();
+        }
     }
-
 }

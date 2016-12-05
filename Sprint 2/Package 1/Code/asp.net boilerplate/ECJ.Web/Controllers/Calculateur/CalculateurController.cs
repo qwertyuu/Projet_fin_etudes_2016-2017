@@ -25,11 +25,15 @@ namespace ECJ.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ViewBag.Salle = db.FindSousEvenement((int)id).tblSalle;
+            var SousEvent = db.FindSousEvenement((int)id);
+
+            ViewBag.SousEvent = SousEvent;
+
+            ViewBag.Salle = SousEvent.tblSalle;
+
+            ViewBag.Forfait = SousEvent.tblForfait.Where(f => f.dateSupprime == null);
 
             ViewBag.Calcul = db.ReturnCalculateur((int)id) ?? new tblCalculateur();
-
-            ViewBag.Forfait = db.FindSousEvenement((int)id).tblForfait.Where(f => f.dateSupprime == null);
 
             return View();
         }
@@ -37,8 +41,19 @@ namespace ECJ.Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AbpMvcAuthorize(PermissionNames.GererSousEvenement)]
-        public ActionResult Index([Bind(Include = "nbBillet,prixBillet,nbBilletVIP,prixBilletVIP,nbBilletSouper,prixSouper,JeunePourcent,RatioJeune,AdultePourcent,RatioAdulte,AinePourcent,RatioAine,nbBilletGratuit,nbBilletPreVente,NomRabaisCustom1,NbBilletRabaisCustom1,PourcentRabaisCustom1,NomRabaisCustom2,NbBilletRabaisCustom2,PourcentRabaisCustom2")] tblCalculateur tblCalculateur)
+        public ActionResult Index([Bind(Include = "noSousEvenement,billet,prixBillet,billetVIP,prixBilletVIP,souperSpectacle,prixSouper,jeunePourcent,jeuneRatio,adultePourcent,adulteRatio,ainePourcent,aineRatio,promo,prevente,customNom1,customBillet1,customPrix1,customNom2,customBillet2,customPrix2")] tblCalculateur tblCalculateur)
         {
+            if (tblCalculateur.customNom1 == null)
+            {
+                tblCalculateur.customNom1 = "";
+            }
+            if (tblCalculateur.customNom2 == null)
+            {
+                tblCalculateur.customNom2 = "";
+            }
+
+            tblCalculateur.tblSousEvenement = db.ReturnSousEvent(tblCalculateur.noSousEvenement);
+
             if (ModelState.IsValid)
             {
                 db.UpdateCalculateur(tblCalculateur);
