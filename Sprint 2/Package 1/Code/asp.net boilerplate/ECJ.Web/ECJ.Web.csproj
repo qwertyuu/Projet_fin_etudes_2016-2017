@@ -830,7 +830,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Lire\" />
-    <Folder Include="Views\Report\" />
     <Folder Include="Views\Verification\" />
   </ItemGroup>
   <ItemGroup>
@@ -841,9 +840,11 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Rapport\RapportAcces.rdlc" />
     <EmbeddedResource Include="Rapport\Report1.rdlc" />
     <EmbeddedResource Include="Rapport\Report2.rdlc" />
     <EmbeddedResource Include="Rapport\RapportAppel.rdlc" />
+    <EmbeddedResource Include="Rapport\ReportAcces_Sub1.rdlc" />
     <EmbeddedResource Include="Rapport\ReportCalculateur.rdlc" />
     <EmbeddedResource Include="Rapport\ReportComendite_Event.rdlc" />
     <EmbeddedResource Include="Rapport\ReportCommenditaire.rdlc" />
