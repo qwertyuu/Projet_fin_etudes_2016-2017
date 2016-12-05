@@ -102,8 +102,8 @@
         <AssociationConnector Association="PE2_OfficielModel.APPEL_OFFRE_FK" />
         <AssociationConnector Association="PE2_OfficielModel.MED_APPEL_FK" />
         <AssociationConnector Association="PE2_OfficielModel.STATUT_APPEL_FK" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUsers" Width="1.5" PointX="14.25" PointY="23.875" />
         <EntityTypeShape EntityType="PE2_OfficielModel.tblQuestionSecrete" Width="1.5" PointX="15" PointY="38.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUsers" Width="1.5" PointX="17.25" PointY="45.875" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" />

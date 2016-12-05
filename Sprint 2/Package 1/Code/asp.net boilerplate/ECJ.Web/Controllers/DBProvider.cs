@@ -181,6 +181,32 @@ namespace ECJ.Web.Controllers
             }
             return new AbpUsers();
         }
+
+        internal AbpUsers ReturnUtilisateur(string nom)
+        {
+            try
+            {
+                List<AbpUsers> list = ToutUtilisateurs();
+                long id = 0;
+                foreach(var i in list)
+                {
+                    if(i.Name == nom)
+                    {
+                        id = i.Id;
+                    }
+                }
+                if(id==0)
+                {
+                    return new AbpUsers();
+                }
+                return db.AbpUsers.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new AbpUsers();
+        }
         internal void InsertUser(AbpUsers abpUser)
         {
             try

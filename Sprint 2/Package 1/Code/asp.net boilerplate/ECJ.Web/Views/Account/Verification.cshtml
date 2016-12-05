@@ -1,4 +1,6 @@
-﻿@{
+﻿@model ECJ.Web.Models.AbpUsers
+    
+@{
     ViewBag.Title = "Verification";
 }
 
@@ -14,6 +16,7 @@
         <label>Choisir la bonne image de profil</label>
     </div>
 
+    
     <div>
         <img src="https://sd-cdn.fr/wp-content/uploads/2016/03/comment-creer-bon-profil-linkedin.jpg" width="200" height="200" alt="Profil 1" style="border:solid" />
         <img src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638_960_720.png" width="200" height="200" alt="Profil 2" style="border:solid" />
@@ -21,7 +24,7 @@
     </div>
     <div>
         <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ-pW_R4dOkNqHWUb-4xbilXGBef03cx46Y4o11RW3ZniV5V1bt" width="200" height="200" alt="Profil 4" style="border:solid" />
-        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSr9OsAQK5JGtvwLUJUD9TsXBZkkYpnpzQa1SDvOwZs_WoFcV9F" width="200" height="200" alt="Profil 5" style="border:solid" />
+        <img width="200" src="@Url.Action("GetFile","account", new { id = Model.ImageProfil})" alt="ImageProfil" />
         <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRrRkQr48RGmDUcBMrdMyDEFl76vU_IiQsctauH5NEwRqy2u6Eh" width="200" height="200" alt="Profil 6" style="border:solid" />
     </div>
     <div>

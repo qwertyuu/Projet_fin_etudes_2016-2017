@@ -342,7 +342,7 @@
           <Property Name="CreatorUserId" Type="bigint" />
           <Property Name="IdQuestion" Type="int" />
           <Property Name="Reponse" Type="varchar" MaxLength="100" />
-          <Property Name="ImageProfil" Type="varbinary" MaxLength="1" />
+          <Property Name="ImageProfil" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="tblQuestionSecrete">
           <Key>
@@ -2247,8 +2247,8 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblStatutAppelOffre" EntitySet="tblStatutAppelOffre" />
             <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
           </AssociationSet>
-          <EntitySet Name="AbpUsers" EntityType="PE2_OfficielModel.AbpUsers" />
           <EntitySet Name="tblQuestionSecrete" EntityType="PE2_OfficielModel.tblQuestionSecrete" />
+          <EntitySet Name="AbpUsers" EntityType="PE2_OfficielModel.AbpUsers" />
           <AssociationSet Name="FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" Association="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId">
             <End Role="AbpUsers" EntitySet="AbpUsers" />
             <End Role="AbpPermissions" EntitySet="AbpPermissions" />
@@ -2317,7 +2317,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="AbpUsers" EntitySet="AbpUsers" />
             <End Role="tblMemo" EntitySet="tblMemo" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="tblAdresse">
           <Key>
             <PropertyRef Name="noAdresse" />
@@ -3281,7 +3281,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <NavigationProperty Name="AbpUsers" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" FromRole="AbpRoles" ToRole="AbpUsers" />
           <NavigationProperty Name="AbpUsers1" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" FromRole="AbpRoles" ToRole="AbpUsers" />
           <NavigationProperty Name="AbpUsers2" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_LastModifierUserId" FromRole="AbpRoles" ToRole="AbpUsers" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="AbpSettings">
           <Key>
             <PropertyRef Name="Id" />
@@ -3587,6 +3587,14 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tblQuestionSecrete">
+          <Key>
+            <PropertyRef Name="IdQuestion" />
+          </Key>
+          <Property Name="IdQuestion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AbpUsers" Relationship="PE2_OfficielModel.Id_Question" FromRole="tblQuestionSecrete" ToRole="AbpUsers" />
+        </EntityType>
         <EntityType Name="AbpUsers">
           <Key>
             <PropertyRef Name="Id" />
@@ -3613,7 +3621,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="CreatorUserId" Type="Int64" />
           <Property Name="IdQuestion" Type="Int32" />
           <Property Name="Reponse" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ImageProfil" Type="Binary" MaxLength="1" FixedLength="false" />
+          <Property Name="ImageProfil" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="AbpPermissions" Relationship="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" FromRole="AbpUsers" ToRole="AbpPermissions" />
           <NavigationProperty Name="AbpRoles" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" FromRole="AbpUsers" ToRole="AbpRoles" />
           <NavigationProperty Name="AbpRoles1" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" FromRole="AbpUsers" ToRole="AbpRoles" />
@@ -3634,14 +3642,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <NavigationProperty Name="tblActivite" Relationship="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR" FromRole="AbpUsers" ToRole="tblActivite" />
           <NavigationProperty Name="tblMemo" Relationship="PE2_OfficielModel.NO_UTILISATEUR_DESTINATAIRE" FromRole="AbpUsers" ToRole="tblMemo" />
           <NavigationProperty Name="tblMemo1" Relationship="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR" FromRole="AbpUsers" ToRole="tblMemo" />
-        </EntityType>
-        <EntityType Name="tblQuestionSecrete">
-          <Key>
-            <PropertyRef Name="IdQuestion" />
-          </Key>
-          <Property Name="IdQuestion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Question" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="AbpUsers" Relationship="PE2_OfficielModel.Id_Question" FromRole="tblQuestionSecrete" ToRole="AbpUsers" />
         </EntityType>
         <Association Name="FK_dbo_AbpPermissions_dbo_AbpUsers_UserId">
           <End Type="PE2_OfficielModel.AbpUsers" Role="AbpUsers" Multiplicity="0..1">
@@ -3853,7 +3853,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -4737,6 +4737,14 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblQuestionSecrete">
+            <EntityTypeMapping TypeName="PE2_OfficielModel.tblQuestionSecrete">
+              <MappingFragment StoreEntitySet="tblQuestionSecrete">
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="IdQuestion" ColumnName="IdQuestion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="AbpUsers">
             <EntityTypeMapping TypeName="PE2_OfficielModel.AbpUsers">
               <MappingFragment StoreEntitySet="AbpUsers">
@@ -4763,14 +4771,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
                 <ScalarProperty Name="AuthenticationSource" ColumnName="AuthenticationSource" />
                 <ScalarProperty Name="TenantId" ColumnName="TenantId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblQuestionSecrete">
-            <EntityTypeMapping TypeName="PE2_OfficielModel.tblQuestionSecrete">
-              <MappingFragment StoreEntitySet="tblQuestionSecrete">
-                <ScalarProperty Name="Question" ColumnName="Question" />
-                <ScalarProperty Name="IdQuestion" ColumnName="IdQuestion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

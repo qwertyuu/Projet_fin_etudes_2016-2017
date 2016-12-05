@@ -23,11 +23,8 @@ using ECJ.Web.Models.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using System.Web.Routing;
 using System.Data;
 using ECJ.Web.Models;
-using BotDetect.Web;
-using BotDetect.Web.Mvc;
 
 namespace ECJ.Web.Controllers
 {
@@ -95,41 +92,38 @@ namespace ECJ.Web.Controllers
         }
         public ActionResult CreateSetting()
         {
-            ViewBag.Question = provider.ToutQuestion();
+            ViewBag.Question = new SelectList(provider.ToutQuestion(), "IdQuestion", "Question");
+
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateSetting([Bind(Include = "IdQuestion,Reponse")] AbpUsers Users,string PasswordChange, string PasswordChange2)
+        public ActionResult CreateSetting([Bind(Include = "IdQuestion,Reponse")] AbpUsers Users, string PasswordChange,string utilisateur)
         {
-            AbpUsers abp = provider.ReturnUtilisateur(3);
-            if (PasswordChange == PasswordChange2)
-            {
-                abp.Password = PasswordChange;
-            }
-
+            AbpUsers abp = provider.ReturnUtilisateur(utilisateur);
+            
             if (Request.Files["pic"].ContentLength > 0)
             {
                 var pic = Request.Files["pic"];
                 using (var reader = new System.IO.BinaryReader(pic.InputStream))
                 {
-                    Users.ImageProfil = reader.ReadBytes(pic.ContentLength);
+                    abp.ImageProfil = reader.ReadBytes(pic.ContentLength);
                 }
             }
-            else
-            {
-                abp.ImageProfil = Users.ImageProfil;
-            }
-            abp.Reponse = Users.Reponse;
-            provider.UpdateUser(abp);
 
-            return View();
+            abp.Password = new PasswordHasher().HashPassword(PasswordChange);
+            abp.IdQuestion = Users.IdQuestion;
+            abp.Reponse = Users.Reponse;
+
+            provider.UpdateUser(abp);
+            return RedirectToAction("Verification/"+abp.Id);
         }
 
-        public ActionResult Verification()
+        public ActionResult Verification(long id)
         {
-            return View();
+            AbpUsers users = provider.ReturnUtilisateur(id);
+            return View(users);
         }
 
         #region Login / Logout
@@ -147,6 +141,13 @@ namespace ECJ.Web.Controllers
                     ReturnUrl = returnUrl,
                     IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled
                 });
+        }
+
+        public FileContentResult GetFile(int id)
+        {
+            var imagedata = provider.ReturnUtilisateur(id).ImageProfil;
+            var contentType = DBProvider.GetContentType(imagedata);
+            return new FileContentResult(imagedata, string.Format("image/{0}", contentType.ToString().ToLower()));
         }
 
         [HttpPost]

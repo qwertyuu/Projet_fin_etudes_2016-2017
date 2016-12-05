@@ -470,6 +470,7 @@
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="Content\zabuto_calendar.css" />
     <Content Include="Scripts\zabuto_calendar.js" />
+    <Content Include="Views\Account\CreateSetting.js" />
     <Content Include="Views\Account\Login.css">
       <DependentUpon>Login.less</DependentUpon>
     </Content>

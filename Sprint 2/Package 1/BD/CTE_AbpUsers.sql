@@ -23,7 +23,7 @@ ALTER TABLE dbo.AbpUsers
 ADD Reponse varchar(100)
 GO
 ALTER TABLE dbo.AbpUsers
-ADD ImageProfil Varbinary
+ADD ImageProfil Varbinary(MAX)
 GO
 ALTER TABLE dbo.AbpUsers ADD
 CONSTRAINT Id_Question FOREIGN KEY(IdQuestion) REFERENCES tblQuestionSecrete(IdQuestion)
