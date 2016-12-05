@@ -20,6 +20,7 @@ namespace ECJ.Web.Controllers
         private readonly ISessionAppService _sessionAppService;
         private readonly IMultiTenancyConfig _multiTenancyConfig;
         DBProvider provider;
+        public static string pagePermission;
         private static List<Exception> erreurs;
         public static Exception erreur { set {
 
@@ -29,7 +30,6 @@ namespace ECJ.Web.Controllers
                 }
                 erreurs.Add(value);
             } }
-        public static AbpMvcAuthorizeAttribute pagePermission;
 
         public LayoutController(
             IUserNavigationManager userNavigationManager, 
@@ -75,7 +75,7 @@ namespace ECJ.Web.Controllers
         {
             if (pagePermission != null)
             {
-                ViewBag.users = provider.ToutUtilisateurs().Where(u => u.AbpUserRoles.Any(r => provider.SelectRole(r.RoleId).AbpPermissions.Where(p => p.Name == pagePermission.Permissions[0]).Any()));
+                ViewBag.users = provider.ToutUtilisateurs().Where(u => u.AbpUserRoles.Any(r => provider.SelectRole(r.RoleId).AbpPermissions.Where(p => p.Name == pagePermission).Any()));
             }
             else
             {

@@ -225,8 +225,8 @@
     }
 
     abp.event.on('abp.dynamicScriptsInitialized', function () {
-        abp.ajax.defaultError.message = abp.localization.abpWeb('DefaultError');
-        abp.ajax.defaultError.details = abp.localization.abpWeb('DefaultErrorDetail');
+        abp.ajax.defaultError.message = abp.localization.localize('DefaultError', 'ECJ');
+        abp.ajax.defaultError.details = abp.localization.localize('DefaultErrorMessage', 'ECJ');
         abp.ajax.defaultError401.message = abp.localization.abpWeb('DefaultError401');
         abp.ajax.defaultError401.details = abp.localization.abpWeb('DefaultErrorDetail401');
         abp.ajax.defaultError403.message = abp.localization.abpWeb('DefaultError403');

@@ -1,0 +1,36 @@
+﻿@{
+        ViewBag.Title = "Ajout";
+    }
+
+    @model ECJ.Web.Models.AbpUsers
+<h2>Modifier mon profil</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        <label>Modifier le mot de passe (laisser vide pour ne pas changer le mot de passe)</label>
+        <input class="form-control" type="password" name="PasswordChange">
+    </div>
+
+    <div class="form-group">
+        <label>Changer l'image de profil (laissez vide pour garder l'ancienne)</label>
+        <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+    </div>
+
+    <div class="form-group">
+        <label>Question  Secrète </label>
+        <select class="form-control">
+            <option  class="form-control" value="QS">Quel est le nom de votre premier animal de compagnie?</option>
+            <option class="form-control" value="QS">Quel est le nom de jeune fille de votre mère?</option>
+            <option class="form-control" value="QS">Quel est l'année de  naissance de votre père?</option>
+        </select>
+        <input class="form-control" type="text" name="QS" required>
+    </div>
+
+    <div class="form-group pull-right">
+        <button type="submit" class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
+        <a href="/Users" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
+}

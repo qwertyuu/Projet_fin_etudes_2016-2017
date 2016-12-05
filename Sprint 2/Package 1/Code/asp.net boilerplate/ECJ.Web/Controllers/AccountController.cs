@@ -23,11 +23,15 @@ using ECJ.Web.Models.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using System.Data;
+using ECJ.Web.Models;
 
 namespace ECJ.Web.Controllers
 {
     public class AccountController : ECJControllerBase
     {
+        DBProvider provider = new DBProvider();
+        private PE2_OfficielEntities db = new PE2_OfficielEntities();
         private readonly TenantManager _tenantManager;
         private readonly UserManager _userManager;
         private readonly RoleManager _roleManager;
@@ -56,6 +60,72 @@ namespace ECJ.Web.Controllers
             _multiTenancyConfig = multiTenancyConfig;
         }
 
+        public ActionResult captcha()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult captcha(int? id)
+        {
+            // Get recaptcha value
+            var r = Request.Params["g-recaptcha-response"];
+            // ... validate null or empty value if you want
+            // then
+            // make a request to recaptcha api
+            using (var wc = new System.Net.WebClient())
+            {
+                var validateString = string.Format(
+                    "https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}",
+                   "6LeEOA0UAAAAANqjZJSMBlNxd5XCRHK7nUfe-AZ6",    // secret recaptcha key
+                   r); // recaptcha value
+                       // Get result of recaptcha
+                var recaptcha_result = wc.DownloadString(validateString);
+                // Just check if request make by user or bot
+                if (recaptcha_result.ToLower().Contains("false"))
+                {
+                    return View();
+                }
+            }
+            return View("CreateSetting");
+        }
+        public ActionResult CreateSetting()
+        {
+            ViewBag.Question = new SelectList(provider.ToutQuestion(), "IdQuestion", "Question");
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateSetting([Bind(Include = "IdQuestion,Reponse")] AbpUsers Users, string PasswordChange,string utilisateur)
+        {
+            AbpUsers abp = provider.ReturnUtilisateur(utilisateur);
+            
+            if (Request.Files["pic"].ContentLength > 0)
+            {
+                var pic = Request.Files["pic"];
+                using (var reader = new System.IO.BinaryReader(pic.InputStream))
+                {
+                    abp.ImageProfil = reader.ReadBytes(pic.ContentLength);
+                }
+            }
+
+            abp.Password = new PasswordHasher().HashPassword(PasswordChange);
+            abp.IdQuestion = Users.IdQuestion;
+            abp.Reponse = Users.Reponse;
+
+            provider.UpdateUser(abp);
+            return RedirectToAction("Verification/"+abp.Id);
+        }
+
+        public ActionResult Verification(long id)
+        {
+            AbpUsers users = provider.ReturnUtilisateur(id);
+            return View(users);
+        }
+
         #region Login / Logout
 
         public ActionResult Login(string returnUrl = "")
@@ -71,6 +141,13 @@ namespace ECJ.Web.Controllers
                     ReturnUrl = returnUrl,
                     IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled
                 });
+        }
+
+        public FileContentResult GetFile(int id)
+        {
+            var imagedata = provider.ReturnUtilisateur(id).ImageProfil;
+            var contentType = DBProvider.GetContentType(imagedata);
+            return new FileContentResult(imagedata, string.Format("image/{0}", contentType.ToString().ToLower()));
         }
 
         [HttpPost]

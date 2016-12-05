@@ -1,6 +1,6 @@
 ﻿@using Abp.Authorization.Users
 @using Abp.Web.Mvc.Extensions
-@model Abp.Application.Services.Dto.ListResultOutput<ECJ.Users.Dto.UserListDto>
+@model Abp.Application.Services.Dto.ListResultOutput<ECJ.Web.Models.AbpUsers>
 @{
     ViewBag.ActiveMenu = "Users"; //The menu item will be active for this page.
 }
@@ -8,38 +8,75 @@
 {
     @Html.IncludeScript("~/Views/Users/Index.js")
 }
+
 <div>
+    <div class="pull-right">
+        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#rapportAcces"><i class="fa fa-file-pdf-o"></i> Générer Rapport</button>
+    </div>
     <h1>@L("Users")</h1>
+    
     <div class="row">
 
         <div class="col-md-12">
-            <form class="page-header">
+@using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "page-header" }))
+{
                 <div class="input-group">
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="recherche" value="@ViewBag.recherche">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Rechercher</button>
+                        <button class="btn btn-primary">Rechercher</button>
+                    </span>
+                    <span class="input-group-btn">
+                        <a href="/Users/" class="btn btn-default">Vider</a>
                     </span>
                 </div>
-            </form>
-
-            <button data-toggle="modal" data-target="#UserCreateModal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> @L("CreateNewUser")</button>
+}
+            <a href="/Users/Ajout" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un nouvel utilisateur</a>
             <table class="table">
                 <thead>
                     <tr>
                         <th>@L("UserName")</th>
-                        <th>@L("FullName")</th>
+                        <th>Prénom</th>
+                        <th>Nom de famille</th>
                         <th>@L("EmailAddress")</th>
-                        <th>@L("IsActive")</th>
+                        <th>Rôle</th>
+                        <th>Activé</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @{ 
+                        Dictionary<int, string> nomRoles = new Dictionary<int, string>()
+                {
+                    {2, "Administrateur"},
+                    {3, "Agent" },
+                    {4, "Agent senior" },
+                    {5, "Représentant" }
+                        };
+                    }
                     @foreach (var user in Model.Items)
-                    {
+                        {
+
                         <tr>
                             <td>@user.UserName</td>
-                            <td>@user.FullName</td>
+                            <td>@user.Name</td>
+                            <td>@user.Surname</td>
                             <td>@user.EmailAddress</td>
-                            <td>@L(user.IsActive ? "Yes" : "No")</td>
+                            <td>                
+                            @if (user.AbpUserRoles.Count == 0)
+                            {
+                                <span>Employé</span>
+                            }
+                            else
+                            {
+                                @nomRoles[user.AbpUserRoles.ToList()[0].RoleId];
+                            }
+                            </td>
+                            <td>@(user.IsActive ? "Oui" : "Non")</td>
+                            <td>
+                                <a href="/Users/Detail/@user.Id" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="/Users/Modifier/@user.Id" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="/Users/Supprimer/@user.Id" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            </td>
                         </tr>
                     }
                 </tbody>
@@ -47,35 +84,76 @@
         </div>
     </div>
 </div>
+<div id="rapportAcces" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
-<div class="modal fade" id="UserCreateModal" tabindex="-1" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form name="userCreateForm" role="form" novalidate class="form-validation">
-                <div class="modal-header">
-                    <h4 class="modal-title">
-                        <span>Créer un nouveau mémo</span>
-                    </h4>
-                </div>
-                <div class="modal-body">
+        <!-- Modal content-->
+        <form class="modal-content" method="get" target="_blank" action="~/Report/RapportAcces">
 
 
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Générer le rapport d'accès</h3>
+            </div>
+            <div class="modal-body ">
+                <fieldset>
+                    <legend>Restreindre les dates (facultatif)</legend>
                     <div class="form-group">
-                        <label>Destinataire</label>
-                        <input type="text" name="Name" class="form-control" required maxlength="@ECJ.Users.User.MaxNameLength">
+                        <label>Date de début</label>
+                        <input placeholder="depuis le début" name="filtre_debut" type="date" class="dp form-control" />
                     </div>
-
                     <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="EmailAddress" class="form-control" rows="10" cols="5" required></textarea>
+                        <label>Date de fin</label>
+                        <input placeholder="jusqu'à aujourd'hui" name="filtre_fin" type="date" class="dp form-control" />
                     </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Restreindre par période</legend>
+                    <div class="form-group">
+                        <label>Période</label>
+                        <select name="filtre_periode" class="form-control">
+                            <option value="tous" selected>Aucune période</option>
+                            <option value="jour">Journalier</option>
+                            <option value="semaine">Hebdomadaire</option>
+                            <option value="mois">Mensuel</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Filtrer</legend>
+                    <div class="form-group">
+                        <label>Par profil</label>
+                        <select name="filtre_profil" class="form-control">
+                            <option value="tous" selected>Tous</option>
+                            <option value="Admin">Administrateur</option>
+                            <option value="Representant">Représentant</option>
+                            <option value="AgentSenior">Agent senior</option>
+                            <option value="Agent">Agent</option>
+                            <option value="Employe">Employé</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Par utilisateur</label>
+                        <select name="filtre_utilisateur" class="form-control">
+                            <option value="tous" selected>Tous</option>
+                            @foreach (var item in Model.Items)
+                            {
+                                <option value="@item.Id">@item.UserName</option>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary blue"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">@L("Cancel")</button>
-                </div>
-            </form>
-        </div>
+                            }
+                        </select>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary">Générer</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+            </div>
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+        </form>
+
     </div>
 </div>

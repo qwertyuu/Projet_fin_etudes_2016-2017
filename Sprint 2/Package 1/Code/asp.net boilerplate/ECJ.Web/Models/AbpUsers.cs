@@ -30,9 +30,9 @@ namespace ECJ.Web.Models
             this.AbpUsers1 = new HashSet<AbpUsers>();
             this.AbpUsers11 = new HashSet<AbpUsers>();
             this.AbpUsers12 = new HashSet<AbpUsers>();
+            this.tblActivite = new HashSet<tblActivite>();
             this.tblMemo = new HashSet<tblMemo>();
             this.tblMemo1 = new HashSet<tblMemo>();
-            this.tblActivite = new HashSet<tblActivite>();
         }
     
         public long Id { get; set; }
@@ -55,6 +55,9 @@ namespace ECJ.Web.Models
         public Nullable<long> LastModifierUserId { get; set; }
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
+        public Nullable<int> IdQuestion { get; set; }
+        public string Reponse { get; set; }
+        public byte[] ImageProfil { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AbpPermissions> AbpPermissions { get; set; }
@@ -85,11 +88,12 @@ namespace ECJ.Web.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AbpUsers> AbpUsers12 { get; set; }
         public virtual AbpUsers AbpUsers4 { get; set; }
+        public virtual tblQuestionSecrete tblQuestionSecrete { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblActivite> tblActivite { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblMemo> tblMemo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblMemo> tblMemo1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblActivite> tblActivite { get; set; }
     }
 }

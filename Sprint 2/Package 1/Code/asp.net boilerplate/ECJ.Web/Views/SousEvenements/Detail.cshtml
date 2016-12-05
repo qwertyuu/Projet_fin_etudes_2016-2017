@@ -2,6 +2,7 @@
 @using System.Text
 @using ECJ.Web.Models
 @using System.Runtime.Serialization.Json
+@using ECJ.Authorization;
 @{
     ViewBag.Title = "Detail";
     @*Service, Salle, Forfait, Engagement*@
@@ -38,13 +39,15 @@
         </div>
     </div>
     <label>Services requis</label>
-@if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+@if (IsGranted(PermissionNames.GererSousEvenement))
 {
-
-    if (Model.Item2.Count > 0)
-    {
-        <button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
-    }
+	if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+	{
+	    if (Model.Item2.Count > 0)
+	    {
+	        <button data-target="#ServiceAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un service</button>
+	    }
+	}
 }
     <div class="form-group">
         @using (Html.BeginForm())
@@ -64,9 +67,12 @@
                     <tr>
                         <td>@s.nomService</td>
                         <td>
-                        @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+                        @if (IsGranted(PermissionNames.GererSousEvenement))
                         {
-                            <button name="service_suppr" value="@s.noService" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                            if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+	                        {
+	                            <button name="service_suppr" value="@s.noService" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+	                        }
                         }
                         </td>
                     </tr>
@@ -78,9 +84,12 @@
     <label>Salle</label>
     @if (Model.Item1.noSalle == null || Model.Item1.tblSalle.dateSupprime != null)
     {
-        if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+        if (IsGranted(PermissionNames.GererSousEvenement))
         {
-        <button data-target="#SalleAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Choisir une salle</button>
+            if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+	        {
+	        	<button data-target="#SalleAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Choisir une salle</button>
+	        }
         }
     }
     <div class="form-group">
@@ -107,10 +116,14 @@
                         <td>@Model.Item1.tblSalle.billet</td>
                         <td>@Model.Item1.tblSalle.billetVIP</td>
                         <td>
-                            @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+
+                        @if (IsGranted(PermissionNames.GererSousEvenement))
+                        {
+                            if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
                             {
-                            <button name="salle_suppr" value="@Model.Item1.noSalle" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+                            	<button name="salle_suppr" value="@Model.Item1.noSalle" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
                             }
+                        }
                         </td>
                     </tr>
                 }
@@ -120,13 +133,16 @@
     </div>
 
     <label>Forfaits</label>
-@if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+@if (IsGranted(PermissionNames.GererSousEvenement))
 {
-    if (Model.Item4.Count > 0)
-    {
-        <button data-target="#ForfaitAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un forfait</button>
-
-    }
+	if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+	{
+	    if (Model.Item4.Count > 0)
+	    {
+	        <button data-target="#ForfaitAjoutModal" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un forfait</button>
+	
+	    }
+	}
 }
     <div class="form-group">
 @using (Html.BeginForm())
@@ -148,10 +164,13 @@
                         <td>@f.nom</td>
                         <td>@f.description</td>
                         <td>
-                            @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
-                            {
-                            <button name="forfait_suppr" value="@f.noForfait" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
-                            }
+@if (IsGranted(PermissionNames.GererSousEvenement))
+{
+    if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+    {
+    	<button name="forfait_suppr" value="@f.noForfait" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+    }
+}
                         </td>
                     </tr>
                 }
@@ -159,9 +178,11 @@
         </table>
 }
     </div>
-
     <label>Engagements</label>
-    @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+
+@if (IsGranted(PermissionNames.GererSousEvenement))
+{
+	if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
     {
         if (Model.Item5.Count > 0)
         {
@@ -169,6 +190,7 @@
 
         }
     }
+}
     <div class="form-group">
 @using (Html.BeginForm())
 {
@@ -197,10 +219,13 @@
                         <td>@e.heure</td>
                         <td>@e.descriptionCourte</td>
                         <td>
-                        @if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
-                        {
-                            <button name="engagement_suppr" value="@e.noEngagement" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
-                        }
+@if (IsGranted(PermissionNames.GererSousEvenement))
+{
+	if (DateTime.Now <= Model.Item1.tblEvenement.datefin)
+	{
+	    <button name="engagement_suppr" value="@e.noEngagement" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></button>
+	}
+}
                         </td>
                     </tr>
                 }
@@ -210,7 +235,10 @@
     </div>
 
     <label>Activités</label>
+@if (IsGranted(PermissionNames.GererSousEvenement))
+{
     <a href="~/Activite/Ajout/?sousevenement_id=@Model.Item1.noSousEvenement&return=@Request.RawUrl" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
+}
     <ul class="nav nav-tabs">
         <li class="active"><a href="#liste" data-toggle="tab" aria-expanded="true">Liste</a></li>
         <li class=""><a href="#calendrier" data-toggle="tab" aria-expanded="false">Calendrier</a></li>
@@ -255,7 +283,9 @@
                                         @(activite.etat == 1 ? "Réalisé" : "Non réalisé")
                                     </td>
                                     <td>
-                                        @if (activite.etat == 1)
+@if (IsGranted(PermissionNames.GererSousEvenement))
+{
+                                        if (activite.etat == 1)
                                         {
                                             <a href="~/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-warning" title="Changer pour non-réalisé"><i class="fa fa-times-circle fa-lg"></i></a>
 
@@ -264,19 +294,23 @@
                                         {
                                             <a href="~/Activite/ChangeEtat/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-success" title="Changer pour réalisé"><i class="fa fa-check-square fa-lg"></i></a>
                                         }
+}
                                         <a href="~/Activite/Detail/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+
+@if (IsGranted(PermissionNames.GererSousEvenement))
+{
                                         <a href="~/Activite/Modifier/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
                                         <a href="~/Activite/Supprimer/@activite.noActivite?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
-
+}
                                     </td>
                                 </tr>
-                                        }
+                                }
 
-                                        foreach (var d in actInfo)
-                                        {
-                                            cals.Add(new ECJ.Web.Models.Calendrier() { date = d.Key, badge = true, title = d.Value });
-                                        }
-                        }
+                                foreach (var d in actInfo)
+                                {
+                                    cals.Add(new ECJ.Web.Models.Calendrier() { date = d.Key, badge = true, title = d.Value });
+                                }
+                            }
                     </tbody>
 
                 </table>

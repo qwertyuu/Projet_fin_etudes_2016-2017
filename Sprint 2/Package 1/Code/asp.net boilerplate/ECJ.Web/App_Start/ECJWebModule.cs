@@ -24,8 +24,8 @@ namespace ECJ.Web
     {
         public override void PreInitialize()
         {
-            //Enable database based localization
-            Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
+             //Enable database based localization
+             Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
 
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<ECJNavigationProvider>();
@@ -35,6 +35,7 @@ namespace ECJ.Web
             //{
             //    configuration.GlobalConfiguration.UseSqlServerStorage("Default");
             //});
+
         }
 
         public override void Initialize()

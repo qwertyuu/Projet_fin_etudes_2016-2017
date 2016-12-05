@@ -38,9 +38,10 @@
             </div>
         </div>   
         <br />
-        <a href="~/AppellOffre/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i> Ajouter un appel d'offre</a>
-
-
+        @if (ViewBag.PeutCreerAppelOffre)
+        {
+        	<a href="~/AppellOffre/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i> Ajouter un appel d'offre</a>
+        }
         <table class="table" align="center" data-sortlist="[[4,0]]">
             <thead>
                 <tr>
@@ -114,4 +115,6 @@
 <br />
 <br />
 <button class="btn btn-default pull-right " data-dismiss="modal" onclick="javascript:window.location.reload()">Mettre à jour les soumissions</button> 
+
+
 

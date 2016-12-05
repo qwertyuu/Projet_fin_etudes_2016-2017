@@ -89,11 +89,21 @@
         <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserNotifications" Width="1.5" PointX="19.75" PointY="13.75" />
         <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserOrganizationUnits" Width="1.5" PointX="19.75" PointY="16.75" />
         <EntityTypeShape EntityType="PE2_OfficielModel.AbpUserRoles" Width="1.5" PointX="18" PointY="35.375" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUsers" Width="1.5" PointX="15.75" PointY="24.25" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpFeatures_dbo_AbpEditions_EditionId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpEditions_EditionId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpOrganizationUnits_dbo_AbpOrganizationUnits_ParentId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpRoles_RoleId" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblCalculateur" Width="2" PointX="5.25" PointY="35.5" />
+        <AssociationConnector Association="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomSalle" Width="1.5" PointX="7.375" PointY="20.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAppelOffre" Width="1.5" PointX="7.375" PointY="16.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffre" Width="1.5" PointX="6" PointY="9.25" />
+        <AssociationConnector Association="PE2_OfficielModel.EVENEMENT_APPEL_FK" />
+        <AssociationConnector Association="PE2_OfficielModel.APPEL_OFFRE_FK" />
+        <AssociationConnector Association="PE2_OfficielModel.MED_APPEL_FK" />
+        <AssociationConnector Association="PE2_OfficielModel.STATUT_APPEL_FK" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblQuestionSecrete" Width="1.5" PointX="15" PointY="38.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUsers" Width="1.5" PointX="17.25" PointY="45.875" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" />
@@ -107,18 +117,10 @@
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" />
+        <AssociationConnector Association="PE2_OfficielModel.Id_Question" />
+        <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR" />
         <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_DESTINATAIRE" />
         <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblCalculateur" Width="2" PointX="5.25" PointY="35.5" />
-        <AssociationConnector Association="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK" />
-        <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomSalle" Width="1.5" PointX="7.375" PointY="20.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.vueSomAppelOffre" Width="1.5" PointX="7.375" PointY="16.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblAppelOffre" Width="1.5" PointX="6" PointY="9.25" />
-        <AssociationConnector Association="PE2_OfficielModel.EVENEMENT_APPEL_FK" />
-        <AssociationConnector Association="PE2_OfficielModel.APPEL_OFFRE_FK" />
-        <AssociationConnector Association="PE2_OfficielModel.MED_APPEL_FK" />
-        <AssociationConnector Association="PE2_OfficielModel.STATUT_APPEL_FK" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

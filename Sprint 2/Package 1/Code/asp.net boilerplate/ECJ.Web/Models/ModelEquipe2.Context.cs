@@ -82,9 +82,10 @@ namespace ECJ.Web.Models
         public virtual DbSet<AbpUserNotifications> AbpUserNotifications { get; set; }
         public virtual DbSet<AbpUserOrganizationUnits> AbpUserOrganizationUnits { get; set; }
         public virtual DbSet<AbpUserRoles> AbpUserRoles { get; set; }
-        public virtual DbSet<AbpUsers> AbpUsers { get; set; }
         public virtual DbSet<tblCalculateur> tblCalculateur { get; set; }
         public virtual DbSet<vueSomSalle> vueSomSalle { get; set; }
         public virtual DbSet<tblAppelOffre> tblAppelOffre { get; set; }
+        public virtual DbSet<tblQuestionSecrete> tblQuestionSecrete { get; set; }
+        public virtual DbSet<AbpUsers> AbpUsers { get; set; }
     }
 }

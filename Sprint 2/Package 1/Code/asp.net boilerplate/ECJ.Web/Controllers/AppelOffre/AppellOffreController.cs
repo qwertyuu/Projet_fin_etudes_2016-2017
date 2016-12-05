@@ -13,10 +13,12 @@ using System.IO;
 using System.Xml.Linq;
 using Abp.Web.Mvc.Authorization;
 using System.Globalization;
+using ECJ.Authorization;
+using System.Web.Helpers;
 
 namespace ECJ.Web.Controllers.AppelOffre
 {
-    [AbpMvcAuthorize]
+    [AbpMvcAuthorize(PermissionNames.ConsulterAppelOffre)]
     public class AppellOffreController : ECJControllerBase
     {
         private DBProvider provider;
@@ -327,6 +329,10 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         private tblSoumission CreateSoumission(int noAgenP, int noApp)
         {
+            //if (!PermissionChecker.IsGrantedAsync("CreerSoumission").Result)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
             tblSoumission soumi = provider.SleclectSoumi(noApp, noAgenP);
             if (soumi!=null)//update soumission
             {
@@ -394,7 +400,7 @@ namespace ECJ.Web.Controllers.AppelOffre
 
             //Retourner les soumission du xml vers la bd
             RetournerSoumissionXml();
-            
+            ViewBag.PeutCreerAppelOffre = PermissionChecker.IsGrantedAsync(PermissionNames.CreerAppelOffre).Result;
             return View(appelGoupBy.ToList());
         }
 
@@ -420,6 +426,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             return View(tblAppelOffre);
         }
 
+        [AbpMvcAuthorize(PermissionNames.CreerAppelOffre)]
         // GET: AppellOffre/Create
         public ActionResult Create()
         {
@@ -623,5 +630,16 @@ namespace ECJ.Web.Controllers.AppelOffre
             }
             return RedirectToAction("Index");
         }
+        public ActionResult GetChart()
+        {
+            ViewBag.chart = new Chart(600, 400,ChartTheme.Green)
+                .AddTitle("Montant des dons par commanditaires")
+                .AddSeries(
+                    chartType: "column",
+                    xValue: new[] { "Platine Comunication", "Mediative", "Agence Polka", "Zed Productions" },
+                    yValues: new[] { "2000", "1800", "1200", "2100" });
+            return View();
+        }
+
     }
 }

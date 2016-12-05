@@ -188,22 +188,38 @@ PRINT 'INSERTION DE LA tblCalculateur'
 GO
 INSERT INTO S_forfait.tblCalculateur (billet,billetVIP,prixBillet,prixBilletVIP,souperSpectacle,prixSouper,jeunePourcent,adultePourcent,ainePourcent,jeuneRatio,adulteRatio,aineRatio,promo,prevente,customBillet1,customBillet2,customPrix1,customPrix2,customNom1,customNom2)
 VALUES
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
 (5,5,5,5,5,5,5,5,5,50,30,20,5,5,5,5,5,5,'Rabais rue','Rabais internet'),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
-
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',''),
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','');
 GO
 PRINT 'INSERTION RÉUSSI'
 

@@ -26,7 +26,7 @@ namespace ECJ.Web.Controllers
             AbpMvcAuthorizeAttribute[] MyAttributes = (AbpMvcAuthorizeAttribute[])Attribute.GetCustomAttributes(this.GetType(), typeof(AbpMvcAuthorizeAttribute));
             if (MyAttributes.Length > 0 && MyAttributes[0].Permissions.Length > 0)
             {
-                LayoutController.pagePermission = MyAttributes[0];
+                LayoutController.pagePermission = MyAttributes[0].Permissions[0];
             }
         }
 

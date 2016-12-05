@@ -42,7 +42,7 @@ namespace ECJ.Web.Controllers.Don
                     comm.Add(c);
                 }
             }
-            var commandite = provider.ReturnCommanditaire((int)id);
+            var commandite = provider.returnCommanditaire((int)id);
             ViewBag.noCommanditaire = commandite.noCommanditaire;
             ViewBag.nomCommanditaire = commandite.nomCommanditaire;
             List<SelectListItem> sousEvenements = new List<SelectListItem>();
@@ -73,29 +73,7 @@ namespace ECJ.Web.Controllers.Don
 
                 tblCommanditaire tblCommanditaire = provider.returnCommanditaire((int)tblDon.noCommanditaire);
 
-                // CREATION DE MAIL NON-FONCTIONNEL
-                string to = tblCommanditaire.courrielContact.ToString();
-                string from = "PagPi1433443@etu.cegepjonquiere.ca";
-                MailMessage message = new MailMessage(from, to);
-                SmtpClient client = new SmtpClient("smtp.office365.com");
-                client.Port = 587;
-                client.EnableSsl = true;
-                client.UseDefaultCredentials = false;
-                NetworkCredential cred = new System.Net.NetworkCredential(from, "PAPageau04");
-                client.Credentials = cred;
-                client.DeliveryMethod = SmtpDeliveryMethod.Network;
-
-                message.Subject = "Merci de votre Commandite";
-                message.Body = "Merci pour votre don de " + tblDon.montant + " $ effectué le " + tblDon.dateDon + ".";
-
-                try
-                {
-                    client.Send(message);
-                }
-                catch (Exception ex)
-                {
-                    LayoutController.erreur = ex;
-                }
+                SendMail(tblCommanditaire.courrielContact.ToString(), tblDon.montant.ToString(), tblDon.dateDon.ToString());
             }
             var retour = Request.QueryString["return"] ?? "~/Commanditaire";
             return Redirect(retour);
@@ -109,6 +87,32 @@ namespace ECJ.Web.Controllers.Don
             }
             var retour = Request.QueryString["return"] ?? "~/Commanditaire";
             return Redirect(retour);
+        }
+
+        private void SendMail(string courrielContact, string montant, string dateDon)
+        {
+            string to = courrielContact;
+            string from = "PagPi1433443@etu.cegepjonquiere.ca";
+            MailMessage message = new MailMessage(from, to);
+            SmtpClient client = new SmtpClient("smtp.office365.com");
+            client.Port = 587;
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = false;
+            NetworkCredential cred = new System.Net.NetworkCredential(from, "PAPageau04");
+            client.Credentials = cred;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+            message.Subject = "Merci de votre Commandite";
+            message.Body = "Merci pour votre don de " + montant + " $ effectué le " + dateDon + ".";
+
+            try
+            {
+                client.Send(message);
+            }
+            catch (Exception ex)
+            {
+                LayoutController.erreur = ex;
+            }
         }
     }
 }

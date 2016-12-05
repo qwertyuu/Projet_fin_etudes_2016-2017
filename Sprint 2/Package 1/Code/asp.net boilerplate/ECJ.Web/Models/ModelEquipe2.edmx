@@ -340,6 +340,16 @@
           <Property Name="LastModifierUserId" Type="bigint" />
           <Property Name="CreationTime" Type="datetime" Nullable="false" />
           <Property Name="CreatorUserId" Type="bigint" />
+          <Property Name="IdQuestion" Type="int" />
+          <Property Name="Reponse" Type="varchar" MaxLength="100" />
+          <Property Name="ImageProfil" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tblQuestionSecrete">
+          <Key>
+            <PropertyRef Name="IdQuestion" />
+          </Key>
+          <Property Name="IdQuestion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="tblAdresse">
           <Key>
@@ -1341,6 +1351,18 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="Id_Question">
+          <End Role="tblQuestionSecrete" Type="Self.tblQuestionSecrete" Multiplicity="0..1" />
+          <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblQuestionSecrete">
+              <PropertyRef Name="IdQuestion" />
+            </Principal>
+            <Dependent Role="AbpUsers">
+              <PropertyRef Name="IdQuestion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="MED_APPEL_FK">
           <End Role="tblMedia" Type="Self.tblMedia" Multiplicity="1" />
           <End Role="tblAppelOffre" Type="Self.tblAppelOffre" Multiplicity="*" />
@@ -1628,6 +1650,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySet Name="AbpUserOrganizationUnits" EntityType="Self.AbpUserOrganizationUnits" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AbpUserRoles" EntityType="Self.AbpUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AbpUsers" EntityType="Self.AbpUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblQuestionSecrete" EntityType="Self.tblQuestionSecrete" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAdresse" EntityType="Self.tblAdresse" Schema="S_Contrat" store:Type="Tables" />
           <EntitySet Name="tblAgence" EntityType="Self.tblAgence" Schema="S_Contrat" store:Type="Tables" />
           <EntitySet Name="tblArtiste" EntityType="Self.tblArtiste" Schema="S_Contrat" store:Type="Tables" />
@@ -1922,6 +1945,10 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblForfait" EntitySet="tblForfait" />
             <End Role="tblForfaitSousEvenement" EntitySet="tblForfaitSousEvenement" />
           </AssociationSet>
+          <AssociationSet Name="Id_Question" Association="Self.Id_Question">
+            <End Role="tblQuestionSecrete" EntitySet="tblQuestionSecrete" />
+            <End Role="AbpUsers" EntitySet="AbpUsers" />
+          </AssociationSet>
           <AssociationSet Name="MED_APPEL_FK" Association="Self.MED_APPEL_FK">
             <End Role="tblMedia" EntitySet="tblMedia" />
             <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
@@ -2181,7 +2208,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySet Name="AbpUserNotifications" EntityType="PE2_OfficielModel.AbpUserNotifications" />
           <EntitySet Name="AbpUserOrganizationUnits" EntityType="PE2_OfficielModel.AbpUserOrganizationUnits" />
           <EntitySet Name="AbpUserRoles" EntityType="PE2_OfficielModel.AbpUserRoles" />
-          <EntitySet Name="AbpUsers" EntityType="PE2_OfficielModel.AbpUsers" />
           <AssociationSet Name="FK_dbo_AbpFeatures_dbo_AbpEditions_EditionId" Association="PE2_OfficielModel.FK_dbo_AbpFeatures_dbo_AbpEditions_EditionId">
             <End Role="AbpEditions" EntitySet="AbpEditions" />
             <End Role="AbpFeatures" EntitySet="AbpFeatures" />
@@ -2198,6 +2224,31 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="AbpRoles" EntitySet="AbpRoles" />
             <End Role="AbpPermissions" EntitySet="AbpPermissions" />
           </AssociationSet>
+          <EntitySet Name="tblCalculateur" EntityType="PE2_OfficielModel.tblCalculateur" />
+          <AssociationSet Name="SOUSEVEN_CALC_NOSEVENL_FK" Association="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK">
+            <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
+            <End Role="tblCalculateur" EntitySet="tblCalculateur" />
+          </AssociationSet>
+          <EntitySet Name="vueSomSalle" EntityType="PE2_OfficielModel.vueSomSalle" />
+          <EntitySet Name="tblAppelOffre" EntityType="PE2_OfficielModel.tblAppelOffre" />
+          <AssociationSet Name="EVENEMENT_APPEL_FK" Association="PE2_OfficielModel.EVENEMENT_APPEL_FK">
+            <End Role="tblEvenement" EntitySet="tblEvenement" />
+            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
+          </AssociationSet>
+          <AssociationSet Name="APPEL_OFFRE_FK" Association="PE2_OfficielModel.APPEL_OFFRE_FK">
+            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
+            <End Role="tblSoumission" EntitySet="tblSoumission" />
+          </AssociationSet>
+          <AssociationSet Name="MED_APPEL_FK" Association="PE2_OfficielModel.MED_APPEL_FK">
+            <End Role="tblMedia" EntitySet="tblMedia" />
+            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
+          </AssociationSet>
+          <AssociationSet Name="STATUT_APPEL_FK" Association="PE2_OfficielModel.STATUT_APPEL_FK">
+            <End Role="tblStatutAppelOffre" EntitySet="tblStatutAppelOffre" />
+            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
+          </AssociationSet>
+          <EntitySet Name="tblQuestionSecrete" EntityType="PE2_OfficielModel.tblQuestionSecrete" />
+          <EntitySet Name="AbpUsers" EntityType="PE2_OfficielModel.AbpUsers" />
           <AssociationSet Name="FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" Association="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId">
             <End Role="AbpUsers" EntitySet="AbpUsers" />
             <End Role="AbpPermissions" EntitySet="AbpPermissions" />
@@ -2250,6 +2301,14 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="AbpUsers" EntitySet="AbpUsers" />
             <End Role="AbpUsers1" EntitySet="AbpUsers" />
           </AssociationSet>
+          <AssociationSet Name="Id_Question" Association="PE2_OfficielModel.Id_Question">
+            <End Role="tblQuestionSecrete" EntitySet="tblQuestionSecrete" />
+            <End Role="AbpUsers" EntitySet="AbpUsers" />
+          </AssociationSet>
+          <AssociationSet Name="NO_UTILISATEUR_CREATEUR" Association="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR">
+            <End Role="AbpUsers" EntitySet="AbpUsers" />
+            <End Role="tblActivite" EntitySet="tblActivite" />
+          </AssociationSet>
           <AssociationSet Name="NO_UTILISATEUR_DESTINATAIRE" Association="PE2_OfficielModel.NO_UTILISATEUR_DESTINATAIRE">
             <End Role="AbpUsers" EntitySet="AbpUsers" />
             <End Role="tblMemo" EntitySet="tblMemo" />
@@ -2258,34 +2317,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="AbpUsers" EntitySet="AbpUsers" />
             <End Role="tblMemo" EntitySet="tblMemo" />
           </AssociationSet>
-          <EntitySet Name="tblCalculateur" EntityType="PE2_OfficielModel.tblCalculateur" />
-          <AssociationSet Name="SOUSEVEN_CALC_NOSEVENL_FK" Association="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK">
-            <End Role="tblSousEvenement" EntitySet="tblSousEvenement" />
-            <End Role="tblCalculateur" EntitySet="tblCalculateur" />
-          </AssociationSet>
-          <AssociationSet Name="NO_UTILISATEUR_CREATEUR" Association="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR">
-            <End Role="AbpUsers" EntitySet="AbpUsers" />
-            <End Role="tblActivite" EntitySet="tblActivite" />
-          </AssociationSet>
-          <EntitySet Name="vueSomSalle" EntityType="PE2_OfficielModel.vueSomSalle" />
-          <EntitySet Name="tblAppelOffre" EntityType="PE2_OfficielModel.tblAppelOffre" />
-          <AssociationSet Name="EVENEMENT_APPEL_FK" Association="PE2_OfficielModel.EVENEMENT_APPEL_FK">
-            <End Role="tblEvenement" EntitySet="tblEvenement" />
-            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
-          </AssociationSet>
-          <AssociationSet Name="APPEL_OFFRE_FK" Association="PE2_OfficielModel.APPEL_OFFRE_FK">
-            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
-            <End Role="tblSoumission" EntitySet="tblSoumission" />
-          </AssociationSet>
-          <AssociationSet Name="MED_APPEL_FK" Association="PE2_OfficielModel.MED_APPEL_FK">
-            <End Role="tblMedia" EntitySet="tblMedia" />
-            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
-          </AssociationSet>
-          <AssociationSet Name="STATUT_APPEL_FK" Association="PE2_OfficielModel.STATUT_APPEL_FK">
-            <End Role="tblStatutAppelOffre" EntitySet="tblStatutAppelOffre" />
-            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
-          </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="tblAdresse">
           <Key>
             <PropertyRef Name="noAdresse" />
@@ -2596,7 +2628,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="destinataire" Type="Int64" Nullable="false" />
           <NavigationProperty Name="AbpUsers" Relationship="PE2_OfficielModel.NO_UTILISATEUR_DESTINATAIRE" FromRole="tblMemo" ToRole="AbpUsers" />
           <NavigationProperty Name="AbpUsers1" Relationship="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR" FromRole="tblMemo" ToRole="AbpUsers" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="tblAgencePublicite">
           <Key>
             <PropertyRef Name="noAgencePub" />
@@ -3249,7 +3281,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <NavigationProperty Name="AbpUsers" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" FromRole="AbpRoles" ToRole="AbpUsers" />
           <NavigationProperty Name="AbpUsers1" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" FromRole="AbpRoles" ToRole="AbpUsers" />
           <NavigationProperty Name="AbpUsers2" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_LastModifierUserId" FromRole="AbpRoles" ToRole="AbpUsers" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="AbpSettings">
           <Key>
             <PropertyRef Name="Id" />
@@ -3302,7 +3334,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <NavigationProperty Name="AbpUsers" Relationship="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_CreatorUserId" FromRole="AbpTenants" ToRole="AbpUsers" />
           <NavigationProperty Name="AbpUsers1" Relationship="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_DeleterUserId" FromRole="AbpTenants" ToRole="AbpUsers" />
           <NavigationProperty Name="AbpUsers2" Relationship="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_LastModifierUserId" FromRole="AbpTenants" ToRole="AbpUsers" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="AbpUserAccounts">
           <Key>
             <PropertyRef Name="Id" />
@@ -3382,50 +3414,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="TenantId" Type="Int32" />
           <NavigationProperty Name="AbpUsers" Relationship="PE2_OfficielModel.FK_dbo_AbpUserRoles_dbo_AbpUsers_UserId" FromRole="AbpUserRoles" ToRole="AbpUsers" />
         </EntityType>
-        <EntityType Name="AbpUsers">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenantId" Type="Int32" />
-          <Property Name="AuthenticationSource" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
-          <Property Name="Surname" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
-          <Property Name="UserName" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
-          <Property Name="IsEmailConfirmed" Type="Boolean" Nullable="false" />
-          <Property Name="EmailConfirmationCode" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="PasswordResetCode" Type="String" MaxLength="328" FixedLength="false" Unicode="true" />
-          <Property Name="LastLoginTime" Type="DateTime" Precision="3" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="DeleterUserId" Type="Int64" />
-          <Property Name="DeletionTime" Type="DateTime" Precision="3" />
-          <Property Name="LastModificationTime" Type="DateTime" Precision="3" />
-          <Property Name="LastModifierUserId" Type="Int64" />
-          <Property Name="CreationTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="CreatorUserId" Type="Int64" />
-          <NavigationProperty Name="AbpPermissions" Relationship="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" FromRole="AbpUsers" ToRole="AbpPermissions" />
-          <NavigationProperty Name="AbpRoles" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" FromRole="AbpUsers" ToRole="AbpRoles" />
-          <NavigationProperty Name="AbpRoles1" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" FromRole="AbpUsers" ToRole="AbpRoles" />
-          <NavigationProperty Name="AbpRoles2" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_LastModifierUserId" FromRole="AbpUsers" ToRole="AbpRoles" />
-          <NavigationProperty Name="AbpSettings" Relationship="PE2_OfficielModel.FK_dbo_AbpSettings_dbo_AbpUsers_UserId" FromRole="AbpUsers" ToRole="AbpSettings" />
-          <NavigationProperty Name="AbpTenants" Relationship="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_CreatorUserId" FromRole="AbpUsers" ToRole="AbpTenants" />
-          <NavigationProperty Name="AbpTenants1" Relationship="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_DeleterUserId" FromRole="AbpUsers" ToRole="AbpTenants" />
-          <NavigationProperty Name="AbpTenants2" Relationship="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_LastModifierUserId" FromRole="AbpUsers" ToRole="AbpTenants" />
-          <NavigationProperty Name="AbpUserLogins" Relationship="PE2_OfficielModel.FK_dbo_AbpUserLogins_dbo_AbpUsers_UserId" FromRole="AbpUsers" ToRole="AbpUserLogins" />
-          <NavigationProperty Name="AbpUserRoles" Relationship="PE2_OfficielModel.FK_dbo_AbpUserRoles_dbo_AbpUsers_UserId" FromRole="AbpUsers" ToRole="AbpUserRoles" />
-          <NavigationProperty Name="AbpUsers1" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId" FromRole="AbpUsers" ToRole="AbpUsers1" />
-          <NavigationProperty Name="AbpUsers2" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId" FromRole="AbpUsers1" ToRole="AbpUsers" />
-          <NavigationProperty Name="AbpUsers11" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId" FromRole="AbpUsers" ToRole="AbpUsers1" />
-          <NavigationProperty Name="AbpUsers3" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId" FromRole="AbpUsers1" ToRole="AbpUsers" />
-          <NavigationProperty Name="AbpUsers12" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" FromRole="AbpUsers" ToRole="AbpUsers1" />
-          <NavigationProperty Name="AbpUsers4" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" FromRole="AbpUsers1" ToRole="AbpUsers" />
-          <NavigationProperty Name="tblMemo" Relationship="PE2_OfficielModel.NO_UTILISATEUR_DESTINATAIRE" FromRole="AbpUsers" ToRole="tblMemo" />
-          <NavigationProperty Name="tblMemo1" Relationship="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR" FromRole="AbpUsers" ToRole="tblMemo" />
-          <NavigationProperty Name="tblActivite" Relationship="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR" FromRole="AbpUsers" ToRole="tblActivite" />
-        </EntityType>
         <Association Name="FK_dbo_AbpFeatures_dbo_AbpEditions_EditionId">
           <End Type="PE2_OfficielModel.AbpEditions" Role="AbpEditions" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -3478,6 +3466,183 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tblCalculateur">
+          <Key>
+            <PropertyRef Name="noSousEvenement" />
+          </Key>
+          <Property Name="noSousEvenement" Type="Int32" Nullable="false" />
+          <Property Name="billet" Type="Int32" Nullable="true" />
+          <Property Name="billetVIP" Type="Int32" Nullable="true" />
+          <Property Name="prixBillet" Type="Int32" Nullable="true" />
+          <Property Name="prixBilletVIP" Type="Int32" Nullable="true" />
+          <Property Name="souperSpectacle" Type="Int32" Nullable="true" />
+          <Property Name="prixSouper" Type="Int32" Nullable="true" />
+          <Property Name="jeunePourcent" Type="Int32" Nullable="true" />
+          <Property Name="adultePourcent" Type="Int32" Nullable="true" />
+          <Property Name="ainePourcent" Type="Int32" Nullable="true" />
+          <Property Name="jeuneRatio" Type="Int32" Nullable="true" />
+          <Property Name="adulteRatio" Type="Int32" Nullable="true" />
+          <Property Name="aineRatio" Type="Int32" Nullable="true" />
+          <Property Name="promo" Type="Int32" Nullable="true" />
+          <Property Name="prevente" Type="Int32" Nullable="true" />
+          <Property Name="customBillet1" Type="Int32" Nullable="true" />
+          <Property Name="customBillet2" Type="Int32" Nullable="true" />
+          <Property Name="customPrix1" Type="Int32" Nullable="true" />
+          <Property Name="customPrix2" Type="Int32" Nullable="true" />
+          <Property Name="customNom1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="customNom2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="true" />
+          <NavigationProperty Name="tblSousEvenement" Relationship="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK" FromRole="tblCalculateur" ToRole="tblSousEvenement" />
+        </EntityType>
+        <Association Name="SOUSEVEN_CALC_NOSEVENL_FK">
+          <End Type="PE2_OfficielModel.tblSousEvenement" Role="tblSousEvenement" Multiplicity="1" />
+          <End Type="PE2_OfficielModel.tblCalculateur" Role="tblCalculateur" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tblSousEvenement">
+              <PropertyRef Name="noSousEvenement" />
+            </Principal>
+            <Dependent Role="tblCalculateur">
+              <PropertyRef Name="noSousEvenement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vueSomSalle">
+          <Key>
+            <PropertyRef Name="noSalle" />
+            <PropertyRef Name="nomSalle" />
+            <PropertyRef Name="prix" />
+            <PropertyRef Name="billet" />
+            <PropertyRef Name="billetVIP" />
+          </Key>
+          <Property Name="noSalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomSalle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="prix" Type="Decimal" Nullable="false" Precision="19" Scale="2" />
+          <Property Name="billet" Type="Int32" Nullable="false" />
+          <Property Name="billetVIP" Type="Int32" Nullable="false" />
+          <Property Name="photoSalle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="urlGoogleMap" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblAppelOffre">
+          <Key>
+            <PropertyRef Name="noAppelOffre" />
+          </Key>
+          <Property Name="noAppelOffre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dateRequis" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateEnvoi" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <Property Name="noEvenement" Type="Int32" Nullable="false" />
+          <Property Name="noStatut" Type="Int32" Nullable="false" />
+          <Property Name="noMedia" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblEvenement" Relationship="PE2_OfficielModel.EVENEMENT_APPEL_FK" FromRole="tblAppelOffre" ToRole="tblEvenement" />
+          <NavigationProperty Name="tblSoumission" Relationship="PE2_OfficielModel.APPEL_OFFRE_FK" FromRole="tblAppelOffre" ToRole="tblSoumission" />
+          <NavigationProperty Name="tblMedia" Relationship="PE2_OfficielModel.MED_APPEL_FK" FromRole="tblAppelOffre" ToRole="tblMedia" />
+          <NavigationProperty Name="tblStatutAppelOffre" Relationship="PE2_OfficielModel.STATUT_APPEL_FK" FromRole="tblAppelOffre" ToRole="tblStatutAppelOffre" />
+        </EntityType>
+        <Association Name="EVENEMENT_APPEL_FK">
+          <End Type="PE2_OfficielModel.tblEvenement" Role="tblEvenement" Multiplicity="1" />
+          <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEvenement">
+              <PropertyRef Name="noEvenement" />
+            </Principal>
+            <Dependent Role="tblAppelOffre">
+              <PropertyRef Name="noEvenement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APPEL_OFFRE_FK">
+          <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="1" />
+          <End Type="PE2_OfficielModel.tblSoumission" Role="tblSoumission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAppelOffre">
+              <PropertyRef Name="noAppelOffre" />
+            </Principal>
+            <Dependent Role="tblSoumission">
+              <PropertyRef Name="noAppelOffre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MED_APPEL_FK">
+          <End Type="PE2_OfficielModel.tblMedia" Role="tblMedia" Multiplicity="1" />
+          <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMedia">
+              <PropertyRef Name="noMedia" />
+            </Principal>
+            <Dependent Role="tblAppelOffre">
+              <PropertyRef Name="noMedia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STATUT_APPEL_FK">
+          <End Type="PE2_OfficielModel.tblStatutAppelOffre" Role="tblStatutAppelOffre" Multiplicity="1" />
+          <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblStatutAppelOffre">
+              <PropertyRef Name="noStatut" />
+            </Principal>
+            <Dependent Role="tblAppelOffre">
+              <PropertyRef Name="noStatut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblQuestionSecrete">
+          <Key>
+            <PropertyRef Name="IdQuestion" />
+          </Key>
+          <Property Name="IdQuestion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AbpUsers" Relationship="PE2_OfficielModel.Id_Question" FromRole="tblQuestionSecrete" ToRole="AbpUsers" />
+        </EntityType>
+        <EntityType Name="AbpUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenantId" Type="Int32" />
+          <Property Name="AuthenticationSource" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="IsEmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="EmailConfirmationCode" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordResetCode" Type="String" MaxLength="328" FixedLength="false" Unicode="true" />
+          <Property Name="LastLoginTime" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeleterUserId" Type="Int64" />
+          <Property Name="DeletionTime" Type="DateTime" Precision="3" />
+          <Property Name="LastModificationTime" Type="DateTime" Precision="3" />
+          <Property Name="LastModifierUserId" Type="Int64" />
+          <Property Name="CreationTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorUserId" Type="Int64" />
+          <Property Name="IdQuestion" Type="Int32" />
+          <Property Name="Reponse" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ImageProfil" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="AbpPermissions" Relationship="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" FromRole="AbpUsers" ToRole="AbpPermissions" />
+          <NavigationProperty Name="AbpRoles" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" FromRole="AbpUsers" ToRole="AbpRoles" />
+          <NavigationProperty Name="AbpRoles1" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" FromRole="AbpUsers" ToRole="AbpRoles" />
+          <NavigationProperty Name="AbpRoles2" Relationship="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_LastModifierUserId" FromRole="AbpUsers" ToRole="AbpRoles" />
+          <NavigationProperty Name="AbpSettings" Relationship="PE2_OfficielModel.FK_dbo_AbpSettings_dbo_AbpUsers_UserId" FromRole="AbpUsers" ToRole="AbpSettings" />
+          <NavigationProperty Name="AbpTenants" Relationship="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_CreatorUserId" FromRole="AbpUsers" ToRole="AbpTenants" />
+          <NavigationProperty Name="AbpTenants1" Relationship="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_DeleterUserId" FromRole="AbpUsers" ToRole="AbpTenants" />
+          <NavigationProperty Name="AbpTenants2" Relationship="PE2_OfficielModel.FK_dbo_AbpTenants_dbo_AbpUsers_LastModifierUserId" FromRole="AbpUsers" ToRole="AbpTenants" />
+          <NavigationProperty Name="AbpUserLogins" Relationship="PE2_OfficielModel.FK_dbo_AbpUserLogins_dbo_AbpUsers_UserId" FromRole="AbpUsers" ToRole="AbpUserLogins" />
+          <NavigationProperty Name="AbpUserRoles" Relationship="PE2_OfficielModel.FK_dbo_AbpUserRoles_dbo_AbpUsers_UserId" FromRole="AbpUsers" ToRole="AbpUserRoles" />
+          <NavigationProperty Name="AbpUsers1" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId" FromRole="AbpUsers" ToRole="AbpUsers1" />
+          <NavigationProperty Name="AbpUsers2" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId" FromRole="AbpUsers1" ToRole="AbpUsers" />
+          <NavigationProperty Name="AbpUsers11" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId" FromRole="AbpUsers" ToRole="AbpUsers1" />
+          <NavigationProperty Name="AbpUsers3" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId" FromRole="AbpUsers1" ToRole="AbpUsers" />
+          <NavigationProperty Name="AbpUsers12" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" FromRole="AbpUsers" ToRole="AbpUsers1" />
+          <NavigationProperty Name="AbpUsers4" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" FromRole="AbpUsers1" ToRole="AbpUsers" />
+          <NavigationProperty Name="tblQuestionSecrete" Relationship="PE2_OfficielModel.Id_Question" FromRole="AbpUsers" ToRole="tblQuestionSecrete" />
+          <NavigationProperty Name="tblActivite" Relationship="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR" FromRole="AbpUsers" ToRole="tblActivite" />
+          <NavigationProperty Name="tblMemo" Relationship="PE2_OfficielModel.NO_UTILISATEUR_DESTINATAIRE" FromRole="AbpUsers" ToRole="tblMemo" />
+          <NavigationProperty Name="tblMemo1" Relationship="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR" FromRole="AbpUsers" ToRole="tblMemo" />
+        </EntityType>
         <Association Name="FK_dbo_AbpPermissions_dbo_AbpUsers_UserId">
           <End Type="PE2_OfficielModel.AbpUsers" Role="AbpUsers" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -3640,6 +3805,30 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="Id_Question">
+          <End Type="PE2_OfficielModel.tblQuestionSecrete" Role="tblQuestionSecrete" Multiplicity="0..1" />
+          <End Type="PE2_OfficielModel.AbpUsers" Role="AbpUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblQuestionSecrete">
+              <PropertyRef Name="IdQuestion" />
+            </Principal>
+            <Dependent Role="AbpUsers">
+              <PropertyRef Name="IdQuestion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NO_UTILISATEUR_CREATEUR">
+          <End Type="PE2_OfficielModel.AbpUsers" Role="AbpUsers" Multiplicity="0..1" />
+          <End Type="PE2_OfficielModel.tblActivite" Role="tblActivite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbpUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblActivite">
+              <PropertyRef Name="noUtilisateur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="NO_UTILISATEUR_DESTINATAIRE">
           <End Type="PE2_OfficielModel.AbpUsers" Role="AbpUsers" Multiplicity="1" />
           <End Type="PE2_OfficielModel.tblMemo" Role="tblMemo" Multiplicity="*" />
@@ -3664,140 +3853,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="tblCalculateur">
-          <Key>
-            <PropertyRef Name="noSousEvenement" />
-          </Key>
-          <Property Name="noSousEvenement" Type="Int32" Nullable="false" />
-          <Property Name="billet" Type="Int32" Nullable="true" />
-          <Property Name="billetVIP" Type="Int32" Nullable="true" />
-          <Property Name="prixBillet" Type="Int32" Nullable="true" />
-          <Property Name="prixBilletVIP" Type="Int32" Nullable="true" />
-          <Property Name="souperSpectacle" Type="Int32" Nullable="true" />
-          <Property Name="prixSouper" Type="Int32" Nullable="true" />
-          <Property Name="jeunePourcent" Type="Int32" Nullable="true" />
-          <Property Name="adultePourcent" Type="Int32" Nullable="true" />
-          <Property Name="ainePourcent" Type="Int32" Nullable="true" />
-          <Property Name="jeuneRatio" Type="Int32" Nullable="true" />
-          <Property Name="adulteRatio" Type="Int32" Nullable="true" />
-          <Property Name="aineRatio" Type="Int32" Nullable="true" />
-          <Property Name="promo" Type="Int32" Nullable="true" />
-          <Property Name="prevente" Type="Int32" Nullable="true" />
-          <Property Name="customBillet1" Type="Int32" Nullable="true" />
-          <Property Name="customBillet2" Type="Int32" Nullable="true" />
-          <Property Name="customPrix1" Type="Int32" Nullable="true" />
-          <Property Name="customPrix2" Type="Int32" Nullable="true" />
-          <Property Name="customNom1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="true" />
-          <Property Name="customNom2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="true" />
-          <NavigationProperty Name="tblSousEvenement" Relationship="PE2_OfficielModel.SOUSEVEN_CALC_NOSEVENL_FK" FromRole="tblCalculateur" ToRole="tblSousEvenement" />
-        </EntityType>
-        <Association Name="SOUSEVEN_CALC_NOSEVENL_FK">
-          <End Type="PE2_OfficielModel.tblSousEvenement" Role="tblSousEvenement" Multiplicity="1" />
-          <End Type="PE2_OfficielModel.tblCalculateur" Role="tblCalculateur" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="tblSousEvenement">
-              <PropertyRef Name="noSousEvenement" />
-            </Principal>
-            <Dependent Role="tblCalculateur">
-              <PropertyRef Name="noSousEvenement" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="NO_UTILISATEUR_CREATEUR">
-          <End Type="PE2_OfficielModel.AbpUsers" Role="AbpUsers" Multiplicity="0..1" />
-          <End Type="PE2_OfficielModel.tblActivite" Role="tblActivite" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AbpUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tblActivite">
-              <PropertyRef Name="noUtilisateur" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="vueSomSalle">
-          <Key>
-            <PropertyRef Name="noSalle" />
-            <PropertyRef Name="nomSalle" />
-            <PropertyRef Name="prix" />
-            <PropertyRef Name="billet" />
-            <PropertyRef Name="billetVIP" />
-          </Key>
-          <Property Name="noSalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nomSalle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="prix" Type="Decimal" Nullable="false" Precision="19" Scale="2" />
-          <Property Name="billet" Type="Int32" Nullable="false" />
-          <Property Name="billetVIP" Type="Int32" Nullable="false" />
-          <Property Name="photoSalle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="urlGoogleMap" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="tblAppelOffre">
-          <Key>
-            <PropertyRef Name="noAppelOffre" />
-          </Key>
-          <Property Name="noAppelOffre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="dateRequis" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="dateEnvoi" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
-          <Property Name="noEvenement" Type="Int32" Nullable="false" />
-          <Property Name="noStatut" Type="Int32" Nullable="false" />
-          <Property Name="noMedia" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tblEvenement" Relationship="PE2_OfficielModel.EVENEMENT_APPEL_FK" FromRole="tblAppelOffre" ToRole="tblEvenement" />
-          <NavigationProperty Name="tblSoumission" Relationship="PE2_OfficielModel.APPEL_OFFRE_FK" FromRole="tblAppelOffre" ToRole="tblSoumission" />
-          <NavigationProperty Name="tblMedia" Relationship="PE2_OfficielModel.MED_APPEL_FK" FromRole="tblAppelOffre" ToRole="tblMedia" />
-          <NavigationProperty Name="tblStatutAppelOffre" Relationship="PE2_OfficielModel.STATUT_APPEL_FK" FromRole="tblAppelOffre" ToRole="tblStatutAppelOffre" />
-        </EntityType>
-        <Association Name="EVENEMENT_APPEL_FK">
-          <End Type="PE2_OfficielModel.tblEvenement" Role="tblEvenement" Multiplicity="1" />
-          <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblEvenement">
-              <PropertyRef Name="noEvenement" />
-            </Principal>
-            <Dependent Role="tblAppelOffre">
-              <PropertyRef Name="noEvenement" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="APPEL_OFFRE_FK">
-          <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="1" />
-          <End Type="PE2_OfficielModel.tblSoumission" Role="tblSoumission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblAppelOffre">
-              <PropertyRef Name="noAppelOffre" />
-            </Principal>
-            <Dependent Role="tblSoumission">
-              <PropertyRef Name="noAppelOffre" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="MED_APPEL_FK">
-          <End Type="PE2_OfficielModel.tblMedia" Role="tblMedia" Multiplicity="1" />
-          <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblMedia">
-              <PropertyRef Name="noMedia" />
-            </Principal>
-            <Dependent Role="tblAppelOffre">
-              <PropertyRef Name="noMedia" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="STATUT_APPEL_FK">
-          <End Type="PE2_OfficielModel.tblStatutAppelOffre" Role="tblStatutAppelOffre" Multiplicity="1" />
-          <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblStatutAppelOffre">
-              <PropertyRef Name="noStatut" />
-            </Principal>
-            <Dependent Role="tblAppelOffre">
-              <PropertyRef Name="noStatut" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -4626,32 +4682,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="AbpUsers">
-            <EntityTypeMapping TypeName="PE2_OfficielModel.AbpUsers">
-              <MappingFragment StoreEntitySet="AbpUsers">
-                <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
-                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
-                <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
-                <ScalarProperty Name="LastModificationTime" ColumnName="LastModificationTime" />
-                <ScalarProperty Name="DeletionTime" ColumnName="DeletionTime" />
-                <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
-                <ScalarProperty Name="PasswordResetCode" ColumnName="PasswordResetCode" />
-                <ScalarProperty Name="EmailConfirmationCode" ColumnName="EmailConfirmationCode" />
-                <ScalarProperty Name="IsEmailConfirmed" ColumnName="IsEmailConfirmed" />
-                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="AuthenticationSource" ColumnName="AuthenticationSource" />
-                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tblCalculateur">
             <EntityTypeMapping TypeName="PE2_OfficielModel.tblCalculateur">
               <MappingFragment StoreEntitySet="tblCalculateur">
@@ -4704,6 +4734,43 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
                 <ScalarProperty Name="dateRequis" ColumnName="dateRequis" />
                 <ScalarProperty Name="nom" ColumnName="nom" />
                 <ScalarProperty Name="noAppelOffre" ColumnName="noAppelOffre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblQuestionSecrete">
+            <EntityTypeMapping TypeName="PE2_OfficielModel.tblQuestionSecrete">
+              <MappingFragment StoreEntitySet="tblQuestionSecrete">
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="IdQuestion" ColumnName="IdQuestion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AbpUsers">
+            <EntityTypeMapping TypeName="PE2_OfficielModel.AbpUsers">
+              <MappingFragment StoreEntitySet="AbpUsers">
+                <ScalarProperty Name="ImageProfil" ColumnName="ImageProfil" />
+                <ScalarProperty Name="Reponse" ColumnName="Reponse" />
+                <ScalarProperty Name="IdQuestion" ColumnName="IdQuestion" />
+                <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+                <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+                <ScalarProperty Name="LastModificationTime" ColumnName="LastModificationTime" />
+                <ScalarProperty Name="DeletionTime" ColumnName="DeletionTime" />
+                <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+                <ScalarProperty Name="PasswordResetCode" ColumnName="PasswordResetCode" />
+                <ScalarProperty Name="EmailConfirmationCode" ColumnName="EmailConfirmationCode" />
+                <ScalarProperty Name="IsEmailConfirmed" ColumnName="IsEmailConfirmed" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AuthenticationSource" ColumnName="AuthenticationSource" />
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

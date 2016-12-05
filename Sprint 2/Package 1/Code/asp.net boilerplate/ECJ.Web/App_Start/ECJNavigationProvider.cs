@@ -12,6 +12,7 @@ namespace ECJ.Web
     /// </summary>
     public class ECJNavigationProvider : NavigationProvider
     {
+       
         public override void SetNavigation(INavigationProviderContext context)
         {
             context.Manager.Menus.Add("Footer", new MenuDefinition(
@@ -22,7 +23,8 @@ namespace ECJ.Web
                         L("Memo"),
                         icon: "fa fa-plus",
                         requiresAuthentication: true,
-                        url: ""
+                        url: "",
+                        requiredPermissionName: PermissionNames.CreerMemo
             )));
             context.Manager.MainMenu
                 .AddItem(
@@ -55,7 +57,8 @@ namespace ECJ.Web
                         L("pub"),
                         url: "AppellOffre",
                         icon: "fa fa-television",
-                        requiresAuthentication: true
+                        requiresAuthentication: true,
+                        requiredPermissionName: PermissionNames.ConsulterAppelOffre
                         )
                 ).AddItem(
                     new MenuItemDefinition(
@@ -73,12 +76,27 @@ namespace ECJ.Web
                         icon: "fa fa-bed",
                         requiresAuthentication: true
                         )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        "Users",
+                        L("Users"),
+                        url: "Users",
+                        icon: "fa fa-users",
+                        requiresAuthentication: true
+                        )
                 );
         }
 
         private static ILocalizableString L(string name)
         {
             return new LocalizableString(name, ECJConsts.LocalizationSourceName);
+        }
+
+        private int getUser()
+        {
+
+
+            return 1;
         }
     }
 }

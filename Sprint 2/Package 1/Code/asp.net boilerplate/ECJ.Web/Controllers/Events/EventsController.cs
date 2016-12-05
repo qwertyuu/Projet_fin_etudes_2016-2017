@@ -66,8 +66,11 @@ namespace ECJ.Web.Controllers
             }
             return View(tblEvenement);
         }
+
+        [AbpMvcAuthorize(PermissionNames.GererEvenement)]
         public ActionResult Ajout()
         {
+            LayoutController.pagePermission = PermissionNames.GererEvenement;
             return View();
         }
 
@@ -100,6 +103,7 @@ namespace ECJ.Web.Controllers
             return View();
         }
 
+        [AbpMvcAuthorize(PermissionNames.GererEvenement)]
         public ActionResult Modifier(int? id)
         {
             if (id == null)
@@ -111,11 +115,13 @@ namespace ECJ.Web.Controllers
             {
                 return HttpNotFound();
             }
+            LayoutController.pagePermission = PermissionNames.GererEvenement;
             return View(elementAModifier);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AbpMvcAuthorize(PermissionNames.GererEvenement)]
         public ActionResult Modifier([Bind(Include = "noEvenement,nom,dateDebut,datefin,affiche,url,description,dateSupprime")] tblEvenement tblEvenement)
         {
             //var a = db.tblEvenement.Find(tblEvenement.noEvenement) == tblEvenement;
@@ -141,16 +147,19 @@ namespace ECJ.Web.Controllers
 
                 return RedirectToAction("Index");
             }
+            LayoutController.pagePermission = PermissionNames.GererEvenement;
             return View(tblEvenement);
         }
 
 
+        [AbpMvcAuthorize(PermissionNames.GererEvenement)]
         public ActionResult Supprimer(int? id)
         {
             if (id != null)
             {
                 db.SupprimerEvenement((int)id);
             }
+            LayoutController.pagePermission = PermissionNames.GererEvenement;
             return RedirectToAction("Index");
         }
     }

@@ -169,12 +169,63 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
         }
+        internal AbpUsers ReturnUtilisateur(long id)
+        {
+            try
+            {
+                return db.AbpUsers.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new AbpUsers();
+        }
+
+        internal AbpUsers ReturnUtilisateur(string nom)
+        {
+            try
+            {
+                List<AbpUsers> list = ToutUtilisateurs();
+                long id = 0;
+                foreach(var i in list)
+                {
+                    if(i.Name == nom)
+                    {
+                        id = i.Id;
+                    }
+                }
+                if(id==0)
+                {
+                    return new AbpUsers();
+                }
+                return db.AbpUsers.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new AbpUsers();
+        }
+        internal void InsertUser(AbpUsers abpUser)
+        {
+            try
+            {
+                db.AbpUsers.Add(abpUser);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
 
         public List<tblMemo> MemosUtilisateur(long userId)
         {
             try
             {
                 return db.tblMemo.Where(m => m.destinataire == userId && m.dateSupprime == null).ToList();
+
             }
             catch (Exception e)
             {
@@ -289,6 +340,50 @@ namespace ECJ.Web.Controllers
             return null;
         }
 
+        internal void UpdateRole(AbpUsers abpUser, int role)
+        {
+            try
+            {
+                var u = db.AbpUsers.Find(abpUser.Id);
+
+                if (!u.AbpUserRoles.Any(UR => UR.RoleId == role) && role != 0)
+                {
+                    for (int i = 0; i < u.AbpUserRoles.Count; i++)
+                    {
+                        db.Entry(u.AbpUserRoles.ElementAt(i)).State = EntityState.Deleted;
+                    }
+                    u.AbpUserRoles.Clear();
+                    u.AbpUserRoles.Add(new AbpUserRoles() { UserId = abpUser.Id, RoleId = role, CreationTime = DateTime.Now, TenantId = 1 });
+                }
+                else if(role == 0)
+                {
+                    for (int i = 0; i < u.AbpUserRoles.Count; i++)
+                    {
+                        db.Entry(u.AbpUserRoles.ElementAt(i)).State = EntityState.Deleted;
+                    }
+                    u.AbpUserRoles.Clear();
+                }
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
+        internal void UpdateUser(AbpUsers abpUser)
+        {
+            try
+            {
+                db.Entry(db.AbpUsers.Find(abpUser.Id)).CurrentValues.SetValues(abpUser);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
         public void InsertEvenement(tblEvenement tblEvenement)
         {
             try
@@ -374,6 +469,19 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
             return new AbpRoles();
+        }
+
+        public List<tblQuestionSecrete> ToutQuestion()
+        {
+            try
+            {
+                return db.tblQuestionSecrete.ToList();
+            }
+            catch(Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblQuestionSecrete>();
         }
 
         public List<ECJ.Web.Models.AbpUsers> ToutUtilisateurs()
@@ -465,6 +573,61 @@ namespace ECJ.Web.Controllers
             return new List<tblSousEvenement>();
         }
 
+        public List<tblCommanditaire> ToutCommenditaire()
+        {
+            try
+            {
+                return db.tblCommanditaire.Where(c => c.dateSupprime == null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblCommanditaire>();
+        }
+
+        public List<tblAppelOffre> ToutAppleOffre()
+        {
+            try
+            {
+                return db.tblAppelOffre.Where(a => a.dateSupprime == null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblAppelOffre>();
+        }
+        public List<tblCommanditaire> CommenEvent(int? no)
+        {
+            if (no != null)
+            {
+                try
+                {
+                    return (from c in db.tblCommanditaire
+                            join d in db.tblDon
+                            on c.noCommanditaire equals d.noCommanditaire
+                            join se in db.tblSousEvenement
+                            on d.noSousEvenement equals se.noSousEvenement
+                            where c.dateSupprime == null
+                            where se.dateSupprime == null
+                            where d.dateSupprime == null
+                            where se.tblEvenement.dateSupprime == null
+                            where se.tblEvenement.noEvenement == no
+                            select c).ToList();
+                }
+                catch (Exception e)
+                {
+                    LayoutController.erreur = e;
+                }
+            }
+
+
+            return new List<tblCommanditaire>();
+        }
+
+
+
         public List<tblEvenement> ToutEvenement()
         {
             try
@@ -476,6 +639,18 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
             return new List<tblEvenement>();
+        }
+        public List<tblDon> ToutDon()
+        {
+            try
+            {
+                return db.tblDon.Where(d => d.dateSupprime == null && d.tblCommanditaire.dateSupprime==null).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblDon>();
         }
 
 
@@ -514,6 +689,19 @@ namespace ECJ.Web.Controllers
 
             }
             return new List<tblSoumission>();
+        }
+
+        internal List<ECJ.Web.Models.AbpAuditLogs> ToutLogs()
+        {
+            try
+            {
+                return db.AbpAuditLogs.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<AbpAuditLogs>();
         }
 
         public void InsertServiceRequis(int id, int serviceAAjouter)
@@ -608,6 +796,33 @@ namespace ECJ.Web.Controllers
             }
             return new List<tblForfait>();
         }
+
+        internal List<AbpUserRoles> ToutRoleUtilisateur()
+        {
+            try
+            {
+                return db.AbpUserRoles.Where(ur => ur.UserId != 1).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<AbpUserRoles>();
+        }
+
+        internal List<AbpRoles> ToutRoles()
+        {
+            try
+            {
+                return db.AbpRoles.Where(r => r.Id != 1).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<AbpRoles>();
+        }
+
         public List<tblForfait> ToutForfaitLieeEvent(int id)
         {
             try
@@ -637,6 +852,22 @@ namespace ECJ.Web.Controllers
             {
                 LayoutController.erreur = e;
             }
+        }
+
+        internal string GetRoleUtilisateur(AbpUsers abpUsers)
+        {
+            try
+            {
+                if(abpUsers.AbpUserRoles.Count > 0)
+                {
+                    return SelectRole(abpUsers.AbpUserRoles.ToList()[0].RoleId).Name;
+                }
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return "Employe";
         }
 
         public List<tblEngagement> ToutEngagement()
@@ -911,7 +1142,7 @@ namespace ECJ.Web.Controllers
             }
             return new tblSalle();
         }
-        public tblCalculateur ReturnCalculateur(int id)
+        public tblCalculateur ReturnCalculateur(int? id)
         {
             try
             {
@@ -922,19 +1153,6 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
             return new tblCalculateur();
-        }
-
-        public tblCommanditaire ReturnCommanditaire(int id)
-        {
-            try
-            {
-                return db.tblCommanditaire.Where(c => c.noCommanditaire == id).FirstOrDefault();
-            }
-            catch (Exception e)
-            {
-                LayoutController.erreur = e;
-            }
-            return new tblCommanditaire();
         }
         public tblAppelOffre returnAppel(int? id)
         {
@@ -1158,7 +1376,54 @@ namespace ECJ.Web.Controllers
             }
             return new List<vueSomAppelOffre>();
         }
+        public List<tblCalculateur> ReturnListCalculateur()
+        {
+            try
+            {
+                return db.tblCalculateur.ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblCalculateur>();
+        }
+        public List<tblSalle> ReturnListSalle()
+        {
+            try
+            {
+                return db.tblSalle.ToList();
+            }
+
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblSalle>();
+        }
+        public void UpdateCalculateur(tblCalculateur tblCalculateur)
+        {
+            try
+            {
+                db.Entry(db.tblCalculateur.Find(tblCalculateur.noSousEvenement)).CurrentValues.SetValues(tblCalculateur);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+        public tblSousEvenement ReturnSousEvent(int id)
+        {
+            try
+            {
+                return db.tblSousEvenement.Find(id);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new tblSousEvenement();
+        }
     }
-
-
 }

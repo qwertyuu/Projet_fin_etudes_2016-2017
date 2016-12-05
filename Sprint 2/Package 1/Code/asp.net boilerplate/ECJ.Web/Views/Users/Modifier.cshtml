@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Ajout";
+}
+@model ECJ.Users.User
+<h2>Modifier cet utilisateur</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <input type="hidden" name="Id" value="@Model.Id">
+    <input type="hidden" name="Password" value="@Model.Password">
+    <div class="form-group">
+        <label>Nom d'utilisateur</label>
+        <input class="form-control" type="text" name="UserName" value="@Model.UserName" required>
+    </div>
+    <div class="form-group">
+        <label>Prénom</label>
+        <input class="form-control" type="text" name="Name" value="@Model.Name" required>
+    </div>
+    <div class="form-group">
+        <label>Nom de famille</label>
+        <input class="form-control" type="text" name="Surname" value="@Model.Surname" required>
+    </div>
+    <div class="form-group">
+        <label>Adresse courriel</label>
+        <input class="form-control courriel" type="text" name="EmailAddress" value="@Model.EmailAddress" required>
+    </div>
+    <div class="form-group">
+        <label>Rôle</label>
+        <select class="form-control" name="Role">
+            <option value="2" @(Model.Roles.Any(Role => Role.RoleId == 2) ? "selected" : "")>Administrateur</option>
+            <option value="5" @(Model.Roles.Any(Role => Role.RoleId == 5) ? "selected" : "")>Représentant</option>
+            <option value="4" @(Model.Roles.Any(Role => Role.RoleId == 4) ? "selected" : "")>Agent senior</option>
+            <option value="3" @(Model.Roles.Any(Role => Role.RoleId == 3) ? "selected" : "")>Agent</option>
+            <option value="0" @(Model.Roles.Count == 0 ? "selected" : "")>Employé</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Modifier le mot de passe (laisser vide pour ne pas changer le mot de passe)</label>
+        <input class="form-control" type="password" name="PasswordChange">
+    </div>
+
+    <div class="form-group">
+        <label>Image de profil (laisser vide pour ne pas modifier l'image courrante)</label>
+        <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+    </div>
+    <div class="form-group">
+        <label>Question secrète</label>
+        <select class="form-control">
+            <option>Quelle est la date de naissance de votre père?</option>
+        </select>
+        <input class="form-control" type="text" name="QS" placeholder="Réponse" required>
+    </div>
+    <div class="form-group">
+        @{
+            var actif = Model.IsActive ? "checked" : "";
+        }
+        <label>Activé <input value="True" type="checkbox" name="IsActive" @actif></label>
+
+    </div>
+    <div class="form-group pull-right">
+        <button type="submit" class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
+        <a href="/Users" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
+}

@@ -1,0 +1,63 @@
+﻿@using Abp.Authorization.Users
+@using Abp.Web.Mvc.Extensions
+@using System.Web.Script.Serialization
+@using System.Text
+@using System.Runtime.Serialization.Json
+@using Abp.Runtime.Session;
+@{
+    ViewBag.Title = "Detail";
+}
+@section scripts
+{
+    @Html.IncludeScript("~/Views/Events/Detail.js")
+}
+@model ECJ.Web.Models.AbpUsers
+<h2>Détail d'un utilisateur</h2>
+
+<div class="form-validation">
+
+    <div class="form-group">
+        <label>Nom d'utilisateur</label>
+        <div class="well well-sm">
+            @Model.UserName
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Nom complet</label>
+        <div class="well well-sm">
+            @Model.Name @Model.Surname
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Est activé</label>
+        <div class="well well-sm">
+            @(Model.IsActive ? "Oui" : "Non")
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Rôle</label>
+        <div class="well well-sm">
+            @{ 
+                Dictionary<int, string> nomRoles = new Dictionary<int, string>()
+                {
+                    {2, "Administrateur"},
+                    {3, "Agent" },
+                    {4, "Agent senior" },
+                    {5, "Représentant" }
+                };
+
+
+                if(Model.AbpUserRoles.Count == 0)
+                {
+                    <span>Employé</span>
+                }
+                else
+                {
+                    @nomRoles[Model.AbpUserRoles.ToList()[0].RoleId];
+                }
+            }
+        </div>
+    </div>
+    <a href="~/Users/" class="btn btn-default pull-right" data-dismiss="modal">Retour à la liste d'utilisateurs</a>
+</div>
+

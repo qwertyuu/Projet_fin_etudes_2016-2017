@@ -3,6 +3,7 @@
 @using System.Web.Script.Serialization
 @using System.Text
 @using System.Runtime.Serialization.Json
+@using ECJ.Authorization;
 @using Abp.Runtime.Session;
 @{
     ViewBag.Title = "Detail";
@@ -84,10 +85,12 @@
         </div>
     </div>
     <label>Sous-Événements</label>
-@if (DateTime.Now <= Model.datefin)
+@if (IsGranted(PermissionNames.GererSousEvenement))
 {
-    <a href="~/sousEvenements/Ajout?evenement_id=@Model.noEvenement&return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un sous-événement</a>
-
+	if (DateTime.Now <= Model.datefin)
+	{
+	    <a href="~/sousEvenements/Ajout?evenement_id=@Model.noEvenement&return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter un sous-événement</a>
+	}
 }
     <div class="form-group">
         <table class="table table-striped table-hover">
@@ -106,10 +109,13 @@
                         <td>@sE.description</td>
                         <td>
                             <a href="~/sousEvenements/Detail/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-@if (DateTime.Now <= Model.datefin)
+@if (IsGranted(PermissionNames.GererSousEvenement))
 {
-                            <a href="~/sousEvenements/Modifier/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                            <a href="~/sousEvenements/Supprimer/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+	if (DateTime.Now <= Model.datefin)
+	{
+	                            <a href="~/sousEvenements/Modifier/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+	                            <a href="~/sousEvenements/Supprimer/@sE.noSousEvenement?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+	}
 }
                         </td>
                     </tr>
@@ -118,7 +124,10 @@
         </table>
     </div>
     <label>Activités</label>
+@if (IsGranted(PermissionNames.GererSousEvenement))
+{
     <a href="~/Activite/Ajout/?evenement_id=@Model.noEvenement&return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter une activité</a>
+}
     <ul class="nav nav-tabs">
         <li class="active"><a href="#liste" data-toggle="tab" aria-expanded="true">Liste</a></li>
         <li class=""><a href="#calendrier" data-toggle="tab" aria-expanded="false">Calendrier</a></li>
