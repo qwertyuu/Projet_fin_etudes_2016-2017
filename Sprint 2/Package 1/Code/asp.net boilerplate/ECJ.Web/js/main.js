@@ -353,9 +353,7 @@ function validerDateHeure(form) {
     if (heure1.length) {
         var h = heure1.filter(".heure").val();
         var m = heure1.filter(".minute").val();
-        var s = heure1.filter(".seconde").val();
-
-        datePlusPetite.setHours(h,m,s,0);
+        datePlusPetite.setHours(h,m,0);
     }
 
     var date2 = $(form).find(".date2");
@@ -369,9 +367,7 @@ function validerDateHeure(form) {
     if (heure2.length) {
         var h = heure2.filter(".heure").val();
         var m = heure2.filter(".minute").val();
-        var s = heure2.filter(".seconde").val();
-
-        datePlusGrande.setHours(h, m, s, 0);
+        datePlusGrande.setHours(h, m, 0);
     }
     var valide = datePlusPetite <= datePlusGrande;
     if (!valide) {

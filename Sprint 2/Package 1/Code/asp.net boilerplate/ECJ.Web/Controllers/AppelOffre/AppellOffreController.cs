@@ -214,6 +214,17 @@ namespace ECJ.Web.Controllers.AppelOffre
             return Path.GetInvalidFileNameChars().Aggregate(fileName, (current, c) => current.Replace(c.ToString(), string.Empty));
         }
 
+        private void ArchiverXML(XmlDocument doc, string pathXml, string pathArhive,string pathRetour)
+        {
+            DirectoryInfo dr = null;
+            dr = CreateDirectory(pathArhive);
+            if(dr!=null)
+            {
+                pathArhive = dr.FullName;
+            }
+            //on copy le fichier
+            System.IO.File.Move(Path.Combine(pathRetour, pathXml), Path.Combine(pathArhive, pathXml));
+        }
         private void RetournerSoumissionXml()
         {
             
@@ -221,6 +232,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             DirectoryInfo dr = null;
             string pathXsd = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\SoumissionAgence.xsd";
             string pathRetour = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\Soumission_retour";
+            string pathArchive = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\Soumission_archive";
             dr = CreateDirectory(pathRetour);
             CreateXsd(pathXsd, doc);
             //On prcoure tous les xmls contenus dans le dossier
@@ -255,6 +267,9 @@ namespace ECJ.Web.Controllers.AppelOffre
                             soumi.commentaire = soumission["Commentaire"].InnerText;
                             provider.Save();
                         }
+                    //lorsque que la soumission à été validée par l'agence de publicité on l'archive
+                    ArchiverXML(doc, f.file, pathArchive, pathRetour);
+
                 }                   
                 
             }
@@ -446,10 +461,6 @@ namespace ECJ.Web.Controllers.AppelOffre
             int second = 0;
             int hour = Convert.ToInt32(Request.Form.GetValues(nameHour)[0]);
             int min = Convert.ToInt32(Request.Form.GetValues(nameMin)[0]);
-            if(Request.Form.GetValues(nameSecond)[0]!="")
-            {
-                second = Convert.ToInt32(Request.Form.GetValues(nameSecond)[0]);
-            }
             DateTime d = new DateTime(date.Year,date.Month,date.Day,hour,min,second);
            return d;
         }

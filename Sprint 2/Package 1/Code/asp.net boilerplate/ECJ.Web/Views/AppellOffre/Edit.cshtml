@@ -45,14 +45,11 @@
                     @Html.ValidationMessageFor(model => model.dateEnvoi, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <input type="number" name="heureEnvoi" required min="0" max="24" placeholder="Heure" maxlength="2" class="form-control heure heure1" value="@Model.dateEnvoi.Hour" />
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <input type="number" name="minEnvoi" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control minute heure1" value="@Model.dateEnvoi.Minute" />
-            </div>
-            <div class="col-md-2">
-                <input type="number" name="secondeEnvoi" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control seconde heure1" value="@Model.dateEnvoi.Second" />
             </div>
         </div>
         <hr />
@@ -70,14 +67,11 @@
                 @Html.ValidationMessageFor(model => model.dateRequis, "", new { @class = "text-danger" })
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <input type="number" name="heureRequise" required min="0" max="24" placeholder="Heure" maxlength="2" class="form-control heure heure2" value="@Model.dateRequis.Hour" />
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <input type="number" name="minRequise" required min="0" max="59" placeholder="Minute" maxlength="2" class="form-control minute heure2"  value="@Model.dateRequis.Minute" />
-            </div>
-            <div class="col-md-2">
-                <input type="number" name="secondeRequise" min="0" max="59" placeholder="Seconde" maxlength="2" class="form-control seconde heure2" value="@Model.dateRequis.Second" />
             </div>
 
         </div>
