@@ -183,12 +183,13 @@ VALUES
 (1,32);
 GO
 PRINT 'INSERTION RÉUSSI'
+
 PRINT 'INSERTION DE LA tblCalculateur'
 --Ces données vont être plus complètes lorsque que la sauvegarde du calculateur sera fonctionnelle.
 GO
-INSERT INTO S_forfait.tblCalculateur (billet,billetVIP,prixBillet,prixBilletVIP,souperSpectacle,prixSouper,jeunePourcent,adultePourcent,ainePourcent,jeuneRatio,adulteRatio,aineRatio,promo,prevente,customBillet1,customBillet2,customPrix1,customPrix2,customNom1,customNom2)
+INSERT INTO S_forfait.tblCalculateur (noSousEvenement,billet,billetVIP,prixBillet,prixBilletVIP,souperSpectacle,prixSouper,jeunePourcent,adultePourcent,ainePourcent,jeuneRatio,adulteRatio,aineRatio,promo,prevente,customBillet1,customBillet2,customPrix1,customPrix2,customNom1,customNom2)
 VALUES
-(5,5,5,5,5,5,5,5,5,5,50,30,20,5,5,5,5,5,5,'Rabais rue','Rabais internet'),
+(5,5,5,5,5,5,5,5,5,5,50,30,20,5,5,5,5,5,5,'Rabais rue','Rabais internet');
 GO
 PRINT 'INSERTION RÉUSSI'
 
