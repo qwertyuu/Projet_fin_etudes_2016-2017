@@ -246,6 +246,20 @@ namespace ECJ.Web.Controllers
             }
         }
 
+        internal void SupprimerCommanditaire(int id)
+        {
+            try
+            {
+                var elementASupprimer = returnCommanditaire(id);
+                elementASupprimer.dateSupprime = DateTime.Now;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+
         public List<tblMemo> MemosUtilisateur(long userId)
         {
             try

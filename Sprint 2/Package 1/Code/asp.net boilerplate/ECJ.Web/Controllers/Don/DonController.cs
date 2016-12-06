@@ -14,7 +14,7 @@ using System.Globalization;
 
 namespace ECJ.Web.Controllers.Don
 {
-    [AbpMvcAuthorize]
+    [AbpMvcAuthorize(PermissionNames.GererDon)]
     public class DonController : ECJControllerBase
     {
         DBProvider provider;
@@ -26,7 +26,6 @@ namespace ECJ.Web.Controllers.Don
             GetPermissions();
         }
 
-        [AbpMvcAuthorize(PermissionNames.GererDon)]
         public ActionResult Create(int? id)
         {
             if (id == null)
@@ -63,7 +62,6 @@ namespace ECJ.Web.Controllers.Don
         // POST: tblDons/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AbpMvcAuthorize(PermissionNames.GererDon)]
         public ActionResult Create([Bind(Include = "noDon,noCommanditaire,noSousEvenement,dateDon,dateSupprime")] tblDon tblDon, string montant)
         {
 
@@ -80,8 +78,7 @@ namespace ECJ.Web.Controllers.Don
             var retour = Request.QueryString["return"] ?? "~/Commanditaire";
             return Redirect(retour);
         }
-
-        [AbpMvcAuthorize(PermissionNames.GererDon)]
+        
         public ActionResult Supprimer(int? id)
         {
             if (id != null)

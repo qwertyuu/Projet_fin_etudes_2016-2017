@@ -48,8 +48,9 @@ namespace ECJ.Web.Controllers.Commanditaire
                 a.courrielContact.ToString().ToUpper().Contains(recherche) ||
                 a.nomContact.ToString().ToUpper().Contains(recherche) ||
                 (a.tblDon.Where(d => d.dateSupprime == null).Sum(d => d.montant).ToString() + "$").Contains(recherche.Replace('.', ','))).ToList();
-                
+
             }
+            LayoutController.pagePermission = null;
             return View(Commanditaire);
         }
 
@@ -72,6 +73,7 @@ namespace ECJ.Web.Controllers.Commanditaire
             {
                 return HttpNotFound();
             }
+            LayoutController.pagePermission = null;
             return View(tblCommanditaire);
         }
 
@@ -79,6 +81,7 @@ namespace ECJ.Web.Controllers.Commanditaire
         // GET: tblCommanditaires/Create
         public ActionResult Create()
         {
+            LayoutController.pagePermission = PermissionNames.GererCommanditaire;
             return View();
         }
 
@@ -102,6 +105,7 @@ namespace ECJ.Web.Controllers.Commanditaire
                 provider.AjouterCommanditaire(tblCommanditaire);
                 return RedirectToAction("Index");
             }
+            LayoutController.pagePermission = PermissionNames.GererCommanditaire;
 
             return View(tblCommanditaire);
         }
@@ -119,6 +123,7 @@ namespace ECJ.Web.Controllers.Commanditaire
             {
                 return HttpNotFound();
             }
+            LayoutController.pagePermission = PermissionNames.GererCommanditaire;
             return View(elementAModifier);
         }
 
@@ -150,6 +155,7 @@ namespace ECJ.Web.Controllers.Commanditaire
 
                 return RedirectToAction("Index");
             }
+            LayoutController.pagePermission = PermissionNames.GererCommanditaire;
             return View(tblCommanditaire);
         }
 
@@ -159,27 +165,9 @@ namespace ECJ.Web.Controllers.Commanditaire
         {
             if (id != null)
             {
-                var elementAModifier = provider.returnCommanditaire(Convert.ToInt32(id));
-                elementAModifier.dateSupprime = DateTime.Now;
-                provider.Save();
+                provider.SupprimerCommanditaire(id.Value);
             }
             return RedirectToAction("Index");
-        }
-
-        public ActionResult DetailsDon(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            tblCommanditaire tblCommanditaire = provider.returnCommanditaire(Convert.ToInt32(id));
-
-            if (tblCommanditaire == null)
-            {
-                return HttpNotFound();
-            }
-
-            return View(tblCommanditaire);
         }
     }
 }

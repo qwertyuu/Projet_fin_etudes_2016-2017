@@ -38,6 +38,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             {
                 return HttpNotFound();
             }
+            LayoutController.pagePermission = PermissionNames.ConsulterSoumission;
             return View(soumission);
         }
 

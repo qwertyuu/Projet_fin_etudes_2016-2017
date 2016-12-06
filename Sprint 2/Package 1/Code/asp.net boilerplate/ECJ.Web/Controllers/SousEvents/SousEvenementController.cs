@@ -65,7 +65,15 @@ namespace ECJ.Web.Controllers
                 //supprimer la salle sélectionnée ou si le service ajouté est de trop
                 if (Request.Form["salle_suppr"] != null || Request.Form["service_delete_salle"] != null)
                 {
+                    if (Request.Form["service_delete_salle"] != null)
+                    {
+                        var SousEvenement = db.FindSousEvenement((int)id);
+                        var nom_salle = SousEvenement.tblSalle.nomSalle;
+                        var nom_sous_evenement = SousEvenement.nom;
+                        db.CreerMemo((int)AbpSession.UserId.Value, (int)AbpSession.UserId.Value, string.Format("La salle «{0}» a été retirée du sous-événement «{1}» car un service requis n'y sétait pas offert", nom_salle, nom_sous_evenement), Request.RawUrl);
+                    }
                     db.DelierSalle((int)id);
+       
                 }
 
                 //ajouter l'engagement sélectionné
@@ -108,6 +116,7 @@ namespace ECJ.Web.Controllers
             var engagement = db.ToutEngagement().Except(SousEvenementCourrant.tblEngagement).ToList();
             ViewBag.listTuple = new Tuple<tblSousEvenement, List<tblService>, List<tblSalle>, List<tblForfait>, List<tblEngagement>>(SousEvenementCourrant, service, salle, forfait, engagement);
             ViewBag.UtilisateurCourrant = (long)AbpSession.UserId;
+            GetPermissions();
             return View();
         }
 

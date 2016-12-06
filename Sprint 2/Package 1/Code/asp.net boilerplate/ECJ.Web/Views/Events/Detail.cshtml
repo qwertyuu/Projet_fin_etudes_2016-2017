@@ -152,6 +152,7 @@
                                 activites = activites.Concat(item.tblActivite.Where(a => a.AbpUsers.Id == ViewBag.UtilisateurCourrant));
                             }
                             List<ECJ.Web.Models.Calendrier> cals = new List<ECJ.Web.Models.Calendrier>();
+                            List<KeyValuePair<string, List<int>>> actInfoId = new List<KeyValuePair<string, List<int>>>();
                             Dictionary<string, string> actInfo = new Dictionary<string, string>();
                             foreach (var activite in activites.Where(element => element.dateSupprime == null))
                             {
@@ -160,10 +161,12 @@
                                 if (actInfo.ContainsKey(date))
                                 {
                                     actInfo[date] += ",<br>" + nomAct;
+                                    actInfoId.Where(kv => kv.Key == date).First().Value.Add(activite.noActivite);
                                 }
                                 else
                                 {
                                     actInfo[date] = nomAct;
+                                    actInfoId.Add(new KeyValuePair<string, List<int>>(date, new List<int>() { activite.noActivite }));
                                 }
                                 <tr>
                                     <td>@activite.nomResponsable</td>
@@ -199,11 +202,11 @@
 
                                     </td>
                                 </tr>
-                                            }
-                                            foreach (var d in actInfo)
-                                            {
-                                                cals.Add(new ECJ.Web.Models.Calendrier() { date = d.Key, badge = true, title = d.Value });
-                                            }
+                                        }
+                                        foreach (var d in actInfo)
+                                        {
+                                            cals.Add(new ECJ.Web.Models.Calendrier() { date = d.Key, badge = true, title = d.Value });
+                                        }
                                         }
                     </tbody>
 
@@ -231,9 +234,26 @@
             dateCal = Encoding.UTF8.GetString(ms.ToArray());
         }
         <script>var dates_calendrier = @(new HtmlString(dateCal));</script>
+        var ids_cal = "{}";
+        using (MemoryStream ms = new MemoryStream())
+        {
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<KeyValuePair<string, List<int>>>));
+            ser.WriteObject(ms, actInfoId);
+            ids_cal = Encoding.UTF8.GetString(ms.ToArray());
+        }
+        <script>
+            var ids_calendrier = @(new HtmlString(ids_cal));
+            ids_calendrier = ids_calendrier.reduce(function(prev,curr){prev[curr["key"]] = curr["value"]; return prev}, {});
+            var return_url = "return=@Request.RawUrl";
+
+        </script>
     }
     else
     {
-        <script>var dates_calendrier = [];</script>
+        <script>
+            var dates_calendrier = [];
+            var ids_calendrier = {};
+            var return_url = "return=";
+        </script>
     }
 }

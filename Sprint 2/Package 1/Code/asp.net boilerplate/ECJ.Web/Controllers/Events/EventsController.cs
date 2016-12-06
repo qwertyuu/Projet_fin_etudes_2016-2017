@@ -64,14 +64,24 @@ namespace ECJ.Web.Controllers
                 ).Contains(recherche)
                 ).ToList();
             }
+            GetPermissions();
             return View(tblEvenement);
         }
 
         [AbpMvcAuthorize(PermissionNames.GererEvenement)]
-        public ActionResult Ajout()
+        public ActionResult Ajout(int? id)
         {
+            if (id != null)
+            {
+                var elementADupliquer = db.ReturnEvenement((int)id);
+                if (elementADupliquer == null)
+                {
+                    return View(new tblEvenement());
+                }
+                return View(elementADupliquer);
+            }
             LayoutController.pagePermission = PermissionNames.GererEvenement;
-            return View();
+            return View(new tblEvenement());
         }
 
         public FileContentResult GetFile(int id)
@@ -89,7 +99,11 @@ namespace ECJ.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                if (Request.Files["pic"].ContentLength > 0)
+                if (Request.Form["SupprimerAffiche"] != null)
+                {
+                    tblEvenement.affiche = null;
+                }
+                else if (Request.Files["pic"].ContentLength > 0)
                 {
                     var pic = Request.Files["pic"];
                     using (var reader = new System.IO.BinaryReader(pic.InputStream))
@@ -97,10 +111,15 @@ namespace ECJ.Web.Controllers
                         tblEvenement.affiche = reader.ReadBytes(pic.ContentLength);
                     }
                 }
+                else
+                {
+                    tblEvenement.affiche = db.ReturnEvenement(tblEvenement.noEvenement).affiche;
+                }
                 db.InsertEvenement(tblEvenement);
 
                 return RedirectToAction("Index");
             }
+            LayoutController.pagePermission = PermissionNames.GererEvenement;
             return View();
         }
 

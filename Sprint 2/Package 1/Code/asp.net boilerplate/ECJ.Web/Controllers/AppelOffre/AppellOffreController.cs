@@ -401,6 +401,8 @@ namespace ECJ.Web.Controllers.AppelOffre
 
             //Retourner les soumission du xml vers la bd
             RetournerSoumissionXml();
+            GetPermissions();
+
             return View(appelGoupBy.ToList());
         }
 
@@ -435,6 +437,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             ViewBag.noStatut = new SelectList(provider.ToutStatutAppel(), "noStatut", "nom");
             ViewBag.noMedia = new SelectList(provider.ToutMedia(), "noMedia", "nom");
             ViewBag.noAgencePub = new MultiSelectList(provider.ToutAgencePublicite(), "noAgencePub", "nom");
+            LayoutController.pagePermission = PermissionNames.CreerAppelOffre;
             return View();
         }
 
@@ -513,6 +516,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             ViewBag.noStatut = new SelectList(provider.ToutStatutAppel(), "noStatut", "nom", tblAppelOffre.noStatut);
             ViewBag.noMedia = new SelectList(provider.ToutMedia(), "noMedia", "nom",tblAppelOffre.noMedia);
             ViewBag.noAgencePub = new MultiSelectList(provider.ToutAgencePublicite(), "noAgencePub", "nom");
+            LayoutController.pagePermission = PermissionNames.CreerAppelOffre;
             return View(tblAppelOffre);
         }
 
@@ -534,6 +538,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             ViewBag.noEvenement = new SelectList(provider.ToutEvenement(), "noEvenement", "nom", tblAppelOffre.noEvenement);
             ViewBag.noStatut = new SelectList(provider.ToutStatutAppel(), "noStatut", "nom", tblAppelOffre.noStatut);
             ViewBag.noMedia = new SelectList(provider.ToutMedia(), "noMedia", "nom", tblAppelOffre.noMedia);
+            LayoutController.pagePermission = PermissionNames.CreerAppelOffre;
             return View(tblAppelOffre);
         }
 

@@ -60,18 +60,13 @@
                                 }
                             }
                             <td>@e.description</td>
-
-
-
-
                             <td>
-
-
-
-
                                 <a href="~/Events/Detail/@e.noEvenement" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
                                 @if (IsGranted(PermissionNames.GererEvenement))
 								{
+                                    
+	                                <a href="~/Events/Ajout/@e.noEvenement" class="btn btn-sm btn-primary" title="Dupliquer"><i class="fa fa-files-o"></i></a>
+
 	                                if (DateTime.Now <= e.dateFin)
 	                                {
 	                                    <a href="~/Events/Modifier/@e.noEvenement" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
