@@ -58,7 +58,9 @@ CREATE TABLE S_publicite.tblSoumission (
 	,statut tinyint  NULL
 	,commentaire TEXT 
     ,noAgencePub INT NOT NULL
-	,noAppelOffre INT NOT NULL 
+	,noAppelOffre INT NOT NULL
+	,dateEnvoi DATETIME
+	,dateReponse DATETIME
     ,dateSupprime DATETIME 
 	);
 	

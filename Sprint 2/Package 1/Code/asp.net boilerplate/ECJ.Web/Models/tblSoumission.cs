@@ -21,6 +21,8 @@ namespace ECJ.Web.Models
         public string commentaire { get; set; }
         public int noAgencePub { get; set; }
         public int noAppelOffre { get; set; }
+        public Nullable<System.DateTime> dateEnvoi { get; set; }
+        public Nullable<System.DateTime> dateReponse { get; set; }
         public Nullable<System.DateTime> dateSupprime { get; set; }
     
         public virtual tblAgencePublicite tblAgencePublicite { get; set; }

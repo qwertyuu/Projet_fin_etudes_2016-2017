@@ -31,9 +31,9 @@ namespace ECJ.Web.Models
         public int noMedia { get; set; }
     
         public virtual tblEvenement tblEvenement { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblSoumission> tblSoumission { get; set; }
         public virtual tblMedia tblMedia { get; set; }
         public virtual tblStatutAppelOffre tblStatutAppelOffre { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblSoumission> tblSoumission { get; set; }
     }
 }
