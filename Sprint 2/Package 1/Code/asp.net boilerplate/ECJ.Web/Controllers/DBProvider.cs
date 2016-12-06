@@ -1405,7 +1405,7 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                if (db.tblCalculateur.Where(s => s.noSousEvenement == tblCalculateur.noSousEvenement).ToList() == null)
+                if (db.tblCalculateur.Where(s => s.noSousEvenement == tblCalculateur.noSousEvenement).ToList().Count() == 0)
                 {
                     db.tblCalculateur.Add(tblCalculateur);
                     db.SaveChanges();

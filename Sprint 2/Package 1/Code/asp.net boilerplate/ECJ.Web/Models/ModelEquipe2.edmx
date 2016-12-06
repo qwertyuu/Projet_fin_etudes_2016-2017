@@ -591,7 +591,7 @@
           <Key>
             <PropertyRef Name="noSousEvenement" />
           </Key>
-          <Property Name="noSousEvenement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="noSousEvenement" Type="int" Nullable="false" />
           <Property Name="billet" Type="int" />
           <Property Name="billetVIP" Type="int" />
           <Property Name="prixBillet" Type="int" />

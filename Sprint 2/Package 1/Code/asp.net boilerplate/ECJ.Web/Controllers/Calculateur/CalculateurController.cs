@@ -29,7 +29,14 @@ namespace ECJ.Web.Controllers
 
             ViewBag.SousEvent = SousEvent;
 
-            ViewBag.Salle = SousEvent.tblSalle;
+            if (SousEvent.tblSalle != null)
+            {
+               ViewBag.Salle = SousEvent.tblSalle;
+            }
+            else
+            {
+                ViewBag.Salle = new tblSalle(); //Envoie d'une salle vide pour empêcher l'envoie d'une erreur
+            }
 
             ViewBag.Forfait = SousEvent.tblForfait.Where(f => f.dateSupprime == null);
 
