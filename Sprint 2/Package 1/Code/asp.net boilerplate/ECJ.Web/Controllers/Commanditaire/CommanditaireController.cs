@@ -75,6 +75,7 @@ namespace ECJ.Web.Controllers.Commanditaire
             return View(tblCommanditaire);
         }
 
+        [AbpMvcAuthorize(PermissionNames.GererCommanditaire)]
         // GET: tblCommanditaires/Create
         public ActionResult Create()
         {
@@ -84,6 +85,7 @@ namespace ECJ.Web.Controllers.Commanditaire
         // POST: tblCommanditaires/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AbpMvcAuthorize(PermissionNames.GererCommanditaire)]
         public ActionResult Create([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire)
         {
             if (ModelState.IsValid)
@@ -104,6 +106,7 @@ namespace ECJ.Web.Controllers.Commanditaire
             return View(tblCommanditaire);
         }
 
+        [AbpMvcAuthorize(PermissionNames.GererCommanditaire)]
         // GET: tblCommanditaires/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -122,6 +125,7 @@ namespace ECJ.Web.Controllers.Commanditaire
         // POST: tblCommanditaires/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AbpMvcAuthorize(PermissionNames.GererCommanditaire)]
         public ActionResult Edit([Bind(Include = "noCommanditaire,nomCommanditaire,nomContact,logo,url,textePresentation,courrielContact,numTel,extension,dateSupprime")] tblCommanditaire tblCommanditaire)
         {
             if (ModelState.IsValid)
@@ -150,6 +154,7 @@ namespace ECJ.Web.Controllers.Commanditaire
         }
 
         // GET: tblCommanditaires/Delete/5
+        [AbpMvcAuthorize(PermissionNames.GererCommanditaire)]
         public ActionResult Supprimer(int? id)
         {
             if (id != null)

@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<ECJ.Web.Models.tblCommanditaire>
+@using ECJ.Authorization;
 
 @{
     ViewBag.Title = "Index";
@@ -20,7 +21,10 @@
                 </span>
             </div>
         }
-        <a href="~/Commanditaire/Create" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un commanditaire</a>
+        @if (IsGranted(PermissionNames.GererCommanditaire))
+        {
+            <a href="~/Commanditaire/Create" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un commanditaire</a>
+        }
 
         <table class="table" align="center" data-sortlist="[[3,1]]">
             <thead>
@@ -95,10 +99,20 @@
 
                         <td>
                             <a href="~/Commanditaire/Details/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                            <a href="~/Commanditaire/Edit/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                            <a href="~/Don/Create/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Ajouter"><i class="fa fa-money fa-lg"></i></a>
-                            <a href="~/Commanditaire/Supprimer/@item.noCommanditaire" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                            @if (IsGranted(PermissionNames.GererCommanditaire))
+                            {
+                                <a href="~/Commanditaire/Edit/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
 
+                            }
+                            @if (IsGranted(PermissionNames.GererDon))
+                            {
+                                <a href="~/Don/Create/@item.noCommanditaire" class="btn btn-sm btn-primary" title="Ajouter"><i class="fa fa-money fa-lg"></i></a>
+                            }
+                            @if (IsGranted(PermissionNames.GererCommanditaire))
+                            {
+                                <a href="~/Commanditaire/Supprimer/@item.noCommanditaire" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+
+                            }
                         </td>
                     </tr>
                                 }

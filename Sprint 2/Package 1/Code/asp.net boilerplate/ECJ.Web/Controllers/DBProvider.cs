@@ -34,6 +34,19 @@ namespace ECJ.Web.Controllers
             }
         }
 
+        internal bool UtilisateurExiste(string uname)
+        {
+            try
+            {
+                return db.AbpUsers.Where(u => !u.IsDeleted).Any(u => u.UserName == uname);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return true;
+        }
+
         internal void ResetDB()
         {
             try
@@ -45,6 +58,19 @@ namespace ECJ.Web.Controllers
             {
                 LayoutController.erreur = e;
             }
+        }
+
+        internal bool CourrielExiste(string email)
+        {
+            try
+            {
+                return db.AbpUsers.Where(u => !u.IsDeleted).Any(u => u.EmailAddress == email);
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return true;
         }
 
         public List<tblCommanditaire> CommanditaireList()

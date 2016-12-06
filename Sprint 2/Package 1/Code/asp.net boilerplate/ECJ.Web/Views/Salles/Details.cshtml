@@ -1,4 +1,5 @@
 ﻿@using ECJ.Web.Models
+@using ECJ.Authorization;
 @using Abp.Web.Mvc.Extensions
 @{
     ViewBag.Title = "DetailSalles";
@@ -81,7 +82,12 @@
                 }
                 <tr>
                     <td>@s.nomService</td>
-                    <td><button data-evenements="@txt" name=@name value="@s.noService" class="btn btn-danger btn-sm" title="Supprimer le service offert"><i class="fa fa-trash fa-lg"></i></button> </td>
+                    <td>
+                        @if (IsGranted(PermissionNames.GererSalle))
+                        {
+                            <button data-evenements="@txt" name=@name value="@s.noService" class="btn btn-danger btn-sm" title="Supprimer le service offert"><i class="fa fa-trash fa-lg"></i></button>
+                        }
+                    </td>
                 </tr>
             }
         }

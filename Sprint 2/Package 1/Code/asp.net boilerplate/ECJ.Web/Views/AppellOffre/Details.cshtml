@@ -1,4 +1,5 @@
 ﻿@model ECJ.Web.Models.tblAppelOffre
+@using ECJ.Authorization;
 
 
 <h2>Détail de l'appel d'offre</h2>
@@ -126,12 +127,19 @@
                             }
                             <td>@soumi.commentaire</td>
                             <td>
-                                @if (Model.tblStatutAppelOffre.nom == "Envoyé" || Model.tblStatutAppelOffre.nom == "En Création")
+                                @if (IsGranted(PermissionNames.ApprouverSoumission))
                                 {
-                                    <a href="~/Soumission/Accepter/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
-                                    <a href="~/Soumission/Refuser/@soumi.noSoumission" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
+                                    if (Model.tblStatutAppelOffre.nom == "Envoyé" || Model.tblStatutAppelOffre.nom == "En Création")
+                                    {
+                                        <a href="~/Soumission/Accepter/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Accepter"><i class="fa fa-check-circle fa-lg"></i></a>
+                                        <a href="~/Soumission/Refuser/@soumi.noSoumission" class="btn btn-sm btn-danger" title="Refuser"><i class="fa fa-times fa-lg"></i></a>
+                                    }
                                 }
-                                <a href="~/Soumission/Detail/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                @if (IsGranted(PermissionNames.ConsulterSoumission))
+                                {
+                                    <a href="~/Soumission/Detail/@soumi.noSoumission" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+
+                                }
                             </td>
                         </tr>
                     }

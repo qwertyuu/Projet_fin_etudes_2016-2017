@@ -23,6 +23,23 @@ namespace ECJ.Web.Controllers
             GetPermissions();
         }
 
+        public ActionResult CheckUser(string uname, string email)
+        {
+            if (db.UtilisateurExiste(uname))
+            {
+                Response.Write("Un utilisateur utilisant ce nom d'utilisateur existe déjà.\nVeuillez choisir un autre nom d'utilisateur.");
+            }
+            else if (db.CourrielExiste(email))
+            {
+                Response.Write("Un utilisateur utilisant ce courriel existe déjà.\nVeuillez choisir un autre courriel ou essayez de retrouver le compte utilisant déjà ce courriel.");
+            }
+            else
+            {
+                Response.Write("1");
+            }
+            return new EmptyResult();
+        }
+
         public ActionResult Index()
         {
             var model = new Abp.Application.Services.Dto.ListResultOutput<ECJ.Web.Models.AbpUsers>(db.ToutUtilisateurs());

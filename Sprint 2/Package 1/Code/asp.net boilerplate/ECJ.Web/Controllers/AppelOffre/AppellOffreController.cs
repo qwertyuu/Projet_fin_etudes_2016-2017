@@ -327,6 +327,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             }
         }
 
+
         private tblSoumission CreateSoumission(int noAgenP, int noApp)
         {
             //if (!PermissionChecker.IsGrantedAsync("CreerSoumission").Result)
@@ -400,7 +401,6 @@ namespace ECJ.Web.Controllers.AppelOffre
 
             //Retourner les soumission du xml vers la bd
             RetournerSoumissionXml();
-            ViewBag.PeutCreerAppelOffre = PermissionChecker.IsGrantedAsync(PermissionNames.CreerAppelOffre).Result;
             return View(appelGoupBy.ToList());
         }
 
@@ -471,6 +471,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AbpMvcAuthorize(PermissionNames.CreerAppelOffre)]
         public ActionResult Create([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre)
         {
             List<int> idSelect = new List<int>();
@@ -516,6 +517,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         }
 
         // GET: AppellOffre/Edit/5
+        [AbpMvcAuthorize(PermissionNames.CreerAppelOffre)]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -540,6 +542,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AbpMvcAuthorize(PermissionNames.CreerAppelOffre)]
         public ActionResult Edit([Bind(Include = "noAppelOffre,nom,dateRequis,dateEnvoi,description,dateSupprime,noEvenement,noMedia")] tblAppelOffre tblAppelOffre)
         {
 
@@ -597,6 +600,7 @@ namespace ECJ.Web.Controllers.AppelOffre
         }
 
         // GET: AppellOffre/Delete/5
+        [AbpMvcAuthorize(PermissionNames.CreerAppelOffre)]
         public ActionResult Delete(int? id)
         {
             if (id == null)

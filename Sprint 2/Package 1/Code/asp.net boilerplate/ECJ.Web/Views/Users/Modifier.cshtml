@@ -1,6 +1,10 @@
-﻿
+﻿@using Abp.Web.Mvc.Extensions
 @{
     ViewBag.Title = "Ajout";
+}
+@section scripts
+{
+    @Html.IncludeScript("~/Views/Users/CheckUser.js")
 }
 @model ECJ.Users.User
 <h2>Modifier cet utilisateur</h2>

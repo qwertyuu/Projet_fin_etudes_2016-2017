@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlTypes;
 using Abp.Web.Mvc.Authorization;
+using ECJ.Authorization;
 
 namespace ECJ.Web.Controllers.AppelOffre
 {
@@ -25,6 +26,7 @@ namespace ECJ.Web.Controllers.AppelOffre
        
         }
 
+        [AbpMvcAuthorize(PermissionNames.ConsulterSoumission)]
         public ActionResult Detail(int? id)
         {
             if (id == null)
@@ -39,6 +41,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             return View(soumission);
         }
 
+        [AbpMvcAuthorize(PermissionNames.ApprouverSoumission)]
         public ActionResult Accepter(int? id)
         {
             tblAppelOffre appelOffre = provider.SelectAppelParSoumi(id);
@@ -69,6 +72,7 @@ namespace ECJ.Web.Controllers.AppelOffre
 
         }
 
+        [AbpMvcAuthorize(PermissionNames.ApprouverSoumission)]
         public ActionResult Refuser(int ? id)
         {
             tblSoumission soumi =provider.ReturnUneSoumi(id);

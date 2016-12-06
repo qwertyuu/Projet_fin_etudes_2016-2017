@@ -1,4 +1,5 @@
 ﻿
+@using ECJ.Authorization;
 @model List<ECJ.Web.Models.vueSomAppelOffre>
 @{ 
     ViewBag.ActiveMenu = "AppellOffre";
@@ -38,7 +39,7 @@
             </div>
         </div>   
         <br />
-        @if (ViewBag.PeutCreerAppelOffre)
+        @if (IsGranted(PermissionNames.CreerAppelOffre))
         {
         	<a href="~/AppellOffre/Create" data-toggle="modal" class="btn btn-primary  pull-right"><i class="fa fa-plus"></i> Ajouter un appel d'offre</a>
         }
@@ -97,12 +98,18 @@
                             @Html.DisplayFor(modelItem => item.description)
                         </td>
                         <td>
-                            <a href="~/AppellOffre/Details/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                            @if (item.noStatut == 1 || item.noStatut==2)
+                            @if (IsGranted(PermissionNames.ConsulterAppelOffre))
                             {
-                                <a href="~/AppellOffre/Edit/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                                <a href="~/AppellOffre/Delete/@item.noAppelOffre" class="btn btn-sm btn-danger" title="Supprimer l'appel d'offre"><i class="fa fa-trash fa-lg"></i></a>
-                            }                       
+                                <a href="~/AppellOffre/Details/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                            }
+                            @if (IsGranted(PermissionNames.CreerAppelOffre))
+                            {
+                                if (item.noStatut == 1 || item.noStatut == 2)
+                                {
+                                    <a href="~/AppellOffre/Edit/@item.noAppelOffre" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                    <a href="~/AppellOffre/Delete/@item.noAppelOffre" class="btn btn-sm btn-danger" title="Supprimer l'appel d'offre"><i class="fa fa-trash fa-lg"></i></a>
+                                }
+                            }                      
                         </td>
                     </tr>
                 }

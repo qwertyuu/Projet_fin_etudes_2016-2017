@@ -121,6 +121,7 @@ namespace ECJ.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AbpMvcAuthorize(PermissionNames.GererSousEvenement)]
         public ActionResult Ajout([Bind(Include = "noSousEvenement,nom,description,noEvenement,noSalle,dateSupprime")] tblSousEvenement tblSousEvenement)
         {
 

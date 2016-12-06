@@ -1,4 +1,5 @@
 ﻿@model ECJ.Web.Models.tblCommanditaire
+@using ECJ.Authorization;
 
 @{
         ViewBag.Title = "Details";
@@ -81,7 +82,11 @@
         </div>
     </div>
     <label>Dons effectués</label>
-    <a href="~/Don/Create/@Model.noCommanditaire?return=@Request.RawUrl" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Faire un don</a>
+    @if (IsGranted(PermissionNames.GererDon))
+    {
+        <a href="~/Don/Create/@Model.noCommanditaire?return=@Request.RawUrl" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Faire un don</a>
+
+    }
 
     <div class="form-group">
         <table class="table table-striped table-hover" data-sortlist="[[2,1]]">
@@ -111,7 +116,12 @@
                             }</td>
                             <td class="{sorter:'monetaryValue'}">@don.montant$</td>
                             <td>@String.Format("{0:yyyy/MM/dd}", don.dateDon)</td>
-                            <td><a href="~/Don/Supprimer/@don.noDon?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a></td>
+                            <td>
+@if (IsGranted(PermissionNames.GererDon))
+{
+                            <a href="~/Don/Supprimer/@don.noDon?return=@Request.RawUrl" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+}
+                            </td>
                         </tr>
                     }
                 }

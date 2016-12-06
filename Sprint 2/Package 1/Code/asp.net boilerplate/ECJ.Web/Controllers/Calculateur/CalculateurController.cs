@@ -10,7 +10,7 @@ using ECJ.Authorization;
 
 namespace ECJ.Web.Controllers
 {
-    [AbpMvcAuthorize]
+    [AbpMvcAuthorize(PermissionNames.GererSousEvenement)]
     public class CalculateurController : ECJControllerBase
     {
         DBProvider db;
@@ -67,7 +67,6 @@ namespace ECJ.Web.Controllers
 
                 return RedirectToAction("Index");
             }
-            LayoutController.pagePermission = PermissionNames.GererSousEvenement;
             return View(tblCalculateur);
         }
     }
