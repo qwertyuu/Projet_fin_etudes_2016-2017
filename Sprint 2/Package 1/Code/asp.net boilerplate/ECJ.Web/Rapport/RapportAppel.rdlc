@@ -1525,7 +1525,7 @@
             <ChartMember>
               <Group Name="Chart1_CategoryGroup">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!noAgencePub.Value</GroupExpression>
+                  <GroupExpression>=Fields!dateReponse.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
@@ -1533,7 +1533,7 @@
                   <Value>=Fields!noAgencePub.Value</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label>=Lookup(Fields!noAgencePub.Value, Fields!noAgencePub.Value, Fields!nom.Value,"DataSetAgence")</Label>
+              <Label>=Fields!dateReponse.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
@@ -1758,6 +1758,7 @@
             <AutoFitTextDisabled>true</AutoFitTextDisabled>
             <HeaderSeparatorColor>Black</HeaderSeparatorColor>
             <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+            <Reversed>=DateDiff("yyyy",Fields!dateReponse.Value,Fields!dateEnvoi.Value)</Reversed>
           </ChartLegend>
         </ChartLegends>
         <ChartTitles>
@@ -1792,7 +1793,7 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSetSoumission</DataSetName>
-        <Top>16.73522cm</Top>
+        <Top>16.69994cm</Top>
         <Left>1.21838cm</Left>
         <Height>6.46399cm</Height>
         <Width>14.95257cm</Width>
@@ -1960,54 +1961,6 @@
         <rd:TableAdapterName>tblAppelOffreTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DataSetSoumission">
-      <Query>
-        <DataSourceName>PE2_OfficielDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="noSoumission">
-          <DataField>noSoumission</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="noSoumissionAgence">
-          <DataField>noSoumissionAgence</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="prix">
-          <DataField>prix</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="statut">
-          <DataField>statut</DataField>
-          <rd:TypeName>System.Byte</rd:TypeName>
-        </Field>
-        <Field Name="commentaire">
-          <DataField>commentaire</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="noAgencePub">
-          <DataField>noAgencePub</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="noAppelOffre">
-          <DataField>noAppelOffre</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="dateSupprime">
-          <DataField>dateSupprime</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>PE2_OfficielDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\Rapport\DataSet\PE2_OfficielDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>tblSoumission</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>tblSoumissionTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
     <DataSet Name="DataSetMedia">
       <Query>
         <DataSourceName>PE2_OfficielDataSet</DataSourceName>
@@ -2142,6 +2095,62 @@
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>tblEvenementTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSetSoumission">
+      <Query>
+        <DataSourceName>PE2_OfficielDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="noSoumission">
+          <DataField>noSoumission</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="noSoumissionAgence">
+          <DataField>noSoumissionAgence</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="prix">
+          <DataField>prix</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="statut">
+          <DataField>statut</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="commentaire">
+          <DataField>commentaire</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="noAgencePub">
+          <DataField>noAgencePub</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="noAppelOffre">
+          <DataField>noAppelOffre</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="dateEnvoi">
+          <DataField>dateEnvoi</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="dateReponse">
+          <DataField>dateReponse</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="dateSupprime">
+          <DataField>dateSupprime</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>PE2_OfficielDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-NR17UOQ\Desktop\projet de fin d'études\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\PE2_OfficielDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>tblSoumission</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>tblSoumissionTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

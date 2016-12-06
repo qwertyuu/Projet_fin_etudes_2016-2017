@@ -173,7 +173,9 @@ namespace ECJ.Web.Controllers
                                         s.noAgencePub,
                                         s.noAppelOffre,
                                         s.noSoumission,
-                                        s.noSoumissionAgence
+                                        s.noSoumissionAgence,
+                                        s.dateReponse,
+                                        s.dateEnvoi
                                     }).ToList();
             var reportMedia = db.ToutMedia().Where(me => me.noMedia == reportQueryAppel.First().noMedia);
 

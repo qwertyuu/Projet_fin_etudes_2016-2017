@@ -114,6 +114,8 @@ namespace ECJ.Web.Rapport.DataSet {
         
         private tblMemoDataTable tabletblMemo;
         
+        private tblQuestionSecreteDataTable tabletblQuestionSecrete;
+        
         private tblRespoContratDataTable tabletblRespoContrat;
         
         private tblResponsableDataTable tabletblResponsable;
@@ -191,6 +193,8 @@ namespace ECJ.Web.Rapport.DataSet {
         private global::System.Data.DataRelation _relationFK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId;
         
         private global::System.Data.DataRelation _relationFK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId;
+        
+        private global::System.Data.DataRelation relationId_Question;
         
         private global::System.Data.DataRelation relationNO_UTILISATEUR_CREATEUR;
         
@@ -436,6 +440,9 @@ namespace ECJ.Web.Rapport.DataSet {
                 }
                 if ((ds.Tables["tblMemo"] != null)) {
                     base.Tables.Add(new tblMemoDataTable(ds.Tables["tblMemo"]));
+                }
+                if ((ds.Tables["tblQuestionSecrete"] != null)) {
+                    base.Tables.Add(new tblQuestionSecreteDataTable(ds.Tables["tblQuestionSecrete"]));
                 }
                 if ((ds.Tables["tblRespoContrat"] != null)) {
                     base.Tables.Add(new tblRespoContratDataTable(ds.Tables["tblRespoContrat"]));
@@ -975,6 +982,16 @@ namespace ECJ.Web.Rapport.DataSet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public tblQuestionSecreteDataTable tblQuestionSecrete {
+            get {
+                return this.tabletblQuestionSecrete;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public tblRespoContratDataTable tblRespoContrat {
             get {
                 return this.tabletblRespoContrat;
@@ -1393,6 +1410,9 @@ namespace ECJ.Web.Rapport.DataSet {
                 if ((ds.Tables["tblMemo"] != null)) {
                     base.Tables.Add(new tblMemoDataTable(ds.Tables["tblMemo"]));
                 }
+                if ((ds.Tables["tblQuestionSecrete"] != null)) {
+                    base.Tables.Add(new tblQuestionSecreteDataTable(ds.Tables["tblQuestionSecrete"]));
+                }
                 if ((ds.Tables["tblRespoContrat"] != null)) {
                     base.Tables.Add(new tblRespoContratDataTable(ds.Tables["tblRespoContrat"]));
                 }
@@ -1762,6 +1782,12 @@ namespace ECJ.Web.Rapport.DataSet {
                     this.tabletblMemo.InitVars();
                 }
             }
+            this.tabletblQuestionSecrete = ((tblQuestionSecreteDataTable)(base.Tables["tblQuestionSecrete"]));
+            if ((initTable == true)) {
+                if ((this.tabletblQuestionSecrete != null)) {
+                    this.tabletblQuestionSecrete.InitVars();
+                }
+            }
             this.tabletblRespoContrat = ((tblRespoContratDataTable)(base.Tables["tblRespoContrat"]));
             if ((initTable == true)) {
                 if ((this.tabletblRespoContrat != null)) {
@@ -1911,6 +1937,7 @@ namespace ECJ.Web.Rapport.DataSet {
             this._relationFK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId = this.Relations["FK_dbo.AbpUsers_dbo.AbpUsers_CreatorUserId"];
             this._relationFK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId = this.Relations["FK_dbo.AbpUsers_dbo.AbpUsers_DeleterUserId"];
             this._relationFK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId = this.Relations["FK_dbo.AbpUsers_dbo.AbpUsers_LastModifierUserId"];
+            this.relationId_Question = this.Relations["Id_Question"];
             this.relationNO_UTILISATEUR_CREATEUR = this.Relations["NO_UTILISATEUR_CREATEUR"];
             this.relationNOEVEN_ACT_FK = this.Relations["NOEVEN_ACT_FK"];
             this.relationNOSOUSEVEN_ACT_FK = this.Relations["NOSOUSEVEN_ACT_FK"];
@@ -2052,6 +2079,8 @@ namespace ECJ.Web.Rapport.DataSet {
             base.Tables.Add(this.tabletblMedia);
             this.tabletblMemo = new tblMemoDataTable();
             base.Tables.Add(this.tabletblMemo);
+            this.tabletblQuestionSecrete = new tblQuestionSecreteDataTable();
+            base.Tables.Add(this.tabletblQuestionSecrete);
             this.tabletblRespoContrat = new tblRespoContratDataTable();
             base.Tables.Add(this.tabletblRespoContrat);
             this.tabletblResponsable = new tblResponsableDataTable();
@@ -2164,6 +2193,10 @@ namespace ECJ.Web.Rapport.DataSet {
                         this.tableAbpUsers.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableAbpUsers.LastModifierUserIdColumn}, false);
             this.Relations.Add(this._relationFK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId);
+            this.relationId_Question = new global::System.Data.DataRelation("Id_Question", new global::System.Data.DataColumn[] {
+                        this.tabletblQuestionSecrete.IdQuestionColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAbpUsers.IdQuestionColumn}, false);
+            this.Relations.Add(this.relationId_Question);
             this.relationNO_UTILISATEUR_CREATEUR = new global::System.Data.DataRelation("NO_UTILISATEUR_CREATEUR", new global::System.Data.DataColumn[] {
                         this.tableAbpUsers.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tabletblActivite.noUtilisateurColumn}, false);
@@ -2602,6 +2635,12 @@ namespace ECJ.Web.Rapport.DataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializetblQuestionSecrete() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializetblRespoContrat() {
             return false;
         }
@@ -2921,6 +2960,9 @@ namespace ECJ.Web.Rapport.DataSet {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tblMemoRowChangeEventHandler(object sender, tblMemoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void tblQuestionSecreteRowChangeEventHandler(object sender, tblQuestionSecreteRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tblRespoContratRowChangeEventHandler(object sender, tblRespoContratRowChangeEvent e);
@@ -11276,6 +11318,12 @@ namespace ECJ.Web.Rapport.DataSet {
             
             private global::System.Data.DataColumn columnCreatorUserId;
             
+            private global::System.Data.DataColumn columnIdQuestion;
+            
+            private global::System.Data.DataColumn columnReponse;
+            
+            private global::System.Data.DataColumn columnImageProfil;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AbpUsersDataTable() {
@@ -11471,6 +11519,30 @@ namespace ECJ.Web.Rapport.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdQuestionColumn {
+                get {
+                    return this.columnIdQuestion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ReponseColumn {
+                get {
+                    return this.columnReponse;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ImageProfilColumn {
+                get {
+                    return this.columnImageProfil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -11525,7 +11597,10 @@ namespace ECJ.Web.Rapport.DataSet {
                         System.DateTime LastModificationTime, 
                         AbpUsersRow _parentAbpUsersRowByFK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId, 
                         System.DateTime CreationTime, 
-                        AbpUsersRow _parentAbpUsersRowByFK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId) {
+                        AbpUsersRow _parentAbpUsersRowByFK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId, 
+                        tblQuestionSecreteRow parenttblQuestionSecreteRowById_Question, 
+                        string Reponse, 
+                        byte[] ImageProfil) {
                 AbpUsersRow rowAbpUsersRow = ((AbpUsersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -11547,7 +11622,10 @@ namespace ECJ.Web.Rapport.DataSet {
                         LastModificationTime,
                         null,
                         CreationTime,
-                        null};
+                        null,
+                        null,
+                        Reponse,
+                        ImageProfil};
                 if ((_parentAbpUsersRowByFK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId != null)) {
                     columnValuesArray[14] = _parentAbpUsersRowByFK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId[0];
                 }
@@ -11556,6 +11634,9 @@ namespace ECJ.Web.Rapport.DataSet {
                 }
                 if ((_parentAbpUsersRowByFK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId != null)) {
                     columnValuesArray[19] = _parentAbpUsersRowByFK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId[0];
+                }
+                if ((parenttblQuestionSecreteRowById_Question != null)) {
+                    columnValuesArray[20] = parenttblQuestionSecreteRowById_Question[0];
                 }
                 rowAbpUsersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAbpUsersRow);
@@ -11606,6 +11687,9 @@ namespace ECJ.Web.Rapport.DataSet {
                 this.columnLastModifierUserId = base.Columns["LastModifierUserId"];
                 this.columnCreationTime = base.Columns["CreationTime"];
                 this.columnCreatorUserId = base.Columns["CreatorUserId"];
+                this.columnIdQuestion = base.Columns["IdQuestion"];
+                this.columnReponse = base.Columns["Reponse"];
+                this.columnImageProfil = base.Columns["ImageProfil"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11651,6 +11735,12 @@ namespace ECJ.Web.Rapport.DataSet {
                 base.Columns.Add(this.columnCreationTime);
                 this.columnCreatorUserId = new global::System.Data.DataColumn("CreatorUserId", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCreatorUserId);
+                this.columnIdQuestion = new global::System.Data.DataColumn("IdQuestion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdQuestion);
+                this.columnReponse = new global::System.Data.DataColumn("Reponse", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReponse);
+                this.columnImageProfil = new global::System.Data.DataColumn("ImageProfil", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImageProfil);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -11676,6 +11766,7 @@ namespace ECJ.Web.Rapport.DataSet {
                 this.columnIsActive.AllowDBNull = false;
                 this.columnIsDeleted.AllowDBNull = false;
                 this.columnCreationTime.AllowDBNull = false;
+                this.columnReponse.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14208,6 +14299,7 @@ namespace ECJ.Web.Rapport.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tblCalculateurRow AddtblCalculateurRow(
+                        tblSousEvenementRow parenttblSousEvenementRowBySOUSEVEN_CALC_NOSEVENL_FK, 
                         int billet, 
                         int billetVIP, 
                         int prixBillet, 
@@ -14251,6 +14343,9 @@ namespace ECJ.Web.Rapport.DataSet {
                         customPrix2,
                         customNom1,
                         customNom2};
+                if ((parenttblSousEvenementRowBySOUSEVEN_CALC_NOSEVENL_FK != null)) {
+                    columnValuesArray[0] = parenttblSousEvenementRowBySOUSEVEN_CALC_NOSEVENL_FK[0];
+                }
                 rowtblCalculateurRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblCalculateurRow);
                 return rowtblCalculateurRow;
@@ -14350,11 +14445,7 @@ namespace ECJ.Web.Rapport.DataSet {
                 base.Columns.Add(this.columncustomNom2);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnnoSousEvenement}, true));
-                this.columnnoSousEvenement.AutoIncrement = true;
-                this.columnnoSousEvenement.AutoIncrementSeed = -1;
-                this.columnnoSousEvenement.AutoIncrementStep = -1;
                 this.columnnoSousEvenement.AllowDBNull = false;
-                this.columnnoSousEvenement.ReadOnly = true;
                 this.columnnoSousEvenement.Unique = true;
                 this.columncustomNom1.MaxLength = 50;
                 this.columncustomNom2.MaxLength = 50;
@@ -19888,6 +19979,283 @@ namespace ECJ.Web.Rapport.DataSet {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class tblQuestionSecreteDataTable : global::System.Data.TypedTableBase<tblQuestionSecreteRow> {
+            
+            private global::System.Data.DataColumn columnIdQuestion;
+            
+            private global::System.Data.DataColumn columnQuestion;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblQuestionSecreteDataTable() {
+                this.TableName = "tblQuestionSecrete";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tblQuestionSecreteDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected tblQuestionSecreteDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdQuestionColumn {
+                get {
+                    return this.columnIdQuestion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QuestionColumn {
+                get {
+                    return this.columnQuestion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblQuestionSecreteRow this[int index] {
+                get {
+                    return ((tblQuestionSecreteRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblQuestionSecreteRowChangeEventHandler tblQuestionSecreteRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblQuestionSecreteRowChangeEventHandler tblQuestionSecreteRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblQuestionSecreteRowChangeEventHandler tblQuestionSecreteRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblQuestionSecreteRowChangeEventHandler tblQuestionSecreteRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddtblQuestionSecreteRow(tblQuestionSecreteRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblQuestionSecreteRow AddtblQuestionSecreteRow(string Question) {
+                tblQuestionSecreteRow rowtblQuestionSecreteRow = ((tblQuestionSecreteRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Question};
+                rowtblQuestionSecreteRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtblQuestionSecreteRow);
+                return rowtblQuestionSecreteRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblQuestionSecreteRow FindByIdQuestion(int IdQuestion) {
+                return ((tblQuestionSecreteRow)(this.Rows.Find(new object[] {
+                            IdQuestion})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                tblQuestionSecreteDataTable cln = ((tblQuestionSecreteDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new tblQuestionSecreteDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnIdQuestion = base.Columns["IdQuestion"];
+                this.columnQuestion = base.Columns["Question"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnIdQuestion = new global::System.Data.DataColumn("IdQuestion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdQuestion);
+                this.columnQuestion = new global::System.Data.DataColumn("Question", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuestion);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIdQuestion}, true));
+                this.columnIdQuestion.AutoIncrement = true;
+                this.columnIdQuestion.AutoIncrementSeed = -1;
+                this.columnIdQuestion.AutoIncrementStep = -1;
+                this.columnIdQuestion.AllowDBNull = false;
+                this.columnIdQuestion.ReadOnly = true;
+                this.columnIdQuestion.Unique = true;
+                this.columnQuestion.MaxLength = 100;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblQuestionSecreteRow NewtblQuestionSecreteRow() {
+                return ((tblQuestionSecreteRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new tblQuestionSecreteRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(tblQuestionSecreteRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.tblQuestionSecreteRowChanged != null)) {
+                    this.tblQuestionSecreteRowChanged(this, new tblQuestionSecreteRowChangeEvent(((tblQuestionSecreteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.tblQuestionSecreteRowChanging != null)) {
+                    this.tblQuestionSecreteRowChanging(this, new tblQuestionSecreteRowChangeEvent(((tblQuestionSecreteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.tblQuestionSecreteRowDeleted != null)) {
+                    this.tblQuestionSecreteRowDeleted(this, new tblQuestionSecreteRowChangeEvent(((tblQuestionSecreteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.tblQuestionSecreteRowDeleting != null)) {
+                    this.tblQuestionSecreteRowDeleting(this, new tblQuestionSecreteRowChangeEvent(((tblQuestionSecreteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovetblQuestionSecreteRow(tblQuestionSecreteRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                PE2_OfficielDataSet ds = new PE2_OfficielDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "tblQuestionSecreteDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class tblRespoContratDataTable : global::System.Data.TypedTableBase<tblRespoContratRow> {
             
             private global::System.Data.DataColumn columnnoResponsable;
@@ -21852,6 +22220,10 @@ namespace ECJ.Web.Rapport.DataSet {
             
             private global::System.Data.DataColumn columnnoAppelOffre;
             
+            private global::System.Data.DataColumn columndateEnvoi;
+            
+            private global::System.Data.DataColumn columndateReponse;
+            
             private global::System.Data.DataColumn columndateSupprime;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21945,6 +22317,22 @@ namespace ECJ.Web.Rapport.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn dateEnvoiColumn {
+                get {
+                    return this.columndateEnvoi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn dateReponseColumn {
+                get {
+                    return this.columndateReponse;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn dateSupprimeColumn {
                 get {
                     return this.columndateSupprime;
@@ -21988,7 +22376,7 @@ namespace ECJ.Web.Rapport.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblSoumissionRow AddtblSoumissionRow(string noSoumissionAgence, decimal prix, byte statut, string commentaire, tblAgencePubliciteRow parenttblAgencePubliciteRowByAGENCE_PUB_FK, tblAppelOffreRow parenttblAppelOffreRowByAPPEL_OFFRE_FK, System.DateTime dateSupprime) {
+            public tblSoumissionRow AddtblSoumissionRow(string noSoumissionAgence, decimal prix, byte statut, string commentaire, tblAgencePubliciteRow parenttblAgencePubliciteRowByAGENCE_PUB_FK, tblAppelOffreRow parenttblAppelOffreRowByAPPEL_OFFRE_FK, System.DateTime dateEnvoi, System.DateTime dateReponse, System.DateTime dateSupprime) {
                 tblSoumissionRow rowtblSoumissionRow = ((tblSoumissionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -21998,6 +22386,8 @@ namespace ECJ.Web.Rapport.DataSet {
                         commentaire,
                         null,
                         null,
+                        dateEnvoi,
+                        dateReponse,
                         dateSupprime};
                 if ((parenttblAgencePubliciteRowByAGENCE_PUB_FK != null)) {
                     columnValuesArray[5] = parenttblAgencePubliciteRowByAGENCE_PUB_FK[0];
@@ -22041,6 +22431,8 @@ namespace ECJ.Web.Rapport.DataSet {
                 this.columncommentaire = base.Columns["commentaire"];
                 this.columnnoAgencePub = base.Columns["noAgencePub"];
                 this.columnnoAppelOffre = base.Columns["noAppelOffre"];
+                this.columndateEnvoi = base.Columns["dateEnvoi"];
+                this.columndateReponse = base.Columns["dateReponse"];
                 this.columndateSupprime = base.Columns["dateSupprime"];
             }
             
@@ -22061,6 +22453,10 @@ namespace ECJ.Web.Rapport.DataSet {
                 base.Columns.Add(this.columnnoAgencePub);
                 this.columnnoAppelOffre = new global::System.Data.DataColumn("noAppelOffre", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnoAppelOffre);
+                this.columndateEnvoi = new global::System.Data.DataColumn("dateEnvoi", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndateEnvoi);
+                this.columndateReponse = new global::System.Data.DataColumn("dateReponse", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndateReponse);
                 this.columndateSupprime = new global::System.Data.DataColumn("dateSupprime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndateSupprime);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -32108,6 +32504,54 @@ namespace ECJ.Web.Rapport.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int IdQuestion {
+                get {
+                    try {
+                        return ((int)(this[this.tableAbpUsers.IdQuestionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'IdQuestion\' dans la table \'AbpUsers\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAbpUsers.IdQuestionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Reponse {
+                get {
+                    try {
+                        return ((string)(this[this.tableAbpUsers.ReponseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Reponse\' dans la table \'AbpUsers\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAbpUsers.ReponseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte[] ImageProfil {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableAbpUsers.ImageProfilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'ImageProfil\' dans la table \'AbpUsers\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAbpUsers.ImageProfilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AbpUsersRow _AbpUsersRowParentByFK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId {
                 get {
                     return ((AbpUsersRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.AbpUsers_dbo.AbpUsers_CreatorUserId"])));
@@ -32136,6 +32580,17 @@ namespace ECJ.Web.Rapport.DataSet {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_dbo.AbpUsers_dbo.AbpUsers_LastModifierUserId"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblQuestionSecreteRow tblQuestionSecreteRow {
+                get {
+                    return ((tblQuestionSecreteRow)(this.GetParentRow(this.Table.ParentRelations["Id_Question"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Id_Question"]);
                 }
             }
             
@@ -32257,6 +32712,42 @@ namespace ECJ.Web.Rapport.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCreatorUserIdNull() {
                 this[this.tableAbpUsers.CreatorUserIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdQuestionNull() {
+                return this.IsNull(this.tableAbpUsers.IdQuestionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdQuestionNull() {
+                this[this.tableAbpUsers.IdQuestionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsReponseNull() {
+                return this.IsNull(this.tableAbpUsers.ReponseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetReponseNull() {
+                this[this.tableAbpUsers.ReponseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsImageProfilNull() {
+                return this.IsNull(this.tableAbpUsers.ImageProfilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetImageProfilNull() {
+                this[this.tableAbpUsers.ImageProfilColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -36382,6 +36873,72 @@ namespace ECJ.Web.Rapport.DataSet {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class tblQuestionSecreteRow : global::System.Data.DataRow {
+            
+            private tblQuestionSecreteDataTable tabletblQuestionSecrete;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tblQuestionSecreteRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabletblQuestionSecrete = ((tblQuestionSecreteDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int IdQuestion {
+                get {
+                    return ((int)(this[this.tabletblQuestionSecrete.IdQuestionColumn]));
+                }
+                set {
+                    this[this.tabletblQuestionSecrete.IdQuestionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Question {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblQuestionSecrete.QuestionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Question\' dans la table \'tblQuestionSecrete\' est DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblQuestionSecrete.QuestionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQuestionNull() {
+                return this.IsNull(this.tabletblQuestionSecrete.QuestionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQuestionNull() {
+                this[this.tabletblQuestionSecrete.QuestionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AbpUsersRow[] GetAbpUsersRows() {
+                if ((this.Table.ChildRelations["Id_Question"] == null)) {
+                    return new AbpUsersRow[0];
+                }
+                else {
+                    return ((AbpUsersRow[])(base.GetChildRows(this.Table.ChildRelations["Id_Question"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class tblRespoContratRow : global::System.Data.DataRow {
             
             private tblRespoContratDataTable tabletblRespoContrat;
@@ -37266,6 +37823,39 @@ namespace ECJ.Web.Rapport.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime dateEnvoi {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletblSoumission.dateEnvoiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'dateEnvoi\' dans la table \'tblSoumission\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblSoumission.dateEnvoiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime dateReponse {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletblSoumission.dateReponseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'dateReponse\' dans la table \'tblSoumission\' est DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabletblSoumission.dateReponseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime dateSupprime {
                 get {
                     try {
@@ -37349,6 +37939,30 @@ namespace ECJ.Web.Rapport.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetcommentaireNull() {
                 this[this.tabletblSoumission.commentaireColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdateEnvoiNull() {
+                return this.IsNull(this.tabletblSoumission.dateEnvoiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdateEnvoiNull() {
+                this[this.tabletblSoumission.dateEnvoiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdateReponseNull() {
+                return this.IsNull(this.tabletblSoumission.dateReponseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdateReponseNull() {
+                this[this.tabletblSoumission.dateReponseColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -40833,6 +41447,40 @@ namespace ECJ.Web.Rapport.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tblMemoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class tblQuestionSecreteRowChangeEvent : global::System.EventArgs {
+            
+            private tblQuestionSecreteRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblQuestionSecreteRowChangeEvent(tblQuestionSecreteRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblQuestionSecreteRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -49955,6 +50603,9 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("LastModifierUserId", "LastModifierUserId");
             tableMapping.ColumnMappings.Add("CreationTime", "CreationTime");
             tableMapping.ColumnMappings.Add("CreatorUserId", "CreatorUserId");
+            tableMapping.ColumnMappings.Add("IdQuestion", "IdQuestion");
+            tableMapping.ColumnMappings.Add("Reponse", "Reponse");
+            tableMapping.ColumnMappings.Add("ImageProfil", "ImageProfil");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -49963,7 +50614,7 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[AbpUsers] ([TenantId], [AuthenticationSource], [Name], [Surname], [UserName], [Password], [EmailAddress], [IsEmailConfirmed], [EmailConfirmationCode], [PasswordResetCode], [LastLoginTime], [IsActive], [IsDeleted], [DeleterUserId], [DeletionTime], [LastModificationTime], [LastModifierUserId], [CreationTime], [CreatorUserId]) VALUES (@TenantId, @AuthenticationSource, @Name, @Surname, @UserName, @Password, @EmailAddress, @IsEmailConfirmed, @EmailConfirmationCode, @PasswordResetCode, @LastLoginTime, @IsActive, @IsDeleted, @DeleterUserId, @DeletionTime, @LastModificationTime, @LastModifierUserId, @CreationTime, @CreatorUserId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[AbpUsers] ([TenantId], [AuthenticationSource], [Name], [Surname], [UserName], [Password], [EmailAddress], [IsEmailConfirmed], [EmailConfirmationCode], [PasswordResetCode], [LastLoginTime], [IsActive], [IsDeleted], [DeleterUserId], [DeletionTime], [LastModificationTime], [LastModifierUserId], [CreationTime], [CreatorUserId], [IdQuestion], [Reponse], [ImageProfil]) VALUES (@TenantId, @AuthenticationSource, @Name, @Surname, @UserName, @Password, @EmailAddress, @IsEmailConfirmed, @EmailConfirmationCode, @PasswordResetCode, @LastLoginTime, @IsActive, @IsDeleted, @DeleterUserId, @DeletionTime, @LastModificationTime, @LastModifierUserId, @CreationTime, @CreatorUserId, @IdQuestion, @Reponse, @ImageProfil)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenantId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenantId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AuthenticationSource", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AuthenticationSource", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -49984,9 +50635,12 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastModifierUserId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastModifierUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreationTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreationTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreatorUserId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreatorUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdQuestion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdQuestion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reponse", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reponse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ImageProfil", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImageProfil", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[AbpUsers] SET [TenantId] = @TenantId, [AuthenticationSource] = @AuthenticationSource, [Name] = @Name, [Surname] = @Surname, [UserName] = @UserName, [Password] = @Password, [EmailAddress] = @EmailAddress, [IsEmailConfirmed] = @IsEmailConfirmed, [EmailConfirmationCode] = @EmailConfirmationCode, [PasswordResetCode] = @PasswordResetCode, [LastLoginTime] = @LastLoginTime, [IsActive] = @IsActive, [IsDeleted] = @IsDeleted, [DeleterUserId] = @DeleterUserId, [DeletionTime] = @DeletionTime, [LastModificationTime] = @LastModificationTime, [LastModifierUserId] = @LastModifierUserId, [CreationTime] = @CreationTime, [CreatorUserId] = @CreatorUserId WHERE (([Id] = @Original_Id))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[AbpUsers] SET [TenantId] = @TenantId, [AuthenticationSource] = @AuthenticationSource, [Name] = @Name, [Surname] = @Surname, [UserName] = @UserName, [Password] = @Password, [EmailAddress] = @EmailAddress, [IsEmailConfirmed] = @IsEmailConfirmed, [EmailConfirmationCode] = @EmailConfirmationCode, [PasswordResetCode] = @PasswordResetCode, [LastLoginTime] = @LastLoginTime, [IsActive] = @IsActive, [IsDeleted] = @IsDeleted, [DeleterUserId] = @DeleterUserId, [DeletionTime] = @DeletionTime, [LastModificationTime] = @LastModificationTime, [LastModifierUserId] = @LastModifierUserId, [CreationTime] = @CreationTime, [CreatorUserId] = @CreatorUserId, [IdQuestion] = @IdQuestion, [Reponse] = @Reponse, [ImageProfil] = @ImageProfil WHERE (([Id] = @Original_Id))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenantId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenantId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AuthenticationSource", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AuthenticationSource", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -50007,6 +50661,9 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastModifierUserId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastModifierUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreationTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreationTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreatorUserId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreatorUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdQuestion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdQuestion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reponse", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reponse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ImageProfil", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImageProfil", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -50023,7 +50680,7 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT Id, TenantId, AuthenticationSource, Name, Surname, UserName, Password, EmailAddress, IsEmailConfirmed, EmailConfirmationCode, PasswordResetCode, LastLoginTime, IsActive, IsDeleted, DeleterUserId, DeletionTime, LastModificationTime, LastModifierUserId, CreationTime, CreatorUserId FROM dbo.AbpUsers";
+            this._commandCollection[0].CommandText = @"SELECT Id, TenantId, AuthenticationSource, Name, Surname, UserName, Password, EmailAddress, IsEmailConfirmed, EmailConfirmationCode, PasswordResetCode, LastLoginTime, IsActive, IsDeleted, DeleterUserId, DeletionTime, LastModificationTime, LastModifierUserId, CreationTime, CreatorUserId, IdQuestion, Reponse, ImageProfil FROM dbo.AbpUsers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -50125,7 +50782,10 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> LastModificationTime, 
                     global::System.Nullable<long> LastModifierUserId, 
                     System.DateTime CreationTime, 
-                    global::System.Nullable<long> CreatorUserId) {
+                    global::System.Nullable<long> CreatorUserId, 
+                    global::System.Nullable<int> IdQuestion, 
+                    string Reponse, 
+                    byte[] ImageProfil) {
             if ((TenantId.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(TenantId.Value));
             }
@@ -50220,6 +50880,24 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
+            if ((IdQuestion.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((int)(IdQuestion.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Reponse == null)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(Reponse));
+            }
+            if ((ImageProfil == null)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((byte[])(ImageProfil));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -50260,6 +50938,9 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     global::System.Nullable<long> LastModifierUserId, 
                     System.DateTime CreationTime, 
                     global::System.Nullable<long> CreatorUserId, 
+                    global::System.Nullable<int> IdQuestion, 
+                    string Reponse, 
+                    byte[] ImageProfil, 
                     long Original_Id) {
             if ((TenantId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(TenantId.Value));
@@ -50355,7 +51036,25 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((long)(Original_Id));
+            if ((IdQuestion.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(IdQuestion.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Reponse == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Reponse));
+            }
+            if ((ImageProfil == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((byte[])(ImageProfil));
+            }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((long)(Original_Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -52667,8 +53366,9 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_noSousEvenement", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noSousEvenement", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [S_forfait].[tblCalculateur] ([billet], [billetVIP], [prixBillet], [prixBilletVIP], [souperSpectacle], [prixSouper], [jeunePourcent], [adultePourcent], [ainePourcent], [jeuneRatio], [adulteRatio], [aineRatio], [promo], [prevente], [customBillet1], [customBillet2], [customPrix1], [customPrix2], [customNom1], [customNom2]) VALUES (@billet, @billetVIP, @prixBillet, @prixBilletVIP, @souperSpectacle, @prixSouper, @jeunePourcent, @adultePourcent, @ainePourcent, @jeuneRatio, @adulteRatio, @aineRatio, @promo, @prevente, @customBillet1, @customBillet2, @customPrix1, @customPrix2, @customNom1, @customNom2)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [S_forfait].[tblCalculateur] ([noSousEvenement], [billet], [billetVIP], [prixBillet], [prixBilletVIP], [souperSpectacle], [prixSouper], [jeunePourcent], [adultePourcent], [ainePourcent], [jeuneRatio], [adulteRatio], [aineRatio], [promo], [prevente], [customBillet1], [customBillet2], [customPrix1], [customPrix2], [customNom1], [customNom2]) VALUES (@noSousEvenement, @billet, @billetVIP, @prixBillet, @prixBilletVIP, @souperSpectacle, @prixSouper, @jeunePourcent, @adultePourcent, @ainePourcent, @jeuneRatio, @adulteRatio, @aineRatio, @promo, @prevente, @customBillet1, @customBillet2, @customPrix1, @customPrix2, @customNom1, @customNom2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noSousEvenement", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noSousEvenement", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@billet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "billet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@billetVIP", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "billetVIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prixBillet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prixBillet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -52691,8 +53391,9 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@customNom2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "customNom2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [S_forfait].[tblCalculateur] SET [billet] = @billet, [billetVIP] = @billetVIP, [prixBillet] = @prixBillet, [prixBilletVIP] = @prixBilletVIP, [souperSpectacle] = @souperSpectacle, [prixSouper] = @prixSouper, [jeunePourcent] = @jeunePourcent, [adultePourcent] = @adultePourcent, [ainePourcent] = @ainePourcent, [jeuneRatio] = @jeuneRatio, [adulteRatio] = @adulteRatio, [aineRatio] = @aineRatio, [promo] = @promo, [prevente] = @prevente, [customBillet1] = @customBillet1, [customBillet2] = @customBillet2, [customPrix1] = @customPrix1, [customPrix2] = @customPrix2, [customNom1] = @customNom1, [customNom2] = @customNom2 WHERE (([noSousEvenement] = @Original_noSousEvenement))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [S_forfait].[tblCalculateur] SET [noSousEvenement] = @noSousEvenement, [billet] = @billet, [billetVIP] = @billetVIP, [prixBillet] = @prixBillet, [prixBilletVIP] = @prixBilletVIP, [souperSpectacle] = @souperSpectacle, [prixSouper] = @prixSouper, [jeunePourcent] = @jeunePourcent, [adultePourcent] = @adultePourcent, [ainePourcent] = @ainePourcent, [jeuneRatio] = @jeuneRatio, [adulteRatio] = @adulteRatio, [aineRatio] = @aineRatio, [promo] = @promo, [prevente] = @prevente, [customBillet1] = @customBillet1, [customBillet2] = @customBillet2, [customPrix1] = @customPrix1, [customPrix2] = @customPrix2, [customNom1] = @customNom1, [customNom2] = @customNom2 WHERE (([noSousEvenement] = @Original_noSousEvenement))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noSousEvenement", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noSousEvenement", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@billet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "billet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@billetVIP", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "billetVIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prixBillet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prixBillet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -52813,6 +53514,7 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(
+                    int noSousEvenement, 
                     global::System.Nullable<int> billet, 
                     global::System.Nullable<int> billetVIP, 
                     global::System.Nullable<int> prixBillet, 
@@ -52833,125 +53535,126 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     global::System.Nullable<int> customPrix2, 
                     string customNom1, 
                     string customNom2) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(noSousEvenement));
             if ((billet.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(billet.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((billetVIP.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(billetVIP.Value));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(billet.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((prixBillet.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(prixBillet.Value));
+            if ((billetVIP.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(billetVIP.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((prixBilletVIP.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(prixBilletVIP.Value));
+            if ((prixBillet.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(prixBillet.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((souperSpectacle.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(souperSpectacle.Value));
+            if ((prixBilletVIP.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(prixBilletVIP.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((prixSouper.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(prixSouper.Value));
+            if ((souperSpectacle.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(souperSpectacle.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((jeunePourcent.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(jeunePourcent.Value));
+            if ((prixSouper.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(prixSouper.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((adultePourcent.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(adultePourcent.Value));
+            if ((jeunePourcent.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(jeunePourcent.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((ainePourcent.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(ainePourcent.Value));
+            if ((adultePourcent.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(adultePourcent.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((jeuneRatio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(jeuneRatio.Value));
+            if ((ainePourcent.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(ainePourcent.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((adulteRatio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(adulteRatio.Value));
+            if ((jeuneRatio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(jeuneRatio.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((aineRatio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(aineRatio.Value));
+            if ((adulteRatio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(adulteRatio.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((promo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(promo.Value));
+            if ((aineRatio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(aineRatio.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((prevente.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((int)(prevente.Value));
+            if ((promo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((int)(promo.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((customBillet1.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((int)(customBillet1.Value));
+            if ((prevente.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((int)(prevente.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((customBillet2.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((int)(customBillet2.Value));
+            if ((customBillet1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((int)(customBillet1.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((customPrix1.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((int)(customPrix1.Value));
+            if ((customBillet2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((int)(customBillet2.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((customPrix2.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((int)(customPrix2.Value));
+            if ((customPrix1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((int)(customPrix1.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((customNom1 == null)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            if ((customPrix2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((int)(customPrix2.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(customNom1));
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((customNom2 == null)) {
+            if ((customNom1 == null)) {
                 this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(customNom2));
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(customNom1));
+            }
+            if ((customNom2 == null)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(customNom2));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -52965,6 +53668,171 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int noSousEvenement, 
+                    global::System.Nullable<int> billet, 
+                    global::System.Nullable<int> billetVIP, 
+                    global::System.Nullable<int> prixBillet, 
+                    global::System.Nullable<int> prixBilletVIP, 
+                    global::System.Nullable<int> souperSpectacle, 
+                    global::System.Nullable<int> prixSouper, 
+                    global::System.Nullable<int> jeunePourcent, 
+                    global::System.Nullable<int> adultePourcent, 
+                    global::System.Nullable<int> ainePourcent, 
+                    global::System.Nullable<int> jeuneRatio, 
+                    global::System.Nullable<int> adulteRatio, 
+                    global::System.Nullable<int> aineRatio, 
+                    global::System.Nullable<int> promo, 
+                    global::System.Nullable<int> prevente, 
+                    global::System.Nullable<int> customBillet1, 
+                    global::System.Nullable<int> customBillet2, 
+                    global::System.Nullable<int> customPrix1, 
+                    global::System.Nullable<int> customPrix2, 
+                    string customNom1, 
+                    string customNom2, 
+                    int Original_noSousEvenement) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(noSousEvenement));
+            if ((billet.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(billet.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((billetVIP.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(billetVIP.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((prixBillet.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(prixBillet.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((prixBilletVIP.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(prixBilletVIP.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((souperSpectacle.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(souperSpectacle.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((prixSouper.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(prixSouper.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((jeunePourcent.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(jeunePourcent.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((adultePourcent.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(adultePourcent.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((ainePourcent.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(ainePourcent.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((jeuneRatio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(jeuneRatio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((adulteRatio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(adulteRatio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((aineRatio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(aineRatio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((promo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(promo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((prevente.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(prevente.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((customBillet1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(customBillet1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((customBillet2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(customBillet2.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((customPrix1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(customPrix1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((customPrix2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(customPrix2.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((customNom1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(customNom1));
+            }
+            if ((customNom2 == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(customNom2));
+            }
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_noSousEvenement));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
         }
@@ -52995,141 +53863,7 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     string customNom1, 
                     string customNom2, 
                     int Original_noSousEvenement) {
-            if ((billet.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(billet.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((billetVIP.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(billetVIP.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((prixBillet.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(prixBillet.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((prixBilletVIP.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(prixBilletVIP.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((souperSpectacle.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(souperSpectacle.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((prixSouper.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(prixSouper.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((jeunePourcent.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(jeunePourcent.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((adultePourcent.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(adultePourcent.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((ainePourcent.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(ainePourcent.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((jeuneRatio.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(jeuneRatio.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((adulteRatio.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(adulteRatio.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((aineRatio.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(aineRatio.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((promo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(promo.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((prevente.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(prevente.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((customBillet1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(customBillet1.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((customBillet2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(customBillet2.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((customPrix1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(customPrix1.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((customPrix2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(customPrix2.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((customNom1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(customNom1));
-            }
-            if ((customNom2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(customNom2));
-            }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_noSousEvenement));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
+            return this.Update(Original_noSousEvenement, billet, billetVIP, prixBillet, prixBilletVIP, souperSpectacle, prixSouper, jeunePourcent, adultePourcent, ainePourcent, jeuneRatio, adulteRatio, aineRatio, promo, prevente, customBillet1, customBillet2, customPrix1, customPrix2, customNom1, customNom2, Original_noSousEvenement);
         }
     }
     
@@ -58744,6 +59478,298 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class tblQuestionSecreteTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public tblQuestionSecreteTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "tblQuestionSecrete";
+            tableMapping.ColumnMappings.Add("IdQuestion", "IdQuestion");
+            tableMapping.ColumnMappings.Add("Question", "Question");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tblQuestionSecrete] WHERE (([IdQuestion] = @Original_IdQuestio" +
+                "n))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdQuestion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdQuestion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tblQuestionSecrete] ([Question]) VALUES (@Question)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Question", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Question", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tblQuestionSecrete] SET [Question] = @Question WHERE (([IdQuestion]" +
+                " = @Original_IdQuestion))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Question", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Question", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdQuestion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdQuestion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT IdQuestion, Question FROM dbo.tblQuestionSecrete";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(PE2_OfficielDataSet.tblQuestionSecreteDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual PE2_OfficielDataSet.tblQuestionSecreteDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            PE2_OfficielDataSet.tblQuestionSecreteDataTable dataTable = new PE2_OfficielDataSet.tblQuestionSecreteDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(PE2_OfficielDataSet.tblQuestionSecreteDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(PE2_OfficielDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "tblQuestionSecrete");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_IdQuestion) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdQuestion));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string Question) {
+            if ((Question == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Question));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Question, int Original_IdQuestion) {
+            if ((Question == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Question));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_IdQuestion));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class tblRespoContratTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -60894,6 +61920,8 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("commentaire", "commentaire");
             tableMapping.ColumnMappings.Add("noAgencePub", "noAgencePub");
             tableMapping.ColumnMappings.Add("noAppelOffre", "noAppelOffre");
+            tableMapping.ColumnMappings.Add("dateEnvoi", "dateEnvoi");
+            tableMapping.ColumnMappings.Add("dateReponse", "dateReponse");
             tableMapping.ColumnMappings.Add("dateSupprime", "dateSupprime");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -60904,10 +61932,7 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_noSoumission", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noSoumission", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [S_publicite].[tblSoumission] ([noSoumissionAgence], [prix], [statut]" +
-                ", [commentaire], [noAgencePub], [noAppelOffre], [dateSupprime]) VALUES (@noSoumi" +
-                "ssionAgence, @prix, @statut, @commentaire, @noAgencePub, @noAppelOffre, @dateSup" +
-                "prime)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [S_publicite].[tblSoumission] ([noSoumissionAgence], [prix], [statut], [commentaire], [noAgencePub], [noAppelOffre], [dateEnvoi], [dateReponse], [dateSupprime]) VALUES (@noSoumissionAgence, @prix, @statut, @commentaire, @noAgencePub, @noAppelOffre, @dateEnvoi, @dateReponse, @dateSupprime)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noSoumissionAgence", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noSoumissionAgence", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prix", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 19, 2, "prix", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -60915,10 +61940,12 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@commentaire", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "commentaire", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noAgencePub", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noAgencePub", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noAppelOffre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noAppelOffre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateEnvoi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateEnvoi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateReponse", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateReponse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateSupprime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateSupprime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [S_publicite].[tblSoumission] SET [noSoumissionAgence] = @noSoumissionAgence, [prix] = @prix, [statut] = @statut, [commentaire] = @commentaire, [noAgencePub] = @noAgencePub, [noAppelOffre] = @noAppelOffre, [dateSupprime] = @dateSupprime WHERE (([noSoumission] = @Original_noSoumission))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [S_publicite].[tblSoumission] SET [noSoumissionAgence] = @noSoumissionAgence, [prix] = @prix, [statut] = @statut, [commentaire] = @commentaire, [noAgencePub] = @noAgencePub, [noAppelOffre] = @noAppelOffre, [dateEnvoi] = @dateEnvoi, [dateReponse] = @dateReponse, [dateSupprime] = @dateSupprime WHERE (([noSoumission] = @Original_noSoumission))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noSoumissionAgence", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noSoumissionAgence", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prix", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 19, 2, "prix", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -60926,6 +61953,8 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@commentaire", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "commentaire", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noAgencePub", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noAgencePub", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noAppelOffre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noAppelOffre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateEnvoi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateEnvoi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateReponse", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateReponse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateSupprime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateSupprime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_noSoumission", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noSoumission", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -60944,7 +61973,8 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT noSoumission, noSoumissionAgence, prix, statut, commentaire, noAgencePub, " +
-                "noAppelOffre, dateSupprime FROM S_publicite.tblSoumission";
+                "noAppelOffre, dateEnvoi, dateReponse, dateSupprime FROM S_publicite.tblSoumissio" +
+                "n";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -61027,7 +62057,7 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string noSoumissionAgence, global::System.Nullable<decimal> prix, global::System.Nullable<byte> statut, string commentaire, int noAgencePub, int noAppelOffre, global::System.Nullable<global::System.DateTime> dateSupprime) {
+        public virtual int Insert(string noSoumissionAgence, global::System.Nullable<decimal> prix, global::System.Nullable<byte> statut, string commentaire, int noAgencePub, int noAppelOffre, global::System.Nullable<global::System.DateTime> dateEnvoi, global::System.Nullable<global::System.DateTime> dateReponse, global::System.Nullable<global::System.DateTime> dateSupprime) {
             if ((noSoumissionAgence == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -61054,11 +62084,23 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((int)(noAgencePub));
             this.Adapter.InsertCommand.Parameters[5].Value = ((int)(noAppelOffre));
-            if ((dateSupprime.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(dateSupprime.Value));
+            if ((dateEnvoi.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(dateEnvoi.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((dateReponse.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(dateReponse.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((dateSupprime.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(dateSupprime.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -61080,7 +62122,7 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string noSoumissionAgence, global::System.Nullable<decimal> prix, global::System.Nullable<byte> statut, string commentaire, int noAgencePub, int noAppelOffre, global::System.Nullable<global::System.DateTime> dateSupprime, int Original_noSoumission) {
+        public virtual int Update(string noSoumissionAgence, global::System.Nullable<decimal> prix, global::System.Nullable<byte> statut, string commentaire, int noAgencePub, int noAppelOffre, global::System.Nullable<global::System.DateTime> dateEnvoi, global::System.Nullable<global::System.DateTime> dateReponse, global::System.Nullable<global::System.DateTime> dateSupprime, int Original_noSoumission) {
             if ((noSoumissionAgence == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -61107,13 +62149,25 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(noAgencePub));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(noAppelOffre));
-            if ((dateSupprime.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(dateSupprime.Value));
+            if ((dateEnvoi.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(dateEnvoi.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_noSoumission));
+            if ((dateReponse.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(dateReponse.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((dateSupprime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(dateSupprime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_noSoumission));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -64312,6 +65366,8 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
         
         private tblMemoTableAdapter _tblMemoTableAdapter;
         
+        private tblQuestionSecreteTableAdapter _tblQuestionSecreteTableAdapter;
+        
         private tblRespoContratTableAdapter _tblRespoContratTableAdapter;
         
         private tblResponsableTableAdapter _tblResponsableTableAdapter;
@@ -64982,6 +66038,20 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
+        public tblQuestionSecreteTableAdapter tblQuestionSecreteTableAdapter {
+            get {
+                return this._tblQuestionSecreteTableAdapter;
+            }
+            set {
+                this._tblQuestionSecreteTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
         public tblRespoContratTableAdapter tblRespoContratTableAdapter {
             get {
                 return this._tblRespoContratTableAdapter;
@@ -65316,6 +66386,10 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                             && (this._tblMemoTableAdapter.Connection != null))) {
                     return this._tblMemoTableAdapter.Connection;
                 }
+                if (((this._tblQuestionSecreteTableAdapter != null) 
+                            && (this._tblQuestionSecreteTableAdapter.Connection != null))) {
+                    return this._tblQuestionSecreteTableAdapter.Connection;
+                }
                 if (((this._tblRespoContratTableAdapter != null) 
                             && (this._tblRespoContratTableAdapter.Connection != null))) {
                     return this._tblRespoContratTableAdapter.Connection;
@@ -65504,6 +66578,9 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                 if ((this._tblMemoTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._tblQuestionSecreteTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 if ((this._tblRespoContratTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -65545,6 +66622,15 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(PE2_OfficielDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._tblQuestionSecreteTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblQuestionSecrete.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tblQuestionSecreteTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._tblAdresseTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tblAdresse.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -65563,6 +66649,24 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._tblMediaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblMedia.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tblMediaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tblDiffuseurTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblDiffuseur.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tblDiffuseurTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._abpUsersTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.AbpUsers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -65577,39 +66681,12 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tblDiffuseurTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblDiffuseur.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tblDiffuseurTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._tblMediaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblMedia.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tblMediaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._tblStatutTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tblStatut.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._tblStatutTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._tblStatutAppelOffreTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblStatutAppelOffre.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tblStatutAppelOffreTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -65631,12 +66708,30 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._tblStatutAppelOffreTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblStatutAppelOffre.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tblStatutAppelOffreTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._tblAgenceTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tblAgence.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._tblAgenceTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tblServiceTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblService.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tblServiceTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -65685,15 +66780,6 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tblForfaitTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblForfait.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tblForfaitTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._tblAgencePubliciteTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tblAgencePublicite.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -65703,12 +66789,12 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tblServiceTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblService.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tblForfaitTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblForfait.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tblServiceTableAdapter.Update(updatedRows));
+                    result = (result + this._tblForfaitTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -65766,12 +66852,12 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tblRespoContratTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblRespoContrat.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tblMemoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblMemo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tblRespoContratTableAdapter.Update(updatedRows));
+                    result = (result + this._tblMemoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -65784,21 +66870,21 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._tblRespoContratTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblRespoContrat.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tblRespoContratTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._tblSoumissionTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tblSoumission.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._tblSoumissionTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._tblMemoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblMemo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tblMemoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -66056,6 +67142,14 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(PE2_OfficielDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._tblQuestionSecreteTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblQuestionSecrete.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tblQuestionSecreteTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._tblAdresseTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tblAdresse.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -66072,6 +67166,22 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._tblMediaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblMedia.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tblMediaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tblDiffuseurTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblDiffuseur.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tblDiffuseurTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._abpUsersTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.AbpUsers.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -66085,35 +67195,11 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tblDiffuseurTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblDiffuseur.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tblDiffuseurTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._tblMediaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblMedia.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tblMediaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._tblStatutTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tblStatut.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._tblStatutTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._tblStatutAppelOffreTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblStatutAppelOffre.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tblStatutAppelOffreTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -66133,11 +67219,27 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._tblStatutAppelOffreTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblStatutAppelOffre.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tblStatutAppelOffreTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._tblAgenceTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tblAgence.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._tblAgenceTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tblServiceTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblService.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tblServiceTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -66181,14 +67283,6 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tblForfaitTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblForfait.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tblForfaitTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._tblAgencePubliciteTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tblAgencePublicite.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -66197,11 +67291,11 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tblServiceTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblService.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tblForfaitTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblForfait.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tblServiceTableAdapter.Update(addedRows));
+                    result = (result + this._tblForfaitTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -66253,11 +67347,11 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tblRespoContratTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblRespoContrat.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tblMemoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblMemo.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tblRespoContratTableAdapter.Update(addedRows));
+                    result = (result + this._tblMemoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -66269,19 +67363,19 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._tblRespoContratTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblRespoContrat.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tblRespoContratTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._tblSoumissionTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tblSoumission.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._tblSoumissionTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._tblMemoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblMemo.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tblMemoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -66729,19 +67823,19 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tblMemoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblMemo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tblMemoTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tblSoumissionTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tblSoumission.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tblSoumissionTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tblRespoContratTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblRespoContrat.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tblRespoContratTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -66753,11 +67847,11 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tblRespoContratTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblRespoContrat.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tblMemoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblMemo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tblRespoContratTableAdapter.Update(deletedRows));
+                    result = (result + this._tblMemoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -66809,11 +67903,11 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tblServiceTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblService.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tblForfaitTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblForfait.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tblServiceTableAdapter.Update(deletedRows));
+                    result = (result + this._tblForfaitTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -66822,14 +67916,6 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tblAgencePubliciteTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tblForfaitTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblForfait.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tblForfaitTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -66873,11 +67959,27 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._tblServiceTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblService.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tblServiceTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._tblAgenceTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tblAgence.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tblAgenceTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tblStatutAppelOffreTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblStatutAppelOffre.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tblStatutAppelOffreTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -66897,35 +67999,11 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tblStatutAppelOffreTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblStatutAppelOffre.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tblStatutAppelOffreTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tblStatutTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tblStatut.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tblStatutTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tblMediaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblMedia.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tblMediaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tblDiffuseurTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblDiffuseur.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tblDiffuseurTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -66942,6 +68020,22 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._tblDiffuseurTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblDiffuseur.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tblDiffuseurTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tblMediaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblMedia.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tblMediaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._tblEvenementTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tblEvenement.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -66955,6 +68049,14 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tblAdresseTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tblQuestionSecreteTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblQuestionSecrete.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tblQuestionSecreteTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -67219,6 +68321,11 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
             }
             if (((this._tblMemoTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._tblMemoTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Tous les TableAdapters managés par un TableAdapterManager doivent utiliser la mêm" +
+                        "e chaîne de connexion.");
+            }
+            if (((this._tblQuestionSecreteTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tblQuestionSecreteTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Tous les TableAdapters managés par un TableAdapterManager doivent utiliser la mêm" +
                         "e chaîne de connexion.");
             }
@@ -67711,6 +68818,15 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tblMemoTableAdapter.Adapter);
                     }
                 }
+                if ((this._tblQuestionSecreteTableAdapter != null)) {
+                    revertConnections.Add(this._tblQuestionSecreteTableAdapter, this._tblQuestionSecreteTableAdapter.Connection);
+                    this._tblQuestionSecreteTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tblQuestionSecreteTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tblQuestionSecreteTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tblQuestionSecreteTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblQuestionSecreteTableAdapter.Adapter);
+                    }
+                }
                 if ((this._tblRespoContratTableAdapter != null)) {
                     revertConnections.Add(this._tblRespoContratTableAdapter, this._tblRespoContratTableAdapter.Connection);
                     this._tblRespoContratTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -68038,6 +69154,10 @@ namespace ECJ.Web.Rapport.DataSet.PE2_OfficielDataSetTableAdapters {
                 if ((this._tblMemoTableAdapter != null)) {
                     this._tblMemoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblMemoTableAdapter]));
                     this._tblMemoTableAdapter.Transaction = null;
+                }
+                if ((this._tblQuestionSecreteTableAdapter != null)) {
+                    this._tblQuestionSecreteTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblQuestionSecreteTableAdapter]));
+                    this._tblQuestionSecreteTableAdapter.Transaction = null;
                 }
                 if ((this._tblRespoContratTableAdapter != null)) {
                     this._tblRespoContratTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblRespoContratTableAdapter]));
