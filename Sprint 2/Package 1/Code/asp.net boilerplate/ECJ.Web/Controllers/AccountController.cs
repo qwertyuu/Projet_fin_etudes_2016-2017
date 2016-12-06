@@ -25,11 +25,14 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System.Data;
 using ECJ.Web.Models;
+using Newtonsoft.Json;
+using System.Net;
 
 namespace ECJ.Web.Controllers
 {
     public class AccountController : ECJControllerBase
     {
+
         DBProvider provider = new DBProvider();
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
         private readonly TenantManager _tenantManager;
@@ -60,39 +63,71 @@ namespace ECJ.Web.Controllers
             _multiTenancyConfig = multiTenancyConfig;
         }
 
-        public ActionResult captcha()
+        public ActionResult captcha(int? id)
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult captcha(int? id)
+        public ActionResult captcha()
         {
-            // Get recaptcha value
-            var r = Request.Params["g-recaptcha-response"];
-            // ... validate null or empty value if you want
-            // then
-            // make a request to recaptcha api
-            using (var wc = new System.Net.WebClient())
+            var response = Request["g-recaptcha-response"];
+            //secret that was generated in key value pair
+            const string secret = "6LeEOA0UAAAAAAOAP2VlD_mhjIK5yA1jgNQanxVJ";
+
+            var client = new WebClient();
+            var reply =
+                client.DownloadString(
+                    string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, response));
+
+            var captchaResponse = JsonConvert.DeserializeObject<CaptchaResponse>(reply);
+
+            //when response is false check for the error message
+            if (!captchaResponse.Success)
             {
-                var validateString = string.Format(
-                    "https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}",
-                   "6LeEOA0UAAAAANqjZJSMBlNxd5XCRHK7nUfe-AZ6",    // secret recaptcha key
-                   r); // recaptcha value
-                       // Get result of recaptcha
-                var recaptcha_result = wc.DownloadString(validateString);
-                // Just check if request make by user or bot
-                if (recaptcha_result.ToLower().Contains("false"))
+                if (captchaResponse.ErrorCodes.Count <= 0) return View();
+
+                var error = captchaResponse.ErrorCodes[0].ToLower();
+                switch (error)
                 {
-                    return View();
+                    case ("missing-input-secret"):
+                        ViewBag.Message = "The secret parameter is missing.";
+                        break;
+                    case ("invalid-input-secret"):
+                        ViewBag.Message = "The secret parameter is invalid or malformed.";
+                        break;
+
+                    case ("missing-input-response"):
+                        ViewBag.Message = "The response parameter is missing.";
+                        break;
+                    case ("invalid-input-response"):
+                        ViewBag.Message = "The response parameter is invalid or malformed.";
+                        break;
+
+                    default:
+                        ViewBag.Message = "Error occured. Please try again";
+                        break;
                 }
             }
-            return View("CreateSetting");
+            else
+            {
+                ViewBag.Message = "Valid";
+            }
+            
+            return RedirectToAction("CreateSetting");
         }
         public ActionResult CreateSetting()
         {
             ViewBag.Question = new SelectList(provider.ToutQuestion(), "IdQuestion", "Question");
+            if(AbpSession.UserId == null)
+            {
+                ViewBag.UtilisateurCourrant = null;
+            }
+            else
+            {
+                ViewBag.UtilisateurCourrant = (long)AbpSession.UserId;
+            }
 
             return View();
         }
@@ -124,6 +159,15 @@ namespace ECJ.Web.Controllers
         {
             AbpUsers users = provider.ReturnUtilisateur(id);
             return View(users);
+        }
+
+        public class CaptchaResponse
+        {
+            [JsonProperty("success")]
+            public bool Success { get; set; }
+
+            [JsonProperty("error-codes")]
+            public List<string> ErrorCodes { get; set; }
         }
 
         #region Login / Logout

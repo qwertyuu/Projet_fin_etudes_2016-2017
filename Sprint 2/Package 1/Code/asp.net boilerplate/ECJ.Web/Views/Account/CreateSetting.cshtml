@@ -8,14 +8,22 @@
 }
 
 <h2>Sécuritée du compte</h2>
+
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <div class="form-group">
-        <label>Nom d'utilisateur</label>
-        <input class="form-control" type="text" name="utilisateur" id="utilisateur" minlength="1" required>
+        @if(ViewBag.UtilisateurCourrant != null)
+        {
+            <input class="form-control hidden" type="text" name="utilisateur" id="utilisateur" value="@ViewBag.UtilisateurCourrant"required/>
+        }
+        else
+        {
+            <label>Nom d'utilisateur</label>
+            <input class="form-control" type="text" name="utilisateur" id="utilisateur" minlength="1" required>
+        }
     </div>
     <div class="form-group">
         <label>Entrez un mot de passe</label>
@@ -32,12 +40,24 @@
             <input class="Image" type="file" name="pic" accept="image/png,image/jpeg,image/gif" required>
         </div>
 
-        <div class="form-group">
-            <label>Question  Secrète </label>
-            @Html.DropDownList("IdQuestion", (SelectList)ViewBag.Question, new { @class = "form-control" ,name = "IdQuestion"})
-            <input class="form-control reponse" type="text" name="Reponse" required>
-        </div>
+        if(ViewBag.UtilisateurCourrant != null)
+        {
+            <div class="form-group">
+                <label>Question  Secrète </label>
+                @Html.DropDownList("IdQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "IdQuestion" })
+                <input class="form-control reponse" type="text" name="Reponse" required>
+            </div>
 
+        }
+        else
+        {
+            <div class="form-group">
+                <label>Question  Secrète </label>
+                @Html.DropDownList("IdQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "IdQuestion" })
+                <input class="form-control reponse" type="text" name="Reponse" required>
+            </div>
+
+        }
             <div class="form-group pull-right">
                 <button class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Confirmer</span></button>
             </div>

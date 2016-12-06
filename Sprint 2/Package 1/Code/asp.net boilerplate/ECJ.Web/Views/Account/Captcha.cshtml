@@ -1,13 +1,25 @@
-﻿<script src='https://www.google.com/recaptcha/api.js'></script>
+﻿@{
+    ViewBag.Title = "captcha";
+}
+
+@section scripts{
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+}
 
 <h1>CAPTCHA</h1>
 <legend></legend>
-<h4>Confirmez que vous n'êtes pas un robot</h4>
 
-<form>
-    <div class="g-recaptcha" data-sitekey="6LeEOA0UAAAAAAOAP2VlD_mhjIK5yA1jgNQanxVJ"></div>
-</form>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
-<div class="form-group pull-right">
-    <button class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Confirmer</span></button>
-</div>
+    <h4>Confirmez que vous n'êtes pas un robot</h4>
+
+    <form action="/Account/CreateSetting" method="POST">
+        <div class="g-recaptcha" data-sitekey="6LeEOA0UAAAAAAOAP2VlD_mhjIK5yA1jgNQanxVJ"></div>
+        <div class="form-group pull-right">
+            <button type="submit" class="btn btn-primary blue valid"><i class="fa fa-save"></i><span> Confirmer</span></button>
+        </div>
+    </form>
+}
