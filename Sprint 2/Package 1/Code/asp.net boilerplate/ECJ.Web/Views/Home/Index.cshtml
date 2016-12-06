@@ -1,4 +1,5 @@
 ﻿@using Abp.Authorization.Users
+@using ECJ.Authorization;
 @using Abp.Web.Mvc.Extensions
 @using System.Web.Script.Serialization
 @using System.Text
@@ -61,21 +62,24 @@
 </table>
 }
 <div class="row">
-    <div class="col-md-6">
+    <div class="@(IsGranted(PermissionNames.ConsulterAppelOffre) ?"col-md-6" : "col-md-12")">
         <h2>Événements</h2>
         <p>
             Ici contient toutes les informations par rapport aux événements. Il est possible de voir chaque événement, ainsi que leurs dates et l'heure de ces derniers.
         </p>
         <p><a class="btn btn-primary pull-right" href="~/Events">Voir les événements &raquo;</a></p>
     </div>
+    @if (IsGranted(PermissionNames.ConsulterAppelOffre))
+    {
+        <div class="col-md-6">
+            <h2>Publicités</h2>
+            <p>
+                Ici contient toutes les informations par rapport aux publicités. Il est possible de voir l'affiche, le média ainsi que la date de la sortie.
+            </p>
+            <p><a class="btn btn-primary pull-right" href="~/AppellOffre">Voir les publicités &raquo;</a></p>
+        </div>
 
-    <div class="col-md-6">
-        <h2>Publicités</h2>
-        <p>
-            Ici contient toutes les informations par rapport aux publicités. Il est possible de voir l'affiche, le média ainsi que la date de la sortie.
-        </p>
-        <p><a class="btn btn-primary pull-right" href="~/AppellOffre">Voir les publicités &raquo;</a></p>
-    </div>
+    }
 
 
 

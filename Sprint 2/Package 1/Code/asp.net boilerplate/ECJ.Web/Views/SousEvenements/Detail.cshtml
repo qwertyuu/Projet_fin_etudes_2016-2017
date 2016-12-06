@@ -10,11 +10,14 @@
     //bug avec le model par défaut lorsqu'on utilise un tuple avec 5 éléments...
     Tuple<tblSousEvenement, List<tblService>, List<tblSalle>, List<tblForfait>, List<tblEngagement>> Model = ViewBag.listTuple;
 }
-@if (Model.Item1.noSalle != null)
+@if (IsGranted(PermissionNames.GererSousEvenement))
 {
-    if (Model.Item1.tblEvenement.datefin > DateTime.Now)
+    if (Model.Item1.noSalle != null)
     {
-        <a href="~/Calculateur/index/@Model.Item1.noSousEvenement?return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-calculator"></i> Ouvrir le calculateur</a>
+        if (Model.Item1.tblEvenement.datefin > DateTime.Now)
+        {
+            <a href="~/Calculateur/index/@Model.Item1.noSousEvenement?return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-calculator"></i> Ouvrir le calculateur</a>
+        }
     }
 }
 

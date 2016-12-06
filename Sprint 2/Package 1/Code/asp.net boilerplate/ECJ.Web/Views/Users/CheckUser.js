@@ -7,15 +7,16 @@
             method: "POST",
             url: abp.appPath + "Users/CheckUser",
             data: { uname: uname, email: email },
+            async:false,
             success: function (data) {
                 if (data != "1") {
-                    alert(data);
                     event.preventDefault();
+                    alert(data);
                 }
             },
             error: function () {
-                alert("N'a pas pu vérifier avec le serveur");
                 event.preventDefault();
+                alert("N'a pas pu vérifier avec le serveur");
             }
         })
     });
