@@ -1405,8 +1405,16 @@ namespace ECJ.Web.Controllers
         {
             try
             {
+                if (db.tblCalculateur.Where(s => s.noSousEvenement == tblCalculateur.noSousEvenement).ToList() == null)
+                {
+                    db.tblCalculateur.Add(tblCalculateur);
+                    db.SaveChanges();
+                }
+                else
+                {
                 db.Entry(db.tblCalculateur.Find(tblCalculateur.noSousEvenement)).CurrentValues.SetValues(tblCalculateur);
                 db.SaveChanges();
+                }
             }
             catch (Exception e)
             {
