@@ -14,10 +14,7 @@
 {
     if (Model.Item1.noSalle != null)
     {
-        if (Model.Item1.tblEvenement.datefin > DateTime.Now)
-        {
             <a href="~/Calculateur/index/@Model.Item1.noSousEvenement?return=@Request.RawUrl" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-calculator"></i> Ouvrir le calculateur</a>
-        }
     }
 }
 

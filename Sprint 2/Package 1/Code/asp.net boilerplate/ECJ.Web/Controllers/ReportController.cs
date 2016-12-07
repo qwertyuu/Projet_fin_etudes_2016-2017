@@ -303,9 +303,9 @@ namespace ECJ.Web.Controllers
             Response.AppendHeader("Content-Disposition", cd.ToString());
             return File(bytes, "application/pdf");
         }
-        public ActionResult RapportCalculateur()
+        public ActionResult RapportCalculateur(int? id)
         {
-            var reportQueryCalculateur = (from s in db.ReturnListCalculateur().Where(c => c.noSousEvenement == 5)
+            var reportQueryCalculateur = (from s in db.ReturnListCalculateur().Where(c => c.noSousEvenement == id)
                                     select new
                                     {
                                         s.noSousEvenement,
@@ -331,7 +331,7 @@ namespace ECJ.Web.Controllers
                                         s.customNom2,
                                     }).ToList();
 
-            var reportQuerySSEvent = (from s in db.ToutSousEvenement().Where(sse => sse.noSousEvenement == 5)
+            var reportQuerySSEvent = (from s in db.ToutSousEvenement().Where(sse => sse.noSousEvenement == id)
                                       select new
                                       {
                                           s.noSousEvenement,
@@ -341,7 +341,7 @@ namespace ECJ.Web.Controllers
                                           s.noSalle
                                       }).ToList();
 
-            var reportQuerySalle = (from s in db.ReturnListSalle().Where(a => a.noSalle == 1)
+            var reportQuerySalle = (from s in db.ReturnListSalle().Where(a => a.noSalle == db.FindSousEvenement((int)id).noSalle)
                                     select new
                                     {
                                         s.noSalle,

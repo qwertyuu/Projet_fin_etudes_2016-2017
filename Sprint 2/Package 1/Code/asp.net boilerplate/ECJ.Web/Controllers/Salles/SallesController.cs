@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ECJ.Web.Models;
 
 namespace ECJ.Web.Controllers.Salles
 {
@@ -72,6 +73,41 @@ namespace ECJ.Web.Controllers.Salles
             ViewBag.Service = salle.tblService;
             ViewBag.ServiceAjoutable = db.ToutService().Except(salle.tblService).ToList();
             ViewBag.SousEvent = salle.tblSousEvenement.Where(sse => sse.dateSupprime == null && sse.tblEvenement.dateSupprime == null && sse.tblEvenement.datefin >= DateTime.Now).ToList();
+            return View();
+        }
+        public ActionResult Ajouter()
+        {
+            if (IsGranted(PermissionNames.GererSalle))
+            {
+
+                //var serviceAAjouter = Request.Form["service"];
+                ////ajouter le service offert
+                //if (serviceAAjouter != null)
+                //{
+                //    db.InsertServiceOffert((int)id, int.Parse(serviceAAjouter));
+                //}
+                ////supprimer un service offert
+                //var serviceASupprimer = Request.Form["service_suppr"] ?? Request.Form["service_delete_salle"];
+                //if (serviceASupprimer != null)
+                //{
+                //    db.SupprimerServiceOffert((int)id, int.Parse(serviceASupprimer));
+                //}
+                //var serviceDeleteSalle = Request.Form["service_delete_salle"];
+                //if (serviceDeleteSalle != null)
+                //{
+                //    var SousEvenementAvecService = db.ToutSousEvenement().Where(SsE => SsE.tblService.Contains(db.ReturnService(int.Parse(serviceDeleteSalle))) &&
+                //    SsE.tblEvenement.dateSupprime == null && SsE.tblEvenement.datefin >= DateTime.Now).ToList();
+                //    foreach (var ss in SousEvenementAvecService)
+                //    {
+                //        db.DelierSalle(ss.noSousEvenement);
+                //    }
+                //}
+            }
+            var salle = new tblSalle();
+            ViewBag.Service = db.ToutService();
+            //ViewBag.Salle = salle;
+            //ViewBag.ServiceAjoutable = db.ToutService().Except(salle.tblService).ToList();
+            //ViewBag.SousEvent = salle.tblSousEvenement.Where(sse => sse.dateSupprime == null && sse.tblEvenement.dateSupprime == null && sse.tblEvenement.datefin >= DateTime.Now).ToList();
             return View();
         }
     }
