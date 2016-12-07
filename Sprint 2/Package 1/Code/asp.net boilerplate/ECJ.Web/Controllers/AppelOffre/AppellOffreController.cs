@@ -81,14 +81,14 @@ namespace ECJ.Web.Controllers.AppelOffre
                                  "<xs:element name=\"Soumission\">" +
                                     "<xs:complexType>" +
                                       "<xs:sequence>" +
-                                        "<xs:element name=\"NoSoumission\" type=\"xs:int\"/>" +
-                                        "<xs:element name=\"noSoumissionAgence\" type=\"xs:string\"/>" +
-                                        "<xs:element name=\"Nom\" type=\"xs:string\"/>" +
-                                        "<xs:element name=\"Prix\" type=\"xs:decimal\"/>" +
-                                        "<xs:element name=\"noAgencePub\" type=\"xs:int\"/>" +
-                                        "<xs:element name=\"noAppelOffre\" type=\"xs:int\"/>" +
-                                        "<xs:element name=\"Statut\" type=\"xs:string\"/>" +
-                                        "<xs:element name=\"Commentaire\" type=\"xs:string\"/>" +
+                                        "<xs:element name=\"NoSoumission\" type=\"xs:positiveInteger\" nillable=\"false\"/>" +
+                                        "<xs:element name=\"noSoumissionAgence\" type=\"xs:string\" nillable=\"false\"/>" +
+                                        "<xs:element name=\"Nom\" type=\"xs:string\" nillable=\"false\"/>" +
+                                        "<xs:element name=\"Prix\" type=\"xs:decimal\" nillable=\"false\"/>" +
+                                        "<xs:element name=\"noAgencePub\" type=\"xs:positiveInteger\" nillable=\"false\"/>" +
+                                        "<xs:element name=\"noAppelOffre\" type=\"xs:positiveInteger\" nillable=\"false\"/>" +
+                                        "<xs:element name=\"Statut\" type=\"xs:string\" nillable=\"false\"/>" +
+                                        "<xs:element name=\"Commentaire\" type=\"xs:string\" nillable=\"false\"/>" +
                                      "</xs:sequence>" +
                                     "</xs:complexType>" +
                                   "</xs:element>" +

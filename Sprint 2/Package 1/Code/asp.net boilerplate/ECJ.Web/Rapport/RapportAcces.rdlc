@@ -1639,7 +1639,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             <Top>2.3316in</Top>
             <Left>0.01377in</Left>
             <Height>0.75in</Height>
-            <Width>6.88401in</Width>
+            <Width>6.884in</Width>
             <ZIndex>8</ZIndex>
             <Visibility>
               <Hidden>=Parameters!periode.Value &lt;&gt; "tous"</Hidden>
@@ -1928,7 +1928,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                 <DataSetName>Logs</DataSetName>
                 <Top>0.54514in</Top>
                 <Left>3.4962in</Left>
-                <Height>0.46181in</Height>
+                <Height>0.4618in</Height>
                 <Width>3.38782in</Width>
                 <ZIndex>3</ZIndex>
                 <Style>
@@ -1941,8 +1941,8 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             <KeepTogether>true</KeepTogether>
             <Top>7.86254cm</Top>
             <Left>0.03497cm</Left>
-            <Height>2.55764cm</Height>
-            <Width>17.4854cm</Width>
+            <Height>2.55765cm</Height>
+            <Width>17.48541cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -2161,8 +2161,8 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             <DataSetName>Logs</DataSetName>
             <Top>3.64063in</Top>
             <Left>0.01377in</Left>
-            <Height>0.46181in</Height>
-            <Width>3.43449in</Width>
+            <Height>0.4618in</Height>
+            <Width>3.4345in</Width>
             <ZIndex>11</ZIndex>
             <Style>
               <Border>
