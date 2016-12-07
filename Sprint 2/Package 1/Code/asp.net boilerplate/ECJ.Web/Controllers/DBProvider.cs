@@ -431,8 +431,8 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                //db.Entry(db.AbpUsers.Find(abpUser.Id)).CurrentValues.SetValues(abpUser);
-                db.Entry(abpUser).State = EntityState.Modified;
+                db.Entry(db.AbpUsers.Find(abpUser.Id)).CurrentValues.SetValues(abpUser);
+                //db.Entry(abpUser).State = EntityState.Modified;
                 db.SaveChanges();
             }
             catch (Exception e)

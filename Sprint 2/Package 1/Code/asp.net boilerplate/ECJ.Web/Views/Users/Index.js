@@ -24,7 +24,13 @@
                 abp.ui.clearBusy(_$modal);
             });
         });
-        
+
+        $('form.modal-content').submit(function () {
+            var re = /^\d{4}\/\d{2}\/\d{2}$/;
+
+            return re.test(this.filtre_debut.value ? this.filtre_debut.value : "0001/01/01") &&
+            re.test(this.filtre_fin.value ? this.filtre_fin.value : "0001/01/01");
+        });
         _$modal.on('shown.bs.modal', function () {
             _$modal.find('input:not([type=hidden]):first').focus();
         });

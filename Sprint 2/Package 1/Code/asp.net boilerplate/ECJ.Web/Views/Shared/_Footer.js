@@ -27,14 +27,16 @@
             var filtre = $("#filtreUsers").val();
             $("#destinataire > option").each(function () {
                 if ($(this).text().toUpperCase().search(filtre.toUpperCase()) > -1) {
-                    $(this).show();
+                    //$(this).show();
+                    $(this).removeAttr('disabled');
                 }
                 else {
-                    $(this).hide();
+                    //$(this).hide();
+                    $(this).attr('disabled', 'disabled');
                 }
             });
-            if ($("#destinataire > option:visible").length > 0) {
-                $("#destinataire").val($("#destinataire option:visible:first").val());
+            if ($("#destinataire > option:not([disabled])").length > 0) {
+                $("#destinataire").val($("#destinataire option:not([disabled]):first").val());
             }
             else {
                 $("#destinataire").val([]);

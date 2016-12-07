@@ -148,9 +148,12 @@ namespace ECJ.Web.Controllers
                 {
                     AbpUser.Password = new PasswordHasher().HashPassword(PasswordChange);
                 }
-                //AbpUser.TenantId = 1;
-                //AbpUser.IsDeleted = false;
-                //AbpUser.IsEmailConfirmed = false;
+                var u = db.ReturnUtilisateur(AbpUser.Id);
+                AbpUser.TenantId = 1;
+                AbpUser.IsDeleted = false;
+                AbpUser.IsEmailConfirmed = false;
+                AbpUser.CreationTime = u.CreationTime;
+                AbpUser.Password = u.Password;
                 db.UpdateUser(AbpUser);
                 db.UpdateRole(AbpUser, Role);
 
