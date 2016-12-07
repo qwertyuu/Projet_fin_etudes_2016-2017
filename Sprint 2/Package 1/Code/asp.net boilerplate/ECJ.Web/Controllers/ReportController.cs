@@ -209,6 +209,8 @@ namespace ECJ.Web.Controllers
             u.DataSources.Add(dataSourceStatut);
             u.DataSources.Add(dataSourceAgence);
             u.DataSources.Add(dataSourceEvent);
+            u.SetParameters(new ReportParameter("auteur", db.ReturnUtilisateur(AbpSession.UserId.Value).UserName));
+
 
 
 

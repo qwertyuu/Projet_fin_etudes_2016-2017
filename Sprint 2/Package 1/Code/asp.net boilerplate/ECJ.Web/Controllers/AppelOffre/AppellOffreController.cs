@@ -81,14 +81,14 @@ namespace ECJ.Web.Controllers.AppelOffre
                                  "<xs:element name=\"Soumission\">" +
                                     "<xs:complexType>" +
                                       "<xs:sequence>" +
-                                        "<xs:element name=\"NoSoumission\" type=\"xs:positiveInteger\" nillable=\"false\"/>" +
-                                        "<xs:element name=\"noSoumissionAgence\" type=\"xs:string\" nillable=\"false\"/>" +
-                                        "<xs:element name=\"Nom\" type=\"xs:string\" nillable=\"false\"/>" +
-                                        "<xs:element name=\"Prix\" type=\"xs:decimal\" nillable=\"false\"/>" +
-                                        "<xs:element name=\"noAgencePub\" type=\"xs:positiveInteger\" nillable=\"false\"/>" +
+                                        "<xs:element name=\"NoSoumission\" type=\"xs:positiveInteger\" minOccurs=\"1\" maxOccurs=\"1\"/>" +
+                                        "<xs:element name=\"noSoumissionAgence\" type=\"xs:string\"  minOccurs=\"1\" maxOccurs=\"1\"/>" +
+                                        "<xs:element name=\"Nom\" type=\"xs:string\"  minOccurs=\"1\" maxOccurs=\"1\"/>" +
+                                        "<xs:element name=\"Prix\" type=\"xs:decimal\"  minOccurs=\"1\" maxOccurs=\"1\"/>" +
+                                        "<xs:element name=\"noAgencePub\" type=\"xs:positiveInteger\"  minOccurs=\"1\" maxOccurs=\"1\"/>" +
                                         "<xs:element name=\"noAppelOffre\" type=\"xs:positiveInteger\" nillable=\"false\"/>" +
-                                        "<xs:element name=\"Statut\" type=\"xs:string\" nillable=\"false\"/>" +
-                                        "<xs:element name=\"Commentaire\" type=\"xs:string\" nillable=\"false\"/>" +
+                                        "<xs:element name=\"Statut\" type=\"xs:string\"/>" +
+                                        "<xs:element name=\"Commentaire\" type=\"xs:string\" minOccurs=\"1\" maxOccurs=\"1\"/>" +
                                      "</xs:sequence>" +
                                     "</xs:complexType>" +
                                   "</xs:element>" +

@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>5.4501cm</Width>
+              <Width>4.7021cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.4501cm</Width>
+              <Width>4.7021cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -173,7 +173,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Montant($)</Value>
+                              <Value>Montant</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -208,7 +208,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!prix.Value</Value>
+                              <Value>=IIF(Fields!prix.Value is nothing, "0,00", Fields!prix.Value)&amp;" $"</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                               </Style>
@@ -356,7 +356,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!commentaire.Value</Value>
+                              <Value>=iif((Fields!commentaire.Value=""),"Aucun",Fields!commentaire.Value)</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                               </Style>
@@ -412,7 +412,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetSoumission</DataSetName>
         <Height>5.505cm</Height>
-        <Width>10.9002cm</Width>
+        <Width>9.40421cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -677,7 +677,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!prix.Value</Value>
+                                  <Value>=IIF(Fields!prix.Value is nothing, "0,00", Fields!prix.Value)&amp;" $"</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                   </Style>
@@ -811,7 +811,7 @@
         </ReportItems>
         <KeepTogether>true</KeepTogether>
         <Top>0.70533cm</Top>
-        <Left>11.30959cm</Left>
+        <Left>9.5806cm</Left>
         <Height>4.29867cm</Height>
         <Width>5.9475cm</Width>
         <ZIndex>1</ZIndex>
