@@ -25,11 +25,11 @@ namespace ECJ.Web.Controllers
 
         public ActionResult CheckUser(string uname, string email)
         {
-            if (db.UtilisateurExiste(uname))
+            if (db.UtilisateurExiste(uname, Request.Form["exclu_id"]))
             {
                 Response.Write("Un utilisateur utilisant ce nom d'utilisateur existe déjà.\nVeuillez choisir un autre nom d'utilisateur.");
             }
-            else if (db.CourrielExiste(email))
+            else if (db.CourrielExiste(email, Request.Form["exclu_id"]))
             {
                 Response.Write("Un utilisateur utilisant ce courriel existe déjà.\nVeuillez choisir un autre courriel ou essayez de retrouver le compte utilisant déjà ce courriel.");
             }
@@ -148,6 +148,9 @@ namespace ECJ.Web.Controllers
                 {
                     AbpUser.Password = new PasswordHasher().HashPassword(PasswordChange);
                 }
+                //AbpUser.TenantId = 1;
+                //AbpUser.IsDeleted = false;
+                //AbpUser.IsEmailConfirmed = false;
                 db.UpdateUser(AbpUser);
                 db.UpdateRole(AbpUser, Role);
 

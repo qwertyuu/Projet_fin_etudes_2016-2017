@@ -34,11 +34,19 @@ namespace ECJ.Web.Controllers
             }
         }
 
-        internal bool UtilisateurExiste(string uname)
+        internal bool UtilisateurExiste(string uname, string exclu_id)
         {
             try
             {
-                return db.AbpUsers.Where(u => !u.IsDeleted).Any(u => u.UserName == uname);
+                if(exclu_id == null)
+                {
+                    return db.AbpUsers.Where(u => !u.IsDeleted).Any(u => u.UserName == uname);
+                }
+                else
+                {
+                    var exclu_id_int = int.Parse(exclu_id);
+                    return db.AbpUsers.Where(u => !u.IsDeleted && u.Id != exclu_id_int).Any(u => u.UserName == uname);
+                }
             }
             catch (Exception e)
             {
@@ -60,11 +68,19 @@ namespace ECJ.Web.Controllers
             }
         }
 
-        internal bool CourrielExiste(string email)
+        internal bool CourrielExiste(string email, string exclu_id)
         {
             try
             {
-                return db.AbpUsers.Where(u => !u.IsDeleted).Any(u => u.EmailAddress == email);
+                if(exclu_id == null)
+                {
+                    return db.AbpUsers.Where(u => !u.IsDeleted).Any(u => u.EmailAddress == email);
+                }
+                else
+                {
+                    var exclu_id_int = int.Parse(exclu_id);
+                    return db.AbpUsers.Where(u => !u.IsDeleted && u.Id != exclu_id_int).Any(u => u.EmailAddress == email);
+                }
             }
             catch (Exception e)
             {
@@ -415,7 +431,8 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                db.Entry(db.AbpUsers.Find(abpUser.Id)).CurrentValues.SetValues(abpUser);
+                //db.Entry(db.AbpUsers.Find(abpUser.Id)).CurrentValues.SetValues(abpUser);
+                db.Entry(abpUser).State = EntityState.Modified;
                 db.SaveChanges();
             }
             catch (Exception e)
