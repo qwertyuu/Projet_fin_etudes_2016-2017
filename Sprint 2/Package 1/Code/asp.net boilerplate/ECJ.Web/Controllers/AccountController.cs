@@ -32,7 +32,6 @@ namespace ECJ.Web.Controllers
 {
     public class AccountController : ECJControllerBase
     {
-        AbpUsers abp;
         DBProvider provider = new DBProvider();
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
         private readonly TenantManager _tenantManager;
@@ -112,6 +111,7 @@ namespace ECJ.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateSetting([Bind(Include = "IdQuestion,Reponse")] AbpUsers Users, string PasswordChange,string utilisateur)
         {
+            AbpUsers abp;
             abp = provider.ReturnUtilisateur(utilisateur);
             
             if (Request.Files["pic"].ContentLength > 0)
@@ -126,6 +126,8 @@ namespace ECJ.Web.Controllers
             abp.Password = new PasswordHasher().HashPassword(PasswordChange);
             abp.IdQuestion = Users.IdQuestion;
             abp.Reponse = Users.Reponse;
+
+            provider.UpdateUser(abp);
             return RedirectToAction("Verification/"+abp.Id);
         }
 
@@ -135,18 +137,16 @@ namespace ECJ.Web.Controllers
             return View(users);
         }
         
-        public ActionResult Correct()
+        public ActionResult Correct(int id)
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Correct(int? id)
+        public ActionResult Correct()
         {
-            provider.UpdateUser(abp);
-
-            return View("Login");
+            return RedirectToAction("Login");
         }
 
         public class CaptchaResponse
