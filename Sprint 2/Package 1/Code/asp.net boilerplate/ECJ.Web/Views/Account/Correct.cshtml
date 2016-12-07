@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Correct";
+}
+
+<h2>Information Enregistrée</h2>
+<legend></legend>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <h2>Bravo! Toutes les informations ont été enregistrées.</h2>
+    <img src="http://www.notclosed.com/uploads/images/open_bravo_logo3.jpg" width="400" height="400" alt="Bravo" />
+
+    <div class="form-group pull-right">
+        <button type="submit" class="btn btn-primary blue valid"><i class="fa fa-save"></i><span> Confirmer</span></button>
+    </div>
+}

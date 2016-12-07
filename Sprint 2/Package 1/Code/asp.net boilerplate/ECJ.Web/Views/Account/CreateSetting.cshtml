@@ -7,7 +7,7 @@
     @Html.IncludeScript("~/Views/Account/CreateSetting.js")
 }
 
-<h2>Sécuritée du compte</h2>
+<h2>Sécurité du compte</h2>
 
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -43,7 +43,7 @@
         if(ViewBag.UtilisateurCourrant != null)
         {
             <div class="form-group">
-                <label>Question  Secrète </label>
+                <label>Question  secrète </label>
                 @Html.DropDownList("IdQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "IdQuestion" })
                 <input class="form-control reponse" type="text" name="Reponse" required>
             </div>

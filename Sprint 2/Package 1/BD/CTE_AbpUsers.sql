@@ -10,20 +10,20 @@ GO
 CREATE TABLE tblQuestionSecrete
 (
 	IdQuestion INT NOT NULL IDENTITY(1,1),
-	Question varchar(100)
+	Question varchar(100) NOT NULL
 )
 GO
 ALTER TABLE tblQuestionSecrete ADD
 PRIMARY KEY (IdQuestion)
 GO
 ALTER TABLE dbo.AbpUsers
-ADD IdQuestion INT
+ADD IdQuestion INT NULL
 GO
 ALTER TABLE dbo.AbpUsers
-ADD Reponse varchar(100)
+ADD Reponse varchar(100) NULL
 GO
 ALTER TABLE dbo.AbpUsers
-ADD ImageProfil Varbinary(MAX)
+ADD ImageProfil Varbinary(MAX) NULL
 GO
 ALTER TABLE dbo.AbpUsers ADD
 CONSTRAINT Id_Question FOREIGN KEY(IdQuestion) REFERENCES tblQuestionSecrete(IdQuestion)

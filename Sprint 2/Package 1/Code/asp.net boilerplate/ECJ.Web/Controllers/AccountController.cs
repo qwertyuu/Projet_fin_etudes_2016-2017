@@ -32,7 +32,7 @@ namespace ECJ.Web.Controllers
 {
     public class AccountController : ECJControllerBase
     {
-
+        AbpUsers abp;
         DBProvider provider = new DBProvider();
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
         private readonly TenantManager _tenantManager;
@@ -74,7 +74,7 @@ namespace ECJ.Web.Controllers
         {
             var response = Request["g-recaptcha-response"];
             //secret that was generated in key value pair
-            const string secret = "6LeEOA0UAAAAAAOAP2VlD_mhjIK5yA1jgNQanxVJ";
+            const string secret = "6LeEOA0UAAAAANqjZJSMBlNxd5XCRHK7nUfe-AZ6";
 
             var client = new WebClient();
             var reply =
@@ -86,36 +86,12 @@ namespace ECJ.Web.Controllers
             //when response is false check for the error message
             if (!captchaResponse.Success)
             {
-                if (captchaResponse.ErrorCodes.Count <= 0) return View();
-
-                var error = captchaResponse.ErrorCodes[0].ToLower();
-                switch (error)
-                {
-                    case ("missing-input-secret"):
-                        ViewBag.Message = "The secret parameter is missing.";
-                        break;
-                    case ("invalid-input-secret"):
-                        ViewBag.Message = "The secret parameter is invalid or malformed.";
-                        break;
-
-                    case ("missing-input-response"):
-                        ViewBag.Message = "The response parameter is missing.";
-                        break;
-                    case ("invalid-input-response"):
-                        ViewBag.Message = "The response parameter is invalid or malformed.";
-                        break;
-
-                    default:
-                        ViewBag.Message = "Error occured. Please try again";
-                        break;
-                }
+                return View();
             }
             else
             {
-                ViewBag.Message = "Valid";
+                return RedirectToAction("CreateSetting");
             }
-            
-            return RedirectToAction("CreateSetting");
         }
         public ActionResult CreateSetting()
         {
@@ -136,7 +112,7 @@ namespace ECJ.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateSetting([Bind(Include = "IdQuestion,Reponse")] AbpUsers Users, string PasswordChange,string utilisateur)
         {
-            AbpUsers abp = provider.ReturnUtilisateur(utilisateur);
+            abp = provider.ReturnUtilisateur(utilisateur);
             
             if (Request.Files["pic"].ContentLength > 0)
             {
@@ -150,8 +126,6 @@ namespace ECJ.Web.Controllers
             abp.Password = new PasswordHasher().HashPassword(PasswordChange);
             abp.IdQuestion = Users.IdQuestion;
             abp.Reponse = Users.Reponse;
-
-            provider.UpdateUser(abp);
             return RedirectToAction("Verification/"+abp.Id);
         }
 
@@ -159,6 +133,20 @@ namespace ECJ.Web.Controllers
         {
             AbpUsers users = provider.ReturnUtilisateur(id);
             return View(users);
+        }
+        
+        public ActionResult Correct()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Correct(int? id)
+        {
+            provider.UpdateUser(abp);
+
+            return View("Login");
         }
 
         public class CaptchaResponse
