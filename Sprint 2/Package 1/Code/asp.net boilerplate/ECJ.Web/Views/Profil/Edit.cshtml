@@ -1,36 +1,55 @@
-﻿@{
-        ViewBag.Title = "Ajout";
-    }
+﻿@using Abp.Web.Mvc.Extensions
+@model ECJ.Web.Models.AbpUsers
+@{
+    ViewBag.Title = "Edit";
+}
 
-    @model ECJ.Web.Models.AbpUsers
+@section scripts{
+    @Html.IncludeScript("~/Views/Profil/Edit.js")
+}
+
 <h2>Modifier mon profil</h2>
-@using (Html.BeginForm())
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <div class="form-group">
-        <label>Modifier le mot de passe (laisser vide pour ne pas changer le mot de passe)</label>
-        <input class="form-control" type="password" name="PasswordChange">
+        <label>Entrez un mot de passe</label>
+        <input class="form-control PasswordChange" type="password" name="PasswordChange" id="PasswordChange" minlength="8">
     </div>
 
     <div class="form-group">
-        <label>Changer l'image de profil (laissez vide pour garder l'ancienne)</label>
+        <label>Écrire à nouveau le mot de passe</label>
+        <input class="form-control PasswordChange2" type="password" name="PasswordChange2" id="PasswordChange2" minlength="8">
+    </div>
+
+    <img width="200" src="@Url.Action("GetFile","profil", new { id = Model.Id})" alt="Image de profil" />
+
+    <div class="form-group">
+        <label>Changer l'image de profil</label>
         <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
     </div>
 
-    <div class="form-group">
-        <label>Question  Secrète </label>
-        <select class="form-control">
-            <option  class="form-control" value="QS">Quel est le nom de votre premier animal de compagnie?</option>
-            <option class="form-control" value="QS">Quel est le nom de jeune fille de votre mère?</option>
-            <option class="form-control" value="QS">Quel est l'année de  naissance de votre père?</option>
-        </select>
-        <input class="form-control" type="text" name="QS" required>
-    </div>
+    if (ViewBag.UtilisateurCourrant != null)
+    {
+        <div class="form-group">
+            <label>Question  secrète </label>
+            @Html.DropDownList("IdQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "IdQuestion" })
+            <input class="form-control reponse" type="text" name="Reponse" >
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            <label>Question  Secrète </label>
+            @Html.DropDownList("IdQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "IdQuestion" })
+            <input class="form-control reponse" type="text" name="Reponse" >
+        </div>
+    }
 
     <div class="form-group pull-right">
-        <button type="submit" class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
+        <button class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Confirmer</span></button>
         <a href="/" class="btn btn-default" data-dismiss="modal">Annuler</a>
     </div>
 }

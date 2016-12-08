@@ -486,6 +486,7 @@
     <Content Include="Views\Events\Ajout.js" />
     <Content Include="Views\Events\Detail.js" />
     <Content Include="Views\Home\Index.js" />
+    <Content Include="Views\Profil\Edit.js" />
     <Content Include="Views\Salles\Details.js" />
     <Content Include="Views\Shared\_Footer.js" />
     <Content Include="Views\SousEvenements\Detail.js" />
@@ -515,7 +516,7 @@
     <Compile Include="Controllers\Memo\CMemoController.cs" />
     <Compile Include="Controllers\Calculateur\CalculateurController.cs" />
     <Compile Include="Controllers\Commanditaire\CommanditaireController.cs" />
-    <Compile Include="Controllers\ProfilController.cs" />
+    <Compile Include="Controllers\Profil\ProfilController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\Salles\SallesController.cs" />
     <Compile Include="Controllers\SousEvents\SousEvenementController.cs" />

@@ -32,6 +32,8 @@ namespace ECJ.Web.Controllers
 {
     public class AccountController : ECJControllerBase
     {
+
+        static AbpUsers abp;
         DBProvider provider = new DBProvider();
         private PE2_OfficielEntities db = new PE2_OfficielEntities();
         private readonly TenantManager _tenantManager;
@@ -111,24 +113,35 @@ namespace ECJ.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateSetting([Bind(Include = "IdQuestion,Reponse")] AbpUsers Users, string PasswordChange,string utilisateur)
         {
-            AbpUsers abp;
+            abp = null;
             abp = provider.ReturnUtilisateur(utilisateur);
-            
-            if (Request.Files["pic"].ContentLength > 0)
+
+            if(abp.Id != 0)
             {
-                var pic = Request.Files["pic"];
-                using (var reader = new System.IO.BinaryReader(pic.InputStream))
+                if (Request.Files["pic"].ContentLength > 0)
                 {
-                    abp.ImageProfil = reader.ReadBytes(pic.ContentLength);
+                    var pic = Request.Files["pic"];
+                    using (var reader = new System.IO.BinaryReader(pic.InputStream))
+                    {
+                        abp.ImageProfil = reader.ReadBytes(pic.ContentLength);
+                    }
                 }
+                else
+                {
+                    return View();
+                }
+                provider.UpdateUser(abp);
+
+                abp.Password = new PasswordHasher().HashPassword(PasswordChange);
+                abp.IdQuestion = Users.IdQuestion;
+                abp.Reponse = Users.Reponse;
+
+                return RedirectToAction("Verification/" + abp.Id);
             }
-
-            abp.Password = new PasswordHasher().HashPassword(PasswordChange);
-            abp.IdQuestion = Users.IdQuestion;
-            abp.Reponse = Users.Reponse;
-
-            provider.UpdateUser(abp);
-            return RedirectToAction("Verification/"+abp.Id);
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult Verification(long id)
@@ -139,6 +152,7 @@ namespace ECJ.Web.Controllers
         
         public ActionResult Correct(int id)
         {
+            provider.UpdateUser(abp);
             return View();
         }
 
