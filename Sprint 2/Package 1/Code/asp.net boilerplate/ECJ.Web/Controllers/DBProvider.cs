@@ -655,34 +655,61 @@ namespace ECJ.Web.Controllers
             }
             return new List<tblAppelOffre>();
         }
-        public List<tblCommanditaire> CommenEvent(int? no)
+        public List<tblCommanditaire> CommenEvent(int? noEven)
         {
-            if (no != null)
+            if (noEven != null)
             {
-                try
-                {
-                    return (from c in db.tblCommanditaire
-                            join d in db.tblDon
-                            on c.noCommanditaire equals d.noCommanditaire
-                            join se in db.tblSousEvenement
-                            on d.noSousEvenement equals se.noSousEvenement
-                            where c.dateSupprime == null
-                            where se.dateSupprime == null
-                            where d.dateSupprime == null
-                            where se.tblEvenement.dateSupprime == null
-                            where se.tblEvenement.noEvenement == no
-                            select c).ToList();
-                }
-                catch (Exception e)
-                {
-                    LayoutController.erreur = e;
-                }
+                
+                    try
+                    {
+                        return (from c in db.tblCommanditaire
+                                join d in db.tblDon
+                                on c.noCommanditaire equals d.noCommanditaire
+                                join se in db.tblSousEvenement
+                                on d.noSousEvenement equals se.noSousEvenement
+                                where c.dateSupprime == null
+                                where se.dateSupprime == null
+                                where d.dateSupprime == null
+                                where se.tblEvenement.dateSupprime == null
+                                where se.tblEvenement.noEvenement == noEven
+                                select c).ToList();
+                    }
+                    catch (Exception e)
+                    {
+                        LayoutController.erreur = e;
+                    }
+                }               
+            
+            return new List<tblCommanditaire>();
+        }
+
+        
+        public List<tblCommanditaire> CommenSousEvent(int? noEven)
+        {
+            if (noEven != null)
+            {
+                
+                    try
+                    {
+                        return (from c in db.tblCommanditaire
+                                join d in db.tblDon
+                                on c.noCommanditaire equals d.noCommanditaire
+                                where c.dateSupprime == null
+                                where d.tblSousEvenement.dateSupprime == null
+                                where d.dateSupprime == null
+                                where d.tblSousEvenement.noSousEvenement == noEven
+                                select c).ToList();
+                    }
+                    catch (Exception e)
+                    {
+                        LayoutController.erreur = e;
+                    }                
+
             }
 
 
             return new List<tblCommanditaire>();
         }
-
 
 
         public List<tblEvenement> ToutEvenement()

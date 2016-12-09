@@ -32,6 +32,8 @@ namespace ECJ.Web.Controllers.Commanditaire
             var recherche = Request.QueryString["recherche"];
             var Commanditaire = provider.CommanditaireList();
             var don = provider.DonList();
+            ViewBag.AllEvent = provider.ToutEvenement();
+            ViewBag.AllSousEvent = provider.ToutSousEvenement();
 
             if (recherche != null)
             {

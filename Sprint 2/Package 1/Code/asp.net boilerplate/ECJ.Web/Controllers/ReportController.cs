@@ -143,6 +143,20 @@ namespace ECJ.Web.Controllers
                     ReportDataSource datasource2 = new ReportDataSource("DataSetDon", don);
                     e.DataSources.Add(datasource2);
                 }
+                else
+                {
+                    if(e.ReportPath== "ReportComSousEvent")
+                    {
+                      var com = db.CommenSousEvent(int.Parse(e.Parameters.First(param => param.Name == "noSousEvent").Values[0])).Select(a =>
+                       new
+                      {
+                        nomCommanditaire = a.nomCommanditaire,
+                        textePresentation = a.textePresentation
+                      }).ToList();
+                        ReportDataSource datasource2 = new ReportDataSource("DataSetCommenditaire", com);
+                        e.DataSources.Add(datasource2);
+                    }
+                }
             }
 
         }
@@ -241,9 +255,21 @@ namespace ECJ.Web.Controllers
             Response.AppendHeader("Content-Disposition", cd.ToString());
             return File(bytes, "application/pdf");
         }
+
         //Rapport Commenditaire
         public ActionResult RapportCommenditaire()
         {
+            var EventSelect = Request.QueryString["filtre_unTous"];
+            var SousEvent = Request.QueryString["filtre_SousEvent"];
+
+            var reportQueryCom = (from c in db.ToutCommenditaire()
+                                  select new
+                                  {
+                                      c.nomCommanditaire,
+                                      c.noCommanditaire,
+                                      c.textePresentation
+                                  }).ToList();
+
             var reportQuery = (from k in db.ToutEvenement()
                                select new
                                {
@@ -255,7 +281,28 @@ namespace ECJ.Web.Controllers
                                }).ToList();
 
 
-            var reportQueryCom = (from c in db.ToutCommenditaire()
+            if (EventSelect != "ToutEven")
+            {
+                 reportQuery = (from k in db.ToutEvenement()
+                                   select new
+                                   {
+                                       k.noEvenement,
+                                       k.nom,
+                                       k.dateDebut,
+                                       k.datefin,
+                                       k.url
+                                   }).Where(ev => ev.noEvenement == Convert.ToInt32(EventSelect)).ToList();
+
+                 reportQueryCom = (from c in db.CommenEvent(Convert.ToInt32(EventSelect))
+                                      select new
+                                      {
+                                          c.nomCommanditaire,
+                                          c.noCommanditaire,
+                                          c.textePresentation
+                                      }).ToList();
+            }
+
+            var reportQueryComSousEvent = (from c in db.ToutCommenditaire()
                                   select new
                                   {
                                       c.nomCommanditaire,
@@ -263,22 +310,54 @@ namespace ECJ.Web.Controllers
                                       c.textePresentation
                                   }).ToList();
 
+
             var reportQueryDon = db.ToutDon().Select(d => new
             {
                 montant = d.montant,
-                noCommanditaire = d.noCommanditaire
+                noCommanditaire = d.noCommanditaire,
+                d.noSousEvenement
             }).ToList();
+
+            var reportQuerySousEvent = db.ToutSousEvenement().Select(se => new
+            {
+                se.noSousEvenement,
+                se.nom
+            }).ToList();
+
+            if (SousEvent != "ToutSousEven")
+            {
+                 reportQuerySousEvent = db.ToutSousEvenement().Select(se => new
+                {
+                    se.noSousEvenement,
+                    se.nom
+                }).Where(ss=>ss.noSousEvenement==Convert.ToInt32(SousEvent)).ToList();
+
+                 reportQueryComSousEvent = (from c in db.CommenSousEvent(Convert.ToInt32(SousEvent))
+                                      select new
+                                      {
+                                          c.nomCommanditaire,
+                                          c.noCommanditaire,
+                                          c.textePresentation
+                                      }).ToList();
+            }
 
             LocalReport u = new LocalReport();
             u.ReportPath = "Rapport/ReportComendite_Event.rdlc";
             u.DataSources.Clear();
             ReportDataSource datasourceComSous = new ReportDataSource("DataSetEvent", reportQuery);
             ReportDataSource datasourceComDon = new ReportDataSource("DataSetCommenditaire", reportQueryCom);
+            ReportDataSource datasourceComDonSousEvent = new ReportDataSource("DataSetCommenditaire", reportQueryComSousEvent);
+            ReportDataSource datasourceSouesEvent = new ReportDataSource("DataSetSousEvent", reportQuerySousEvent);
             var dsDons = new ReportDataSource("DataSetDon", reportQueryDon);
+
             u.DataSources.Add(datasourceComSous);
             u.DataSources.Add(datasourceComDon);
             u.DataSources.Add(dsDons);
+            u.DataSources.Add(datasourceSouesEvent);
+            u.DataSources.Add(datasourceComDonSousEvent);
             u.SubreportProcessing += U_SubreportComEvent;
+            u.SetParameters(new ReportParameter("auteur", db.ReturnUtilisateur(AbpSession.UserId.Value).UserName));
+
             //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());
             //u.SetParameters(new[] { p });
 

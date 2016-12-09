@@ -8,6 +8,9 @@
 
 <h1>Commanditaire</h1>
 <div>
+    <button data-target="#rapportComenditaire" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-file-pdf-o"></i> Générer Rapport</button><br />
+</div><br />
+<div>
     <div>
         @using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "page-header" }))
         {
@@ -54,7 +57,7 @@
                 {
                     if (item.dateSupprime == null)
                     {
-                        var sommeDon = item.tblDon.Where(d => 
+                        var sommeDon = item.tblDon.Where(d =>
                         d.dateSupprime == null).Sum(d => d.montant);
                         <tr>
                             <td>
@@ -119,5 +122,60 @@
                             }
             </tbody>
         </table>
+    </div>
+</div>
+
+<div id="rapportComenditaire" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <form class="modal-content" method="get" target="_blank" action="~/Report/RapportCommenditaire">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Générer le rapport des commenditaires</h3>
+            </div>
+            <div class="modal-body ">
+                <fieldset>
+                    <legend>Restreindre par évènement</legend>
+                    <div class="form-group">
+                        <select name="filtre_unTous" class="form-control">
+                           @{
+                               foreach (var e in ViewBag.AllEvent)
+                               {
+                                <option value="@e.noEvenement">@e.nom</option>
+                               }
+                            }
+                            <option value="ToutEven">Tous les évènements</option>
+                        </select>
+                   
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Restreindre par sous-évènement</legend>
+                    <div class="form-group">
+                        <select name="filtre_SousEvent" class="form-control">
+                            @{
+                                foreach (var e in ViewBag.AllSousEvent)
+                                {
+                                    <option value="@e.noSousEvenement">@e.nom</option>
+                                }
+                            }
+                            <option value="ToutSousEven">Tous les sous-évènements</option>
+                        </select>
+
+                    </div>
+                </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" title="Générer le rapport">Générer</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+            </div>
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+        </form>
+
     </div>
 </div>
