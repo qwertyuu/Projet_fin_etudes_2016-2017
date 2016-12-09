@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace ECJ.Web.Controllers
 {
@@ -21,9 +22,14 @@ namespace ECJ.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Send(int expediteur, int destinataire, string message, string lien)
+        public ActionResult Send(int expediteur, string destinataire, string message, string lien)
         {
-            db.CreerMemo(expediteur, destinataire, message, lien);
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            string[] destinataires = js.Deserialize<string[]>(destinataire);
+            foreach (var dest in destinataires)
+            {
+                db.CreerMemo(expediteur, int.Parse(dest), message, lien);
+            }
             return Content(expediteur + destinataire + message);
         }
     }

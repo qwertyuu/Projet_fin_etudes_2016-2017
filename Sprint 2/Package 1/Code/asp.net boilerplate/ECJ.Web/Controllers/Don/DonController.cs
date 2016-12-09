@@ -11,6 +11,8 @@ using System.Net.Mail;
 using Abp.Web.Mvc.Authorization;
 using ECJ.Authorization;
 using System.Globalization;
+using System.IO;
+using Microsoft.Reporting.WebForms;
 
 namespace ECJ.Web.Controllers.Don
 {
@@ -72,8 +74,8 @@ namespace ECJ.Web.Controllers.Don
                 provider.AjouterDon(tblDon);
 
                 tblCommanditaire tblCommanditaire = provider.returnCommanditaire((int)tblDon.noCommanditaire);
-
-                SendMail(tblCommanditaire.courrielContact.ToString(), tblDon.montant.ToString(), tblDon.dateDon.ToString());
+                
+                SendMail(tblCommanditaire.courrielContact.ToString(), tblDon.montant.ToString(), tblDon.dateDon.Value.ToShortDateString(), provider.ReturnSousEvent(tblDon.noSousEvenement.Value).nom, tblDon.noDon.ToString());
             }
             var retour = Request.QueryString["return"] ?? "~/Commanditaire";
             return Redirect(retour);
@@ -89,12 +91,21 @@ namespace ECJ.Web.Controllers.Don
             return Redirect(retour);
         }
 
-        private void SendMail(string courrielContact, string montant, string dateDon)
+        private void SendMail(string courrielContact, string montant, string dateDon, string sousEvenementDonne, string noDon)
         {
+            LocalReport facture = new LocalReport();
+            facture.ReportPath = "Rapport/Report_Facture.rdlc";
+            facture.SetParameters(new ReportParameter("montant", montant));
+            facture.SetParameters(new ReportParameter("noRecu", noDon.PadLeft(5, '0')));
+            facture.SetParameters(new ReportParameter("sous_evenement", sousEvenementDonne));
+            facture.SetParameters(new ReportParameter("date", dateDon));
+            byte[] facture_bytes = facture.Render("PDF");
             string to = courrielContact;
             string from = "PagPi1433443@etu.cegepjonquiere.ca";
             MailMessage message = new MailMessage(from, to);
+            message.From = new MailAddress(from, "Cégep de Jonquière");
             SmtpClient client = new SmtpClient("smtp.office365.com");
+            message.Attachments.Add(new Attachment(new MemoryStream(facture_bytes), "recu.pdf", "application/pdf"));
             client.Port = 587;
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;

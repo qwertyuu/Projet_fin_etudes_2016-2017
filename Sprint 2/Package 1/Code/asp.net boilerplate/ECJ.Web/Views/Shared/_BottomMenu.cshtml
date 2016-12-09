@@ -16,17 +16,25 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
+                        <div class="pull-right">
+                            <button id="ajout_dest" type="button" class="btn btn-primary btn-sm"><i class="fa fa-plus fa-lg"></i></button>
+                            <button id="suppr_dest" type="button" class="btn btn-danger btn-sm"><i class="fa fa-minus fa-lg"></i></button>
+
+                        </div>
                         <label>Destinataire</label>
-                        <input type="text" id="filtreUsers" class="form-control" placeholder="Filtrer la liste..." />
-                        <select name="destinataire" id="destinataire" class="form-control" required>
-                            @if (Model.Items.Count > 0)
-                            {
-                                foreach (AbpUsers utilisateur in ViewBag.users)
+                        <div class="destinataire-group">
+
+                            <input type="text" class="form-control filtreUsers" placeholder="Filtrer la liste..." />
+                            <select name="destinataire" id="destinataire" class="form-control destinataire" required>
+                                @if (Model.Items.Count > 0)
                                 {
-                                    <option value="@utilisateur.Id">@utilisateur.UserName</option>
+                                    foreach (AbpUsers utilisateur in ViewBag.users)
+                                    {
+                                        <option value="@utilisateur.Id">@utilisateur.UserName</option>
+                                    }
                                 }
-                            }
-                        </select>
+                            </select>
+                        </div>
                     </div>
                     <input type="hidden" name="lien" id="lien" value="@Request.RawUrl" />
                     <input type="hidden" name="expediteur" id="expediteur" value="@ViewBag.uId" />

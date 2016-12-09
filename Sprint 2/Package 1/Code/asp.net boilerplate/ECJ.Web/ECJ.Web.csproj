@@ -857,6 +857,9 @@
     <Content Include="Rapport\ReportSoumission.rdlc" />
     <Content Include="Rapport\ReportStatut.rdlc" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Rapport\Report_Facture.rdlc" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
