@@ -858,9 +858,6 @@
     <Content Include="Rapport\ReportStatut.rdlc" />
   </ItemGroup>
   <ItemGroup>
-    <ItemGroup>
-    <EmbeddedResource Include="Rapport\ReportComSousEvent.rdlc" />
-  </ItemGroup>
     <EmbeddedResource Include="Rapport\Report_Facture.rdlc" />
   </ItemGroup>
   <PropertyGroup>
