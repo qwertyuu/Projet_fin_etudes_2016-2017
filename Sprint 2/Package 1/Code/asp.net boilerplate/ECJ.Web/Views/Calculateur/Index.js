@@ -199,6 +199,10 @@ function Calcultotal() {
 
         totalFinal = total;
         revenuTotal(totalFinal);
+        return true;
+    }
+    else {
+        return false;
     }
 } //Calcule le montant total et l'envoie 
 
@@ -487,7 +491,7 @@ function checkPositif() {
     else {
         return true;
     }
-}// Regarde toute les valeures et si elles sont négaive les remets à 0
+}//Regarde toute les valeures et si elles sont négaive les remets à 0
 
 function revenuTotal() {
     if (totalFinal != null) {
@@ -496,8 +500,8 @@ function revenuTotal() {
     else {
         $("#Revenu").text(round_argent(0 - coutTotal) + "$");
     }
-}
+}  //Calcule le gain total moins le prix de la salle
 
 function setCout(couttot) {
     coutTotal = parseInt(couttot);
-}
+} //Va chercher le cout de salle et la place dans un variable

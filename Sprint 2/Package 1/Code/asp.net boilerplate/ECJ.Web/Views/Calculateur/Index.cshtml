@@ -27,7 +27,7 @@
                             <th>
                                 <div class="form-group">
                                     <label class="control-label" for="nbBillet">Billets</label>
-                                    <input type="number" min=0 max="@ViewBag.Salle.billet" class="form-control" id="nbBillet" value="@ViewBag.Calcul.billet" name="billet">
+                                    <input type="number" min=1 max="@ViewBag.Salle.billet" class="form-control" id="nbBillet" value="@ViewBag.Calcul.billet" name="billet">
                                 </div>
                             </th>
                             <th>
@@ -351,7 +351,7 @@
             <div class="row">
                 <btn class="btn btn-default" onclick="Calcultotal()">Calculer</btn>
                 <btn class="btn btn-default" onclick="remiseAZero()">Remettre à zero</btn>
-                <button type="submit" class="btn btn-primary blue valid"><span>Enregistrer</span></button>
+                <button  type="submit" class="btn btn-primary blue valid" onsubmit="return Calcultotal()"><span>Enregistrer</span></button>
             </div>
         </div>
 }
