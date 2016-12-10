@@ -430,8 +430,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
         <Top>2.45181cm</Top>
-        <Left>0cm</Left>
-        <Height>1.59715cm</Height>
+        <Height>1.59714cm</Height>
         <Width>17.00851cm</Width>
         <Style>
           <Border>
@@ -1027,7 +1026,6 @@
         </ChartNoDataMessage>
         <DataSetName>DataSetCalculateur</DataSetName>
         <Top>6.942cm</Top>
-        <Left>0cm</Left>
         <Height>3.73cm</Height>
         <Width>7.68521cm</Width>
         <ZIndex>2</ZIndex>
@@ -1344,7 +1342,7 @@
         <Top>6.94201cm</Top>
         <Left>7.9776cm</Left>
         <Height>3.72999cm</Height>
-        <Width>9.08381cm</Width>
+        <Width>9.0838cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -1371,7 +1369,6 @@
         </Paragraphs>
         <rd:DefaultName>Textbox47</rd:DefaultName>
         <Top>6.20089cm</Top>
-        <Left>0cm</Left>
         <Height>0.6cm</Height>
         <Width>6.33394cm</Width>
         <ZIndex>4</ZIndex>
@@ -2812,7 +2809,7 @@
         <DataSetName>DataSetCalculateur</DataSetName>
         <Top>19.08804cm</Top>
         <Height>4.14626cm</Height>
-        <Width>17.05462cm</Width>
+        <Width>17.05461cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -2872,7 +2869,6 @@
         </Paragraphs>
         <rd:DefaultName>Textbox77</rd:DefaultName>
         <Top>4.15479cm</Top>
-        <Left>0cm</Left>
         <Height>0.61736cm</Height>
         <Width>4.67179cm</Width>
         <ZIndex>10</ZIndex>
@@ -3401,7 +3397,7 @@
         <Top>9.4807in</Top>
         <Left>0.00268in</Left>
         <Height>0.97917in</Height>
-        <Width>6.71441in</Width>
+        <Width>6.71442in</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -3451,7 +3447,6 @@
                         <rd:FormatSymbolCulture>fr-CA</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -3536,7 +3531,6 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>0.71528in</Top>
-        <Left>0in</Left>
         <Height>0.25in</Height>
         <Width>2.50535in</Width>
         <ZIndex>15</ZIndex>
@@ -3658,7 +3652,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=  "Rapport du calculateur"</Value>
+                  <Value>="Rapport du calculateur / "&amp; Parameters!auteur.Value &amp; System.Environment.NewLine &amp; "Page "&amp; Globals!PageNumber &amp; " sur "&amp; Globals!TotalPages</Value>
                   <Style>
                     <FontFamily>times New Roman</FontFamily>
                   </Style>
@@ -3670,7 +3664,6 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>0cm</Top>
           <Left>0.70378cm</Left>
           <Height>0.52062cm</Height>
           <Width>9.69667cm</Width>
@@ -3963,6 +3956,12 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="auteur">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <EmbeddedImages>
     <EmbeddedImage Name="ID9">
       <MIMEType>image/jpeg</MIMEType>

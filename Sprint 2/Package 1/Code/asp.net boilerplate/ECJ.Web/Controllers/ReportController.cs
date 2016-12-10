@@ -438,7 +438,7 @@ namespace ECJ.Web.Controllers
 
             LocalReport u = new LocalReport();
             u.ReportPath = "Rapport/ReportCalculateur.rdlc";
-            //u.SetParameters(new ReportParameter("auteur", db.ReturnUtilisateur(AbpSession.UserId.Value).UserName));
+            u.SetParameters(new ReportParameter("auteur", db.ReturnUtilisateur(AbpSession.UserId.Value).UserName));
             u.DataSources.Clear();
             ReportDataSource datasourceCalcul = new ReportDataSource("DataSetCalculateur", reportQueryCalculateur);
             ReportDataSource datasourceSSEvent = new ReportDataSource("DataSetSousEvent", reportQuerySSEvent);
