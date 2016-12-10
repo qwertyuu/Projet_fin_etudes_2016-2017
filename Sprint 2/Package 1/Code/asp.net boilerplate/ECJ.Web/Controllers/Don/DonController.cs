@@ -85,6 +85,9 @@ namespace ECJ.Web.Controllers.Don
         {
             if (id != null)
             {
+                tblDon don = provider.returnDon((int)id);
+                tblCommanditaire tblCommanditaire = provider.returnCommanditaire((int)don.noCommanditaire);
+                SendDeleteMail(tblCommanditaire.courrielContact.ToString(), don.montant.ToString());
                 provider.supprimerDon((int)id);
             }
             var retour = Request.QueryString["return"] ?? "~/Commanditaire";
@@ -115,6 +118,34 @@ namespace ECJ.Web.Controllers.Don
 
             message.Subject = "Merci de votre Commandite";
             message.Body = "Merci pour votre don de " + montant + " $ effectué le " + dateDon + ".";
+
+            try
+            {
+                client.Send(message);
+            }
+            catch (Exception ex)
+            {
+                LayoutController.erreur = ex;
+            }
+        }
+
+        private void SendDeleteMail(string courrielContact, string montant)
+        {
+            
+            string to = courrielContact;
+            string from = "PagPi1433443@etu.cegepjonquiere.ca";
+            MailMessage message = new MailMessage(from, to);
+            message.From = new MailAddress(from, "Cégep de Jonquière");
+            SmtpClient client = new SmtpClient("smtp.office365.com");
+            client.Port = 587;
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = false;
+            NetworkCredential cred = new System.Net.NetworkCredential(from, "PAPageau04");
+            client.Credentials = cred;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+            message.Subject = "Suppresion de votre commandite";
+            message.Body = "Votre don de " + montant + " $ à été effacé suite à un erreur ou autres du même genre. Pour plus d'information, veuillez nous contacter.";
 
             try
             {

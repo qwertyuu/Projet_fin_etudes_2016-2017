@@ -128,17 +128,17 @@ namespace ECJ.Web.Controllers
             return new tblCommanditaire();
         }
 
-        public tblCommanditaire returnDon(int id)
+        public tblDon returnDon(int id)
         {
             try
             {
-                return db.tblCommanditaire.Find(id);
+                return db.tblDon.Find(id);
             }
             catch (Exception e)
             {
                 LayoutController.erreur = e;
             }
-            return new tblCommanditaire();
+            return new tblDon();
         }
 
         public void CreerMemo(int expediteur, int destinataire, string message, string lien)
