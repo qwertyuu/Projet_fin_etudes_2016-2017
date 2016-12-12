@@ -81,14 +81,14 @@ namespace ECJ.Web.Controllers.AppelOffre
                                  "<xs:element name=\"Soumission\">" +
                                     "<xs:complexType>" +
                                       "<xs:sequence>" +
-                                        "<xs:element name=\"NoSoumission\" type=\"xs:positiveInteger\" nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
-                                        "<xs:element name=\"noSoumissionAgence\" type=\"xs:string\" nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
-                                        "<xs:element name=\"Nom\" type=\"xs:string\"  nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
-                                        "<xs:element name=\"Prix\" type=\"xs:decimal\" nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
-                                        "<xs:element name=\"noAgencePub\" type=\"xs:positiveInteger\"  nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
-                                        "<xs:element name=\"noAppelOffre\" type=\"xs:positiveInteger\" nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
-                                        "<xs:element name=\"Statut\" type=\"xs:string\" nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
-                                        "<xs:element name=\"Commentaire\" type=\"xs:string\" nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
+                                        "<xs:element name=\"NoSoumission\" type=\"xs:positiveInteger\" nillable=\"false\"> <xs:simpleType><xs:restriction base=\"xs: integer\"><xs:minLength value=\"1\"/></xs:restriction></xs:simpleType> </ xs:element>" +
+                                        "<xs:element name=\"noSoumissionAgence\" type=\"xs:string\" nillable=\"false\"> <xs:simpleType><xs:restriction base=\"xs: string\"><xs:minLength value=\"1\"/></xs:restriction></xs:simpleType> </ xs:element>" +
+                                        "<xs:element name=\"Nom\" type=\"xs:string\"  nillable=\"false\"> <xs:simpleType><xs:restriction base=\"xs: string\"><xs:minLength value=\"1\"/></xs:restriction></xs:simpleType> </ xs:element>" +
+                                        "<xs:element name=\"Prix\" type=\"xs:decimal\" nillable=\"false\"> <xs:simpleType><xs:restriction base=\"xs: decimal\"><xs:minLength value=\"1\"/></xs:restriction></xs:simpleType> </ xs:element>" +
+                                        "<xs:element name=\"noAgencePub\" type=\"xs:positiveInteger\"  nillable=\"false\"> <xs:simpleType><xs:restriction base=\"xs: integer\"><xs:minLength value=\"1\"/></xs:restriction></xs:simpleType> </ xs:element>" +
+                                        "<xs:element name=\"noAppelOffre\" type=\"xs:positiveInteger\" nillable=\"false\"> <xs:simpleType><xs:restriction base=\"xs: integer\"><xs:minLength value=\"1\"/></xs:restriction></xs:simpleType> </ xs:element>" +
+                                        "<xs:element name=\"Statut\" type=\"xs:string\" nillable=\"false\"> <xs:simpleType><xs:restriction base=\"xs: string\"><xs:minLength value=\"1\"/></xs:restriction></xs:simpleType> </ xs:element>" +
+                                        "<xs:element name=\"Commentaire\" type=\"xs:string\" nillable=\"false\"> <xs:simpleType><xs:restriction base=\"xs: string\"><xs:minLength value=\"1\"/></xs:restriction></xs:simpleType></ xs:element>" +
                                      "</xs:sequence>" +
                                     "</xs:complexType>" +
                                   "</xs:element>" +
@@ -232,7 +232,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             DirectoryInfo dr = null;
             string pathXsd = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\SoumissionAgence.xsd";
             string pathRetour = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\Soumission_retour";
-            string pathArchive = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\Soumission_archive";
+          //  string pathArchive = "E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\Soumission_archive";
             dr = CreateDirectory(pathRetour);
             CreateXsd(pathXsd, doc);
             //On prcoure tous les xmls contenus dans le dossier
