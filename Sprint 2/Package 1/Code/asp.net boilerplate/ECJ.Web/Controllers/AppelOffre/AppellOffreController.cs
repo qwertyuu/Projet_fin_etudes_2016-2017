@@ -43,7 +43,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             XmlNode xmlNoSoumiAgence = doc.CreateNode(XmlNodeType.Element, "noSoumissionAgence", "");
             xmlNoSoumiAgence.InnerText = soumi.noSoumissionAgence;
             XmlNode xmlPrix = doc.CreateNode(XmlNodeType.Element, "Prix", "");
-            if(soumi.prix.ToString()=="")
+            if(soumi.prix==null)
             {
                 xmlPrix.InnerText = prix.ToString();
             }
@@ -81,14 +81,14 @@ namespace ECJ.Web.Controllers.AppelOffre
                                  "<xs:element name=\"Soumission\">" +
                                     "<xs:complexType>" +
                                       "<xs:sequence>" +
-                                        "<xs:element name=\"NoSoumission\" type=\"xs:positiveInteger\" minOccurs=\"1\" maxOccurs=\"1\"/>" +
-                                        "<xs:element name=\"noSoumissionAgence\" type=\"xs:string\"  minOccurs=\"1\" maxOccurs=\"1\"/>" +
-                                        "<xs:element name=\"Nom\" type=\"xs:string\"  minOccurs=\"1\" maxOccurs=\"1\"/>" +
-                                        "<xs:element name=\"Prix\" type=\"xs:decimal\"  minOccurs=\"1\" maxOccurs=\"1\"/>" +
-                                        "<xs:element name=\"noAgencePub\" type=\"xs:positiveInteger\"  minOccurs=\"1\" maxOccurs=\"1\"/>" +
-                                        "<xs:element name=\"noAppelOffre\" type=\"xs:positiveInteger\" nillable=\"false\"/>" +
-                                        "<xs:element name=\"Statut\" type=\"xs:string\"/>" +
-                                        "<xs:element name=\"Commentaire\" type=\"xs:string\" minOccurs=\"1\" maxOccurs=\"1\"/>" +
+                                        "<xs:element name=\"NoSoumission\" type=\"xs:positiveInteger\" nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
+                                        "<xs:element name=\"noSoumissionAgence\" type=\"xs:string\" nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
+                                        "<xs:element name=\"Nom\" type=\"xs:string\"  nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
+                                        "<xs:element name=\"Prix\" type=\"xs:decimal\" nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
+                                        "<xs:element name=\"noAgencePub\" type=\"xs:positiveInteger\"  nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
+                                        "<xs:element name=\"noAppelOffre\" type=\"xs:positiveInteger\" nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
+                                        "<xs:element name=\"Statut\" type=\"xs:string\" nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
+                                        "<xs:element name=\"Commentaire\" type=\"xs:string\" nillable=\"false\"> <xs:minLength value=\"1\"/> </ xs:element>" +
                                      "</xs:sequence>" +
                                     "</xs:complexType>" +
                                   "</xs:element>" +
@@ -214,16 +214,16 @@ namespace ECJ.Web.Controllers.AppelOffre
             return Path.GetInvalidFileNameChars().Aggregate(fileName, (current, c) => current.Replace(c.ToString(), string.Empty));
         }
 
-        private void ArchiverXML(XmlDocument doc, string pathXml, string pathArhive,string pathRetour)
+        private void ArchiverXML(XmlDocument doc, string pathXml, string pathArhive)
         {
             DirectoryInfo dr = null;
             dr = CreateDirectory(pathArhive);
-            if(dr!=null)
+            if (dr != null)
             {
                 pathArhive = dr.FullName;
             }
             //on copy le fichier
-            System.IO.File.Move(Path.Combine(pathRetour, pathXml), Path.Combine(pathArhive, pathXml));
+            System.IO.File.Move(pathXml,pathArhive+"\\"+Path.GetFileName(pathXml));
         }
         private void RetournerSoumissionXml()
         {
@@ -268,7 +268,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                             provider.Save();
                         }
                     //lorsque que la soumission à été validée par l'agence de publicité on l'archive
-                    ArchiverXML(doc, f.file, pathArchive, pathRetour);
+                  //  ArchiverXML(doc, f.file, pathArchive);
 
                 }                   
                 
