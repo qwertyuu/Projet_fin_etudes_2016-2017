@@ -54,6 +54,7 @@
     <text name="Salles" value="Salles" />
     <text name="DefaultError" value="Une erreur s'est produite" />
     <text name="DefaultErrorMessage" value="Erreur serveur interne" />
+    <text name="Profil" value="Profil" />
 
   </texts>
 </localizationDictionary>

@@ -1,12 +1,13 @@
 ﻿$(function () {
-    var Pass = $('.PasswordChange').val();
+    $("form").submit(function (e) {
+        var Pass = $('[name="PasswordChange"]').val();
 
-    $(".valid").closest("form").submit(function (e) {
         if ($(".PasswordChange").val() != $(".PasswordChange2").val()) {
             alert("Veuillez entrer le même mot de passe.");
             return false;
         }
-        else if (Pass.length >= 8) {
+
+        if (Pass.length >= 8) {
             var AUneMinuscule = false;
             var AUneMajuscule = false;
             var AUnChiffre = false;
