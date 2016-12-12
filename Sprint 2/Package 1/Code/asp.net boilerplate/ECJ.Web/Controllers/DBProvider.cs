@@ -232,7 +232,7 @@ namespace ECJ.Web.Controllers
                 long id = 0;
                 foreach(var i in list)
                 {
-                    if(i.Name == nom)
+                    if(i.UserName == nom)
                     {
                         id = i.Id;
                     }
