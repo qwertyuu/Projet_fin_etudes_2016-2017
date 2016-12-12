@@ -26,11 +26,11 @@
                         <button class="btn btn-primary">Rechercher</button>
                     </span>
                     <span class="input-group-btn">
-                        <a href="/Projet2016/Equipe2/Users/" class="btn btn-default">Vider</a>
+                        <a href="~/Users/" class="btn btn-default">Vider</a>
                     </span>
                 </div>
 }
-            <a href="/Projet2016/Equipe2/Users/Ajout" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un nouvel utilisateur</a>
+            <a href="~/Users/Ajout" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Créer un nouvel utilisateur</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -73,9 +73,9 @@
                             </td>
                             <td>@(user.IsActive ? "Oui" : "Non")</td>
                             <td>
-                                <a href="/Projet2016/Equipe2/Users/Detail/@user.Id" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
-                                <a href="/Projet2016/Equipe2/Users/Modifier/@user.Id" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
-                                <a href="/Projet2016/Equipe2/Users/Supprimer/@user.Id" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
+                                <a href="~/Users/Detail/@user.Id" class="btn btn-sm btn-primary" title="Détail"><i class="fa fa-info-circle fa-lg"></i></a>
+                                <a href="~/Users/Modifier/@user.Id" class="btn btn-sm btn-primary" title="Modifier"><i class="fa fa-pencil fa-lg"></i></a>
+                                <a href="~/Users/Supprimer/@user.Id" class="btn btn-sm btn-danger" title="Supprimer"><i class="fa fa-trash fa-lg"></i></a>
                             </td>
                         </tr>
                     }
