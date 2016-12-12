@@ -1,4 +1,13 @@
 ﻿ USE PE2_Officiel
+ 
+ INSERT INTO S_Personnel.tblUtilisateur(IdUser,motPasse)VALUES('Equipe2','PvCmx48Mqm5pqGzWe6nKEg=='); --mot passe: Raispike
+ INSERT INTO S_Personnel.tblUtilisateur(IdUser,motPasse)VALUES('Utilisateur','DMF1ucDxtqgxw5niaXcmYQ==');--mot passe: a
+ INSERT INTO S_Personnel.tblUtilisateur(IdUser,motPasse)VALUES('Admin','ISMvKXpXpadDiUoOSoAfww==');--mot passe: amin
+ INSERT INTO S_Personnel.tblUtilisateur(IdUser,motPasse)VALUES('User','7hHLsZBS5AsHqsDKBgwj7g==');--mot passe: user
+ INSERT INTO S_Personnel.tblUtilisateur(IdUser,motPasse)VALUES('Root','Y6nw6nu5gFB5a2SehUgYRQ==');--mot passe: root
+ PRINT 'Insérer utilisateurs réussi'
+ 
+ GO
 
  INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, 'Events', 0, '20160504 14:30:00','J''ai une petite question Admin à propos des evenements');
  INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(4, 2, '', 0, '20160505 10:30:00','Il manque des détails dans le 2ieme contrat');

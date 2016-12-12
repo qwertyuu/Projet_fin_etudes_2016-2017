@@ -644,16 +644,16 @@ iif(Parameters!date_fin.Value Is Nothing, "à aujourd'hui", "au " &amp; Format(P
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.1418in</Width>
+                  <Width>0.87836in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.28717in</Width>
+                  <Width>0.68599in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.25976in</Width>
+                  <Width>0.82236in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.44909in</Width>
+                  <Width>1.94117in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -780,7 +780,7 @@ iif(Parameters!date_fin.Value Is Nothing, "à aujourd'hui", "au " &amp; Format(P
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox46">
+                        <Textbox Name="Textbox30">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -796,7 +796,7 @@ iif(Parameters!date_fin.Value Is Nothing, "à aujourd'hui", "au " &amp; Format(P
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox46</rd:DefaultName>
+                          <rd:DefaultName>Textbox30</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -851,7 +851,7 @@ iif(Parameters!date_fin.Value Is Nothing, "à aujourd'hui", "au " &amp; Format(P
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>ID</Value>
+                                  <Value>Action</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -978,14 +978,14 @@ iif(Parameters!date_fin.Value Is Nothing, "à aujourd'hui", "au " &amp; Format(P
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="UserId">
+                        <Textbox Name="UserId5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!UserId.Value</Value>
+                                  <Value>=code.NomController(StrReverse(StrReverse(Fields!ServiceName.Value.ToString().Substring(20)).Substring(10)).Split(".").GetValue(0)) &amp; IIF(code.NomAction(Fields!MethodName.Value.ToString()) &lt;&gt; "", "/" &amp; code.NomAction(Fields!MethodName.Value.ToString()), "")</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1037,7 +1037,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>1.54679in</Size>
+                    <Size>1.35674in</Size>
                     <CellContents>
                       <Textbox Name="ExecutionTime">
                         <CanGrow>true</CanGrow>
@@ -1219,16 +1219,16 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.43975in</Width>
+                  <Width>1.06864in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.29392in</Width>
+                  <Width>1.00219in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.721in</Width>
+                  <Width>1.02323in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.70833in</Width>
+                  <Width>2.06346in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1386,14 +1386,14 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox51">
+                        <Textbox Name="Textbox53">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>ID</Value>
+                                  <Value>Action</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1520,14 +1520,14 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="UserId2">
+                        <Textbox Name="UserId3">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!UserId.Value</Value>
+                                  <Value>=code.NomController(StrReverse(StrReverse(Fields!ServiceName.Value.ToString().Substring(20)).Substring(10)).Split(".").GetValue(0)) &amp; IIF(code.NomAction(Fields!MethodName.Value.ToString()) &lt;&gt; "", "/" &amp; code.NomAction(Fields!MethodName.Value.ToString()), "")</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1575,7 +1575,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>1.721in</Size>
+                    <Size>1.7265in</Size>
                     <CellContents>
                       <Textbox Name="Group1">
                         <CanGrow>true</CanGrow>
@@ -1634,12 +1634,13 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             <SortExpressions>
               <SortExpression>
                 <Value>=Fields!ExecutionTime.Value</Value>
+                <Direction>Descending</Direction>
               </SortExpression>
             </SortExpressions>
             <Top>2.3316in</Top>
             <Left>0.01377in</Left>
             <Height>0.75in</Height>
-            <Width>6.884in</Width>
+            <Width>6.88401in</Width>
             <ZIndex>8</ZIndex>
             <Visibility>
               <Hidden>=Parameters!periode.Value &lt;&gt; "tous"</Hidden>
@@ -1754,7 +1755,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             <Top>7.86254cm</Top>
             <Left>0.03497cm</Left>
             <Height>1.41994cm</Height>
-            <Width>17.48541cm</Width>
+            <Width>17.4854cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -1971,8 +1972,8 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>Logs</DataSetName>
-            <Top>3.66841in</Top>
-            <Left>0.01377in</Left>
+            <Top>3.68228in</Top>
+            <Left>0.01991in</Left>
             <Height>0.4618in</Height>
             <Width>3.4345in</Width>
             <ZIndex>11</ZIndex>
@@ -2746,8 +2747,8 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>Logs</DataSetName>
-            <Top>3.6684in</Top>
-            <Left>3.48246in</Left>
+            <Top>3.6823in</Top>
+            <Left>3.50996in</Left>
             <Height>0.4618in</Height>
             <Width>3.38782in</Width>
             <ZIndex>15</ZIndex>
@@ -2814,6 +2815,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox191</rd:DefaultName>
+              <Top>0cm</Top>
               <Left>0.01377in</Left>
               <Height>0.25in</Height>
               <Width>2.74619in</Width>
@@ -2861,6 +2863,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
               </Style>
             </Textbox>
             <Line Name="Line3">
+              <Top>0cm</Top>
               <Height>0in</Height>
               <Width>6.89778in</Width>
               <ZIndex>3</ZIndex>
@@ -2944,6 +2947,56 @@ Function NomRole(id As Integer) As String
         Case Is = Nothing
            NomRole = "Employé"
     End Select
+End Function
+
+Function NomController(s As String) As String
+    Select Case s
+      Case Is = "Report"
+        NomController = "Rapport"
+      Case Is = "Users"
+        NomController = "Utilisateurs"
+      Case Is = "Home"
+        NomController = "Accueil"
+      Case Is = "Account"
+        NomController = "Profil"
+      Case Is = "Events"
+        NomController = "Événement"
+      Case Is = "CMemo"
+        NomController = "Mémo"
+      Case Is = "Lire"
+        NomController = "Mémo/Lire"    
+      Case Is = "Salles"
+        NomController = "Salle"    
+      Case Is = "SousEvenements"
+        NomController = "SousÉvénement"
+      Case Else
+        NomController = s
+    End Select
+End Function
+
+Function NomAction(s1 As String) As String
+  Select Case s1
+    Case Is = "Send"
+      NomAction = "Envoi"
+    Case Is = "GetFile"
+      NomAction = "Image"
+    Case Is = "Index"
+      NomAction = ""
+    Case Is = "Logout"
+      NomAction = "Quitter"
+    Case Is = "Events"
+      NomAction = "Événement"
+    Case Is = "Edit"
+      NomAction  = "Modifier"    
+    Case Is = "Delete"
+      NomAction = "Supprimer"
+    Case Is = "Create"
+      NomAction = "Créer"
+    Case Is = "Detail"
+      NomAction = "Détail"
+    Case Else
+      NomAction = s1
+  End Select
 End Function</Code>
   <EmbeddedImages>
     <EmbeddedImage Name="logo_Home">
