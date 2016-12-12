@@ -167,6 +167,10 @@ function calculPrixReduit() {
 
     if (parseInt(totalBilletReduit) > TotalBillet) {
         alert("Vous ne pouvez pas entrer une quantitée plus grande de billet à prix réduit que le nombre total de billets. Les Billets réduits ne seront pas calculés.")
+        $("#nbBilletGratuit").val(0);
+        $("#nbBilletPreVente").val(0);
+        $("#NbBilletRabaisCustom1").val(0);
+        $("#NbBilletRabaisCustom2").val(0);
         return 0;
     }
     else {
