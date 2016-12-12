@@ -60,7 +60,7 @@ namespace ECJ.Web.Controllers
                 }
                 ViewBag.recherche = recherche;
                 recherche = recherche.Trim().ToUpper();
-                model = new Abp.Application.Services.Dto.ListResultOutput<Models.AbpUsers>( 
+                model = new Abp.Application.Services.Dto.ListResultOutput<Models.AbpUsers>(
                     model.Items.Where(e =>
                 e.UserName.ToUpper().Contains(recherche) ||
                 e.Name.ToUpper().Contains(recherche) ||
@@ -136,7 +136,13 @@ namespace ECJ.Web.Controllers
                 AbpUser.IsDeleted = false;
                 AbpUser.IsEmailConfirmed = false;
                 AbpUser.CreationTime = DateTime.Now;
-                AbpUser.Password = new PasswordHasher().HashPassword(PasswordChange);
+
+                if (AbpUser.Password != null)
+                {
+                    AbpUser.Password = new PasswordHasher().HashPassword(PasswordChange);
+                }
+
+
                 db.InsertUser(AbpUser);
 
                 if (Role > 0 && AbpUser.Id > 1)
@@ -151,6 +157,16 @@ namespace ECJ.Web.Controllers
                     db.Save();
                 }
 
+                if (Request.Files["pic"].ContentLength > 0)
+                {
+                    var pic = Request.Files["pic"];
+                    using (var reader = new System.IO.BinaryReader(pic.InputStream))
+                    {
+                        AbpUser.ImageProfil = reader.ReadBytes(pic.ContentLength);
+                    }
+                    db.UpdateUser(AbpUser);
+                }
+
 
             }
             return RedirectToAction("Index");
@@ -162,23 +178,45 @@ namespace ECJ.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                var u = db.ReturnUtilisateur(AbpUser.Id);
                 string PasswordChange = Request.Form["PasswordChange"];
-                if(!string.IsNullOrWhiteSpace(PasswordChange))
+                if (!string.IsNullOrWhiteSpace(PasswordChange))
                 {
                     AbpUser.Password = new PasswordHasher().HashPassword(PasswordChange);
                 }
-                var u = db.ReturnUtilisateur(AbpUser.Id);
+
+                if(AbpUser.Reponse == null)
+                {
+                    AbpUser.Reponse = u.Reponse;
+                    AbpUser.NoQuestion = u.NoQuestion;
+                }
+
                 AbpUser.TenantId = 1;
                 AbpUser.IsDeleted = false;
                 AbpUser.IsEmailConfirmed = false;
                 AbpUser.CreationTime = u.CreationTime;
-                AbpUser.Password = u.Password;
                 db.UpdateUser(AbpUser);
                 db.UpdateRole(AbpUser, Role);
 
+                if (Request.Files["pic"].ContentLength > 0)
+                {
+                    var pic = Request.Files["pic"];
+                    using (var reader = new System.IO.BinaryReader(pic.InputStream))
+                    {
+                        AbpUser.ImageProfil = reader.ReadBytes(pic.ContentLength);
+                    }
+                    db.UpdateUser(AbpUser);
+                }
 
             }
             return RedirectToAction("Index");
+        }
+
+        public FileContentResult GetFile(int id)
+        {
+            var imagedata = db.ReturnUtilisateur(id).ImageProfil;
+            var contentType = DBProvider.GetContentType(imagedata);
+            return new FileContentResult(imagedata, string.Format("image/{0}", contentType.ToString().ToLower()));
         }
 
     }

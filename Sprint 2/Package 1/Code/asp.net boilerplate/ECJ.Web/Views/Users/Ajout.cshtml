@@ -7,11 +7,11 @@
     @Html.IncludeScript("~/Views/Users/CheckUser.js")
 }
 <h2>Créer un utilisateur</h2>
-@using (Html.BeginForm())
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-    
+
     <div class="form-group">
         <label>Nom d'utilisateur</label>
         <input class="form-control" type="text" name="UserName" id="uname" required>
@@ -43,10 +43,22 @@
         <input class="form-control" type="password" name="PasswordChange" required>
     </div>
 
-    <div class="form-group">
-        <label>Image de profil</label>
-        <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
-    </div>
+    if (Model.ImageProfil == null)
+    {
+        <label>Aucune image de profil</label>
+        <div class="form-group">
+            <label>Changer l'image de profil</label>
+            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+        </div>
+    }
+    else
+    {
+        <img width="200" src="@Url.Action("GetFile","profil", new { id = Model.Id})" alt="Image de profil" />
+        <div class="form-group">
+            <label>Changer l'image de profil</label>
+            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+        </div>
+    }
 
     if (ViewBag.UtilisateurCourrant != null)
     {

@@ -8,7 +8,7 @@
 }
 @model ECJ.Web.Models.AbpUsers
 <h2>Modifier cet utilisateur</h2>
-@using (Html.BeginForm())
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
@@ -46,10 +46,23 @@
         <input class="form-control" type="password" name="PasswordChange">
     </div>
 
-    <div class="form-group">
-        <label>Image de profil (laisser vide pour ne pas modifier l'image courrante)</label>
-        <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
-    </div>
+    if (Model.ImageProfil == null)
+    {
+        <label>Aucune image de profil</label>
+        <div class="form-group">
+            <label>Changer l'image de profil</label>
+            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+        </div>
+    }
+    else
+    {
+        <img width="200" src="@Url.Action("GetFile","profil", new { id = Model.Id})" alt="Image de profil" />
+        <div class="form-group">
+            <label>Changer l'image de profil</label>
+            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+        </div>
+    }
+
     if (ViewBag.UtilisateurCourrant != null)
     {
         <div class="form-group">

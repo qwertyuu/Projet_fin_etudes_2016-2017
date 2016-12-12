@@ -71,6 +71,11 @@ namespace ECJ.Web.Controllers.Don
             {
                 tblDon.montant = Convert.ToDecimal(montant, CultureInfo.InvariantCulture);
 
+                if(tblDon.montant > 1000000)
+                {
+                    tblDon.montant = 1000000;
+                }
+
                 provider.AjouterDon(tblDon);
 
                 tblCommanditaire tblCommanditaire = provider.returnCommanditaire((int)tblDon.noCommanditaire);
