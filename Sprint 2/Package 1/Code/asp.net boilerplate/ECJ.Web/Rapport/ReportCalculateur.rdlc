@@ -62,7 +62,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nombre de Billets</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -92,7 +94,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Prix des billets</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -122,7 +126,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Prix total</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -157,7 +163,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Billets</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -187,7 +195,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!billet.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -218,6 +228,7 @@
                             <TextRun>
                               <Value>=Fields!prixBillet.Value</Value>
                               <Style>
+                                <FontFamily>times new Roman</FontFamily>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
                             </TextRun>
@@ -251,6 +262,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!billet.Value, "DataSetCalculateur")*Sum(Fields!prixBillet.Value, "DataSetCalculateur")</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
                             </TextRun>
@@ -288,7 +300,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Billets VIP</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -318,7 +332,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!billetVIP.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -349,6 +365,7 @@
                             <TextRun>
                               <Value>=Fields!prixBilletVIP.Value</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
                             </TextRun>
@@ -381,6 +398,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!billetVIP.Value, "DataSetCalculateur")*Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
                             </TextRun>
@@ -429,7 +447,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>2.45181cm</Top>
+        <Top>4.93888cm</Top>
+        <Left>0.0529cm</Left>
         <Height>1.59714cm</Height>
         <Width>17.00851cm</Width>
         <Style>
@@ -465,7 +484,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nombre de places régulières</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -495,7 +516,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nombre de places V.I.P.</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -525,7 +548,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Prix de la salle</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -560,7 +585,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!billet.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -590,7 +617,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!billetVIP.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -621,6 +650,7 @@
                             <TextRun>
                               <Value>=Fields!prix.Value</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
                             </TextRun>
@@ -665,8 +695,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetSalle</DataSetName>
-        <Top>0.58208cm</Top>
-        <Left>0.04611cm</Left>
+        <Top>3.06915cm</Top>
+        <Left>0.09901cm</Left>
         <Height>1.05834cm</Height>
         <Width>17.05891cm</Width>
         <ZIndex>1</ZIndex>
@@ -707,7 +737,9 @@
                     <Y>=Sum(Fields!jeuneRatio.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
-                    <Style />
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
                     <UseValueAsLabel>true</UseValueAsLabel>
                     <Visible>true</Visible>
                   </ChartDataLabel>
@@ -978,6 +1010,7 @@
           <ChartLegend Name="Default">
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Times New Roman</FontFamily>
               <FontSize>8pt</FontSize>
             </Style>
             <DockOutsideChartArea>true</DockOutsideChartArea>
@@ -1001,6 +1034,7 @@
                 <Style>None</Style>
               </Border>
               <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Times new roman</FontFamily>
               <FontWeight>Bold</FontWeight>
               <TextAlign>General</TextAlign>
               <VerticalAlign>Top</VerticalAlign>
@@ -1025,7 +1059,8 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>6.942cm</Top>
+        <Top>9.42907cm</Top>
+        <Left>0.0529cm</Left>
         <Height>3.73cm</Height>
         <Width>7.68521cm</Width>
         <ZIndex>2</ZIndex>
@@ -1062,7 +1097,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Catégories d'âge</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1092,7 +1129,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Rabais</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1127,7 +1166,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Jeunes</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1158,6 +1199,7 @@
                             <TextRun>
                               <Value>=Fields!jeunePourcent.Value/100</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0%</Format>
                               </Style>
                             </TextRun>
@@ -1194,7 +1236,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Adultes</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1225,6 +1269,7 @@
                             <TextRun>
                               <Value>=Fields!adultePourcent.Value/100</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0%</Format>
                               </Style>
                             </TextRun>
@@ -1261,7 +1306,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Âge d'or</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1292,6 +1339,7 @@
                             <TextRun>
                               <Value>=Fields!ainePourcent.Value/100</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0%</Format>
                               </Style>
                             </TextRun>
@@ -1339,8 +1387,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>6.94201cm</Top>
-        <Left>7.9776cm</Left>
+        <Top>9.42908cm</Top>
+        <Left>8.0305cm</Left>
         <Height>3.72999cm</Height>
         <Width>9.0838cm</Width>
         <ZIndex>3</ZIndex>
@@ -1359,6 +1407,7 @@
               <TextRun>
                 <Value>Rabais de groupes d'âge</Value>
                 <Style>
+                  <FontFamily>Times New Roman</FontFamily>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -1368,7 +1417,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox47</rd:DefaultName>
-        <Top>6.20089cm</Top>
+        <Top>8.68796cm</Top>
+        <Left>0.0529cm</Left>
         <Height>0.6cm</Height>
         <Width>6.33394cm</Width>
         <ZIndex>4</ZIndex>
@@ -1391,6 +1441,7 @@
               <TextRun>
                 <Value>Réductions</Value>
                 <Style>
+                  <FontFamily>Times New Roman</FontFamily>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -1400,7 +1451,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox48</rd:DefaultName>
-        <Top>10.8584cm</Top>
+        <Top>13.34547cm</Top>
+        <Left>0.06651cm</Left>
         <Height>0.6cm</Height>
         <Width>2.98994cm</Width>
         <ZIndex>5</ZIndex>
@@ -1441,7 +1493,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nom de la réduction</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1501,7 +1555,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>% de réductions</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1536,7 +1592,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Billet Gratuit</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1566,7 +1624,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!promo.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1596,7 +1656,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>100%</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1633,7 +1695,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Pré-vente</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1663,7 +1727,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!prevente.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1693,7 +1759,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>25%</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1730,7 +1798,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!customNom1.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1760,7 +1830,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!customBillet1.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1790,7 +1862,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!customPrix1.Value/100</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                                <Format>0%</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1825,7 +1900,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!customNom2.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1855,7 +1932,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!customBillet2.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1885,7 +1964,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!customPrix2.Value/100</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                                <Format>0%</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1933,8 +2015,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>11.4584cm</Top>
-        <Left>0.00681cm</Left>
+        <Top>13.94547cm</Top>
+        <Left>0.05971cm</Left>
         <Height>3.12291cm</Height>
         <Width>17.0546cm</Width>
         <ZIndex>6</ZIndex>
@@ -2001,7 +2083,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nombres de billets</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2031,7 +2115,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Prix des billets</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2066,7 +2152,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Souper Spectacle</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2096,7 +2184,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!souperSpectacle.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2126,7 +2216,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!prixSouper.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2168,8 +2260,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>4.77214cm</Top>
-        <Left>0.08621cm</Left>
+        <Top>7.25921cm</Top>
+        <Left>0.13911cm</Left>
         <Height>1.32292cm</Height>
         <Width>17.105cm</Width>
         <ZIndex>7</ZIndex>
@@ -2236,7 +2328,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Revenus</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2266,7 +2360,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Dépenses</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2301,7 +2397,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Billets</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2332,6 +2430,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
                             </TextRun>
@@ -2382,7 +2481,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Billets VIP</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2413,6 +2514,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
                             </TextRun>
@@ -2462,7 +2564,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Souper Spectacle</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2493,6 +2597,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!prixSouper.Value, "DataSetCalculateur") * Sum(Fields!souperSpectacle.Value, "DataSetCalculateur")</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
                             </TextRun>
@@ -2543,7 +2648,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Tranches d'âge</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2587,6 +2694,7 @@
                             <TextRun>
                               <Value>=(((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * (Sum(Fields!jeunePourcent.Value, "DataSetCalculateur") / 100)) + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * (Sum(Fields!adultePourcent.Value, "DataSetCalculateur") / 100)) + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * (Sum(Fields!ainePourcent.Value, "DataSetCalculateur") / 100))</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
                             </TextRun>
@@ -2626,7 +2734,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Réductions</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2670,6 +2780,7 @@
                             <TextRun>
                               <Value>=(Sum(Fields!promo.Value, "DataSetCalculateur") * ((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) + (Sum(Fields!prevente.Value, "DataSetCalculateur") * ((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * 0.25) + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * Sum(Fields!customBillet1.Value, "DataSetCalculateur") * Sum(Fields!customPrix1.Value, "DataSetCalculateur") / 100 + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * Sum(Fields!customBillet2.Value, "DataSetCalculateur") * Sum(Fields!customPrix2.Value, "DataSetCalculateur") / 100</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
                             </TextRun>
@@ -2709,7 +2820,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Salle</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2753,6 +2866,7 @@
                             <TextRun>
                               <Value>=First(Fields!prix.Value, "DataSetSalle")</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
                             </TextRun>
@@ -2807,7 +2921,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>19.08804cm</Top>
+        <Top>21.57511cm</Top>
+        <Left>0.0529cm</Left>
         <Height>4.14626cm</Height>
         <Width>17.05461cm</Width>
         <ZIndex>8</ZIndex>
@@ -2826,6 +2941,7 @@
               <TextRun>
                 <Value>Sous-Total des catégories</Value>
                 <Style>
+                  <FontFamily>Times New Roman</FontFamily>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -2835,8 +2951,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox76</rd:DefaultName>
-        <Top>18.32075cm</Top>
-        <Left>0.05292cm</Left>
+        <Top>20.8431cm</Top>
+        <Left>0.10582cm</Left>
         <Height>0.5909cm</Height>
         <Width>6.82393cm</Width>
         <ZIndex>9</ZIndex>
@@ -2859,6 +2975,7 @@
               <TextRun>
                 <Value>Souper Spectacle</Value>
                 <Style>
+                  <FontFamily>Times New Roman</FontFamily>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -2868,7 +2985,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox77</rd:DefaultName>
-        <Top>4.15479cm</Top>
+        <Top>6.64186cm</Top>
+        <Left>0.0529cm</Left>
         <Height>0.61736cm</Height>
         <Width>4.67179cm</Width>
         <ZIndex>10</ZIndex>
@@ -2891,6 +3009,7 @@
               <TextRun>
                 <Value>=First(Fields!nomSalle.Value, "DataSetSalle")</Value>
                 <Style>
+                  <FontFamily>Times New Roman</FontFamily>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -2903,6 +3022,7 @@
               <TextRun>
                 <Value />
                 <Style>
+                  <FontFamily>Times New Roman</FontFamily>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -2912,7 +3032,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox28</rd:DefaultName>
-        <Top>0.10583cm</Top>
+        <Top>2.5929cm</Top>
+        <Left>0.0529cm</Left>
         <Height>0.47625cm</Height>
         <Width>6.33394cm</Width>
         <ZIndex>11</ZIndex>
@@ -2936,6 +3057,7 @@
               <TextRun>
                 <Value>Total :</Value>
                 <Style>
+                  <FontFamily>Times New Roman</FontFamily>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -2945,8 +3067,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
-        <Top>9.16125in</Top>
-        <Left>0.00536in</Left>
+        <Top>10.14041in</Top>
+        <Left>0.02619in</Left>
         <Height>0.25in</Height>
         <Width>0.88542in</Width>
         <ZIndex>12</ZIndex>
@@ -3004,7 +3126,9 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Revenus</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Times New Roman</FontFamily>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -3036,7 +3160,9 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Billets/Salle</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Times New Roman</FontFamily>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -3067,6 +3193,7 @@
                           <TextRun>
                             <Value>=Sum(Fields!billet.Value, "DataSetCalculateur")*Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur")*Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")</Value>
                             <Style>
+                              <FontFamily>Times New Roman</FontFamily>
                               <Format>0.00'$';(0.00'$')</Format>
                             </Style>
                           </TextRun>
@@ -3113,6 +3240,7 @@
                             <TextRun>
                               <Value>=((((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * (Sum(Fields!jeunePourcent.Value, "DataSetCalculateur") / 100)) + (Sum(Fields!promo.Value, "DataSetCalculateur") * ((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) + (Sum(Fields!prevente.Value, "DataSetCalculateur") * ((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * 0.25) + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * Sum(Fields!customBillet1.Value, "DataSetCalculateur") * Sum(Fields!customPrix1.Value, "DataSetCalculateur") / 100 + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * Sum(Fields!customBillet2.Value, "DataSetCalculateur") * Sum(Fields!customPrix2.Value, "DataSetCalculateur") / 100)</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00'$';(0.00'$')</Format>
                               </Style>
                             </TextRun>
@@ -3151,6 +3279,7 @@
                             <TextRun>
                               <Value>=((((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * (Sum(Fields!jeunePourcent.Value, "DataSetCalculateur") / 100)) + (Sum(Fields!promo.Value, "DataSetCalculateur") * ((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) + (Sum(Fields!prevente.Value, "DataSetCalculateur") * ((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * 0.25) + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * Sum(Fields!customBillet1.Value, "DataSetCalculateur") * Sum(Fields!customPrix1.Value, "DataSetCalculateur") / 100 + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * Sum(Fields!customBillet2.Value, "DataSetCalculateur") * Sum(Fields!customPrix2.Value, "DataSetCalculateur") / 100) + Fields!prix.Value</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00;(0.00)</Format>
                               </Style>
                             </TextRun>
@@ -3190,7 +3319,9 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Dépenses</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Times New Roman</FontFamily>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -3234,6 +3365,7 @@
                               <TextRun>
                                 <Value>=Fields!prix.Value</Value>
                                 <Style>
+                                  <FontFamily>Times New Roman</FontFamily>
                                   <Format>0.00'$';(0.00'$')</Format>
                                 </Style>
                               </TextRun>
@@ -3280,7 +3412,9 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Catégories</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Times New Roman</FontFamily>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -3331,7 +3465,9 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Total</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Times New Roman</FontFamily>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -3365,6 +3501,7 @@
                               <TextRun>
                                 <Value>=Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")</Value>
                                 <Style>
+                                  <FontFamily>Times New Roman</FontFamily>
                                   <Format>0.00'$';(0.00'$')</Format>
                                 </Style>
                               </TextRun>
@@ -3394,8 +3531,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetSalle</DataSetName>
-        <Top>9.4807in</Top>
-        <Left>0.00268in</Left>
+        <Top>10.45986in</Top>
+        <Left>0.02351in</Left>
         <Height>0.97917in</Height>
         <Width>6.71442in</Width>
         <ZIndex>13</ZIndex>
@@ -3427,6 +3564,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur") - ((((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * (Sum(Fields!jeunePourcent.Value, "DataSetCalculateur") / 100)) + (Sum(Fields!promo.Value, "DataSetCalculateur") * ((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) + (Sum(Fields!prevente.Value, "DataSetCalculateur") * ((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * 0.25) + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * Sum(Fields!customBillet1.Value, "DataSetCalculateur") * Sum(Fields!customPrix1.Value, "DataSetCalculateur") / 100 + (((Sum(Fields!billet.Value, "DataSetCalculateur") * Sum(Fields!prixBillet.Value, "DataSetCalculateur")) + Sum(Fields!billetVIP.Value, "DataSetCalculateur") * Sum(Fields!prixBilletVIP.Value, "DataSetCalculateur")) \ (Sum(Fields!billet.Value, "DataSetCalculateur") + Sum(Fields!billetVIP.Value, "DataSetCalculateur"))) * Sum(Fields!customBillet2.Value, "DataSetCalculateur") * Sum(Fields!customPrix2.Value, "DataSetCalculateur") / 100) - Sum(Fields!prix.Value, "DataSetSalle")</Value>
                               <Style>
+                                <FontFamily>Times New Roman</FontFamily>
                                 <Format>0.00'$'</Format>
                               </Style>
                             </TextRun>
@@ -3477,7 +3615,9 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Revenus total :</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Times New Roman</FontFamily>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -3501,8 +3641,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCalculateur</DataSetName>
-        <Top>10.70986in</Top>
-        <Left>1.42537in</Left>
+        <Top>11.68902in</Top>
+        <Left>1.4462in</Left>
         <Height>0.28125in</Height>
         <Width>5.29172in</Width>
         <ZIndex>14</ZIndex>
@@ -3521,6 +3661,7 @@
               <TextRun>
                 <Value>Billets</Value>
                 <Style>
+                  <FontFamily>Times New Roman</FontFamily>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -3530,10 +3671,142 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.71528in</Top>
+        <Top>1.69444in</Top>
+        <Left>0.0529cm</Left>
         <Height>0.25in</Height>
         <Width>2.50535in</Width>
         <ZIndex>15</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image1">
+        <Source>Embedded</Source>
+        <Value>logo_Home</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.39688cm</Top>
+        <Left>1.12168cm</Left>
+        <Height>1.68452cm</Height>
+        <Width>3.74896cm</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Style>Double</Style>
+            <Width>3.25pt</Width>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Rapport du calculateur</Value>
+                <Style>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Left>5.04703cm</Left>
+        <Height>2.28424cm</Height>
+        <Width>8.34474cm</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border />
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox21">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!nom.Value, "DataSetSousEvent")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox21</rd:DefaultName>
+        <Top>0.52778in</Top>
+        <Left>2.69044in</Left>
+        <Height>0.25in</Height>
+        <Width>1.98375in</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox30">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!nom.Value, "DataNomEvent")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox30</rd:DefaultName>
+        <Top>0.27209in</Top>
+        <Left>3.08627in</Left>
+        <Height>0.2418in</Height>
+        <Width>1.16667in</Width>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -3548,98 +3821,8 @@
     <Height>11.97791in</Height>
     <Style />
   </Body>
-  <Width>6.76819in</Width>
+  <Width>6.78902in</Width>
   <Page>
-    <PageHeader>
-      <Height>1.01042in</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <ReportItems>
-        <Image Name="Image1">
-          <Source>Embedded</Source>
-          <Value>logo_Home</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.47625cm</Top>
-          <Left>0.17841cm</Left>
-          <Height>1.68452cm</Height>
-          <Width>3.74896cm</Width>
-          <Style>
-            <Border>
-              <Style>Double</Style>
-              <Width>3.25pt</Width>
-            </Border>
-          </Style>
-        </Image>
-        <Textbox Name="Textbox11">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Rapport du calculateur</Value>
-                  <Style>
-                    <FontFamily>times New Roman</FontFamily>
-                    <FontSize>12pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Festi-Rire 2018</Value>
-                  <Style>
-                    <FontFamily>times New Roman</FontFamily>
-                    <FontSize>12pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Spectacle 2018</Value>
-                  <Style>
-                    <FontFamily>times New Roman</FontFamily>
-                    <FontSize>12pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Top>0.07937cm</Top>
-          <Left>4.10376cm</Left>
-          <Height>2.28424cm</Height>
-          <Width>8.34474cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border />
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-      </ReportItems>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageHeader>
     <PageFooter>
       <Height>0.8125in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
@@ -3664,6 +3847,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0cm</Top>
           <Left>0.70378cm</Left>
           <Height>0.52062cm</Height>
           <Width>9.69667cm</Width>
@@ -3684,7 +3868,7 @@
                 <TextRun>
                   <Value>=FormatDateTime(Globals!ExecutionTime, DateFormat.GeneralDate)</Value>
                   <Style>
-                    <FontFamily>times New Roman</FontFamily>
+                    <FontFamily>Times New Roman</FontFamily>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -3692,7 +3876,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.03528cm</Top>
+          <Top>0.07056cm</Top>
           <Left>12.74836cm</Left>
           <Height>0.82904cm</Height>
           <Width>4.30626cm</Width>
@@ -3953,6 +4137,54 @@
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>tblSousEvenementTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataNomEvent">
+      <Query>
+        <DataSourceName>PE2_OfficielDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="noEvenement">
+          <DataField>noEvenement</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="nom">
+          <DataField>nom</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dateDebut">
+          <DataField>dateDebut</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="datefin">
+          <DataField>datefin</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="affiche">
+          <DataField>affiche</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="url">
+          <DataField>url</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="description">
+          <DataField>description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dateSupprime">
+          <DataField>dateSupprime</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>PE2_OfficielDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\utilisateur.DESKTOP-7L405VB\Desktop\Projet_fin_etudes_2016-2017\Sprint 2\Package 1\Code\asp.net boilerplate\ECJ.Web\Rapport\DataSet\PE2_OfficielDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>tblEvenement</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>tblEvenementTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

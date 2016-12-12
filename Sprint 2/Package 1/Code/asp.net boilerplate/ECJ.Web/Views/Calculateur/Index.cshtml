@@ -13,7 +13,7 @@
     @Html.IncludeStyle("~/Views/Calculateur/Index.css") @*Il reste a enlever le curseur par dessus les champs readonly*@
 }
 
-@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" , onsubmit = "return Calcultotal()" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
@@ -351,7 +351,7 @@
             <div class="row">
                 <btn class="btn btn-default" onclick="Calcultotal()">Calculer</btn>
                 <btn class="btn btn-default" onclick="remiseAZero()">Remettre à zero</btn>
-                <button  type="submit" class="btn btn-primary blue valid" onsubmit="return Calcultotal()"><span>Enregistrer</span></button>
+                <button  type="submit" class="btn btn-primary blue valid" ><span>Enregistrer</span></button>
             </div>
         </div>
 }

@@ -429,7 +429,7 @@ namespace ECJ.Web.Controllers
                                           s.nom,
                                           s.description,
                                           s.noEvenement,
-                                          s.noSalle
+                                          s.noSalle,
                                       }).ToList();
 
             var reportQuerySalle = (from s in db.ReturnListSalle().Where(a => a.noSalle == db.FindSousEvenement((int)id).noSalle)
@@ -445,6 +445,13 @@ namespace ECJ.Web.Controllers
                                          s.urlGoogleMap
                                     }).ToList();
 
+            var reportQueryNomEvent = (from s in db.ToutEvenement().Where(a => a.noEvenement == db.ReturnEvenement((reportQuerySSEvent.FirstOrDefault().noEvenement)).noEvenement)
+                                    select new
+                                    {
+                                        s.noEvenement,
+                                        s.nom,
+                                    }).ToList();
+
 
             LocalReport u = new LocalReport();
             u.ReportPath = "Rapport/ReportCalculateur.rdlc";
@@ -453,9 +460,11 @@ namespace ECJ.Web.Controllers
             ReportDataSource datasourceCalcul = new ReportDataSource("DataSetCalculateur", reportQueryCalculateur);
             ReportDataSource datasourceSSEvent = new ReportDataSource("DataSetSousEvent", reportQuerySSEvent);
             ReportDataSource datasourceSalle = new ReportDataSource("DataSetSalle", reportQuerySalle);
+            ReportDataSource datasourceNomEvent = new ReportDataSource("DataNomEvent", reportQueryNomEvent);
             u.DataSources.Add(datasourceCalcul);
             u.DataSources.Add(datasourceSSEvent);
             u.DataSources.Add(datasourceSalle);
+            u.DataSources.Add(datasourceNomEvent);
 
             //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());
             //u.SetParameters(new[] { p });
