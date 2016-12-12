@@ -20,7 +20,7 @@ namespace ECJ.Web.Controllers
 
         public ActionResult Edit()
         {
-            ViewBag.Question = new SelectList(provider.ToutQuestion(), "IdQuestion", "Question");
+            ViewBag.Question = new SelectList(provider.ToutQuestion(), "NoQuestion", "Question");
 
             var id = (long)AbpSession.UserId;
 
@@ -31,7 +31,7 @@ namespace ECJ.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdQuestion,Reponse")] AbpUsers Users)
+        public ActionResult Edit([Bind(Include = "NoQuestion,Reponse")] AbpUsers Users)
         {
             var id = (long)AbpSession.UserId;
 
@@ -55,7 +55,7 @@ namespace ECJ.Web.Controllers
 
             if (Users.Reponse != null)
             {
-                abp.IdQuestion = Users.IdQuestion;
+                abp.NoQuestion = Users.NoQuestion;
                 abp.Reponse = Users.Reponse;
             }
 

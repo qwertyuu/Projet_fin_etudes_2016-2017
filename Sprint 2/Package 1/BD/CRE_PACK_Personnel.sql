@@ -31,3 +31,11 @@ CREATE TABLE S_personnel.tblMemo (
 	);
 PRINT 'Fin de la création de la table memo'
  
+ GO
+ PRINT 'Création de la table questionSecrète'
+CREATE TABLE S_personnel.tblQuestionSecrete
+(
+	NoQuestion INT NOT NULL IDENTITY(1,1),
+	Question varchar(100) NOT NULL
+)
+ PRINT 'Fin de la création de la table questionSecrète'

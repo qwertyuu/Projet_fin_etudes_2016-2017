@@ -90,6 +90,16 @@ namespace ECJ.Web.Controllers
 
         public ActionResult Modifier(int? id)
         {
+            ViewBag.Question = new SelectList(db.ToutQuestion(), "NoQuestion", "Question");
+            if (AbpSession.UserId == null)
+            {
+                ViewBag.UtilisateurCourrant = null;
+            }
+            else
+            {
+                ViewBag.UtilisateurCourrant = (long)AbpSession.UserId;
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -104,12 +114,21 @@ namespace ECJ.Web.Controllers
 
         public ActionResult Ajout()
         {
+            ViewBag.Question = new SelectList(db.ToutQuestion(), "NoQuestion", "Question");
+            if (AbpSession.UserId == null)
+            {
+                ViewBag.UtilisateurCourrant = null;
+            }
+            else
+            {
+                ViewBag.UtilisateurCourrant = (long)AbpSession.UserId;
+            }
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Ajout([Bind(Include = "Id,UserName,Name,Surname,EmailAddress,IsActive")] ECJ.Web.Models.AbpUsers AbpUser, string PasswordChange, int Role)
+        public ActionResult Ajout([Bind(Include = "Id,UserName,Name,Surname,EmailAddress,IsActive,NoQuestion, Reponse")] ECJ.Web.Models.AbpUsers AbpUser, string PasswordChange, int Role)
         {
             if (ModelState.IsValid)
             {
@@ -139,7 +158,7 @@ namespace ECJ.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Modifier([Bind(Include = "Id,UserName,Name,Surname,EmailAddress,IsActive")] ECJ.Web.Models.AbpUsers AbpUser, int Role)
+        public ActionResult Modifier([Bind(Include = "Id,UserName,Name,Surname,EmailAddress,IsActive,NoQuestion, Reponse")] ECJ.Web.Models.AbpUsers AbpUser, int Role)
         {
             if (ModelState.IsValid)
             {

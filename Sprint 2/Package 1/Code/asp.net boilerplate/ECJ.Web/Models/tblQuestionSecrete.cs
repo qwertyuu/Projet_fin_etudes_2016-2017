@@ -20,7 +20,7 @@ namespace ECJ.Web.Models
             this.AbpUsers = new HashSet<AbpUsers>();
         }
     
-        public int IdQuestion { get; set; }
+        public int NoQuestion { get; set; }
         public string Question { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

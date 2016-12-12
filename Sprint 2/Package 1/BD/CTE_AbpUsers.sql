@@ -7,17 +7,11 @@ GO
 ALTER TABLE S_evenement.tblActivite ADD
 CONSTRAINT NO_UTILISATEUR_CREATEUR FOREIGN KEY(noUtilisateur) REFERENCES dbo.AbpUsers(Id)
 GO
-CREATE TABLE tblQuestionSecrete
-(
-	IdQuestion INT NOT NULL IDENTITY(1,1),
-	Question varchar(100) NOT NULL
-)
-GO
-ALTER TABLE tblQuestionSecrete ADD
-PRIMARY KEY (IdQuestion)
+ALTER TABLE S_personnel.tblQuestionSecrete ADD
+PRIMARY KEY (NoQuestion)
 GO
 ALTER TABLE dbo.AbpUsers
-ADD IdQuestion INT NULL
+ADD NoQuestion INT NULL
 GO
 ALTER TABLE dbo.AbpUsers
 ADD Reponse varchar(100) NULL
@@ -26,4 +20,4 @@ ALTER TABLE dbo.AbpUsers
 ADD ImageProfil Varbinary(MAX) NULL
 GO
 ALTER TABLE dbo.AbpUsers ADD
-CONSTRAINT Id_Question FOREIGN KEY(IdQuestion) REFERENCES tblQuestionSecrete(IdQuestion)
+CONSTRAINT NO_Question FOREIGN KEY(NoQuestion) REFERENCES S_personnel.tblQuestionSecrete(NoQuestion)

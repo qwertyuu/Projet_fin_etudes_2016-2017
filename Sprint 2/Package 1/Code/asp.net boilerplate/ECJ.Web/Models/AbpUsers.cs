@@ -55,7 +55,7 @@ namespace ECJ.Web.Models
         public Nullable<long> LastModifierUserId { get; set; }
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
-        public Nullable<int> IdQuestion { get; set; }
+        public Nullable<int> NoQuestion { get; set; }
         public string Reponse { get; set; }
         public byte[] ImageProfil { get; set; }
     

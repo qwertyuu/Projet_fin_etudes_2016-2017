@@ -50,13 +50,23 @@
         <label>Image de profil (laisser vide pour ne pas modifier l'image courrante)</label>
         <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
     </div>
-    <div class="form-group">
-        <label>Question secrète</label>
-        <select class="form-control">
-            <option>Quelle est la date de naissance de votre père?</option>
-        </select>
-        <input class="form-control" type="text" name="QS" placeholder="Réponse" required>
-    </div>
+    if (ViewBag.UtilisateurCourrant != null)
+    {
+        <div class="form-group">
+            <label>Question  secrète </label>
+            @Html.DropDownList("NoQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "NoQuestion" })
+            <input class="form-control reponse" type="text" name="Reponse">
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            <label>Question  Secrète </label>
+            @Html.DropDownList("NoQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "NoQuestion" })
+            <input class="form-control reponse" type="text" name="Reponse">
+        </div>
+    }
+
     <div class="form-group">
         @{
             var actif = Model.IsActive ? "checked" : "";

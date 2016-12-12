@@ -340,16 +340,9 @@
           <Property Name="LastModifierUserId" Type="bigint" />
           <Property Name="CreationTime" Type="datetime" Nullable="false" />
           <Property Name="CreatorUserId" Type="bigint" />
-          <Property Name="IdQuestion" Type="int" />
+          <Property Name="NoQuestion" Type="int" />
           <Property Name="Reponse" Type="varchar" MaxLength="100" />
           <Property Name="ImageProfil" Type="varbinary(max)" />
-        </EntityType>
-        <EntityType Name="tblQuestionSecrete">
-          <Key>
-            <PropertyRef Name="IdQuestion" />
-          </Key>
-          <Property Name="IdQuestion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Question" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="tblAdresse">
           <Key>
@@ -679,6 +672,13 @@
           <Property Name="dateSupprime" Type="datetime" />
           <Property Name="expediteur" Type="bigint" Nullable="false" />
           <Property Name="destinataire" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblQuestionSecrete">
+          <Key>
+            <PropertyRef Name="NoQuestion" />
+          </Key>
+          <Property Name="NoQuestion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="tblAgencePublicite">
           <Key>
@@ -1353,18 +1353,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Id_Question">
-          <End Role="tblQuestionSecrete" Type="Self.tblQuestionSecrete" Multiplicity="0..1" />
-          <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblQuestionSecrete">
-              <PropertyRef Name="IdQuestion" />
-            </Principal>
-            <Dependent Role="AbpUsers">
-              <PropertyRef Name="IdQuestion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="MED_APPEL_FK">
           <End Role="tblMedia" Type="Self.tblMedia" Multiplicity="1" />
           <End Role="tblAppelOffre" Type="Self.tblAppelOffre" Multiplicity="*" />
@@ -1374,6 +1362,18 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Principal>
             <Dependent Role="tblAppelOffre">
               <PropertyRef Name="noMedia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NO_Question">
+          <End Role="tblQuestionSecrete" Type="Self.tblQuestionSecrete" Multiplicity="0..1" />
+          <End Role="AbpUsers" Type="Self.AbpUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblQuestionSecrete">
+              <PropertyRef Name="NoQuestion" />
+            </Principal>
+            <Dependent Role="AbpUsers">
+              <PropertyRef Name="NoQuestion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1652,7 +1652,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySet Name="AbpUserOrganizationUnits" EntityType="Self.AbpUserOrganizationUnits" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AbpUserRoles" EntityType="Self.AbpUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AbpUsers" EntityType="Self.AbpUsers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tblQuestionSecrete" EntityType="Self.tblQuestionSecrete" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAdresse" EntityType="Self.tblAdresse" Schema="S_Contrat" store:Type="Tables" />
           <EntitySet Name="tblAgence" EntityType="Self.tblAgence" Schema="S_Contrat" store:Type="Tables" />
           <EntitySet Name="tblArtiste" EntityType="Self.tblArtiste" Schema="S_Contrat" store:Type="Tables" />
@@ -1681,6 +1680,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <EntitySet Name="tblServiceOffert" EntityType="Self.tblServiceOffert" Schema="S_forfait" store:Type="Tables" />
           <EntitySet Name="tblServiceRequis" EntityType="Self.tblServiceRequis" Schema="S_forfait" store:Type="Tables" />
           <EntitySet Name="tblMemo" EntityType="Self.tblMemo" Schema="S_personnel" store:Type="Tables" />
+          <EntitySet Name="tblQuestionSecrete" EntityType="Self.tblQuestionSecrete" Schema="S_personnel" store:Type="Tables" />
           <EntitySet Name="tblAgencePublicite" EntityType="Self.tblAgencePublicite" Schema="S_publicite" store:Type="Tables" />
           <EntitySet Name="tblAppelOffre" EntityType="Self.tblAppelOffre" Schema="S_publicite" store:Type="Tables" />
           <EntitySet Name="tblMedia" EntityType="Self.tblMedia" Schema="S_publicite" store:Type="Tables" />
@@ -1947,13 +1947,13 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblForfait" EntitySet="tblForfait" />
             <End Role="tblForfaitSousEvenement" EntitySet="tblForfaitSousEvenement" />
           </AssociationSet>
-          <AssociationSet Name="Id_Question" Association="Self.Id_Question">
-            <End Role="tblQuestionSecrete" EntitySet="tblQuestionSecrete" />
-            <End Role="AbpUsers" EntitySet="AbpUsers" />
-          </AssociationSet>
           <AssociationSet Name="MED_APPEL_FK" Association="Self.MED_APPEL_FK">
             <End Role="tblMedia" EntitySet="tblMedia" />
             <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
+          </AssociationSet>
+          <AssociationSet Name="NO_Question" Association="Self.NO_Question">
+            <End Role="tblQuestionSecrete" EntitySet="tblQuestionSecrete" />
+            <End Role="AbpUsers" EntitySet="AbpUsers" />
           </AssociationSet>
           <AssociationSet Name="NO_UTILISATEUR_CREATEUR" Association="Self.NO_UTILISATEUR_CREATEUR">
             <End Role="AbpUsers" EntitySet="AbpUsers" />
@@ -2240,8 +2240,17 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="tblStatutAppelOffre" EntitySet="tblStatutAppelOffre" />
             <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
           </AssociationSet>
-          <EntitySet Name="tblQuestionSecrete" EntityType="PE2_OfficielModel.tblQuestionSecrete" />
+          <EntitySet Name="tblSoumission" EntityType="PE2_OfficielModel.tblSoumission" />
+          <AssociationSet Name="AGENCE_PUB_FK" Association="PE2_OfficielModel.AGENCE_PUB_FK">
+            <End Role="tblAgencePublicite" EntitySet="tblAgencePublicite" />
+            <End Role="tblSoumission" EntitySet="tblSoumission" />
+          </AssociationSet>
+          <AssociationSet Name="APPEL_OFFRE_FK" Association="PE2_OfficielModel.APPEL_OFFRE_FK">
+            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
+            <End Role="tblSoumission" EntitySet="tblSoumission" />
+          </AssociationSet>
           <EntitySet Name="AbpUsers" EntityType="PE2_OfficielModel.AbpUsers" />
+          <EntitySet Name="tblQuestionSecrete" EntityType="PE2_OfficielModel.tblQuestionSecrete" />
           <AssociationSet Name="FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" Association="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId">
             <End Role="AbpUsers" EntitySet="AbpUsers" />
             <End Role="AbpPermissions" EntitySet="AbpPermissions" />
@@ -2294,7 +2303,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             <End Role="AbpUsers" EntitySet="AbpUsers" />
             <End Role="AbpUsers1" EntitySet="AbpUsers" />
           </AssociationSet>
-          <AssociationSet Name="Id_Question" Association="PE2_OfficielModel.Id_Question">
+          <AssociationSet Name="NO_Question" Association="PE2_OfficielModel.NO_Question">
             <End Role="tblQuestionSecrete" EntitySet="tblQuestionSecrete" />
             <End Role="AbpUsers" EntitySet="AbpUsers" />
           </AssociationSet>
@@ -2309,15 +2318,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <AssociationSet Name="NO_UTILISATEUR_EXPEDITEUR" Association="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR">
             <End Role="AbpUsers" EntitySet="AbpUsers" />
             <End Role="tblMemo" EntitySet="tblMemo" />
-          </AssociationSet>
-          <EntitySet Name="tblSoumission" EntityType="PE2_OfficielModel.tblSoumission" />
-          <AssociationSet Name="AGENCE_PUB_FK" Association="PE2_OfficielModel.AGENCE_PUB_FK">
-            <End Role="tblAgencePublicite" EntitySet="tblAgencePublicite" />
-            <End Role="tblSoumission" EntitySet="tblSoumission" />
-          </AssociationSet>
-          <AssociationSet Name="APPEL_OFFRE_FK" Association="PE2_OfficielModel.APPEL_OFFRE_FK">
-            <End Role="tblAppelOffre" EntitySet="tblAppelOffre" />
-            <End Role="tblSoumission" EntitySet="tblSoumission" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="tblAdresse">
@@ -3550,14 +3550,47 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="tblQuestionSecrete">
+        <EntityType Name="tblSoumission">
           <Key>
-            <PropertyRef Name="IdQuestion" />
+            <PropertyRef Name="noSoumission" />
           </Key>
-          <Property Name="IdQuestion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Question" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="AbpUsers" Relationship="PE2_OfficielModel.Id_Question" FromRole="tblQuestionSecrete" ToRole="AbpUsers" />
+          <Property Name="noSoumission" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="noSoumissionAgence" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="prix" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="statut" Type="Byte" />
+          <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="noAgencePub" Type="Int32" Nullable="false" />
+          <Property Name="noAppelOffre" Type="Int32" Nullable="false" />
+          <Property Name="dateEnvoi" Type="DateTime" Precision="3" />
+          <Property Name="dateReponse" Type="DateTime" Precision="3" />
+          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblAgencePublicite" Relationship="PE2_OfficielModel.AGENCE_PUB_FK" FromRole="tblSoumission" ToRole="tblAgencePublicite" />
+          <NavigationProperty Name="tblAppelOffre" Relationship="PE2_OfficielModel.APPEL_OFFRE_FK" FromRole="tblSoumission" ToRole="tblAppelOffre" />
         </EntityType>
+        <Association Name="AGENCE_PUB_FK">
+          <End Type="PE2_OfficielModel.tblAgencePublicite" Role="tblAgencePublicite" Multiplicity="1" />
+          <End Type="PE2_OfficielModel.tblSoumission" Role="tblSoumission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAgencePublicite">
+              <PropertyRef Name="noAgencePub" />
+            </Principal>
+            <Dependent Role="tblSoumission">
+              <PropertyRef Name="noAgencePub" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APPEL_OFFRE_FK">
+          <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="1" />
+          <End Type="PE2_OfficielModel.tblSoumission" Role="tblSoumission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAppelOffre">
+              <PropertyRef Name="noAppelOffre" />
+            </Principal>
+            <Dependent Role="tblSoumission">
+              <PropertyRef Name="noAppelOffre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="AbpUsers">
           <Key>
             <PropertyRef Name="Id" />
@@ -3582,7 +3615,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <Property Name="LastModifierUserId" Type="Int64" />
           <Property Name="CreationTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="CreatorUserId" Type="Int64" />
-          <Property Name="IdQuestion" Type="Int32" />
+          <Property Name="NoQuestion" Type="Int32" />
           <Property Name="Reponse" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="ImageProfil" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="AbpPermissions" Relationship="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" FromRole="AbpUsers" ToRole="AbpPermissions" />
@@ -3601,10 +3634,18 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
           <NavigationProperty Name="AbpUsers3" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId" FromRole="AbpUsers1" ToRole="AbpUsers" />
           <NavigationProperty Name="AbpUsers12" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" FromRole="AbpUsers" ToRole="AbpUsers1" />
           <NavigationProperty Name="AbpUsers4" Relationship="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" FromRole="AbpUsers1" ToRole="AbpUsers" />
-          <NavigationProperty Name="tblQuestionSecrete" Relationship="PE2_OfficielModel.Id_Question" FromRole="AbpUsers" ToRole="tblQuestionSecrete" />
+          <NavigationProperty Name="tblQuestionSecrete" Relationship="PE2_OfficielModel.NO_Question" FromRole="AbpUsers" ToRole="tblQuestionSecrete" />
           <NavigationProperty Name="tblActivite" Relationship="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR" FromRole="AbpUsers" ToRole="tblActivite" />
           <NavigationProperty Name="tblMemo" Relationship="PE2_OfficielModel.NO_UTILISATEUR_DESTINATAIRE" FromRole="AbpUsers" ToRole="tblMemo" />
           <NavigationProperty Name="tblMemo1" Relationship="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR" FromRole="AbpUsers" ToRole="tblMemo" />
+        </EntityType>
+        <EntityType Name="tblQuestionSecrete">
+          <Key>
+            <PropertyRef Name="NoQuestion" />
+          </Key>
+          <Property Name="NoQuestion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AbpUsers" Relationship="PE2_OfficielModel.NO_Question" FromRole="tblQuestionSecrete" ToRole="AbpUsers" />
         </EntityType>
         <Association Name="FK_dbo_AbpPermissions_dbo_AbpUsers_UserId">
           <End Type="PE2_OfficielModel.AbpUsers" Role="AbpUsers" Multiplicity="0..1">
@@ -3768,15 +3809,15 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Id_Question">
+        <Association Name="NO_Question">
           <End Type="PE2_OfficielModel.tblQuestionSecrete" Role="tblQuestionSecrete" Multiplicity="0..1" />
           <End Type="PE2_OfficielModel.AbpUsers" Role="AbpUsers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblQuestionSecrete">
-              <PropertyRef Name="IdQuestion" />
+              <PropertyRef Name="NoQuestion" />
             </Principal>
             <Dependent Role="AbpUsers">
-              <PropertyRef Name="IdQuestion" />
+              <PropertyRef Name="NoQuestion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3813,47 +3854,6 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
             </Principal>
             <Dependent Role="tblMemo">
               <PropertyRef Name="expediteur" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="tblSoumission">
-          <Key>
-            <PropertyRef Name="noSoumission" />
-          </Key>
-          <Property Name="noSoumission" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="noSoumissionAgence" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="prix" Type="Decimal" Precision="19" Scale="2" />
-          <Property Name="statut" Type="Byte" />
-          <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="noAgencePub" Type="Int32" Nullable="false" />
-          <Property Name="noAppelOffre" Type="Int32" Nullable="false" />
-          <Property Name="dateEnvoi" Type="DateTime" Precision="3" />
-          <Property Name="dateReponse" Type="DateTime" Precision="3" />
-          <Property Name="dateSupprime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="tblAgencePublicite" Relationship="PE2_OfficielModel.AGENCE_PUB_FK" FromRole="tblSoumission" ToRole="tblAgencePublicite" />
-          <NavigationProperty Name="tblAppelOffre" Relationship="PE2_OfficielModel.APPEL_OFFRE_FK" FromRole="tblSoumission" ToRole="tblAppelOffre" />
-        </EntityType>
-        <Association Name="AGENCE_PUB_FK">
-          <End Type="PE2_OfficielModel.tblAgencePublicite" Role="tblAgencePublicite" Multiplicity="1" />
-          <End Type="PE2_OfficielModel.tblSoumission" Role="tblSoumission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblAgencePublicite">
-              <PropertyRef Name="noAgencePub" />
-            </Principal>
-            <Dependent Role="tblSoumission">
-              <PropertyRef Name="noAgencePub" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="APPEL_OFFRE_FK">
-          <End Type="PE2_OfficielModel.tblAppelOffre" Role="tblAppelOffre" Multiplicity="1" />
-          <End Type="PE2_OfficielModel.tblSoumission" Role="tblSoumission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblAppelOffre">
-              <PropertyRef Name="noAppelOffre" />
-            </Principal>
-            <Dependent Role="tblSoumission">
-              <PropertyRef Name="noAppelOffre" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4727,11 +4727,19 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblQuestionSecrete">
-            <EntityTypeMapping TypeName="PE2_OfficielModel.tblQuestionSecrete">
-              <MappingFragment StoreEntitySet="tblQuestionSecrete">
-                <ScalarProperty Name="Question" ColumnName="Question" />
-                <ScalarProperty Name="IdQuestion" ColumnName="IdQuestion" />
+          <EntitySetMapping Name="tblSoumission">
+            <EntityTypeMapping TypeName="PE2_OfficielModel.tblSoumission">
+              <MappingFragment StoreEntitySet="tblSoumission">
+                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
+                <ScalarProperty Name="dateReponse" ColumnName="dateReponse" />
+                <ScalarProperty Name="dateEnvoi" ColumnName="dateEnvoi" />
+                <ScalarProperty Name="noAppelOffre" ColumnName="noAppelOffre" />
+                <ScalarProperty Name="noAgencePub" ColumnName="noAgencePub" />
+                <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+                <ScalarProperty Name="statut" ColumnName="statut" />
+                <ScalarProperty Name="prix" ColumnName="prix" />
+                <ScalarProperty Name="noSoumissionAgence" ColumnName="noSoumissionAgence" />
+                <ScalarProperty Name="noSoumission" ColumnName="noSoumission" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4740,7 +4748,7 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
               <MappingFragment StoreEntitySet="AbpUsers">
                 <ScalarProperty Name="ImageProfil" ColumnName="ImageProfil" />
                 <ScalarProperty Name="Reponse" ColumnName="Reponse" />
-                <ScalarProperty Name="IdQuestion" ColumnName="IdQuestion" />
+                <ScalarProperty Name="NoQuestion" ColumnName="NoQuestion" />
                 <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
                 <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
                 <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
@@ -4764,19 +4772,11 @@ avertissement 6002: La table/vue 'PE2_Officiel.S_publicite.vueSomSoumission' n'a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblSoumission">
-            <EntityTypeMapping TypeName="PE2_OfficielModel.tblSoumission">
-              <MappingFragment StoreEntitySet="tblSoumission">
-                <ScalarProperty Name="dateSupprime" ColumnName="dateSupprime" />
-                <ScalarProperty Name="dateReponse" ColumnName="dateReponse" />
-                <ScalarProperty Name="dateEnvoi" ColumnName="dateEnvoi" />
-                <ScalarProperty Name="noAppelOffre" ColumnName="noAppelOffre" />
-                <ScalarProperty Name="noAgencePub" ColumnName="noAgencePub" />
-                <ScalarProperty Name="commentaire" ColumnName="commentaire" />
-                <ScalarProperty Name="statut" ColumnName="statut" />
-                <ScalarProperty Name="prix" ColumnName="prix" />
-                <ScalarProperty Name="noSoumissionAgence" ColumnName="noSoumissionAgence" />
-                <ScalarProperty Name="noSoumission" ColumnName="noSoumission" />
+          <EntitySetMapping Name="tblQuestionSecrete">
+            <EntityTypeMapping TypeName="PE2_OfficielModel.tblQuestionSecrete">
+              <MappingFragment StoreEntitySet="tblQuestionSecrete">
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="NoQuestion" ColumnName="NoQuestion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

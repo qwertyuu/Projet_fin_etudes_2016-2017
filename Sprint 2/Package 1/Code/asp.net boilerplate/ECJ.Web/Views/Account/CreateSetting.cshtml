@@ -35,16 +35,11 @@
         <input class="form-control PasswordChange2" type="password" name="PasswordChange2" id="PasswordChange2" minlength="8" required>
     </div>
 
-    <div class="form-group">
-        <label>Changer l'image de profil</label>
-        <input class="Image" type="file" name="pic" accept="image/png,image/jpeg,image/gif" required>
-    </div>
-
     if (ViewBag.UtilisateurCourrant != null)
     {
         <div class="form-group">
             <label>Question  secrète </label>
-            @Html.DropDownList("IdQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "IdQuestion" })
+            @Html.DropDownList("NoQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "NoQuestion" })
             <input class="form-control reponse" type="text" name="Reponse" required>
         </div>
     }
@@ -52,7 +47,7 @@
     {
         <div class="form-group">
             <label>Question  Secrète </label>
-            @Html.DropDownList("IdQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "IdQuestion" })
+            @Html.DropDownList("NoQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "NoQuestion" })
             <input class="form-control reponse" type="text" name="Reponse" required>
         </div>
     }

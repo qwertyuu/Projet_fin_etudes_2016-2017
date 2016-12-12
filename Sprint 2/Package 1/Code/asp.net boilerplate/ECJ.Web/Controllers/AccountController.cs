@@ -75,7 +75,7 @@ namespace ECJ.Web.Controllers
         {
             var response = Request["g-recaptcha-response"];
             //secret that was generated in key value pair
-            const string secret = "6LeEOA0UAAAAANqjZJSMBlNxd5XCRHK7nUfe-AZ6";
+            const string secret = "6LeDOA0UAAAAAN-X4JSD66z5jT3WCds-5juuj7hF";
 
             var client = new WebClient();
             var reply =
@@ -96,7 +96,7 @@ namespace ECJ.Web.Controllers
         }
         public ActionResult CreateSetting()
         {
-            ViewBag.Question = new SelectList(provider.ToutQuestion(), "IdQuestion", "Question");
+            ViewBag.Question = new SelectList(provider.ToutQuestion(), "NoQuestion", "Question");
             if(AbpSession.UserId == null)
             {
                 ViewBag.UtilisateurCourrant = null;
@@ -111,29 +111,15 @@ namespace ECJ.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateSetting([Bind(Include = "IdQuestion,Reponse")] AbpUsers Users, string PasswordChange,string utilisateur)
+        public ActionResult CreateSetting([Bind(Include = "NoQuestion,Reponse")] AbpUsers Users, string PasswordChange,string utilisateur)
         {
             abp = null;
             abp = provider.ReturnUtilisateur(utilisateur);
 
             if(abp.Id != 0)
             {
-                if (Request.Files["pic"].ContentLength > 0)
-                {
-                    var pic = Request.Files["pic"];
-                    using (var reader = new System.IO.BinaryReader(pic.InputStream))
-                    {
-                        abp.ImageProfil = reader.ReadBytes(pic.ContentLength);
-                    }
-                }
-                else
-                {
-                    return View();
-                }
-                provider.UpdateUser(abp);
-
                 abp.Password = new PasswordHasher().HashPassword(PasswordChange);
-                abp.IdQuestion = Users.IdQuestion;
+                abp.NoQuestion = Users.NoQuestion;
                 abp.Reponse = Users.Reponse;
 
                 return RedirectToAction("Verification/" + abp.Id);

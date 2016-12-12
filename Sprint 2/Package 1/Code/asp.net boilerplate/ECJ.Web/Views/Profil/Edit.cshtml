@@ -24,18 +24,29 @@
         <input class="form-control PasswordChange2" type="password" name="PasswordChange2" id="PasswordChange2" minlength="8">
     </div>
 
-    <img width="200" src="@Url.Action("GetFile","profil", new { id = Model.Id})" alt="Image de profil" />
+    if(Model.ImageProfil == null)
+    {
+        <label>Aucune image de profil</label>
+        <div class="form-group">
+            <label>Changer l'image de profil</label>
+            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+        </div>
+    }
+    else
+    {
+        <img width="200" src="@Url.Action("GetFile","profil", new { id = Model.Id})" alt="Image de profil" />
+        <div class="form-group">
+            <label>Changer l'image de profil</label>
+            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+        </div>
+    }
 
-    <div class="form-group">
-        <label>Changer l'image de profil</label>
-        <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
-    </div>
 
     if (ViewBag.UtilisateurCourrant != null)
     {
         <div class="form-group">
             <label>Question  secrète </label>
-            @Html.DropDownList("IdQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "IdQuestion" })
+            @Html.DropDownList("NoQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "NoQuestion" })
             <input class="form-control reponse" type="text" name="Reponse" >
         </div>
     }
@@ -43,7 +54,7 @@
     {
         <div class="form-group">
             <label>Question  Secrète </label>
-            @Html.DropDownList("IdQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "IdQuestion" })
+            @Html.DropDownList("NoQuestion", (SelectList)ViewBag.Question, new { @class = "form-control", name = "NoQuestion" })
             <input class="form-control reponse" type="text" name="Reponse" >
         </div>
     }

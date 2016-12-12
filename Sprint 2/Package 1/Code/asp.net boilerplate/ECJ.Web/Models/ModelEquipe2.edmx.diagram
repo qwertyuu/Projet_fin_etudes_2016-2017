@@ -99,8 +99,11 @@
         <AssociationConnector Association="PE2_OfficielModel.EVENEMENT_APPEL_FK" />
         <AssociationConnector Association="PE2_OfficielModel.MED_APPEL_FK" />
         <AssociationConnector Association="PE2_OfficielModel.STATUT_APPEL_FK" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblQuestionSecrete" Width="1.5" PointX="15" PointY="38.75" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUsers" Width="1.5" PointX="17.25" PointY="45.875" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblSoumission" Width="1.5" PointX="11.25" PointY="8.75" />
+        <AssociationConnector Association="PE2_OfficielModel.AGENCE_PUB_FK" />
+        <AssociationConnector Association="PE2_OfficielModel.APPEL_OFFRE_FK" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.AbpUsers" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="PE2_OfficielModel.tblQuestionSecrete" Width="1.5" PointX="1.5" PointY="36.625" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" />
@@ -114,13 +117,10 @@
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId" />
         <AssociationConnector Association="PE2_OfficielModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" />
-        <AssociationConnector Association="PE2_OfficielModel.Id_Question" />
+        <AssociationConnector Association="PE2_OfficielModel.NO_Question" />
         <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_CREATEUR" />
         <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_DESTINATAIRE" />
         <AssociationConnector Association="PE2_OfficielModel.NO_UTILISATEUR_EXPEDITEUR" />
-        <EntityTypeShape EntityType="PE2_OfficielModel.tblSoumission" Width="1.5" PointX="11.25" PointY="8.75" />
-        <AssociationConnector Association="PE2_OfficielModel.AGENCE_PUB_FK" />
-        <AssociationConnector Association="PE2_OfficielModel.APPEL_OFFRE_FK" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
