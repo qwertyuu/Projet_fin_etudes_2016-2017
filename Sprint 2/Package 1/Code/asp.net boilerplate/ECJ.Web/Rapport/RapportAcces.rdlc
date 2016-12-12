@@ -1749,199 +1749,11 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
-              <Tablix Name="Tablix4">
-                <TablixBody>
-                  <TablixColumns>
-                    <TablixColumn>
-                      <Width>1.69391in</Width>
-                    </TablixColumn>
-                    <TablixColumn>
-                      <Width>1.69391in</Width>
-                    </TablixColumn>
-                  </TablixColumns>
-                  <TablixRows>
-                    <TablixRow>
-                      <Height>0.2309in</Height>
-                      <TablixCells>
-                        <TablixCell>
-                          <CellContents>
-                            <Textbox Name="Textbox139">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>Utilisateur</Value>
-                                      <Style />
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox139</rd:DefaultName>
-                              <Style>
-                                <Border>
-                                  <Style>Solid</Style>
-                                </Border>
-                                <BackgroundColor>LightGrey</BackgroundColor>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                          </CellContents>
-                        </TablixCell>
-                        <TablixCell>
-                          <CellContents>
-                            <Textbox Name="Textbox127">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>Nombre d'accès</Value>
-                                      <Style />
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox126</rd:DefaultName>
-                              <Style>
-                                <Border>
-                                  <Style>Solid</Style>
-                                </Border>
-                                <BackgroundColor>LightGrey</BackgroundColor>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                          </CellContents>
-                        </TablixCell>
-                      </TablixCells>
-                    </TablixRow>
-                    <TablixRow>
-                      <Height>0.2309in</Height>
-                      <TablixCells>
-                        <TablixCell>
-                          <CellContents>
-                            <Textbox Name="Textbox140">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Lookup(Fields!UserId.Value, Fields!Id.Value, Fields!UserName.Value, "Users")</Value>
-                                      <Style />
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox140</rd:DefaultName>
-                              <Style>
-                                <Border>
-                                  <Style>Solid</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                          </CellContents>
-                        </TablixCell>
-                        <TablixCell>
-                          <CellContents>
-                            <Textbox Name="Textbox142">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Count(Fields!Id.Value)</Value>
-                                      <Style />
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox142</rd:DefaultName>
-                              <Style>
-                                <Border>
-                                  <Style>Solid</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                          </CellContents>
-                        </TablixCell>
-                      </TablixCells>
-                    </TablixRow>
-                  </TablixRows>
-                </TablixBody>
-                <TablixColumnHierarchy>
-                  <TablixMembers>
-                    <TablixMember />
-                    <TablixMember />
-                  </TablixMembers>
-                </TablixColumnHierarchy>
-                <TablixRowHierarchy>
-                  <TablixMembers>
-                    <TablixMember>
-                      <KeepWithGroup>After</KeepWithGroup>
-                    </TablixMember>
-                    <TablixMember>
-                      <Group Name="Détails1">
-                        <GroupExpressions>
-                          <GroupExpression>=Fields!UserId.Value</GroupExpression>
-                        </GroupExpressions>
-                      </Group>
-                      <SortExpressions>
-                        <SortExpression>
-                          <Value>=Count(Fields!Id.Value)</Value>
-                          <Direction>Descending</Direction>
-                        </SortExpression>
-                      </SortExpressions>
-                    </TablixMember>
-                  </TablixMembers>
-                </TablixRowHierarchy>
-                <KeepTogether>true</KeepTogether>
-                <DataSetName>Logs</DataSetName>
-                <Top>0.54514in</Top>
-                <Left>3.4962in</Left>
-                <Height>0.4618in</Height>
-                <Width>3.38782in</Width>
-                <ZIndex>3</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
-              </Tablix>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>7.86254cm</Top>
             <Left>0.03497cm</Left>
-            <Height>2.55765cm</Height>
+            <Height>1.41994cm</Height>
             <Width>17.48541cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
@@ -2159,7 +1971,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>Logs</DataSetName>
-            <Top>3.64063in</Top>
+            <Top>3.66841in</Top>
             <Left>0.01377in</Left>
             <Height>0.4618in</Height>
             <Width>3.4345in</Width>
@@ -2187,7 +1999,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox146</rd:DefaultName>
-            <Top>4.10244in</Top>
+            <Top>4.17187in</Top>
             <Left>0.01377in</Left>
             <Height>0.38542in</Height>
             <Width>2.74619in</Width>
@@ -2464,7 +2276,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                 </FilterValues>
               </Filter>
             </Filters>
-            <Top>4.54341in</Top>
+            <Top>4.61284in</Top>
             <Left>0.01377in</Left>
             <Height>0.5in</Height>
             <Width>2.74619in</Width>
@@ -2744,7 +2556,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
               </Style>
             </ChartNoDataMessage>
             <DataSetName>Logs</DataSetName>
-            <Top>4.11632in</Top>
+            <Top>4.18575in</Top>
             <Left>2.80163in</Left>
             <Height>1.96875in</Height>
             <Width>4.06865in</Width>
@@ -2757,8 +2569,196 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
+          <Tablix Name="Tablix4">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.69391in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.69391in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.2309in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox139">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Utilisateur</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox139</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox127">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Nombre d'accès</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox126</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.2309in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox140">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Lookup(Fields!UserId.Value, Fields!Id.Value, Fields!UserName.Value, "Users")</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox140</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox142">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Count(Fields!Id.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox142</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Détails1">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!UserId.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Count(Fields!Id.Value)</Value>
+                      <Direction>Descending</Direction>
+                    </SortExpression>
+                  </SortExpressions>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <KeepTogether>true</KeepTogether>
+            <DataSetName>Logs</DataSetName>
+            <Top>3.6684in</Top>
+            <Left>3.48246in</Left>
+            <Height>0.4618in</Height>
+            <Width>3.38782in</Width>
+            <ZIndex>15</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
         </ReportItems>
-        <Height>6.08507in</Height>
+        <Height>6.1545in</Height>
         <Style />
       </Body>
       <Width>17.57329cm</Width>

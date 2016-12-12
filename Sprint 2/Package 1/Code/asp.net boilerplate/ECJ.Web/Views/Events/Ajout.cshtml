@@ -20,7 +20,7 @@
     </div>
     <div class="form-group">
         <label>Date de début</label>
-        <input class="form-control dp date1" type="text" name="dateDebut" value="@(Model.dateDebut == DateTime.MinValue ? "" : String.Format("{0:yyyy/MM/dd}", Model.dateDebut))" required>
+        <input class="form-control dp date1" type="text" name="dateDebut" value="@(Model.dateDebut == DateTime.MinValue ? "" : Model.dateDebut.ToString("yyyy/MM/dd"))" required>
     </div>
     <div class="form-group">
         <label>Date de fin</label>
@@ -28,7 +28,7 @@
     </div>
     <div class="form-group">
         <label>Lien hypertexte</label>
-        <input class="form-control url" type="text" name="url" value="@Model.url" required>
+        <input class="form-control url" type="text" name="url" value="@Model.url">
     </div>
     <div class="form-group">
         <label>Description</label>

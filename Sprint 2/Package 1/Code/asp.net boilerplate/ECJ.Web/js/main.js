@@ -4,6 +4,14 @@
     abp.event.on('abp.notifications.received', function (userNotification) {
         abp.notifications.showUiNotifyForUserNotification(userNotification);
     });
+    var datepickers = $('.dp');
+    if (datepickers.length) {
+        datepickers.each(function () {
+            var ce_datepicker = $(this)
+            ce_datepicker.val(ce_datepicker.val().replace(/\-/g, '/'));
+        });
+
+    }
 
     //serializeFormToObject plugin for jQuery
     $.fn.serializeFormToObject = function () {
@@ -74,7 +82,6 @@
     });
 
     $("table:not(.ui-datepicker-calendar, .noTS)").tablesorter();
-
 
 })(jQuery);
 
@@ -312,7 +319,7 @@ function validerIntPositif(form) {
         if (!entier) {
             return true;
         }
-        var entierParsed = parseInt(entier);
+        var entierParsed = parseFloat(entier);
         if (!entierParsed || entierParsed < 0) {
             valide = false;
             alert("Le champ doit être positif");

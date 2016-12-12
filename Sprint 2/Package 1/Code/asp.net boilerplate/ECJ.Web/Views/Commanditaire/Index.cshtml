@@ -5,11 +5,14 @@
     ViewBag.Title = "Index";
     ViewBag.ActiveMenu = "Commanditaires";
 }
-
-<h1>Commanditaire</h1>
 <div>
-    <button data-target="#rapportComenditaire" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-file-pdf-o"></i> Générer Rapport</button><br />
-</div><br />
+    <div class="pull-right">
+        <button data-target="#rapportComenditaire" data-toggle="modal" class="btn btn-primary pull-right"><i class="fa fa-file-pdf-o"></i> Générer Rapport</button>
+
+    </div>
+    <h1>Commanditaire</h1>
+</div>
+
 <div>
     <div>
         @using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "page-header" }))
