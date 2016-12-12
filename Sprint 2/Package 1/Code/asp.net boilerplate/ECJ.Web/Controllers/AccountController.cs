@@ -75,7 +75,7 @@ namespace ECJ.Web.Controllers
         {
             var response = Request["g-recaptcha-response"];
             //secret that was generated in key value pair
-            const string secret = "6LeDOA0UAAAAAN-X4JSD66z5jT3WCds-5juuj7hF";
+            const string secret = "6LdGjw4UAAAAAFhLv9bT3rFvljJVWF6Hh-AyVU-E";
 
             var client = new WebClient();
             var reply =
@@ -116,7 +116,7 @@ namespace ECJ.Web.Controllers
             abp = null;
             abp = provider.ReturnUtilisateur(utilisateur);
 
-            if(abp.Id != 0)
+            if (abp.Id != 0 && Users.NoQuestion == abp.NoQuestion && Users.Reponse == abp.Reponse)
             {
                 abp.Password = new PasswordHasher().HashPassword(PasswordChange);
                 abp.NoQuestion = Users.NoQuestion;
@@ -126,6 +126,7 @@ namespace ECJ.Web.Controllers
             }
             else
             {
+                ViewBag.Question = new SelectList(provider.ToutQuestion(), "NoQuestion", "Question");
                 return View();
             }
         }
