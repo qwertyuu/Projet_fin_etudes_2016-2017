@@ -853,12 +853,13 @@
     <Content Include="Rapport\ReportComendite_Event.rdlc" />
     <Content Include="Rapport\ReportCommenditaire.rdlc" />
     <Content Include="Rapport\ReportDon.rdlc" />
-    <Content Include="Rapport\ReportSecurite.rdlc" />
     <Content Include="Rapport\ReportSoumission.rdlc" />
-    <Content Include="Rapport\ReportStatut.rdlc" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Rapport\Report_Facture.rdlc" />
+    <Content Include="Rapport\Report_Facture.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Rapport\ReportComSousEvent.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

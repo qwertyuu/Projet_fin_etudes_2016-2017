@@ -327,9 +327,12 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetSoumission</DataSetName>
-        <Top>10.20716cm</Top>
+        <Top>10.18841cm</Top>
         <Height>1.2cm</Height>
         <Width>16.85652cm</Width>
+        <Visibility>
+          <Hidden>=Parameters!nbSoumission.Value = "0"</Hidden>
+        </Visibility>
         <Style>
           <Border>
             <Style>None</Style>
@@ -357,10 +360,13 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>11.76931cm</Top>
+        <Top>11.78576cm</Top>
         <Height>0.6cm</Height>
         <Width>16.5cm</Width>
         <ZIndex>1</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!nbSoumission.Value = "0"</Hidden>
+        </Visibility>
         <Style>
           <Border />
           <PaddingLeft>2pt</PaddingLeft>
@@ -390,10 +396,13 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>9.43077cm</Top>
+        <Top>9.41202cm</Top>
         <Height>0.6cm</Height>
         <Width>16.5cm</Width>
         <ZIndex>2</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!nbSoumission.Value = "0"</Hidden>
+        </Visibility>
         <Style>
           <Border />
           <PaddingLeft>2pt</PaddingLeft>
@@ -1018,6 +1027,7 @@
                         </Border>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1504,7 +1514,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetSoumission</DataSetName>
-        <Top>12.43987cm</Top>
+        <Top>12.56215cm</Top>
         <Height>4.11896cm</Height>
         <Width>9.69667cm</Width>
         <ZIndex>9</ZIndex>
@@ -1788,11 +1798,13 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSetSoumission</DataSetName>
-        <Top>16.69994cm</Top>
-        <Left>0.91336cm</Left>
+        <Top>17.59861cm</Top>
         <Height>6.46399cm</Height>
-        <Width>14.95257cm</Width>
+        <Width>16.5cm</Width>
         <ZIndex>10</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!nbSoumission.Value = "0"</Hidden>
+        </Visibility>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1802,11 +1814,48 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Cet appel d'offres n'a aucune soumission ni d'agence de publcité</Value>
+                <Style>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>16.8575cm</Top>
+        <Left>0.91336cm</Left>
+        <Height>0.6cm</Height>
+        <Width>13.21916cm</Width>
+        <ZIndex>11</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!nbSoumission.Value &lt;&gt;"0"</Hidden>
+        </Visibility>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>9.11966in</Height>
+    <Height>9.47346in</Height>
     <Style />
   </Body>
-  <Width>16.88298cm</Width>
+  <Width>16.85652cm</Width>
   <Page>
     <PageFooter>
       <Height>1.45518cm</Height>
@@ -2151,6 +2200,10 @@
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="auteur">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="nbSoumission">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

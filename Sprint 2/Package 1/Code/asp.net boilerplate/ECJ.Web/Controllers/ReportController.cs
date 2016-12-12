@@ -223,6 +223,7 @@ namespace ECJ.Web.Controllers
             u.DataSources.Add(dataSourceStatut);
             u.DataSources.Add(dataSourceAgence);
             u.DataSources.Add(dataSourceEvent);
+            u.SetParameters(new ReportParameter("nbSoumission",reportQuerySoumi.Count.ToString()));
             u.SetParameters(new ReportParameter("auteur", db.ReturnUtilisateur(AbpSession.UserId.Value).UserName));
 
 
@@ -261,6 +262,7 @@ namespace ECJ.Web.Controllers
         {
             var EventSelect = Request.QueryString["filtre_unTous"];
             var SousEvent = Request.QueryString["filtre_SousEvent"];
+            int nbComEvent = 0;
 
             var reportQueryCom = (from c in db.ToutCommenditaire()
                                   select new
@@ -343,10 +345,16 @@ namespace ECJ.Web.Controllers
 
             LocalReport u = new LocalReport();
             u.ReportPath = "Rapport/ReportComendite_Event.rdlc";
+            //On charge tous les commenditaires 
+            nbComEvent = reportQueryCom.Count;
+            foreach(var com in reportQueryComSousEvent)
+            {
+                if(!reportQueryCom.Contains(com))
+                reportQueryCom.Add(com);
+            }
             u.DataSources.Clear();
             ReportDataSource datasourceComSous = new ReportDataSource("DataSetEvent", reportQuery);
             ReportDataSource datasourceComDon = new ReportDataSource("DataSetCommenditaire", reportQueryCom);
-            ReportDataSource datasourceComDonSousEvent = new ReportDataSource("DataSetCommenditaire", reportQueryComSousEvent);
             ReportDataSource datasourceSouesEvent = new ReportDataSource("DataSetSousEvent", reportQuerySousEvent);
             var dsDons = new ReportDataSource("DataSetDon", reportQueryDon);
 
@@ -354,9 +362,11 @@ namespace ECJ.Web.Controllers
             u.DataSources.Add(datasourceComDon);
             u.DataSources.Add(dsDons);
             u.DataSources.Add(datasourceSouesEvent);
-            u.DataSources.Add(datasourceComDonSousEvent);
             u.SubreportProcessing += U_SubreportComEvent;
             u.SetParameters(new ReportParameter("auteur", db.ReturnUtilisateur(AbpSession.UserId.Value).UserName));
+            u.SetParameters(new ReportParameter("nbComSousEvent", reportQueryComSousEvent.Count.ToString()));
+            u.SetParameters(new ReportParameter("nbComEvent", nbComEvent.ToString()));
+            u.SetParameters(new ReportParameter("nbComFinal", reportQueryCom.Count.ToString()));
 
             //ReportParameter p = new ReportParameter("DeptID", deptID.ToString());
             //u.SetParameters(new[] { p });

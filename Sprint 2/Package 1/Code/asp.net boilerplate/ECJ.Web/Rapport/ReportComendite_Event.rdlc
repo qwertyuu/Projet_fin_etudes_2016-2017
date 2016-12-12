@@ -203,9 +203,13 @@
         </TablixRowHierarchy>
         <RepeatRowHeaders>true</RepeatRowHeaders>
         <DataSetName>DataSetEvent</DataSetName>
-        <Top>3.07346cm</Top>
+        <Top>3.74946cm</Top>
+        <Left>0cm</Left>
         <Height>1.21391cm</Height>
         <Width>17.08228cm</Width>
+        <Visibility>
+          <Hidden>=Parameters!nbComEvent.Value = "0"</Hidden>
+        </Visibility>
         <Style>
           <Border>
             <Style>None</Style>
@@ -342,7 +346,6 @@
                         </LeftBorder>
                       </Style>
                     </Subreport>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -366,10 +369,14 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCommenditaire</DataSetName>
-        <Top>8.26687cm</Top>
+        <Top>8.94287cm</Top>
+        <Left>0cm</Left>
         <Height>1.33542cm</Height>
         <Width>17.08228cm</Width>
         <ZIndex>1</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!nbComFinal.Value = "0"</Hidden>
+        </Visibility>
         <Style>
           <Border>
             <Style>None</Style>
@@ -450,6 +457,7 @@
         </ChartData>
         <ChartAreas>
           <ChartArea Name="Default">
+            <Hidden>=Parameters!nbComFinal.Value = "0"</Hidden>
             <ChartCategoryAxes>
               <ChartAxis Name="Primary">
                 <Style>
@@ -606,6 +614,7 @@
         <ChartTitles>
           <ChartTitle Name="Default">
             <Caption>Montant accumulé par type de commanditaire</Caption>
+            <Hidden>=Parameters!nbComFinal.Value &lt;&gt; "0"</Hidden>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -631,7 +640,8 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSetCommenditaire</DataSetName>
-        <Top>9.60229cm</Top>
+        <Top>10.86947cm</Top>
+        <Left>0.3175cm</Left>
         <Height>11.29754cm</Height>
         <Width>17.24863cm</Width>
         <ZIndex>2</ZIndex>
@@ -814,10 +824,14 @@
         </TablixRowHierarchy>
         <RepeatRowHeaders>true</RepeatRowHeaders>
         <DataSetName>DataSetSousEvent</DataSetName>
-        <Top>5.59101cm</Top>
+        <Top>6.26701cm</Top>
+        <Left>0cm</Left>
         <Height>1.21391cm</Height>
         <Width>17.08228cm</Width>
         <ZIndex>3</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!nbComSousEvent.Value = "0"</Hidden>
+        </Visibility>
         <Style>
           <Border>
             <Style>None</Style>
@@ -845,11 +859,14 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
-        <Top>4.53608cm</Top>
+        <Top>5.21208cm</Top>
         <Left>1.0826cm</Left>
         <Height>0.6cm</Height>
         <Width>15.99968cm</Width>
         <ZIndex>4</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!nbComSousEvent.Value = "0"</Hidden>
+        </Visibility>
         <Style>
           <Border />
           <PaddingLeft>2pt</PaddingLeft>
@@ -879,11 +896,14 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
-        <Top>2.30617cm</Top>
+        <Top>2.17841cm</Top>
         <Left>0.62447cm</Left>
         <Height>0.6cm</Height>
         <Width>15.99968cm</Width>
         <ZIndex>5</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!nbComEvent.Value = "0"</Hidden>
+        </Visibility>
         <Style>
           <Border />
           <PaddingLeft>2pt</PaddingLeft>
@@ -991,11 +1011,88 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
-        <Top>7.18231cm</Top>
+        <Top>7.85831cm</Top>
         <Left>1.0826cm</Left>
         <Height>0.6cm</Height>
         <Width>15.99968cm</Width>
         <ZIndex>8</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!nbComFinal.Value = "0"</Hidden>
+        </Visibility>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox15">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Cet évènement n'a pas de commenditaires</Value>
+                <Style>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>2.91952cm</Top>
+        <Left>0.62447cm</Left>
+        <Height>0.6cm</Height>
+        <Width>15.99968cm</Width>
+        <ZIndex>9</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!nbComEvent.Value &lt;&gt; "0"</Hidden>
+        </Visibility>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Ce sous-évènement n'a pas de commenditaires</Value>
+                <Style>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>5.63173cm</Top>
+        <Left>1.0826cm</Left>
+        <Height>0.6cm</Height>
+        <Width>15.99968cm</Width>
+        <ZIndex>10</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!nbComSousEvent.Value &lt;&gt; "0"</Hidden>
+        </Visibility>
         <Style>
           <Border />
           <PaddingLeft>2pt</PaddingLeft>
@@ -1005,10 +1102,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>20.97067cm</Height>
+    <Height>22.19347cm</Height>
     <Style />
   </Body>
-  <Width>17.25646cm</Width>
+  <Width>17.56613cm</Width>
   <Page>
     <PageFooter>
       <Height>1.31438cm</Height>
@@ -1295,6 +1392,18 @@
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="auteur">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="nbComSousEvent">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="nbComEvent">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="nbComFinal">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

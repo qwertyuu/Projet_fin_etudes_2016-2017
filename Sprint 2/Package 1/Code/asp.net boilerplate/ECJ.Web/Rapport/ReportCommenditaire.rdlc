@@ -25,7 +25,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!nomCommanditaire.Value</Value>
+                              <Value>=IIF(IsNothing(Fields!nomCommanditaire.Value),"Aucun commenditaire",Fields!nomCommanditaire.Value)</Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                               </Style>
@@ -62,7 +62,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!textePresentation.Value</Value>
+                              <Value>=IIF(IsNothing(Fields!textePresentation.Value),"Aucun commenditaire",Fields!textePresentation.Value)</Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                               </Style>
