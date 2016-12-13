@@ -64,6 +64,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceDescriptionLongue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceCommentaire)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHeure)).BeginInit();
@@ -185,16 +187,16 @@
             // 
             this.rtbCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbCommentaire.Location = new System.Drawing.Point(19, 179);
+            this.rtbCommentaire.Location = new System.Drawing.Point(19, 204);
             this.rtbCommentaire.Name = "rtbCommentaire";
-            this.rtbCommentaire.Size = new System.Drawing.Size(464, 251);
+            this.rtbCommentaire.Size = new System.Drawing.Size(464, 226);
             this.rtbCommentaire.TabIndex = 50;
             this.rtbCommentaire.Text = "";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 137);
+            this.label8.Location = new System.Drawing.Point(16, 161);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 13);
             this.label8.TabIndex = 49;
@@ -298,7 +300,7 @@
             // numPoliceCommentaire
             // 
             this.numPoliceCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numPoliceCommentaire.Location = new System.Drawing.Point(105, 153);
+            this.numPoliceCommentaire.Location = new System.Drawing.Point(105, 177);
             this.numPoliceCommentaire.Name = "numPoliceCommentaire";
             this.numPoliceCommentaire.Size = new System.Drawing.Size(35, 20);
             this.numPoliceCommentaire.TabIndex = 74;
@@ -313,7 +315,7 @@
             // 
             this.btnEnumCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnumCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnumCommentaire.Location = new System.Drawing.Point(145, 153);
+            this.btnEnumCommentaire.Location = new System.Drawing.Point(145, 177);
             this.btnEnumCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnumCommentaire.Name = "btnEnumCommentaire";
             this.btnEnumCommentaire.Size = new System.Drawing.Size(47, 21);
@@ -326,7 +328,7 @@
             // 
             this.btnSouslignerCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSouslignerCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSouslignerCommentaire.Location = new System.Drawing.Point(52, 153);
+            this.btnSouslignerCommentaire.Location = new System.Drawing.Point(52, 177);
             this.btnSouslignerCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnSouslignerCommentaire.Name = "btnSouslignerCommentaire";
             this.btnSouslignerCommentaire.Size = new System.Drawing.Size(23, 21);
@@ -339,7 +341,7 @@
             // 
             this.btnItaliqueCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnItaliqueCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItaliqueCommentaire.Location = new System.Drawing.Point(79, 153);
+            this.btnItaliqueCommentaire.Location = new System.Drawing.Point(79, 177);
             this.btnItaliqueCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnItaliqueCommentaire.Name = "btnItaliqueCommentaire";
             this.btnItaliqueCommentaire.Size = new System.Drawing.Size(21, 21);
@@ -352,7 +354,7 @@
             // 
             this.btnGrasCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrasCommentaire.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrasCommentaire.Location = new System.Drawing.Point(24, 153);
+            this.btnGrasCommentaire.Location = new System.Drawing.Point(24, 177);
             this.btnGrasCommentaire.Margin = new System.Windows.Forms.Padding(2);
             this.btnGrasCommentaire.Name = "btnGrasCommentaire";
             this.btnGrasCommentaire.Size = new System.Drawing.Size(24, 21);
@@ -472,12 +474,32 @@
             this.label18.TabIndex = 82;
             this.label18.Text = "* Champs obligatoires";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 142);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 13);
+            this.label9.TabIndex = 83;
+            this.label9.Text = "Événement:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(87, 142);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 13);
+            this.label11.TabIndex = 84;
+            this.label11.Text = "Festi-rire 2016";
+            // 
             // DetailEngagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 474);
             this.ControlBox = false;
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -565,5 +587,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
     }
 }
