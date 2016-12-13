@@ -13,7 +13,14 @@
     <div class="form-group">
         <label>Numéro de l'agence</label>
         <div class="well well-sm">
-            @Html.DisplayFor(model => model.noSoumissionAgence)
+            @if (Model.noSoumissionAgence== null || Model.noSoumissionAgence=="")
+            {
+                <span>Aucun numéro</span>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.noSoumissionAgence)
+            }
         </div>
     </div>
 
@@ -38,12 +45,23 @@
             {
                 @Html.DisplayFor(model => model.prix)<span> $</span>
             }
+            else
+            {
+                <span>Aucun prix</span>
+            }
         </div>
     </div>
     <div class="form-group">
         <label>Commentaire</label>
         <div class="well well-sm">
-            @Html.DisplayFor(model => model.commentaire)
+            @if (Model.commentaire == null || Model.commentaire=="")
+            {
+                <span>Aucun Commentaire</span>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.commentaire)
+            }
         </div>
     </div>
 
@@ -62,7 +80,7 @@
                 }
                 else
                 {
-                    <span></span>
+                    <span>Aucun statut</span>
                 }
             }
    
