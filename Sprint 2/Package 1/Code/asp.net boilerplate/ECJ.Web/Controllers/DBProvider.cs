@@ -1517,5 +1517,28 @@ namespace ECJ.Web.Controllers
             }
             return new tblSousEvenement();
         }
+        public void AjouterSalle(tblSalle salle)
+        {
+            try
+            {
+                db.tblSalle.Add(salle);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+        public void ModiferSalle(tblSalle salle)
+        {
+            try
+            {
+                db.Entry(salle).State = EntityState.Modified;
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
     }
 }

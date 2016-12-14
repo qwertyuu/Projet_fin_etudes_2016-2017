@@ -1,0 +1,42 @@
+﻿@using ECJ.Web.Models
+@using ECJ.Authorization;
+@using Abp.Web.Mvc.Extensions
+
+@{
+    ViewBag.Title = "ModifierSalles";
+}
+
+@section scripts
+{
+    @Html.IncludeScript("~/Views/Salles/Details.js")
+}
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <input type="text" min=0 class="form-control" id="noSalle" name="noSalle" value="@ViewBag.Salle.noSalle" style="display:none">
+
+    <div class="form-group">
+        <label>Nom</label>
+        <input type="text" min=0 class="form-control" id="nomSalle" name="nomSalle"  value="@ViewBag.Salle.nomSalle">
+    </div>
+    <div class="form-group">
+        <label>Prix</label>
+        <input type="text" min=0 class="form-control" id="prix" name="prix" value="@(ViewBag.Salle.prix.ToString().Replace(",", "."))">
+    </div>
+    <div class="form-group">
+        <label>Billets standard</label>
+        <input type="number" min=0 class="form-control" id="totalBillet" name="billet" value="@ViewBag.Salle.billet">
+    </div>
+    <div class="form-group">
+        <label>Billets VIP</label>
+        <input type="number" min=0 class="form-control" id="BilletVIP" name="billetVIP" value="@ViewBag.Salle.billetVIP">
+    </div>
+    <input type="text" min=0 class="form-control" id="photo" name="photoSalle" value="@ViewBag.Salle.photoSalle" style="display:none">
+    <input type="text" min=0 class="form-control" id="url" name="urlGoogleMap" value="@ViewBag.Salle.urlGoogleMap" style="display:none">
+    <div class="form-group pull-right">
+        <button type="submit" class="btn btn-primary blue valid"><i class="fa fa-save"></i> <span>Enregistrer</span></button>
+        <a href="~/Salles" class="btn btn-default" data-dismiss="modal">Annuler</a>
+    </div>
+}

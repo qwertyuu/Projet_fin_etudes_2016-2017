@@ -801,6 +801,7 @@
     <Content Include="Views\Account\Verification.cshtml" />
     <Content Include="Views\Account\Correct.cshtml" />
     <Content Include="Views\Salles\Ajouter.cshtml" />
+    <Content Include="Views\Salles\Modifier.cshtml" />
     <None Include="Web.Cegep.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
