@@ -653,7 +653,7 @@ iif(Parameters!date_fin.Value Is Nothing, "à aujourd'hui", "au " &amp; Format(P
                   <Width>0.82236in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.94117in</Width>
+                  <Width>2.26432in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1037,7 +1037,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>1.35674in</Size>
+                    <Size>1.11738in</Size>
                     <CellContents>
                       <Textbox Name="ExecutionTime">
                         <CanGrow>true</CanGrow>
@@ -1078,7 +1078,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>1.1994in</Size>
+                        <Size>1.1156in</Size>
                         <CellContents>
                           <Textbox Name="Textbox15">
                             <CanGrow>true</CanGrow>
@@ -1126,10 +1126,16 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                           <GroupExpression>=Lookup(Fields!UserId.Value, Fields!UserId.Value, Fields!Id.Value, "UserRoles")</GroupExpression>
                         </GroupExpressions>
                       </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!ExecutionTime.Value</Value>
+                          <Direction>Descending</Direction>
+                        </SortExpression>
+                      </SortExpressions>
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>1.1994in</Size>
+                            <Size>1.1156in</Size>
                             <CellContents>
                               <Textbox Name="Textbox21">
                                 <CanGrow>true</CanGrow>
@@ -1286,7 +1292,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.11458in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1419,7 +1425,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.09375in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1571,7 +1577,8 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Lookup(Fields!UserId.Value, Fields!UserId.Value, Fields!Id.Value, "UserRoles")</Value>
+                      <Value>=Fields!ExecutionTime.Value</Value>
+                      <Direction>Descending</Direction>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
@@ -1612,10 +1619,11 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
-                      <KeepWithGroup>After</KeepWithGroup>
+                      <RepeatOnNewPage>true</RepeatOnNewPage>
                     </TablixMember>
                     <TablixMember>
                       <KeepWithGroup>After</KeepWithGroup>
+                      <RepeatOnNewPage>true</RepeatOnNewPage>
                     </TablixMember>
                     <TablixMember>
                       <Group Name="Detail1" />
@@ -1639,8 +1647,8 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             </SortExpressions>
             <Top>2.3316in</Top>
             <Left>0.01377in</Left>
-            <Height>0.75in</Height>
-            <Width>6.88401in</Width>
+            <Height>0.45833in</Height>
+            <Width>6.88402in</Width>
             <ZIndex>8</ZIndex>
             <Visibility>
               <Hidden>=Parameters!periode.Value &lt;&gt; "tous"</Hidden>
@@ -1752,7 +1760,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>7.86254cm</Top>
+            <Top>7.17026cm</Top>
             <Left>0.03497cm</Left>
             <Height>1.41994cm</Height>
             <Width>17.4854cm</Width>
@@ -1780,7 +1788,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>7.86254cm</Top>
+            <Top>7.17026cm</Top>
             <Left>1.82385in</Left>
             <Height>0.55903in</Height>
             <Width>1.64445in</Width>
@@ -1972,7 +1980,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>Logs</DataSetName>
-            <Top>3.68228in</Top>
+            <Top>3.40973in</Top>
             <Left>0.01991in</Left>
             <Height>0.4618in</Height>
             <Width>3.4345in</Width>
@@ -2000,7 +2008,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox146</rd:DefaultName>
-            <Top>4.17187in</Top>
+            <Top>3.89932in</Top>
             <Left>0.01377in</Left>
             <Height>0.38542in</Height>
             <Width>2.74619in</Width>
@@ -2277,7 +2285,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
                 </FilterValues>
               </Filter>
             </Filters>
-            <Top>4.61284in</Top>
+            <Top>4.34029in</Top>
             <Left>0.01377in</Left>
             <Height>0.5in</Height>
             <Width>2.74619in</Width>
@@ -2557,7 +2565,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
               </Style>
             </ChartNoDataMessage>
             <DataSetName>Logs</DataSetName>
-            <Top>4.18575in</Top>
+            <Top>3.9132in</Top>
             <Left>2.80163in</Left>
             <Height>1.96875in</Height>
             <Width>4.06865in</Width>
@@ -2747,7 +2755,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>Logs</DataSetName>
-            <Top>3.6823in</Top>
+            <Top>3.40975in</Top>
             <Left>3.50996in</Left>
             <Height>0.4618in</Height>
             <Width>3.38782in</Width>
@@ -2759,7 +2767,7 @@ IIF(Parameters!periode.Value = "jour", Month(Fields!ExecutionTime.Value) &amp; D
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>6.1545in</Height>
+        <Height>5.88195in</Height>
         <Style />
       </Body>
       <Width>17.57329cm</Width>
