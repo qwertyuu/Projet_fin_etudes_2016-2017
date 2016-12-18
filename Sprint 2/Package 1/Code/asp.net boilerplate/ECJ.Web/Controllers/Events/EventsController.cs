@@ -113,7 +113,11 @@ namespace ECJ.Web.Controllers
                 }
                 else
                 {
-                    tblEvenement.affiche = db.ReturnEvenement(tblEvenement.noEvenement).affiche;
+                    var evenement = db.ReturnEvenement(tblEvenement.noEvenement);
+                    if(evenement != null)
+                    {
+                        tblEvenement.affiche = evenement.affiche;
+                    }
                 }
                 db.InsertEvenement(tblEvenement);
 
