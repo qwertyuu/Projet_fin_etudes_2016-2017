@@ -55,8 +55,6 @@ INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noE
 INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Souper 2015','Le souper 2015 est en fait un souper bénéfice. Tout l''argent amassé à ce souper sera remis à des fondations et quelques invités surprises sont invités à faire un spectacle sur la grande scène',NULL,7);
 INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Spectacle 2016','Le Spectacle 2016 est le specatacle de l''année 2016 comportant plusieurs artistes de renom. Il sert à conclure l''année 2016 avec un spectacle grandiose.',NULL,8);
 INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Collecte de fond 2016','La collecte de fond 2016 est en fait une collecte de fond à travers la province. Il y a une grande activitée dans une ville de Québec afin de collecter de l''argent auprès du public',NULL,8);
-INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Souper Bénéfice 2017','Tout l''argent amassé à ce souper sera remis à des fondations et quelques invités surprises sont invités à faire un spectacle sur la grande scène',NULL,8);
-INSERT INTO S_evenement.tblSousEvenement([nom],[description],[dateSupprime],[noEvenement]) VALUES('Spectacle 2017','La collecte de fond 2016 est en fait une collecte de fond à travers la province. Il y a une grande activitée dans une ville de Québec afin de collecter de l''argent auprès du public',NULL,8);
 GO
 
 PRINT('Fin des insertions des sous-évènements')

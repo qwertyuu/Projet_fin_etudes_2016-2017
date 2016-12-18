@@ -14,7 +14,7 @@
  INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(5, 2, 'Events/Detail/1', 0, '20160506 14:30:00','Admin, peux-tu confirmer si j''ai bien entré les sous-evenements?');
  INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(9, 2, '', 1, '20160509 10:30:00','Le bouton en bas de la page est grisé.. c''est normal?');
  INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(8, 2, '', 1, '20160510 14:30:00','Il serait bien de pouvoir voir notre photo en tout temps.');
- INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(2, 2, '', 1, '20160511 13:30:00','Je n''ai pas accès aux appels d''offres est-ce que mes permissions ont changées?');
+ INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(9, 2, '', 1, '20160511 13:30:00','Je n''ai pas accès aux appels d''offres est-ce que mes permissions ont changées?');
  INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(3, 4, 'Events', 0, '20160517 14:30:00','Clique sur le bouton de crayon à droite pour modifier un événement!');
  INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(5, 4, '', 0, '20160518 13:30:00','Peux-tu demander à monique où elle a pris sa barre de chocolat?');
  INSERT INTO S_Personnel.tblMemo(expediteur, destinataire, lien, statut, dateEnvoi, info) VALUES 	(8, 4, 'Events/Detail/1', 0, '20160519 10:30:00','J''ai fait des modifications');

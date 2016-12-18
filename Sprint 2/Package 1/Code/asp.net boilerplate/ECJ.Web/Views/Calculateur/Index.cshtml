@@ -368,7 +368,7 @@
         </div>
     </div>
 </form>
-<a href="~/sousEvenements/Detail/@ViewBag.SousEvent.noSousEvenement" class="btn btn-default pull-right" title="Retourner au sous-événement">Retourner au sous-événement</a><br />
+<a href="@Request.QueryString["return"]" class="btn btn-default pull-right" title="Retourner au sous-événement">Retourner au sous-événement</a><br />
 
 <script>
     var maxBillet = @ViewBag.Salle.billet;
