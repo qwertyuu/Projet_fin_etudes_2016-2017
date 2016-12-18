@@ -45,7 +45,7 @@ namespace ECJ.Web.Controllers
                 else
                 {
                     var exclu_id_int = int.Parse(exclu_id);
-                    return db.AbpUsers.Where(u => !u.IsDeleted && u.Id != exclu_id_int).Any(u => u.UserName == uname);
+                    return db.AbpUsers.Where(u => !u.IsDeleted && u.Id != exclu_id_int && u.Id != 1).Any(u => u.UserName == uname);
                 }
             }
             catch (Exception e)
@@ -545,7 +545,7 @@ namespace ECJ.Web.Controllers
         {
             try
             {
-                return db.AbpUsers.Where(u => u.Id != 1).ToList();
+                return db.AbpUsers.Where(u => u.Id != 1 && !u.IsDeleted).ToList();
             }
             catch (Exception e)
             {
