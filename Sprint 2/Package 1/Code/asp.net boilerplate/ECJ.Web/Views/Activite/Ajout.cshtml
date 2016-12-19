@@ -12,8 +12,8 @@
     <input type="hidden" name="noUtilisateur" value="@ViewBag.UtilisateurCourrant">
 
     <div class="form-group">
-        <label>Nom du responsable</label>
-        <input class="form-control" type="text" name="nomResponsable" maxlength="50" required>
+        <label>Nom du responsable </label>
+        @Html.DropDownList("UserName", (SelectList)ViewBag.Responsable, new { @class = "form-control"})
     </div>
     <div class="form-group">
         <label>Réalisé </label>

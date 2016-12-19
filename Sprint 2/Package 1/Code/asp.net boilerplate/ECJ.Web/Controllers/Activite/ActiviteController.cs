@@ -26,16 +26,20 @@ namespace ECJ.Web.Controllers.Activite
         public ActionResult Ajout()
         {
             ViewBag.UtilisateurCourrant = (long)AbpSession.UserId;
+            ViewBag.Responsable = new SelectList(db.ToutUtilisateurs(), "Id", "UserName");
             return View();
         }
 
         [HttpPost]
-        public ActionResult Ajout([Bind(Include = "nomResponsable,etat,tache,detail,dateCreation,noEvenement,noSousEvenement,noUtilisateur")] tblActivite tblActivite)
+        public ActionResult Ajout([Bind(Include = "etat,tache,detail,dateCreation,noEvenement,noSousEvenement,noUtilisateur")] tblActivite tblActivite, string UserName)
         {
             var idEvent = Request.QueryString["evenement_id"];
             var idSousEvent = Request.QueryString["sousevenement_id"];
             var retour = Request.QueryString["return"];
-            
+
+            var nomResponsable = db.ReturnUtilisateur((long)Convert.ToInt32(UserName)).UserName;
+
+            tblActivite.nomResponsable = nomResponsable;
             if (ModelState.IsValid)
             {
                 if (retour.Contains("sousEvenements"))
@@ -103,16 +107,20 @@ namespace ECJ.Web.Controllers.Activite
                 return HttpNotFound();
             }
             ViewBag.UtilisateurCourrant = (long)AbpSession.UserId;
+            ViewBag.Responsable = new SelectList(db.ToutUtilisateurs(), "Id", "UserName");
             return View(elementAModifier);
         }
 
         // POST: tblActivites/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Modifier([Bind(Include = "noActivite,nomResponsable,etat,dateCreation,tache,detail,dateSupprime,noEvenement,noSousEvenement,noUtilisateur")] tblActivite tblActivite)
+        public ActionResult Modifier([Bind(Include = "noActivite,nomResponsable,etat,dateCreation,tache,detail,dateSupprime,noEvenement,noSousEvenement,noUtilisateur")] tblActivite tblActivite,string  UserName)
         {
             var retour = Request.QueryString["return"];
 
+            var nomResponsable = db.ReturnUtilisateur((long)Convert.ToInt32(UserName)).UserName;
+
+            tblActivite.nomResponsable = nomResponsable;
             if (ModelState.IsValid)
             {
                 if(db.ReturnActivite(tblActivite.noActivite).noEvenement != null)
