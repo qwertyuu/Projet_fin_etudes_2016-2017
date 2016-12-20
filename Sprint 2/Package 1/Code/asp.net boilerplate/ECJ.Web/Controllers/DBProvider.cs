@@ -1382,17 +1382,17 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
         }
-        public List<vueSomSalle> ToutVueSalle()
+        public List<tblSalle> ToutVueSalle()
         {
             try
             {
-                return db.vueSomSalle.ToList();
+                return db.tblSalle.Where(a => a.dateSupprime == null).ToList();
             }
             catch (Exception e)
             {
                 LayoutController.erreur = e;
             }
-            return new List<vueSomSalle>();
+            return new List<tblSalle>();
         }
         public void InsertServiceOffert(int id, int serviceAAjouter)
         {
@@ -1529,16 +1529,42 @@ namespace ECJ.Web.Controllers
                 LayoutController.erreur = e;
             }
         }
-        public void ModiferSalle(tblSalle salle)
+        public void ModifierSalle(tblSalle salle)
         {
             try
             {
-                db.Entry(salle).State = EntityState.Modified;
+                db.Entry(db.tblSalle.Find(salle.noSalle)).CurrentValues.SetValues(salle);
+                db.SaveChanges();
             }
             catch (Exception e)
             {
                 LayoutController.erreur = e;
             }
+        }
+        internal void SupprimerSalle(int id)
+        {
+            try
+            {
+                var elementASupprimer = ReturnSalle(id);
+                elementASupprimer.dateSupprime = DateTime.Now;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+        }
+        public List<tblSousEvenement> ReturnListEventWithSalle(int salleid)
+        {
+            try
+            {
+                return db.tblSousEvenement.ToList().Where(s => s.noSalle == salleid).ToList();
+            }
+            catch (Exception e)
+            {
+                LayoutController.erreur = e;
+            }
+            return new List<tblSousEvenement>();
         }
     }
 }
