@@ -14,10 +14,11 @@
     margin-left: 0px;
 }
 
-h3, h2 {
-    font-weight: bold;
-}
 #souper{
     width:51%;
     height:inherit;
+}
+
+#calculateur, #souper, #souperdiv, #age, #carte, #calculfinal, #tot,h1,h2,h3{
+    font-family:"Open Sans",Calibri,Candara,Arial,sans-serif;
 }

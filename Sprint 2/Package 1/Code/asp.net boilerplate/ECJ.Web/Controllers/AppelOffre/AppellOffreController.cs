@@ -43,7 +43,7 @@ namespace ECJ.Web.Controllers.AppelOffre
             XmlNode xmlNoSoumiAgence = doc.CreateNode(XmlNodeType.Element, "noSoumissionAgence", "");
             xmlNoSoumiAgence.InnerText = soumi.noSoumissionAgence;
             XmlNode xmlPrix = doc.CreateNode(XmlNodeType.Element, "Prix", "");
-            if(soumi.prix.ToString()=="")
+            if(soumi.prix==null)
             {
                 xmlPrix.InnerText = prix.ToString();
             }
@@ -81,14 +81,14 @@ namespace ECJ.Web.Controllers.AppelOffre
                                  "<xs:element name=\"Soumission\">" +
                                     "<xs:complexType>" +
                                       "<xs:sequence>" +
-                                        "<xs:element name=\"NoSoumission\" type=\"xs:positiveInteger\" minOccurs=\"1\" maxOccurs=\"1\"/>" +
-                                        "<xs:element name=\"noSoumissionAgence\" type=\"xs:string\"  minOccurs=\"1\" maxOccurs=\"1\"/>" +
-                                        "<xs:element name=\"Nom\" type=\"xs:string\"  minOccurs=\"1\" maxOccurs=\"1\"/>" +
-                                        "<xs:element name=\"Prix\" type=\"xs:decimal\"  minOccurs=\"1\" maxOccurs=\"1\"/>" +
-                                        "<xs:element name=\"noAgencePub\" type=\"xs:positiveInteger\"  minOccurs=\"1\" maxOccurs=\"1\"/>" +
-                                        "<xs:element name=\"noAppelOffre\" type=\"xs:positiveInteger\" nillable=\"false\"/>" +
-                                        "<xs:element name=\"Statut\" type=\"xs:string\"/>" +
-                                        "<xs:element name=\"Commentaire\" type=\"xs:string\" minOccurs=\"1\" maxOccurs=\"1\"/>" +
+                                        "<xs:element name=\"NoSoumission\" type=\"xs:positiveInteger\"/>" +
+                                        "<xs:element name=\"noSoumissionAgence\" type=\"xs:string\"/> " +
+                                        "<xs:element name=\"Nom\" type=\"xs:string\"/>" +
+                                        "<xs:element name=\"Prix\" type=\"xs:decimal\"/> " +
+                                        "<xs:element name=\"noAgencePub\" type=\"xs:positiveInteger\" />" +
+                                        "<xs:element name=\"noAppelOffre\" type=\"xs:positiveInteger\"/>" +
+                                        "<xs:element name=\"Statut\" type=\"xs:string\"/> " +
+                                        "<xs:element name=\"Commentaire\" type=\"xs:string\"/>" +
                                      "</xs:sequence>" +
                                     "</xs:complexType>" +
                                   "</xs:element>" +
@@ -214,16 +214,21 @@ namespace ECJ.Web.Controllers.AppelOffre
             return Path.GetInvalidFileNameChars().Aggregate(fileName, (current, c) => current.Replace(c.ToString(), string.Empty));
         }
 
-        private void ArchiverXML(XmlDocument doc, string pathXml, string pathArhive,string pathRetour)
+        private void ArchiverXML(XmlDocument doc, string pathXml, string pathArhive)
         {
             DirectoryInfo dr = null;
             dr = CreateDirectory(pathArhive);
-            if(dr!=null)
+            if (dr != null)
             {
                 pathArhive = dr.FullName;
             }
             //on copy le fichier
-            System.IO.File.Move(Path.Combine(pathRetour, pathXml), Path.Combine(pathArhive, pathXml));
+            //On supprime le fichier s'il exite déja.
+            if(System.IO.File.Exists(pathArhive + "\\" + Path.GetFileName(pathXml)))
+            {
+                System.IO.File.Delete(pathArhive + "\\" + Path.GetFileName(pathXml));
+            }
+            System.IO.File.Move(pathXml,pathArhive+"\\"+Path.GetFileName(pathXml));
         }
         private void RetournerSoumissionXml()
         {
@@ -267,8 +272,27 @@ namespace ECJ.Web.Controllers.AppelOffre
                             soumi.commentaire = soumission["Commentaire"].InnerText;
                             provider.Save();
                         }
+
                     //lorsque que la soumission à été validée par l'agence de publicité on l'archive
-                    ArchiverXML(doc, f.file, pathArchive, pathRetour);
+                    if(soumission["noSoumissionAgence"].InnerText=="" || soumission["Commentaire"].InnerText=="")
+                    {
+                        try
+                        {
+                            StreamWriter fileLog = new StreamWriter("E:\\inetpub\\wwwroot\\Projet2016\\Equipe2\\logErreur.txt", true);
+                            fileLog.WriteLine("Le numéro de soumission et commentaire de l'agence de publicité doit être précisé pour pouvoir archiver le XML.");
+                            doc.Save(fileLog);
+                            fileLog.Close();
+                        }
+                        catch (IOException IOEx)
+                        {
+                            ViewBag.IO = IOEx.Message;
+                            LayoutController.erreur = IOEx;
+                        }
+                    }
+                    else
+                    {
+                        ArchiverXML(doc, f.file, pathArchive);
+                    }
 
                 }                   
                 
@@ -288,7 +312,7 @@ namespace ECJ.Web.Controllers.AppelOffre
                 LayoutController.erreur = IOEx;
             }
         }
-
+     
         private void DeleteXml(string nameXml)
         {
             XmlDocument doc = new XmlDocument();

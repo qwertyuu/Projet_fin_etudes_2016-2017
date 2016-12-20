@@ -58,6 +58,7 @@ namespace ECJ.Web.Controllers
                 {
                     return RedirectToAction("Index");
                 }
+
                 ViewBag.recherche = recherche;
                 recherche = recherche.Trim().ToUpper();
                 model = new Abp.Application.Services.Dto.ListResultOutput<Models.AbpUsers>(
@@ -137,10 +138,7 @@ namespace ECJ.Web.Controllers
                 AbpUser.IsEmailConfirmed = false;
                 AbpUser.CreationTime = DateTime.Now;
 
-                if (AbpUser.Password != null)
-                {
-                    AbpUser.Password = new PasswordHasher().HashPassword(PasswordChange);
-                }
+                AbpUser.Password = new PasswordHasher().HashPassword(PasswordChange);
 
 
                 db.InsertUser(AbpUser);
@@ -183,6 +181,10 @@ namespace ECJ.Web.Controllers
                 if (!string.IsNullOrWhiteSpace(PasswordChange))
                 {
                     AbpUser.Password = new PasswordHasher().HashPassword(PasswordChange);
+                }
+                else
+                {
+                    AbpUser.Password = u.Password;
                 }
 
                 if(AbpUser.Reponse == null)

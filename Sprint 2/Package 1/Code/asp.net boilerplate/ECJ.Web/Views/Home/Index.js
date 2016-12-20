@@ -1,5 +1,6 @@
 ﻿$(function () {
-    $(".sommaireMemo tbody tr.warning").on("click", function () {
+    $(".sommaireMemo tbody tr.warning").on("click", function (e) {
+        console.log(!$(e.target).is('a'));
         var moi = $(this);
         if (moi.hasClass("warning")) {
             $.ajax({
@@ -15,7 +16,9 @@
                     var resort = "",
                     cb = function (u) { };
                     $(".sommaireMemo").trigger("updateCell", [etatcell.get(0), resort, cb]);
-                }
+                },
+                async: !$(e.target).is('a'),
+                timeout: 3000
             });
         }
 

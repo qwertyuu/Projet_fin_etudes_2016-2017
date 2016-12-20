@@ -5,6 +5,7 @@
 
             if ($('.destinataire').map(function(){ return $(this).val() != null; }).toArray().reduce(function(final, elem){ return final && elem }, true)) {
                 var lienAEnvoyer = $("#lien").val().replace(abp.appPath, "");
+                lienAEnvoyer = lienAEnvoyer.replace(abp.appPath.slice(0, -1), "");
                 if (lienAEnvoyer.charAt(0) == "/") {
                     lienAEnvoyer = lienAEnvoyer.substring(1);
                 }

@@ -16,7 +16,15 @@ IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = @Schema)
 BEGIN
 EXEC('CREATE SCHEMA ' + @Schema)
 END
+GO
+PRINT 'Création de la table d''utilisateur'
 
+CREATE TABLE S_personnel.tblUtilisateur
+(
+	IdUser  varchar(30)NOT NULL,
+	motPasse char(24) NOT NULL
+)
+PRINT 'Fin de la création de la table d''utilisateur'
 GO
 PRINT 'Création de la table memo'
 CREATE TABLE S_personnel.tblMemo (

@@ -43,22 +43,10 @@
         <input class="form-control" type="password" name="PasswordChange" required>
     </div>
 
-    if (Model.ImageProfil == null)
-    {
-        <label>Aucune image de profil</label>
         <div class="form-group">
             <label>Changer l'image de profil</label>
-            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
+            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif" required>
         </div>
-    }
-    else
-    {
-        <img width="200" src="@Url.Action("GetFile","profil", new { id = Model.Id})" alt="Image de profil" />
-        <div class="form-group">
-            <label>Changer l'image de profil</label>
-            <input type="file" name="pic" accept="image/png,image/jpeg,image/gif">
-        </div>
-    }
 
     if (ViewBag.UtilisateurCourrant != null)
     {
